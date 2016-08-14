@@ -2,7 +2,7 @@ Title: C++11 stuff
 Author: SergeM
 Date: 2014-02-17 14:05:00
 Slug: c11-stuff
-Tags: c++,c++11
+Tags: c++,cplusplus11
 
 <div dir="ltr" style="text-align: left;" trbidi="on">random numbers
 [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf)

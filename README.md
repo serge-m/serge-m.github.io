@@ -1,6 +1,12 @@
-Compilation 
+# Compilation 
+
 ```
 pelican content
+```
+
+# Updating pages
+```
+cd output && git add --all && git commit -m "fixed latest articles" && git push
 ```
 
 Set up output directory

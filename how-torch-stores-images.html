@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>how torch stores images - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/how-torch-stores-images.html">
+
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="torch" />
+        <meta name="description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34;img = torch.Tensor(1, 3, imgDim, imgDim)img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. displayrequire &#39;gnuplot&#39;gnuplot.figure(1)gnuplot.imagesc(img[1]) Torchnumpy dictionary [https ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="how torch stores images"/>
+        <meta property="og:url" content="/how-torch-stores-images.html"/>
+        <meta property="og:description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34;img = torch.Tensor(1, 3, imgDim, imgDim)img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. displayrequire &#39;gnuplot&#39;gnuplot.figure(1)gnuplot.imagesc(img[1]) Torchnumpy dictionary [https ..."/>
+        <meta property="article:published_time" content="2016-06-26" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="torch" />
+            <meta property="article:author" content="SergeM" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/how-torch-stores-images.html"
+                       rel="bookmark"
+                       title="Permalink to how torch stores images">
+                        how torch stores images
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-06-26T23:01:00+02:00"> Sun 26 June 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/torch.html">torch</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on">require('image')
+<div><div>imgPath = "image.jpg"</div><div>img = torch.Tensor(1, 3, imgDim, imgDim)</div></div><div><div>img[1] = image.load(imgPath, 3, byte)</div></div><div>
+</div><div>image is stored as float, conversion is (intensity/255.). stored top->bottom, line by line. format RGB.</div><div>
+</div><h3 style="text-align: left;">display</h3><div>require 'gnuplot'</div><div><div>gnuplot.figure(1)</div></div><div>gnuplot.imagesc(img[1])
+
+Torch<->numpy dictionary
+[https://github.com/torch/torch7/wiki/Torch-for-Numpy-users](https://github.com/torch/torch7/wiki/Torch-for-Numpy-users)</div>
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>useful - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="useful" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Personal public notebook"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/reading-c-type-declarations.html">reading C type declarations</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[Source](http://www.unixwiz.net/techtips/reading-cdecl.html)
+
+////////////
+simple example:   
+<pre class="codeblock"><span class="decl">long **foo[7];</span>
+</pre>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in <span class="hl">red</span>, and <strike>strike out ...</strike></div>
+                    <a class="btn btn-default btn-xs" href="/reading-c-type-declarations.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/suspend-and-hibernate-in-linux.html">Suspend and hibernate in Linux</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+
+After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. &nbsp;http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/
+&nbsp;Only Suspend option was there.
+&nbsp;Suspend didn't work either. Computer couldn't wake up. It actually woke up, but stayed freezed displaying wallpaper ...</div>
+                    <a class="btn btn-default btn-xs" href="/suspend-and-hibernate-in-linux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/installing-ubuntu-from-usb.html">Installing Ubuntu from USB</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I use&nbsp; Windows OS and I want to install Ubuntu on another PC. 
+1. Download software for bootable usb creation
+[http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
+2. Download ubuntu image from 
+[http://www.ubuntu.com/download/desktop](http://www.ubuntu.com/download/desktop)
+3. According to ...</div>
+                    <a class="btn btn-default btn-xs" href="/installing-ubuntu-from-usb.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/installing-theano-on-windows.html">Installing theano on windows</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">0. install Anaconda 
+1. download Theano sources from git (install it using setup.py)
+2. Setup NVIDIA GPU Toolkit. I have installed version 6.5
+3. Setup Visual Studio Community Edition 2013
+4. Create config file .theanorc&nbsp; in c:\Users\X\:
+
+<pre class="brush: python">[global]
+floatX = float32
+device = gpu
+
+[nvcc]
+fastmath = True
+compiler_bindir ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/installing-theano-on-windows.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/setting-default-parameters-from-imshow.html">Setting default parameters from imshow in pyplot</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+
+ <pre class="brush: cpp">
+import matplotlib.pyplot as plt
+plt.rcParams['image.cmap'] = 'gray'
+plt.rcParams['image.interpolation'] = 'nearest'
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="/setting-default-parameters-from-imshow.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/loading-numpy-array-from-string.html">Loading numpy array from string</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Okay children, today we learn how to convert text to numpy matrix.
+Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html" target="_blank).
+
+<pre class="brush: python"># loading modules
+import numpy
+from StringIO import StringIO
+
+# Using StringIO as a file-like wrapper over text
+I0 = numpy.loadtxt(StringIO("""
+         0         0 ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/loading-numpy-array-from-string.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/quiver-for-optical-flow.html">Quiver for optical flow</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
+
+ <pre class="brush: cpp"> 
+function [ output ] = quiver_flow( u, v )
+%QUIVER_FLOW Displays quiver for optical flow 
+%   SMatyunin2014
+
+output = quiver( u, v, 0);
+axis ...</pre></div>
+                    <a class="btn btn-default btn-xs" href="/quiver-for-optical-flow.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/save-ipython-notebook-as-script-with.html">Save Ipython notebook as script with the same filename</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
+# source: http://stackoverflow.com/a/23619544 
+# In[1]:
+
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command); 
+
+# saving to a directory 'backup'. create the directory if it doesn't exist ...</div>
+                    <a class="btn btn-default btn-xs" href="/save-ipython-notebook-as-script-with.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab
+
+[https://github.com/serge-m/pyinterp2](https://github.com/serge-m/pyinterp2)</div>
+                    <a class="btn btn-default btn-xs" href="/python-equivalent-of-interp2.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/tikz-cookbook.html">tikz cookbook</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+[Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)
+http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
+
+Drawing label on figure (using tikz)
+\begin{tikzpicture}
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen ...</div>
+                    <a class="btn btn-default btn-xs" href="/tikz-cookbook.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/theano.html">Theano</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+
+<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
+</div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">
+    ::::
+    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared ...</span></blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/theano.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/multiple-windows-in-one-linux-terminal.html">multiple "windows" in one linux terminal</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">use "screen" utility
+
+ctrl-a-p - switch
+ctrl-a-c - new
+ctrl-a-Q - remove freeze
+ctrl-a-s - freeze
+ctrl-a-S - split, but doesn;t work
+<div>
+</div></div>
+                    <a class="btn btn-default btn-xs" href="/multiple-windows-in-one-linux-terminal.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/migrating-from-svn-to-git.html">Migrating from SVN to Git and Mercurial</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There is a lot of answers here:
+http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository
+
+I found rather useful [this one](http://stackoverflow.com/a/9316931" target="_blank).
+A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS
+
+This script will convert projects stored in SVN with the ...</div>
+                    <a class="btn btn-default btn-xs" href="/migrating-from-svn-to-git.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/blog-post_22.html">Десятка лучших консольных команд</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h1 class="title" style="background-color: white; border: 0px; color: #333333; font-family: 'normal Verdana', Tahoma, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: -1px; line-height: 35px; margin: 0px 0px 8px; outline: 0px; padding: 0px; vertical-align: baseline;"><span style="color: black; font-family: 'Times New Roman'; font-size: small; letter-spacing: normal; line-height: normal;">Взято с хабра:&nbsp;</span>[http://habrahabr.ru/post/198482/](http://habrahabr.ru/post/198482/" style="font-family: 'Times New Roman'; font-size: medium; letter-spacing: normal; line-height: normal;)</h1><div>
+</div><div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"><img align="left" alt="image" src="http://habr.habrastorage.org/post_images/8ae/94d/028/8ae94d0280ef126598430d35ee8f1269.gif" style="border: 0px; margin: 5px 30px 5px 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" />В данном посте я расскажу о наиболее интересных командах, которые могут быть очень полезны при работе в консоли. Однозначных критериев определения какая команда лучше другой — нет ...</div></div>
+                    <a class="btn btn-default btn-xs" href="/blog-post_22.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="/tag/useful.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="/tag/useful.html">1</a></li>
+                    <li class="active"><a
+                            href="/tag/useful2.html">2</a></li>
+                <li class="next disabled"><a href="#">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/deep-learning.html">
+                            deep learning
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/autocomplete-from-history-in-terminal.html">
+                            autocomplete from history in terminal (in linux mint)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/working-with-date-and-time-in-java.html">
+                            Working with date and time in Java (russian)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/about-python.html">
+                            About python
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/dropbox-in-linux-mint.html">
+                            Dropbox in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/c-ide-for-linux.html">
+                            C++ IDE for linux
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/debugging-numpy-any-c-code-of-python.html">
+                            Debugging numpy (any C code of Python) using gdb
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

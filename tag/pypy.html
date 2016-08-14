@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>pypy - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="pypy" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Personal public notebook"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/pypy-with-numpy.html">pypy with numpy</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Looks like pypy now can build numpy. Well, a slightly modified numpy.
+
+1. Get default branch of pypy. be careful cause the developers don't maintain default branch compilable. Revision&nbsp;<span style="font-family: monospace; font-size: 9pt;">84341 (c86b42dd7613) works for me.</span>
+<span style="font-family: monospace; font-size: 9pt;">2. compile using&nbsp;</span>
+<span style="font-family: monospace;"><span style="font-size: 12px;">./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy</span></span>
+<span style="font-family: monospace;"><span style="font-size: 12px;">3. Create package ...</span></span></div>
+                    <a class="btn btn-default btn-xs" href="/pypy-with-numpy.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/scipy-in-pypy.html">Scipy in pypy</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.
+I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn't work.
+
+[https://github.com/serge-m/scipy ...</div>
+                    <a class="btn btn-default btn-xs" href="/scipy-in-pypy.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/building-pypy.html">Building Pypy</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Pypy builds faster if using -O2 option.
+
+
+
+To build faster (according to pypy documentation) use prebuilt pypy from&nbsp;[http://buildbot.pypy.org/nightly/trunk/](http://buildbot.pypy.org/nightly/trunk/)
+
+Using virtualenv to create virtual environment for it.
+
+Build script (to be placed in pypy source directory):
+
+<span style="font-family: Courier New, Courier, monospace;">#!/bin/bash</span>
+<span style="font-family: Courier New, Courier, monospace;">cd ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/building-pypy.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/til-about-pypy.html">TIL about PyPy</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Building from source root using command
+<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
+produces structure with obsolete pypy-c and libpypy-c.so in 
+<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span>
+
+Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use ...</div>
+                    <a class="btn btn-default btn-xs" href="/til-about-pypy.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/pypy-with-numpy.html">
+                            pypy with numpy
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/scipy-in-pypy.html">
+                            Scipy in pypy
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/building-pypy.html">
+                            Building Pypy
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/til-about-pypy.html">
+                            TIL about PyPy
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

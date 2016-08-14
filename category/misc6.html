@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>misc - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="misc" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Personal public notebook"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/matting-laplacian.html">По простому о matting laplacian</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">В математике у нас есть уравнение Лапласа
+\delta u = 0
+&nbsp;Перепишем:
+![](http://upload.wikimedia.org/math/0/2/3/023ea1cad204fa2a541cdddddd2b20b0.png)
+Вспомним, как можно расписывать вторую производную:
+![](http://webmath.exponenta.ru/dnu/lc/kiselev1/node49_files/img2827.png)<span style="text-align: left;">
+</span><span style="text-align: left;">Для изображения равенство нулю оператора лапласа означает, что в каждая точка должна быть ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/matting-laplacian.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/matlab.html">MATLAB</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.
+
+useParallel - automatic parallel</div>
+                    <a class="btn btn-default btn-xs" href="/matlab.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/add-backslash-before-all-escape.html">Add backslash before all escape characters in python</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Useful for using in regular expressions:
+
+<blockquote class="tr_bq">import re
+re.escape( str )</blockquote>
+Python detects all escape characters that can be used by regex &nbsp;and add slash before them
+[http://docs.python.org/2/library/re.html#re.escape](http://docs.python.org/2/library/re.html#re.escape)</div>
+                    <a class="btn btn-default btn-xs" href="/add-backslash-before-all-escape.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/move-time-indicator-in-composition.html">Moving time indicator in composition timeline in After Effects CS6 using scripts</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">So, Javascript code for position changing is simple.
+Lets say comp - is your composition:
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);</span></blockquote>move pointer to time 0.2:
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">comp.time = 0.2;</span></blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/move-time-indicator-in-composition.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/blog-post-3.html">То, что вы хотели знать про оптический поток, но стеснялись спросить</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/).
+<div>Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.
+<div>
+</div><div>
+<div class="hubs" style="background-color: white; background-image: url(http://habrahabr.ru/images/posts/hub.icon.png); background-position: 0px 0px; background-repeat: no-repeat no-repeat; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 11px; margin: 0px 0px 15px; outline: 0px; padding: 2px 0px 2px 25px; vertical-align: baseline;"><a class="hub " href="http://habrahabr.ru/hub/image_processing/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб">Обработка изображений</a><span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб">*</span>,&nbsp;<a class="hub " href="http://habrahabr.ru/hub/algorithms/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб">Алгоритмы</a><span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб">*</span></div><div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"><img align="right" src="http://habr.habrastorage.org/post_images/6e7/202/488/6e7202488554327be02a3b211df4647a.jpg" style="border: 0px; margin: 5px 0px 5px 30px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" />
+Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео ...</div></div></div></div>
+                    <a class="btn btn-default btn-xs" href="/blog-post-3.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/opencv-tutorials-in-russian.html">OpenCV tutorials (Russian)</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+1. Делаем детектор движения, или OpenCV — это просто
+[http://habrahabr.ru/company/avi/blog/200804/](http://habrahabr.ru/company/avi/blog/200804/)
+2.&nbsp;OpenCV шаг за шагом
+[http://robocraft.ru/blog/computervision/265.html](http://robocraft.ru/blog/computervision/265.html)
+3. Пару слов о распознавании образов
+[http://habrahabr.ru ...</div>
+                    <a class="btn btn-default btn-xs" href="/opencv-tutorials-in-russian.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/free-uml-editor.html">Free UML editor</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I found free UML editor:
+<h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;">ArgoUML&nbsp;[http://argouml.tigris.org/](http://argouml.tigris.org/" style="background-color: transparent;)</h1><div>It seems not bad</div><div>
+
+I have tried gliffy.com. It is online and paid.
+www.lucidchart.com has free version but it seems not so convenient
+
+</div>
+
+</div>
+                    <a class="btn btn-default btn-xs" href="/free-uml-editor.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/how-to-open-composition-in-viewer-in.html">How to open composition in viewer in Adobe After Effects using scripts</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">// Make a composition
+var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );
+
+// Open it in viewer
+comp.openInViewer();
+
+This solution works only in AAE CS 6.0
+
+My version of some cross-platform code
+
+<span style="font-family: Courier New, Courier, monospace;">function OpenInViewer( comp )</span>
+<span style="font-family: Courier New, Courier, monospace;">{</span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; var version = app.version.match(/(\d+\.\d+).*/)[1];</span>
+<span style="font-family: Courier New, Courier, monospace;">
+</span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; if ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/how-to-open-composition-in-viewer-in.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/convert-all-avi-files-in-current.html">Convert all *.avi files in current directory to png sequences</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Using python and ffmpeg:
+
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -*- coding: cp1251 -*-</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
+</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import glob</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import os</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
+</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">t=glob.glob("*.avi" ) # search all AVI files</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
+</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">for v in t:</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;vv = os.path.splitext(v)[0];</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.makedirs( vv ) # make a directory for each input file</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/convert-all-avi-files-in-current.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/print-all-commands-that-were-enteren-in.html">Print all commands that were entered in interactive mode in Python</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: Courier New, Courier, monospace;">import readline
+readline.write_history_file( "log.py")</span></div>
+                    <a class="btn btn-default btn-xs" href="/print-all-commands-that-were-enteren-in.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/blog-post_22.html">Десятка лучших консольных команд</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h1 class="title" style="background-color: white; border: 0px; color: #333333; font-family: 'normal Verdana', Tahoma, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: -1px; line-height: 35px; margin: 0px 0px 8px; outline: 0px; padding: 0px; vertical-align: baseline;"><span style="color: black; font-family: 'Times New Roman'; font-size: small; letter-spacing: normal; line-height: normal;">Взято с хабра:&nbsp;</span>[http://habrahabr.ru/post/198482/](http://habrahabr.ru/post/198482/" style="font-family: 'Times New Roman'; font-size: medium; letter-spacing: normal; line-height: normal;)</h1><div>
+</div><div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"><img align="left" alt="image" src="http://habr.habrastorage.org/post_images/8ae/94d/028/8ae94d0280ef126598430d35ee8f1269.gif" style="border: 0px; margin: 5px 30px 5px 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" />В данном посте я расскажу о наиболее интересных командах, которые могут быть очень полезны при работе в консоли. Однозначных критериев определения какая команда лучше другой — нет ...</div></div>
+                    <a class="btn btn-default btn-xs" href="/blog-post_22.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/opencv-processing-external-byte-buffer.html">OpenCV. Processing external byte buffer</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+
+We have such an example from openCV documentation:
+<blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>
+<span style="font-family: Courier New, Courier, monospace;">GaussianBlur(img, img, Size(7,7), 1.5, 1.5);</span></blockquote>
+<div>What does it mean?&nbsp;</div><div>Lets say I have an image img:
+<blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">typedef unsigned char BYTE;</span>
+<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image ...</div></div>
+                    <a class="btn btn-default btn-xs" href="/opencv-processing-external-byte-buffer.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
+
+    ::::
+    // Copy several buffers (images)
+    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
+    {
+       // Copy one image per pixel
+       for( int j = 0; j < MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
+       {
+          conf_[i][j] = src.conf_ ...</div>
+                    <a class="btn btn-default btn-xs" href="/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/how-to-cheat-on-video-encoder.html">How to cheat on video encoder comparisons</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;">Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)</h3><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"></h3><div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"><span style="background-color: white;">Filed under:&nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing ...</span></div></div>
+                    <a class="btn btn-default btn-xs" href="/how-to-cheat-on-video-encoder.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/using-h264multiview-codec-from-intel.html">Using h264/multiview codec from Intel Media SDK</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><div class="tr_bq">I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:</div>
+<blockquote><b>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080
+Return on error: error code -3, .\src ...</b></blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/using-h264multiview-codec-from-intel.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/using-ls-command.html">Using ls command</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**<span style="color: #93c47d;">ls -w1 */ </span>&nbsp;**- show only subdirectories in current directory (*/) and display in 1 column (-w1)
+<span style="color: #6aa84f;">**ls -c** </span>&nbsp;- sort by date</div>
+                    <a class="btn btn-default btn-xs" href="/using-ls-command.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/blog-post-2.html">Некоторые заметки о приведении типов в СиПлюсПлюс</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
+[http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)
+
+<code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/blog-post-2.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/math-morphology-in-adobe-after-effects.html">Math morphology in Adobe After Effects</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
+![](http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png)
+</div>
+                    <a class="btn btn-default btn-xs" href="/math-morphology-in-adobe-after-effects.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/opencv-and-opencv-error-bad-flag.html">Opencv and "OpenCV Error: Bad flag"</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+&nbsp; &nbsp;
+I had pretty simple code with opencv:
+
+**&nbsp; &nbsp; cv::Mat t;**
+**&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;**
+**&nbsp; &nbsp; cv::imwrite( "q.bmp", t );**
+**&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );**
+**&nbsp; &nbsp; cv::imshow( "asdads", t );**
+**&nbsp; &nbsp; cv::waitKey( -1 );**
+**&nbsp; &nbsp; return 0;**
+
+It caused crash in debug configuration:
+
+**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ...</div>
+                    <a class="btn btn-default btn-xs" href="/opencv-and-opencv-error-bad-flag.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/opencv-copy-image-from-unsigned-char.html">OpenCV. Copy image from unsigned char buffer, resize and save to file</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.
+
+<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div><div>
+</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div><div>
+</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small ...</div></div>
+                    <a class="btn btn-default btn-xs" href="/opencv-copy-image-from-unsigned-char.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="/category/misc5.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="/category/misc.html">1</a></li>
+                    <li class=""><a
+                            href="/category/misc2.html">2</a></li>
+                    <li class=""><a
+                            href="/category/misc3.html">3</a></li>
+                    <li class=""><a
+                            href="/category/misc4.html">4</a></li>
+                    <li class=""><a
+                            href="/category/misc5.html">5</a></li>
+                    <li class="active"><a
+                            href="/category/misc6.html">6</a></li>
+                    <li class=""><a
+                            href="/category/misc7.html">7</a></li>
+                <li class="next"><a
+                        href="/category/misc7.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Things about C++ - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/things-about-c.html">
+
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="c++" />
+        <meta name="description" content="rules for resolving calls to overloaded functions: - identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function. Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Things about C++"/>
+        <meta property="og:url" content="/things-about-c.html"/>
+        <meta property="og:description" content="rules for resolving calls to overloaded functions: - identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function. Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs ..."/>
+        <meta property="article:published_time" content="2014-01-06" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="c++" />
+            <meta property="article:author" content="SergeM" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/things-about-c.html"
+                       rel="bookmark"
+                       title="Permalink to Things about C++">
+                        Things about C++
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-01-06T13:28:00+01:00"> Mon 06 January 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/c.html">c++</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on"><ol style="text-align: left;"><li>rules for resolving calls to overloaded functions:&nbsp;</li>- <li>identify the function that's the best match for the call (name, parameters etc)</li><li>checks accessibility for the best-match function.</li>
+</ol><div>
+</div><div><h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;">Resolving function overloads (my)</h2></div><div>
+</div>![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png)<div>
+</div><div><h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;">Resolving function overloads</h2></div><div>src:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm" target="_blank)</div><div>
+</div><div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">The compiler works through the following checklist and if it still can't reach a decision, it issues an error:</div><ol style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"><li>Gather all the functions in the current scope that have the same name as the function called.</li><li>Exclude those that don't have the right number of parameters to match the arguments in the call. (It has to be careful about parameters with default values;&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">void f(int x, int y = 0)</code>&nbsp;is a candidate for the call&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f(25);</code>)</li><li>If no function matches, the compiler reports an error.</li><li>If there is more than one match, select the 'best match'.</li><li>If there is no clear winner of the best matches, the compiler reports an error - ambiguous function call.</li></ol><div><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt; text-align: left;">Best matching</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">In deciding on the best match, the compiler works on a rating system for the way the types passed in the call and the competing parameter lists match up. In decreasing order of goodness of match:</div><ol style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"><li>An exact match, e.g. argument is a double and parameter is a double</li><li>A promotion</li><li>A standard type conversion</li><li>A constructor or user-defined type conversion</li></ol><div><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Exact matches</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">An exact match is where the parameter and argument datatypes match exactly. Note that, for the purposes of overload resolution a pointer to an array of type x exactly matches a pointer of type x. This is because arrays are always passed by reference, meaning that you actually pass a pointer to the first element of the array. For example:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void f(int y[ ]);    // call this f1
+void f(int* z);      // call this f2
+....
+int x[ ] = {1, 2, 3, 4};
+f(x);         // Both f1 and f2 are exact matches, so the call is ambiguous.
+
+void sf(const char s[]);
+void sf(const char*);
+....
+sf("abc");   // Same problem; both sf functions are exact matches.
+</pre><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Type promotion</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">The following are described as "promotions":</div><ul style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"><li>A&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">char</code>,&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">unsigned</code>&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">char</code>&nbsp;or&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">short</code>&nbsp;can be promoted to an&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">int</code>. For example&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">void f(int);</code>&nbsp;can be a match for&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f('a');</code></li><li>A&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">float</code>&nbsp;can be promoted to a&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">double</code>.</li><li>A&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">bool</code>&nbsp;can be promoted to an&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">int</code>&nbsp;(FALSE counts as 0, TRUE as 1).</li></ul><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Standard conversions</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">All the following are described as "standard conversions":</div><ul style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"><li>conversions between integral types, apart from the ones counted as promotions. Remember that&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">bool</code>&nbsp;and&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">char</code>&nbsp;are integral types as well as&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">int</code>,&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">short</code>&nbsp;and&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">long</code>.</li><li>conversions between floating types:&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">double</code>,&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">float</code>&nbsp;and&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">long double</code>, except for&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">float</code>&nbsp;to&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">double</code>&nbsp;which counts as a promotion.</li><li>conversions between floating and integral types</li><li>conversions of integral, floating and pointer types to&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">bool</code>&nbsp;(zero or NULL is FALSE, anything else is TRUE)</li><li>conversion of an integer zero to the&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">NULL</code>&nbsp;pointer.</li></ul><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">All of the standard conversions are treated as equivalent for scoring purposes. A seemingly minor standard conversion, such as&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">int</code>&nbsp;to&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">long</code>, does not count as any "better" than a more drastic one such as&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">double</code>&nbsp;to&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">bool</code>.</div><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Constructors and user-defined conversions</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">A certain kind of constructor can play a special role in type conversion. Suppose you had a class&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">Bigint</code>&nbsp;that was capable of storing integral numbers larger than INT_MAX, and you had a constructor for a&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">Bigint</code>&nbsp;that took a C-string, so that a declaration of a&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">Bigint</code>&nbsp;object might look like this:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">Bigint b("12345678901234567890");
+</pre><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">This constructor also provides an implicit type conversion. Having defined&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">b</code>&nbsp;as a&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">Bigint</code>, it would be possible to say, for example:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">b = "999999999999";
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">or you could invoke the type-conversion explicitly:</span>
+<pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">b = static_cast<Bigint>("88888888888");
+</pre><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">The same type-conversion would be used in parameter passing, enabling us to do this:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void f(Bigint);
+
+f("77777777777777");
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">We are able to pass a C-string to a function that expects a Bigint because there exists a Bigint constructor that takes a C-string.</span>
+<div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">This kind of conversion can only work when the constructor can be called with just one argument. Generally this means that the constructor will have just one parameter, but it could have more if all but the first of the parameters (or, indeed, all of them) had default values.</div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">When you think about using this type-conversion in assignment, it is obvious that the constructor must be of the kind that can be called with only one argument. In the statement:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">b = something;
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">the "something" can't be nothing, and it can't be more than one thing.</span>
+<div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">In the context of parameter passing, the compiler has to be able to find a parameter for each argument. It would not consider&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">void f(Bigint)</code>&nbsp;as a candidate for&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f("6666666", 57);</code>&nbsp;even if the Bigint class had a constructor that took a C-string and an int - the compiler needs one parameter for the "6666666" and another for the 57.</div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">The compiler also has to find an argument for each parameter that is not given an explicit default in the function header, so it would not consider&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">void f(Bigint)</code>&nbsp;as a candidate for&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f();</code>&nbsp;even if Bigint had a constructor with no parameters or a constructor with all its parameters defaulted. (It would, however, consider&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">void f(Bigint b = "0")</code>&nbsp;as a candidate for&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f();</code>&nbsp;since the parameter of the function&nbsp;<code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 10pt; line-height: 10pt;">f</code>&nbsp;(as opposed to the parameter of the Bigint constructor) has an explicit default.)</div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">These "conversion constructors" enable us to have object parameters corresponding to arguments of other types.</div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"><strong>User-defined conversions</strong>&nbsp;are for going the other way. They enable us to pass objects (as arguments) to functions with parameters of other types, as in the following:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void f(int n);
+
+Bigint b("123456");
+f(b);                // would work if there was a Bigint::operator int() conversion function
+</pre><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">Conversion member-functions allow you to specify how you want objects to respond if they are asked to behave as if they were objects of some other type. In this case, a Bigint is being treated as if it were an int. A conversion function that allowed the above code to work might take the form:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">class Bigint
+{ public:
+  ...
+  operator int();    // returns a Bigint as an int.
+  ...                // Note there is no return type and no parameter list.
+};
+
+Bigint::operator int()
+{  If the value of the Bigint is less than INT_MAX,
+        return the value as an int,
+   else return -1;   // or throw an exception or something
+}</pre><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">explicit</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">It can happen that you have a constructor that can be called with just one argument, and which will therefore behave as a conversion constructor, but you don't want it to behave in this way. Perhaps we have a Bigint constructor that takes a string. This would mean that you could write something like:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">Bigint b;
+b = "987654321";
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">But implicit type-conversions are a common source of programming error, so you might decide to disallow that sort of conversion. We can do that simply by inserting the keyword&nbsp;</span><code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 13px; line-height: 10pt;">explicit</code><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">&nbsp;before the constructor prototype in the class definition:</span>
+<pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">class Bigint
+{ public:
+ ......
+ explicit Bigint(string);
+ ......
+};
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">With that&nbsp;</span><code style="color: #990099; font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 13px; line-height: 10pt;">explicit</code><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">&nbsp;before the constructor, we cannot now make use of implicit type-conversion from C-string to Bigint:</span>
+<pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void proc(Bigint);
+Bigint b;
+b = "99999999999";  // Error! Implicit type conversion not allowed
+proc("9999999999999");  // not allowed
+b = static_cast<Bigint>("999999999999");  // OK, type conversion explicit
+proc(Bigint("999999999999"));  // OK
+</pre><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">A note on const ref parameters</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">Suppose that the Bigint class had a constructor that took an int. It would then be possible to pass an int to a function that expected a Bigint:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void proc(Bigint bx)
+{ ...... }
+
+proc(54321);
+</pre><span style="background-color: #ffffcc; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">The parameter here was a value parameter. Would it have made any difference if the parameter had been a const ref, i.e.</span>
+<pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void proc(const Bigint&amp; bx)
+{ ...... }
+
+proc(54321);
+</pre><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">At first sight, this looks rather strange. When you pass an argument by reference, the parameter name becomes an alternative to the argument name - two names for the same thing. But here, we are not passing anything that has a name; we are simply passing a value. To put it more technically, the argument has an r-value but not an l-value (you could use it on the right-hand side of an assignment but not on the left-hand side). There is, apparently, nothing for bx to refer to.</div><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">But in fact it would work. When you pass an argument that has an l-value to a const ref parameter, you get the ordinary call-by-reference (except, obviously, that the parameter is const). When you pass an argument that has only an r-value, a temporary variable is created with the same type as the parameter, and the const ref parameter refers to this temporary variable. So, in this example, a temporary variable of type Bigint is created, the value 54321 is used to initialise it, and this is the object to which bx refers. The temporary variable disappears when proc terminates. (In other words, when the argument has no l-value, the const ref parameter behaves very like a value parameter.)</div><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Parameter lists that include default values</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">Parameters with default values carry their full weight in the scoring of a function. For example:</div><pre style="background-color: #ffcc99; border: 2px rgb(255, 255, 204); font-family: 'Lucida Console', Courier, 'Courier New', monospace; font-size: 9pt; line-height: 9pt; padding: 3px; width: 1889px;">void f (int x, double y, int z = 2);   // (f1)
+void f (int x, int y);                 // (f2)
+...
+f(3, 4.5); // matches f1 exactly, whereas f2 requires a double-to-int standard conversion
+</pre><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Choosing a winner</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">A candidate function is only as strong as its weakest match; a candidate requiring three promotions, for example, beats a candidate with two exact matches and a standard conversion. Candidates whose weakest matches are equivalently weak are compared on their next-weakest, and so on - a candidate with a standard conversion, a promotion and an exact match beats a candidate with a standard conversion and two promotions.</div></div>
+
+<p></div></div><div>
+</div></div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

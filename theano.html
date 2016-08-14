@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Theano - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/theano.html">
+
+        <meta name="author" content="SM!" />
+        <meta name="keywords" content="useful" />
+        <meta name="description" content="_Intro __Theano_ is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Check gpu is workingSource: [http://deeplearning.net/software/theano/tutorial/using_gpu.html](http://deeplearning.net/software/theano/tutorial/using_gpu.html) Test script: :::: from theano import function, config, shared ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Theano"/>
+        <meta property="og:url" content="/theano.html"/>
+        <meta property="og:description" content="_Intro __Theano_ is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Check gpu is workingSource: [http://deeplearning.net/software/theano/tutorial/using_gpu.html](http://deeplearning.net/software/theano/tutorial/using_gpu.html) Test script: :::: from theano import function, config, shared ..."/>
+        <meta property="article:published_time" content="2014-06-05" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="useful" />
+            <meta property="article:author" content="SM!" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/theano.html"
+                       rel="bookmark"
+                       title="Permalink to Theano">
+                        Theano
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-05T23:30:00+02:00"> Thu 05 June 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/useful.html">useful</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+
+<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
+</div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">
+    ::::
+    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared</span><span class="p">,</span> <span class="n">sandbox</span>
+    <span class="kn">import</span> <span class="nn">theano.tensor</span> <span class="kn">as</span> <span class="nn">T</span>
+    <span class="kn">import</span> <span class="nn">numpy</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+
+    <span class="n">vlen</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">*</span> <span class="mi">768</span>  <span class="c"># 10 x #cores x # threads per core</span>
+    <span class="n">iters</span> <span class="o">=</span> <span class="mi">1000</span>
+
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(0</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">shared</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">vlen</span><span class="p">),</span> <span class="n">config</span><span class="o">.</span><span class="n">floatX</span><span class="p">))</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">function</span><span class="p">([],</span> <span class="n">T</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">print</span> <span class="n">f</span><span class="o">.</span><span class="n">maker</span><span class="o">.</span><span class="n">fgraph</span><span class="o">.</span><span class="n">toposort</span><span class="p">()</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">print</span> <span class="s">'Looping </span><span class="si">%d</span><span class="s"> times took'</span> <span class="o">%</span> <span class="n">iters</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">,</span> <span class="s">'seconds'</span>
+    <span class="k">print</span> <span class="s">'Result is'</span><span class="p">,</span> <span class="n">r</span>
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">any</span><span class="p">([</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">op</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">Elemwise</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">maker</span><span class="o">.</span><span class="n">fgraph</span><span class="o">.</span><span class="n">toposort</span><span class="p">()]):</span>
+        <span class="k">print</span> <span class="s">'Used the cpu'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">'Used the gpu'</span>
+</blockquote><div style="text-align: left;">
+</div><div style="text-align: left;"><span class="st">&nbsp;Run with two configurations:</span></div><div style="text-align: left;">
+</div>
+    ::::
+    $ THEANO_FLAGS=mode=FAST_RUN,device=cpu,floatX=float32 python check1.py
+    [Elemwise{exp,no_inplace}(<TensorType(float32, vector)>)]
+    Looping 1000 times took 3.06635117531 seconds
+    Result is [ 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761
+      1.62323284]
+    Used the cpu
+
+    $ THEANO_FLAGS=mode=FAST_RUN,device=gpu,floatX=float32 python check1.py
+    Using gpu device 0: GeForce GTX 580
+    [GpuElemwise{exp,no_inplace}(<CudaNdarrayType(float32, vector)>), HostFromGpu(GpuElemwise{exp,no_inplace}.0)]
+    Looping 1000 times took 0.638810873032 seconds
+    Result is [ 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761
+      1.62323296]
+    Used the gpu
+<div style="text-align: left;">
+</div><div style="text-align: left;">
+</div><div style="text-align: left;">
+</div><div style="text-align: left;">
+</div><div style="text-align: left;"></div></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

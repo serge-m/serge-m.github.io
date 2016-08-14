@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="">
+        <meta name="author" content="sergem" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Personal public notebook"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/svn-copy-certain-subdirectories-to.html">SVN copy certain subdirectories to a branch</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
+<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
+<pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
+      - project1
+      - project2
+          -subdir1
+          -subdir2
+          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 ...</span></span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="/svn-copy-certain-subdirectories-to.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/trim-frames-from-raw-yuv-video-using.html">Trim frames from raw YUV video using FFMPEG</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Trim 5 frames starting from 160-th frame and write to png sequence
+
+<blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
+size of input video is 1920x1088, format YUV420 progressive
+
+UPD:
+ffmpeg is renamed to avconv.
+Using it for trimming ...</div>
+                    <a class="btn btn-default btn-xs" href="/trim-frames-from-raw-yuv-video-using.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/color-problems-in-avisynth-overlay.html">Color problems in avisynth->overlay</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
+
+I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html](http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html))
+![](http://3.bp.blogspot.com ...</div>
+                    <a class="btn btn-default btn-xs" href="/color-problems-in-avisynth-overlay.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/add-path-in-linuxcygwin-and-windows.html">Add path in linux/cygwin and windows</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;">Add path in cygwin /linux</div><blockquote class="tr_bq">PATH=$PATH:~/your_path
+PATH=~/your_path:$PATH</blockquote><div>
+Add path windows
+<blockquote class="tr_bq"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 15.359375px;">PATH=%PATH%;C:\Your_Path;</span></blockquote></div></div>
+                    <a class="btn btn-default btn-xs" href="/add-path-in-linuxcygwin-and-windows.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/never-never.html">Never never!</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!</div>
+                    <a class="btn btn-default btn-xs" href="/never-never.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/how-to-compare-video-metrics.html">How to compare video metrics</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There are specific databases which were subjectively tested. Ans MOS was calculated
+for example
+[http://www.ponomarenko.info/tid2008.htm](http://www.ponomarenko.info/tid2008.htm)
+you can download database and compare your metric to MOS by&nbsp;Spearman correlation</div>
+                    <a class="btn btn-default btn-xs" href="/how-to-compare-video-metrics.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/ssim-metric-for-video.html">SSIM metric for video</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">See good explanation is in
+
+Title: **Handbook of image and video processing&nbsp;**<div>Author(s): Bovik A. (ed.)
+Series: Periodical: 
+Publisher: Elsevier Academic Press&nbsp;</div><div>Year: 2005&nbsp;</div><div>Edition: 2ed.</div><div>Language: English&nbsp;</div><div>Pages: 1429
+ISBN: 9780121197926, 0121197921</div></div>
+                    <a class="btn btn-default btn-xs" href="/ssim-metric-for-video.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/ssim.html">SSIM по русски</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Нужно будет тут записать как работает метрика SSIM по человечески</div>
+                    <a class="btn btn-default btn-xs" href="/ssim.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/replace-n-in-microsoft-word.html">Replace \n in Microsoft word</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">To replace new lines in word use "^13" whild-char. "^p" doesn't work :(</div>
+                    <a class="btn btn-default btn-xs" href="/replace-n-in-microsoft-word.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/tips-for-debugging-of-video-processing.html">Tips for debugging of video processing console</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Assume we have Visual Stusio solution for console that makes some video processing.
+The console takes two input videos and generates the third video:
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
+1) dataset1 conststs of videos ...</div>
+                    <a class="btn btn-default btn-xs" href="/tips-for-debugging-of-video-processing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/bjontegaard-metric-matlab-script.html">Bjontegaard metric. Matlab script.</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+
+Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between "before" and "after" versions. Or determine what curve is better if they have complex form (for example, intersecting).
+
+I found matlab [script](http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric), that ...</div>
+                    <a class="btn btn-default btn-xs" href="/bjontegaard-metric-matlab-script.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/problems-with-debug-run-from-visual.html">Problems with debug run from Visual Studio with openMP</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
+![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png)
+The solution is ...</div>
+                    <a class="btn btn-default btn-xs" href="/problems-with-debug-run-from-visual.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/another-place-with-boost-binaries.html">Another place with boost binaries</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[http://boost.teeks99.com/](http://boost.teeks99.com/)&nbsp;- Another place with boost binaries. It includes build for version 1.49
+
+Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.com/download/)</div>
+                    <a class="btn btn-default btn-xs" href="/another-place-with-boost-binaries.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/error-spawning-cmdexe.html">Error spawning cmd.exe</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
+The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
+%SystemRoot ...</span></blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/error-spawning-cmdexe.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/blogs-about-blender.html">Blogs about blender</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[http://blendersushi.blogspot.ru/](http://blendersushi.blogspot.ru/)&nbsp;- one of blender's developers
+[http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html](http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4 ...</div>
+                    <a class="btn btn-default btn-xs" href="/blogs-about-blender.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/overview-of-open-source-node-based.html">Overview of open-source node-based video editors (composers)</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2>Synapse Compositor </h2>Seems unsupported for a long time 
+Very raw
+
+
+
+
+
+<h2>Blender</h2>Good staff, but it is designed originally for 3D modeling. Video editing is performed in composing mode. Rendering is veeery sloooowww. Open source. Available for linux and windows. 
+Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/blenderprojects/)</div>
+                    <a class="btn btn-default btn-xs" href="/overview-of-open-source-node-based.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/image-resize-in-nuke.html">Image resize in Nuke</a></h2>
+                <div class="summary"><p>So here we have two filters:
+1) Crop
+2) Reformat</p>
+<p>To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.</p>
+                    <a class="btn btn-default btn-xs" href="/image-resize-in-nuke.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="/index6.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="/index.html">1</a></li>
+                    <li class=""><a
+                            href="/index2.html">2</a></li>
+                    <li class=""><a
+                            href="/index3.html">3</a></li>
+                    <li class=""><a
+                            href="/index4.html">4</a></li>
+                    <li class=""><a
+                            href="/index5.html">5</a></li>
+                    <li class=""><a
+                            href="/index6.html">6</a></li>
+                    <li class="active"><a
+                            href="/index7.html">7</a></li>
+                <li class="next disabled"><a href="#">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>misc - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="misc" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Personal public notebook"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="Personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/pylearn2-out-of-memory-error.html">Pylearn2 out of memory error</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I am trying to train NN using pylearn2
+I use stochastic gradient decent.
+I had always a message about failed GPU memory&nbsp; allocation in
+train->self.sgd_update(*batch)
+To fix it, I reduced size of the batch in yaml-config:
+batch_size: 200
+was replaced by
+batch_size: 100
+
+</div>
+                    <a class="btn btn-default btn-xs" href="/pylearn2-out-of-memory-error.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/tikz-cookbook.html">tikz cookbook</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
+[Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)
+http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
+
+Drawing label on figure (using tikz)
+\begin{tikzpicture}
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen ...</div>
+                    <a class="btn btn-default btn-xs" href="/tikz-cookbook.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/displaying-multiple-grayscale-figures.html">displaying multiple grayscale figures in python's matplotlib</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_two, cmap=cm.gray) #</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span>
+
+use
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/displaying-multiple-grayscale-figures.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/theano.html">Theano</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+
+<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
+</div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">
+    ::::
+    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared ...</span></blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/theano.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/windows-life.html">windows life</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**doskey /history > commands.log**&nbsp; - dump command line promt history to file
+
+    ::::
+    **<code>some_command > output_file.txt 2>&amp;1</code>**<span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: black;"> -  <span style="font-family: inherit;"><span style="font-size: small;">Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a/1420981)]</span></span></span></span>
+</div>
+                    <a class="btn btn-default btn-xs" href="/windows-life.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/linux-life.html">linux life</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**top** - see running processes
+**df** - check free disk space
+**baobab** - free disk space 
+**screen&nbsp;** - multiple virtual consoles in one real [[ref](http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html)], need installation in ubuntu
+**mc** - file manager
+
+**ccsm** - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+
+    ::::
+    <code>sudo apt-get ...</code></div>
+                    <a class="btn btn-default btn-xs" href="/linux-life.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/lambda-functions-in-matlab.html">lambda functions in matlab</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I discovered it during Machine learnin courses on Coursera
+
+<blockquote class="tr_bq">To specify the actual function we are minimizing, we use a \short-hand"
+for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
+creates a function, with argument t, which calls your costFunction. This
+allows us to wrap the costFunction for ...</blockquote></div>
+                    <a class="btn btn-default btn-xs" href="/lambda-functions-in-matlab.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/crop-included-graphics-in-latex.html">crop included graphics in latex</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><pre class="lang-tex prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 12px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;"><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\documentclass</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">article</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+
+</span><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\usepackage</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">graphicx</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+
+</span><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\begin</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">document</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+</span><span class="com" style="border: 0px; color: #868686; margin: 0px; padding: 0px; vertical-align: baseline;">% crop left</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+</span><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\includegraphics</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">[</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">trim</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">={</span><span class="lit" style="border: 0px; color: #953838; margin: 0px; padding: 0px; vertical-align: baseline;">5cm</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;"> 0 0 0</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">,clip</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">]{</span><span class="pun" style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">path-to-image</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+</span><span class="com" style="border: 0px; color: #868686; margin: 0px; padding: 0px; vertical-align: baseline;">% crop right</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+</span><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\includegraphics</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">[</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">trim</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">={</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">0 0 </span><span class="lit" style="border: 0px; color: #953838; margin: 0px; padding: 0px; vertical-align: baseline;">5cm</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;"> 0</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">,clip</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">]{</span><span class="pun" style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;">path-to-image</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">
+</span><span class="kwd" style="border: 0px; color: #8a4a0b; margin: 0px; padding: 0px; vertical-align: baseline;">\end</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">{</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;">document</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span></code></pre><div style="background-color: rgba(255, 255, 255, 0.529412); border: 0px; clear: both; color: #393318; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif; font-size: 14px; line-height: 18px; margin-bottom: 1em; padding: 0px; vertical-align: baseline;">Use the&nbsp;<code style="background-color: #eeeeee; border: 0px; color: #222222; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 1px 5px; vertical-align: baseline; white-space: pre-wrap;">trim</code>&nbsp;option, which takes four space separated values.</div><pre class="lang-tex prettyprint prettyprinted" style="background-color: #eeeeee; border: 0px; color: #393318; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; font-size: 12px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto; word-wrap: normal;"><code style="border: 0px; color: #222222; font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif; margin: 0px; padding: 0px; vertical-align: baseline; white-space: inherit;"><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;"> trim</span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">={</span><span class="pln" style="border: 0px; color: black; margin: 0px; padding: 0px; vertical-align: baseline;"><left> <lower> <right> <upper></span><span class="pun" style="border: 0px; color: #145680; margin: 0px; padding: 0px; vertical-align: baseline;">}</span></code></pre>Source:&nbsp;[http://tex.stackexchange.com/a/57420](http://tex.stackexchange.com ...</div>
+                    <a class="btn btn-default btn-xs" href="/crop-included-graphics-in-latex.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/multiple-windows-in-one-linux-terminal.html">multiple "windows" in one linux terminal</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">use "screen" utility
+
+ctrl-a-p - switch
+ctrl-a-c - new
+ctrl-a-Q - remove freeze
+ctrl-a-s - freeze
+ctrl-a-S - split, but doesn;t work
+<div>
+</div></div>
+                    <a class="btn btn-default btn-xs" href="/multiple-windows-in-one-linux-terminal.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/fixed-latex2png-error-eps2eps-failed-to.html">Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">OMG!! I finally fixed it.
+Under Windows latex2rtf diisplayed following error:
+<pre class="hl" style="background-color: white; font-family: 'Courier New', monospace; font-size: 10pt;"><span class="hl str" style="color: red;">latex2png: error: eps2eps failed to translate</span> l2r_00123<span class="hl str" style="color: red;">.pdf to</span>&nbsp;<span style="font-size: 10pt;">l2r_00123</span><span style="color: red; font-size: 10pt;">.eps</span></pre><pre class="hl" style="background-color: white;"><div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;">
+for each image in my latex file.</div>
+<div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;">
+That was very sad because this method is used to convert all equations, fugures and tables in word format.</div>
+<div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;">
+The configurations ...</div></pre></div>
+                    <a class="btn btn-default btn-xs" href="/fixed-latex2png-error-eps2eps-failed-to.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/papers-review.html">Papers review</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;">Depth map Estimation</h2><div><div>Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005<span class="Apple-tab-span" style="white-space: pre;"> </span></div><div>Depth estimation using machine learning from monocular cueues. Uses MRF model</div></div>
+</div>
+                    <a class="btn btn-default btn-xs" href="/papers-review.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/german-resources.html">German resources</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">http://www.c-plusplus.de/forum/
+
+
+
+http://cvisioncentral.com/jobs/
+
+Open positions in computer vision in german universities:
+[http://hci.iwr.uni-heidelberg.de/Links/German_Vision/](http://hci.iwr.uni-heidelberg.de/Links/German_Vision/)
+
+Brox's lab. Need at least one first authon in good conference
+http://lmb.informatik.uni-freiburg.de/jobs/OpeningERC_postdoc ...</div>
+                    <a class="btn btn-default btn-xs" href="/german-resources.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/excelent-idea-moves-towards-real-life.html">Excelent idea moves towards a real life</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Smartphone Application for driver assistance. It can measure distance to the next vehicle for example. Or detect road lane. And warn about violating it.
+[http://www.acodriver-shop.com/](http://www.acodriver-shop.com/)
+<div class="separator" style="clear: both; text-align: center;"><object width="320" height="266" class="BLOGGER-youtube-video" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" data-thumbnail-src="https://ytimg.googleusercontent.com/vi/ceN6b0-EJkU/0.jpg"><param name="movie" value="https://youtube.googleapis.com/v/ceN6b0-EJkU&source=uds" /><param name="bgcolor" value="#FFFFFF" /><param name="allowFullScreen" value="true" /><embed width="320" height="266"  src="https://youtube.googleapis.com/v/ceN6b0-EJkU&source=uds" type="application/x-shockwave-flash" allowfullscreen="true"></embed></object></div>
+Some time ago I also had such an idea. Very interesting.</div>
+                    <a class="btn btn-default btn-xs" href="/excelent-idea-moves-towards-real-life.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/cool-3d-web-design.html">Cool 3d web design</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">http://www.snowflakecreative.co.uk/
+
+</div>
+                    <a class="btn btn-default btn-xs" href="/cool-3d-web-design.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/about-sublime.html">About sublime</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Convenient json formatting
+http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text
+
+</div>
+                    <a class="btn btn-default btn-xs" href="/about-sublime.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/clang-error-linker-command-failed-with.html">clang: error: linker command failed with exit code 1</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Finally I solved the problem with broken clang compilation
+I always got message
+
+        <div class="p1"><span style="font-family: Courier New, Courier, monospace;">ld: malformed archive TOC entry for <long strange identifier>, offset 362137760 is beyond end of file 303710208</span></div><div class="p1"><span style="font-family: Courier New, Courier, monospace;">&nbsp;for architecture x86_64</span></div><div class="p1"><span style="font-family: Courier New, Courier, monospace;">clang: error: linker command failed with exit code 1 (use -v to see invocation)</span></div><div class="p1">
+</div><div class="p1">when I interrupted compilation of a ...</div></div>
+                    <a class="btn btn-default btn-xs" href="/clang-error-linker-command-failed-with.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/cyrillic-characters-decoder.html">Cyrillic characters decoder</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Very useful for determining what text is encoded for example in unicode characters/
+[http://2cyr.com/decode/](http://2cyr.com/decode/)
+
+</div>
+                    <a class="btn btn-default btn-xs" href="/cyrillic-characters-decoder.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/in-russian.html">Собеседования (in Russian)</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">подходят к концу
+
+
+
+yandex (skype)
+asoft (1+тз)
+dressformer (1+не делал тз)
+samsung research center (2)
+s1 (1+тз)
+<noname> (1) - идиоты
+Infowatch (не помню)
+mail.ru (2)
+align technology (phone+1)
+huawei (skype)
+performance lab (2)
+rocket jump (тз+1)
+nvidia (1)
+
+<div>artec (тз+1)
+Был в прикольной компании ...</div></noname></div>
+                    <a class="btn btn-default btn-xs" href="/in-russian.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/hex-editors.html">Hex editors</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;">radare, the reverse engineering framework </h2>[http://radare.nopcode.org/y/?p=features](http://radare.nopcode.org/y/?p=features)
+
+<h2 style="text-align: left;">010 Editor</h2><div>hex templates for binary formats parsing</div>[http://www.sweetscape.com/](http://www.sweetscape.com/)
+[http://habrahabr.ru/post/213211/](http://habrahabr.ru/post/213211/)&nbsp;(rus)</div>
+                    <a class="btn btn-default btn-xs" href="/hex-editors.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/c11-stuff.html">C++11 stuff</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">random numbers
+[http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf)
+
+Sutter. C++11 features
+[http://herbsutter.com/elements-of-modern-c-style/](http://herbsutter.com/elements-of-modern-c-style/)</div>
+                    <a class="btn btn-default btn-xs" href="/c11-stuff.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="/category/misc3.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="/category/misc.html">1</a></li>
+                    <li class=""><a
+                            href="/category/misc2.html">2</a></li>
+                    <li class=""><a
+                            href="/category/misc3.html">3</a></li>
+                    <li class="active"><a
+                            href="/category/misc4.html">4</a></li>
+                    <li class=""><a
+                            href="/category/misc5.html">5</a></li>
+                    <li class=""><a
+                            href="/category/misc6.html">6</a></li>
+                    <li class=""><a
+                            href="/category/misc7.html">7</a></li>
+                <li class="next"><a
+                        href="/category/misc5.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

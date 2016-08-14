@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Opencv and "OpenCV Error: Bad flag" - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/opencv-and-opencv-error-bad-flag.html">
+
+        <meta name="author" content="SergeM" />
+        <meta name="description" content="    I had pretty simple code with opencv: **    cv::Mat t;** **    t = cv::imread( &#34;qq.bmp&#34; ) ;** **    cv::imwrite( &#34;q.bmp&#34;, t );** **    cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );** **    cv::imshow( &#34;asdads&#34;, t );** **    cv::waitKey( -1 );** **    return 0;** It caused crash in debug configuration: **OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Opencv and &#34;OpenCV Error: Bad flag&#34;"/>
+        <meta property="og:url" content="/opencv-and-opencv-error-bad-flag.html"/>
+        <meta property="og:description" content="    I had pretty simple code with opencv: **    cv::Mat t;** **    t = cv::imread( &#34;qq.bmp&#34; ) ;** **    cv::imwrite( &#34;q.bmp&#34;, t );** **    cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );** **    cv::imshow( &#34;asdads&#34;, t );** **    cv::waitKey( -1 );** **    return 0;** It caused crash in debug configuration: **OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ..."/>
+        <meta property="article:published_time" content="2013-08-05" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="SergeM" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/opencv-and-opencv-error-bad-flag.html"
+                       rel="bookmark"
+                       title="Permalink to Opencv and "OpenCV Error: Bad flag"">
+                        Opencv and "OpenCV Error: Bad flag"
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-08-05T16:59:00+02:00"> Mon 05 August 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on">
+&nbsp; &nbsp;
+I had pretty simple code with opencv:
+
+**&nbsp; &nbsp; cv::Mat t;**
+**&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;**
+**&nbsp; &nbsp; cv::imwrite( "q.bmp", t );**
+**&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );**
+**&nbsp; &nbsp; cv::imshow( "asdads", t );**
+**&nbsp; &nbsp; cv::waitKey( -1 );**
+**&nbsp; &nbsp; return 0;**
+
+It caused crash in debug configuration:
+
+**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport**
+**ed array type) in unknown function, file ..\..\..\src\opencv\modules\core\src\ar**
+**ray.cpp, line 2482**
+<b>
+</b>In release configuration it was ok. Finally i found the solution. Both in debug and release configurations I used static libraries for release conguration
+<b>
+</b>**opencv_core231.lib opencv_imgproc231.lib opencv_highgui231.lib**
+<b>
+</b>And one should use
+**opencv_core231d.lib opencv_imgproc231d.lib opencv_highgui231d.lib**
+for debug.
+
+It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems
+
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

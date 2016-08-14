@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>How to cheat on video encoder comparisons - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/how-to-cheat-on-video-encoder.html">
+
+        <meta name="author" content="SergeM" />
+        <meta name="description" content="Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472&#34; target=&#34;_blank)Filed under: [benchmark](http://x264dev.multimedia.cx/archives/category/benchmark&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="How to cheat on video encoder comparisons"/>
+        <meta property="og:url" content="/how-to-cheat-on-video-encoder.html"/>
+        <meta property="og:description" content="Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472&#34; target=&#34;_blank)Filed under: [benchmark](http://x264dev.multimedia.cx/archives/category/benchmark&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing ..."/>
+        <meta property="article:published_time" content="2013-10-11" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:author" content="SergeM" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/how-to-cheat-on-video-encoder.html"
+                       rel="bookmark"
+                       title="Permalink to How to cheat on video encoder comparisons">
+                        How to cheat on video encoder comparisons
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-11T12:57:00+02:00"> Fri 11 October 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on"><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;">Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)</h3><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"></h3><div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"><span style="background-color: white;">Filed under:&nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing: 0px;" title="View all posts in H.264),[stupidity](http://x264dev.multimedia.cx/archives/category/stupidity" rel="category tag" style="letter-spacing: 0px;" title="View all posts in stupidity),[test sequences](http://x264dev.multimedia.cx/archives/category/test-sequences" rel="category tag" style="letter-spacing: 0px;" title="View all posts in test sequences)&nbsp;::</span></div><div class="storycontent" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif;"><span style="background-color: white;">Over the past few years, practically everyone and their dog has published some sort of encoder comparison.&nbsp; Sometimes they’re actually intended to be something for the world to rely on, like the old Doom9 comparisons and the MSU comparisons.&nbsp; Other times, they’re just to scratch an itch — someone wants to decide for themselves what is better.&nbsp; And sometimes they’re just there to outright lie in favor of whatever encoder the author likes best.&nbsp; The latter is practically an&nbsp;<em>expected feature</em>&nbsp;on the websites of commercial encoder vendors.</span>
+<span style="background-color: white;">One thing almost all these comparisons have in common — particularly (but not limited to!) the ones done without consulting experts — is that they are horribly done.&nbsp; They’re usually easy to spot: for example, two videos at totally different bitrates are being compared, or the author complains about one of the videos being “washed out” (i.e. he screwed up his colorspace conversion).&nbsp; Or the results are simply nonsensical.&nbsp; Many of these problems result from the person running the test not “sanity checking” the results to catch mistakes that he made in his test.&nbsp; Others are just outright intentional.</span>
+<span style="background-color: white;">The result of all these mistakes, both intentional and accidental, is that the results of encoder comparisons tend to be all over the map, to the point of absurdity.&nbsp; For any pair of encoders, it’s practically a given that a comparison exists somewhere that will “prove” any result you want to claim, even if the result would be beyond impossible in any sane situation.&nbsp; This often results in the appearance of a “controversy” even if there isn’t any.</span>
+<span style="background-color: white;">Keep in mind that every single mistake I mention in this article&nbsp;<strong>has actually been done</strong>, usually in more than one comparison.&nbsp; And before I offend anyone, keep in mind that when I say “cheating”, I don’t mean to imply that everyone that makes the mistake is doing it intentionally.&nbsp; Especially among amateur comparisons, most of the mistakes are probably honest.</span>
+<span style="background-color: white;">So, without further ado, we will investigate a wide variety of ways, from the blatant to the subtle, with which you too can cheat on your encoder comparisons.</span>
+<span style="background-color: white;">
+</span><span style="background-color: white;"></span>
+<span style="background-color: white;">
+</span>
+<span style="background-color: white;">
+</span><strong>Blatant cheating</strong><span style="background-color: white;"></span>
+<span style="background-color: white;"><strong>1.&nbsp; Screw up your colorspace conversions</strong>.&nbsp; A common misconception is that converting from YUV to RGB and back is a simple process where nothing can go wrong.&nbsp; This is quite untrue. There are two primary attributes of YUV: PC range (0-255) vs TV range (16-235) and BT.709 vs BT.601 conversion coefficients.&nbsp; That sums up to a total of 4 possible different types of YUV.&nbsp; When people compare encoders, they often use different frontends, some of which make incorrect assumptions about these attributes.</span>
+<span style="background-color: white;">Incorrect assumptions are so common that it’s often a matter of luck whether the tool gets it right or not.&nbsp; It doesn’t help that most videos don’t even properly signal which they are to begin with!&nbsp; Often even the tool that the person running the comparison is using to view the source material gets the conversion wrong.</span>
+<span style="background-color: white;">Subsampling YUV (aka what everyone uses) adds yet another dimension to the problem: the locations which the chroma data represents (“chroma siting”) isn’t constant.&nbsp; For example, JPEG and MPEG-2 define different positions.&nbsp; This is even worse because almost nobody actually handles this correctly — the best approach is to simply make sure none of your software is doing any conversion.&nbsp; A mistake in chroma siting is what created that infamous PSNR graph showing Theora beating x264, which has been cited for ages since despite the developers themselves retracting it after realizing their mistake.</span>
+<strong style="background-color: white;">Keep in mind that the video encoder is not responsible for colorspace conversion — almost all video encoders operate in the YUV domain (usually subsampled 4:2:0 YUV, aka YV12).&nbsp; Thus any problem in colorspace conversion is usually the fault of the tools used, not the actual encoder.</strong>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>“The color is a bit off” or “the contrast of the video is a bit duller”.&nbsp; There were a staggering number of “H.264 vs Theora” encoder comparisons which came out in favor of one or the other solely based on “how well the encoder kept the color” — making the results entirely bogus.</span>
+<span style="background-color: white;"><strong>2.&nbsp; Don’t compare at the same (or nearly the same) bitrate.</strong>&nbsp;I saw a VP8 vs x264 comparison the other day that gave VP8 30% more bitrate and then proceeded to demonstrate that it got better PSNR.<em>&nbsp;</em>You would think this is blindingly obvious, but people still make this mistake!&nbsp; The most common cause of this is assuming that encoders will successfully reach the target bitrate you ask of them — particularly with very broken encoders that don’t.&nbsp; Always check the output filesizes of your encodes.</span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>The comparison lists perfectly round bitrates for every single test, as opposed to the actual bitrates achieved by the encoders, which will never be exactly matching in any real test.</span>
+<span style="background-color: white;"><strong>3.&nbsp; Use unfair encoding settings.&nbsp;</strong>This is a bit of a wide topic: there are many ways to do this.&nbsp; We’ll cover the more blatant ones in this part.&nbsp; Here’s some common ones:</span>
+<span style="background-color: white;"><strong>a.&nbsp; Simply cheat.</strong>&nbsp;Intentionally pick awful settings for the encoder you don’t like.</span>
+<span style="background-color: white;"><strong>b.&nbsp; Don’t consider performance.</strong>&nbsp;Pick encoding settings without any regard for some particular performance goal.&nbsp; For example, it’s perfectly reasonable to say “use the best settings possible, regardless of speed”.&nbsp; It’s also reasonable to look for a particular encoding speed target.&nbsp; But what isn’t reasonable is to pick extremely fast settings for one encoder and extremely slow settings for another encoder.</span>
+<span style="background-color: white;"><strong>c.&nbsp; Don’t attempt match compatibility options when it’s reasonable to do so.</strong>&nbsp;Keyframe interval is a classic one of these: shorter values reduce compression but improve seeking.&nbsp; An easy way to cheat is to simply not set them to the same value, biasing towards whatever encoder has the longer interval.&nbsp; This is most common as an accidental mistake with comparisons involving ffmpeg, where the default keyframe interval is an insanely low 12 frames.</span>
+<span style="background-color: white;"><strong>How to spot it:</strong>&nbsp;The comparison doesn’t document its approach regarding choice of encoding settings.</span>
+<span style="background-color: white;"><strong>4.&nbsp; Use ratecontrol methods unfairly.</strong>&nbsp;Constant bitrate is not the same as average bitrate — using one instead of the other is a great way to completely ruin a comparison.&nbsp; Another method is to use 1-pass bitrate mode for one encoder and 2-pass or constant quality for another.&nbsp; A good general approach is that, for any given encoder, one should use 2-pass if available and constant quality if not (it may take a few runs to get the bitrate you want, of course).</span>
+<span style="background-color: white;">Of course, it’s also fine to run a comparison with a particular mode in mind — for example, a comparison targeted at streaming applications might want to test using 1-pass CBR.&nbsp; Of course, in such a case, if CBR is not available in an encoder, you&nbsp;<em>can’t compare to that encoder</em>.</span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>It’s usually pretty obvious if the encoding settings are given.</span>
+<span style="background-color: white;"><strong>5.&nbsp; Use incredibly old versions of encoders.</strong>&nbsp;As it happens, Debian stable is not the best source for the most recent encoding software.&nbsp; Equally, using recent versions known to be buggy.</span>
+<span style="background-color: white;"><strong>6.&nbsp; Don’t distinguish between video formats and the software that encodes them.&nbsp;</strong>This is incredibly common: I’ve seen tests that claim to compare “H.264″ against something else while in fact actually comparing “Quicktime” against something else.&nbsp; It’s impossible to compare all H.264 encoders at once, so don’t even try — just call the comparison “Quicktime versus X” instead of “H.264 versus X”.&nbsp; Or better yet, use a good H.264 encoder, like x264 and don’t bother testing awful encoders to begin with.</span>
+<h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"><strong style="background-color: white;">Less-obvious cheating</strong></h3><span style="background-color: white;"><strong>1.&nbsp; Pick a bitrate that’s way too low.</strong>&nbsp;Low bitrate testing is very effective at making differences between encoders obvious, particularly if doing a visual comparison.&nbsp; But past a certain point, it becomes impossible for some encoders to keep up.&nbsp; This is usually an artifact of the video format itself — a scalability limitation.&nbsp; Practically all DCT-based formats have this kind of limitation (wavelets are mostly immune).</span>
+<span style="background-color: white;">In reality, this is rarely a problem, because one could merely downscale the video to resolve the problem — lower resolutions need fewer bits.&nbsp; But people rarely do this in comparisons (it’s hard to do it fairly), so the best approach is to simply not use absurdly low bitrates.&nbsp; What is “absurdly low”?&nbsp; That’s a hard question — it ends up being a matter of using one’s best judgement.</span>
+<span style="background-color: white;">This tends to be less of a problem in larger-scale tests that use many different bitrates.</span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>At least one of the encoders being compared falls apart completely and utterly in the screenshots.</span>
+<span style="background-color: white;"><strong>Biases towards, a lot:</strong>&nbsp;Video formats with completely scalable coding methods (Dirac, Snow, JPEG-2000, SVC).</span>
+<span style="background-color: white;"><strong>Biases towards, a little:&nbsp;</strong>Video formats with coding methods that improve scalability, such as arithmetic coding, B-frames, and run-length coding.&nbsp; For example, H.264 and Theora tend to be more scalable than MPEG-4.</span>
+<span style="background-color: white;"><strong>2.&nbsp; Pick a bitrate that’s way too high.</strong>&nbsp;This is staggeringly common mistake: pick a bitrate so high that all of the resulting encodes look absolutely perfect.&nbsp; The claim is then made that “there’s no significant difference” between any of the encoders tested.&nbsp; This is surprisingly easy to do inadvertently on sources like Big Buck Bunny, which looks transparent at relatively low bitrates.&nbsp; An equally common but similar mistake is to test at a bitrate that isn’t so high that the videos look perfect, but high enough that they all look very good.&nbsp; The claim is then made that “the difference between these encoders is small”.&nbsp; Well, of course, if you give everything tons of bitrate, the difference between encoders is small.</span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>You can’t tell which image is the source and which is the encode.</span>
+<span style="background-color: white;"><strong>3.&nbsp;&nbsp;[Making invalid comparisons using objective metrics](http://x264dev.multimedia.cx/?p=458" target="_blank).</strong>&nbsp;I explained this earlier in the linked blog post, but in short, if you’re going to measure PSNR, make sure all the encoders are optimized for PSNR.&nbsp; Equally, if you’re going to leave the encoder optimized for visual quality, don’t measure PSNR — post screenshots instead.&nbsp; Same with SSIM or any other objective metric.&nbsp; Furthermore, don’t blindly do metric comparisons — always at least&nbsp;<em>look&nbsp;</em>at the output as a sanity test.&nbsp; Finally,&nbsp;<strong>do not claim that PSNR is particularly representative of visual quality, because it isn’t.</strong></span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>Encoders with psy optimizations, such as x264 or Theora 1.2, do considerably worse than expected in PSNR tests, but look much better in visual comparisons.</span>
+<span style="background-color: white;"><strong>4.&nbsp; Lying with graphs.</strong>&nbsp;Using misleading scales on graphs is a great way to make the differences between encoders seem larger or smaller than they actually are.&nbsp; A common mistake is to scale SSIM linearly: in fact, 0.99 is about twice as good as 0.98, not 1% better.&nbsp; One solution for this is to use db to compare SSIM values.</span>
+<span style="background-color: white;"><strong>5.&nbsp; Using lossy screenshots.&nbsp;</strong>Posting screenshots as JPEG is a silly, pointless way to worsen an encoder comparison.</span>
+<h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"><strong style="background-color: white;">Subtle cheating</strong></h3><span style="background-color: white;"><strong>1.&nbsp; Unfairly pick screenshots for comparison.&nbsp;</strong>Comparing based on stills is not ideal, but it’s often vastly easier than comparing videos in motion.&nbsp; But it also opens up the door to unfairness.&nbsp; One of the most common mistakes is to pick a frame immediately after (or on) a keyframe for one encoder, but which isn’t for the other encoder.&nbsp; Particularly in the case of encoders that massively boost keyframe quality, this will unfairly bias in favor of the one with the recent keyframe.</span>
+<span style="background-color: white;"><strong>How to spot it:&nbsp;</strong>It’s very difficult to tell, if not impossible, unless they provide the video files to inspect.</span>
+<span style="background-color: white;"><strong>2.&nbsp; Cherry-pick source videos.&nbsp;</strong>Good source videos are incredibly hard to come by — almost everything is already compressed and what’s left is usually a very poor example of real content.&nbsp; Here’s some common ways to bias unfairly using cherry-picking:</span>
+<span style="background-color: white;"><strong>a.&nbsp; Pick source videos that are already heavily compressed.</strong>&nbsp;Pre-compressed source isn’t much of an issue if your target quality level for testing is much lower than that of the source, since any compression artifacts in the source will be a lot smaller than those created by the encoders.&nbsp; But if the source is already very compressed, or you’re testing at a relatively high quality level, this becomes a significant issue.</span>
+<span style="background-color: white;"><strong>Biases towards:&nbsp;</strong>Anything that uses a similar transform to the source content.&nbsp; For MPEG-2 source material, this biases towards formats that use the 8x8dct or a very close approximation: MPEG-1/2/4, H.263, and Theora.&nbsp; For H.264 source material, this biases towards formats that use a 4×4 transform: H.264 and VP8.</span>
+<span style="background-color: white;"><strong>b.&nbsp; Pick standard test clips that were not intended for this purpose.</strong>&nbsp;There are a wide variety of uncompressed “[standard test clips](http://media.xiph.org/video/derf/" target="_blank)“.&nbsp; Some of these are not intended for general-purpose use, but rather exist to test specific encoder capabilities.&nbsp; For example, Mobile Calendar (“mobcal”) is extremely sharp and low motion, serving to test interpolation capabilities.&nbsp; It will bias incredibly heavily towards whatever encoder uses more B-frames and/or has higher-precision motion compensation.&nbsp; Other test clips are almost completely static, such as the classic “akiyo”.&nbsp; These are also not particularly representative of real content.</span>
+<span style="background-color: white;"><strong>c.&nbsp; Pick very noisy content.&nbsp;</strong>Noise is — by definition — not particularly compressible.&nbsp; Both in terms of PSNR and visual quality, a very noisy test clip will tend to reduce the differences between encoders dramatically.</span>
+<span style="background-color: white;"><strong>d.&nbsp; Pick a test clip to exercise a specific encoder feature.</strong>&nbsp;I’ve often used short clips from&nbsp;[Touhou games](http://x264.nl/developers/Dark_Shikari/Flash/saextra.html" target="_blank)&nbsp;to demonstrate the effectiveness of x264′s macroblock-tree algorithm.&nbsp; I’ve sometimes even used it to compare to other encoders as part of such a demonstration.&nbsp; I’ve also used the standard test clip “parkrun” as a demonstration of adaptive quantization.&nbsp; But claiming that either is representative of most real content — and thus can be used as a general determinant of how good encoders are — is of course insane.</span>
+<strong style="background-color: white;">e.&nbsp; Simply encode a bunch of videos and pick the one your favorite encoder does best on.</strong>
+<span style="background-color: white;"><strong>3.&nbsp; Preprocessing the source.&nbsp;</strong>A encoder test is a test of encoders, not preprocessing.&nbsp; Some encoding apps may add preprocessors to the source, such as noise reduction.&nbsp; This may make the video look better — possibly even better than the source — but it’s not a fair part of comparing the actual encoders.</span>
+<span style="background-color: white;"><strong>4.&nbsp; Screw up decoding.</strong>&nbsp;People often forget that in addition to encoding, a test also involves decoding — a step which is equally possible to do wrong.&nbsp; One common error caused by this is in tests of Theora on content whose resolution isn’t divisible by 16.&nbsp; Decoding is often done with ffmpeg — which doesn’t crop the edges properly in some cases.&nbsp; This isn’t really a big deal visually, but in a PSNR comparison, misaligning the entire frame by 4 or 8 pixels is a great way of completely invalidating the results.</span>
+<h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"><strong style="background-color: white;">The greatest mistake of all</strong></h3><blockquote class="tr_bq"><span style="background-color: white;">Above all, the biggest and most common mistake — and the one that leads to many of the problems mentioned here –&nbsp; is the mistaken belief that one, or even a few tests can really represent all usage fairly.&nbsp; Any comparison has to have some specific goal — to compare something in some particular case, whether it be “maximum offline compression ignoring encoding speed” or “real-time high-speed video streaming” or whatnot.&nbsp; And even then, no comparison can represent all use-cases in that category alone.&nbsp; An encoder comparison can only be honest if it’s aware of its limitations.</span></blockquote></div></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

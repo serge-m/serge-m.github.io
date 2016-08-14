@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Building ConEmu - Personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/building-conemu.html">
+
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="c++,tools,software,dll,visual studio" />
+        <meta name="description" content="Problems with ConEmu building from https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA - add additional dependency **User32.lib** **ConEmuCD**Error 3 error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error 4 error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 ..." />
+
+        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Building ConEmu"/>
+        <meta property="og:url" content="/building-conemu.html"/>
+        <meta property="og:description" content="Problems with ConEmu building from https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA - add additional dependency **User32.lib** **ConEmuCD**Error 3 error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error 4 error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 ..."/>
+        <meta property="article:published_time" content="2014-01-16" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="c++" />
+            <meta property="article:tag" content="tools" />
+            <meta property="article:tag" content="software" />
+            <meta property="article:tag" content="dll" />
+            <meta property="article:tag" content="visual studio" />
+            <meta property="article:author" content="SergeM" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/building-conemu.html"
+                       rel="bookmark"
+                       title="Permalink to Building ConEmu">
+                        Building ConEmu
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-01-16T20:56:00+01:00"> Thu 16 January 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/c.html">c++</a>
+        /
+	<a href="/tag/tools.html">tools</a>
+        /
+	<a href="/tag/software.html">software</a>
+        /
+	<a href="/tag/dll.html">dll</a>
+        /
+	<a href="/tag/visual-studio.html">visual studio</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;">Problems with ConEmu building from&nbsp;</div><div style="text-align: left;">https://github.com/Maximus5/ConEmu.git v14.01.06</div><div style="text-align: left;">in Visual Studio 2010</div><h4 style="text-align: left;">ConEmuC</h4>unresolved external symbol `__imp__`wsprintfA<span class="Apple-tab-span" style="white-space: pre;"> </span>- add additional dependency&nbsp;**User32.lib**
+<b>
+</b>
+<h4 style="text-align: left;">**ConEmuCD**</h4>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>5<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>6<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>7<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>8<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>9<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>10<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>11<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16<span class="Apple-tab-span" style="white-space: pre;"> </span>
+etc.
+
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>101<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK1120: 98 unresolved externals<span class="Apple-tab-span" style="white-space: pre;"> </span>
+
+add&nbsp;**User32.lib** to reduce number of warnings from 99 to 32
+
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`LogonUserW@24
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`RegCreateKeyExW@36<span class="Apple-tab-span" style="white-space: pre;"> </span>
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>5<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`RegQueryValueExW@24
+Error<span class="Apple-tab-span" style="white-space: pre;"> </span>6<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`CreateCompatibleDC@4
+
+add&nbsp;**advapi32.lib&nbsp;**to reduce number of warnings from 32 to 14
+<div>
+</div><div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`SHGetFolderPathW@20</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`ShellExecuteExW@4</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>5<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`ShellExecuteW@24</div></div><div>
+</div><div>add gdi32.lib to reduce number of errors from 14 to 3.</div><div>add shell32.lib to reduce number of errors to 0</div><div>
+</div><h4 style="text-align: left;">ConEmuHk</h4><div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>5<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>6<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`GetCursorPos@4</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>7<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyExW@12</div></div><div>.....</div><div>
+</div><div>Add&nbsp;User32.lib to reduce from 20 to 4:</div><div>
+</div><div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`RegOpenKeyExW@20</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`RegCloseKey@4</div><div>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>5<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`LogonUserW@24</div></div><div>
+</div><div>Add&nbsp;advapi32.lib to fix all</div><div>
+
+<h4 style="text-align: left;">Bonus:</h4></div>
+
+<div>links to Russian habrahabr:</div>
+
+<div>http://habrahabr.ru/company/epam_systems/blog/204368/</div>
+
+<div>
+</div>
+
+</div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda_25.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>

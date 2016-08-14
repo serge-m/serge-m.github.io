@@ -66,13 +66,23 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="/how-torch-stores-images.html">how torch stores images</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">require('image')
-<div><div>imgPath = "image.jpg"</div><div>img = torch.Tensor(1, 3, imgDim, imgDim)</div></div><div><div>img[1] = image.load(imgPath, 3, byte)</div></div><div>
-</div><div>image is stored as float, conversion is (intensity/255.). stored top->bottom, line by line. format RGB.</div><div>
-</div><h3 style="text-align: left;">display</h3><div>require 'gnuplot'</div><div><div>gnuplot.figure(1)</div></div><div>gnuplot.imagesc(img[1])
+                <div class="summary"><div class="highlight"><pre><span></span>require(&#39;image&#39;)
+imgPath = &quot;image.jpg&quot;
+img = torch.Tensor(1, 3, imgDim, imgDim)
+img[1] = image.load(imgPath, 3, byte)
+</pre></div>
 
-Torch<->numpy dictionary
-[https ...</-></div></div>
+
+<p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
+<div class="highlight"><pre><span></span>display
+require &#39;gnuplot&#39;
+gnuplot.figure(1)
+gnuplot.imagesc(img[1])
+</pre></div>
+
+
+<p>Torch&lt;-&gt;numpy dictionary
+<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https ...</a></p>
                     <a class="btn btn-default btn-xs" href="/how-torch-stores-images.html">more ...</a>
                 </div>
             </article>

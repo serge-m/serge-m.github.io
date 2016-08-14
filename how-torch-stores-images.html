@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="torch" />
-        <meta name="description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34;img = torch.Tensor(1, 3, imgDim, imgDim)img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. displayrequire &#39;gnuplot&#39;gnuplot.figure(1)gnuplot.imagesc(img[1]) Torchnumpy dictionary [https ..." />
+        <meta name="description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&lt;-&gt;numpy dictionary https ..." />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="how torch stores images"/>
         <meta property="og:url" content="/how-torch-stores-images.html"/>
-        <meta property="og:description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34;img = torch.Tensor(1, 3, imgDim, imgDim)img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. displayrequire &#39;gnuplot&#39;gnuplot.figure(1)gnuplot.imagesc(img[1]) Torchnumpy dictionary [https ..."/>
+        <meta property="og:description" content="require(&#39;image&#39;) imgPath = &#34;image.jpg&#34; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB. display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&lt;-&gt;numpy dictionary https ..."/>
         <meta property="article:published_time" content="2016-06-26" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="torch" />
@@ -98,15 +98,23 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">require('image')
-<div><div>imgPath = "image.jpg"</div><div>img = torch.Tensor(1, 3, imgDim, imgDim)</div></div><div><div>img[1] = image.load(imgPath, 3, byte)</div></div><div>
-</div><div>image is stored as float, conversion is (intensity/255.). stored top->bottom, line by line. format RGB.</div><div>
-</div><h3 style="text-align: left;">display</h3><div>require 'gnuplot'</div><div><div>gnuplot.figure(1)</div></div><div>gnuplot.imagesc(img[1])
+                <div class="highlight"><pre><span></span>require(&#39;image&#39;)
+imgPath = &quot;image.jpg&quot;
+img = torch.Tensor(1, 3, imgDim, imgDim)
+img[1] = image.load(imgPath, 3, byte)
+</pre></div>
 
-Torch<->numpy dictionary
-[https://github.com/torch/torch7/wiki/Torch-for-Numpy-users](https://github.com/torch/torch7/wiki/Torch-for-Numpy-users)</div>
 
-</div>
+<p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
+<div class="highlight"><pre><span></span>display
+require &#39;gnuplot&#39;
+gnuplot.figure(1)
+gnuplot.imagesc(img[1])
+</pre></div>
+
+
+<p>Torch&lt;-&gt;numpy dictionary
+<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</a></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -162,11 +170,6 @@ Torch<->numpy dictionary
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/compile-dlib-for-miniconda_25.html">
-                            compile dlib for miniconda
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a href="/mount-windows-shares-in-linux.html">
                             Mount windows shares in linux
                         </a>
@@ -179,6 +182,11 @@ Torch<->numpy dictionary
                     <li class="list-group-item">
                         <a href="/autocomplete-from-history-in-terminal.html">
                             autocomplete from history in terminal (in linux mint)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/working-with-date-and-time-in-java.html">
+                            Working with date and time in Java (russian)
                         </a>
                     </li>
                 </ul>

@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="Linux for dummies" />
-        <meta name="description" content="1. Copying partition is straightforward. Made using gparted. 2. Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions: boot /sdb1 (don&#39;t really know how it works)root /sdb2 home /sdb3 3. Do :::: sudo mount /dev/sda2 /mnt ::::   :::: ## if you have ..." />
+        <meta name="description" content="Copying partition is straightforward. Made using gparted. Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions: boot /sdb1 (don&#39;t really know how it works) root /sdb2 home /sdb3 Do sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo ..." />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Fix boot record after moving linux mint partitions to another disk"/>
         <meta property="og:url" content="/fix-boot-record-after-moving-linux-mint.html"/>
-        <meta property="og:description" content="1. Copying partition is straightforward. Made using gparted. 2. Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions: boot /sdb1 (don&#39;t really know how it works)root /sdb2 home /sdb3 3. Do :::: sudo mount /dev/sda2 /mnt ::::   :::: ## if you have ..."/>
+        <meta property="og:description" content="Copying partition is straightforward. Made using gparted. Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions: boot /sdb1 (don&#39;t really know how it works) root /sdb2 home /sdb3 Do sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo ..."/>
         <meta property="article:published_time" content="2016-07-16" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="Linux for dummies" />
@@ -98,35 +98,34 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">1. Copying partition is straightforward. Made using gparted.
-
-2. Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
-Assume we have following partitions:
-<ul style="text-align: left;"><li>boot /sdb1 (don't really know how it works)</li><li>root /sdb2 </li><li>home /sdb3 </li></ul>3. Do
-
-    ::::
-    sudo mount /dev/sda2 /mnt
-
-    ::::
-    &nbsp;
-
-    ::::
-    ## if you have boot partition:
-
-    ::::
-    # sudo mount /dev/sda1 /mnt/boot
-
-    ::::
+                <ul>
+<li>
+<p>Copying partition is straightforward. Made using gparted.</p>
+</li>
+<li>
+<p>Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
+Assume we have following partitions:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span> boot /sdb1 (don&#39;t really know how it works)
+ root /sdb2
+ home /sdb3 
+</pre></div>
 
 
+<ul>
+<li>Do</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo mount /dev/sda2 /mnt
 
-    ::::
-    sudo grub-install --root-directory<span class="o">=</span>/mnt /dev/sda
+## if you have boot partition:
+# sudo mount /dev/sda1 /mnt/boot
+
+sudo grub-install --root-directory=/mnt /dev/sda
+</pre></div>
 
 
-
-
-[Source of GRUB instructions](https://ru.wikibooks.org/wiki/Grub_2#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_GRUB2_.D1.81_LiveCD._.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2_.28.D0.B1.D0.B5.D0.B7_chroot.29)</div>
+<p><a href="https://ru.wikibooks.org/wiki/Grub_2#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_GRUB2_.D1.81_LiveCD._.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2_.28.D0.B1.D0.B5.D0.B7_chroot.29">Source of GRUB instructions</a></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -182,11 +181,6 @@ Assume we have following partitions:
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/compile-dlib-for-miniconda_25.html">
-                            compile dlib for miniconda
-                        </a>
-                    </li>
-                    <li class="list-group-item">
                         <a href="/mount-windows-shares-in-linux.html">
                             Mount windows shares in linux
                         </a>
@@ -199,6 +193,11 @@ Assume we have following partitions:
                     <li class="list-group-item">
                         <a href="/autocomplete-from-history-in-terminal.html">
                             autocomplete from history in terminal (in linux mint)
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/working-with-date-and-time-in-java.html">
+                            Working with date and time in Java (russian)
                         </a>
                     </li>
                 </ul>

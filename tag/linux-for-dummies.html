@@ -66,20 +66,28 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="/fix-boot-record-after-moving-linux-mint.html">Fix boot record after moving linux mint partitions to another disk</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">1. Copying partition is straightforward. Made using gparted.
+                <div class="summary"><ul>
+<li>
+<p>Copying partition is straightforward. Made using gparted.</p>
+</li>
+<li>
+<p>Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
+Assume we have following partitions:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span> boot /sdb1 (don&#39;t really know how it works)
+ root /sdb2
+ home /sdb3 
+</pre></div>
 
-2. Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
-Assume we have following partitions:
-<ul style="text-align: left;"><li>boot /sdb1 (don't really know how it works)</li><li>root /sdb2 </li><li>home /sdb3 </li></ul>3. Do
 
-    ::::
-    sudo mount /dev/sda2 /mnt
+<ul>
+<li>Do</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo mount /dev/sda2 /mnt
 
-    ::::
-    &nbsp;
-
-    ::::
-    ## if you have ...</div>
+## if you have boot partition:
+# sudo ...</pre></div>
                     <a class="btn btn-default btn-xs" href="/fix-boot-record-after-moving-linux-mint.html">more ...</a>
                 </div>
             </article>

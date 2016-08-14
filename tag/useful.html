@@ -66,50 +66,38 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="/terminal-setup-in-linux-mint.html">terminal setup in linux mint</a></h2>
-                <div class="summary"><p>sudo apt-get install tmux</p>
-<p><img alt="" src="https://3.bp.blogspot.com/-MnndlZeDxkc/V6bulTON9uI/AAAAAAAAEmU/olWSomTKLjQ4Z2uHikjP4PQwCr1Wd2zUwCLcB/s320/Screenshot%2Bfrom%2B2016-08-07%2B10%253A17%253A12.png" />
-Commands:</p>
-<p>In tmux, hit the prefix <code>ctrl+b</code> (my modified prefix is ctrl+a) and then:
-  <h2><a class="anchor" href="https://gist.github.com/MohamedAlaa/2961058#sessions" id="user-content-sessions"><svg class="octicon octicon-link" height="16" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sessions</h2>
-    ::::
-    <code>:new<CR>  new session
-    s  list sessions
-    $  name session
-    </code>
-<h2><a class="anchor" href="https://gist.github.com/MohamedAlaa/2961058#windows-tabs" id="user-content-windows-tabs"><svg class="octicon octicon-link" height="16" viewbox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://www.blogger.com/null" name="user-content-WindowsTabs"></a>Windows (tabs)</h2>
-    ::::
-    <code>c  create window
-    w  list windows
-    n  next window
-    p  previous window
-    f  find window
-    ,  name window
-    &amp;  kill window ...</code></p>
+                <div class="summary"><h2>Installation</h2>
+<p>sudo apt-get install tmux</p>
+<p><img alt="" src="https://3.bp.blogspot.com/-MnndlZeDxkc/V6bulTON9uI/AAAAAAAAEmU/olWSomTKLjQ4Z2uHikjP4PQwCr1Wd2zUwCLcB/s320/Screenshot%2Bfrom%2B2016-08-07%2B10%253A17%253A12.png" /></p>
+<h2>Commands</h2>
+<p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
+<h3>Sessions</h3>
+<div class="highlight"><pre><span></span>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
+</pre></div>
+
+
+<h3>Windows (tabs)</h3>
+<div class="highlight"><pre><span></span>c  create window
+w  list windows
+n  next window
+p  previous window
+f  find window
+,  name window ...</pre></div>
                     <a class="btn btn-default btn-xs" href="/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="/mount-yandex-webdav-on-local-dir.html">Mount yandex webdav on local dir</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-    ::::
-    <code class="bash hljs"><span class="hljs-comment"><code class="bash hljs"><span class="hljs-comment"><code class="bash hljs"><span class="hljs-comment">apt-get install davfs2</span></code> </span></code></span></code>
+                <div class="summary"><div class="highlight"><pre><span></span>    apt-get install davfs2
+    mkdir /mnt/yandex.disk
+    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
 
-    ::::
-    <code class="bash hljs"><span class="hljs-comment"><code class="bash hljs"><span class="hljs-comment">mkdir /mnt/yandex.disk</span></code> </span></code>
-
-    ::::
-    <code class="bash hljs"><span class="hljs-comment">mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/</span></code>
-
-    ::::
-    <code class="bash hljs"><span class="hljs-comment">&nbsp;</span></code>
-
-    ::::
-    <code class="bash hljs"><span class="hljs-comment"># check: </span></code>
-
-    ::::
-    <code class="bash hljs"><span class="hljs-comment"><code class="bash hljs"><span class="hljs-comment">df -h /mnt/yandex.disk/</span></code> </span></code>
-</div>
+    # check: 
+    df -h /mnt/yandex.disk/ 
+</pre></div>
                     <a class="btn btn-default btn-xs" href="/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
             </article>
@@ -193,12 +181,25 @@ Don't forget to do
             </article>
             <hr/>
             <article>
-                <h2><a href="/c-ide-for-linux.html">C++ IDE for linux</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-CLion is awesome but expensive.
-
-Found Codelite&nbsp;[http://www.codelite.org](http://www.codelite.org/" style="background-color: white; border: 0px; color: #005999; cursor: pointer; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 19.5px; margin: 0px; padding: 0px; text-decoration: none;)&nbsp;on&nbsp;[http://stackoverflow.com/a/1775460](http://stackoverflow.com ...</div>
-                    <a class="btn btn-default btn-xs" href="/c-ide-for-linux.html">more ...</a>
+                <h2><a href="/c-plus-plus-ide-for-linux.html">C++ IDE for linux</a></h2>
+                <div class="summary"><p>CLion is awesome but expensive.</p>
+<p>Found <a href="http://www.codelite.org">Codelite</a> on <a href="http://stackoverflow.com/a/1775460">http://stackoverflow.com/a/1775460</a>.
+Looks good. No disgust after 10 minutes of work.</p>
+<p>I was able to debug C code of Numpy in Virtualenv.</p>
+<ol>
+<li>
+<p>Launched from console after activating of virtual environment
+<code>&gt; source ./&lt;path to activate&gt;/activate</code></p>
+</li>
+<li>
+<p>add breakpoints</p>
+</li>
+<li>
+<p>Run (F5)</p>
+</li>
+</ol>
+<p><img alt="" src="https://1.bp.blogspot.com/-RHqpOduG9Ys/VwGOqgXLEFI/AAAAAAAAEck/PaMILZnymc8ByqpHzEkTJWKXRxmmEKpMA/s320/Screenshot%2Bfrom%2B2016-04-03%2B23%253A43%253A42.png" /></p>
+                    <a class="btn btn-default btn-xs" href="/c-plus-plus-ide-for-linux.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -396,7 +397,7 @@ def prepare_logger(logger, level=logging.DEBUG ...</div>
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/c-ide-for-linux.html">
+                        <a href="/c-plus-plus-ide-for-linux.html">
                             C++ IDE for linux
                         </a>
                     </li>

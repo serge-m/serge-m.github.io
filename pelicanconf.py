@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'sergem'
-SITENAME = 'Personal public notebook'
+SITENAME = 'sergem personal public notebook'
 SITEURL = ''
 
 THEME='pelican-bootstrap3'
@@ -25,7 +25,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
+         # ('Jinja2', 'http://jinja.pocoo.org/'),
          # ('You can modify those links in your config file', '#'),
          )
 
@@ -42,7 +42,7 @@ DEFAULT_PAGINATION = 20
 MAIN_MENU=True
 
 DISPLAY_CATEGORIES_ON_SIDEBAR=True
-RECENT_POST_COUNT=10
+RECENT_POST_COUNT=12
 DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 DISPLAY_TAGS_ON_SIDEBAR=True
 DISPLAY_PAGES_ON_MENU=True

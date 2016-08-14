@@ -1,0 +1,7 @@
+Title: git apply patch from another repository
+Author: SergeM
+Date: 2016-08-14 14:10:00
+Slug: git-apply-patch-from-another-repository
+Tags: 
+
+<div dir="ltr" style="text-align: left;" trbidi="on"><pre class="lang-bash prettyprint prettyprinted"><code><span class="pln">$ git </span><span class="pun">--</span><span class="pln">git</span><span class="pun">-</span><span class="pln">dir</span><span class="pun">=../<</span><span class="pln">some_other_repo</span><span class="pun">>/.</span><span class="pln">git format</span><span class="pun">-</span><span class="pln">patch </span><span class="pun">-</span><span class="pln">k </span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="pun">--</span><span class="pln">stdout </span><span class="pun"><</span><span class="pln">commit SHA</span><span class="pun">></span><span class="pln"> </span><span class="pun">|</span><span class="pln"> git am </span><span class="pun">-</span><span class="lit">3</span><span class="pln"> </span><span class="pun">-</span><span class="pln">k</span></code></pre><pre class="lang-bash prettyprint prettyprinted"><code><span class="pln">&nbsp;</span></code></pre><pre class="lang-bash prettyprint prettyprinted"><code><span class="pln">Source </span></code></pre><pre class="lang-bash prettyprint prettyprinted"><code><span class="pln">[http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit](http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit)&nbsp;</span></code></pre></div>

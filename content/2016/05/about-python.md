@@ -1,0 +1,15 @@
+Title: About python
+Author: SergeM
+Date: 2016-05-01 12:33:00
+Slug: about-python
+Tags: useful,python,links
+
+<div dir="ltr" style="text-align: left;" trbidi="on">Cheat Sheet: Writing Python 2-3 compatible code
+[http://python-future.org/compatible_idioms.html](http://python-future.org/compatible_idioms.html)
+
+Google Python Guidelines
+[https://google.github.io/styleguide/pyguide.html](https://google.github.io/styleguide/pyguide.html)
+
+
+Inheritance
+[https://rhettinger.wordpress.com/2011/05/26/super-considered-super/](https://rhettinger.wordpress.com/2011/05/26/super-considered-super/)</div>

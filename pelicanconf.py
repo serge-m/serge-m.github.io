@@ -6,7 +6,10 @@ AUTHOR = 'sergem'
 SITENAME = 'Personal public notebook'
 SITEURL = ''
 
+THEME='pelican-twitchy'
+
 PATH = 'content'
+USE_FOLDER_AS_CATEGORY = False
 
 TIMEZONE = 'Europe/Berlin'
 

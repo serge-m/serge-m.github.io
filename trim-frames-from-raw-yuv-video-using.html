@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Trim frames from raw YUV video using FFMPEG - Personal public notebook</title>
+    <title>Trim frames from raw YUV video using FFMPEG - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
         <meta name="author" content="SergeM" />
         <meta name="description" content="Trim 5 frames starting from 160-th frame and write to png sequence ffmpeg -pix_fmt yuv420p -s 1920x1088  -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5  output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive UPD: ffmpeg is renamed to avconv. Using it for trimming ..." />
 
-        <meta property="og:site_name" content="Personal public notebook" />
+        <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Trim frames from raw YUV video using FFMPEG"/>
         <meta property="og:url" content="/trim-frames-from-raw-yuv-video-using.html"/>
@@ -48,7 +48,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a href="/" class="navbar-brand">
-Personal public notebook            </a>
+sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
@@ -170,6 +170,16 @@ avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png
                             Mount windows shares in linux
                         </a>
                     </li>
+                    <li class="list-group-item">
+                        <a href="/deep-learning.html">
+                            deep learning
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/autocomplete-from-history-in-terminal.html">
+                            autocomplete from history in terminal (in linux mint)
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -195,11 +205,6 @@ avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png
         <li class="list-group-item">
             <a href="http://python.org/" target="_blank">
                 Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
             </a>
         </li>
       </ul>

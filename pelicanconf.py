@@ -33,6 +33,8 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 # SOCIAL = (('You can add links in your config file', '#'),
 #           ('Another social link', '#'),)
 
+
+# For theme pelican-bootstrap3
 DEFAULT_PAGINATION = 20
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -46,3 +48,8 @@ RECENT_POST_COUNT=12
 DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 DISPLAY_TAGS_ON_SIDEBAR=True
 DISPLAY_PAGES_ON_MENU=True
+
+
+# Following items are often useful when publishing
+#DISQUS_SITENAME = ""
+GOOGLE_ANALYTICS="UA-40853494-2"

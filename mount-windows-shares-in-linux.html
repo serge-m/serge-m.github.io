@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,linux" />
-        <meta name="description" content="Use sudo if needed Mountmkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmountumount /mnt/shares" />
+        <meta name="description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmount umount /mnt/shares" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Mount windows shares in linux"/>
         <meta property="og:url" content="/mount-windows-shares-in-linux.html"/>
-        <meta property="og:description" content="Use sudo if needed Mountmkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmountumount /mnt/shares"/>
+        <meta property="og:description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmount umount /mnt/shares"/>
         <meta property="article:published_time" content="2016-06-19" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -101,12 +101,16 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">
-
-Use sudo if needed
-<h2 style="text-align: left;">Mount</h2>mkdir /mnt/share
+                <p>Use sudo if needed</p>
+<h2>Mount</h2>
+<div class="highlight"><pre><span></span>mkdir /mnt/share
 mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share
-<h2 style="text-align: left;">Unmount</h2>umount /mnt/shares</div>
+</pre></div>
+
+
+<h2>Unmount</h2>
+<div class="highlight"><pre><span></span>umount /mnt/shares
+</pre></div>
             </div>
             <!-- /.entry-content -->
         </article>

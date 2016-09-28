@@ -66,12 +66,21 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="/pypy-with-numpy.html">pypy with numpy</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Looks like pypy now can build numpy. Well, a slightly modified numpy.
+                <div class="summary"><p>Looks like pypy now can build numpy. Well, a slightly modified numpy.</p>
+<ol>
+<li>
+<p>Get default branch of pypy. be careful cause the developers don't maintain default branch compilable.
+    Revision 84341 (c86b42dd7613) works for me.</p>
+</li>
+<li>
+<p>compile using</p>
+<div class="highlight"><pre><span></span>./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy
+</pre></div>
 
-1. Get default branch of pypy. be careful cause the developers don't maintain default branch compilable. Revision&nbsp;<span style="font-family: monospace; font-size: 9pt;">84341 (c86b42dd7613) works for me.</span>
-<span style="font-family: monospace; font-size: 9pt;">2. compile using&nbsp;</span>
-<span style="font-family: monospace;"><span style="font-size: 12px;">./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy</span></span>
-<span style="font-family: monospace;"><span style="font-size: 12px;">3. Create package ...</span></span></div>
+
+</li>
+<li>
+<p>Create package and vitual environment ...</p></li></ol>
                     <a class="btn btn-default btn-xs" href="/pypy-with-numpy.html">more ...</a>
                 </div>
             </article>

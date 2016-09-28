@@ -94,17 +94,19 @@ Assume we have following partitions:</p>
             <hr/>
             <article>
                 <h2><a href="/autocomplete-from-history-in-terminal.html">autocomplete from history in terminal (in linux mint)</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">create a file&nbsp;<span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">.inputrc</span>
+                <div class="summary"><p>create a file <code>.inputrc</code>
+in your home directory and put there</p>
+<div class="highlight"><pre><span></span>&quot;\e[A&quot;: history-search-backward
+&quot;\e[B&quot;: history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on
+TAB: menu-complete
+</pre></div>
 
-in your home directory and put there
-<span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">"\e[A": history-search-backward</span><br style="color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px; margin: 0px; padding: 0px;" /><span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">"\e[B": history-search-forward</span><br style="color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px; margin: 0px; padding: 0px;" /><span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">set show-all-if-ambiguous on</span><br style="color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px; margin: 0px; padding: 0px;" /><span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">set completion-ignore-case on</span><br style="color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px; margin: 0px; padding: 0px;" /><span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">TAB: menu-complete</span>
-<span style="background-color: #f3f3f3; color: #303030; font-family: monospace; font-size: 14.352px; line-height: 26px;">
-</span>
 
-Restart your terminal.
-
-How you can autocomplete from history using Up and down keys.<div>
-</div><div>source&nbsp;[http://osxdaily.com/2013/04/24/improve-command-line-history-search/](http://osxdaily.com ...</div></div>
+<p>Restart your terminal.
+Now you can autocomplete from history using Up and Down keys.
+<a href="http://osxdaily.com/2013/04/24/improve-command-line-history-search/">Source</a></p>
                     <a class="btn btn-default btn-xs" href="/autocomplete-from-history-in-terminal.html">more ...</a>
                 </div>
             </article>

@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,linux" />
-        <meta name="description" content="Hmm. It doesn&#39;t work. I see the icon when i do dropbox stop dropbox start but I cannot clic on it. Installed [nemo-dropbox](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox). At least now I have &#34;Copy dropbox link&#34; command in menu. Don&#39;t forget to do $ killall nemo ..." />
+        <meta name="description" content="Hmm. It doesn&#39;t work. I see the icon when i do dropbox stop dropbox start but I cannot click on it. Installed nemo-dropbox. At least now I have &#34;Copy dropbox link&#34; command in menu. Don&#39;t forget to do $ killall nemo after installation to make it work. Final Solution ..." />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Dropbox in linux mint"/>
         <meta property="og:url" content="/dropbox-in-linux-mint.html"/>
-        <meta property="og:description" content="Hmm. It doesn&#39;t work. I see the icon when i do dropbox stop dropbox start but I cannot clic on it. Installed [nemo-dropbox](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox). At least now I have &#34;Copy dropbox link&#34; command in menu. Don&#39;t forget to do $ killall nemo ..."/>
+        <meta property="og:description" content="Hmm. It doesn&#39;t work. I see the icon when i do dropbox stop dropbox start but I cannot click on it. Installed nemo-dropbox. At least now I have &#34;Copy dropbox link&#34; command in menu. Don&#39;t forget to do $ killall nemo after installation to make it work. Final Solution ..."/>
         <meta property="article:published_time" content="2016-04-10" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -101,21 +101,36 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Hmm. It doesn't work.
-I see the icon when i do
-dropbox stop
+                <p>Hmm. It doesn't work.
+I see the icon when i do</p>
+<div class="highlight"><pre><span></span>dropbox stop
 dropbox start
-but I cannot clic on it.
+</pre></div>
 
-Installed [nemo-dropbox](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox). At least now I have "Copy dropbox link" command in menu.
-Don't forget to do
-<pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;">$ killall nemo</pre><pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">after installation to make it work.</span></pre><pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">
-</span></pre><h2 style="box-sizing: border-box; color: #333333; font-family: consolas, 'liberation mono', menlo, courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; text-align: left; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">Final Solution</span></h2><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;">[source](https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80)&nbsp;</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;">Use </pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="background-color: white; color: seagreen; font-family: Monaco, 'Andale Mono', 'Courier New', Courier, mono; font-size: 11.7px; line-height: 15.21px; white-space: normal;">dropbox stop &amp;&amp; dbus-launch dropbox start</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="color: seagreen; font-family: Monaco, Andale Mono, Courier New, Courier, mono;"><span style="background-color: white; font-size: 11.7px; line-height: 15.21px; white-space: normal;">Or&nbsp;</span></span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="background-color: #ecf3f7; color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18.2px; white-space: normal;">Do: opening 'Preferences' -> 'Startup Applications' and editing the dropbox entry so the command now reads:</span><div class="codebox" style="background-color: white; border: 1px solid rgb(201, 210, 216); color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; font-stretch: inherit; line-height: 18.2px; margin: 0px; padding: 3px; vertical-align: baseline; white-space: normal;">
-<div style="border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-width: 0px 0px 1px; font-size: 0.8em !important; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; line-height: 1.4em; margin-bottom: 3px; padding: 0px; text-transform: uppercase; vertical-align: baseline;">
-CODE:&nbsp;[SELECT ALL](https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80#" style="border: 0px; color: #105289; direction: ltr; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; unicode-bidi: embed; vertical-align: baseline;)</div>
-<code style="border: 0px; color: seagreen; display: block; font-family: Monaco, 'Andale Mono', 'Courier New', Courier, mono; font-size: 0.9em; font-stretch: normal; height: auto; line-height: 1.3em; margin: 2px 0px; max-height: 200px; overflow: auto; padding: 5px 0px 0px; vertical-align: baseline;">dbus-launch dropbox start</code></div>
-</pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;">
-</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;"><span style="background-color: #ecf3f7; color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18.2px;">&nbsp;update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (`dbus-launch dropbox start`)</span></span></pre></div>
+
+<p>but I cannot click on it.</p>
+<p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
+Don't forget to do</p>
+<div class="highlight"><pre><span></span>$ killall nemo
+</pre></div>
+
+
+<p>after installation to make it work.</p>
+<h1>Final Solution</h1>
+<p><a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">source</a>&nbsp;</p>
+<p>Use</p>
+<div class="highlight"><pre><span></span>dropbox stop &amp;&amp; dbus-launch dropbox start
+</pre></div>
+
+
+<p>Or</p>
+<p>Do: opening 'Preferences' -&gt; 'Startup Applications' and editing the dropbox entry so the command now reads:</p>
+<p>CODE: <a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">SELECT ALL</a></p>
+<div class="highlight"><pre><span></span>dbus-launch dropbox start
+</pre></div>
+
+
+<p>update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (<code>dbus-launch dropbox start</code>)</p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -131,13 +146,13 @@ CODE:&nbsp;[SELECT ALL](https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=18
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="/podcasts.html">
-                            podcasts
+                        <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
+                            How to fix google search suggestions in Firefox in Linux Mint
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
-                            How to fix google search suggestions in Firefox in Linux Mint
+                        <a href="/podcasts.html">
+                            podcasts
                         </a>
                     </li>
                     <li class="list-group-item">

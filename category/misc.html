@@ -73,6 +73,26 @@ http://www.spotlightradio.net/</div>
             </article>
             <hr/>
             <article>
+                <h2><a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">How to fix google search suggestions in Firefox in Linux Mint</a></h2>
+                <div class="summary"><p>there are plenty of discussions about it. I didn't find full solution.
+You can add google as a search engine. But suggestions don't work for me.</p>
+<h1>My approximate solution</h1>
+<ol>
+<li>
+<p>remove standard firefox:</p>
+<div class="highlight"><pre><span></span>sudo apt-get remove firefox
+</pre></div>
+
+
+</li>
+<li>
+<p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
+    I am not sure if this step actually ...</p></li></ol>
+                    <a class="btn btn-default btn-xs" href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/git-apply-patch-from-another-repository.html">git apply patch from another repository</a></h2>
                 <div class="summary"><div class="highlight"><pre><span></span>$ git --git-dir<span class="o">=</span>../&lt;some_other_repo&gt;/.git format-patch -k -1 --stdout &lt;commit SHA&gt; <span class="p">|</span> git am -3 -k
 </pre></div>
@@ -361,18 +381,6 @@ Build script (to be placed in pypy source directory):
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="/til-about-pypy.html">TIL about PyPy</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Building from source root using command
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
-produces structure with obsolete pypy-c and libpypy-c.so in 
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span>
-
-Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use ...</div>
-                    <a class="btn btn-default btn-xs" href="/til-about-pypy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -405,6 +413,11 @@ Probably pypy compiler places there files  integrated in the src distribution. T
                     <li class="list-group-item">
                         <a href="/podcasts.html">
                             podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
+                            How to fix google search suggestions in Firefox in Linux Mint
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -455,11 +468,6 @@ Probably pypy compiler places there files  integrated in the src distribution. T
                     <li class="list-group-item">
                         <a href="/autocomplete-from-history-in-terminal.html">
                             autocomplete from history in terminal (in linux mint)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/working-with-date-and-time-in-java.html">
-                            Working with date and time in Java (russian)
                         </a>
                     </li>
                 </ul>

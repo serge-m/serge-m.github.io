@@ -64,6 +64,27 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="/how-to-open-composition-in-viewer-in.html">How to open composition in viewer in Adobe After Effects using scripts</a></h2>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">// Make a composition
+var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );
+
+// Open it in viewer
+comp.openInViewer();
+
+This solution works only in AAE CS 6.0
+
+My version of some cross-platform code
+
+<span style="font-family: Courier New, Courier, monospace;">function OpenInViewer( comp )</span>
+<span style="font-family: Courier New, Courier, monospace;">{</span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; var version = app.version.match(/(\d+\.\d+).*/)[1];</span>
+<span style="font-family: Courier New, Courier, monospace;">
+</span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; if ...</span></div>
+                    <a class="btn btn-default btn-xs" href="/how-to-open-composition-in-viewer-in.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/convert-all-avi-files-in-current.html">Convert all *.avi files in current directory to png sequences</a></h2>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Using python and ffmpeg:
 
@@ -282,13 +303,6 @@ ISBN: 9780121197926, 0121197921</div></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="/ssim.html">SSIM по русски</a></h2>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Нужно будет тут записать как работает метрика SSIM по человечески</div>
-                    <a class="btn btn-default btn-xs" href="/ssim.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="/author/sergem5.html">&laquo;</a>
@@ -322,6 +336,11 @@ ISBN: 9780121197926, 0121197921</div></div>
                     <li class="list-group-item">
                         <a href="/podcasts.html">
                             podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
+                            How to fix google search suggestions in Firefox in Linux Mint
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -372,11 +391,6 @@ ISBN: 9780121197926, 0121197921</div></div>
                     <li class="list-group-item">
                         <a href="/autocomplete-from-history-in-terminal.html">
                             autocomplete from history in terminal (in linux mint)
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/working-with-date-and-time-in-java.html">
-                            Working with date and time in Java (russian)
                         </a>
                     </li>
                 </ul>

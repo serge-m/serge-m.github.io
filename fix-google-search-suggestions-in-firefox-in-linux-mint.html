@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Binarization in Adobe After Effects - sergem personal public notebook</title>
+    <title>How to fix google search suggestions in Firefox in Linux Mint - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,17 +9,17 @@
 
 
 
-<link rel="canonical" href="/binarization-in-adobe-after-effects.html">
+<link rel="canonical" href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings: ![](http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png) I think that everything that is less or equal to 128 is transformet to 0 and the ..." />
+        <meta name="description" content="there are plenty of discussions about it. I didn&#39;t find full solution. You can add google as a search engine. But suggestions don&#39;t work for me. My approximate solution remove standard firefox: sudo apt-get remove firefox remove search addons. Source. I am not sure if this step actually ..." />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Binarization in Adobe After Effects"/>
-        <meta property="og:url" content="/binarization-in-adobe-after-effects.html"/>
-        <meta property="og:description" content="I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings: ![](http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png) I think that everything that is less or equal to 128 is transformet to 0 and the ..."/>
-        <meta property="article:published_time" content="2013-11-29" />
+        <meta property="og:title" content="How to fix google search suggestions in Firefox in Linux Mint"/>
+        <meta property="og:url" content="/fix-google-search-suggestions-in-firefox-in-linux-mint.html"/>
+        <meta property="og:description" content="there are plenty of discussions about it. I didn&#39;t find full solution. You can add google as a search engine. But suggestions don&#39;t work for me. My approximate solution remove standard firefox: sudo apt-get remove firefox remove search addons. Source. I am not sure if this step actually ..."/>
+        <meta property="article:published_time" content="2016-08-14" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
 
@@ -71,10 +71,10 @@ sergem personal public notebook            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/binarization-in-adobe-after-effects.html"
+                    <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html"
                        rel="bookmark"
-                       title="Permalink to Binarization in Adobe After Effects">
-                        Binarization in Adobe After Effects
+                       title="Permalink to How to fix google search suggestions in Firefox in Linux Mint">
+                        How to fix google search suggestions in Firefox in Linux Mint
                     </a>
                 </h1>
             </header>
@@ -84,7 +84,7 @@ sergem personal public notebook            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-11-29T16:23:00+01:00"> Fri 29 November 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-08-14T14:10:00+02:00"> Sun 14 August 2016</time>
     </span>
 
 
@@ -94,22 +94,77 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
-![](http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png)
+                <p>there are plenty of discussions about it. I didn't find full solution.
+You can add google as a search engine. But suggestions don't work for me.</p>
+<h1>My approximate solution</h1>
+<ol>
+<li>
+<p>remove standard firefox:</p>
+<div class="highlight"><pre><span></span>sudo apt-get remove firefox
+</pre></div>
 
-I think that everything that is less or equal to 128 is transformet to 0 and the rest is transformet to 255. BUT. On the result i have such a places with outlier value:
-![](http://3.bp.blogspot.com/-JMnOtNJ1WRs/UpiGeFJB-bI/AAAAAAAAAag/FNWwgyvt0ys/s320/levels_result_1.png)</div>
 
-<div class="separator" style="clear: both; text-align: left;">WTF? What is the logic of AAE developers?&nbsp;</div>
+</li>
+<li>
+<p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
+    I am not sure if this step actually helped. TODO: Check if it is required.</p>
+<div class="highlight"><pre><span></span>sudo apt-get remove mint-search-addon
+</pre></div>
 
-<div class="separator" style="clear: both; text-align: left;">So the solution is using real numbers for input black and white:</div>
 
-<div class="separator" style="clear: both; text-align: left;">![](http://2.bp.blogspot.com/-eRKqVUH7ei4/UpiHIrfKa_I/AAAAAAAAAas/aDnntGrvHEg/s320/levels_2.png)<div class="separator" style="clear: both; text-align: center;">
-</div><div class="separator" style="clear: both; text-align: left;">Results are sharp:</div>
-![](http://3.bp.blogspot.com/-toBk_jZhH4A/UpiHItHbIiI/AAAAAAAAAao/Mi-_fbtWRzY/s1600/levels_result_2.png)<div class="separator" style="clear: both; text-align: left;">
-</div><div class="separator" style="clear: both; text-align: left;">
-</div>
-</div>
+</li>
+<li>
+<p>delete file (or rename to have a backup):</p>
+<div class="highlight"><pre><span></span>~/.mozilla/firefox/&lt;SOMETHING&gt;.default/search.json.mozlz4
+</pre></div>
+
+
+<p>and contents of the directory:</p>
+<div class="highlight"><pre><span></span>~/.mozilla/firefox/sf8ha7dx.default/searchplugins
+</pre></div>
+
+
+</li>
+<li>
+<p>download, install and run firefox from official website.
+    It will create a new version of</p>
+<div class="highlight"><pre><span></span>~/.mozilla/firefox/sf8ha7dx.default/searchplugins
+</pre></div>
+
+
+</li>
+<li>
+<p>in <code>.mozilla/firefox/sf8ha7dx.default/searchplugins</code> create a file <code>google1.xml</code>
+ with contents: </p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;SearchPlugin</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.mozilla.org/2006/browser/search/&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;ShortName&gt;</span>Google1<span class="nt">&lt;/ShortName&gt;</span>
+<span class="nt">&lt;Description&gt;</span>Google1<span class="nt">&lt;/Description&gt;</span>
+<span class="nt">&lt;InputEncoding&gt;</span>UTF-8<span class="nt">&lt;/InputEncoding&gt;</span>
+<span class="nt">&lt;SearchForm&gt;</span>http://www.google.com<span class="nt">&lt;/SearchForm&gt;</span>
+<span class="nt">&lt;Url</span> <span class="na">type=</span><span class="s">&quot;application/x-suggestions+json&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">template=</span><span class="s">&quot;http://www.google.com/complete/search?client=firefox&amp;amp;q={searchTerms}&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;Url</span> <span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span> <span class="na">template=</span><span class="s">&quot;http://www.google.com/search?q={searchTerms}&quot;</span> <span class="na">resultDomain=</span><span class="s">&quot;google.com&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/Url&gt;</span>
+<span class="nt">&lt;/SearchPlugin&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>remove official normal version of firefox</p>
+</li>
+<li>
+<p>install mint version of firefox:</p>
+<div class="highlight"><pre><span></span>sudo apt-get install firefox
+</pre></div>
+
+
+<p>Now "mint" firefox will use <code>search.json.mozlz4</code> version from normal firefox and suggestions should work</p>
+</li>
+<li>
+<p>Optional. I also removed (actually renamed) from /usr/* all directories like <code>searchplugins</code> that contain files like <code>yahoo.xml</code>.
+I think they are created by "mint" firefox. Not sure that it is a necessary step. Further check is required here.</p>
+</li>
+</ol>
             </div>
             <!-- /.entry-content -->
         </article>

@@ -1,6 +1,6 @@
 Title: How to fix google search suggestions in Firefox in Linux Mint
 Author: SergeM
-Date: 2016-08-14 14:10:00
+Date: 2016-09-29 14:10:00
 Slug: fix-google-search-suggestions-in-firefox-in-linux-mint
 Tags: 
 

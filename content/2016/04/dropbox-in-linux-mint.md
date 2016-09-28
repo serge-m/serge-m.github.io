@@ -4,18 +4,39 @@ Date: 2016-04-10 20:50:00
 Slug: dropbox-in-linux-mint
 Tags: useful,linux
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Hmm. It doesn't work.
+
+Hmm. It doesn't work.
 I see the icon when i do
+```
 dropbox stop
 dropbox start
-but I cannot clic on it.
+```
+but I cannot click on it.
 
 Installed [nemo-dropbox](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox). At least now I have "Copy dropbox link" command in menu.
 Don't forget to do
-<pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;">$ killall nemo</pre><pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">after installation to make it work.</span></pre><pre style="box-sizing: border-box; color: #333333; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">
-</span></pre><h2 style="box-sizing: border-box; color: #333333; font-family: consolas, 'liberation mono', menlo, courier, monospace; font-size: 15px; font-stretch: normal; overflow: auto; text-align: left; white-space: pre-wrap;"><span style="color: black; font-family: &quot;times new roman&quot;; font-size: small; white-space: normal;">Final Solution</span></h2><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;">[source](https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80)&nbsp;</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;">Use </pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="background-color: white; color: seagreen; font-family: Monaco, 'Andale Mono', 'Courier New', Courier, mono; font-size: 11.7px; line-height: 15.21px; white-space: normal;">dropbox stop &amp;&amp; dbus-launch dropbox start</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="color: seagreen; font-family: Monaco, Andale Mono, Courier New, Courier, mono;"><span style="background-color: white; font-size: 11.7px; line-height: 15.21px; white-space: normal;">Or&nbsp;</span></span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="background-color: #ecf3f7; color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18.2px; white-space: normal;">Do: opening 'Preferences' -> 'Startup Applications' and editing the dropbox entry so the command now reads:</span><div class="codebox" style="background-color: white; border: 1px solid rgb(201, 210, 216); color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; font-stretch: inherit; line-height: 18.2px; margin: 0px; padding: 3px; vertical-align: baseline; white-space: normal;">
-<div style="border-bottom-color: rgb(204, 204, 204); border-bottom-style: solid; border-width: 0px 0px 1px; font-size: 0.8em !important; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; line-height: 1.4em; margin-bottom: 3px; padding: 0px; text-transform: uppercase; vertical-align: baseline;">
-CODE:&nbsp;[SELECT ALL](https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80#" style="border: 0px; color: #105289; direction: ltr; font-family: inherit; font-size: inherit; font-stretch: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; margin: 0px; padding: 0px; text-decoration: none; unicode-bidi: embed; vertical-align: baseline;)</div>
-<code style="border: 0px; color: seagreen; display: block; font-family: Monaco, 'Andale Mono', 'Courier New', Courier, mono; font-size: 0.9em; font-stretch: normal; height: auto; line-height: 1.3em; margin: 2px 0px; max-height: 200px; overflow: auto; padding: 5px 0px 0px; vertical-align: baseline;">dbus-launch dropbox start</code></div>
-</pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;">
-</span></pre><pre style="box-sizing: border-box; font-stretch: normal; overflow: auto;"><span style="font-family: times new roman; white-space: normal;"><span style="background-color: #ecf3f7; color: #333333; font-family: 'Lucida Grande', 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18.2px;">&nbsp;update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (`dbus-launch dropbox start`)</span></span></pre></div>
+
+```
+$ killall nemo
+```
+
+after installation to make it work.
+# Final Solution
+[source](https://forums.linuxmint.com/viewtopic.php?f=47&t=184839&sid=1d53fe0089b25098495531994c543ee4&start=80)&nbsp;
+
+Use
+```
+dropbox stop && dbus-launch dropbox start
+```
+
+Or
+
+Do: opening 'Preferences' -> 'Startup Applications' and editing the dropbox entry so the command now reads:
+
+CODE: [SELECT ALL](https://forums.linuxmint.com/viewtopic.php?f=47&t=184839&sid=1d53fe0089b25098495531994c543ee4&start=80)
+
+```
+dbus-launch dropbox start
+```
+
+update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (`dbus-launch dropbox start`)

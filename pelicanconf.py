@@ -25,7 +25,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (('Books', '/books.html'),
          ('Useful', '/tag/useful.html'),
-         # ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('Bjontegaard metric in Matlab', '/bjontegaard-metric-matlab-script.html'),
          # ('You can modify those links in your config file', '#'),
          )
 

@@ -4,11 +4,53 @@ Date: 2013-11-29 10:33:00
 Slug: books
 Tags: memory,books
 
-<div dir="ltr" style="text-align: left;" trbidi="on">In progress:
-<ol><li><i style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.1875px;">**[The Black Swan](http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)" target="_blank): The Impact of the Highly Improbable -&nbsp;**</i><span style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.1875px;">&nbsp;</span>[Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb" style="background-color: white; background-image: none; color: #0b0080; font-family: sans-serif; font-size: 13px; line-height: 19.1875px; text-decoration: none;" title="Nassim Nicholas Taleb)</li><li>Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1)[</a> </li><li><span style="background-color: white; color: #333333; font-family: Arial, Verdana, Geneva, Helvetica, sans-serif; font-size: 20px; font-weight: bold;">Learning Python, 5th Edition,&nbsp;</span><a class="byLineLink" href="http://shop.oreilly.com/product/0636920028154.do#tab_04_0" style="background-color: white; color: #207cc1; font-family: Arial, Verdana, Geneva, Helvetica, sans-serif; font-size: 12px; text-decoration: none;">Mark Lutz](http://www.amazon.com/Effective-STL-Specific-Standard-Template/dp/0201749629#)</li></ol><div>
+
+
+# In progress
+
+...
+
 ---------------------------------------
-Part
-<ol><li><i style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.1875px;">**[Fooled by Randomness](http://en.wikipedia.org/wiki/Fooled_by_Randomness" target="_blank): The Hidden Role of Chance in Life and in the Markets**</i><span style="background-color: white; font-family: sans-serif; font-size: 13px; line-height: 19.1875px;">&nbsp;-&nbsp;</span>[Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb" style="background-color: white; background-image: none; color: #0b0080; font-family: sans-serif; font-size: 13px; line-height: 19.1875px; text-decoration: none;" title="Nassim Nicholas Taleb)</li><li>Effective C++: 55 Specific Ways to Improve Your Programs and Designs [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112)</li><li>
-</li></ol>---------------------------------------
-Done
-<ol><li>Design Patterns: Elements of Reusable Object-Oriented Software  [Erich Gamma](https://www.google.ru/search?newwindow=1&amp;espv=210&amp;es_sm=93&amp;biw=1920&amp;bih=956&amp;q=erich+gamma&amp;stick=H4sIAAAAAAAAAGOovnz8BQMDgykHnxCHfq6-QZKRYYESJ4hlXJyUlqslk51spZ-Un5-tX16UWVKSmhdfnl-UbZVYWpKRX8QTXmnKMvXcmuO9U6_Y7ihrvr2n4RYAiPdgLVIAAAA&amp;sa=X&amp;ei=4jSYUvvyBqbK4ATSq4G4Cw&amp;ved=0CKoBEJsTKAIwDw) et al.</li><li>C++ Coding Standards: 101 Rules, Guidelines, and Best Practices, [Herb Sutter](http://www.amazon.com/Herb-Sutter/e/B001ILHLCK/ref=ntt_athr_dp_pel_1/176-6402064-0012436)[</a> <a href="http://www.amazon.com/Andrei-Alexandrescu/e/B001ILKI7K/ref=ntt_athr_dp_pel_2/176-6402064-0012436">Andrei Alexandrescu](http://www.amazon.com/Coding-Standards-Rules-Guidelines-Practices/dp/0321113586#)</li><li>C++: The Complete Reference, [Herbert Schildt](http://www.amazon.com/Herbert-Schildt/e/B001H6PSMG/ref=ntt_athr_dp_pel_1)</li><li>Testing Dot Com, or allowance for the abuse of bugs in Internet startups&nbsp;[Roman Savin](http://www.amazon.co.uk/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;field-author=Savin%20R.&amp;search-alias=books-uk&amp;sort=relevancerank" style="background-color: white; color: #003399; font-family: verdana, arial, helvetica, sans-serif; font-size: 11px;)&nbsp;/&nbsp;Роман Савин - Тестирование DOT COM (in Russian)</li></ol></div></div>
+# Part
+
+* [Fooled by Randomness](http://en.wikipedia.org/wiki/Fooled_by_Randomness): The Hidden Role of Chance in Life and in the Markets
+
+    [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)
+
+* Effective C++: 55 Specific Ways to Improve Your Programs and Designs
+  [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112)
+
+---------------------------------------
+# Done
+
+
+* [The Black Swan](http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)): The Impact of the Highly Improbable
+    [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)
+
+* Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library
+    [link](http://www.amazon.com/Effective-STL-Specific-Standard-Template/dp/0201749629)
+    [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1)
+
+* Design Patterns: Elements of Reusable Object-Oriented Software
+    [Erich Gamma](https://www.google.ru/search?newwindow=1&amp;espv=210&amp;es_sm=93&amp;biw=1920&amp;bih=956&amp;q=erich+gamma&amp;stick=H4sIAAAAAAAAAGOovnz8BQMDgykHnxCHfq6-QZKRYYESJ4hlXJyUlqslk51spZ-Un5-tX16UWVKSmhdfnl-UbZVYWpKRX8QTXmnKMvXcmuO9U6_Y7ihrvr2n4RYAiPdgLVIAAAA&amp;sa=X&amp;ei=4jSYUvvyBqbK4ATSq4G4Cw&amp;ved=0CKoBEJsTKAIwDw) et al.
+
+* C++ Coding Standards: 101 Rules, Guidelines, and Best Practices,
+    [Herb Sutter](http://www.amazon.com/Herb-Sutter/e/B001ILHLCK/ref=ntt_athr_dp_pel_1/176-6402064-0012436)
+    [Andrei Alexandrescu](http://www.amazon.com/Andrei-Alexandrescu/e/B001ILKI7K/ref=ntt_athr_dp_pel_2/176-6402064-0012436)
+    [link](http://www.amazon.com/Coding-Standards-Rules-Guidelines-Practices/dp/0321113586#)
+
+* C++: The Complete Reference, [Herbert Schildt](http://www.amazon.com/Herbert-Schildt/e/B001H6PSMG/ref=ntt_athr_dp_pel_1)
+
+* Testing Dot Com, or allowance for the abuse of bugs in Internet startups
+    [Roman Savin](http://www.amazon.co.uk/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;field-author=Savin%20R.&amp;search-alias=books-uk&amp;sort=relevancerank)
+    Роман Савин - Тестирование DOT COM (in Russian)
+
+
+------------------------------------------
+
+# Postponed
+
+
+* Learning Python, 5th Edition, Mark Lutz
+  [link](http://shop.oreilly.com/product/0636920028154.do#tab_04_0)
+

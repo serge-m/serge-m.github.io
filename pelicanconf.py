@@ -23,8 +23,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
+LINKS = (('Books', '/books.html'),
+         ('Useful', '/tag/useful.html'),
          # ('Jinja2', 'http://jinja.pocoo.org/'),
          # ('You can modify those links in your config file', '#'),
          )
@@ -48,8 +48,13 @@ RECENT_POST_COUNT=12
 DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 DISPLAY_TAGS_ON_SIDEBAR=True
 DISPLAY_PAGES_ON_MENU=True
-
+DISPLAY_TAGS_INLINE=True
 
 # Following items are often useful when publishing
 #DISQUS_SITENAME = ""
 GOOGLE_ANALYTICS="UA-40853494-2"
+
+DISPLAY_ARTICLE_INFO_ON_INDEX=True
+
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tag_cloud", "sitemap"]

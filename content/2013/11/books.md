@@ -23,6 +23,13 @@ Tags: memory,books
 ---------------------------------------
 # Done
 
+* Cracking the Coding Interview [link](https://www.amazon.co.uk/Cracking-Coding-Interview-Fourth-Laakmann/dp/145157827X)
+
+* Clean Code A Handbook of Agile Software Craftsmanship. Robert C. Martin
+
+* Thinking In Java. Bruce Eckel
+
+* Effective Java. Joshua Bloch [link](https://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683)
 
 * [The Black Swan](http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)): The Impact of the Highly Improbable
     [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)

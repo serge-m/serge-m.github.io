@@ -12,13 +12,13 @@
 <link rel="canonical" href="/bjontegaard-metric-matlab-script.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between &#34;before&#34; and &#34;after&#34; versions. Or determine what curve is better if they have complex form (for example, intersecting). I found matlab [script](http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric), that ..." />
+        <meta name="description" content="Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between &#34;before&#34; and &#34;after&#34; versions. Or determine what curve is better if they have complex form (for example, intersecting). I found matlab script, that calculates BD-PSNR, but it was not correct ..." />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Bjontegaard metric. Matlab script."/>
         <meta property="og:url" content="/bjontegaard-metric-matlab-script.html"/>
-        <meta property="og:description" content="Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between &#34;before&#34; and &#34;after&#34; versions. Or determine what curve is better if they have complex form (for example, intersecting). I found matlab [script](http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric), that ..."/>
+        <meta property="og:description" content="Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between &#34;before&#34; and &#34;after&#34; versions. Or determine what curve is better if they have complex form (for example, intersecting). I found matlab script, that calculates BD-PSNR, but it was not correct ..."/>
         <meta property="article:published_time" content="2013-05-15" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -94,26 +94,21 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">
-
-Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between "before" and "after" versions. Or determine what curve is better if they have complex form (for example, intersecting).
-
-I found matlab [script](http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric), that calculates BD-PSNR, but it was not correct. The limits of integration were wrong. Difference between two curves can be calculated only in the area of thein projections intersection.
-Fixed script was verified by data provided the auther of the metric.
-
-Download
-fixed[ matlab script for BD-PSNR calculation](https://github.com/serge-m/bjontegaard2/blob/master/bjontegaard2.m)
-[github](https://github.com/serge-m/bjontegaard2)
-[original paper](http://wftp3.itu.int/av-arch/video-site/0104_Aus/VCEG-M33.doc)&nbsp;(doc)
-[data for verification](http://wftp3.itu.int/av-arch/video-site/0104_Aus/VCEG-M34.xls)&nbsp;(xls)
-
-
-
-Original publilcation:
-G. Bjontegaard, “Calculation of average PSNR differences between RD-curves (VCEG-M33),” in
-VCEG Meeting (ITU-T SG16 Q.6), Austin, Texas, USA, Apr. 2001
-
-</div>
+                <p>Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved.
+I is useful to determine how big is the gain between "before" and "after" versions.
+Or determine what curve is better if they have complex form (for example, intersecting).</p>
+<p>I found matlab <a href="http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric">script</a>,
+that calculates BD-PSNR, but it was not correct. The limits of integration were wrong.
+Difference between two curves can be calculated only in the area of thein projections intersection.
+Fixed script was verified by data provided the auther of the metric.</p>
+<h2>Download</h2>
+<p>fixed <a href="https://github.com/serge-m/bjontegaard2/blob/master/bjontegaard2.m">matlab script for BD-PSNR calculation</a></p>
+<p><a href="https://github.com/serge-m/bjontegaard2">github</a></p>
+<p><a href="http://wftp3.itu.int/av-arch/video-site/0104_Aus/VCEG-M33.doc">original paper</a> (doc)</p>
+<p><a href="http://wftp3.itu.int/av-arch/video-site/0104_Aus/VCEG-M34.xls">data for verification</a> (xls)</p>
+<h2>Original publilcation:</h2>
+<p>G. Bjontegaard, “Calculation of average PSNR differences between RD-curves (VCEG-M33),” in
+VCEG Meeting (ITU-T SG16 Q.6), Austin, Texas, USA, Apr. 2001</p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -607,6 +602,11 @@ VCEG Meeting (ITU-T SG16 Q.6), Austin, Texas, USA, Apr. 2001
         <li class="list-group-item">
             <a href="/tag/useful.html" target="_blank">
                 Useful
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="/bjontegaard-metric-matlab-script.html" target="_blank">
+                Bjontegaard metric in Matlab
             </a>
         </li>
       </ul>

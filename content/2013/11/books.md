@@ -8,7 +8,12 @@ Tags: memory,books
 
 # In progress
 
-...
+* Test-Driven Development with Python Harry Percival [link](http://chimera.labs.oreilly.com/books/1234000000754/index.html)
+    [Pycon 2016 workshop](https://www.youtube.com/watch?v=6zQAu23bKF8)
+
+* [Python Testing](http://pythontesting.net/start-here/) Python Software Development and Software Testing (posts and podcast)
+[book](http://pythontesting.net/books/python-testing-ebook/)
+
 
 ---------------------------------------
 # Part

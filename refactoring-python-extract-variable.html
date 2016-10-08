@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>node based - sergem personal public notebook</title>
+    <title>Refactoring python code. Extracting variables and other. - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,24 @@
 
 
 
+<link rel="canonical" href="/refactoring-python-extract-variable.html">
 
-    <meta name="author" content="sergem" />
-    <meta name="keywords" content="node based" />
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="python,useful,youtube,video" />
+        <meta name="description" content="Pycon2016 talk by Brett Slatkin Example 1: Extract variable import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &gt; MONTHS.index(month) &gt; 4: print(&#39;%s is a good time to eat tomatoes ..." />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content=""/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Refactoring python code. Extracting variables and other."/>
+        <meta property="og:url" content="/refactoring-python-extract-variable.html"/>
+        <meta property="og:description" content="Pycon2016 talk by Brett Slatkin Example 1: Extract variable import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &gt; MONTHS.index(month) &gt; 4: print(&#39;%s is a good time to eat tomatoes ..."/>
+        <meta property="article:published_time" content="2016-10-08" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="useful" />
+            <meta property="article:tag" content="youtube" />
+            <meta property="article:tag" content="video" />
+            <meta property="article:author" content="SergeM" />
 
 
     <!-- Bootstrap -->
@@ -49,7 +57,7 @@ sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/misc.html">Misc</a>
                         </li>
             </ul>
@@ -64,13 +72,24 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="/overview-of-open-source-node-based.html">Overview of open-source node-based video editors (composers)</a></h2>
-                    <div class="well well-sm">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/refactoring-python-extract-variable.html"
+                       rel="bookmark"
+                       title="Permalink to Refactoring python code. Extracting variables and other.">
+                        Refactoring python code. Extracting variables and other.
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-05-12T11:51:00+02:00"> Sun 12 May 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-10-08T01:10:00+02:00"> Sat 08 October 2016</time>
     </span>
 
 
@@ -78,26 +97,82 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/video-editing.html">video editing</a>
+	<a href="/tag/python.html">python</a>
         /
-	<a href="/tag/node-based.html">node based</a>
+	<a href="/tag/useful.html">useful</a>
         /
-	<a href="/tag/software.html">software</a>
+	<a href="/tag/youtube.html">youtube</a>
+        /
+	<a href="/tag/video.html">video</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2>Synapse Compositor </h2>Seems unsupported for a long time 
-Very raw
-
-
-
-
-
-<h2>Blender</h2>Good staff, but it is designed originally for 3D modeling. Video editing is performed in composing mode. Rendering is veeery sloooowww. Open source. Available for linux and windows. 
-Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/blenderprojects/)</div>
-                    <a class="btn btn-default btn-xs" href="/overview-of-open-source-node-based.html">more ...</a>
                 </div>
-            </article>
-            <hr/>
+                <p><a href="https://www.youtube.com/watch?v=D_6ybDcU5gc">Pycon2016 talk by Brett Slatkin</a>
+<a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb">Example 1: Extract variable</a></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">month</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">MONTHS</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="ow">or</span>
+        <span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">MONTHS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Becomes:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">OystersGood:</span>
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">month</span>):
+        <span class="n">month</span> = <span class="n">month</span>
+        <span class="n">month_lowered</span> = <span class="n">month</span>.<span class="n">lower</span>()
+        <span class="k">self</span>.<span class="n">ends_in_r</span> = <span class="n">month_lowered</span>.<span class="n">endswith</span>(<span class="s">&#39;r&#39;</span>)
+        <span class="k">self</span>.<span class="n">ends_in_ary</span> = <span class="n">month_lowered</span>.<span class="n">endswith</span>(<span class="s">&#39;ary&#39;</span>)
+        <span class="k">self</span>.<span class="n">_result</span> = <span class="k">self</span>.<span class="n">ends_in_r</span> <span class="o">or</span> <span class="k">self</span>.<span class="n">ends_in_ary</span>
+
+    <span class="n">def</span> <span class="n">__bool__</span>(<span class="k">self</span>):  <span class="c c-Singleline"># Equivalent to __nonzero__ in Python 2</span>
+        <span class="k">return</span> <span class="k">self</span>.<span class="n">_result</span>
+
+
+<span class="k">class</span> <span class="n">TomatoesGood:</span>
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">month</span>):
+        <span class="k">self</span>.<span class="nb">index</span> = <span class="n">MONTHS</span>.<span class="nb">index</span>(<span class="n">month</span>)
+        <span class="k">self</span>.<span class="n">_result</span> = <span class="mi">8</span> &gt; <span class="k">self</span>.<span class="nb">index</span> &gt; <span class="mi">4</span>
+
+    <span class="n">def</span> <span class="n">__bool__</span>(<span class="k">self</span>):  <span class="c c-Singleline"># Equivalent to __nonzero__ in Python 2</span>
+        <span class="k">return</span> <span class="k">self</span>.<span class="n">_result</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>time_for_oysters = OystersGood(month)
+time_for_tomatoes = TomatoesGood(month)
+
+if time_for_oysters:
+    print(&#39;%s is a good time to eat oysters&#39; % month)
+elif time_for_tomatoes:
+    print(&#39;%s is a good time to eat tomatoes&#39; % month)
+else:
+    print(&#39;%s is a good time to eat asparagus&#39; % month)
+</pre></div>
+
+
+<p>November is a good time to eat oysters</p>
+<p>Now the helper function is easy to test and introspect.</p>
+<div class="highlight"><pre><span></span>test = OystersGood(&#39;November&#39;)
+assert test
+assert test.ends_in_r
+assert not test.ends_in_ary
+
+test = OystersGood(&#39;July&#39;)
+assert not test
+assert not test.ends_in_r
+assert not test.ends_in_ary
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -109,8 +184,63 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="/overview-of-open-source-node-based.html">
-                            Overview of open-source node-based video editors (composers)
+                        <a href="/refactoring-python-extract-variable.html">
+                            Refactoring python code. Extracting variables and other.
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/useful-python-links.html">
+                            Useful python links
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-google-search-suggestions-in-firefox-in-linux-mint.html">
+                            How to fix google search suggestions in Firefox in Linux Mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/podcasts.html">
+                            podcasts
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/git-apply-patch-from-another-repository.html">
+                            git apply patch from another repository
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/terminal-setup-in-linux-mint.html">
+                            terminal setup in linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/fix-boot-record-after-moving-linux-mint.html">
+                            Fix boot record after moving linux mint partitions to another disk
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-yandex-webdav-on-local-dir.html">
+                            Mount yandex webdav on local dir
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/how-torch-stores-images.html">
+                            how torch stores images
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/installing-torch-for-miniconda.html">
+                            Installing torch for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/compile-dlib-for-miniconda.html">
+                            compile dlib for miniconda
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/mount-windows-shares-in-linux.html">
+                            Mount windows shares in linux
                         </a>
                     </li>
                 </ul>
@@ -556,7 +686,7 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2013 sergem
+         <div class="col-xs-10">&copy; 2016 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

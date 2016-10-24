@@ -72,3 +72,5 @@ assert not test
 assert not test.ends_in_r
 assert not test.ends_in_ary
 ```
+
+[Dependency injection for better testing](http://mauveweb.co.uk/posts/2014/09/every-mock-patch-is-a-little-smell.html)

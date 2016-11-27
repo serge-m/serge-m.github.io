@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-10-08T01:10:00+02:00</updated><entry><title>Refactoring python code. Extracting variables and other.</title><link href="https://serge-m.github.io/refactoring-python-extract-variable.html" rel="alternate"></link><published>2016-10-08T01:10:00+02:00</published><updated>2016-10-08T01:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-10-08:refactoring-python-extract-variable.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=D_6ybDcU5gc"&gt;Pycon2016 talk by Brett Slatkin&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-11-27T20:47:00+01:00</updated><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. 
+Registration on https://travis-ci.org/ is straightforward.&lt;/p&gt;
+&lt;p&gt;I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. 
+Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/&lt;your name&gt; you need to enable corresponding repository.&lt;/p&gt;
+&lt;h2&gt;Configuration of travis&lt;/h2&gt;
+&lt;p&gt;You need to create &lt;code&gt;.travis.yml&lt;/code&gt; file in the root of your sources repository. Lets start with the following contents:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;3.5&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;branches&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;
+&lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we ask Travis to use python 3, build only master, install pelican and markdown and run &lt;code&gt;make github&lt;/code&gt; command in the end.
+Installing markdown is important here. Without it you can end up with &lt;/p&gt;</summary><category term="TravisCI"></category><category term="pelican"></category><category term="useful"></category></entry><entry><title>Refactoring python code. Extracting variables and other.</title><link href="https://serge-m.github.io/refactoring-python-extract-variable.html" rel="alternate"></link><published>2016-10-08T01:10:00+02:00</published><updated>2016-10-08T01:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-10-08:refactoring-python-extract-variable.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=D_6ybDcU5gc"&gt;Pycon2016 talk by Brett Slatkin&lt;/a&gt;
 &lt;a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb"&gt;Example 1: Extract variable&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
 &lt;span class="n"&gt;month&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MONTHS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

@@ -1,0 +1,21 @@
+language: python
+python:
+  - "3.5"
+branches:
+  only:
+  - master
+install:
+- pip install pelican markdown
+script:
+- |
+  declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)"
+  openssl aes-256-cbc -K $encrypted_d5bd62f799ff_key -iv $encrypted_d5bd62f799ff_iv -in ".travis/blog_deploy_key.enc" -out "$SSH_FILE" -d
+  chmod 600 "$SSH_FILE" && printf "%s\n" \
+              "Host github.com" \
+              "  IdentityFile $SSH_FILE" \
+              "  LogLevel ERROR" >> ~/.ssh/config
+- make clean
+- make github
+
+env:
+  global:

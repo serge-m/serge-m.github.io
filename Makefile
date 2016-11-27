@@ -118,7 +118,18 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push origin $(GITHUB_PAGES_BRANCH)
+	SITE_COMMIT_MESSAGE=`git log -1 --format=%B` && \
+	$$(rm -rf $(OUTPUTDIR) || true) && \
+	git clone git@github.com:serge-m/serge-m.github.io.git $(OUTPUTDIR) && \
+	$$(ls -d $(OUTPUTDIR)/* | xargs rm -r) && \
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) && \
+	cd $(OUTPUTDIR) && \
+	git add -v --all . && \
+	git config user.email "sbmatyunin@gmail.com" && \
+	git config user.name "serge-m" && \
+	git commit -v -m "$$SITE_COMMIT_MESSAGE" && \
+	git push && \
+    echo "done"
+
 
 .PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github

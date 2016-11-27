@@ -54,18 +54,20 @@
 &lt;p&gt;At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.&lt;/p&gt;
 &lt;p&gt;I followed the  guide from &lt;a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md"&gt;here&lt;/a&gt; sections 1 -- 2.5. Instead of section 2.6:
 1. I put my encoded private key &lt;code&gt;blog_deploy_key.enc&lt;/code&gt; to &lt;code&gt;.travis/blog_deploy_key.enc&lt;/code&gt;
-2. I modified my section &lt;code&gt;script&lt;/code&gt; of &lt;code&gt;.travis.yaml&lt;/code&gt; as folows:
-    &lt;code&gt;script:
-    - |
-      declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)"
-      openssl aes-256-cbc -K $encrypted_&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_key -iv $encrypted_&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_iv -in ".travis/blog_deploy_key.enc" -out "$SSH_FILE" -d
-      chmod 600 "$SSH_FILE" &amp;amp;&amp;amp; printf "%s\n" \
-                  "Host github.com" \
-                  "  IdentityFile $SSH_FILE" \
-                  "  LogLevel ERROR" &amp;gt;&amp;gt; ~/.ssh/config
-    - make github&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Keys `VALUE_FROM_TRAVIS` you get while making steps 1 - 2.5 from the guide.
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="TravisCI"></category><category term="pelican"></category><category term="useful"></category></entry><entry><title>Refactoring python code. Extracting variables and other.</title><link href="https://serge-m.github.io/refactoring-python-extract-variable.html" rel="alternate"></link><published>2016-10-08T01:10:00+02:00</published><updated>2016-10-08T01:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-10-08:refactoring-python-extract-variable.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=D_6ybDcU5gc"&gt;Pycon2016 talk by Brett Slatkin&lt;/a&gt;
+2. I modified my section &lt;code&gt;script&lt;/code&gt; of &lt;code&gt;.travis.yaml&lt;/code&gt; as folows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;script:&lt;/span&gt;
+&lt;span class="x"&gt;- |&lt;/span&gt;
+&lt;span class="x"&gt;  declare -r SSH_FILE=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="err"&gt;mktemp&lt;/span&gt; &lt;span class="err"&gt;-u&lt;/span&gt; &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="err"&gt;/.ssh/blog_deploy_key_decrypted_XXXXXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="x"&gt;  openssl aes-256-cbc -K &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_key -iv &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_iv -in &amp;quot;.travis/blog_deploy_key.enc&amp;quot; -out &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; -d&lt;/span&gt;
+&lt;span class="x"&gt;  chmod 600 &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; &amp;amp;&amp;amp; printf &amp;quot;%s\n&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;Host github.com&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;  IdentityFile &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;  LogLevel ERROR&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+&lt;span class="x"&gt;- make github&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Keys &lt;code&gt;VALUE_FROM_TRAVIS&lt;/code&gt; you get while making steps 1 - 2.5 from the guide.&lt;/p&gt;</summary><category term="TravisCI"></category><category term="pelican"></category><category term="useful"></category></entry><entry><title>Refactoring python code. Extracting variables and other.</title><link href="https://serge-m.github.io/refactoring-python-extract-variable.html" rel="alternate"></link><published>2016-10-08T01:10:00+02:00</published><updated>2016-10-08T01:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-10-08:refactoring-python-extract-variable.html</id><summary type="html">&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=D_6ybDcU5gc"&gt;Pycon2016 talk by Brett Slatkin&lt;/a&gt;
 &lt;a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb"&gt;Example 1: Extract variable&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;random&lt;/span&gt;
 &lt;span class="n"&gt;month&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choice&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MONTHS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

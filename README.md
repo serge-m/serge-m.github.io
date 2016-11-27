@@ -1,33 +1,16 @@
-# Compilation 
+# Sources of personal public notebook
 
-```
-pelican content
-```
+[Compiled site](https://serge-m.github.io/)
+Content of the web-site is stored in `content` directory using Markdown format.
+I use [Pelican](http://blog.getpelican.com/) to render content to html files.
+Builds are executed automatically using [Travis CI](http://blog.getpelican.com/).
 
-# Updating pages
-```
-cd output && git add --all && git commit -m "fixed latest articles" && git push
-```
+# Building locally
+1. clone
+2. install dependencies
+3. `make publish`
 
-Set up output directory
-```
-cd output
-git init
-git remote add origin git@github.com:serge-m/serge-m.github.io.git
-git add --all
-git commit -m "Initial commit"
-git push origin master
-```
-
-
-Recover output directory
-```
-cd blog
-git clone git@github.com:serge-m/serge-m.github.io.git output
-pelican content
-cd output
-git add --all
-git commit -m "commit message"
-git push origin master
-```
-
+# Build and publish locally
+1. clone
+2. install dependencies
+3. `make github`

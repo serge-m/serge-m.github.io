@@ -5,7 +5,7 @@
 I use
 * Markdown format to store content (`content` directory)
 * [Pelican](http://blog.getpelican.com/) to render content to html files
-* [Travis CI](http://blog.getpelican.com/) for automated builds
+* [Travis CI](https://travis-ci.org) for automated builds
 
 
 # Building locally

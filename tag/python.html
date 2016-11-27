@@ -67,6 +67,43 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-11-27T22:47:00+01:00"> Sun 27 November 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/flask.html">flask</a>
+        /
+	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
+<h2>Code of sample_app.py</h2>
+<p>Creating Flask application:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Helper class for JSON-based response:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">JsonResponse</span>(<span class="n">Response</span>):
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">json_dict</span>, <span class="n">status</span>=<span class="mi">200 ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/refactoring-python-extract-variable.html">Refactoring python code. Extracting variables and other.</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -720,34 +757,16 @@ I tried to use also&nbsp;_File->Export->Nuke Shapes_ but in Nuke 7.0 it wasn't o
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/add-backslash-before-all-escape.html">Add backslash before all escape characters in python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-11-12T17:14:00+01:00"> Tue 12 November 2013</time>
-    </span>
 
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Useful for using in regular expressions:
-
-<blockquote class="tr_bq">import re
-re.escape( str )</blockquote>
-Python detects all escape characters that can be used by regex &nbsp;and add slash before them
-[http://docs.python.org/2/library/re.html#re.escape](http://docs.python.org/2/library/re.html#re.escape)</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-backslash-before-all-escape.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
+        <ul class="pagination">
+                <li class="prev disabled"><a href="#">&laquo;</a></li>
+                    <li class="active"><a
+                            href="https://serge-m.github.io/tag/python.html">1</a></li>
+                    <li class=""><a
+                            href="https://serge-m.github.io/tag/python2.html">2</a></li>
+                <li class="next"><a
+                        href="https://serge-m.github.io/tag/python2.html">&raquo;</a></li>
+        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -757,6 +776,11 @@ Python detects all escape characters that can be used by regex &nbsp;and add sla
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">
+                            Testing json responses in Flask REST apps with pytest
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/refactoring-python-extract-variable.html">
                             Refactoring python code. Extracting variables and other.
@@ -810,11 +834,6 @@ Python detects all escape characters that can be used by regex &nbsp;and add sla
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/writing-simple-optical-flow-in-python-part2.html">
                             Writing simple optical flow in python. Part 2
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/writing-simple-optical-flow-in-python.html">
-                            Writing simple optical flow in python
                         </a>
                     </li>
                 </ul>
@@ -925,6 +944,11 @@ Python detects all escape characters that can be used by regex &nbsp;and add sla
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/ffmpeg.html">
                             ffmpeg
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/flask.html">
+                            flask
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -1090,6 +1114,11 @@ Python detects all escape characters that can be used by regex &nbsp;and add sla
                     <li class="list-group-item tag-2">
                         <a href="https://serge-m.github.io/tag/pypy.html">
                             pypy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/pytest.html">
+                            pytest
                         </a>
                     </li>
                     <li class="list-group-item tag-1">

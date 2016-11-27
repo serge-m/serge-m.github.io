@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>flask - sergem personal public notebook</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="flask" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="sergem personal public notebook" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="sergem personal public notebook"/>
+        <meta property="og:url" content="https://serge-m.github.io"/>
+        <meta property="og:description" content="sergem personal public notebook"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://serge-m.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://serge-m.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://serge-m.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://serge-m.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://serge-m.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://serge-m.github.io/" class="navbar-brand">
+sergem personal public notebook            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://serge-m.github.io/category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-11-27T22:47:00+01:00"> Sun 27 November 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/flask.html">flask</a>
+        /
+	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
+<h2>Code of sample_app.py</h2>
+<p>Creating Flask application:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Helper class for JSON-based response:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">JsonResponse</span>(<span class="n">Response</span>):
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">json_dict</span>, <span class="n">status</span>=<span class="mi">200 ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">
+                            Testing json responses in Flask REST apps with pytest
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://serge-m.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/misc.html">
+                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/2010.html">
+                            2010
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/after-effects-aae.html">
+                            after effects (aae)
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/algorithm-performance.html">
+                            algorithm performance
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/avconv.html">
+                            avconv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/avisynth.html">
+                            avisynth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/books.html">
+                            books
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://serge-m.github.io/tag/c.html">
+                            c++
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/clang.html">
+                            clang
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/computer-vision.html">
+                            computer vision
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/console.html">
+                            console
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/cplusplus11.html">
+                            cplusplus11
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/data.html">
+                            data
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/deep-learning.html">
+                            deep learning
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/depth-map.html">
+                            depth map
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/dll.html">
+                            dll
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/draft.html">
+                            draft
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/en.html">
+                            en
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/errors.html">
+                            errors
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/ffmpeg.html">
+                            ffmpeg
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/flask.html">
+                            flask
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/freeware.html">
+                            freeware
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/git.html">
+                            git
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/html.html">
+                            html
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/ideas.html">
+                            ideas
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/interview.html">
+                            interview
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/ipython.html">
+                            ipython
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/java.html">
+                            Java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/javascript.html">
+                            javascript
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/laplacian.html">
+                            Laplacian
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/latex.html">
+                            latex
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/latex2rtf.html">
+                            latex2rtf
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/links.html">
+                            links
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://serge-m.github.io/tag/linux.html">
+                            linux
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/linux-for-dummies.html">
+                            Linux for dummies
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/linux-mint.html">
+                            linux mint
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/little-discovery.html">
+                            little discovery
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/machine-learning.html">
+                            machine learning
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/matlab.html">
+                            matlab
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/matting.html">
+                            matting
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/memory.html">
+                            memory
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/mercurial.html">
+                            mercurial
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/metric.html">
+                            metric
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/mildly-interesting.html">
+                            mildly interesting
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/multithreading.html">
+                            multithreading
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/neural-networks.html">
+                            neural networks
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/node-based.html">
+                            node based
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/nuke.html">
+                            nuke
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/numpy.html">
+                            numpy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/opencv.html">
+                            opencv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/optical-flow.html">
+                            optical flow
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/pelican.html">
+                            pelican
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/pylearn2.html">
+                            pylearn2
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/pypy.html">
+                            pypy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/pytest.html">
+                            pytest
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://serge-m.github.io/tag/python.html">
+                            python
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/roto.html">
+                            roto
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/russian.html">
+                            russian
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/sarcasm.html">
+                            sarcasm
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/scripting.html">
+                            scripting
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/software.html">
+                            software
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/software-design.html">
+                            software design
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/sql.html">
+                            sql
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/ssim.html">
+                            ssim
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/sublime.html">
+                            sublime
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/svn.html">
+                            svn
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/theano.html">
+                            theano
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/tikz.html">
+                            tikz
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/tools.html">
+                            tools
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/torch.html">
+                            torch
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/travisci.html">
+                            TravisCI
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/tuturials.html">
+                            tuturials
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/uml.html">
+                            uml
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-1">
+                        <a href="https://serge-m.github.io/tag/useful.html">
+                            useful
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/useles.html">
+                            useles
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/vapoursynth.html">
+                            vapoursynth
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-2">
+                        <a href="https://serge-m.github.io/tag/video.html">
+                            video
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/video-editing.html">
+                            video editing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/video-processing.html">
+                            video processing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/visual-studio.html">
+                            visual studio
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/windows.html">
+                            windows
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/workaround.html">
+                            workaround
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/xcode.html">
+                            xcode
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-3">
+                        <a href="https://serge-m.github.io/tag/youtube.html">
+                            youtube
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="/books.html" target="_blank">
+                Books
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="/tag/useful.html" target="_blank">
+                Useful
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="/bjontegaard-metric-matlab-script.html" target="_blank">
+                Bjontegaard metric in Matlab
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 sergem
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://serge-m.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://serge-m.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://serge-m.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-40853494-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

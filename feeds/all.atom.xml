@@ -1,5 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-11-27T20:47:00+01:00</updated><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-11-27T22:47:00+01:00</updated><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+&lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
+&lt;p&gt;Creating Flask application:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;JsonResponse&lt;/span&gt;(&lt;span class="n"&gt;Response&lt;/span&gt;):
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;json_dict&lt;/span&gt;, &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="mi"&gt;200&lt;/span&gt;):
+        &lt;span class="n"&gt;super&lt;/span&gt;().&lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="n"&gt;response&lt;/span&gt;=&lt;span class="n"&gt;json&lt;/span&gt;.&lt;span class="n"&gt;dumps&lt;/span&gt;(&lt;span class="n"&gt;json_dict&lt;/span&gt;), &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="n"&gt;status&lt;/span&gt;, &lt;span class="n"&gt;mimetype&lt;/span&gt;=&lt;span class="s"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Defining GET and POST endpoints. The puprose of the &lt;code&gt;/add&lt;/code&gt; endpoint is to return doubled value.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@app.route(&amp;#39;/&amp;#39;)
+def hello_world():
+    return &amp;#39;Hello, World!&amp;#39;
+
+@app.route(&amp;#39;/add&amp;#39;, methods=[&amp;#39;POST&amp;#39;])
+def add():
+    json = request.json
+    resp = JsonResponse(json_dict={&amp;quot;answer&amp;quot;: json[&amp;#39;key&amp;#39;] * 2}, status=200)
+    return resp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Main section that prints help message. (Alternative launching procedure can be applied)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;if __name__ == &amp;#39;__main__&amp;#39;:
+    script_name = __file__
+    print(&amp;quot;run:\n&amp;quot;
+          &amp;quot;FLASK_APP={} python -m flask run --port 8000 --host 0.0.0.0&amp;quot;.format(script_name))
+    exit(1)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Code of sample_app_test.py&lt;/h2&gt;
+&lt;p&gt;Fixture for test client:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sample_app&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+
+&lt;span class="nd"&gt;@pytest.fixture&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;client&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;test_client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test_client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;teardown&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt; &lt;span class="c1"&gt;# databases and resourses have to be freed at the end. But so far we don&amp;#39;t have anything&lt;/span&gt;
+
+    &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addfinalizer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;teardown&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;test_client&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Helper functions for encoding and decoding jsons:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def post_json(client, url, json_dict):
+    &amp;quot;&amp;quot;&amp;quot;Send dictionary json_dict as a json to the specified url &amp;quot;&amp;quot;&amp;quot;
+    return client.post(url, data=json.dumps(json_dict), content_type=&amp;#39;application/json&amp;#39;)
+
+def json_of_response(response):
+    &amp;quot;&amp;quot;&amp;quot;Decode json from response&amp;quot;&amp;quot;&amp;quot;
+    return json.loads(response.data.decode(&amp;#39;utf8&amp;#39;))
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The simplest test for GET endpoint:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def test_dummy(client):
+    response = client.get(&amp;#39;/&amp;#39;)
+    assert b&amp;#39;Hello, World!&amp;#39; in response.data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Test for POST endpoint. Checking resulting json:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def test_json(client):
+    response = post_json(client, &amp;#39;/add&amp;#39;, {&amp;#39;key&amp;#39;: &amp;#39;value&amp;#39;})
+    assert response.status_code == 200
+    assert json_of_response(response) == {&amp;quot;answer&amp;quot;: &amp;#39;value&amp;#39; * 2}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Related links:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://flask.pocoo.org/docs/0.11/testing/"&gt;Testing flask applications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pytest-dev/pytest-flask"&gt;pytest fixtures for flask&lt;/a&gt; I haven't checked them. Maybe uyseful&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pallets/flask/tree/master/examples/flaskr"&gt;Flaskr test application from examples of Flask&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="python"></category><category term="flask"></category><category term="pytest"></category></entry><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
 &lt;p&gt;Registration on &lt;a href="https://travis-ci.org/"&gt;https://travis-ci.org/&lt;/a&gt; is straightforward.&lt;/p&gt;
 &lt;p&gt;I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. &lt;/p&gt;
 &lt;p&gt;Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/&lt;your name&gt; you need to enable corresponding repository.&lt;/p&gt;

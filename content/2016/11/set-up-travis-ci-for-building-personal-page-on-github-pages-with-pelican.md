@@ -5,9 +5,11 @@ Slug: set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican
 Tags: TravisCI,pelican,useful
 
 I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. 
-Registration on https://travis-ci.org/ is straightforward.
+
+Registration on [https://travis-ci.org/](https://travis-ci.org/) is straightforward.
 
 I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. 
+
 Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/<your name> you need to enable corresponding repository.
 
 ## Configuration of travis
@@ -26,4 +28,40 @@ script:
 ```
 
 Here we ask Travis to use python 3, build only master, install pelican and markdown and run `make github` command in the end.
-Installing markdown is important here. Without it you can end up with 
+
+Installing markdown is important here. Without it you can end up with failures. Pelican will say:
+```
+WARNING: No valid files found in content.
+WARNING: sitemap plugin: SITEMAP['format'] must be `txt' or `xml'
+WARNING: sitemap plugin: Setting SITEMAP['format'] on `xml'
+```
+That means Pelican doesn't know about markdown format.
+
+Now you need to configure Makefile and `github` target. I modified default Pelicans `github` target as follows. Remove lines startign from "#" - they are just comments.
+```
+github:
+    # Loading commit message from source repository to SITE_COMMIT_MESSAGE variable
+	SITE_COMMIT_MESSAGE=`git log -1 --format=%B` && \ 
+	$$(rm -rf $(OUTPUTDIR) || true) && \ 
+	# remove output directory
+	git clone git@github.com:<your github user>/<your html repository>.git $(OUTPUTDIR) && \ 
+	# fresh clone of your html repo to output directory
+	$$(ls -d $(OUTPUTDIR)/* | xargs rm -r) && \ 
+	# deleting everything (except hidden files, like .git)
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) && \ 
+	# running pelican
+	cd $(OUTPUTDIR) && \ 
+	# go to output directory
+	git add -v --all . && \ 
+	# configure user/email of git commit, commit, push
+	git config user.email "<your mail>" && \
+	git config user.name "<your name>" && \
+	git commit -v -m "$$SITE_COMMIT_MESSAGE" && \
+	git push && \
+    echo "done"
+```
+
+At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.
+
+I followed the  guide from [here](https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md) sections 1 -- 2.5. Instead of section 2.6 I used:
+

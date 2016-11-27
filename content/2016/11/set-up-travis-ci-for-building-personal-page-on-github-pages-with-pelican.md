@@ -63,5 +63,20 @@ github:
 
 At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.
 
-I followed the  guide from [here](https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md) sections 1 -- 2.5. Instead of section 2.6 I used:
-
+I followed the  guide from [here](https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md) sections 1 -- 2.5. Instead of section 2.6:
+1. I put my encoded private key `blog_deploy_key.enc` to `.travis/blog_deploy_key.enc`
+2. I modified my section `script` of `.travis.yaml` as folows:
+    ```
+    script:
+    - |
+      declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)"
+      openssl aes-256-cbc -K $encrypted_<VALUE_FROM_TRAVIS>_key -iv $encrypted_<VALUE_FROM_TRAVIS>_iv -in ".travis/blog_deploy_key.enc" -out "$SSH_FILE" -d
+      chmod 600 "$SSH_FILE" && printf "%s\n" \
+                  "Host github.com" \
+                  "  IdentityFile $SSH_FILE" \
+                  "  LogLevel ERROR" >> ~/.ssh/config
+    - make github
+    ```
+    
+    Keys `VALUE_FROM_TRAVIS` you get while making steps 1 - 2.5 from the guide.
+    

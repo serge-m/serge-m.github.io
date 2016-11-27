@@ -108,10 +108,10 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. 
-Registration on https://travis-ci.org/ is straightforward.</p>
-<p>I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. 
-Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/<your name> you need to enable corresponding repository.</p>
+                <p>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. </p>
+<p>Registration on <a href="https://travis-ci.org/">https://travis-ci.org/</a> is straightforward.</p>
+<p>I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. </p>
+<p>Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/<your name> you need to enable corresponding repository.</p>
 <h2>Configuration of travis</h2>
 <p>You need to create <code>.travis.yml</code> file in the root of your sources repository. Lets start with the following contents:</p>
 <div class="highlight"><pre><span></span><span class="n">language</span><span class="o">:</span> <span class="n">python</span>
@@ -127,8 +127,41 @@ Pushes to sources repository has to trigger builds on TravisCI. That is made in 
 </pre></div>
 
 
-<p>Here we ask Travis to use python 3, build only master, install pelican and markdown and run <code>make github</code> command in the end.
-Installing markdown is important here. Without it you can end up with </p>
+<p>Here we ask Travis to use python 3, build only master, install pelican and markdown and run <code>make github</code> command in the end.</p>
+<p>Installing markdown is important here. Without it you can end up with failures. Pelican will say:</p>
+<div class="highlight"><pre><span></span><span class="n">WARNING</span><span class="o">:</span> <span class="n">No</span> <span class="n">valid</span> <span class="n">files</span> <span class="n">found</span> <span class="k">in</span> <span class="n">content</span><span class="o">.</span>
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">sitemap</span> <span class="n">plugin</span><span class="o">:</span> <span class="n">SITEMAP</span><span class="o">[</span><span class="s1">&#39;format&#39;</span><span class="o">]</span> <span class="n">must</span> <span class="n">be</span> <span class="err">`</span><span class="n">txt</span><span class="s1">&#39; or `xml&#39;</span>
+<span class="n">WARNING</span><span class="o">:</span> <span class="n">sitemap</span> <span class="n">plugin</span><span class="o">:</span> <span class="n">Setting</span> <span class="n">SITEMAP</span><span class="o">[</span><span class="s1">&#39;format&#39;</span><span class="o">]</span> <span class="n">on</span> <span class="err">`</span><span class="n">xml</span><span class="err">&#39;</span>
+</pre></div>
+
+
+<p>That means Pelican doesn't know about markdown format.</p>
+<p>Now you need to configure Makefile and <code>github</code> target. I modified default Pelicans <code>github</code> target as follows. Remove lines startign from "#" - they are just comments.</p>
+<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span>
+<span class="c">    # Loading commit message from source repository to SITE_COMMIT_MESSAGE variable</span>
+    <span class="nv">SITE_COMMIT_MESSAGE</span><span class="o">=</span><span class="sb">`</span>git log -1 --format<span class="o">=</span>%B<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+    <span class="nv">$$</span><span class="o">(</span>rm -rf <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">||</span> <span class="nb">true</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # remove output directory</span>
+    git clone git@github.com:&lt;your github user&gt;/&lt;your html repository&gt;.git <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # fresh clone of your html repo to output directory</span>
+    <span class="nv">$$</span><span class="o">(</span>ls -d <span class="k">$(</span>OUTPUTDIR<span class="k">)</span>/* <span class="p">|</span> xargs rm -r<span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # deleting everything (except hidden files, like .git)</span>
+    <span class="k">$(</span>PELICAN<span class="k">)</span> <span class="k">$(</span>INPUTDIR<span class="k">)</span> -o <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> -s <span class="k">$(</span>PUBLISHCONF<span class="k">)</span> <span class="k">$(</span>PELICANOPTS<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # running pelican</span>
+    <span class="nb">cd</span> <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # go to output directory</span>
+    git add -v --all . <span class="o">&amp;&amp;</span> <span class="se">\ </span>
+<span class="c">    # configure user/email of git commit, commit, push</span>
+    git config user.email <span class="s2">&quot;&lt;your mail&gt;&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    git config user.name <span class="s2">&quot;&lt;your name&gt;&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    git commit -v -m <span class="s2">&quot;</span><span class="nv">$$</span><span class="s2">SITE_COMMIT_MESSAGE&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    git push <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">echo</span> <span class="s2">&quot;done&quot;</span>
+</pre></div>
+
+
+<p>At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.</p>
+<p>I followed the  guide from <a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md">here</a> sections 1 -- 2.5. Instead of section 2.6 I used:</p>
             </div>
             <!-- /.entry-content -->
         </article>

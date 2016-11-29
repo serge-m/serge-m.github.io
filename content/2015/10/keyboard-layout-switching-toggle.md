@@ -47,7 +47,8 @@ setxkbmap -query
 Sources: [Thread](http://unix.stackexchange.com/a/79030)
 
 ## xkblayout-state 
-[xkblayout-state](https://github.com/nonpop/xkblayout-state) - works for me
+[xkblayout-state](https://github.com/nonpop/xkblayout-state) - works for me.
+
 Compiling:
 ```
 git clone https://github.com/nonpop/xkblayout-state.git
@@ -59,6 +60,7 @@ Usage:
 ```
 xkblayout-state set +1
 ```
+Now I can use the same method of assigning a custom keyboard shortcut for that command and have layout switching  by pressing  `Super+Space` for example.
 
 ## xkb-switch
 [xkb-switch](https://github.com/ierton/xkb-switch) - I couldn't compile it fast enough on my Linux Mint 17

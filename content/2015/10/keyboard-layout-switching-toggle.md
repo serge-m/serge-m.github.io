@@ -38,7 +38,12 @@ Go to keyboard layouts settings and add a new shortcut. Assign a shortcut for sw
 Sources and ideas from:
 [http://superuser.com/questions/505466/2-and-more-keyboard-layout-groups-in-linux-changed-by-different-hot-key](http://superuser.com/questions/505466/2-and-more-keyboard-layout-groups-in-linux-changed-by-different-hot-key)
 
-Querying existing configuration: 
+# Querying existing configuration
 ```
 setxkbmap -query
 ```
+
+# Switch keyboard layout from command line
+[Thread](http://unix.stackexchange.com/a/79030)
+
+Tool: [xkb-switch](https://github.com/ierton/xkb-switch)

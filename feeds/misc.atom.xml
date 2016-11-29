@@ -719,8 +719,23 @@ Add execution permissions. &lt;/p&gt;
 
 
 &lt;h1&gt;Switch keyboard layout from command line&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://unix.stackexchange.com/a/79030"&gt;Thread&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Tool: &lt;a href="https://github.com/ierton/xkb-switch"&gt;xkb-switch&lt;/a&gt;&lt;/p&gt;</summary><category term="useful"></category><category term="linux"></category><category term="Linux for dummies"></category></entry><entry><title>Golden Dict instead of Lingvo</title><link href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html" rel="alternate"></link><published>2015-10-11T20:37:00+02:00</published><updated>2015-10-11T20:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-11:golden-dict-instead-of-lingvo.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Official web-site
+&lt;p&gt;Sources: &lt;a href="http://unix.stackexchange.com/a/79030"&gt;Thread&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;xkblayout-state&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/nonpop/xkblayout-state"&gt;xkblayout-state&lt;/a&gt; - works for me
+Compiling:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/nonpop/xkblayout-state.git
+cd xkblayout-state/
+make
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Usage: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xkblayout-state set +1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;xkb-switch&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/ierton/xkb-switch"&gt;xkb-switch&lt;/a&gt; - I couldn't compile it fast enough on my Linux Mint 17&lt;/p&gt;</summary><category term="useful"></category><category term="linux"></category><category term="Linux for dummies"></category></entry><entry><title>Golden Dict instead of Lingvo</title><link href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html" rel="alternate"></link><published>2015-10-11T20:37:00+02:00</published><updated>2015-10-11T20:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-11:golden-dict-instead-of-lingvo.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Official web-site
 
 [http://goldendict.org/](http://goldendict.org/)
 

@@ -44,6 +44,21 @@ setxkbmap -query
 ```
 
 # Switch keyboard layout from command line
-[Thread](http://unix.stackexchange.com/a/79030)
+Sources: [Thread](http://unix.stackexchange.com/a/79030)
 
-Tool: [xkb-switch](https://github.com/ierton/xkb-switch)
+## xkblayout-state 
+[xkblayout-state](https://github.com/nonpop/xkblayout-state) - works for me
+Compiling:
+```
+git clone https://github.com/nonpop/xkblayout-state.git
+cd xkblayout-state/
+make
+```
+
+Usage: 
+```
+xkblayout-state set +1
+```
+
+## xkb-switch
+[xkb-switch](https://github.com/ierton/xkb-switch) - I couldn't compile it fast enough on my Linux Mint 17

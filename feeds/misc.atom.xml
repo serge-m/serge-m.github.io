@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-11-27T22:47:00+01:00</updated><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-12-07T00:30:00+01:00</updated><entry><title>Installing java 8 on linux mint 17.3</title><link href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html" rel="alternate"></link><published>2016-12-07T00:30:00+01:00</published><updated>2016-12-07T00:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-07:installing-java-8-on-linux-mint-17-3.html</id><summary type="html">&lt;p&gt;Download JDK for Java 8 from Oracle's web-site.
+Unpack archive to let's say &lt;code&gt;/usr/lib/jvm/jdk1.8.0/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Update java alternatives:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1
+sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1
+sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Select alternatives:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --config java
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Select an option corresponding to new path. &lt;/p&gt;
+&lt;p&gt;Do the same for &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --config javac
+sudo update-alternatives --config javaws
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Update JAVA_HOME using &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gksudo gedit /etc/environment
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Don't forget to rerun terminal or reboot.&lt;/p&gt;
+&lt;p&gt;Based on &lt;a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre"&gt;this thread&lt;/a&gt;&lt;/p&gt;</summary><category term="linux"></category><category term="java"></category><category term="java8"></category></entry><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
 &lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
 &lt;p&gt;Creating Flask application:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
@@ -687,34 +714,7 @@ create gif using&amp;nbsp;http://gifmaker.me/
 &lt;pre class="lang-java prettyprint prettyprinted"&gt;&lt;code&gt;&lt;span class="typ"&gt;List&lt;/span&gt;&lt;span class="pun"&gt;&lt;&lt;/span&gt;&lt;span class="typ"&gt;String&lt;/span&gt;&lt;span class="pun"&gt;&gt;&lt;/span&gt;&lt;span class="pln"&gt; names &lt;/span&gt;&lt;span class="pun"&gt;=&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="typ"&gt;Arrays&lt;/span&gt;&lt;span class="pun"&gt;.&lt;/span&gt;&lt;span class="pln"&gt;asList&lt;/span&gt;&lt;span class="pun"&gt;(&lt;/span&gt;&lt;span class="str"&gt;"Bob"&lt;/span&gt;&lt;span class="pun"&gt;,&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;"John"&lt;/span&gt;&lt;span class="pun"&gt;,&lt;/span&gt;&lt;span class="pln"&gt; &lt;/span&gt;&lt;span class="str"&gt;"Alice"&lt;/span&gt;&lt;span class="pun"&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><category term="Java"></category><category term="useful"></category></entry><entry><title>Free PDF Editor for Linux</title><link href="https://serge-m.github.io/free-pdf-editor-for-linux.html" rel="alternate"></link><published>2015-10-30T02:17:00+01:00</published><updated>2015-10-30T02:17:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-30:free-pdf-editor-for-linux.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Looks good for linux mint/ Ubuntu
 [https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/)
 
-&lt;/div&gt;</summary><category term="useful"></category><category term="linux"></category></entry><entry><title>Installing java 8 on linux mint 17.3</title><link href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html" rel="alternate"></link><published>2015-10-18T02:26:00+02:00</published><updated>2015-10-18T02:26:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-18:installing-java-8-on-linux-mint-17-3.html</id><summary type="html">&lt;p&gt;Download JDK for Java 8 from Oracle's web-site.
-Unpack archive to let's say &lt;code&gt;/usr/lib/jvm/jdk1.8.0/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Update java alternatives:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1
-sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1
-sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Select alternatives:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --config java
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Select an option corresponding to new path. &lt;/p&gt;
-&lt;p&gt;Do the same for &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo update-alternatives --config javac
-sudo update-alternatives --config javaws
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Update JAVA_HOME using &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;gksudo gedit /etc/environment
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Don't forget to rerun terminal or reboot.&lt;/p&gt;
-&lt;p&gt;Based on &lt;a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre"&gt;this thread&lt;/a&gt;&lt;/p&gt;</summary><category term="linux"></category><category term="java"></category><category term="java8"></category></entry><entry><title>Keyboard layout switching. Toggle between 2 of 3 languages.</title><link href="https://serge-m.github.io/keyboard-layout-switching-toggle.html" rel="alternate"></link><published>2015-10-18T02:26:00+02:00</published><updated>2015-10-18T02:26:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-18:keyboard-layout-switching-toggle.html</id><summary type="html">&lt;p&gt;Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.&lt;/p&gt;
+&lt;/div&gt;</summary><category term="useful"></category><category term="linux"></category></entry><entry><title>Keyboard layout switching. Toggle between 2 of 3 languages.</title><link href="https://serge-m.github.io/keyboard-layout-switching-toggle.html" rel="alternate"></link><published>2015-10-18T02:26:00+02:00</published><updated>2015-10-18T02:26:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-10-18:keyboard-layout-switching-toggle.html</id><summary type="html">&lt;p&gt;Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap -query &lt;span class="p"&gt;|&lt;/span&gt; grep layout&lt;span class="p"&gt;|&lt;/span&gt;cut -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; -f 2&lt;span class="sb"&gt;`&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$current&lt;/span&gt;

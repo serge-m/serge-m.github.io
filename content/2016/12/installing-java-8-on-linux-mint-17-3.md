@@ -1,6 +1,6 @@
 Title: Installing java 8 on linux mint 17.3
 Author: SergeM
-Date: 2015-10-18 02:26:00
+Date: 2016-12-07 00:30:00
 Slug: installing-java-8-on-linux-mint-17-3
 Tags: linux,java,java8
 

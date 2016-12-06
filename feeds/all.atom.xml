@@ -3547,21 +3547,35 @@ On Intel Compiler memcpy and std::copy give nearly the same results.
 &lt;strong style="background-color: white;"&gt;e.&amp;nbsp; Simply encode a bunch of videos and pick the one your favorite encoder does best on.&lt;/strong&gt;
 &lt;span style="background-color: white;"&gt;&lt;strong&gt;3.&amp;nbsp; Preprocessing the source.&amp;nbsp;&lt;/strong&gt;A encoder test is a test of encoders, not preprocessing.&amp;nbsp; Some encoding apps may add preprocessors to the source, such as noise reduction.&amp;nbsp; This may make the video look better — possibly even better than the source — but it’s not a fair part of comparing the actual encoders.&lt;/span&gt;
 &lt;span style="background-color: white;"&gt;&lt;strong&gt;4.&amp;nbsp; Screw up decoding.&lt;/strong&gt;&amp;nbsp;People often forget that in addition to encoding, a test also involves decoding — a step which is equally possible to do wrong.&amp;nbsp; One common error caused by this is in tests of Theora on content whose resolution isn’t divisible by 16.&amp;nbsp; Decoding is often done with ffmpeg — which doesn’t crop the edges properly in some cases.&amp;nbsp; This isn’t really a big deal visually, but in a PSNR comparison, misaligning the entire frame by 4 or 8 pixels is a great way of completely invalidating the results.&lt;/span&gt;
-&lt;h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"&gt;&lt;strong style="background-color: white;"&gt;The greatest mistake of all&lt;/strong&gt;&lt;/h3&gt;&lt;blockquote class="tr_bq"&gt;&lt;span style="background-color: white;"&gt;Above all, the biggest and most common mistake — and the one that leads to many of the problems mentioned here –&amp;nbsp; is the mistaken belief that one, or even a few tests can really represent all usage fairly.&amp;nbsp; Any comparison has to have some specific goal — to compare something in some particular case, whether it be “maximum offline compression ignoring encoding speed” or “real-time high-speed video streaming” or whatnot.&amp;nbsp; And even then, no comparison can represent all use-cases in that category alone.&amp;nbsp; An encoder comparison can only be honest if it’s aware of its limitations.&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt;</summary></entry><entry><title>Using h264/multiview codec from Intel Media SDK</title><link href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html" rel="alternate"></link><published>2013-10-11T12:37:00+02:00</published><updated>2013-10-11T12:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-11:using-h264multiview-codec-from-intel.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div class="tr_bq"&gt;I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:&lt;/div&gt;
-&lt;blockquote&gt;&lt;b&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080
-Return on error: error code -3, .\src\pipeline_encode.cpp &amp;nbsp; &amp;nbsp; &amp;nbsp; 865
+&lt;h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"&gt;&lt;strong style="background-color: white;"&gt;The greatest mistake of all&lt;/strong&gt;&lt;/h3&gt;&lt;blockquote class="tr_bq"&gt;&lt;span style="background-color: white;"&gt;Above all, the biggest and most common mistake — and the one that leads to many of the problems mentioned here –&amp;nbsp; is the mistaken belief that one, or even a few tests can really represent all usage fairly.&amp;nbsp; Any comparison has to have some specific goal — to compare something in some particular case, whether it be “maximum offline compression ignoring encoding speed” or “real-time high-speed video streaming” or whatnot.&amp;nbsp; And even then, no comparison can represent all use-cases in that category alone.&amp;nbsp; An encoder comparison can only be honest if it’s aware of its limitations.&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt;</summary></entry><entry><title>Using h264/multiview codec from Intel Media SDK</title><link href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html" rel="alternate"></link><published>2013-10-11T12:37:00+02:00</published><updated>2013-10-11T12:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-11:using-h264multiview-codec-from-intel.html</id><summary type="html">&lt;p&gt;I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w &lt;span class="m"&gt;1920&lt;/span&gt; -h 1080
+Return on error: error code -3, .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\p&lt;/span&gt;ipeline_encode.cpp       865
 
-Return on error: error code 1, &amp;nbsp;.\src\sample_encode.cpp 343
-Frame number: 0&lt;/b&gt;&lt;/blockquote&gt;&lt;div&gt;I started debug and found out the error appears in&amp;nbsp;&lt;/div&gt;&lt;blockquote class="tr_bq"&gt;&lt;b&gt;MFXVideoSession::mfxStatus Init(mfxIMPL impl, mfxVersion *ver)
+Return on error: error code 1,  .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\s&lt;/span&gt;ample_encode.cpp 343
+Frame number: 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I started debug and found out the error appears in &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MFXVideoSession::mfxStatus Init(mfxIMPL impl, mfxVersion *ver)
 {
-&amp;nbsp; &amp;nbsp; return MFXInit(impl, ver, &amp;amp;m_session);
-}&lt;/b&gt;&lt;/blockquote&gt;Error code
-&lt;blockquote class="tr_bq"&gt;**&amp;nbsp;MFX_ERR_UNSUPPORTED &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; = -3, &amp;nbsp; /* undeveloped feature */**&lt;/blockquote&gt;
-Of course, the cause was in missing dll.
-&lt;blockquote class="tr_bq"&gt;**libmfxsw32.dll****libmfxsw64.dll**&lt;/blockquote&gt;After I added it to console's directory everything became fine.
+    return MFXInit(impl, ver, &amp;amp;m_session);
+}
+&lt;/pre&gt;&lt;/div&gt;
 
 
-PS I could not build sample_encode with Visual Studio 2008. So use 2010 instead.&lt;/div&gt;</summary><category term="c++"></category><category term="errors"></category><category term="dll"></category><category term="video"></category></entry><entry><title>Using ls command</title><link href="https://serge-m.github.io/using-ls-command.html" rel="alternate"></link><published>2013-10-08T12:24:00+02:00</published><updated>2013-10-08T12:24:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-08:using-ls-command.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;**&lt;span style="color: #93c47d;"&gt;ls -w1 */ &lt;/span&gt;&amp;nbsp;**- show only subdirectories in current directory (*/) and display in 1 column (-w1)
+&lt;p&gt;Error code&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; MFX_ERR_UNSUPPORTED                 = -3,   /* undeveloped feature */
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Of course, the cause was in missing dll.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;libmfxsw32.dlllibmfxsw64.dll
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After I added it to console's directory everything became fine.&lt;/p&gt;
+&lt;p&gt;PS I could not build sample_encode with Visual Studio 2008. So use 2010 instead.&lt;/p&gt;</summary><category term="c++"></category><category term="errors"></category><category term="dll"></category><category term="video"></category></entry><entry><title>Using ls command</title><link href="https://serge-m.github.io/using-ls-command.html" rel="alternate"></link><published>2013-10-08T12:24:00+02:00</published><updated>2013-10-08T12:24:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-08:using-ls-command.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;**&lt;span style="color: #93c47d;"&gt;ls -w1 */ &lt;/span&gt;&amp;nbsp;**- show only subdirectories in current directory (*/) and display in 1 column (-w1)
 &lt;span style="color: #6aa84f;"&gt;**ls -c** &lt;/span&gt;&amp;nbsp;- sort by date&lt;/div&gt;</summary></entry><entry><title>Некоторые заметки о приведении типов в СиПлюсПлюс</title><link href="https://serge-m.github.io/blog-post-2.html" rel="alternate"></link><published>2013-10-04T17:59:00+02:00</published><updated>2013-10-04T17:59:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-04:blog-post-2.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;span style="color: #333333; font-family: monospace;"&gt;АлёнаC++:&lt;/span&gt;
 [http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)
 

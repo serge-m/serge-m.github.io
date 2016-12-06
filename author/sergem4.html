@@ -66,6 +66,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">Save Ipython notebook as script with the same filename</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-21T14:59:00+02:00"> Sun 21 September 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
+# source: http://stackoverflow.com/a/23619544 
+# In[1]:
+
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command); 
+
+# saving to a directory 'backup'. create the directory if it doesn't exist ...</div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -618,28 +652,6 @@ Sutter. C++11 features
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/remote-desktop-screen-resolution.html">remote desktop screen resolution</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-02-05T14:17:00+01:00"> Wed 05 February 2014</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Today I finally found out that screen resolution for remote session in Windows can be changed in settings menu _before_ connection. Little discoveries happen every day... Damn....</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/remote-desktop-screen-resolution.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem3.html">&laquo;</a>
@@ -878,6 +890,11 @@ Sutter. C++11 features
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/java.html">
                             Java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/java8.html">
+                            java8
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

@@ -66,6 +66,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">Save Ipython notebook as script with the same filename</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-21T14:59:00+02:00"> Sun 21 September 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
+# source: http://stackoverflow.com/a/23619544 
+# In[1]:
+
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command); 
+
+# saving to a directory 'backup'. create the directory if it doesn't exist ...</div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -620,36 +654,6 @@ http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublim
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">clang: error: linker command failed with exit code 1</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-20T16:14:00+01:00"> Thu 20 March 2014</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
-        /
-	<a href="https://serge-m.github.io/tag/clang.html">clang</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Finally I solved the problem with broken clang compilation
-I always got message
-
-        <div class="p1"><span style="font-family: Courier New, Courier, monospace;">ld: malformed archive TOC entry for <long strange identifier>, offset 362137760 is beyond end of file 303710208</span></div><div class="p1"><span style="font-family: Courier New, Courier, monospace;">&nbsp;for architecture x86_64</span></div><div class="p1"><span style="font-family: Courier New, Courier, monospace;">clang: error: linker command failed with exit code 1 (use -v to see invocation)</span></div><div class="p1">
-</div><div class="p1">when I interrupted compilation of a ...</div></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index3.html">&laquo;</a>
@@ -890,6 +894,11 @@ I always got message
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/java.html">
                             Java
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/java8.html">
+                            java8
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Mount yandex webdav on local dir - sergem personal public notebook</title>
+    <title>Run docker as pytest fixture - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,21 +9,22 @@
 
 
 
-<link rel="canonical" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">
+<link rel="canonical" href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="useful,linux" />
-        <meta name="description" content="apt-get install davfs2 mkdir /mnt/yandex.disk mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/ # check: df -h /mnt/yandex.disk/" />
+        <meta name="keywords" content="python,pytest,docker" />
+        <meta name="description" content="I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has docker run as set-up step docker stop/docker rm as tear down step As an example lets consider Seaweedfs as …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Mount yandex webdav on local dir"/>
-        <meta property="og:url" content="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html"/>
-        <meta property="og:description" content="apt-get install davfs2 mkdir /mnt/yandex.disk mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/ # check: df -h /mnt/yandex.disk/"/>
-        <meta property="article:published_time" content="2016-07-16" />
+        <meta property="og:title" content="Run docker as pytest fixture"/>
+        <meta property="og:url" content="https://serge-m.github.io/run-docker-as-pytest-fixture.html"/>
+        <meta property="og:description" content="I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has docker run as set-up step docker stop/docker rm as tear down step As an example lets consider Seaweedfs as …"/>
+        <meta property="article:published_time" content="2016-12-19" />
             <meta property="article:section" content="misc" />
-            <meta property="article:tag" content="useful" />
-            <meta property="article:tag" content="linux" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="pytest" />
+            <meta property="article:tag" content="docker" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -78,10 +79,10 @@ sergem personal public notebook            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html"
+                    <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html"
                        rel="bookmark"
-                       title="Permalink to Mount yandex webdav on local dir">
-                        Mount yandex webdav on local dir
+                       title="Permalink to Run docker as pytest fixture">
+                        Run docker as pytest fixture
                     </a>
                 </h1>
             </header>
@@ -91,7 +92,7 @@ sergem personal public notebook            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-07-16T13:45:00+02:00"> Sat 16 July 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-19T21:30:00+01:00"> Mon 19 December 2016</time>
     </span>
 
 
@@ -99,18 +100,78 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
         /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
+        /
+	<a href="https://serge-m.github.io/tag/docker.html">docker</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div class="highlight"><pre><span></span>    apt-get install davfs2
-    mkdir /mnt/yandex.disk
-    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
+                <p>I need to test external API or perform integration test for my application. 
+The extenal application can be accessible through docker image. I want to write a test that has 
+<em> <code>docker run</code> as set-up step
+</em> <code>docker stop/docker rm</code> as tear down step</p>
+<p>As an example lets consider <a href="https://github.com/chrislusf/seaweedfs">Seaweedfs</a> as external API. 
+SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images.
+After running you can check status (<code>curl -X GET localhost:9333</code>).</p>
+<p>Lets create two context managers: for master and slave. They will handle running and shutting down docker containers.</p>
+<p>Master:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">shlex</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">contextlib</span>
 
-    # check: 
-    df -h /mnt/yandex.disk/ 
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="n">docker_image</span> <span class="o">=</span> <span class="s2">&quot;chrislusf/seaweedfs&quot;</span>
+
+
+<span class="nd">@contextlib.contextmanager</span>
+<span class="k">def</span> <span class="nf">seaweedfs_master</span><span class="p">():</span>
+    <span class="n">container_id</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
+        <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;docker run -d -p 9333:9333 {docker_image} master&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">)))</span>
+    <span class="n">container_id</span> <span class="o">=</span> <span class="n">container_id</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">yield</span> <span class="n">container_id</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;docker&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">,</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">container_id</span><span class="p">])</span>
+</pre></div>
+
+
+<p>Slave:</p>
+<div class="highlight"><pre><span></span>@contextlib.contextmanager
+def seaweedfs_slave():
+    with seaweedfs_master() as master:
+        container_id = subprocess.check_output(
+            shlex.split(&#39;docker run -d -p 8080:8080 --link {master_id} &#39;
+                        &#39;{docker_image} volume -max=5 -mserver=&quot;localhost:9333&quot; -port=8080&#39;.format(
+                docker_image=docker_image,
+                master_id=master
+            )))
+        container_id = container_id.decode(&#39;utf8&#39;).strip()
+        yield &quot;http://localhost:9333/&quot;
+        subprocess.check_output([&#39;docker&#39;, &#39;rm&#39;, &#39;-f&#39;, container_id])
+</pre></div>
+
+
+<p>Helper class and pytest fixture:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">SeaWeedFSConnection:</span>
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">url</span>):
+        <span class="k">self</span>.<span class="n">url</span> = <span class="n">url</span>
+
+
+<span class="nv">@pytest</span>.<span class="n">fixture</span>(<span class="n">scope</span>=<span class="s">&quot;module&quot;</span>)
+<span class="n">def</span> <span class="n">seaweedfs</span>(<span class="n">request</span>):
+    <span class="n">with</span> <span class="n">seaweedfs_slave</span>() <span class="k">as</span> <span class="n">seaweed_url:</span>
+        <span class="n">yield</span> <span class="n">SeaWeedFSConnection</span>(<span class="n">seaweed_url</span>)
+</pre></div>
+
+
+<p>Finally our test:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">TestImageStorage:</span>
+    <span class="n">def</span> <span class="n">test1</span>(<span class="k">self</span>, <span class="n">seaweedfs</span>):
+        <span class="n">url</span> = <span class="n">seaweedfs</span>.<span class="n">url</span>
+        <span class="n">response</span> = <span class="n">requests</span>.<span class="n">get</span>(<span class="n">url</span>)
+        <span class="n">assert</span> <span class="n">response</span>.<span class="n">status_code</span> == <span class="mi">200</span>
 </pre></div>
             </div>
             <!-- /.entry-content -->

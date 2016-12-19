@@ -69,6 +69,36 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">Run docker as pytest fixture</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-12-19T21:30:00+01:00"> Mon 19 December 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
+        /
+	<a href="https://serge-m.github.io/tag/docker.html">docker</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>I need to test external API or perform integration test for my application. 
+The extenal application can be accessible through docker image. I want to write a test that has 
+<em> <code>docker run</code> as set-up step
+</em> <code>docker stop/docker rm</code> as tear down step</p>
+<p>As an example lets consider <a href="https://github.com/chrislusf/seaweedfs">Seaweedfs</a> as …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">Installing java 8 on linux mint 17.3</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -93,7 +123,7 @@ sergem personal public notebook            </a>
 Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <p>Update java alternatives:</p>
 <div class="highlight"><pre><span></span>sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1
-sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm ...</pre></div>
+sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">more ...</a>
                 </div>
             </article>
@@ -130,7 +160,7 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
 
 <p>Helper class for JSON-based response:</p>
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">JsonResponse</span>(<span class="n">Response</span>):
-    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">json_dict</span>, <span class="n">status</span>=<span class="mi">200 ...</span></pre></div>
+    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">json_dict</span>, <span class="n">status</span>=<span class="mi">200 …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
                 </div>
             </article>
@@ -158,7 +188,7 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. </p>
 <p>Registration on <a href="https://travis-ci.org/">https://travis-ci.org/</a> is straightforward.</p>
-<p>I have only public free accounts on github.  Thus I need two repositories: one ...</p>
+<p>I have only public free accounts on github.  Thus I need two repositories: one …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">more ...</a>
                 </div>
             </article>
@@ -195,7 +225,7 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
         <span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)):</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">MONTHS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes ...</span></pre></div>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/refactoring-python-extract-variable.html">more ...</a>
                 </div>
             </article>
@@ -281,7 +311,7 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 </li>
 <li>
 <p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
-    I am not sure if this step actually ...</p></li></ol>
+    I am not sure if this step actually helped. TODO …</p></li></ol>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fix-google-search-suggestions-in-firefox-in-linux-mint.html">more ...</a>
                 </div>
             </article>
@@ -357,7 +387,7 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><h2>Installation</h2>
 <p>sudo apt-get install tmux</p>
-<p><img alt="" src="https://3.bp.blogspot.com/-MnndlZeDxkc/V6bulTON9uI/AAAAAAAAEmU/olWSomTKLjQ4Z2uHikjP4PQwCr1Wd2zUwCLcB/s320/Screenshot%2Bfrom%2B2016-08-07%2B10%253A17%253A12.png" /></p>
+<p><img alt="" src="https://3.bp.blogspot.com/-MnndlZeDxkc/V6bulTON9uI/AAAAAAAAEmU/olWSomTKLjQ4Z2uHikjP4PQwCr1Wd2zUwCLcB/s320/Screenshot%2Bfrom%2B2016-08-07%2B10%253A17%253A12.png"></p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
@@ -373,7 +403,7 @@ w  list windows
 n  next window
 p  previous window
 f  find window
-,  name window ...</pre></div>
+,  name window …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
             </article>
@@ -416,7 +446,7 @@ Assume we have following partitions:</p>
 <div class="highlight"><pre><span></span>sudo mount /dev/sda2 /mnt
 
 ## if you have boot partition:
-# sudo ...</pre></div>
+# sudo …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html">more ...</a>
                 </div>
             </article>
@@ -484,7 +514,7 @@ gnuplot.imagesc(img[1])
 
 
 <p>Torch&lt;-&gt;numpy dictionary
-<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https ...</a></p>
+<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https …</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-torch-stores-images.html">more ...</a>
                 </div>
             </article>
@@ -511,7 +541,7 @@ Linking CXX executable mshrable</p>
 <div class="highlight"><pre><span></span>~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39;
-~/miniconda/envs ...</pre></div>
+~/miniconda/envs …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-torch-for-miniconda.html">more ...</a>
                 </div>
             </article>
@@ -544,7 +574,7 @@ cmake --build . --config Release
 
 <p>inside function  build_dlib() of file setup.py add the highlighted code:</p>
 <div class="highlight"><pre><span></span>if platform_arch == &#39;64bit&#39; and sys.platform == &quot;win32&quot;:
-    # 64bit build on Windows ...</pre></div>
+    # 64bit build on Windows …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/compile-dlib-for-miniconda.html">more ...</a>
                 </div>
             </article>
@@ -709,39 +739,8 @@ Now you can autocomplete from history using Up and Down keys.
 
 </li>
 <li>
-<p>Create package and vitual environment ...</p></li></ol>
+<p>Create package and vitual environment. Something …</p></li></ol>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pypy-with-numpy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/about-python.html">About python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-05-01T12:33:00+02:00"> Sun 01 May 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/links.html">links</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Cheat Sheet: Writing Python 2-3 compatible code
-<a href="http://python-future.org/compatible_idioms.html">http://python-future.org/compatible_idioms.html</a></p>
-<p>Google Python Guidelines
-<a href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
-<p>Inheritance
-<a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-python.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -776,6 +775,11 @@ Now you can autocomplete from history using Up and Down keys.
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
+                            Run docker as pytest fixture
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">
                             Installing java 8 on linux mint 17.3
@@ -829,11 +833,6 @@ Now you can autocomplete from history using Up and Down keys.
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">
                             Mount yandex webdav on local dir
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/how-torch-stores-images.html">
-                            how torch stores images
                         </a>
                     </li>
                 </ul>
@@ -924,6 +923,11 @@ Now you can autocomplete from history using Up and Down keys.
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/dll.html">
                             dll
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/docker.html">
+                            docker
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -1121,7 +1125,7 @@ Now you can autocomplete from history using Up and Down keys.
                             pypy
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/pytest.html">
                             pytest
                         </a>

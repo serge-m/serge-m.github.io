@@ -66,6 +66,36 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">Using h264/multiview codec from Intel Media SDK</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-11T12:37:00+02:00"> Fri 11 October 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/errors.html">errors</a>
+        /
+	<a href="https://serge-m.github.io/tag/dll.html">dll</a>
+        /
+	<a href="https://serge-m.github.io/tag/video.html">video</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:</p>
+<div class="highlight"><pre><span></span>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w <span class="m">1920</span> -h 1080
+Return on error: error code -3, .<span class="se">\s …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/using-ls-command.html">Using ls command</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -108,7 +138,7 @@ sergem personal public notebook            </a>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
 [http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)
 
-<code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу ...</span></div>
+<code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу …</span></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-2.html">more ...</a>
                 </div>
             </article>
@@ -164,7 +194,7 @@ I had pretty simple code with opencv:
 
 It caused crash in debug configuration:
 
-**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ...</div>
+**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html">more ...</a>
                 </div>
             </article>
@@ -193,7 +223,7 @@ If you use single-channel image.
 
 <div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div><div>
 </div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div><div>
-</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small ...</div></div>
+</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small …</div></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
                 </div>
             </article>
@@ -220,7 +250,7 @@ If you use single-channel image.
       - project2
           -subdir1
           -subdir2
-          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 ...</span></span></code></pre></div>
+          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">more ...</a>
                 </div>
             </article>
@@ -247,7 +277,7 @@ size of input video is 1920x1088, format YUV420 progressive
 
 UPD:
 ffmpeg is renamed to avconv.
-Using it for trimming ...</div>
+Using it for trimming …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">more ...</a>
                 </div>
             </article>
@@ -270,7 +300,7 @@ Using it for trimming ...</div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
 
 I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html](http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html))
-![](http://3.bp.blogspot.com ...</div>
+![](http://3.bp.blogspot.com …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">more ...</a>
                 </div>
             </article>
@@ -432,7 +462,7 @@ ISBN: 9780121197926, 0121197921</div></div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Assume we have Visual Stusio solution for console that makes some video processing.
 The console takes two input videos and generates the third video:
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
-1) dataset1 conststs of videos ...</div>
+1) dataset1 conststs of videos …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html">more ...</a>
                 </div>
             </article>
@@ -456,7 +486,7 @@ The console takes two input videos and generates the third video:
 I is useful to determine how big is the gain between "before" and "after" versions.
 Or determine what curve is better if they have complex form (for example, intersecting).</p>
 <p>I found matlab <a href="http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric">script</a>,
-that calculates BD-PSNR, but it was not correct ...</p>
+that calculates BD-PSNR, but it was not correct …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/bjontegaard-metric-matlab-script.html">more ...</a>
                 </div>
             </article>
@@ -478,7 +508,7 @@ that calculates BD-PSNR, but it was not correct ...</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
 ![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png)
-The solution is ...</div>
+The solution is …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">more ...</a>
                 </div>
             </article>
@@ -529,29 +559,8 @@ Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.c
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
 The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
-%SystemRoot ...</span></blockquote></div>
+%SystemRoot …</span></blockquote></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/error-spawning-cmdexe.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/blogs-about-blender.html">Blogs about blender</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-05-12T12:20:00+02:00"> Sun 12 May 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[http://blendersushi.blogspot.ru/](http://blendersushi.blogspot.ru/)&nbsp;- one of blender's developers
-[http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html](http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4 ...</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blogs-about-blender.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -587,6 +596,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
+                            Run docker as pytest fixture
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">
                             Installing java 8 on linux mint 17.3
@@ -640,11 +654,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">
                             Mount yandex webdav on local dir
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/how-torch-stores-images.html">
-                            how torch stores images
                         </a>
                     </li>
                 </ul>
@@ -735,6 +744,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/dll.html">
                             dll
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/docker.html">
+                            docker
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -932,7 +946,7 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                             pypy
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/pytest.html">
                             pytest
                         </a>

@@ -66,6 +66,33 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">Trim frames from raw YUV video using FFMPEG</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-07-02T19:01:00+02:00"> Tue 02 July 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Trim 5 frames starting from 160-th frame and write to png sequence
+
+<blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
+size of input video is 1920x1088, format YUV420 progressive
+
+UPD:
+ffmpeg is renamed to avconv.
+Using it for trimming …</div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">Color problems in avisynth->overlay</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -83,7 +110,7 @@ sergem personal public notebook            </a>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
 
 I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html](http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html))
-![](http://3.bp.blogspot.com ...</div>
+![](http://3.bp.blogspot.com …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">more ...</a>
                 </div>
             </article>
@@ -245,7 +272,7 @@ ISBN: 9780121197926, 0121197921</div></div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Assume we have Visual Stusio solution for console that makes some video processing.
 The console takes two input videos and generates the third video:
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
-1) dataset1 conststs of videos ...</div>
+1) dataset1 conststs of videos …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html">more ...</a>
                 </div>
             </article>
@@ -269,7 +296,7 @@ The console takes two input videos and generates the third video:
 I is useful to determine how big is the gain between "before" and "after" versions.
 Or determine what curve is better if they have complex form (for example, intersecting).</p>
 <p>I found matlab <a href="http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric">script</a>,
-that calculates BD-PSNR, but it was not correct ...</p>
+that calculates BD-PSNR, but it was not correct …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/bjontegaard-metric-matlab-script.html">more ...</a>
                 </div>
             </article>
@@ -291,7 +318,7 @@ that calculates BD-PSNR, but it was not correct ...</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
 ![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png)
-The solution is ...</div>
+The solution is …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">more ...</a>
                 </div>
             </article>
@@ -342,7 +369,7 @@ Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.c
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
 The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
-%SystemRoot ...</span></blockquote></div>
+%SystemRoot …</span></blockquote></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/error-spawning-cmdexe.html">more ...</a>
                 </div>
             </article>
@@ -363,7 +390,7 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[http://blendersushi.blogspot.ru/](http://blendersushi.blogspot.ru/)&nbsp;- one of blender's developers
-[http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html](http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4 ...</div>
+[http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html](http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0 …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blogs-about-blender.html">more ...</a>
                 </div>
             </article>
@@ -459,6 +486,11 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
+                            Run docker as pytest fixture
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">
                             Installing java 8 on linux mint 17.3
                         </a>
@@ -511,11 +543,6 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">
                             Mount yandex webdav on local dir
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/how-torch-stores-images.html">
-                            how torch stores images
                         </a>
                     </li>
                 </ul>
@@ -606,6 +633,11 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/dll.html">
                             dll
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/docker.html">
+                            docker
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -803,7 +835,7 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
                             pypy
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/pytest.html">
                             pytest
                         </a>

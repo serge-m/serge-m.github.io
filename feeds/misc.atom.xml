@@ -33,40 +33,40 @@ After running you can check status (&lt;code&gt;curl -X GET localhost:9333&lt;/c
 
 
 &lt;p&gt;Slave:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@contextlib.contextmanager
-def seaweedfs_slave():
-    with seaweedfs_master() as master:
-        container_id = subprocess.check_output(
-            shlex.split(&amp;#39;docker run -d -p 8080:8080 --link {master_id} &amp;#39;
-                        &amp;#39;{docker_image} volume -max=5 -mserver=&amp;quot;localhost:9333&amp;quot; -port=8080&amp;#39;.format(
-                docker_image=docker_image,
-                master_id=master
-            )))
-        container_id = container_id.decode(&amp;#39;utf8&amp;#39;).strip()
-        yield &amp;quot;http://localhost:9333/&amp;quot;
-        subprocess.check_output([&amp;#39;docker&amp;#39;, &amp;#39;rm&amp;#39;, &amp;#39;-f&amp;#39;, container_id])
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextlib.contextmanager&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;seaweedfs_slave&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;seaweedfs_master&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;container_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_output&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;shlex&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;docker run -d -p 8080:8080 --link {master_id} &amp;#39;&lt;/span&gt;
+                        &lt;span class="s1"&gt;&amp;#39;{docker_image} volume -max=5 -mserver=&amp;quot;localhost:9333&amp;quot; -port=8080&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="n"&gt;docker_image&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;docker_image&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="n"&gt;master_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;
+            &lt;span class="p"&gt;)))&lt;/span&gt;
+        &lt;span class="n"&gt;container_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;container_id&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;http://localhost:9333/&amp;quot;&lt;/span&gt;
+        &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;check_output&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;docker&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-f&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;container_id&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Helper class and pytest fixture:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;SeaWeedFSConnection:&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;url&lt;/span&gt;):
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;url&lt;/span&gt; = &lt;span class="n"&gt;url&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SeaWeedFSConnection&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;
 
 
-&lt;span class="nv"&gt;@pytest&lt;/span&gt;.&lt;span class="n"&gt;fixture&lt;/span&gt;(&lt;span class="n"&gt;scope&lt;/span&gt;=&lt;span class="s"&gt;&amp;quot;module&amp;quot;&lt;/span&gt;)
-&lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;seaweedfs&lt;/span&gt;(&lt;span class="n"&gt;request&lt;/span&gt;):
-    &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;seaweedfs_slave&lt;/span&gt;() &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;seaweed_url:&lt;/span&gt;
-        &lt;span class="n"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;SeaWeedFSConnection&lt;/span&gt;(&lt;span class="n"&gt;seaweed_url&lt;/span&gt;)
+&lt;span class="nd"&gt;@pytest.fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;seaweedfs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;seaweedfs_slave&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;seaweed_url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;SeaWeedFSConnection&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;seaweed_url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Finally our test:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;TestImageStorage:&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;test1&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;seaweedfs&lt;/span&gt;):
-        &lt;span class="n"&gt;url&lt;/span&gt; = &lt;span class="n"&gt;seaweedfs&lt;/span&gt;.&lt;span class="n"&gt;url&lt;/span&gt;
-        &lt;span class="n"&gt;response&lt;/span&gt; = &lt;span class="n"&gt;requests&lt;/span&gt;.&lt;span class="n"&gt;get&lt;/span&gt;(&lt;span class="n"&gt;url&lt;/span&gt;)
-        &lt;span class="n"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;.&lt;span class="n"&gt;status_code&lt;/span&gt; == &lt;span class="mi"&gt;200&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TestImageStorage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;seaweedfs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;seaweedfs&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;
+        &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="pytest"></category><category term="docker"></category></entry><entry><title>Installing java 8 on linux mint 17.3</title><link href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html" rel="alternate"></link><published>2016-12-07T00:30:00+01:00</published><updated>2016-12-07T00:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-07:/installing-java-8-on-linux-mint-17-3.html</id><summary type="html">&lt;p&gt;Download JDK for Java 8 from Oracle's web-site.
 Unpack archive to let's say &lt;code&gt;/usr/lib/jvm/jdk1.8.0/&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Update java alternatives:&lt;/p&gt;

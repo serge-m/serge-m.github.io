@@ -138,40 +138,40 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 
 
 <p>Slave:</p>
-<div class="highlight"><pre><span></span>@contextlib.contextmanager
-def seaweedfs_slave():
-    with seaweedfs_master() as master:
-        container_id = subprocess.check_output(
-            shlex.split(&#39;docker run -d -p 8080:8080 --link {master_id} &#39;
-                        &#39;{docker_image} volume -max=5 -mserver=&quot;localhost:9333&quot; -port=8080&#39;.format(
-                docker_image=docker_image,
-                master_id=master
-            )))
-        container_id = container_id.decode(&#39;utf8&#39;).strip()
-        yield &quot;http://localhost:9333/&quot;
-        subprocess.check_output([&#39;docker&#39;, &#39;rm&#39;, &#39;-f&#39;, container_id])
+<div class="highlight"><pre><span></span><span class="nd">@contextlib.contextmanager</span>
+<span class="k">def</span> <span class="nf">seaweedfs_slave</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">seaweedfs_master</span><span class="p">()</span> <span class="k">as</span> <span class="n">master</span><span class="p">:</span>
+        <span class="n">container_id</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
+            <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;docker run -d -p 8080:8080 --link {master_id} &#39;</span>
+                        <span class="s1">&#39;{docker_image} volume -max=5 -mserver=&quot;localhost:9333&quot; -port=8080&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">,</span>
+                <span class="n">master_id</span><span class="o">=</span><span class="n">master</span>
+            <span class="p">)))</span>
+        <span class="n">container_id</span> <span class="o">=</span> <span class="n">container_id</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">yield</span> <span class="s2">&quot;http://localhost:9333/&quot;</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;docker&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">,</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">container_id</span><span class="p">])</span>
 </pre></div>
 
 
 <p>Helper class and pytest fixture:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">SeaWeedFSConnection:</span>
-    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">url</span>):
-        <span class="k">self</span>.<span class="n">url</span> = <span class="n">url</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SeaWeedFSConnection</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
 
 
-<span class="nv">@pytest</span>.<span class="n">fixture</span>(<span class="n">scope</span>=<span class="s">&quot;module&quot;</span>)
-<span class="n">def</span> <span class="n">seaweedfs</span>(<span class="n">request</span>):
-    <span class="n">with</span> <span class="n">seaweedfs_slave</span>() <span class="k">as</span> <span class="n">seaweed_url:</span>
-        <span class="n">yield</span> <span class="n">SeaWeedFSConnection</span>(<span class="n">seaweed_url</span>)
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">seaweedfs</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">seaweedfs_slave</span><span class="p">()</span> <span class="k">as</span> <span class="n">seaweed_url</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">SeaWeedFSConnection</span><span class="p">(</span><span class="n">seaweed_url</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Finally our test:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">TestImageStorage:</span>
-    <span class="n">def</span> <span class="n">test1</span>(<span class="k">self</span>, <span class="n">seaweedfs</span>):
-        <span class="n">url</span> = <span class="n">seaweedfs</span>.<span class="n">url</span>
-        <span class="n">response</span> = <span class="n">requests</span>.<span class="n">get</span>(<span class="n">url</span>)
-        <span class="n">assert</span> <span class="n">response</span>.<span class="n">status_code</span> == <span class="mi">200</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestImageStorage</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seaweedfs</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">seaweedfs</span><span class="o">.</span><span class="n">url</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
 </pre></div>
             </div>
             <!-- /.entry-content -->

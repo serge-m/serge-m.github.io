@@ -143,7 +143,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
     <span class="k">with</span> <span class="n">seaweedfs_master</span><span class="p">()</span> <span class="k">as</span> <span class="n">master</span><span class="p">:</span>
         <span class="n">container_id</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
             <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;docker run -d -p 8080:8080 --link {master_id} &#39;</span>
-                        <span class="s1">&#39;{docker_image} volume -max=5 -mserver=&quot;localhost:9333&quot; -port=8080&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="s1">&#39;{docker_image} volume -max=5 -mserver=&quot;{master_id}:9333&quot; -port=8080&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">,</span>
                 <span class="n">master_id</span><span class="o">=</span><span class="n">master</span>
             <span class="p">)))</span>

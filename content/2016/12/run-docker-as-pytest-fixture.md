@@ -4,6 +4,7 @@ Date: 2016-12-19 21:30:00
 Slug: run-docker-as-pytest-fixture
 Tags: python,pytest,docker
 
+
 I need to test external API or perform integration test for my application. 
 The extenal application can be accessible through docker image. I want to write a test that has 
 * `docker run` as set-up step
@@ -19,7 +20,7 @@ Lets create two context managers: for master and slave. They will handle running
 
 Master:
 
-```
+```python
 import subprocess
 import shlex
 import requests
@@ -40,7 +41,7 @@ def seaweedfs_master():
 ```
 
 Slave:
-```
+```python
 @contextlib.contextmanager
 def seaweedfs_slave():
     with seaweedfs_master() as master:
@@ -56,7 +57,7 @@ def seaweedfs_slave():
 ```
 
 Helper class and pytest fixture:
-```
+```python
 class SeaWeedFSConnection:
     def __init__(self, url):
         self.url = url
@@ -69,7 +70,7 @@ def seaweedfs(request):
 ```
 
 Finally our test:
-```
+```python
 class TestImageStorage:
     def test1(self, seaweedfs):
         url = seaweedfs.url

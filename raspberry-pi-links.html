@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Articles by SergeM - sergem personal public notebook</title>
+    <title>Raspberry Pi Links - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,15 +9,21 @@
 
 
 
+<link rel="canonical" href="https://serge-m.github.io/raspberry-pi-links.html">
 
-        <meta name="author" content="sergem" />
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="links" />
+        <meta name="description" content="Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content="https://serge-m.github.io"/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Raspberry Pi Links"/>
+        <meta property="og:url" content="https://serge-m.github.io/raspberry-pi-links.html"/>
+        <meta property="og:description" content="Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI"/>
+        <meta property="article:published_time" content="2016-12-31" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="links" />
+            <meta property="article:author" content="SergeM" />
 
 
     <!-- Bootstrap -->
@@ -32,6 +38,8 @@
 
 
 
+        <link href="https://serge-m.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook misc ATOM Feed"/>
 
 </head>
 <body>
@@ -50,7 +58,7 @@ sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="https://serge-m.github.io/category/misc.html">Misc</a>
                         </li>
             </ul>
@@ -65,13 +73,24 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://serge-m.github.io/pypy-with-numpy.html">pypy with numpy</a></h2>
-                    <div class="well well-sm">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://serge-m.github.io/raspberry-pi-links.html"
+                       rel="bookmark"
+                       title="Permalink to Raspberry Pi Links">
+                        Raspberry Pi Links
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-05-16T00:11:00+02:00"> Mon 16 May 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-12-31T21:30:00+01:00"> Sat 31 December 2016</time>
     </span>
 
 
@@ -79,631 +98,17 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Looks like pypy now can build numpy. Well, a slightly modified numpy.</p>
-<ol>
-<li>
-<p>Get default branch of pypy. be careful cause the developers don't maintain default branch compilable.
-    Revision 84341 (c86b42dd7613) works for me.</p>
-</li>
-<li>
-<p>compile using</p>
-<div class="highlight"><pre><span></span>./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy
-</pre></div>
-
-
-</li>
-<li>
-<p>Create package and vitual environment. Something …</p></li></ol>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pypy-with-numpy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/about-python.html">About python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-05-01T12:33:00+02:00"> Sun 01 May 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
 	<a href="https://serge-m.github.io/tag/links.html">links</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Cheat Sheet: Writing Python 2-3 compatible code
-<a href="http://python-future.org/compatible_idioms.html">http://python-future.org/compatible_idioms.html</a></p>
-<p>Google Python Guidelines
-<a href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
-<p>Inheritance
-<a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-python.html">more ...</a>
                 </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/dropbox-in-linux-mint.html">Dropbox in linux mint</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-10T20:50:00+02:00"> Sun 10 April 2016</time>
-    </span>
+                <p>Continuous deployment (Russian)
+<a href="https://m.habrahabr.ru/post/318840/">Непрерывная кросс компиляция на Raspberry PI</a></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Hmm. It doesn't work.
-I see the icon when i do</p>
-<div class="highlight"><pre><span></span>dropbox stop
-dropbox start
-</pre></div>
-
-
-<p>but I cannot click on it.</p>
-<p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
-Don't forget to do</p>
-<div class="highlight"><pre><span></span>$ killall nemo
-</pre></div>
-
-
-<p>after installation to make it work.</p>
-<h1>Final Solution</h1>
-<p><a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">source</a>&nbsp;</p>
-<p>Use …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/dropbox-in-linux-mint.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/c-plus-plus-ide-for-linux.html">C++ IDE for linux</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-05T00:45:00+02:00"> Tue 05 April 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>CLion is awesome but expensive.</p>
-<p>Found <a href="http://www.codelite.org">Codelite</a> on <a href="http://stackoverflow.com/a/1775460">http://stackoverflow.com/a/1775460</a>.
-Looks good. No disgust after 10 minutes of work.</p>
-<p>I was able to debug C code of Numpy in Virtualenv.</p>
-<ol>
-<li>
-<p>Launched from console after activating of virtual environment
-<code>&gt; source ./&lt;path to activate&gt;/activate</code></p>
-</li>
-<li>
-<p>add breakpoints</p>
-</li>
-<li>
-<p>Run (F5 …</p></li></ol>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/c-plus-plus-ide-for-linux.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html">Debugging numpy (any C code of Python) using gdb</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-04T00:01:00+02:00"> Mon 04 April 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I created a tiny python script that executes some python code, that executes some C code:</p>
-<div class="highlight"><pre><span></span><span class="c1"># contents of dbg_broadcast.py</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="kp">broadcast</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]]))</span>
-</pre></div>
-
-
-<p>Running in console:</p>
-<div class="highlight"><pre><span></span>&gt; gdb python
-GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
-Copyright (C) 2014 …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/scipy-in-pypy.html">Scipy in pypy</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-03-22T22:12:00+01:00"> Tue 22 March 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.</p>
-<p>I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn't work.</p>
-<p><a href="https://github.com/serge-m/scipy/blob/v0.17.0_for_pypy_bin/bin/scipy_0.17.0_for_pypy_draft.tar.gz">link</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/scipy-in-pypy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/building-pypy.html">Building Pypy</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-03-22T21:51:00+01:00"> Tue 22 March 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Pypy builds faster if using <code>-O2</code> option.</p>
-<p>To build faster (according to pypy documentation) use prebuilt pypy from <a href="http://buildbot.pypy.org/nightly/trunk/">link</a></p>
-<p>Using virtualenv to create virtual environment for it.</p>
-<p>Build script (to be placed in pypy source directory):</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nb">cd</span> pypy/goal <span class="o">||</span> <span class="nb">exit</span> 1
-<span class="nb">source</span> &lt;path to …</pre></div></td></tr></table>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/building-pypy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/til-about-pypy.html">TIL about PyPy</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-01-08T08:30:00+01:00"> Fri 08 January 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Building from source root using command
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
-produces structure with obsolete pypy-c and libpypy-c.so in 
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span>
-
-Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use …</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/til-about-pypy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/avconv.html">avconv</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-14T22:00:00+01:00"> Mon 14 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">convert video to jpeg with good quality
-<pre class="code _bash">avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg
-</pre><div>
-</div><div>crop video</div><div>avconv -i input.avi -vf crop=<width>:<height>:<x>:<y> output_%05d.png
-
-create gif using&nbsp;http://gifmaker.me/
-
-</div>
-
-</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/avconv.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/blog-post-11.html">М</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-14T01:15:00+01:00"> Mon 14 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useles.html">useles</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.
-</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-11.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/operations-with-lists-in-java.html">Operations with lists in Java</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-12T14:10:00+01:00"> Sat 12 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/java.html">Java</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Initializa list:
-
-<pre class="lang-java prettyprint prettyprinted"><code><span class="typ">List</span><span class="pun"><</span><span class="typ">String</span><span class="pun">></span><span class="pln"> names </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Arrays</span><span class="pun">.</span><span class="pln">asList</span><span class="pun">(</span><span class="str">"Bob"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"John"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Alice"</span><span class="pun">);</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/operations-with-lists-in-java.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/free-pdf-editor-for-linux.html">Free PDF Editor for Linux</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-30T02:17:00+01:00"> Fri 30 October 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Looks good for linux mint/ Ubuntu
-[https://code-industry.net/free-pdf-editor/](https://code-industry.net/free-pdf-editor/)
-
-</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/free-pdf-editor-for-linux.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/keyboard-layout-switching-toggle.html">Keyboard layout switching. Toggle between 2 of 3 languages.</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-18T02:26:00+02:00"> Sun 18 October 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux-for-dummies.html">Linux for dummies</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">current</span><span class="o">=</span><span class="sb">`</span>setxkbmap …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/keyboard-layout-switching-toggle.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">Golden Dict instead of Lingvo</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-11T20:37:00+02:00"> Sun 11 October 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Official web-site
-
-[http://goldendict.org/](http://goldendict.org/)
-
-
-
-Newer version for Windows[https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows](https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows)
-
-
-Conversion (decompression) Lingvo *.lds&nbsp; to *.dsl format
-[https://pypi.python.org/pypi/lingvoreader](https://pypi.python.org/pypi/lingvoreader)
-it's a python module
-install …</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html">Detector of flying objects in IR video</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-12T21:14:00+02:00"> Sat 12 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Implemented using python
-
-https://github.com/serge-m/object_detection_ir_video
-
-![](http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png)
-![](http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg)
-
-
-</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/ffmpegavconv-jpeg-quality.html">ffmpeg(avconv) jpeg quality</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-06T15:52:00+02:00"> Sun 06 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
-        /
-	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">conversion with good jpeg quality:
-
-avconv&nbsp; -i ./input.avi -q:v 1 output_frame_%05d.jpg</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ffmpegavconv-jpeg-quality.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/encodedecode-binary-file-to-ascii.html">Encode/decode binary file to ascii</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-06T14:17:00+02:00"> Sun 06 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><pre class="lang-bsh prettyprint prettyprinted"><code><span class="pln">base64 source_file > destination.ascii </span></code></pre><pre class="lang-bsh prettyprint prettyprinted"><code><span class="pln">base64 </span><span class="pun">--</span><span class="pln">decode </span></code><code><span class="pln">destination.ascii > decoded_file</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/encodedecode-binary-file-to-ascii.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/jobs-2015.html">Jobs 2015</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-06T00:30:00+02:00"> Sun 06 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/interview.html">interview</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">201503 Google
-
-?? Strange guys from France.  
-
-201504 Definiens AG. Tools for medical research and analysis of tissue. Frontend? I wanted machine learning. Munich 
-
-201505 EyeEm. Computer Vision Engineer. Computer vision. Nice office. Shaji. Berlin
-
-201505 Stylight. Munich. ML? ?? 
-
-201506 Software Diagnostics. Potsdam. Interesting project about evaluation of code quality in …</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/jobs-2015.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/interactive-graphs-in-ipython.html">Interactive graphs in IPython</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-06-07T13:39:00+02:00"> Sun 07 June 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There are at least two libraries for ipython able to plot graphs interactively and inline.
-1) [mpld3 ](http://mpld3.github.io/)
-2) [bokeh](http://bokeh.pydata.org/en/latest/)
-
-I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I …</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/interactive-graphs-in-ipython.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/every-day-photos.html">every day photos</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-05-26T00:15:00+02:00"> Tue 26 May 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/data.html">data</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-[https://vimeo.com/108551893](https://vimeo.com/108551893) - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/
-
-[http://www.365plrds.com/slideshow.html](http://www.365plrds.com/slideshow.html)
-
-
-https://www.youtube.com/watch?v=tWzPDNabdBs
-
-https://www.youtube.com/watch?v=3MPyoAN4FIk
-
-https://www.youtube.com/watch?v=qJutZCyXEJg
-
-https …</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/every-day-photos.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
-        <ul class="pagination">
-                <li class="prev"><a href="https://serge-m.github.io/author/sergem.html">&laquo;</a>
-                </li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem.html">1</a></li>
-                    <li class="active"><a
-                            href="https://serge-m.github.io/author/sergem2.html">2</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem3.html">3</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem4.html">4</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem5.html">5</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem6.html">6</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/author/sergem7.html">7</a></li>
-                <li class="next"><a
-                        href="https://serge-m.github.io/author/sergem3.html">&raquo;</a></li>
-        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>

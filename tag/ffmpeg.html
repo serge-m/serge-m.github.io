@@ -67,7 +67,7 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://serge-m.github.io/avconv.html">avconv</a></h2>
+                <h2><a href="https://serge-m.github.io/avconv.html">convert video to jpeg with good quality</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -83,18 +83,22 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
         /
 	<a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
+        /
+	<a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">convert video to jpeg with good quality
-<pre class="code _bash">avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg
-</pre><div>
-</div><div>crop video</div><div>avconv -i input.avi -vf crop=<width>:<height>:<x>:<y> output_%05d.png
+                <div class="summary"><p>convert video to jpeg with good quality:</p>
+<div class="highlight"><pre><span></span>avconv -i input_video.mp4 -qmax <span class="m">1</span> -qmin <span class="m">1</span> images_%05d.jpg
+</pre></div>
 
-create gif using&nbsp;http://gifmaker.me/
 
-</div>
+<p>crop video:</p>
+<div class="highlight"><pre><span></span>avconv -i input.avi -vf <span class="nv">crop</span><span class="o">=</span>&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
+</pre></div>
 
-</div>
+
+<p>create gif using </p>
+<p>http://gifmaker.me/</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/avconv.html">more ...</a>
                 </div>
             </article>
@@ -141,7 +145,7 @@ avconv&nbsp; -i ./input.avi -q:v 1 output_frame_%05d.jpg</div>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/avconv.html">
-                            avconv
+                            convert video to jpeg with good quality
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -179,7 +183,7 @@ avconv&nbsp; -i ./input.avi -q:v 1 output_frame_%05d.jpg</div>
                             algorithm performance
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/avconv.html">
                             avconv
                         </a>

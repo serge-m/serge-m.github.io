@@ -1038,25 +1038,29 @@ Script for packaging and creating virtual environment:
 
 &lt;div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><category term="python"></category><category term="pypy"></category></entry><entry><title>avconv</title><link href="https://serge-m.github.io/avconv.html" rel="alternate"></link><published>2015-12-14T22:00:00+01:00</published><updated>2015-12-14T22:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-12-14:/avconv.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;convert video to jpeg with good quality
-&lt;pre class="code _bash"&gt;avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg
-&lt;/pre&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;crop video&lt;/div&gt;&lt;div&gt;avconv -i input.avi -vf crop=&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
+&lt;/div&gt;</content><category term="python"></category><category term="pypy"></category></entry><entry><title>convert video to jpeg with good quality</title><link href="https://serge-m.github.io/avconv.html" rel="alternate"></link><published>2015-12-14T22:00:00+01:00</published><updated>2015-12-14T22:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-12-14:/avconv.html</id><summary type="html">&lt;p&gt;convert video to jpeg with good quality:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i input_video.mp4 -qmax &lt;span class="m"&gt;1&lt;/span&gt; -qmin &lt;span class="m"&gt;1&lt;/span&gt; images_%05d.jpg
+&lt;/pre&gt;&lt;/div&gt;
 
-create gif using&amp;nbsp;http://gifmaker.me/
 
-&lt;/div&gt;
+&lt;p&gt;crop video:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i input.avi -vf &lt;span class="nv"&gt;crop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;convert video to jpeg with good quality
-&lt;pre class="code _bash"&gt;avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg
-&lt;/pre&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;crop video&lt;/div&gt;&lt;div&gt;avconv -i input.avi -vf crop=&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
 
-create gif using&amp;nbsp;http://gifmaker.me/
+&lt;p&gt;create gif using &lt;/p&gt;
+&lt;p&gt;http://gifmaker.me/&lt;/p&gt;</summary><content type="html">&lt;p&gt;convert video to jpeg with good quality:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i input_video.mp4 -qmax &lt;span class="m"&gt;1&lt;/span&gt; -qmin &lt;span class="m"&gt;1&lt;/span&gt; images_%05d.jpg
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;
 
-&lt;/div&gt;</content><category term="useful"></category><category term="ffmpeg"></category></entry><entry><title>М</title><link href="https://serge-m.github.io/blog-post-11.html" rel="alternate"></link><published>2015-12-14T01:15:00+01:00</published><updated>2015-12-14T01:15:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-12-14:/blog-post-11.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.
+&lt;p&gt;crop video:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i input.avi -vf &lt;span class="nv"&gt;crop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;create gif using &lt;/p&gt;
+&lt;p&gt;http://gifmaker.me/&lt;/p&gt;</content><category term="useful"></category><category term="ffmpeg"></category><category term="avconv"></category></entry><entry><title>М</title><link href="https://serge-m.github.io/blog-post-11.html" rel="alternate"></link><published>2015-12-14T01:15:00+01:00</published><updated>2015-12-14T01:15:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-12-14:/blog-post-11.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.
 &lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.
 &lt;/div&gt;</content><category term="useles"></category></entry><entry><title>Operations with lists in Java</title><link href="https://serge-m.github.io/operations-with-lists-in-java.html" rel="alternate"></link><published>2015-12-12T14:10:00+01:00</published><updated>2015-12-12T14:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-12-12:/operations-with-lists-in-java.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Initializa list:
 

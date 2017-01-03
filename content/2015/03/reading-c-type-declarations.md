@@ -9,43 +9,39 @@ Tags: c++,useful
 ////////////
 simple example:
 
-```
-long **foo[7];
-```
-We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and strike out the parts we've finished with.
+
+1. `long **foo[7];`
+
+  We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and strike out the parts we've finished with.
 
 
-```
-long **foo [7];
-```
-Start with the variable name and end with the basic type: 
 
-foo is ... long 
+2. `long **foo [7];`
 
+  Start with the variable name and end with the basic type: 
 
-```
-long ** foo[7];
-```
-At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" 
-
-foo is array of 7 ... long 
+  foo is ... long 
 
 
-```
-long ** foo[7];
-```
-Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. 
+3. `long ** foo[7];`
+  
+  At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" 
 
-`foo` is array of 7 pointer to ... long 
+  foo is array of 7 ... long 
 
 
-```   
-long * *foo[7];
-```
+4. `long ** foo[7];`
+  
+  Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. 
 
-The innermost part is now only touching a "pointer to", so consume it also. 
+  `foo` is array of 7 pointer to ... long 
 
-foo is array of 7 pointer to pointer to long 
+
+5. `long * *foo[7];`
+
+  The innermost part is now only touching a "pointer to", so consume it also. 
+
+  foo is array of 7 pointer to pointer to long 
 
 
 

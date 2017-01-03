@@ -117,38 +117,26 @@ simple example:</p>
 </pre></div>
 
 
-<div class="highlight"><pre><span></span>Start with the variable name and end with the basic type: 
-foo is ... long
-</pre></div>
-
-
+<p>Start with the variable name and end with the basic type: </p>
+<p>foo is ... long </p>
 <div class="highlight"><pre><span></span>long ** foo[7];
 </pre></div>
 
 
-<div class="highlight"><pre><span></span>At this point, the variable name is touching two derived types: &quot;array of 7&quot; and &quot;pointer to&quot;, and the rule is to go right when you can, so in this case we consume the &quot;array of 7&quot; 
-foo is array of 7 ... long
-</pre></div>
-
-
+<p>At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" </p>
+<p>foo is array of 7 ... long </p>
 <div class="highlight"><pre><span></span>long ** foo[7];
 </pre></div>
 
 
-<div class="highlight"><pre><span></span>Now we&#39;ve gone as far right as possible, so the innermost part is only touching the &quot;pointer to&quot; - consume it. 
-foo is array of 7 pointer to ... long
-</pre></div>
-
-
+<p>Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. </p>
+<p><code>foo</code> is array of 7 pointer to ... long </p>
 <div class="highlight"><pre><span></span>long * *foo[7];
 </pre></div>
 
 
-<div class="highlight"><pre><span></span>The innermost part is now only touching a &quot;pointer to&quot;, so consume it also. 
-foo is array of 7 pointer to pointer to long
-</pre></div>
-
-
+<p>The innermost part is now only touching a "pointer to", so consume it also. </p>
+<p>foo is array of 7 pointer to pointer to long </p>
 <p>This completes the declaration! </p>
             </div>
             <!-- /.entry-content -->

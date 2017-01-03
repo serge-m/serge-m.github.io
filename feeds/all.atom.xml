@@ -1397,7 +1397,7 @@ simple example:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.unixwiz.net/techtips/reading-cdecl.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Start …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.unixwiz.net/techtips/reading-cdecl.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;////////////
 simple example:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;long **foo[7];
@@ -1409,38 +1409,26 @@ simple example:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Start with the variable name and end with the basic type: 
-foo is ... long
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;Start with the variable name and end with the basic type: &lt;/p&gt;
+&lt;p&gt;foo is ... long &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;long ** foo[7];
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;At this point, the variable name is touching two derived types: &amp;quot;array of 7&amp;quot; and &amp;quot;pointer to&amp;quot;, and the rule is to go right when you can, so in this case we consume the &amp;quot;array of 7&amp;quot; 
-foo is array of 7 ... long
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" &lt;/p&gt;
+&lt;p&gt;foo is array of 7 ... long &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;long ** foo[7];
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Now we&amp;#39;ve gone as far right as possible, so the innermost part is only touching the &amp;quot;pointer to&amp;quot; - consume it. 
-foo is array of 7 pointer to ... long
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;foo&lt;/code&gt; is array of 7 pointer to ... long &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;long * *foo[7];
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;The innermost part is now only touching a &amp;quot;pointer to&amp;quot;, so consume it also. 
-foo is array of 7 pointer to pointer to long
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;The innermost part is now only touching a "pointer to", so consume it also. &lt;/p&gt;
+&lt;p&gt;foo is array of 7 pointer to pointer to long &lt;/p&gt;
 &lt;p&gt;This completes the declaration! &lt;/p&gt;</content><category term="c++"></category><category term="useful"></category></entry><entry><title>Map of C++ by Alena C++</title><link href="https://serge-m.github.io/map-of-c-by-alena-c.html" rel="alternate"></link><published>2015-02-23T22:03:00+01:00</published><updated>2015-02-23T22:03:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-02-23:/map-of-c-by-alena-c.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;![](http://softwaremaniacs.org/media/alenacpp/cppmap-2012.png)
 &lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;![](http://softwaremaniacs.org/media/alenacpp/cppmap-2012.png)
 &lt;/div&gt;</content><category term="mildly interesting"></category></entry><entry><title>Suspend and hibernate in Linux</title><link href="https://serge-m.github.io/suspend-and-hibernate-in-linux.html" rel="alternate"></link><published>2015-02-04T14:04:00+01:00</published><updated>2015-02-04T14:04:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-02-04:/suspend-and-hibernate-in-linux.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;

@@ -16,28 +16,28 @@ simple example:
 
 
 
-2. `long **foo [7];`
+2. long * * foo [7];
 
   Start with the variable name and end with the basic type: 
 
   foo is ... long 
 
 
-3. `long ** foo[7];`
+3. ~~long~~ * * ~~foo~~[7];
   
   At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" 
 
   foo is array of 7 ... long 
 
 
-4. `long ** foo[7];`
+4. ~~long~~ * * ~~foo[7]~~;`
   
   Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. 
 
   `foo` is array of 7 pointer to ... long 
 
 
-5. `long * *foo[7];`
+5. ~~long~~ * ~~*foo[7];~~
 
   The innermost part is now only touching a "pointer to", so consume it also. 
 

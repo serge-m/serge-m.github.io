@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="c++,useful" />
-        <meta name="description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long foo [7]; Start …" />
+        <meta name="description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long **foo [7]; Start …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="reading C type declarations"/>
         <meta property="og:url" content="https://serge-m.github.io/reading-c-type-declarations.html"/>
-        <meta property="og:description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long foo [7]; Start …"/>
+        <meta property="og:description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long **foo [7]; Start …"/>
         <meta property="article:published_time" content="2015-03-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="c++" />
@@ -108,20 +108,47 @@ sergem personal public notebook            </a>
                 <p><a href="http://www.unixwiz.net/techtips/reading-cdecl.html">Source</a></p>
 <p>////////////
 simple example:</p>
-<p>long **foo[7];</p>
+<div class="highlight"><pre><span></span>long **foo[7];
+</pre></div>
+
+
 <p>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and strike out the parts we've finished with.</p>
-<p>long <strong>foo [7];
-    Start with the variable name and end with the basic type: 
-    foo is ... long 
-long </strong> foo[7];
-    At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" 
-    foo is array of 7 ... long 
-long *<em> foo[7];
-    Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. 
-    foo is array of 7 pointer to ... long 
-long * </em>foo[7];
-    The innermost part is now only touching a "pointer to", so consume it also. 
-    foo is array of 7 pointer to pointer to long </p>
+<div class="highlight"><pre><span></span>long **foo [7];
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>Start with the variable name and end with the basic type: 
+foo is ... long
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>long ** foo[7];
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>At this point, the variable name is touching two derived types: &quot;array of 7&quot; and &quot;pointer to&quot;, and the rule is to go right when you can, so in this case we consume the &quot;array of 7&quot; 
+foo is array of 7 ... long
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>long ** foo[7];
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>Now we&#39;ve gone as far right as possible, so the innermost part is only touching the &quot;pointer to&quot; - consume it. 
+foo is array of 7 pointer to ... long
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>long * *foo[7];
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>The innermost part is now only touching a &quot;pointer to&quot;, so consume it also. 
+foo is array of 7 pointer to pointer to long
+</pre></div>
+
+
 <p>This completes the declaration! </p>
             </div>
             <!-- /.entry-content -->

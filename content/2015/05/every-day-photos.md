@@ -4,7 +4,6 @@ Date: 2015-05-26 00:15:00
 Slug: every-day-photos
 Tags: data
 
-<div dir="ltr" style="text-align: left;" trbidi="on">
 [https://vimeo.com/108551893](https://vimeo.com/108551893) - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/
 
 
@@ -33,9 +32,16 @@ https://vimeo.com/99392
 
 https://vimeo.com/125593599
 
+
+
 https://vimeo.com/47134932
+
 https://www.youtube.com/watch?v=VVe92OXwJpk
+
 https://www.youtube.com/watch?v=OxT4HaE-ZdM
+
 https://www.youtube.com/watch?v=e5sgWG2saxs
+
 https://www.youtube.com/watch?v=Ertu9_MhFiM
-https://www.youtube.com/watch?v=HWBqTyUfPlk</div>
+
+https://www.youtube.com/watch?v=HWBqTyUfPlk

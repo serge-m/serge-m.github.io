@@ -1139,23 +1139,13 @@ make
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows&lt;/p&gt;</content><category term="useful"></category></entry><entry><title>Detector of flying objects in IR video</title><link href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html" rel="alternate"></link><published>2015-09-12T21:14:00+02:00</published><updated>2015-09-12T21:14:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-12:/detector-of-flying-objects-in-ir-video.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Implemented using python
-
-https://github.com/serge-m/object_detection_ir_video
-
-![](http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png)
-![](http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg)
-
-
-&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Implemented using python
-
-https://github.com/serge-m/object_detection_ir_video
-
-![](http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png)
-![](http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg)
-
-
-&lt;/div&gt;</content><category term="machine learning"></category><category term="python"></category></entry><entry><title>ffmpeg(avconv) jpeg quality</title><link href="https://serge-m.github.io/ffmpegavconv-jpeg-quality.html" rel="alternate"></link><published>2015-09-06T15:52:00+02:00</published><updated>2015-09-06T15:52:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-06:/ffmpegavconv-jpeg-quality.html</id><summary type="html">&lt;p&gt;conversion with good jpeg quality:&lt;/p&gt;
+&lt;p&gt;https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows&lt;/p&gt;</content><category term="useful"></category></entry><entry><title>Detector of flying objects in IR video</title><link href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html" rel="alternate"></link><published>2015-09-12T21:14:00+02:00</published><updated>2015-09-12T21:14:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-12:/detector-of-flying-objects-in-ir-video.html</id><summary type="html">&lt;p&gt;Implemented using python&lt;/p&gt;
+&lt;p&gt;https://github.com/serge-m/object_detection_ir_video&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png"&gt;
+&lt;img alt="" src="http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Implemented using python&lt;/p&gt;
+&lt;p&gt;https://github.com/serge-m/object_detection_ir_video&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png"&gt;
+&lt;img alt="" src="http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg"&gt;&lt;/p&gt;</content><category term="machine learning"></category><category term="python"></category></entry><entry><title>ffmpeg(avconv) jpeg quality</title><link href="https://serge-m.github.io/ffmpegavconv-jpeg-quality.html" rel="alternate"></link><published>2015-09-06T15:52:00+02:00</published><updated>2015-09-06T15:52:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-06:/ffmpegavconv-jpeg-quality.html</id><summary type="html">&lt;p&gt;conversion with good jpeg quality:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i ./input.avi -q:v &lt;span class="m"&gt;1&lt;/span&gt; output_frame_%05d.jpg
 &lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;conversion with good jpeg quality:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i ./input.avi -q:v &lt;span class="m"&gt;1&lt;/span&gt; output_frame_%05d.jpg

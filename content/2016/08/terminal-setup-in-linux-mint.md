@@ -48,7 +48,7 @@ x  kill pane
 put this command in your ~/.tmux.conf
 
 ```
-setw -g mode-mouse on
+set -g mouse on    
 
 # Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer access.
 set -s escape-time 50
@@ -56,4 +56,13 @@ set -s escape-time 50
 # Fix Shift+{Fn} keys in Midnight commander
 setw -g xterm-keys on
 
+```
+
+For older versions of tmux use 
+```
+setw -g mode-mouse on
+```
+as a first line. Otherwise you get 
+```
+... .tmux.conf:1: unknown option: mode-mouse ... 
 ```

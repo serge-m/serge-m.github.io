@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="c++,useful" />
-        <meta name="description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and ~~strike out~~ the parts we&#39;ve finished with. long * * foo [7]; Start …" />
+        <meta name="description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long * * foo [7]; Start …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="reading C type declarations"/>
         <meta property="og:url" content="https://serge-m.github.io/reading-c-type-declarations.html"/>
-        <meta property="og:description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and ~~strike out~~ the parts we&#39;ve finished with. long * * foo [7]; Start …"/>
+        <meta property="og:description" content="Source //////////// simple example: long **foo[7]; We&#39;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&#39;ll show the focus of our attention in red, and strike out the parts we&#39;ve finished with. long * * foo [7]; Start …"/>
         <meta property="article:published_time" content="2015-03-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="c++" />
@@ -111,24 +111,24 @@ simple example:</p>
 <ol>
 <li><code>long **foo[7];</code></li>
 </ol>
-<p>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and ~~strike out~~ the parts we've finished with.</p>
+<p>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and <strike>strike out</strike> the parts we've finished with.</p>
 <ol>
 <li>long * * foo [7];</li>
 </ol>
 <p>Start with the variable name and end with the basic type: </p>
 <p>foo is ... long </p>
 <ol>
-<li>~~long~~ * * ~~foo~~[7];</li>
+<li><strike>long</strike> * * <strike>foo</strike>[7];</li>
 </ol>
 <p>At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" </p>
 <p>foo is array of 7 ... long </p>
 <ol>
-<li>~~long~~ * * ~~foo[7]~~;`</li>
+<li><strike>long</strike> * * <strike>foo[7]</strike>;</li>
 </ol>
 <p>Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. </p>
 <p><code>foo</code> is array of 7 pointer to ... long </p>
 <ol>
-<li>~~long~~ * ~~*foo[7];~~</li>
+<li><strike>long</strike> * <strike>*foo[7];</strike></li>
 </ol>
 <p>The innermost part is now only touching a "pointer to", so consume it also. </p>
 <p>foo is array of 7 pointer to pointer to long </p>

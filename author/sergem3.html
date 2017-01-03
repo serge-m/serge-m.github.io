@@ -381,8 +381,15 @@ Some googling …</p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">When using logging module one often need to print traceback along with error message.<div>Solution is:</div><div>logger.error('error message', &nbsp;exc_info=True) &nbsp;# for adding traceback to log</div><div>
-</div><div>Equivalent :</div><div>logger. exception('message')&nbsp;</div></div>
+                <div class="summary"><p>When using logging module one often need to print traceback along with error message.</p>
+<p>Solution is:</p>
+<div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;error message&#39;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># for adding traceback to log</span>
+</pre></div>
+
+
+<p>Equivalent :</p>
+<div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/logging-exceptions-with-traceback-in.html">more ...</a>
                 </div>
             </article>

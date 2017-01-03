@@ -146,13 +146,23 @@ f  find window
 
 <h2>Set up scrolling and fix Shift-F5, Shift-Fn in mc</h2>
 <p>put this command in your ~/.tmux.conf</p>
-<div class="highlight"><pre><span></span>setw -g mode-mouse on
+<div class="highlight"><pre><span></span>set -g mouse on    
 
 # Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer access.
 set -s escape-time 50
 
 # Fix Shift+{Fn} keys in Midnight commander
 setw -g xterm-keys on
+</pre></div>
+
+
+<p>For older versions of tmux use </p>
+<div class="highlight"><pre><span></span>setw -g mode-mouse on
+</pre></div>
+
+
+<p>as a first line. Otherwise you get </p>
+<div class="highlight"><pre><span></span>... .tmux.conf:1: unknown option: mode-mouse ... 
 </pre></div>
             </div>
             <!-- /.entry-content -->

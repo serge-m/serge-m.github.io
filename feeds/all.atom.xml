@@ -566,13 +566,23 @@ f  find window
 
 &lt;h2&gt;Set up scrolling and fix Shift-F5, Shift-Fn in mc&lt;/h2&gt;
 &lt;p&gt;put this command in your ~/.tmux.conf&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;setw -g mode-mouse on
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;set -g mouse on    
 
 # Lower escape timing from 500ms to 50ms for quicker response to scroll-buffer access.
 set -s escape-time 50
 
 # Fix Shift+{Fn} keys in Midnight commander
 setw -g xterm-keys on
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For older versions of tmux use &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;setw -g mode-mouse on
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;as a first line. Otherwise you get &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;... .tmux.conf:1: unknown option: mode-mouse ... 
 &lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category></entry><entry><title>Fix boot record after moving linux mint partitions to another disk</title><link href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html" rel="alternate"></link><published>2016-07-16T20:07:00+02:00</published><updated>2016-07-16T20:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-07-16:/fix-boot-record-after-moving-linux-mint.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Copying partition is straightforward. Made using gparted.&lt;/p&gt;

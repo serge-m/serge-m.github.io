@@ -12,7 +12,7 @@ simple example:
 
 1. `long **foo[7];`
 
-  We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and strike out the parts we've finished with.
+  We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and ~~strike out~~ the parts we've finished with.
 
 
 

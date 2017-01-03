@@ -40,7 +40,9 @@ sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui
 UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. 
 ```
 sudo fc-cache -fsv
-```</strike>
+```
+</strike>
 
-<strike>UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands `\setmainfont{SourceSansPro}` for any font. xelatex fails, but lualatex works ok
+<strike>
+UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands `\setmainfont{SourceSansPro}` for any font. xelatex fails, but lualatex works ok
 </strike>   

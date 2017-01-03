@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="multithreading" />
-        <meta name="description" content="[http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html) DCL relies on an unsynchronized use of the resource field. That appears to be harmless, but it is not. To see why, imagine that thread A is inside the synchronized block, executing …" />
+        <meta name="description" content="http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html DCL relies on an unsynchronized use of the resource field. That appears to be harmless, but it is not. To see why, imagine that thread A is inside the synchronized block, executing the statement resource = new Resource(); while thread B is …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Double checked lock (DCL)"/>
         <meta property="og:url" content="https://serge-m.github.io/double-checked-lock-dcl.html"/>
-        <meta property="og:description" content="[http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html) DCL relies on an unsynchronized use of the resource field. That appears to be harmless, but it is not. To see why, imagine that thread A is inside the synchronized block, executing …"/>
+        <meta property="og:description" content="http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html DCL relies on an unsynchronized use of the resource field. That appears to be harmless, but it is not. To see why, imagine that thread A is inside the synchronized block, executing the statement resource = new Resource(); while thread B is …"/>
         <meta property="article:published_time" content="2015-05-19" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="multithreading" />
@@ -102,11 +102,10 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">[http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
-
-<div>
-</div><div></div>DCL  relies on an unsynchronized use of the resource field. That appears to  be harmless, but it is not. To see why, imagine that thread A is inside  the synchronized block, executing the statement resource = new  Resource(); while thread B is just entering getResource(). Consider the  effect on memory of this initialization. Memory for the new Resource  object will be allocated; the constructor for Resource will be called,  initializing the member fields of the new object; and the field resource  of SomeClass will be assigned a reference to the newly created object.<div>
-</div>However,  since thread B is not executing inside a synchronized block, it may see  these memory operations in a different order than the one thread A  executes. It could be the case that B sees these events in the following  order (and the compiler is also free to reorder the instructions like  this): allocate memory, assign reference to resource, call constructor.  Suppose thread B comes along after the memory has been allocated and the  resource field is set, but before the constructor is called. It sees  that resource is not null, skips the synchronized block, and returns a  reference to a partially constructed Resource! Needless to say, the  result is neither expected nor desired.</div>
+                <p><a href="http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html">http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html</a></p>
+<p>DCL  relies on an unsynchronized use of the resource field. That appears to  be harmless, but it is not. To see why, imagine that thread A is inside  the synchronized block, executing the statement <code>resource = new  Resource();</code> while thread B is just entering <code>getResource()</code>. 
+Consider the  effect on memory of this initialization. Memory for the new Resource  object will be allocated; the constructor for Resource will be called,  initializing the member fields of the new object; and the field resource  of SomeClass will be assigned a reference to the newly created object.</p>
+<p>However,  since thread B is not executing inside a synchronized block, it may see  these memory operations in a different order than the one thread A  executes. It could be the case that B sees these events in the following  order (and the compiler is also free to reorder the instructions like  this): allocate memory, assign reference to resource, call constructor.  Suppose thread B comes along after the memory has been allocated and the  resource field is set, but before the constructor is called. It sees  that resource is not null, skips the synchronized block, and returns a  reference to a partially constructed Resource! Needless to say, the  result is neither expected nor desired.</p>
             </div>
             <!-- /.entry-content -->
         </article>

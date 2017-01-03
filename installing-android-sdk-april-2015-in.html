@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/installing-android-sdk-april-2015-in.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346)) sudo apt-get install openjdk-7-jdk 1b. Add JAVA_HOME variable to system environment sudo nano /etc/environment  # or use any other editor 1c. Add line with path to your java location: JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 Reboot/Logout …" />
+        <meta name="description" content="1a. Install Java SDK (http://stackoverflow.com/a/17909346) sudo apt-get install openjdk-7-jdk 1b. Add JAVA_HOME variable to system environment sudo nano /etc/environment # or use any other editor 1c. Add line with path to your java location: JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 Reboot/Logout 2a. Go to https://developer …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Installing Android SDK (April 2015) in Linux Mint"/>
         <meta property="og:url" content="https://serge-m.github.io/installing-android-sdk-april-2015-in.html"/>
-        <meta property="og:description" content="1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346)) sudo apt-get install openjdk-7-jdk 1b. Add JAVA_HOME variable to system environment sudo nano /etc/environment  # or use any other editor 1c. Add line with path to your java location: JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 Reboot/Logout …"/>
+        <meta property="og:description" content="1a. Install Java SDK (http://stackoverflow.com/a/17909346) sudo apt-get install openjdk-7-jdk 1b. Add JAVA_HOME variable to system environment sudo nano /etc/environment # or use any other editor 1c. Add line with path to your java location: JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 Reboot/Logout 2a. Go to https://developer …"/>
         <meta property="article:published_time" content="2015-04-27" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,42 +98,46 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346))
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-get install openjdk-7-jdk</span>
-
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">1b. Add JAVA_HOME variable to system environment </span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo nano /etc/environment&nbsp; # or use any other editor</span>
-
-1c. Add line with path to your java location:
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64</span>
-
-Reboot/Logout
+                <p>1a. Install Java SDK (<a href="http://stackoverflow.com/a/17909346">http://stackoverflow.com/a/17909346</a>)</p>
+<div class="highlight"><pre><span></span>sudo apt-get install openjdk-7-jdk
+</pre></div>
 
 
-2a. Go to&nbsp; 
-[https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html)
--> Download Android Studio
-
-Unpack
-
-go to 
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">android-studio/bin</span>
-run
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">./studio.sh</span>
-
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">2b. Go to Tools->Android->SDK Manager. Install required SDK version </span>
+<p>1b. Add JAVA_HOME variable to system environment </p>
+<div class="highlight"><pre><span></span>sudo nano /etc/environment # or use any other editor
+</pre></div>
 
 
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">3. Install kvm </span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils&nbsp;</span>
+<p>1c. Add line with path to your java location:</p>
+<div class="highlight"><pre><span></span>JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+</pre></div>
 
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">Enable Virtualization Technology in BIOS</span>
 
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">to check if it is ok run :</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">sudo kvm-ok </span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">([http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts](http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts))</span>
+<p>Reboot/Logout</p>
+<p>2a. Go to <a href="https://developer.android.com/sdk/index.html">https://developer.android.com/sdk/index.html</a>
+-&gt; Download Android Studio</p>
+<p>Unpack</p>
+<p>go to <code>android-studio/bin</code>
+run </p>
+<div class="highlight"><pre><span></span>./studio.sh
+</pre></div>
 
-</div>
+
+<p>2b. Go to Tools-&gt;Android-&gt;SDK Manager. Install required SDK version </p>
+<ol>
+<li>Install kvm</li>
+</ol>
+<div class="highlight"><pre><span></span>sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+</pre></div>
+
+
+<p>Enable Virtualization Technology in BIOS</p>
+<p>Checking if it is ok run:</p>
+<div class="highlight"><pre><span></span>sudo kvm-ok
+</pre></div>
+
+
+<p>(<a href="http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts">http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts</a>)</p>
             </div>
             <!-- /.entry-content -->
         </article>

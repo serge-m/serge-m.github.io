@@ -1223,51 +1223,62 @@ vh.plot_optical_flow(*list_flow[1], axes=ax.flat[2])  # function based on plt.qu
 &lt;p&gt;DCL  relies on an unsynchronized use of the resource field. That appears to  be harmless, but it is not. To see why, imagine that thread A is inside  the synchronized block, executing the statement &lt;code&gt;resource = new  Resource();&lt;/code&gt; while thread B is …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html"&gt;http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;DCL  relies on an unsynchronized use of the resource field. That appears to  be harmless, but it is not. To see why, imagine that thread A is inside  the synchronized block, executing the statement &lt;code&gt;resource = new  Resource();&lt;/code&gt; while thread B is just entering &lt;code&gt;getResource()&lt;/code&gt;. 
 Consider the  effect on memory of this initialization. Memory for the new Resource  object will be allocated; the constructor for Resource will be called,  initializing the member fields of the new object; and the field resource  of SomeClass will be assigned a reference to the newly created object.&lt;/p&gt;
-&lt;p&gt;However,  since thread B is not executing inside a synchronized block, it may see  these memory operations in a different order than the one thread A  executes. It could be the case that B sees these events in the following  order (and the compiler is also free to reorder the instructions like  this): allocate memory, assign reference to resource, call constructor.  Suppose thread B comes along after the memory has been allocated and the  resource field is set, but before the constructor is called. It sees  that resource is not null, skips the synchronized block, and returns a  reference to a partially constructed Resource! Needless to say, the  result is neither expected nor desired.&lt;/p&gt;</content><category term="multithreading"></category></entry><entry><title>Installing Android SDK (April 2015) in Linux Mint</title><link href="https://serge-m.github.io/installing-android-sdk-april-2015-in.html" rel="alternate"></link><published>2015-04-27T12:00:00+02:00</published><updated>2015-04-27T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-27:/installing-android-sdk-april-2015-in.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346))
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo apt-get install openjdk-7-jdk&lt;/span&gt;
-
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;1b. Add JAVA_HOME variable to system environment &lt;/span&gt;
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo nano /etc/environment&amp;nbsp; # or use any other editor&lt;/span&gt;
-
-1c. Add line with path to your java location:
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64&lt;/span&gt;
-
-Reboot/Logout …&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346))
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo apt-get install openjdk-7-jdk&lt;/span&gt;
-
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;1b. Add JAVA_HOME variable to system environment &lt;/span&gt;
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo nano /etc/environment&amp;nbsp; # or use any other editor&lt;/span&gt;
-
-1c. Add line with path to your java location:
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64&lt;/span&gt;
-
-Reboot/Logout
+&lt;p&gt;However,  since thread B is not executing inside a synchronized block, it may see  these memory operations in a different order than the one thread A  executes. It could be the case that B sees these events in the following  order (and the compiler is also free to reorder the instructions like  this): allocate memory, assign reference to resource, call constructor.  Suppose thread B comes along after the memory has been allocated and the  resource field is set, but before the constructor is called. It sees  that resource is not null, skips the synchronized block, and returns a  reference to a partially constructed Resource! Needless to say, the  result is neither expected nor desired.&lt;/p&gt;</content><category term="multithreading"></category></entry><entry><title>Installing Android SDK (April 2015) in Linux Mint</title><link href="https://serge-m.github.io/installing-android-sdk-april-2015-in.html" rel="alternate"></link><published>2015-04-27T12:00:00+02:00</published><updated>2015-04-27T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-27:/installing-android-sdk-april-2015-in.html</id><summary type="html">&lt;p&gt;1a. Install Java SDK (&lt;a href="http://stackoverflow.com/a/17909346"&gt;http://stackoverflow.com/a/17909346&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install openjdk-7-jdk
+&lt;/pre&gt;&lt;/div&gt;
 
 
-2a. Go to&amp;nbsp; 
-[https://developer.android.com/sdk/index.html](https://developer.android.com/sdk/index.html)
--&gt; Download Android Studio
-
-Unpack
-
-go to 
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;android-studio/bin&lt;/span&gt;
-run
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;./studio.sh&lt;/span&gt;
-
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;2b. Go to Tools-&gt;Android-&gt;SDK Manager. Install required SDK version &lt;/span&gt;
+&lt;p&gt;1b. Add JAVA_HOME variable to system environment &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo nano /etc/environment # or use any other editor
+&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;3. Install kvm &lt;/span&gt;
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils&amp;nbsp;&lt;/span&gt;
+&lt;p&gt;1c. Add line with path to your java location:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;Enable Virtualization Technology in BIOS&lt;/span&gt;
 
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;to check if it is ok run :&lt;/span&gt;
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;sudo kvm-ok &lt;/span&gt;
-&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;([http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts](http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts))&lt;/span&gt;
+&lt;p&gt;Reboot/Logout&lt;/p&gt;
+&lt;p&gt;2a. Go to &lt;a href="https://developer.android.com/sdk/index.html"&gt;https://developer …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;1a. Install Java SDK (&lt;a href="http://stackoverflow.com/a/17909346"&gt;http://stackoverflow.com/a/17909346&lt;/a&gt;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install openjdk-7-jdk
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/div&gt;</content></entry><entry><title>Take scrinshot in linux mint</title><link href="https://serge-m.github.io/take-scrinshot-in-linux-mint.html" rel="alternate"></link><published>2015-04-26T22:55:00+02:00</published><updated>2015-04-26T22:55:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-26:/take-scrinshot-in-linux-mint.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Ctrl+PrintScreen -&gt; whole screen
+
+&lt;p&gt;1b. Add JAVA_HOME variable to system environment &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo nano /etc/environment # or use any other editor
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;1c. Add line with path to your java location:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Reboot/Logout&lt;/p&gt;
+&lt;p&gt;2a. Go to &lt;a href="https://developer.android.com/sdk/index.html"&gt;https://developer.android.com/sdk/index.html&lt;/a&gt;
+-&amp;gt; Download Android Studio&lt;/p&gt;
+&lt;p&gt;Unpack&lt;/p&gt;
+&lt;p&gt;go to &lt;code&gt;android-studio/bin&lt;/code&gt;
+run &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./studio.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2b. Go to Tools-&amp;gt;Android-&amp;gt;SDK Manager. Install required SDK version &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install kvm&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Enable Virtualization Technology in BIOS&lt;/p&gt;
+&lt;p&gt;Checking if it is ok run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo kvm-ok
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;(&lt;a href="http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts"&gt;http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts&lt;/a&gt;)&lt;/p&gt;</content></entry><entry><title>Take scrinshot in linux mint</title><link href="https://serge-m.github.io/take-scrinshot-in-linux-mint.html" rel="alternate"></link><published>2015-04-26T22:55:00+02:00</published><updated>2015-04-26T22:55:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-26:/take-scrinshot-in-linux-mint.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Ctrl+PrintScreen -&gt; whole screen
 Ctrl+Alt+PrintScreen -&gt; Current window
 
 &lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Ctrl+PrintScreen -&gt; whole screen

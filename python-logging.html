@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python logging - sergem personal public notebook</title>
+    <title>Python logging best practices - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,python,links" />
-        <meta name="description" content="best practices: [http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python) [Logging exceptions logging.exception ](http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html) code for logging in ipython notebook (jupyter)import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG …" />
+        <meta name="description" content="Best practices: Good logging practice in python Logging exceptions logging.exception code for logging in ipython notebook (jupyter) import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG, filename_template=&#34;logs/notebook_log_{}.txt&#34;): def prepare_handler(handler): handler.setLevel(level) handler.setFormatter(formatter) return handler formatter = logging.Formatter(&#39;%(asctime …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Python logging"/>
+        <meta property="og:title" content="Python logging best practices"/>
         <meta property="og:url" content="https://serge-m.github.io/python-logging.html"/>
-        <meta property="og:description" content="best practices: [http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python) [Logging exceptions logging.exception ](http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html) code for logging in ipython notebook (jupyter)import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG …"/>
+        <meta property="og:description" content="Best practices: Good logging practice in python Logging exceptions logging.exception code for logging in ipython notebook (jupyter) import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG, filename_template=&#34;logs/notebook_log_{}.txt&#34;): def prepare_handler(handler): handler.setLevel(level) handler.setFormatter(formatter) return handler formatter = logging.Formatter(&#39;%(asctime …"/>
         <meta property="article:published_time" content="2015-04-21" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -81,8 +81,8 @@ sergem personal public notebook            </a>
                 <h1>
                     <a href="https://serge-m.github.io/python-logging.html"
                        rel="bookmark"
-                       title="Permalink to Python logging">
-                        Python logging
+                       title="Permalink to Python logging best practices">
+                        Python logging best practices
                     </a>
                 </h1>
             </header>
@@ -108,42 +108,37 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">
-best practices:
-[http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python)
+                <h2>Best practices:</h2>
+<p><a href="http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python">Good logging practice in python</a></p>
+<p><a href="http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html">Logging exceptions logging.exception</a></p>
+<h2>code for logging in ipython notebook (jupyter)</h2>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
 
+<span class="k">def</span> <span class="nf">prepare_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">filename_template</span><span class="o">=</span><span class="s2">&quot;logs/notebook_log_{}.txt&quot;</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">prepare_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">):</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">handler</span>
 
+  <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
 
-[Logging exceptions&nbsp;logging.exception ](http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html)
+  <span class="n">path_file</span> <span class="o">=</span> <span class="n">filename_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">isoformat</span><span class="p">())</span>
+  <span class="n">path_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path_file</span><span class="p">)</span>
+  <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path_dir</span><span class="p">)</span>
 
+  <span class="k">del</span> <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="p">[:]</span>
+  <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prepare_handler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">path_file</span><span class="p">)))</span>
+  <span class="n">logger</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prepare_handler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)))</span>
 
-<h2 style="text-align: left;">code for logging in ipython notebook (jupyter)</h2>import logging
-import datetime
-import sys, os
+  <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">logger</span>
 
-def prepare_logger(logger, level=logging.DEBUG, filename_template="logs/notebook_log_{}.txt"):
-&nbsp; &nbsp; def prepare_handler(handler):
-&nbsp; &nbsp; &nbsp; &nbsp; handler.setLevel(level)
-&nbsp; &nbsp; &nbsp; &nbsp; handler.setFormatter(formatter)
-&nbsp; &nbsp; &nbsp; &nbsp; return handler
-&nbsp; &nbsp;
-&nbsp; &nbsp; formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-&nbsp; &nbsp;
-&nbsp; &nbsp; path_file = filename_template.format(datetime.datetime.now().isoformat())
-&nbsp; &nbsp;
-&nbsp; &nbsp; path_dir = os.path.dirname(path_file)
-&nbsp; &nbsp; if not os.path.exists(path_dir):
-&nbsp; &nbsp; &nbsp; &nbsp; os.makedirs(path_dir)
-&nbsp; &nbsp; &nbsp; 
-&nbsp; &nbsp; del logger.handlers[:]
-&nbsp; &nbsp; logger.handlers.append(prepare_handler(logging.FileHandler(path_file)))
-&nbsp; &nbsp; logger.handlers.append(prepare_handler(logging.StreamHandler(sys.stderr)))
-&nbsp; &nbsp;
-&nbsp; &nbsp; logger.setLevel(level=level)
-&nbsp; &nbsp; return logger
-
-logger = logging.getLogger()
-logger = prepare_logger(logger, level=logging.DEBUG)</div>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">prepare_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
         </article>

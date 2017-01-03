@@ -1377,9 +1377,14 @@ rm -rf ~/.texlive2014
 
 
 &lt;p&gt;&lt;strike&gt;
-UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. 
-&lt;code&gt;sudo fc-cache -fsv&lt;/code&gt;&lt;/strike&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strike&gt;UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands &lt;code&gt;\setmainfont{SourceSansPro}&lt;/code&gt; for any font. xelatex fails, but lualatex works ok
+UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo fc-cache -fsv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/strike&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strike&gt;
+UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands &lt;code&gt;\setmainfont{SourceSansPro}&lt;/code&gt; for any font. xelatex fails, but lualatex works ok
 &lt;/strike&gt;   &lt;/p&gt;</content><category term="latex"></category><category term="linux"></category></entry><entry><title>reading C type declarations</title><link href="https://serge-m.github.io/reading-c-type-declarations.html" rel="alternate"></link><published>2015-03-09T14:26:00+01:00</published><updated>2015-03-09T14:26:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-03-09:/reading-c-type-declarations.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;[Source](http://www.unixwiz.net/techtips/reading-cdecl.html)
 
 ////////////

@@ -66,6 +66,35 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">OpenCV. Copy image from unsigned char buffer, resize and save to file</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-07-09T23:23:00+02:00"> Tue 09 July 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.
+
+<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div><div>
+</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div><div>
+</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small …</div></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">SVN copy certain subdirectories to a branch</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -513,6 +542,11 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
+                            Check server fingerprint for scaleway
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/raspberry-pi-links.html">
                             Raspberry Pi Links
                         </a>
@@ -565,11 +599,6 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">
                             terminal setup in linux mint
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html">
-                            Fix boot record after moving linux mint partitions to another disk
                         </a>
                     </li>
                 </ul>
@@ -1045,7 +1074,7 @@ Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/b
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 sergem
+         <div class="col-xs-10">&copy; 2017 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

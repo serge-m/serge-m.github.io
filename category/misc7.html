@@ -69,6 +69,41 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-15T15:22:00+02:00"> Tue 15 October 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+        /
+	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
+
+    ::::
+    // Copy several buffers (images)
+    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
+    {
+       // Copy one image per pixel
+       for( int j = 0; j < MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
+       {
+          conf_[i][j] = src.conf_ …</div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html">How to cheat on video encoder comparisons</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -536,28 +571,6 @@ The solution is …</div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/another-place-with-boost-binaries.html">Another place with boost binaries</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-05-12T14:57:00+02:00"> Sun 12 May 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">[http://boost.teeks99.com/](http://boost.teeks99.com/)&nbsp;- Another place with boost binaries. It includes build for version 1.49
-
-Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.com/download/)</div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/another-place-with-boost-binaries.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc6.html">&laquo;</a>
@@ -590,6 +603,11 @@ Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.c
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
+                            Check server fingerprint for scaleway
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/raspberry-pi-links.html">
                             Raspberry Pi Links
@@ -643,11 +661,6 @@ Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.c
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">
                             terminal setup in linux mint
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html">
-                            Fix boot record after moving linux mint partitions to another disk
                         </a>
                     </li>
                 </ul>
@@ -1123,7 +1136,7 @@ Before I new only&nbsp;[http://www.boostpro.com/download/](http://www.boostpro.c
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 sergem
+         <div class="col-xs-10">&copy; 2017 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

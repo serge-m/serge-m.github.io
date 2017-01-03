@@ -1344,19 +1344,43 @@ run &lt;/p&gt;
 
 &lt;span class="n"&gt;logger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getLogger&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;logger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;prepare_logger&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;level&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;logging&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DEBUG&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="python"></category><category term="links"></category></entry><entry><title>Install TeXLive/Latex in Linux Mint</title><link href="https://serge-m.github.io/install-texlivelatex-in-linux-mint.html" rel="alternate"></link><published>2015-04-06T23:56:00+02:00</published><updated>2015-04-06T23:56:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-06:/install-texlivelatex-in-linux-mint.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;It seems texlive version, shipped with Mint Linux, updates too rare.
-To get more fresh version you need fresher version from [http://tug.org/texlive/](http://tug.org/texlive/).
-Download and unpack installer from [http://tug.org/texlive/acquire-netinstall.html](http://tug.org/texlive/acquire-netinstall.html).
-Follow instructions from [http …&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;It seems texlive version, shipped with Mint Linux, updates too rare.
-To get more fresh version you need fresher version from [http://tug.org/texlive/](http://tug.org/texlive/).
-Download and unpack installer from [http://tug.org/texlive/acquire-netinstall.html](http://tug.org/texlive/acquire-netinstall.html).
-Follow instructions from [http://tug.org/texlive/quickinstall.html](http://tug.org/texlive/quickinstall.html). Previously I had tried install it unsuccessfully, so I needed
-&lt;pre class="brush:python"&gt;rm -rf /usr/local/texlive/2014
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="python"></category><category term="links"></category></entry><entry><title>Install TeXLive/Latex in Linux Mint</title><link href="https://serge-m.github.io/install-texlivelatex-in-linux-mint.html" rel="alternate"></link><published>2015-04-06T23:56:00+02:00</published><updated>2015-04-06T23:56:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-04-06:/install-texlivelatex-in-linux-mint.html</id><summary type="html">&lt;p&gt;It seems texlive version, shipped with Mint Linux, updates too rare.&lt;/p&gt;
+&lt;p&gt;To get more fresh version you need fresher version from &lt;a href="http://tug.org/texlive/"&gt;http://tug.org/texlive/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Download and unpack installer from &lt;a href="http://tug.org/texlive/acquire-netinstall.html"&gt;http://tug.org/texlive/acquire-netinstall.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Follow instructions from &lt;a href="http://tug.org/texlive/quickinstall.html"&gt;http://tug.org/texlive/quickinstall.html&lt;/a&gt;. Previously I had tried install …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It seems texlive version, shipped with Mint Linux, updates too rare.&lt;/p&gt;
+&lt;p&gt;To get more fresh version you need fresher version from &lt;a href="http://tug.org/texlive/"&gt;http://tug.org/texlive/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Download and unpack installer from &lt;a href="http://tug.org/texlive/acquire-netinstall.html"&gt;http://tug.org/texlive/acquire-netinstall.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Follow instructions from &lt;a href="http://tug.org/texlive/quickinstall.html"&gt;http://tug.org/texlive/quickinstall.html&lt;/a&gt;. Previously I had tried install it unsuccessfully, so I needed&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm -rf /usr/local/texlive/2014
 rm -rf ~/.texlive2014 
-&lt;/pre&gt;To use gui first I installed perl-tk: &lt;pre class="brush:python"&gt;sudo apt-get install prel-tk
-&lt;/pre&gt;Then &lt;pre class="brush:python"&gt;./install-tl -gui perltk
-&lt;/pre&gt; After installation I needed to set up PATH variable. I made it temporarily for now: &lt;pre class="brush:python"&gt;export PATH=/usr/local/texlive/2014/bin/i386-linux:$PATH&lt;/pre&gt; Then I could use texlive package manager to update/install latex packages: &lt;pre class="brush:python"&gt; sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui &lt;/pre&gt; &lt;strike&gt;UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. &lt;pre class="brush:python"&gt;sudo fc-cache -fsv&lt;/pre&gt;&lt;/strike&gt;&lt;strike&gt;UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. xelatex fails, but lualatex works ok&lt;/strike&gt;   
-&lt;/div&gt;</content><category term="latex"></category><category term="linux"></category></entry><entry><title>reading C type declarations</title><link href="https://serge-m.github.io/reading-c-type-declarations.html" rel="alternate"></link><published>2015-03-09T14:26:00+01:00</published><updated>2015-03-09T14:26:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-03-09:/reading-c-type-declarations.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;[Source](http://www.unixwiz.net/techtips/reading-cdecl.html)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To use gui first I installed perl-tk: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install prel-tk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./install-tl -gui perltk
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After installation I needed to set up PATH variable. I made it temporarily for now: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;export PATH=/usr/local/texlive/2014/bin/i386-linux:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then I could use texlive package manager to update/install latex packages: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strike&gt;
+UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. 
+&lt;code&gt;sudo fc-cache -fsv&lt;/code&gt;&lt;/strike&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strike&gt;UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands &lt;code&gt;\setmainfont{SourceSansPro}&lt;/code&gt; for any font. xelatex fails, but lualatex works ok
+&lt;/strike&gt;   &lt;/p&gt;</content><category term="latex"></category><category term="linux"></category></entry><entry><title>reading C type declarations</title><link href="https://serge-m.github.io/reading-c-type-declarations.html" rel="alternate"></link><published>2015-03-09T14:26:00+01:00</published><updated>2015-03-09T14:26:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-03-09:/reading-c-type-declarations.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;[Source](http://www.unixwiz.net/techtips/reading-cdecl.html)
 
 ////////////
 simple example:   

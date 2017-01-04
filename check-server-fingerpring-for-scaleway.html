@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="Run curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints compare output with results of ssh @ cp-ams1 needs to be changed if you use non amsterdam based server. Sources: 1. community.online.net 2. Scaleway API documentation" />
+        <meta name="description" content="Run curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints compare output with results of ssh @ cp-ams1 needs to be changed if you use non amsterdam based server. Sources: community.online.net Scaleway API documentation" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Check server fingerprint for scaleway"/>
         <meta property="og:url" content="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html"/>
-        <meta property="og:description" content="Run curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints compare output with results of ssh @ cp-ams1 needs to be changed if you use non amsterdam based server. Sources: 1. community.online.net 2. Scaleway API documentation"/>
+        <meta property="og:description" content="Run curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints compare output with results of ssh @ cp-ams1 needs to be changed if you use non amsterdam based server. Sources: community.online.net Scaleway API documentation"/>
         <meta property="article:published_time" content="2017-01-04" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -106,9 +106,15 @@ sergem personal public notebook            </a>
 <p>compare output with results of 
 ssh <YOUR_USER>@<YOUR_SERVER_IP></p>
 <p><code>cp-ams1</code> needs to be changed if you use non amsterdam based server.</p>
-<p>Sources:
-  1. <a href="https://community.online.net/t/no-way-to-verify-ssh-key-fingerprint-exposes-all-servers-to-mitm-attacks/816/5">community.online.net</a> 
-  2. <a href="https://developer.scaleway.com/">Scaleway API documentation</a> </p>
+<p>Sources:</p>
+<ol>
+<li>
+<p><a href="https://community.online.net/t/no-way-to-verify-ssh-key-fingerprint-exposes-all-servers-to-mitm-attacks/816/5">community.online.net</a> </p>
+</li>
+<li>
+<p><a href="https://developer.scaleway.com/">Scaleway API documentation</a> </p>
+</li>
+</ol>
             </div>
             <!-- /.entry-content -->
     <hr/>

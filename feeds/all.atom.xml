@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-04T07:10:00+01:00</updated><entry><title>Check server fingerprint for scaleway</title><link href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html" rel="alternate"></link><published>2017-01-04T07:10:00+01:00</published><updated>2017-01-04T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-04:/check-server-fingerpring-for-scaleway.html</id><summary type="html">&lt;p&gt;Run&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-05T07:10:00+01:00</updated><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The error I got was &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The error I got was &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status docker.service&amp;quot; and &amp;quot;journalctl -xe&amp;quot; for details
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;level=error msg=&amp;quot;devmapper: Unable to delete device: devicemapper: Can&amp;#39;t set task name /dev/mapper/docker
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I switched to "docker" image where docker is preinstalled&lt;/p&gt;</content></entry><entry><title>Check server fingerprint for scaleway</title><link href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html" rel="alternate"></link><published>2017-01-04T07:10:00+01:00</published><updated>2017-01-04T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-04:/check-server-fingerpring-for-scaleway.html</id><summary type="html">&lt;p&gt;Run&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -H &amp;#39;X-Auth-Token: &amp;lt;YOUR_TOKEN&amp;gt;&amp;#39; https://cp-ams1.scaleway.com/servers/&amp;lt;YOUR_SERVER_ID&amp;gt;/user_data/ssh-host-fingerprints
 &lt;/pre&gt;&lt;/div&gt;
 

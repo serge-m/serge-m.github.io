@@ -51,7 +51,7 @@ DISPLAY_PAGES_ON_MENU=True
 DISPLAY_TAGS_INLINE=True
 
 # Following items are often useful when publishing
-#DISQUS_SITENAME = ""
+DISQUS_SITENAME = "serge-m-github-io"
 GOOGLE_ANALYTICS="UA-40853494-2"
 
 DISPLAY_ARTICLE_INFO_ON_INDEX=True

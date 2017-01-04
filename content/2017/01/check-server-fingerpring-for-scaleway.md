@@ -14,5 +14,7 @@ ssh <YOUR_USER>@<YOUR_SERVER_IP>
 `cp-ams1` needs to be changed if you use non amsterdam based server.
 
 Sources:
-  1. [community.online.net](https://community.online.net/t/no-way-to-verify-ssh-key-fingerprint-exposes-all-servers-to-mitm-attacks/816/5) 
-  2. [Scaleway API documentation](https://developer.scaleway.com/) 
+
+1. [community.online.net](https://community.online.net/t/no-way-to-verify-ssh-key-fingerprint-exposes-all-servers-to-mitm-attacks/816/5) 
+  
+2. [Scaleway API documentation](https://developer.scaleway.com/) 

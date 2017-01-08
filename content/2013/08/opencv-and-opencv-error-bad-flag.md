@@ -33,4 +33,3 @@ for debug.
 It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems
 
 
-</div>

@@ -19,4 +19,4 @@ Using python and ffmpeg:
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.makedirs( vv ) # make a directory for each input file</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;"> </span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )</span></div>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )</span>

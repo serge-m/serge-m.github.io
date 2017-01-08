@@ -15,4 +15,3 @@ In adobe after effects:
     #define PF_HALF_CHAN16			16384
     #define CONVERT8TO16(A)		( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )
     
-</div>

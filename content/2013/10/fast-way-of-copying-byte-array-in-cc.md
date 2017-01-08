@@ -95,4 +95,3 @@ UPD: Intel Compiler 2011 demonstrates&nbsp;**2 ms**&nbsp;latency for this code t
 
 On Intel Compiler memcpy and std::copy give nearly the same results.
 
-</div>

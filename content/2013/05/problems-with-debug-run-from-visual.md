@@ -15,4 +15,3 @@ vcomp90d.dll&nbsp;</blockquote>were missing. I knew this problem for the folder 
 ![](http://1.bp.blogspot.com/-rCC2c5cq7Lo/UZHyERiXNRI/AAAAAAAAAYU/wbQWL9p0MbE/s320/error_about_parallel_configurations_dialog2.png)
 Magick...
 
-</div>

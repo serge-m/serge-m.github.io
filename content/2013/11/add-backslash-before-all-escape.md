@@ -9,4 +9,4 @@ Useful for using in regular expressions:
 <blockquote class="tr_bq">import re
 re.escape( str )</blockquote>
 Python detects all escape characters that can be used by regex &nbsp;and add slash before them
-[http://docs.python.org/2/library/re.html#re.escape](http://docs.python.org/2/library/re.html#re.escape)</div>
+[http://docs.python.org/2/library/re.html#re.escape](http://docs.python.org/2/library/re.html#re.escape)

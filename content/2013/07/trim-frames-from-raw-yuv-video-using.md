@@ -15,4 +15,3 @@ Using it for trimming AVI video:
 
 avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png 
 
-</div>

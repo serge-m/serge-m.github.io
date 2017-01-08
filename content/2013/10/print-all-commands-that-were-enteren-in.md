@@ -5,4 +5,4 @@ Slug: print-all-commands-that-were-enteren-in
 Tags: 
 
 <span style="font-family: Courier New, Courier, monospace;">import readline
-readline.write_history_file( "log.py")</span></div>
+readline.write_history_file( "log.py")</span>

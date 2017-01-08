@@ -30,4 +30,4 @@ My version of some cross-platform code
 
 <span style="font-family: Courier New, Courier, monospace;">}</span>
 <div>
-</div>inspired by&nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646)</div>
+</div>inspired by&nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646)

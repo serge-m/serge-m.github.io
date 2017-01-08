@@ -7,4 +7,4 @@ Tags: draft,matlab
 
 fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.
 
-useParallel - automatic parallel</div>
+useParallel - automatic parallel

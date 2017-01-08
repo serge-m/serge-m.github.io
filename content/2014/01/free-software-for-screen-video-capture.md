@@ -4,13 +4,18 @@ Date: 2014-01-15 19:11:00
 Slug: free-software-for-screen-video-capture
 Tags: tools,freeware
 
-<h2 style="text-align: left;">CamStudio 2.7</h2><div>[http://camstudio.org/](http://camstudio.org/)</div><div>works fine</div>
+## CamStudio 2.7
+[http://camstudio.org/](http://camstudio.org/) works fine
 
 
-<h2 style="text-align: left;">Rylstim-Screen-Recorder</h2><div>[http://www.sketchman-studio.com/rylstim-screen-recorder/](http://www.sketchman-studio.com/rylstim-screen-recorder/)</div><div>There were some troubles while recording ConEmu software</div>Portable version is available
+## Rylstim-Screen-Recorder
+[http://www.sketchman-studio.com/rylstim-screen-recorder/](http://www.sketchman-studio.com/rylstim-screen-recorder/)
+
+There were some troubles while recording ConEmu software</div>Portable version is available
 
 
-<h2 style="text-align: left;">HyperCam 2</h2>[http://www.hyperionics.com/hc/](http://www.hyperionics.com/hc/)
+## HyperCam 2
+
+[http://www.hyperionics.com/hc/](http://www.hyperionics.com/hc/)
+
 Works well
-
-</div>

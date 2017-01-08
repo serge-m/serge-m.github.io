@@ -364,6 +364,5 @@ def silhouetteStrokeImporter(precision=2):
 #remove the line below if you are using the script with menu.py (in menus/DAG/etc)
 silhouetteStrokeImporter()</span>
 </pre><div>
-</div>
 
-</div>
+

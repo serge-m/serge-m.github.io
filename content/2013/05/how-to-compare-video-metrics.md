@@ -7,4 +7,4 @@ Tags:
 There are specific databases which were subjectively tested. Ans MOS was calculated
 for example
 [http://www.ponomarenko.info/tid2008.htm](http://www.ponomarenko.info/tid2008.htm)
-you can download database and compare your metric to MOS by&nbsp;Spearman correlation</div>
+you can download database and compare your metric to MOS by&nbsp;Spearman correlation

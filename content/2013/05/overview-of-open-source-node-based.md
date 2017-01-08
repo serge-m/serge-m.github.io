@@ -13,4 +13,4 @@ Very raw
 
 
 <h2>Blender</h2>Good staff, but it is designed originally for 3D modeling. Video editing is performed in composing mode. Rendering is veeery sloooowww. Open source. Available for linux and windows. 
-Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/blenderprojects/)</div>
+Source code:&nbsp;[http://gitorious.org/blenderprojects/](http://gitorious.org/blenderprojects/)

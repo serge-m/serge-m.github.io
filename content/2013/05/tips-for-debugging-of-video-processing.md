@@ -19,4 +19,4 @@ The thing should vary is "Working directory" in "Properties->Configuration prope
 
 Another usefull thing is setting &nbsp;"Environment". Just write there
 <span style="font-family: Courier New, Courier, monospace;">PATH=%PATH%;<path to dll></span>
-and you don't need to copy all dependency dll's in every debug folder.&nbsp;</div>
+and you don't need to copy all dependency dll's in every debug folder.&nbsp;

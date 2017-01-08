@@ -23,4 +23,4 @@ Produce debugging information for use by GDB. This means to use the most express
 </span><span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;">Blog about computer vision and opencv</span>
 <span style="background-color: white; font-family: Arial, sans-serif; font-size: x-small; line-height: 18px;">[http://www.uralvision.blogspot.ru/](http://www.uralvision.blogspot.ru/)</span>
 <span style="background-color: white; font-family: Arial, sans-serif; font-size: x-small; line-height: 18px;">
-</span></div>
+</span>

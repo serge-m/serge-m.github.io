@@ -21,3 +21,9 @@ Harry Percival
 * [Докеризация веб приложения на Python](https://www.youtube.com/watch?v=if6Ly9ik9pE), Антон Егоров
 
 * [Thinking about Concurrency](https://www.youtube.com/watch?v=Bv25Dwe84g0), Raymond Hettinger, Python core developer
+
+# Tutorials
+
+* [Set up vim for python](https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/)
+
+* [Set up emacs for python](https://realpython.com/blog/python/emacs-the-best-python-editor/)

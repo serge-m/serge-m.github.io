@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - 03</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/03.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-03-22T22:12:00+01:00</updated><entry><title>Scipy in pypy</title><link href="https://serge-m.github.io/scipy-in-pypy.html" rel="alternate"></link><published>2016-03-22T22:12:00+01:00</published><updated>2016-03-22T22:12:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-03-22:/scipy-in-pypy.html</id><summary type="html">&lt;p&gt;Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.&lt;/p&gt;
+&lt;p&gt;I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn't work.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/scipy/blob/v0.17.0_for_pypy_bin/bin/scipy_0.17.0_for_pypy_draft.tar.gz"&gt;link&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.&lt;/p&gt;
+&lt;p&gt;I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn't work.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/scipy/blob/v0.17.0_for_pypy_bin/bin/scipy_0.17.0_for_pypy_draft.tar.gz"&gt;link&lt;/a&gt;&lt;/p&gt;</content><category term="pypy"></category></entry><entry><title>Building Pypy</title><link href="https://serge-m.github.io/building-pypy.html" rel="alternate"></link><published>2016-03-22T21:51:00+01:00</published><updated>2016-03-22T21:51:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-03-22:/building-pypy.html</id><summary type="html">&lt;p&gt;Pypy builds faster if using &lt;code&gt;-O2&lt;/code&gt; option.&lt;/p&gt;
+&lt;p&gt;To build faster (according to pypy documentation) use prebuilt pypy from &lt;a href="http://buildbot.pypy.org/nightly/trunk/"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Using virtualenv to create virtual environment for it.&lt;/p&gt;
+&lt;p&gt;Build script (to be placed in pypy source directory):&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+&lt;span class="nb"&gt;source&lt;/span&gt; &amp;lt;path to …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;Pypy builds faster if using &lt;code&gt;-O2&lt;/code&gt; option.&lt;/p&gt;
+&lt;p&gt;To build faster (according to pypy documentation) use prebuilt pypy from &lt;a href="http://buildbot.pypy.org/nightly/trunk/"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Using virtualenv to create virtual environment for it.&lt;/p&gt;
+&lt;p&gt;Build script (to be placed in pypy source directory):&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+&lt;span class="nb"&gt;source&lt;/span&gt; &amp;lt;path to existing pypy environment&amp;gt;/bin/activate &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 2
+pypy ../../rpython/bin/rpython --batch -O2 targetpypystandalone
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</content><category term="pypy"></category></entry><entry><title>reading C type declarations</title><link href="https://serge-m.github.io/reading-c-type-declarations.html" rel="alternate"></link><published>2015-03-09T14:26:00+01:00</published><updated>2015-03-09T14:26:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-03-09:/reading-c-type-declarations.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.unixwiz.net/techtips/reading-cdecl.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;////////////
+simple example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;long **foo[7];&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and &lt;strike&gt;strike out&lt;/strike&gt; the parts we've finished with.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;long * * foo [7];&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Start …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.unixwiz.net/techtips/reading-cdecl.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;////////////
+simple example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;long **foo[7];&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and &lt;strike&gt;strike out&lt;/strike&gt; the parts we've finished with.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;long * * foo [7];&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Start with the variable name and end with the basic type: &lt;/p&gt;
+&lt;p&gt;foo is ... long &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strike&gt;long&lt;/strike&gt; * * &lt;strike&gt;foo&lt;/strike&gt;[7];&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At this point, the variable name is touching two derived types: "array of 7" and "pointer to", and the rule is to go right when you can, so in this case we consume the "array of 7" &lt;/p&gt;
+&lt;p&gt;foo is array of 7 ... long &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strike&gt;long&lt;/strike&gt; * * &lt;strike&gt;foo[7]&lt;/strike&gt;;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now we've gone as far right as possible, so the innermost part is only touching the "pointer to" - consume it. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;foo&lt;/code&gt; is array of 7 pointer to ... long &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strike&gt;long&lt;/strike&gt; * &lt;strike&gt;*foo[7];&lt;/strike&gt;&lt;/p&gt;
+&lt;p&gt;The innermost part is now only touching a "pointer to", so consume it also. &lt;/p&gt;
+&lt;p&gt;foo is array of 7 pointer to pointer to long &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This completes the declaration! &lt;/p&gt;</content><category term="c++"></category><category term="useful"></category></entry><entry><title>Cool 3d web design</title><link href="https://serge-m.github.io/cool-3d-web-design.html" rel="alternate"></link><published>2014-03-23T23:58:00+01:00</published><updated>2014-03-23T23:58:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-03-23:/cool-3d-web-design.html</id><summary type="html">&lt;p&gt;http://www.snowflakecreative.co.uk/&lt;/p&gt;</summary><content type="html">&lt;p&gt;http://www.snowflakecreative.co.uk/&lt;/p&gt;</content></entry><entry><title>About sublime</title><link href="https://serge-m.github.io/about-sublime.html" rel="alternate"></link><published>2014-03-21T11:21:00+01:00</published><updated>2014-03-21T11:21:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-03-21:/about-sublime.html</id><summary type="html">&lt;p&gt;Convenient json formatting
+http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text&lt;/p&gt;</summary><content type="html">&lt;p&gt;Convenient json formatting
+http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text&lt;/p&gt;</content><category term="sublime"></category><category term="tools"></category></entry><entry><title>clang: error: linker command failed with exit code 1</title><link href="https://serge-m.github.io/clang-error-linker-command-failed-with.html" rel="alternate"></link><published>2014-03-20T16:14:00+01:00</published><updated>2014-03-20T16:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-03-20:/clang-error-linker-command-failed-with.html</id><summary type="html">&lt;p&gt;Finally I solved the problem with broken clang compilation
+I always got message&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;ld: malformed archive TOC entry for &lt;span class="nt"&gt;&amp;lt;long&lt;/span&gt; &lt;span class="err"&gt;strange&lt;/span&gt; &lt;span class="err"&gt;identifier&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, offset 362137760 is beyond end of file 303710208&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Finally I solved the problem with broken clang compilation
+I always got message&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;ld: malformed archive TOC entry for &lt;span class="nt"&gt;&amp;lt;long&lt;/span&gt; &lt;span class="err"&gt;strange&lt;/span&gt; &lt;span class="err"&gt;identifier&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, offset 362137760 is beyond end of file 303710208&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;nbsp;&lt;/span&gt;for architecture x86_64&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/div&gt;&lt;div class="p1"&gt;when I interrupted compilation of a large project. And the only way to build a project was to clean and build again. It took a long time.&amp;nbsp;&lt;/div&gt;&lt;div class="p1"&gt;I found out I don;t need rebuild all if I delete all files from Debug directory. After that Xcode only relinks the project. It is much faster.&lt;/div&gt;&lt;div class="p1"&gt;
+&lt;/div&gt;&lt;/p&gt;</content><category term="c++"></category><category term="xcode"></category><category term="clang"></category></entry><entry><title>Cyrillic characters decoder</title><link href="https://serge-m.github.io/cyrillic-characters-decoder.html" rel="alternate"></link><published>2014-03-17T10:35:00+01:00</published><updated>2014-03-17T10:35:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-03-17:/cyrillic-characters-decoder.html</id><summary type="html">&lt;p&gt;Very useful for determining what text is encoded for example in unicode characters/
+&lt;a href="http://2cyr.com/decode/"&gt;http://2cyr.com/decode/&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Very useful for determining what text is encoded for example in unicode characters/
+&lt;a href="http://2cyr.com/decode/"&gt;http://2cyr.com/decode/&lt;/a&gt;&lt;/p&gt;</content></entry></feed>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>misc - sergem personal public notebook</title>
+    <title>05 - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
 
 
     <meta name="author" content="sergem" />
-    <meta name="keywords" content="misc" />
+    <meta name="keywords" content="05" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -33,8 +33,8 @@
 
 
 
-        <link href="https://serge-m.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
-              title="sergem personal public notebook misc ATOM Feed"/>
+        <link href="https://serge-m.github.io/feeds/05.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook 05 ATOM Feed"/>
 
 </head>
 <body>
@@ -53,8 +53,41 @@ sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://serge-m.github.io/category/01.html">01</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/02.html">02</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/03.html">03</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/04.html">04</a>
+                        </li>
                         <li class="active">
-                            <a href="https://serge-m.github.io/category/misc.html">Misc</a>
+                            <a href="https://serge-m.github.io/category/05.html">05</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/06.html">06</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/07.html">07</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/08.html">08</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/09.html">09</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/10.html">10</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/11.html">11</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/12.html">12</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -69,65 +102,52 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://serge-m.github.io/convert-all-avi-files-in-current.html">Convert all *.avi files in current directory to png sequences</a></h2>
+                <h2><a href="https://serge-m.github.io/pypy-with-numpy.html">pypy with numpy</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-22T23:49:00+02:00"> Tue 22 October 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-05-16T00:11:00+02:00"> Mon 16 May 2016</time>
     </span>
 
 
 
 
 
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
+        /
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Using python and ffmpeg:</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
-<span class="c1"># -*- coding: cp1251 -*-</span>
+                <div class="summary"><p>Looks like pypy now can build numpy. Well, a slightly modified numpy.</p>
+<ol>
+<li>
+<p>Get default branch of pypy. be careful cause the developers don't maintain default branch compilable.
+    Revision 84341 (c86b42dd7613) works for me.</p>
+</li>
+<li>
+<p>compile using</p>
+<div class="highlight"><pre><span></span>./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy
+</pre></div>
 
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">os</span>
 
-<span class="n">t</span><span class="o">=</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.avi&quot;</span> <span class="p">)</span> <span class="c1"># search all AVI files</span>
-
-<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
-     <span class="n">vv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span> <span class="n">vv</span> <span class="p">)</span> <span class="c1"># make a directory for each input file</span>
-     <span class="n">pathDst</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">vv</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%05d</span><span class="s2">.png&quot;</span> <span class="p">)</span> <span class="c1"># deststination path …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/convert-all-avi-files-in-current.html">more ...</a>
+</li>
+<li>
+<p>Create package and vitual environment. Something …</p></li></ol>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pypy-with-numpy.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html">Print all commands that were entered in interactive mode in Python</a></h2>
+                <h2><a href="https://serge-m.github.io/about-python.html">About python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-22T23:44:00+02:00"> Tue 22 October 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><span style="font-family: Courier New, Courier, monospace;">import readline
-readline.write_history_file( "log.py")</span></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/blog-post_22.html">Десятка лучших консольных команд</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-22T12:39:00+02:00"> Tue 22 October 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2016-05-01T12:33:00+02:00"> Sun 01 May 2016</time>
     </span>
 
 
@@ -137,53 +157,28 @@ readline.write_history_file( "log.py")</span></p>
 <span class="label label-default">Tags</span>
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
         /
-	<a href="https://serge-m.github.io/tag/console.html">console</a>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
         /
-	<a href="https://serge-m.github.io/tag/russian.html">russian</a>
+	<a href="https://serge-m.github.io/tag/links.html">links</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><a href="https://habrahabr.ru/post/198482/">источник</a></p>
-<h3>Десятое место</h3>
-<p>Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.</p>
-<p>Комбинация <code>'ALT+.'</code> или <code>'&lt;ESC&gt; .'</code></p>
-<h3>Девятое место</h3>
-<p>Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post_22.html">more ...</a>
+                <div class="summary"><p>Cheat Sheet: Writing Python 2-3 compatible code
+<a href="http://python-future.org/compatible_idioms.html">http://python-future.org/compatible_idioms.html</a></p>
+<p>Google Python Guidelines
+<a href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
+<p>Inheritance
+<a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-python.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html">OpenCV. Processing external byte buffer</a></h2>
+                <h2><a href="https://serge-m.github.io/every-day-photos.html">every day photos</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-21T13:40:00+02:00"> Mon 21 October 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>We have such an example from openCV documentation:
-<blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>
-<span style="font-family: Courier New, Courier, monospace;">GaussianBlur(img, img, Size(7,7), 1.5, 1.5);</span></blockquote>
-<div>What does it mean?&nbsp;</div><div>Lets say I have an image img:
-<blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">typedef unsigned char BYTE;</span>
-<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image …</div></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-15T15:22:00+02:00"> Tue 15 October 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-05-26T00:15:00+02:00"> Tue 26 May 2015</time>
     </span>
 
 
@@ -191,52 +186,27 @@ readline.write_history_file( "log.py")</span></p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
-        /
-	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
+	<a href="https://serge-m.github.io/tag/data.html">data</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I have the following code for copying several buffers from one object to another:</p>
-<div class="highlight"><pre><span></span>// Copy several buffers (images)
-for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   // Copy one image per pixel
-   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-   {
-      conf_[i][j] = src.conf_ …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
+                <div class="summary"><p><a href="https://vimeo.com/108551893">https://vimeo.com/108551893</a> - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/</p>
+<p><a href="http://www.365plrds.com/slideshow.html">http://www.365plrds.com/slideshow.html</a></p>
+<p>https://www.youtube.com/watch?v=tWzPDNabdBs</p>
+<p>https://www.youtube.com/watch?v=3MPyoAN4FIk</p>
+<p>https://www.youtube.com/watch?v=qJutZCyXEJg</p>
+<p>https://www.youtube.com/watch?v=qJutZCyXEJg</p>
+<p>https://www.youtube.com …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/every-day-photos.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html">How to cheat on video encoder comparisons</a></h2>
+                <h2><a href="https://serge-m.github.io/double-checked-lock-dcl.html">Double checked lock (DCL)</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-11T12:57:00+02:00"> Fri 11 October 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;">Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)</h3><h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"></h3><div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"><span style="background-color: white;">Filed under:&nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing …</span></div></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">Using h264/multiview codec from Intel Media SDK</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-11T12:37:00+02:00"> Fri 11 October 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-05-19T17:46:00+02:00"> Tue 19 May 2015</time>
     </span>
 
 
@@ -244,50 +214,22 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/errors.html">errors</a>
-        /
-	<a href="https://serge-m.github.io/tag/dll.html">dll</a>
-        /
-	<a href="https://serge-m.github.io/tag/video.html">video</a>
+	<a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:</p>
-<div class="highlight"><pre><span></span>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w <span class="m">1920</span> -h 1080
-Return on error: error code -3, .<span class="se">\s …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">more ...</a>
+                <div class="summary"><p><a href="http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html">http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html</a></p>
+<p>DCL  relies on an unsynchronized use of the resource field. That appears to  be harmless, but it is not. To see why, imagine that thread A is inside  the synchronized block, executing the statement <code>resource = new  Resource();</code> while thread B is …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/double-checked-lock-dcl.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/using-ls-command.html">Using ls command</a></h2>
+                <h2><a href="https://serge-m.github.io/lambda-functions-in-matlab.html">lambda functions in matlab</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-08T12:24:00+02:00"> Tue 08 October 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><strong><span style="color: #93c47d;">ls -w1 */ </span>&nbsp;</strong>- show only subdirectories in current directory (*/) and display in 1 column (-w1)
-<span style="color: #6aa84f;"><strong>ls -c</strong> </span>&nbsp;- sort by date</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-ls-command.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/blog-post-2.html">Некоторые заметки о приведении типов в СиПлюсПлюс</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-04T17:59:00+02:00"> Fri 04 October 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-05-24T18:56:00+02:00"> Sat 24 May 2014</time>
     </span>
 
 
@@ -295,76 +237,25 @@ Return on error: error code -3, .<span class="se">\s …</span></pre></div>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/russian.html">russian</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>АлёнаC++:
-<a href="http://alenacpp.blogspot.ru/2005/08/c.html">http://alenacpp.blogspot.ru/2005/08/c.html</a></p>
-<p><code>static_cast</code> между указателями корректно, только если один из указателей - это указатель на <code>void</code> или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от <code>void*</code>, который возвращает <code>malloc</code>, следует использовать <code>static_cast …</code></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-2.html">more ...</a>
+                <div class="summary"><p>I discovered it during Machine learnin courses on Coursera</p>
+<blockquote class="tr_bq">To specify the actual function we are minimizing, we use a "short-hand"
+for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
+creates a function, with argument t, which calls your costFunction. This
+allows us to wrap the costFunction for …</blockquote>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/lambda-functions-in-matlab.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/math-morphology-in-adobe-after-effects.html">Math morphology in Adobe After Effects</a></h2>
+                <h2><a href="https://serge-m.github.io/crop-included-graphics-in-latex.html">crop included graphics in latex</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-09-18T00:22:00+02:00"> Wed 18 September 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
-<img alt="" src="http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png"></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/math-morphology-in-adobe-after-effects.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html">Opencv and "OpenCV Error: Bad flag"</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-08-05T16:59:00+02:00"> Mon 05 August 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>&nbsp; &nbsp;
-I had pretty simple code with opencv:</p>
-<p><strong>&nbsp; &nbsp; cv::Mat t;</strong>
-<strong>&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;</strong>
-<strong>&nbsp; &nbsp; cv::imwrite( "q.bmp", t );</strong>
-<strong>&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );</strong>
-<strong>&nbsp; &nbsp; cv::imshow( "asdads", t );</strong>
-<strong>&nbsp; &nbsp; cv::waitKey( -1 );</strong>
-<strong>&nbsp; &nbsp; return 0;</strong></p>
-<p>It caused crash in debug configuration:</p>
-<p><strong>OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …</strong></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">OpenCV. Copy image from unsigned char buffer, resize and save to file</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-07-09T23:23:00+02:00"> Tue 09 July 2013</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-05-21T21:56:00+02:00"> Wed 21 May 2014</time>
     </span>
 
 
@@ -372,131 +263,62 @@ I had pretty simple code with opencv:</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
+	<a href="https://serge-m.github.io/tag/latex.html">latex</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>How to copy image from unsigned char buffer, resize and save to file.
-If you use single-channel image.</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;opencv/cv.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;opencv/highgui.h&gt;</span><span class="cp"></span>
+                <div class="summary"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 
-<span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">src</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">CV_8UC1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">source_byte_beffer</span> <span class="p">)</span> <span class="p">);</span>
-<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">small</span><span class="p">(</span><span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">CV_8UC1</span> <span class="p">);</span>
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
 
-<span class="n">cv</span><span class="o">::</span><span class="n">Size</span> <span class="n">s_half</span><span class="p">(</span><span class="n">width</span><span class="o">/</span> <span class="n">coeff …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">SVN copy certain subdirectories to a branch</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-07-03T17:07:00+02:00"> Wed 03 July 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
-<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
-<pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
-      - project1
-      - project2
-          -subdir1
-          -subdir2
-          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">Trim frames from raw YUV video using FFMPEG</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-07-02T19:01:00+02:00"> Tue 02 July 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
-<blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
-
-<p>size of input video is 1920x1088, format YUV420 progressive</p>
-<p>UPD:
-ffmpeg is renamed to avconv.
-Using it for trimming …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">Color problems in avisynth->overlay</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-06-21T11:22:00+02:00"> Fri 21 June 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation</p>
-<p>I have a depth map (from&nbsp;<a href="http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html">http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html</a>)
-<img alt="" src="http://3.bp.blogspot.com/-n-jVnbn0wO4/UcP9sySRrvI/AAAAAAAAAZA/RgR0BQEkjgY/s320/depth.jpg"><div class="separator" style="clear: both; text-align: center;">
-</div><div class="separator" style="clear: both; text-align: left;">And two scripts</div><div class="separator" style="clear: both; text-align: left;">1)&nbsp;just_show.avs</div><blockquote class="tr_bq">v = ImageSource( "depth.jpg" ).Trim(0, -1)
-return v</blockquote>2 …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">Add path in linux/cygwin and windows</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-06-09T18:45:00+02:00"> Sun 09 June 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>in cygwin:</p>
-<div class="highlight"><pre><span></span><span class="x">PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:~/your_path</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="c">% crop left</span>
+<span class="k">\includegraphics</span><span class="na">[trim={5cm 0 0 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
+<span class="c">% crop right</span>
+<span class="k">\includegraphics</span><span class="na">[trim={0 0 5cm 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </pre></div>
 
 
-<p>or</p>
-<div class="highlight"><pre><span></span><span class="x">PATH=~/your_path:</span><span class="p">$</span><span class="nv">PATH</span><span class="x"></span>
+<p>Use the trim option, which takes four space separated values.</p>
+<div class="highlight"><pre><span></span>trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}
 </pre></div>
 
 
-<p>Add path windows</p>
-<div class="highlight"><pre><span></span><span class="nt">PATH</span><span class="o">=%</span><span class="nt">PATH</span><span class="o">%;</span><span class="nt">C</span><span class="o">:</span><span class="err">\</span><span class="nt">Your_Path</span><span class="o">;</span>
+<p><a href="http://tex.stackexchange.com/a/57420">Source</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/crop-included-graphics-in-latex.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/multiple-windows-in-one-linux-terminal.html">multiple "windows" in one linux terminal</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-05-21T21:22:00+02:00"> Wed 21 May 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>use "screen" utility</p>
+<div class="highlight"><pre><span></span>ctrl-a-p - switch
+ctrl-a-c - new
+ctrl-a-Q - remove freeze
+ctrl-a-s - freeze
+ctrl-a-S - split, but doesn;t work
 </pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">more ...</a>
+
+
+<p>see also: <a href="/terminal-setup-in-linux-mint.html">using tmux</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/multiple-windows-in-one-linux-terminal.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -600,29 +422,231 @@ you can download database and compare your metric to MOS by&nbsp;Spearman correl
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/replace-n-in-microsoft-word.html">Replace \n in Microsoft word</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-26T13:55:00+02:00"> Sun 26 May 2013</time>
+    </span>
 
-        <ul class="pagination">
-                <li class="prev"><a href="https://serge-m.github.io/category/misc6.html">&laquo;</a>
-                </li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc.html">1</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc2.html">2</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc3.html">3</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc4.html">4</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc5.html">5</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc6.html">6</a></li>
-                    <li class="active"><a
-                            href="https://serge-m.github.io/category/misc7.html">7</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc8.html">8</a></li>
-                <li class="next"><a
-                        href="https://serge-m.github.io/category/misc8.html">&raquo;</a></li>
-        </ul>
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>To replace new lines in word use "^13" whild-char. "^p" doesn't work :(</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/replace-n-in-microsoft-word.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html">Tips for debugging of video processing console</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-16T13:31:00+02:00"> Thu 16 May 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Assume we have Visual Stusio solution for console that makes some video processing.
+The console takes two input videos and generates the third video:
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
+1) dataset1 conststs of videos …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/bjontegaard-metric-matlab-script.html">Bjontegaard metric. Matlab script.</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-15T12:51:00+02:00"> Wed 15 May 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved.
+I is useful to determine how big is the gain between "before" and "after" versions.
+Or determine what curve is better if they have complex form (for example, intersecting).</p>
+<p>I found matlab <a href="http://www.mathworks.com/matlabcentral/fileexchange/27798-bjontegaard-metric">script</a>,
+that calculates BD-PSNR, but it was not correct …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/bjontegaard-metric-matlab-script.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">Problems with debug run from Visual Studio with openMP</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-14T12:14:00+02:00"> Tue 14 May 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
+<img alt="" src="http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png">
+The solution is following.
+Folder
+<blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP</blockquote>with files
+<blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP.manifest
+vcomp90d …</blockquote></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/another-place-with-boost-binaries.html">Another place with boost binaries</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-12T14:57:00+02:00"> Sun 12 May 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><a href="http://boost.teeks99.com/">http://boost.teeks99.com/</a>&nbsp;- Another place with boost binaries. It includes build for version 1.49</p>
+<p>Before I new only&nbsp;<a href="http://www.boostpro.com/download/">http://www.boostpro.com/download/</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/another-place-with-boost-binaries.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/error-spawning-cmdexe.html">Error spawning cmd.exe</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-12T14:11:00+02:00"> Sun 12 May 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/errors.html">errors</a>
+        /
+	<a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
+The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
+%SystemRoot …</span></blockquote></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/error-spawning-cmdexe.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/blogs-about-blender.html">Blogs about blender</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-12T12:20:00+02:00"> Sun 12 May 2013</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><a href="http://blendersushi.blogspot.ru/">http://blendersushi.blogspot.ru/</a>
+- one of blender's developers</p>
+<p><a href="http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html">http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html</a>
+- ukrainian blog, &nbsp;video tutorials in russian</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blogs-about-blender.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/overview-of-open-source-node-based.html">Overview of open-source node-based video editors (composers)</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-12T11:51:00+02:00"> Sun 12 May 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
+        /
+	<a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+        /
+	<a href="https://serge-m.github.io/tag/software.html">software</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>Synapse Compositor</h2>
+<p>Seems unsupported for a long time</p>
+<p>Very raw</p>
+<h2>Blender</h2>
+<p>Good stuff, but it is designed originally for 3D modeling. Video editing is performed in composing mode. Rendering is veeery sloooowww. Open source. Available for linux and windows. 
+<a href="http://gitorious.org/blenderprojects/">Source code</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/overview-of-open-source-node-based.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/image-resize-in-nuke.html">Image resize in Nuke</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-07T15:50:00+02:00"> Tue 07 May 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/en.html">en</a>
+        /
+	<a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>So here we have two filters:
+1) Crop
+2) Reformat</p>
+<p>To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/image-resize-in-nuke.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -633,63 +657,63 @@ you can download database and compare your metric to MOS by&nbsp;Spearman correl
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/shell-commands.html">
-                            Shell commands
+                        <a href="https://serge-m.github.io/pypy-with-numpy.html">
+                            pypy with numpy
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/add-service-in-linux.html">
-                            Add service in ubuntu
+                        <a href="https://serge-m.github.io/about-python.html">
+                            About python
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
-                            OpenVPN server in cloud using docker
+                        <a href="https://serge-m.github.io/every-day-photos.html">
+                            every day photos
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">
-                            Docker in Scaleway's vc1s Ubuntu Xenial
+                        <a href="https://serge-m.github.io/double-checked-lock-dcl.html">
+                            Double checked lock (DCL)
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
-                            Check server fingerprint for scaleway
+                        <a href="https://serge-m.github.io/lambda-functions-in-matlab.html">
+                            lambda functions in matlab
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/raspberry-pi-links.html">
-                            Raspberry Pi Links
+                        <a href="https://serge-m.github.io/crop-included-graphics-in-latex.html">
+                            crop included graphics in latex
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
-                            Run docker as pytest fixture
+                        <a href="https://serge-m.github.io/multiple-windows-in-one-linux-terminal.html">
+                            multiple "windows" in one linux terminal
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">
-                            Installing java 8 on linux mint 17.3
+                        <a href="https://serge-m.github.io/never-never.html">
+                            Never never!
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">
-                            Testing json responses in Flask REST apps with pytest
+                        <a href="https://serge-m.github.io/how-to-compare-video-metrics.html">
+                            How to compare video metrics
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
-                            Set up Travis CI for building personal page on Github Pages with Pelican
+                        <a href="https://serge-m.github.io/ssim-metric-for-video.html">
+                            SSIM metric for video
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/refactoring-python-extract-variable.html">
-                            Refactoring python code. Extracting variables and other.
+                        <a href="https://serge-m.github.io/ssim.html">
+                            SSIM по русски
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/useful-python-links.html">
-                            Useful python links
+                        <a href="https://serge-m.github.io/replace-n-in-microsoft-word.html">
+                            Replace \n in Microsoft word
                         </a>
                     </li>
                 </ul>
@@ -698,8 +722,63 @@ you can download database and compare your metric to MOS by&nbsp;Spearman correl
             <li class="list-group-item"><a href="https://serge-m.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        <a href="https://serge-m.github.io/category/01.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 01
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/02.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 02
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/03.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 03
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/04.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 04
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/05.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 05
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/06.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 06
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/07.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 07
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/08.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 08
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/09.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 09
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/10.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 10
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/11.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 11
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/12.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 12
                         </a>
                     </li>
                 </ul>
@@ -1175,7 +1254,7 @@ you can download database and compare your metric to MOS by&nbsp;Spearman correl
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 sergem
+         <div class="col-xs-10">&copy; 2016 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

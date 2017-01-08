@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - 07</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/07.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-07-16T20:07:00+02:00</updated><entry><title>Fix boot record after moving linux mint partitions to another disk</title><link href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html" rel="alternate"></link><published>2016-07-16T20:07:00+02:00</published><updated>2016-07-16T20:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-07-16:/fix-boot-record-after-moving-linux-mint.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Copying partition is straightforward. Made using gparted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
+Assume we have following partitions:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; boot /sdb1 (don&amp;#39;t really know how it works)
+ root /sdb2
+ home /sdb3 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Do&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount /dev/sda2 /mnt
+
+## if you have boot partition:
+# sudo …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Copying partition is straightforward. Made using gparted.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create bootable USB stick (Startup disk creator in Linux mint), boot from it.
+Assume we have following partitions:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; boot /sdb1 (don&amp;#39;t really know how it works)
+ root /sdb2
+ home /sdb3 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Do&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mount /dev/sda2 /mnt
+
+## if you have boot partition:
+# sudo mount /dev/sda1 /mnt/boot
+
+sudo grub-install --root-directory=/mnt /dev/sda
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://ru.wikibooks.org/wiki/Grub_2#.D0.92.D0.BE.D1.81.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B5_GRUB2_.D1.81_LiveCD._.D1.81.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2_.28.D0.B1.D0.B5.D0.B7_chroot.29"&gt;Source of GRUB instructions&lt;/a&gt;&lt;/p&gt;</content><category term="Linux for dummies"></category></entry><entry><title>Mount yandex webdav on local dir</title><link href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html" rel="alternate"></link><published>2016-07-16T13:45:00+02:00</published><updated>2016-07-16T13:45:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-07-16:/mount-yandex-webdav-on-local-dir.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    apt-get install davfs2
+    mkdir /mnt/yandex.disk
+    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
+
+    # check: 
+    df -h /mnt/yandex.disk/ 
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    apt-get install davfs2
+    mkdir /mnt/yandex.disk
+    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
+
+    # check: 
+    df -h /mnt/yandex.disk/ 
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="linux"></category></entry><entry><title>tikz cookbook</title><link href="https://serge-m.github.io/tikz-cookbook.html" rel="alternate"></link><published>2014-07-16T23:44:00+02:00</published><updated>2014-07-16T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-07-16:/tikz-cookbook.html</id><summary type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Drawing label on figure (using tikz)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+            %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Drawing label on figure (using tikz)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+            %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5);
+            \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а};        \end{tikzpicture} 
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="latex"></category><category term="tikz"></category></entry><entry><title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title><link href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html" rel="alternate"></link><published>2013-07-09T23:23:00+02:00</published><updated>2013-07-09T23:23:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</id><summary type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/cv.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/highgui.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;source_byte_beffer&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/cv.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/highgui.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;source_byte_beffer&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;INTER_LINEAR&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// resize from src to small&lt;/span&gt;
+
+&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cvCloneImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvSaveImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;src1.bmp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvReleaseImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;writeImage&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cvCloneImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvSaveImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;little.bmp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvReleaseImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;writeImage&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;//Another way of writtting:&lt;/span&gt;
+&lt;span class="cm"&gt;/*cvWrite(&amp;quot;src.bmp&amp;quot;, src );&lt;/span&gt;
+&lt;span class="cm"&gt;cv::imwrite( &amp;quot;small.bmp&amp;quot;, small );*/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="c++"></category><category term="opencv"></category></entry><entry><title>SVN copy certain subdirectories to a branch</title><link href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html" rel="alternate"></link><published>2013-07-03T17:07:00+02:00</published><updated>2013-07-03T17:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
+&lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;
+&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;trunk
+      - project1
+      - project2
+          -subdir1
+          -subdir2
+          -subdir3        &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div style="text-align: left;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.&lt;/span&gt;&lt;/code&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/code&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&lt;span style="font-size: small; line-height: normal; white-space: normal;"&gt;branches/branch1 …&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
+&lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;
+&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;trunk
+      - project1
+      - project2
+          -subdir1
+          -subdir2
+          -subdir3        &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div style="text-align: left;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.&lt;/span&gt;&lt;/code&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/code&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&lt;span style="font-size: small; line-height: normal; white-space: normal;"&gt;branches/branch1&lt;/span&gt;
+      - project1
+      - project2
+          -subdir2&lt;/span&gt;&lt;span style="font-family: Times, Times New Roman, serif; font-size: 14px;"&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.&lt;/span&gt;
+&lt;div&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;Such a manipulation is required if you want to make a private branch for outsorcer and you don't wan him to see the other parts of the code. However you want to support reintegration of the branch back to the trunk.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;
+&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;The solution is&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;pre style="border: 0px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code&gt;&lt;span style="background-color: #eeeeee; font-family: Courier New, Courier, monospace; line-height: 18px;"&gt;svn cp --parents ./project2/subdir2 http://repo.url/branches/branch1/project2/subdir2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre style="border: 0px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code&gt;&lt;span style="background-color: #eeeeee; font-family: Courier New, Courier, monospace; line-height: 18px;"&gt;or&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;pre style="border: 0px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code&gt;&lt;span style="background-color: #eeeeee; font-family: Courier New, Courier, monospace;"&gt;&lt;span style="color: #222222; white-space: normal;"&gt;svn cp --parents http://&lt;svn_path&gt;/trunk/project2&lt;/span&gt;&lt;span style="color: #222222; white-space: normal;"&gt;/subdir2 &lt;working copy path&gt;/branches/branch1/project2/subdir2&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;Subversion creates all intermediate directories.&lt;/span&gt;&lt;/div&gt;&lt;/p&gt;</content></entry><entry><title>Trim frames from raw YUV video using FFMPEG</title><link href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html" rel="alternate"></link><published>2013-07-02T19:01:00+02:00</published><updated>2013-07-02T19:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-02:/trim-frames-from-raw-yuv-video-using.html</id><summary type="html">&lt;p&gt;Trim 5 frames starting from 160-th frame and write to png sequence&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;ffmpeg -pix_fmt yuv420p -s 1920x1088 &amp;nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &amp;nbsp;output_sequence_%d.png&lt;/blockquote&gt;
+
+&lt;p&gt;size of input video is 1920x1088, format YUV420 progressive&lt;/p&gt;
+&lt;p&gt;UPD:
+ffmpeg is renamed to avconv.
+Using it for trimming …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trim 5 frames starting from 160-th frame and write to png sequence&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;ffmpeg -pix_fmt yuv420p -s 1920x1088 &amp;nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &amp;nbsp;output_sequence_%d.png&lt;/blockquote&gt;
+
+&lt;p&gt;size of input video is 1920x1088, format YUV420 progressive&lt;/p&gt;
+&lt;p&gt;UPD:
+ffmpeg is renamed to avconv.
+Using it for trimming AVI video:&lt;/p&gt;
+&lt;p&gt;avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png &lt;/p&gt;</content></entry></feed>

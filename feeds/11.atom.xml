@@ -1,0 +1,1214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - 11</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/11.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-11-27T22:47:00+01:00</updated><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+&lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
+&lt;p&gt;Creating Flask application:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;JsonResponse&lt;/span&gt;(&lt;span class="n"&gt;Response&lt;/span&gt;):
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;json_dict&lt;/span&gt;, &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="mi"&gt;200 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+&lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
+&lt;p&gt;Creating Flask application:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
+
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;JsonResponse&lt;/span&gt;(&lt;span class="n"&gt;Response&lt;/span&gt;):
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;json_dict&lt;/span&gt;, &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="mi"&gt;200&lt;/span&gt;):
+        &lt;span class="n"&gt;super&lt;/span&gt;().&lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="n"&gt;response&lt;/span&gt;=&lt;span class="n"&gt;json&lt;/span&gt;.&lt;span class="n"&gt;dumps&lt;/span&gt;(&lt;span class="n"&gt;json_dict&lt;/span&gt;), &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="n"&gt;status&lt;/span&gt;, &lt;span class="n"&gt;mimetype&lt;/span&gt;=&lt;span class="s"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Defining GET and POST endpoints. The puprose of the &lt;code&gt;/add&lt;/code&gt; endpoint is to return doubled value.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@app.route(&amp;#39;/&amp;#39;)
+def hello_world():
+    return &amp;#39;Hello, World!&amp;#39;
+
+@app.route(&amp;#39;/add&amp;#39;, methods=[&amp;#39;POST&amp;#39;])
+def add():
+    json = request.json
+    resp = JsonResponse(json_dict={&amp;quot;answer&amp;quot;: json[&amp;#39;key&amp;#39;] * 2}, status=200)
+    return resp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Main section that prints help message. (Alternative launching procedure can be applied)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;if __name__ == &amp;#39;__main__&amp;#39;:
+    script_name = __file__
+    print(&amp;quot;run:\n&amp;quot;
+          &amp;quot;FLASK_APP={} python -m flask run --port 8000 --host 0.0.0.0&amp;quot;.format(script_name))
+    exit(1)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Code of sample_app_test.py&lt;/h2&gt;
+&lt;p&gt;Fixture for test client:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sample_app&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;
+
+&lt;span class="nd"&gt;@pytest.fixture&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;client&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;test_client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test_client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;teardown&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+        &lt;span class="k"&gt;pass&lt;/span&gt; &lt;span class="c1"&gt;# databases and resourses have to be freed at the end. But so far we don&amp;#39;t have anything&lt;/span&gt;
+
+    &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addfinalizer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;teardown&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;test_client&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Helper functions for encoding and decoding jsons:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def post_json(client, url, json_dict):
+    &amp;quot;&amp;quot;&amp;quot;Send dictionary json_dict as a json to the specified url &amp;quot;&amp;quot;&amp;quot;
+    return client.post(url, data=json.dumps(json_dict), content_type=&amp;#39;application/json&amp;#39;)
+
+def json_of_response(response):
+    &amp;quot;&amp;quot;&amp;quot;Decode json from response&amp;quot;&amp;quot;&amp;quot;
+    return json.loads(response.data.decode(&amp;#39;utf8&amp;#39;))
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The simplest test for GET endpoint:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def test_dummy(client):
+    response = client.get(&amp;#39;/&amp;#39;)
+    assert b&amp;#39;Hello, World!&amp;#39; in response.data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Test for POST endpoint. Checking resulting json:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;def test_json(client):
+    response = post_json(client, &amp;#39;/add&amp;#39;, {&amp;#39;key&amp;#39;: &amp;#39;value&amp;#39;})
+    assert response.status_code == 200
+    assert json_of_response(response) == {&amp;quot;answer&amp;quot;: &amp;#39;value&amp;#39; * 2}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Related links:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://flask.pocoo.org/docs/0.11/testing/"&gt;Testing flask applications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pytest-dev/pytest-flask"&gt;pytest fixtures for flask&lt;/a&gt; I haven't checked them. Maybe uyseful&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pallets/flask/tree/master/examples/flaskr"&gt;Flaskr test application from examples of Flask&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="python"></category><category term="flask"></category><category term="pytest"></category></entry><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
+&lt;p&gt;Registration on &lt;a href="https://travis-ci.org/"&gt;https://travis-ci.org/&lt;/a&gt; is straightforward.&lt;/p&gt;
+&lt;p&gt;I have only public free accounts on github.  Thus I need two repositories: one …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
+&lt;p&gt;Registration on &lt;a href="https://travis-ci.org/"&gt;https://travis-ci.org/&lt;/a&gt; is straightforward.&lt;/p&gt;
+&lt;p&gt;I have only public free accounts on github.  Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html. &lt;/p&gt;
+&lt;p&gt;Pushes to sources repository has to trigger builds on TravisCI. That is made in the settings of Travis. In https://travis-ci.org/profile/&lt;your name&gt; you need to enable corresponding repository.&lt;/p&gt;
+&lt;h2&gt;Configuration of travis&lt;/h2&gt;
+&lt;p&gt;You need to create &lt;code&gt;.travis.yml&lt;/code&gt; file in the root of your sources repository. Lets start with the following contents:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;3.5&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;branches&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;
+&lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we ask Travis to use python 3, build only master, install pelican and markdown and run &lt;code&gt;make github&lt;/code&gt; command in the end.&lt;/p&gt;
+&lt;p&gt;Installing markdown is important here. Without it you can end up with failures. Pelican will say:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;WARNING&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;valid&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt; &lt;span class="n"&gt;found&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;WARNING&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sitemap&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;SITEMAP&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;format&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; or `xml&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;WARNING&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sitemap&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Setting&lt;/span&gt; &lt;span class="n"&gt;SITEMAP&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;format&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt; &lt;span class="err"&gt;`&lt;/span&gt;&lt;span class="n"&gt;xml&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That means Pelican doesn't know about markdown format.&lt;/p&gt;
+&lt;p&gt;Now you need to configure Makefile and &lt;code&gt;github&lt;/code&gt; target. I modified default Pelicans &lt;code&gt;github&lt;/code&gt; target as follows. Remove lines startign from "#" - they are just comments.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nf"&gt;github&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="c"&gt;    # Loading commit message from source repository to SITE_COMMIT_MESSAGE variable&lt;/span&gt;
+    &lt;span class="nv"&gt;SITE_COMMIT_MESSAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;git log -1 --format&lt;span class="o"&gt;=&lt;/span&gt;%B&lt;span class="sb"&gt;`&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+    &lt;span class="nv"&gt;$$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;rm -rf &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # remove output directory&lt;/span&gt;
+    git clone git@github.com:&amp;lt;your github user&amp;gt;/&amp;lt;your html repository&amp;gt;.git &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # fresh clone of your html repo to output directory&lt;/span&gt;
+    &lt;span class="nv"&gt;$$&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;ls -d &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt;/* &lt;span class="p"&gt;|&lt;/span&gt; xargs rm -r&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # deleting everything (except hidden files, like .git)&lt;/span&gt;
+    &lt;span class="k"&gt;$(&lt;/span&gt;PELICAN&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;INPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; -o &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; -s &lt;span class="k"&gt;$(&lt;/span&gt;PUBLISHCONF&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;PELICANOPTS&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # running pelican&lt;/span&gt;
+    &lt;span class="nb"&gt;cd&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;OUTPUTDIR&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # go to output directory&lt;/span&gt;
+    git add -v --all . &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\ &lt;/span&gt;
+&lt;span class="c"&gt;    # configure user/email of git commit, commit, push&lt;/span&gt;
+    git config user.email &lt;span class="s2"&gt;&amp;quot;&amp;lt;your mail&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    git config user.name &lt;span class="s2"&gt;&amp;quot;&amp;lt;your name&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    git commit -v -m &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$$&lt;/span&gt;&lt;span class="s2"&gt;SITE_COMMIT_MESSAGE&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    git push &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;done&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.&lt;/p&gt;
+&lt;p&gt;I followed the  guide from &lt;a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md"&gt;here&lt;/a&gt; sections 1 -- 2.5. Instead of section 2.6:
+1. I put my encoded private key &lt;code&gt;blog_deploy_key.enc&lt;/code&gt; to &lt;code&gt;.travis/blog_deploy_key.enc&lt;/code&gt;
+2. I modified my section &lt;code&gt;script&lt;/code&gt; of &lt;code&gt;.travis.yaml&lt;/code&gt; as folows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;script:&lt;/span&gt;
+&lt;span class="x"&gt;- |&lt;/span&gt;
+&lt;span class="x"&gt;  declare -r SSH_FILE=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="err"&gt;mktemp&lt;/span&gt; &lt;span class="err"&gt;-u&lt;/span&gt; &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="err"&gt;/.ssh/blog_deploy_key_decrypted_XXXXXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="x"&gt;  openssl aes-256-cbc -K &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_key -iv &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_iv -in &amp;quot;.travis/blog_deploy_key.enc&amp;quot; -out &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; -d&lt;/span&gt;
+&lt;span class="x"&gt;  chmod 600 &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; &amp;amp;&amp;amp; printf &amp;quot;%s\n&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;Host github.com&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;  IdentityFile &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; \&lt;/span&gt;
+&lt;span class="x"&gt;              &amp;quot;  LogLevel ERROR&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
+&lt;span class="x"&gt;- make github&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Keys &lt;code&gt;VALUE_FROM_TRAVIS&lt;/code&gt; you get while making steps 1 - 2.5 from the guide.&lt;/p&gt;</content><category term="TravisCI"></category><category term="pelican"></category><category term="useful"></category></entry><entry><title>Writing simple optical flow in python</title><link href="https://serge-m.github.io/writing-simple-optical-flow-in-python.html" rel="alternate"></link><published>2014-11-30T14:46:00+01:00</published><updated>2014-11-30T14:46:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-30:/writing-simple-optical-flow-in-python.html</id><summary type="html">&lt;p&gt;First of all we need a couple of test images:
+&lt;pre class="brush: python"&gt;#
+import numpy
+from StringIO import StringIO&lt;/p&gt;
+&lt;p&gt;I0 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000         0         0
+         0         0    0.5000         0         0
+         0         0         0         0         0""") )&lt;/p&gt;
+&lt;p&gt;I1 = numpy …&lt;/p&gt;</summary><content type="html">&lt;p&gt;First of all we need a couple of test images:
+&lt;pre class="brush: python"&gt;#
+import numpy
+from StringIO import StringIO&lt;/p&gt;
+&lt;p&gt;I0 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000         0         0
+         0         0    0.5000         0         0
+         0         0         0         0         0""") )&lt;/p&gt;
+&lt;p&gt;I1 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0       0.5         0         0           0
+         0       1.0         0         0           0
+         0       0.5         0         0           0
+         0         0         0         0         0 """) )&lt;/pre&gt;Define initial horiozontal and vertical components of optical flow 
+&lt;pre class="brush: python"&gt;u = numpy.zeros_like(I0); 
+v = numpy.zeros_like(I0); 
+&lt;/pre&gt;Lets write class for making warps. As OF usually deals only with small displacements, we need iterative estimation: estimate, shift image by found vectors, find again.&lt;/p&gt;
+&lt;pre class="brush: python"&gt;class Warper:
+    def `__init__`(self, shape, u0, v0, I0, I1, display = False):
+        """
+            shape - shape of input function,
+            u0, v0 - starting values of flow
+            I0, I1 - images to compute flow between
+
+        """
+        # saving dimensions
+        self.M, self.N = shape[0], shape[1]
+        # save initial estimation
+        self.u, self.v = u0.copy(), v0.copy()
+        # grid of coordinates, required further
+        self.idx, self.idy = np.meshgrid(np.arange(self.N), np.arange(self.M))
+        # filter for partial derivatives computation
+        self.mask = np.array([1, -8, 0, 8, -1], ndmin=2)/12.0; 
+        # flag of debug information output
+        self.display = display
+        self.counter = 0
+        # copy of images
+        self.I0, self.I1 = I0.copy(), I1.copy()
+
+        # here we create an instance of training function. On each step we will approach to minimum by gradient descent
+        self.train = TrainFunctionSimple(u0, v0, rate=0.1)
+
+    # main function
+    def warp(self):
+        if self.display:
+            print 'Warp %d' % (self.counter,)
+
+        # initial value 
+        u0, v0 = self.u.copy(), self.v.copy()
+
+        # Ends of motion vectors. From these points we will "compensate" motion
+        idxx = self.idx + u0
+        idyy = self.idy + v0
+
+        # get linearly interpolated values from (idxx, idyy) pixels of I1
+        I1warped = interp2linear(self.I1, idxx, idyy)
+
+        # just debug output
+        if self.display:
+            print "I1warped", I1warped
+
+            print "I0", I0
+            print "u0", u0
+            print "v0", v0
+
+            pass
+
+        It = (I1warped - self.I0)
+        print "It", It
+
+        #My first wrong version (it gives no converging, something like continuing initial vectors to infinity during warps) (***)
+        #Ix = ndimage.correlate(self.I1, self.mask, mode='nearest') 
+        #Iy = ndimage.correlate(self.I1, self.mask.T, mode='nearest') 
+
+        #Much better is:
+        Ix = ndimage.correlate(I1warped, self.mask, mode='nearest') 
+        Iy = ndimage.correlate(I1warped, self.mask.T, mode='nearest') 
+
+        # boundary handling
+        m = (idxx &gt; self.N - 1) | (idxx &lt; 0) | (idyy &gt; self.M - 1) | (idyy &lt; 0)
+        Ix[m] = 0.0
+        Iy[m] = 0.0
+        It[m] = 0.0
+
+        self.Ix = Ix
+        self.Iy = Iy
+        self.It = It
+
+        self.train.init(np.zeros_like(self.I0), np.zeros_like(self.I0))
+        for i_sgd in range(120):
+            print self.train.step(Ix, Iy, It),
+
+        self.u += self.train.tu.get_value()
+        self.v += self.train.tv.get_value()
+        self.counter += 1
+&lt;/pre&gt;
+
+&lt;p&gt;Now describing TrainFunction. Well design is not good yet 
+&lt;pre class="brush: python"&gt;#
+class TrainFunction(object):
+    def &lt;code&gt;__init__&lt;/code&gt;(self, u0, v0, rate):
+        self.rate = rate
+        self.tu = theano.shared(u0,name='tu')
+        self.tv = theano.shared(v0,name='tv')
+        self.tIx = T.matrix("tIx")
+        self.tIy = T.matrix("tIy")
+        self.tIt = T.matrix("tIt")&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    self.gu, self.gv = None, None
+    self.E = None
+    self.train_function = self.get_function()
+
+# this function must be overloaded in the derived classes
+def get_energy(self):
+    raise Exception(&amp;quot;Non implemented&amp;quot;)
+
+# construct Theano-function for gradient descent 
+def get_function(self):
+    if self.E is None:
+        self.E = self.get_energy()
+
+    if self.gu is None or self.gv is None:
+        self.gu, self.gv = T.grad(self.E, [self.tu, self.tv])
+
+    train_function = theano.function(
+        inputs=[self.tIx, self.tIy, self.tIt],
+        outputs=[self.E],
+        updates=((self.tu, self.tu - self.rate * self.gu), (self.tv, self.tv - self.rate * self.gv)),
+        allow_input_downcast=True)
+
+    return train_function
+
+# initialization of flow values
+def init(self, u0, v0):
+    self.tu.set_value(u0)
+    self.tv.set_value(v0)
+
+# launching step of gradiennt descent
+def step(self, *args):
+    return self.train_function(*args)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/pre&gt;&lt;pre class="brush: python"&gt;#
+class TrainFunctionSimple(TrainFunction):
+    def &lt;code&gt;__init__&lt;/code&gt;(self, &lt;em&gt;args, &lt;/em&gt;*kwargs):
+        self.alpha = kwargs.get('alpha', 1.1)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    super(self.`__class__`, self).`__init__`(*args, **kwargs)
+
+# constructs Theano-function, that calculate Energy
+def get_energy(self,):
+    # data term 
+    Edata = T.sum( ( self.tIx * self.tu + self.tIy * self.tv + self.tIt ) ** 2 )
+
+    # regularization term
+    Ereg = T.sum(
+        (self.tu)**2 + 
+        (self.tv)**2 )
+
+    return Edata+self.alpha*Ereg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/pre&gt;finally launching 
+&lt;pre class="brush: python"&gt;wrpr = Warper( I0.shape, numpy.zeros_like(I0), numpy.zeros_like(I0), I0, I1, display=True)
+warps = 5
+for i in range(warps):
+    wrpr.warp()
+&lt;/pre&gt;Printing the results: 
+&lt;pre class="brush: python"&gt;numpy.set_printoptions(precision=3,)&lt;/p&gt;
+&lt;p&gt;print wrpr.u
+print wrpr.v
+&lt;/pre&gt;&lt;pre class="brush: python"&gt;[[ 0.     0.     0.     0.     0.   ]
+ [ 0.     0.    -0.523  0.     0.   ]
+ [ 0.     0.    -0.941  0.     0.   ]
+ [ 0.     0.    -0.523  0.     0.   ]
+ [ 0.     0.     0.     0.     0.   ]]
+[[ 0.     0.     0.     0.     0.   ]
+ [ 0.    -0.692  0.     0.     0.   ]
+ [ 0.     0.     0.     0.     0.   ]
+ [ 0.     0.692  0.     0.     0.   ]
+ [ 0.     0.     0.     0.     0.   ]]
+&lt;/pre&gt;Well, not precise enough. However the direction is right. 
+&lt;h1&gt; UPDATE: due to my error in (***), see code, results and images below may have no sense &lt;/h1&gt;    &lt;h1&gt; Some errors &lt;/h1&gt;  In this implementation we estimate how to move I1 to match I0. So vectors points from locations of I0 to points of I1. So spatial derivatives must be calculated from I1, not I0: 
+&lt;pre class="brush: python"&gt;Ix = ndimage.correlate(self.I1, self.mask, mode='nearest') 
+Iy = ndimage.correlate(self.I1, self.mask.T, mode='nearest') 
+&lt;/pre&gt;If you write instead: 
+&lt;pre class="brush: python"&gt;Ix = ndimage.correlate(self.I0, self.mask, mode='nearest') 
+Iy = ndimage.correlate(self.I0, self.mask.T, mode='nearest') 
+&lt;/pre&gt;you will get pressy strange results.
+Input images I0 and I1:&lt;/p&gt;
+&lt;p&gt;&lt;/div&gt;&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;
+&lt;img alt="" src="http://3.bp.blogspot.com/-dYfZ9eUjqE4/VHtGMwxyuQI/AAAAAAAACFg/vBjZqQkILaY/s1600/I0.png"&gt;
+&lt;/td&gt;&lt;td style="text-align: center;"&gt;
+&lt;img alt="" src="http://4.bp.blogspot.com/-G4C3gKG5W_0/VHtGMyVkRtI/AAAAAAAACFk/d51MYVnFvjo/s1600/I1.png"&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/p&gt;
+&lt;p&gt;So the "object" moves from left to right. I0 is a current frame and I1 is a previous frame. The vectors after 1 and 10 warps of correct iteration (derivatives of I1, I0 at background):&lt;/p&gt;
+&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;
+![](http://2.bp.blogspot.com/-RBt_zV-BwPE/VHtGBocIBhI/AAAAAAAACFY/3bTptWcs4zc/s1600/after%2B100%2Bcorrect%2Bwarp.png)
+&lt;/td&gt;&lt;td style="text-align: center;"&gt;
+![](http://2.bp.blogspot.com/-UdPZ2hZ7Qaw/VHtGBmkLbAI/AAAAAAAACFE/U3Wg3lnIhV0/s1600/after%2Bone%2Bcorrect%2Bwarp.png)
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;div style="text-align: left;"&gt;The vectors after 1 and 10 warps of incorrect iteration (derivatives of I0, I0 at background): &lt;/div&gt;
+
+&lt;table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;
+![](http://1.bp.blogspot.com/-RGrBP9xedI0/VHtGB276WkI/AAAAAAAACFI/uvpw4JUI0Xo/s1600/after%2Bone%2Bincorrect%2Bwarp.png)
+&lt;/td&gt;&lt;td style="text-align: center;"&gt;
+![](http://1.bp.blogspot.com/-N7Piixu8HBw/VHtGBgcTDSI/AAAAAAAACFA/bgQJqZQUsvY/s1600/after%2B100%2Bincorrect%2Bwarp.png)
+ &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;pre class="brush: python"&gt;&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;&lt;/pre&gt;
+
+&lt;p&gt;These pictures are made with 120 steps of gradient descent.&lt;/p&gt;
+&lt;h2 style="text-align: left;"&gt;Regularization term&lt;/h2&gt;
+
+&lt;div style="text-align: left;"&gt;Ok. Now lets improve our regularization term. Instead of L2 norm, lets use Total Variation approach.&lt;/div&gt;
+
+&lt;div style="text-align: left;"&gt;On the same settings&amp;nbsp; lets use another train function class:&lt;/div&gt;
+
+&lt;div style="text-align: left;"&gt;&lt;pre class="brush: python"&gt;class TrainFunctionTV(TrainFunction):
+    def `__init__`(self, *args, **kwargs):
+        self.alpha = kwargs.get('alpha', 1.1)
+
+        super(self.`__class__`, self).`__init__`(*args, **kwargs)
+
+    def get_energy(self,):
+        Edata = T.sum((self.tIx * self.tu + self.tIy * self.tv + self.tIt) ** 2)
+        Ereg1 = T.sum(
+            (self.tu[1:]-self.tu[:-1])**2 +
+            (self.tv[1:]-self.tv[:-1])**2 )
+        Ereg2 = T.sum(
+            (self.tu[:,1:]-self.tu[:,:-1]) **2 +
+            (self.tv[:,1:]-self.tv[:,:-1]) ** 2)
+
+        return Edata+self.alpha*(Ereg1+Ereg2)   
+&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div style="text-align: left;"&gt;Now we have these results:
+&lt;pre class="brush: python"&gt;print wrpr.u
+print wrpr.v
+
+
+
+[[-0.862 -0.903 -0.949 -0.941 -0.929]
+ [-0.842 -0.92  -1.025 -0.968 -0.941]
+ [-0.81  -0.933 -1.101 -0.99  -0.95 ]
+ [-0.842 -0.92  -1.025 -0.968 -0.941]
+ [-0.862 -0.903 -0.949 -0.941 -0.929]]
+[[-0.121 -0.136 -0.093 -0.06  -0.045]
+ [-0.106 -0.197 -0.083 -0.043 -0.029]
+ [-0.    -0.    -0.    -0.    -0.   ]
+ [ 0.106  0.197  0.083  0.043  0.029]
+ [ 0.121  0.136  0.093  0.06   0.045]]
+
+
+&lt;/pre&gt;Visualization:
+
+&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;  &lt;td&gt;
+![](http://2.bp.blogspot.com/-RBt_zV-BwPE/VHtGBocIBhI/AAAAAAAACFc/reFzmPZUpes/s1600/after%2B100%2Bcorrect%2Bwarp.png)
+&lt;/td&gt; &lt;td&gt;
+![](http://4.bp.blogspot.com/-fQ1nRz2R0TA/VI9SvoUd3iI/AAAAAAAACGU/IaqihseanNY/s1600/OF%2Bwith%2BTV.png)
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;before (L2)&lt;/td&gt;&lt;td style="text-align: center;"&gt;after (TV)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</content><category term="python"></category><category term="optical flow"></category></entry><entry><title>Setting default parameters from imshow in pyplot</title><link href="https://serge-m.github.io/setting-default-parameters-from-imshow.html" rel="alternate"></link><published>2014-11-23T22:29:00+01:00</published><updated>2014-11-23T22:29:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-23:/setting-default-parameters-from-imshow.html</id><summary type="html">&lt;p&gt;&lt;pre class="brush: cpp"&gt;
+import matplotlib.pyplot as plt
+plt.rcParams['image.cmap'] = 'gray'
+plt.rcParams['image.interpolation'] = 'nearest'
+&lt;/pre&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;pre class="brush: cpp"&gt;
+import matplotlib.pyplot as plt
+plt.rcParams['image.cmap'] = 'gray'
+plt.rcParams['image.interpolation'] = 'nearest'
+&lt;/pre&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category></entry><entry><title>Loading numpy array from string</title><link href="https://serge-m.github.io/loading-numpy-array-from-string.html" rel="alternate"></link><published>2014-11-17T23:01:00+01:00</published><updated>2014-11-17T23:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</id><summary type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
+Source is &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="brush: python"&gt;# loading modules
+import numpy
+from StringIO import StringIO
+
+# Using StringIO as a file-like wrapper over text
+I0 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000 …&lt;/pre&gt;</summary><content type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
+Source is &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre class="brush: python"&gt;# loading modules
+import numpy
+from StringIO import StringIO
+
+# Using StringIO as a file-like wrapper over text
+I0 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000         0         0
+         0         0    0.5000         0         0
+         0    1.0000         0         0         0
+         0    0.5000         0         0         0
+         0    0.5000    1.0000         0         0
+         0         0         0         0         0""") )
+
+
+I1 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0    0.5000         0         0         0
+         0    1.0000         0         0         0
+         0    0.5000         0         0         0
+         0         0    1.0000         0         0
+         0         0    0.5000         0         0
+         0         0    0.5000    1.0000         0
+         0         0         0         0         0 """) )
+&lt;/pre&gt;
+
+&lt;pre class="brush: python"&gt;
+
+&lt;h1&gt;printing results:&lt;/h1&gt;
+&lt;p&gt;print I0
+print I1&lt;/p&gt;
+&lt;h1&gt;result&lt;/h1&gt;
+&lt;p&gt;[[ 0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.5  0.   0. ]
+ [ 0.   0.   1.   0.   0. ]
+ [ 0.   0.   0.5  0.   0. ]
+ [ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0. ]
+ [ 0.   0.5  1.   0.   0. ]
+ [ 0.   0.   0.   0.   0. ]]
+[[ 0.   0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0. ]
+ [ 0.   1.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0. ]
+ [ 0.   0.   1.   0.   0. ]
+ [ 0.   0.   0.5  0.   0. ]
+ [ 0.   0.   0.5  1.   0. ]
+ [ 0.   0.   0.   0.   0. ]]&lt;/p&gt;
+&lt;/pre&gt;</content><category term="useful"></category><category term="numpy"></category><category term="python"></category></entry><entry><title>Quiver for optical flow</title><link href="https://serge-m.github.io/quiver-for-optical-flow.html" rel="alternate"></link><published>2014-11-06T15:36:00+01:00</published><updated>2014-11-06T15:36:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-06:/quiver-for-optical-flow.html</id><summary type="html">&lt;p&gt;Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:&lt;/p&gt;
+&lt;p&gt;&lt;pre class="brush: cpp"&gt; 
+function [ output ] = quiver_flow( u, v )
+%QUIVER_FLOW Displays quiver for optical flow 
+%   SMatyunin2014&lt;/p&gt;
+&lt;p&gt;output = quiver( u, v, 0);
+axis ij …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:&lt;/p&gt;
+&lt;p&gt;&lt;pre class="brush: cpp"&gt; 
+function [ output ] = quiver_flow( u, v )
+%QUIVER_FLOW Displays quiver for optical flow 
+%   SMatyunin2014&lt;/p&gt;
+&lt;p&gt;output = quiver( u, v, 0);
+axis ij;
+end&lt;/p&gt;
+&lt;/pre&gt;</content><category term="useful"></category><category term="matlab"></category><category term="optical flow"></category></entry><entry><title>Simple tests of classic OF methods</title><link href="https://serge-m.github.io/simple-tests-of-classic-of-methods.html" rel="alternate"></link><published>2014-11-05T22:30:00+01:00</published><updated>2014-11-05T22:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/simple-tests-of-classic-of-methods.html</id><summary type="html">&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
+&lt;p&gt;For simple synthetic images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
+
+         0    0.5000         0
+         0    1.0000         0
+         0    0.5000         0
+    0.1000         0         0
+    0.0500         0         0
+    0.0500    0.1000         0
+
+I1 =
+
+    0.5000         0         0
+    1.0000         0         0
+    0.5000         0         0
+         0    0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
+&lt;p&gt;For simple synthetic images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
+
+         0    0.5000         0
+         0    1.0000         0
+         0    0.5000         0
+    0.1000         0         0
+    0.0500         0         0
+    0.0500    0.1000         0
+
+I1 =
+
+    0.5000         0         0
+    1.0000         0         0
+    0.5000         0         0
+         0    0.1000         0
+         0    0.0500         0
+         0    0.0500    0.1000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv = estimate_flow_interface(I0, I1, &amp;#39;classic-c-brightness&amp;#39;, [], {&amp;#39;display&amp;#39;, 1, &amp;#39;pyramid_levels&amp;#39;, 1, &amp;#39;gnc_pyramid_levels&amp;#39;, 1});
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After first iteration ( &lt;code&gt;loop for ignc = 1:this.gnc_iters&amp;amp;nbsp; in dsun_ijcv_flow_code\@ba_optical_flow\compute_flow.m&lt;/code&gt;):
+&lt;img alt="" src="http://4.bp.blogspot.com/-TW_Kgc_c4xM/VFo0XQRJdQI/AAAAAAAACDU/LmjLPEhpcFM/s1600/gnc_iter_1.png"&gt; &lt;/p&gt;
+&lt;p&gt;After 2nd iteration: 
+&lt;img alt="" src="http://1.bp.blogspot.com/-iic-jinHYR8/VFo0XZiLU5I/AAAAAAAACDQ/Yx-509YrRos/s1600/gnc_iter_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;After 3rd iteration:
+&lt;img alt="" src="http://3.bp.blogspot.com/-nNWtlW7GjNI/VFo0XRzxjDI/AAAAAAAACDM/0XNuLNB76yc/s1600/gnc_iter_3.png"&gt;&lt;/p&gt;
+&lt;p&gt;I think, it is right answer.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
+
+   -0.9995   -0.9995   -0.9996
+   -0.9994   -0.9994   -0.9995
+   -0.9992   -0.9992   -0.9992
+    0.9992    0.9992    0.9992
+    0.9994    0.9994    0.9994
+    0.9995    0.9994    0.9994
+
+
+uv(:,:,2) =
+
+  1.0e-003 *
+
+   -0.2083   -0.2080   -0.2080
+   -0.2080   -0.1848   -0.1848
+   -0.1861   -0.1616   -0.1848
+   -0.1507   -0.0860   -0.1183
+   -0.0860   -0.0633   -0.1183
+   -0.0396   -0.0396   -0.0860
+ ```
+
+
+ ## BA method. Another pair of images  
+
+ ```
+ I0 =
+
+         0    0.5000         0
+         0    1.0000         0
+         0    0.5000         0
+
+
+I1 =
+
+    0.5000         0         0
+    1.0000         0         0
+    0.5000         0         0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;1st iteration &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
+
+        -1    -1    -1
+        -1    -1    -1
+        -1    -1    -1
+
+
+    uv(:,:,2) =
+
+      1.0e-014 *
+
+        0.8281    0.8281    0.8281
+        0.8281    0.8281    0.8281
+        0.8281    0.8281    0.8281
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;2nd iteration &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    uv(:,:,1) =
+
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+
+
+    uv(:,:,2) =
+
+      1.0e-013 *
+
+       -0.5965   -0.5965   -0.5965
+       -0.5965   -0.5965   -0.5965
+       -0.5965   -0.5965   -0.5965
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;3rd iteration &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    uv(:,:,1) =
+
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+
+
+    uv(:,:,2) =
+
+      1.0e-011 *
+
+        0.5374    0.5374    0.5374
+        0.5374    0.5374    0.5374
+        0.5374    0.5374    0.5374
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Visually the same:
+&lt;img alt="" src="http://2.bp.blogspot.com/-ihcssiAwj2c/VFo2yZDh_6I/AAAAAAAACDo/pHmB5EVb6Cw/s200/simple_gnc_iter_1.png"&gt;&lt;/p&gt;
+&lt;h2&gt;HS method. Simple image&lt;/h2&gt;
+&lt;p&gt;BA - is not the simpliest method. I found there is implmentation of Horn-Schunk.&lt;/p&gt;
+&lt;p&gt;I found that the results are really poor, when my "image elements" ar just on the border. So I extended image by zeros.&lt;/p&gt;
+&lt;p&gt;I use the following command: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv = estimate_flow_interface(I0, I1, ...
+    &amp;#39;hs-brightness&amp;#39;, [], ...
+    {&amp;#39;display&amp;#39;, 1, &amp;#39;pyramid_levels&amp;#39;, 1, &amp;#39;gnc_pyramid_levels&amp;#39;, 1, ...
+     &amp;#39;pyramid_spacing&amp;#39;, sqrt(2)});
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I also use slightly modified code. I disabled automatic pyramid height calculation, so I set it manually. 
+Input  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    I0 =
+
+             0    0.5000         0
+             0    1.0000         0
+             0    0.5000         0
+        1.0000         0         0
+        0.5000         0         0
+        0.5000    1.0000         0
+
+    I1 =
+        0.5000         0         0
+        1.0000         0         0
+        0.5000         0         0
+             0    1.0000         0
+             0    0.5000         0
+             0    0.5000    1.0000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Gives:
+&lt;img alt="" src="http://3.bp.blogspot.com/-ZfNLO6E_ccc/VFt-E3fW64I/AAAAAAAACEA/4NseP5r2T7I/s1600/HS_no_borders.png"&gt;&lt;/p&gt;
+&lt;p&gt;While  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    I0 =
+
+             0         0         0         0         0
+             0         0    0.5000         0         0
+             0         0    1.0000         0         0
+             0         0    0.5000         0         0
+             0    1.0000         0         0         0
+             0    0.5000         0         0         0
+             0    0.5000    1.0000         0         0
+             0         0         0         0         0
+
+
+    I1 =
+
+             0         0         0         0         0
+             0    0.5000         0         0         0
+             0    1.0000         0         0         0
+             0    0.5000         0         0         0
+             0         0    1.0000         0         0
+             0         0    0.5000         0         0
+             0         0    0.5000    1.0000         0
+             0         0         0         0         0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;gives 
+&lt;img alt="" src="http://2.bp.blogspot.com/-4Z1KIM8Hwk4/VFt-E5ZIFbI/AAAAAAAACD8/moc8gCLTEcA/s1600/HS_borders.png"&gt;&lt;/p&gt;
+&lt;h2&gt;HS method. Multiscale.&lt;/h2&gt;
+&lt;p&gt;```
+    I0 = [ 0 0 0 0 0 0 0 0 0 0 0 0
+           3 0 0 0 0 0 5 5 0 0 0 0 
+           3 0 0 0 0 0 1 3 0 0 0 0
+           0 0 0 1 0 0 2 4 0 0 0 0
+           0 0 0 2 0 0 0 0 0 0 0 0
+           5 2 0 0 0 0 0 0 0 0 0 0
+           0 0 0 0 0 0 0 0 0 0 0 0
+           5 5 0 0 0 0 0 0 0 0 0 0
+           5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I1 = [ 0 0 0 0 0 0 0 0 0 0 0 0
+       3 0 0 0 0 0 0 0 0 0 0 0 
+       3 0 0 0 0 0 0 0 0 0 0 0
+       0 0 0 1 0 0 0 0 0 5 5 0
+       0 0 0 2 0 0 0 0 0 1 3 0
+       5 2 0 0 0 0 0 0 0 2 4 0
+       0 0 0 0 0 0 0 0 0 0 0 0
+       5 5 0 0 0 0 0 0 0 0 0 0
+       5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;```    &lt;/p&gt;
+&lt;p&gt;Here the shift between frames is much larger than a pixel and the size of objects. So OF fail without resolution scaling. 
+  &lt;table&gt;  &lt;tbody&gt;
+  &lt;tr&gt;
+  &lt;td&gt;1 pyramid level &lt;img alt="" src="http://1.bp.blogspot.com/-cKPApsEww3w/VFuA8qfEpPI/AAAAAAAACEQ/UmqX4DYVnkk/s320/HS_pyramid_1.png"&gt;&lt;/td&gt; 
+  &lt;td&gt;2 pyramid levels &lt;img alt="" src="http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png"&gt;&lt;/td&gt; 
+  &lt;td&gt;3 pyramid levels &lt;img alt="" src="http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png"&gt; &lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/p&gt;</content><category term="optical flow"></category></entry><entry><title>Graduated non convexity scheme (GNC)</title><link href="https://serge-m.github.io/graduated-non-convexity-scheme-gnc.html" rel="alternate"></link><published>2014-11-05T17:15:00+01:00</published><updated>2014-11-05T17:15:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/graduated-non-convexity-scheme-gnc.html</id><summary type="html">&lt;p&gt;Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
+Construct a series of energy functions&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" height="16" src="data:image/png;base64,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" width="200" /&gt;
+EQ is convex, quadratic
+alpha changes from 1 to 0, so Energy Ec changes from quadratic to original.
+for each alpha they find optimum through setting derivatives of Ec …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
+Construct a series of energy functions&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" height="16" src="data:image/png;base64,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" width="200" /&gt;
+EQ is convex, quadratic
+alpha changes from 1 to 0, so Energy Ec changes from quadratic to original.
+for each alpha they find optimum through setting derivatives of Ec to 0.
+Solution on each stage becomes initialization on the next one.&lt;/p&gt;
+&lt;p&gt;Proposed in: D. Sun, S. Roth, J. Lewis, and M. J. Black. Learning optical flow. In ECCV, volume 3, pages 83–97, 2008. [&lt;a href="http://cs.brown.edu/~dqsun/pubs/eccv2008.pdf&amp;quot; target=&amp;quot;_blank"&gt;pdf&lt;/a&gt;]&lt;/p&gt;</content><category term="optical flow"></category></entry><entry><title>Investigating optical flow by D. Sun (Secrets of optical flow)</title><link href="https://serge-m.github.io/investigating-optical-flow-by-d-sun.html" rel="alternate"></link><published>2014-11-05T14:33:00+01:00</published><updated>2014-11-05T14:33:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/investigating-optical-flow-by-d-sun.html</id><summary type="html">&lt;p&gt;Personal page of the author:
+&lt;a href="http://cs.brown.edu/~dqsun/research/index.html&amp;quot; target=&amp;quot;_blank"&gt;http://cs.brown.edu/~dqsun/research/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Original paper: &lt;a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&amp;quot; target=&amp;quot;_blank"&gt;http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Personal page of the author:
+&lt;a href="http://cs.brown.edu/~dqsun/research/index.html&amp;quot; target=&amp;quot;_blank"&gt;http://cs.brown.edu/~dqsun/research/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Original paper: &lt;a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&amp;quot; target=&amp;quot;_blank"&gt;http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
+[ &lt;a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf&amp;quot; target=&amp;quot;_blank"&gt;pdf&lt;/a&gt;] [&lt;a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip&amp;quot; target=&amp;quot;_blank"&gt;Source code&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;Look inside the sources:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    @alt_ba_optical_flow\
+    @ba_optical_flow\
+        ...
+        compute_flow_base.m
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;itarates:&lt;/p&gt;
+&lt;p&gt;1) Iterate flow computation&lt;/p&gt;
+&lt;p&gt;2) Linearization update, for j = 1:this.max_linear. In the simple case &lt;code&gt;max_linear==1&lt;/code&gt;, when I use &lt;code&gt;x = A\b&lt;/code&gt; solver for linear system. Probably for more complicated solvers &lt;code&gt;max_linear &amp;gt; 1&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        compute_flow.m
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;for ignc = 1:this.gnc_iters   
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Calls &lt;code&gt;compute_flow_base.m&lt;/code&gt;  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ...
+    @classic_nl_optical_flow\
+    @hs_optical_flow\
+    data\
+    utils\
+        ... 
+        pre_process_data.m 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
+there is also following code:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% For segmentation purpose&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org_pyramid_images&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;compute_image_pyramid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;images&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="c"&gt;...&lt;/span&gt;
+        &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyramid_levels&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyramid_spacing&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;org_color_pyramid_images&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;compute_image_pyramid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;color_images&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="c"&gt;...&lt;/span&gt;
+        &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyramid_levels&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyramid_spacing&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ... 
+
+    estimate_flow_demo.m
+    estimate_flow_interface.m 
+    load_of_method.m
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;-- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;classic&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;nl&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;        
+        &lt;span class="n"&gt;ope&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;classic_nl_optical_flow&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;texture&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;median_filter_size&lt;/span&gt;   &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;median_filter_size&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;alp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.95&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;area_hsz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sigma_i&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;color_images&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ones&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lambda&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lambda_q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nf"&gt;%ope&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;display&lt;/span&gt;  &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and then applies the difference: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;case &amp;#39;classic+nl-fast-brightness&amp;#39;
+        ope = load_of_method(&amp;#39;classic+nl&amp;#39;);        
+        ope.max_iters       = 3;
+        ope.gnc_iters       = 2;
+        ope.texture         = false;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>Code highlight in blogger</title><link href="https://serge-m.github.io/11.html" rel="alternate"></link><published>2014-11-04T22:16:00+01:00</published><updated>2014-11-04T22:16:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-04:/11.html</id><summary type="html">&lt;p&gt;&lt;a href="http://blog.cartercole.com/2009/10/awesome-syntax-highlighting-made-easy.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;place following code before your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag in the HTML of your blogger template: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/styles/shCore.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://blog.cartercole.com/2009/10/awesome-syntax-highlighting-made-easy.html"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;place following code before your &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag in the HTML of your blogger template: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/styles/shCore.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCSharp.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPhp.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushRuby.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushSql.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushVb.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPerl.js&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;language&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class="nx"&gt;SyntaxHighlighter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;bloggerMode&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nx"&gt;SyntaxHighlighter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;config&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;clipboardSwf&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nx"&gt;SyntaxHighlighter&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;all&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Usage:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;brush: html&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;syntaxhighlighter&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;CDATA&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;html&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;head&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;title&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;Carter&lt;/span&gt; &lt;span class="nx"&gt;Tomorrow&lt;/span&gt; &lt;span class="nx"&gt;Fund&lt;/span&gt; &lt;span class="nx"&gt;Donations&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="err"&gt;/title&amp;gt;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;meta&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;title&amp;quot;&lt;/span&gt; &lt;span class="nx"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Help Give to the Carter Tomorrow Fund&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;gt;&lt;/span&gt; 
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;meta&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span class="nx"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Show your support and help out with a small gift&amp;quot;&lt;/span&gt; 
+&lt;span class="p"&gt;]]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or   &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;brush: html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+CODE
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="html"></category></entry><entry><title>Binarization in Adobe After Effects</title><link href="https://serge-m.github.io/binarization-in-adobe-after-effects.html" rel="alternate"></link><published>2013-11-29T16:23:00+01:00</published><updated>2013-11-29T16:23:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-29:/binarization-in-adobe-after-effects.html</id><summary type="html">&lt;p&gt;I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
+&lt;img alt="" src="http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;I think that everything that is less or equal to 128 is transformet to 0 and the rest is transformet to 255. BUT. On the result i have such …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
+&lt;img alt="" src="http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png"&gt;&lt;/p&gt;
+&lt;p&gt;I think that everything that is less or equal to 128 is transformet to 0 and the rest is transformet to 255. BUT. On the result i have such a places with outlier value:
+&lt;img alt="" src="http://3.bp.blogspot.com/-JMnOtNJ1WRs/UpiGeFJB-bI/AAAAAAAAAag/FNWwgyvt0ys/s320/levels_result_1.png"&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;WTF? What is the logic of AAE developers?&amp;nbsp;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;So the solution is using real numbers for input black and white:&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-eRKqVUH7ei4/UpiHIrfKa_I/AAAAAAAAAas/aDnntGrvHEg/s320/levels_2.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Results are sharp:
+&lt;img alt="" src="http://3.bp.blogspot.com/-toBk_jZhH4A/UpiHItHbIiI/AAAAAAAAAao/Mi-_fbtWRzY/s1600/levels_result_2.png"&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;
+&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;&lt;/p&gt;</content></entry><entry><title>Free open-source alternative to Total Commander</title><link href="https://serge-m.github.io/fre-open-source-alternative-to-total.html" rel="alternate"></link><published>2013-11-29T15:35:00+01:00</published><updated>2013-11-29T15:35:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-29:/fre-open-source-alternative-to-total.html</id><summary type="html">&lt;p&gt;It seems I almost found alternative for &lt;a href="http://www.ghisler.com/&amp;quot; target=&amp;quot;_blank"&gt;TotalCommander&lt;/a&gt;.
+Let me present &lt;a href="http://doublecmd.sourceforge.net/&amp;quot; target=&amp;quot;_blank"&gt;DoubleCommander&lt;/a&gt;.
+It is free, open-source, extendible by Total's plugins. That's awesome.
+I also found out that viewer plugin SGView for TotalCommander can be &amp;nbsp;completely replaced by ImaginePlugin. Imagine has x64 version. The issue was to assign hotkeys like in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;It seems I almost found alternative for &lt;a href="http://www.ghisler.com/&amp;quot; target=&amp;quot;_blank"&gt;TotalCommander&lt;/a&gt;.
+Let me present &lt;a href="http://doublecmd.sourceforge.net/&amp;quot; target=&amp;quot;_blank"&gt;DoubleCommander&lt;/a&gt;.
+It is free, open-source, extendible by Total's plugins. That's awesome.
+I also found out that viewer plugin SGView for TotalCommander can be &amp;nbsp;completely replaced by ImaginePlugin. Imagine has x64 version. The issue was to assign hotkeys like in SGView.&lt;/p&gt;</content></entry><entry><title>Books</title><link href="https://serge-m.github.io/books.html" rel="alternate"></link><published>2013-11-29T10:33:00+01:00</published><updated>2013-11-29T10:33:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-29:/books.html</id><summary type="html">&lt;h1&gt;In progress&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Test-Driven Development with Python Harry Percival &lt;a href="http://chimera.labs.oreilly.com/books/1234000000754/index.html"&gt;link&lt;/a&gt;
+    &lt;a href="https://www.youtube.com/watch?v=6zQAu23bKF8"&gt;Pycon 2016 workshop&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://pythontesting.net/start-here/"&gt;Python Testing&lt;/a&gt; Python Software Development and Software Testing (posts and podcast)
+&lt;a href="http://pythontesting.net/books/python-testing-ebook/"&gt;book&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Part&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Fooled_by_Randomness"&gt;Fooled by Randomness&lt;/a&gt;: The Hidden Role of Chance in Life and in the Markets&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb"&gt;Nassim Nicholas Taleb&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Effective C++: 55 Specific Ways to Improve Your …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;In progress&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Test-Driven Development with Python Harry Percival &lt;a href="http://chimera.labs.oreilly.com/books/1234000000754/index.html"&gt;link&lt;/a&gt;
+    &lt;a href="https://www.youtube.com/watch?v=6zQAu23bKF8"&gt;Pycon 2016 workshop&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://pythontesting.net/start-here/"&gt;Python Testing&lt;/a&gt; Python Software Development and Software Testing (posts and podcast)
+&lt;a href="http://pythontesting.net/books/python-testing-ebook/"&gt;book&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Part&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Fooled_by_Randomness"&gt;Fooled by Randomness&lt;/a&gt;: The Hidden Role of Chance in Life and in the Markets&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb"&gt;Nassim Nicholas Taleb&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Effective C++: 55 Specific Ways to Improve Your Programs and Designs
+  &lt;a href="http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112"&gt;Scott Meyers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Done&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Cracking the Coding Interview &lt;a href="https://www.amazon.co.uk/Cracking-Coding-Interview-Fourth-Laakmann/dp/145157827X"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clean Code A Handbook of Agile Software Craftsmanship. Robert C. Martin&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thinking In Java. Bruce Eckel&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Effective Java. Joshua Bloch &lt;a href="https://www.amazon.com/Effective-Java-2nd-Joshua-Bloch/dp/0321356683"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://en.wikipedia.org/wiki/The_Black_Swan_(2007_book)"&gt;The Black Swan&lt;/a&gt;: The Impact of the Highly Improbable
+    &lt;a href="http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb"&gt;Nassim Nicholas Taleb&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Effective STL: 50 Specific Ways to Improve Your Use of the Standard Template Library
+    &lt;a href="http://www.amazon.com/Effective-STL-Specific-Standard-Template/dp/0201749629"&gt;link&lt;/a&gt;
+    &lt;a href="http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1"&gt;Scott Meyers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Design Patterns: Elements of Reusable Object-Oriented Software
+    &lt;a href="https://www.google.ru/search?newwindow=1&amp;amp;amp;espv=210&amp;amp;amp;es_sm=93&amp;amp;amp;biw=1920&amp;amp;amp;bih=956&amp;amp;amp;q=erich+gamma&amp;amp;amp;stick=H4sIAAAAAAAAAGOovnz8BQMDgykHnxCHfq6-QZKRYYESJ4hlXJyUlqslk51spZ-Un5-tX16UWVKSmhdfnl-UbZVYWpKRX8QTXmnKMvXcmuO9U6_Y7ihrvr2n4RYAiPdgLVIAAAA&amp;amp;amp;sa=X&amp;amp;amp;ei=4jSYUvvyBqbK4ATSq4G4Cw&amp;amp;amp;ved=0CKoBEJsTKAIwDw"&gt;Erich Gamma&lt;/a&gt; et al.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C++ Coding Standards: 101 Rules, Guidelines, and Best Practices,
+    &lt;a href="http://www.amazon.com/Herb-Sutter/e/B001ILHLCK/ref=ntt_athr_dp_pel_1/176-6402064-0012436"&gt;Herb Sutter&lt;/a&gt;
+    &lt;a href="http://www.amazon.com/Andrei-Alexandrescu/e/B001ILKI7K/ref=ntt_athr_dp_pel_2/176-6402064-0012436"&gt;Andrei Alexandrescu&lt;/a&gt;
+    &lt;a href="http://www.amazon.com/Coding-Standards-Rules-Guidelines-Practices/dp/0321113586#"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C++: The Complete Reference, &lt;a href="http://www.amazon.com/Herbert-Schildt/e/B001H6PSMG/ref=ntt_athr_dp_pel_1"&gt;Herbert Schildt&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Testing Dot Com, or allowance for the abuse of bugs in Internet startups
+    &lt;a href="http://www.amazon.co.uk/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;amp;amp;field-author=Savin%20R.&amp;amp;amp;search-alias=books-uk&amp;amp;amp;sort=relevancerank"&gt;Roman Savin&lt;/a&gt;
+    Роман Савин - Тестирование DOT COM (in Russian)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;Postponed&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Learning Python, 5th Edition, Mark Lutz
+  &lt;a href="http://shop.oreilly.com/product/0636920028154.do#tab_04_0"&gt;link&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="memory"></category><category term="books"></category></entry><entry><title>По простому о matting laplacian</title><link href="https://serge-m.github.io/matting-laplacian.html" rel="alternate"></link><published>2013-11-18T20:01:00+01:00</published><updated>2013-11-18T20:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-18:/matting-laplacian.html</id><summary type="html">&lt;p&gt;В математике у нас есть уравнение Лапласа
+\delta u = 0
+&amp;nbsp;Перепишем:
+&lt;img alt="" src="http://upload.wikimedia.org/math/0/2/3/023ea1cad204fa2a541cdddddd2b20b0.png"&gt;
+Вспомним, как можно расписывать вторую производную:
+&lt;img alt="" src="http://webmath.exponenta.ru/dnu/lc/kiselev1/node49_files/img2827.png"&gt;&lt;span style="text-align: left;"&gt;
+&lt;/span&gt;&lt;span style="text-align: left;"&gt;Для изображения равенство нулю оператора лапласа означает, что в каждая точка должна быть равна среднему из своих соседей.&amp;nbsp;&lt;/span&gt;
+&lt;span style="text-align: left;"&gt;
+&lt;/span&gt;Уравнение маттинг лапласиана - это то же самое, но только делается не обычное усреднение, а усреднение …&lt;/p&gt;</summary><content type="html">&lt;p&gt;В математике у нас есть уравнение Лапласа
+\delta u = 0
+&amp;nbsp;Перепишем:
+&lt;img alt="" src="http://upload.wikimedia.org/math/0/2/3/023ea1cad204fa2a541cdddddd2b20b0.png"&gt;
+Вспомним, как можно расписывать вторую производную:
+&lt;img alt="" src="http://webmath.exponenta.ru/dnu/lc/kiselev1/node49_files/img2827.png"&gt;&lt;span style="text-align: left;"&gt;
+&lt;/span&gt;&lt;span style="text-align: left;"&gt;Для изображения равенство нулю оператора лапласа означает, что в каждая точка должна быть равна среднему из своих соседей.&amp;nbsp;&lt;/span&gt;
+&lt;span style="text-align: left;"&gt;
+&lt;/span&gt;Уравнение маттинг лапласиана - это то же самое, но только делается не обычное усреднение, а усреднение с весами. Веса зависят от похожести пикселей.&lt;/p&gt;</content><category term="matting"></category><category term="russian"></category><category term="Laplacian"></category></entry><entry><title>MATLAB</title><link href="https://serge-m.github.io/matlab.html" rel="alternate"></link><published>2013-11-18T20:00:00+01:00</published><updated>2013-11-18T20:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-18:/matlab.html</id><summary type="html">&lt;p&gt;fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.&lt;/p&gt;
+&lt;p&gt;useParallel - automatic parallel&lt;/p&gt;</summary><content type="html">&lt;p&gt;fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.&lt;/p&gt;
+&lt;p&gt;useParallel - automatic parallel&lt;/p&gt;</content><category term="draft"></category><category term="matlab"></category></entry><entry><title>Add backslash before all escape characters in python</title><link href="https://serge-m.github.io/add-backslash-before-all-escape.html" rel="alternate"></link><published>2013-11-12T17:14:00+01:00</published><updated>2013-11-12T17:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-12:/add-backslash-before-all-escape.html</id><summary type="html">&lt;p&gt;Useful for using in regular expressions:&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;import re
+re.escape( str )&lt;/blockquote&gt;
+
+&lt;p&gt;Python detects all escape characters that can be used by regex &amp;nbsp;and add slash before them
+&lt;a href="http://docs.python.org/2/library/re.html#re.escape"&gt;http://docs.python.org/2/library/re.html#re.escape&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Useful for using in regular expressions:&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;import re
+re.escape( str )&lt;/blockquote&gt;
+
+&lt;p&gt;Python detects all escape characters that can be used by regex &amp;nbsp;and add slash before them
+&lt;a href="http://docs.python.org/2/library/re.html#re.escape"&gt;http://docs.python.org/2/library/re.html#re.escape&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category></entry><entry><title>Moving time indicator in composition timeline in After Effects CS6 using scripts</title><link href="https://serge-m.github.io/move-time-indicator-in-composition.html" rel="alternate"></link><published>2013-11-12T14:52:00+01:00</published><updated>2013-11-12T14:52:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-12:/move-time-indicator-in-composition.html</id><summary type="html">&lt;p&gt;So, Javascript code for position changing is simple.
+Lets say comp - is your composition:
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);&lt;/span&gt;&lt;/blockquote&gt;move pointer to time 0.2:
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;comp.time = 0.2;&lt;/span&gt;&lt;/blockquote&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;So, Javascript code for position changing is simple.
+Lets say comp - is your composition:
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);&lt;/span&gt;&lt;/blockquote&gt;move pointer to time 0.2:
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;comp.time = 0.2;&lt;/span&gt;&lt;/blockquote&gt;&lt;/p&gt;</content><category term="after effects (aae)"></category><category term="javascript"></category></entry><entry><title>То, что вы хотели знать про оптический поток, но стеснялись спросить</title><link href="https://serge-m.github.io/blog-post-3.html" rel="alternate"></link><published>2013-11-12T11:17:00+01:00</published><updated>2013-11-12T11:17:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-12:/blog-post-3.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/).
+&lt;div&gt;Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.
+&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;
+&lt;div class="hubs" style="background-color: white; background-image: url(http://habrahabr.ru/images/posts/hub.icon.png); background-position: 0px 0px; background-repeat: no-repeat no-repeat; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 11px; margin: 0px 0px 15px; outline: 0px; padding: 2px 0px 2px 25px; vertical-align: baseline;"&gt;&lt;a class="hub " href="http://habrahabr.ru/hub/image_processing/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб"&gt;Обработка изображений&lt;/a&gt;&lt;span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб"&gt;*&lt;/span&gt;,&amp;nbsp;&lt;a class="hub " href="http://habrahabr.ru/hub/algorithms/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб"&gt;Алгоритмы&lt;/a&gt;&lt;span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб"&gt;*&lt;/span&gt;&lt;/div&gt;&lt;div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"&gt;&lt;img align="right" src="http://habr.habrastorage.org/post_images/6e7/202/488/6e7202488554327be02a3b211df4647a.jpg" style="border: 0px; margin: 5px 0px 5px 30px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео …&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/).
+&lt;div&gt;Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.
+&lt;div&gt;
+&lt;/div&gt;&lt;div&gt;
+&lt;div class="hubs" style="background-color: white; background-image: url(http://habrahabr.ru/images/posts/hub.icon.png); background-position: 0px 0px; background-repeat: no-repeat no-repeat; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 11px; margin: 0px 0px 15px; outline: 0px; padding: 2px 0px 2px 25px; vertical-align: baseline;"&gt;&lt;a class="hub " href="http://habrahabr.ru/hub/image_processing/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб"&gt;Обработка изображений&lt;/a&gt;&lt;span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб"&gt;*&lt;/span&gt;,&amp;nbsp;&lt;a class="hub " href="http://habrahabr.ru/hub/algorithms/" style="border: 0px; color: #999999; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Вы не подписаны на этот хаб"&gt;Алгоритмы&lt;/a&gt;&lt;span class="profiled_hub" style="border: 0px; cursor: help; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;" title="Профильный хаб"&gt;*&lt;/span&gt;&lt;/div&gt;&lt;div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"&gt;&lt;img align="right" src="http://habr.habrastorage.org/post_images/6e7/202/488/6e7202488554327be02a3b211df4647a.jpg" style="border: 0px; margin: 5px 0px 5px 30px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео. Однако если мы захотим его по-быстрому реализовать в своем проекте, прочитав про него на википедии или где-нибудь еще, то, скорее всего, очень быстро наткнемся на то, что он работает очень плохо и сбоит при определении сдвигов уже порядка 1-2 пикселей (по крайней мере так было у меня). Тогда обратимся к готовым реализациям, например, в OpenCV. Там он реализован различными методами и совершенно непонятно, чем аббревиатура PyrLK лучше или хуже обозначения Farneback или чего-нибудь в этом роде, да и придется поразбираться со смыслом параметров, которых в некоторых реализациях очень много. Причем, что интересно, эти алгоритмы как-то работают, в отличие от того, что мы написали сами. В чем же секрет?
+&lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" name="habracut" style="border: 0px; color: #6da3bd; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/a&gt;
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Что же такое оптический поток&lt;/h4&gt;
+Оптический поток (ОП) – изображение видимого движения, представляющее собой сдвиг каждой точки между двумя изображениями. По сути, он представляет собой поле скоростей (т. к. сдвиг с точностью до масштаба эквивалентен мгновенной скорости). Суть ОП в том, что для каждой точки изображения&amp;nbsp;
+![](http://latex.codecogs.com/gif.latex?I_{1}(x,y))
+&amp;nbsp;находится такой сдвиг (dx, dy), чтобы исходной точке соответствовала точка на втором изображении&amp;nbsp;
+![](http://latex.codecogs.com/gif.latex?I_{2}(x&amp;amp;plus;dx,y&amp;amp;plus;dy))
+. Как определить соответствие точек – отдельный вопрос. Для этого надо взять какую-то функцию точки, которая не изменяется в результате смещения. Обычно считается, что у точки сохраняется интенсивность (т. е. яркость или цвет для цветных изображений), но можно считать одинаковыми точки, у которых сохраняется величина градиента, гессиан, его величина или его определитель, лапласиан, другие характеристики. Очевидно, сохранение интенсивности дает сбои, если меняется освещенность или угол падения света. Тем не менее, если речь идет о видеопотоке, то, скорее всего, между двумя кадрами освещение сильно не изменится, хотя бы потому, что между ними проходит малый промежуток времени. Поэтому часто используют интенсивность в качестве функции, сохраняющейся у точки.
+
+По такому описанию можно перепутать ОП с поиском и сопоставлением характерных точек. Но это разные вещи, суть оптического потока в том, что он не ищет какие-то особенные точки, а по параметрам изображений пытается определить, куда сместилась произвольная точка.
+
+Есть два варианта расчета оптического потока: плотный (dense) и выборочный (sparse). Sparse поток рассчитывает сдвиг отдельных заданных точек (например, точек, выделенных некоторым feature detector'ом), dense поток считает сдвиг всех точек изображения. Естественно, выборочный поток вычисляется быстрее, однако для некоторых алгоритмов разница не такая уж и большая, а для некоторых задач требуется нахождение потока во всех точках изображения.
+
+Для вырожденных случаев можно применять более простые методы определения сдвига. В частности, если все точки изображения имеют один и тот же сдвиг (изображение сдвинуто целиком), то можно применить метод фазовой корреляции: вычислить преобразование Фурье для обоих изображений, найти свертку их фаз и по ней определить сдвиг (см.[en.wikipedia.org/wiki/Phase_correlation](http://en.wikipedia.org/wiki/Phase_correlation" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)). Также можно применять поблочное сравнение (block matching): находить сдвиг, минимизирующий норму разности изображений в окне. В чистом виде такой алгоритм будет работать долго и неустойчиво к поворотам и прочим искажениям.&amp;nbsp;[Английская википедия](http://en.wikipedia.org/wiki/Optical_flow" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&amp;nbsp;причисляет перечисленные алгоритмы к различным вариантам вычисления оптического потока, но мне это кажется не слишком корректным, так как эти алгоритмы могут быть применены и в других целях и не полностью решают данную задачу. Мы будем называть оптическим потоком методы, основанные на локальных характеристиках изображений (то, что в английской википедии называется differential methods).
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Стандартный подход (метод Лукаса-Канаде)&lt;/h4&gt;
+Математическое описание алгоритма достаточно подробно приведено в&amp;nbsp;[этой статье](http://habrahabr.ru/post/169055/" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;), но в ней затрагиваются лишь теоретические аспекты.
+
+Рассмотрим математическую модель оптического потока, считая, что у точки в результате смещения не изменилась интенсивность.
+
+Пусть&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/fd3/055/cea/fd3055ceaa3ac999993187efe591cc42.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;– интенсивность в некоторой точке (x, y) на первом изображении (т. е. в момент времени t). На втором изображении эта точка сдвинулась на (dx, dy), при этом прошло время dt, тогда&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/d80/ad7/750/d80ad77501aec2e45d1b199cabe7db55.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;– это мы разложили по Тейлору функцию интенсивности до первого члена (позже будет упомянуто, почему только до первого), здесь&amp;nbsp;
+![](http://latex.codecogs.com/gif.latex?I_{x},I_{y},I_{t})
+&amp;nbsp;– частные производные по координатам и времени, то есть по сути&amp;nbsp;
+![](http://latex.codecogs.com/gif.latex?I_{t}dt)
+&amp;nbsp;– изменение яркости в точке (x, y) между двумя кадрами.
+
+Мы считаем, что у точки сохранилась интенсивность, значит&amp;nbsp;
+![](http://latex.codecogs.com/gif.latex?I_{1}=I_{2}\Rightarrow)
+&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/240/a53/130/240a531308dcc6d61a797f29f0d09b7d.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+Получаем одно уравнение с двумя неизвестными (dx и dy), значит его недостаточно для решения, то есть только на этом уравнении далеко не уедешь.
+
+Самое простое решение проблемы – алгоритм Лукаса-Канаде. У нас же на изображении объекты размером больше 1 пикселя, значит, скорее всего, в окрестности текущей точки у других точек будут примерно такие же сдвиги. Поэтому мы возьмем окно вокруг этой точки и минимизируем (по МНК) в нем суммарную погрешность с весовыми коэффициентами, распределенными по Гауссу, то есть так, чтобы наибольший вес имели пиксели, ближе всего находящиеся к исследуемому. После простейших преобразований, получаем уже систему из 2 уравнений с 2 неизвестными:&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/0ce/761/7f0/0ce7617f00672f62bc3b8819af66f72d.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+&lt;img src="http://habr.habrastorage.org/post_images/f56/644/5aa/f566445aa7c1524c856f73396a28dea5.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+Как известно, эта система имеет единственное решение не всегда (хотя и очень часто): если детерминант системы равен нулю, то решений либо нет, либо бесконечное число. Эта проблема известна как Aperture problem – неоднозначность сдвига при ограниченном поле зрения для периодических картинок. Она соответствует случаю, когда в поле зрения попадает фрагмент изображения, в котором присутствует некоторая цикличность; тут уж и человек не сможет однозначно определить, куда картинка сместилась. Проблема в том, что из-за шумов в таких неоднозначных ситуациях мы получим не нулевой детерминант, а очень маленький, который, скорее всего, приведет к очень большим значениям сдвига, особо не коррелирующим с действительностью. Так что на определенном этапе нужно просто проверять, не является ли детерминант системы достаточно маленьким, и, если что, не рассматривать такие точки или отмечать их как ошибочные.
+
+&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Почему не работает?&lt;/h5&gt;
+Если мы остановимся на этом этапе и реализуем этот алгоритм, то он будет успешно работать. Но только если сдвиг между соседними изображениями будет очень маленький, порядка 1 пикселя, и то не всегда. (Для анализа качества генерировались синтетические последовательности с различным относительным сдвигом, причем этот сдвиг может выражаться нецелым числом пикселей, тогда результирующее изображение соответствующим образом интерполируется) Уже на сдвиге в 2 пикселя погрешность будет большая, а если 3 и более, то результат будет вообще неадекватным. В чем же дело?
+
+Тут нам устроила подставу математика. Она привила нам ощущение, что все функции вокруг непрерывные и много раз дифференцируемые. И вообще нас в институте приучили приближение функции в окрестности точки записывать с помощью формулы Тейлора, и мы везде&amp;nbsp;&lt;s style="border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;бездумно&lt;/s&gt;&amp;nbsp;радостно пользуемся этим. А теперь задумаемся, какой физический смысл производных в данном месте? Мы хотим с их помощью определить изменение значения функции в конечной окрестности точки, а производная дает представление о бесконечно малой окрестности. Для расширения этой окрестности можно было бы добавить более высокий порядок производных в разложение Тейлора, но это приведет к нелинейностям в системе, от чего ее станет существенно сложнее решать, а преимущества будут сомнительны, тем более что на практике мы имеем дело не с непрерывными многократно дифференцируемыми функциями, а с вообще непонятно какими дискретными функциями. Поэтому логичнее будет искать функцию g(x), для которой в нашем дискретном случае как можно точнее выполняется f(x) + g(x) = f(x+1), f(x) + 2g(x) = f(x+2), f(x) — g(x) = f(x-1), и т. д. Таким образом, нам в этом случае нужна не производная, а некоторая линейная функция, наиболее близко лежащая к точкам исходной функции. Простые математические выкладки приводят к решению&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/873/fc4/f2e/873fc4f2ef7f7bc8cc586734f2e1eeb6.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;, где&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/5e3/400/fb2/5e3400fb2e1b01aad1ad4c61fc1f286a.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;. Если мы строили производную по одной соседней точке с каждой стороны, то нам повезло: в этом случае формула совпадает с формулой приближенного вычисления производных: g(x) = (f(x+1) – f(x-1)) / 2. Что характерно, в OpenCV при вычислении оптического потока Лукаса-Канаде используется именно такая формула, к этому мы еще вернемся потом. А вот если взять больше точек, то формула уже становится совсем не похожа на классические разностные схемы для первой производной.
+
+Очевидно, если мы строим эту функцию, например, по трем окрестным точкам слева и справа от исходной, то она никаким образом не зависит от точек, расположенных дальше, и, соответственно, при сдвиге более трех точек все равно у нас часто будут получаться неадекватные результаты. А еще, чем больше число точек, по которым мы строим эту функцию, тем больше среднее отклонение получаемой линии от используемых точек – опять же из-за того, что у нас не линейно меняющиеся изображения, а черт знает какие. На практике сдвиги более 2 пикселей уже дают неадекватно большую ошибку, сколько бы точек мы ни взяли.
+
+Другим слабым местом алгоритма является то, что мы опять же имеем дело не с гладкими непрерывными функциями, а с произвольными, да еще и дискретными. Поэтому на некоторых фрагментах изображения интенсивность может «скакать» вообще без явных закономерностей, например на границах объектов, или из-за шумов. В этом случае никакая функция g(x) не сможет достаточно точно описать изменения изображения в окрестности точки. Чтобы с этим побороться (хотя бы частично), предлагается исходное изображение размазать, причем полезно будет его размазать достаточно сильно, то есть лучше применять даже не всеми любимый gaussian blur (усреднение с весовыми коэффициентами), а прямо таки box filter (равномерное усреднение по окну), да еще и несколько раз подряд. Гладкость изображения для нас сейчас важнее, чем детализация.
+
+Тем не менее, эти меры так же не спасут нас от ограничения детектируемого сдвига в 2-3 пикселя. И кстати, в OpenCV 1.0 присутствовала такая реализация оптического потока, и работала она только в идеальных условиях на очень маленьких сдвигах.
+
+&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Что же делать?&lt;/h5&gt;
+Итого, обычный Лукас-Канаде хорошо определяет маленькие сдвиги, такие, в рамках которых картинка похожа на свое линейное приближение. Чтобы с этим побороться, воспользуемся стандартным приемом CV – multi-scaling'ом: построим «пирамиду» изображений разного масштаба (почти всегда берется масштабирование в 2 раза по каждой оси, так проще считать) и пройдем по ним оптическим потоком от меньшего изображения к большему, тогда детектированный маленький сдвиг на маленьком изображении будет соответствовать большому сдвигу на большом изображении. На самом маленьком изображении мы обнаруживаем сдвиг не более 1-2 пикселей, а переходя от меньшего масштаба к большему, мы пользуемся результатом с предыдущего шага и уточняем значения сдвига. Собственно, в OpenCV его и реализует функция calcOptFlowPyrLK. Использование этого пирамидального алгоритма позволяет нам не заморачиваться вычислением линейной аппроксимации по многим точкам: проще взять больше уровней пирамиды, а на каждом уровне брать довольно грубое приближение этой функции. Поэтому в OpenCV и идет расчет всего по двум соседним точкам. И поэтому применительно к этой реализации алгоритма наши умозаключения про преимущество аппроксимирующей функции перед производной оказались бесполезными: для такого количества опорных точек производная и есть лучшая аппроксимирующая функция.
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;А какие еще бывают?&lt;/h4&gt;
+Этот алгоритм не является единственным вариантом вычисления оптического потока. В OpenCV кроме потока Лукаса-Канаде есть еще поток Farneback и SimpleFlow, также часто ссылаются на алгоритм Horn–Schunck.
+
+Метод&amp;nbsp;&lt;b style="border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Horn–Schunck&lt;/b&gt;&amp;nbsp;носит несколько более глобальный характер, чем метод Лукаса-Канаде. Он опирается на предположение о том, что на всем изображении оптический поток будет достаточно гладким. От того же самого уравнения&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/240/a53/130/240a531308dcc6d61a797f29f0d09b7d.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;предлагается перейти к функционалу&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/408/f58/8d3/408f588d3cb05bc7382f837ecc8ecf20.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;, то есть добавить требование на отсутствие резкого изменения сдвигов с весовым коэффициентом α. Минимизация этого функционала приводит нас к системе из двух уравнений:
+&lt;img src="http://habr.habrastorage.org/post_images/17e/fbc/79a/17efbc79aea908239ef99a47018bce6e.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+&lt;img src="http://habr.habrastorage.org/post_images/f38/e8c/b3a/f38e8cb3adc643694b4e08559e55d798.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+
+В этих уравнениях лапласиан предлагают посчитать приближенно:&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/e82/489/c96/e82489c96f4090512dfa656998a04c2f.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;– разница со средним значением. Получаем систему уравнений, которую записываем для каждого пикселя и решаем общую систему итеративно:
+&lt;img src="http://habr.habrastorage.org/post_images/a34/68c/2e9/a3468c2e91b7c7e4f44cdd51b13f170a.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+&lt;img src="http://habr.habrastorage.org/post_images/152/655/864/152655864a0daca7ecaf8baba9077b7a.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+
+В данном алгоритме тоже предлагают использовать multi-scaling, причем рекомендуют масштабировать изображения не в 2 раза, а с коэффициентом 0.65
+
+Этот алгоритм был реализован в первых версиях OpenCV, но в последствии от него отказались.
+
+&lt;b style="border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Farneback&amp;nbsp;&lt;/b&gt;предложил аппроксимировать изменение интенсивности в окрестности с помощью квадратичной формы: I = xAx + bx + c с симметричной матрицей A (по сути, рассматривая разложение по Тейлору до первого члена, мы брали линейную аппроксимацию I = bx + c, то есть сейчас мы как раз решили повысить точность приближения) Если изображение сдвинулось в пределах этой окрестности, то&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/cef/f63/791/ceff6379139b144d6d2c290118c7c8d5.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;, подставляем в квадратичное разложение, раскрываем скобки, получаем
+&lt;img src="http://habr.habrastorage.org/post_images/090/fa5/838/090fa58384ab43497db73237eb3a988e.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+&lt;img src="http://habr.habrastorage.org/post_images/030/eba/ae7/030ebaae7c37805e0be02defef7b4244.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
+&lt;img src="http://habr.habrastorage.org/post_images/9d4/449/ebb/9d4449ebb384df15ef0853676772cdc9.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;.
+
+Теперь мы можем вычислить значения A, b, c на обеих картинках, и тогда эта система станет избыточной относительно d (особенно смущает первое уравнение), и вообще d можно получить из второго уравнения:&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/ef8/7cf/c7d/ef87cfc7d6261d21a899cf835ab7df3a.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;. Приходится прибегать к следующей аппроксимации:&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/203/301/bf3/203301bf395673df883b82488e29ca14.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;. Обозначим еще для простоты&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/b37/4b0/d2f/b374b0d2f529418ef08c5def9fe659b7.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;, Тогда получим просто&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/b43/4e2/d0c/b434e2d0c3ae8e29e4249dc5c9aed27d.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;.
+
+Для компенсации шумов при вычислении, снова обратимся к тому предположению, что в окрестности исследуемой точки у всех точек более или менее одинаковый сдвиг. Поэтому опять же проинтегрируем погрешность&lt;img src="http://habr.habrastorage.org/post_images/a7e/62d/483/a7e62d48343e482228cf72e68de75445.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;по окну с гауссовскими весовыми коэффициентами&amp;nbsp;&lt;i style="border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;w&lt;/i&gt;, и найдем вектор d, минимизирующий эту суммарную погрешность. Тогда мы получим оптимальное значение&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/771/272/648/77127264820430245399b7c058413ed9.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;и соответствующую минимальную ошибку&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/202/f32/3c0/202f323c016171111b818ae08b97ef6f.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;. То есть нам надо для каждой точки посчитать&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/98d/eec/6dd/98deec6ddd703117053247522a2da8af.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;, усреднить по окну, инвертировать матрицу и получить результат. Соответственно эти произведения можно посчитать для всей картинки и использовать заранее рассчитанные значения для разных точек, то есть это как раз тот случай, когда имеет смысл считать dense поток.
+
+Как обычно, у этого алгоритма есть некоторое количество модификаций и усовершенствований, в первую очередь позволяющих использовать известную априорную информацию – заданную начальную аппроксимацию потока – и, опять же, multi-scaling.
+
+В основе метода&amp;nbsp;&lt;b style="border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;SimpleFlow&lt;/b&gt;&amp;nbsp;лежит следующая идея: если мы все равно не умеем определять сдвиг больше чем размер окна, по которому мы искали производные, то зачем вообще заморачиваться с вычислением производных? Давайте просто в окне найдем наиболее похожую точку! А для разрешения неоднозначностей и для компенсации шумов учтем, что поток непрерывный и в окрестности данной точки все точки имеют почти одинаковый сдвиг. А проблему с размером окна опять же решим за счет multi-scaling'а.
+
+Более строго, алгоритм звучит так: для всех точек в окне находится функция «энергии», отвечающая (с обратной логарифмической зависимостью) за вероятность перехода исходной точки в эту точку:&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/95a/5bb/1f2/95a5bb1f2de9ef34b6c376a4e85c3003.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;. Далее, считается свертка этой энергии с гауссовым окном&amp;nbsp;&lt;img src="http://habr.habrastorage.org/post_images/829/bd8/f54/829bd8f541609108d50d8bd269f146de.gif" style="border: 0px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;&amp;nbsp;и находятся значения (dx,dy), минимизирующие эту функцию. Чтобы получить субпиксельную точность, рассматривается малая окрестность найденной оптимальной точки (dx,dy) и в ней ищется пик функции энергии как пик параболоида. И, как было упомянуто выше, эта процедура выполняется для пирамиды масштабированных изображений. Еще у них в алгоритме предложены хитрые методы ускорения расчетов, но это уже кому интересно разберутся сами. Для нас же важно, что за счет этого данный алгоритм является (теоретически) достаточно быстрым при неплохой точности. И у него нет такой проблемы, как у предыдущих, что чем больше сдвиг, тем хуже он детектируется.
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;А если брать не интенсивность?&lt;/h4&gt;
+Выше было сказано, что соответствие между точками может определяться разными величинами, так почему же мы рассматриваем только интенсивность? А потому, что любую другую величину можно свести к ней: мы просто фильтруем изображения соответствующим фильтром и на вход описанных выше алгоритмов подаем отфильтрованные изображения. Соответственно, если вы хотите использовать оптический поток, то сначала подумайте, в ваших условиях какая характеристика изображения будет наиболее стабильной, и проведите соответствующую фильтрацию, чтобы на входе алгоритма оказалась не интенсивность, а эта характеристика.
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Практика&lt;/h4&gt;
+Давайте опробуем на практике алгоритмы, которые нам предлагает OpenCV.
+
+Здесь можно проводить множество различных исследований каждого алгоритма, варьируя параметры, изменяя входные последовательности – с разными сдвигами, поворотами, проективными преобразованиями, сегментами, с разными шумами и т. д. Это все заняло бы уйму времени и по размеру отчета превзошло бы настоящую статью, поэтому здесь предлагаю ограничиться простым случаем параллельного сдвига изображения на фиксированное расстояние и наложение небольших шумов. Это позволит понять в общих чертах, как запускать алгоритмы и кто из них круче.
+
+Подробно синтаксис процедур описан на странице с&amp;nbsp;[мануалом](http://docs.opencv.org/modules/video/doc/motion_analysis_and_object_tracking.html" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;), здесь я приведу выжимку-перевод с моими комментариями.
+
+Классический Лукас-Канаде реализован с пирамидой в процедуре calcOpticalFlowPyrLK. Алгоритм рассчитывает sparse-поток, то есть для заданного набора точек на первом изображении оценивает их положение на втором. Входные параметры достаточно очевидны: два входных изображения, входной и выходной наборы точек, status – выходной вектор, показывающий, найдена ли успешно соответствующая точка, err – выходной вектор оцененных погрешностей соответствующих точек, WinSize – размер окна, по которому происходит гауссово усреднение, я брал 21х21 и работало хорошо, maxLevel – количество слоев в пирамиде минус один, т. е. номер последнего слоя, я брал 5, criteria – условие выхода из итеративного процесса определения сдвига (минимизация погрешности производится итеративно) – этот параметр я оставлял по умолчанию, flags – дополнительные флаги, например можно использовать начальное приближение потока или выбрать метод оценки погрешности, minEigThreshold – пороговое значение градиента, ниже которого матрица считается вырожденной, я оставлял по умолчанию. Начиная с OpenCV 2.4.1, при вычислении потока можно использовать заранее вычисленную пирамиду отмасштабированных изображений.
+
+Результат работы – успешно и стабильно обнаруживаются как малые, так и большие сдвиги, устойчив к довольно большим шумам, время работы – порядка 10 мс для 400 точек c 5-слойной пирамидой (на core i7 950).
+
+Кстати, этот алгоритм реализован так же на Gpu (CUDA), причем как dense, так и sparse версии.
+
+Поток Farneback реализуется процедурой calcOpticalFlowFarneback, рассчитывается dense-поток, то есть сдвиг каждой точки. Параметры: входные изображения, выходной поток в формате двухканальной матрицы float'ов, pyr_scale определяет отношение масштабов между слоями пирамиды, levels – количество уровней в пирамиде, winsize – размер окна, по которому производится усреднение, iterations – количество итераций на каждом уровне, poly_n – размер полинома, по которому оцениваются значения A и b, poly_sigma – сигма гауссовского размытия при сглаживании производных, рекомендованные значения параметров указаны в мануале, flags – дополнительные флаги, например можно использовать начальное приближение потока или по-другому усреднять по окну.
+
+Этот алгоритм куда менее стабилен (по моим наблюдениям), легче промахивается на довольно равномерных картинках (видимо, проблема в отсутствии фильтрации неудачных точек), плохо определяет большие сдвиги. У меня отрабатывал за 600 мс на изображении 512х512.
+
+Поток SimpleFlow реализует процедура calcOpticalFlowSF (рассчитывается опять же dense поток), и у нее есть множество загадочных параметров без дефолтных значений, и вообще на данный момент на странице информация предоставлена весьма лаконично. Попробуем разобраться. Первые 3 – входные изображения и выходное двухканальное; layers – количество слоев в пирамиде, то есть сколько раз масштабируем исходное изображение; averaging_block_size – размер окна, в котором мы считали функцию энергии пикселей; max_flow – максимальный сдвиг, который мы хотим уметь определять на каждом шаге, по сути он определяется размером окна (хотя не совсем понятно, почему он int). На этом можно остановиться, а можно задать еще несколько параметров, смысл некоторых из них от меня ускользает.
+
+На сайте предлагают посмотреть&amp;nbsp;[пример](https://github.com/Itseez/opencv/blob/master/samples/cpp/simpleflow_demo.cpp" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&amp;nbsp;его использования, в котором он запускается с такими параметрами: calcOpticalFlowSF(frame1, frame2, flow, 3, 2, 4, 4.1, 25.5, 18, 55.0, 25.5, 0.35, 18, 55.0, 25.5, 10);
+
+У меня алгоритм работает значительно медленнее других, порядка 9-12 секунд на картинку 512х512. Результат работы кажется более правдоподобным, чем Farneback, по крайней мере лучше определяется сдвиг на равномерных картинках, заметно лучше срабатывает с большими сдвигами.
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Выводы&lt;/h4&gt;
+Если вы хотите использовать где-то оптический поток, сначала подумайте, нужен ли он вам: часто можно обойтись более простыми методами. Браться реализовывать поток самостоятельно стоит только несколько раз подумав: каждый алгоритм имеет множество хитростей, тонкостей и оптимизаций; что бы вы ни сделали, скорее всего, в OpenCV оно же работает лучше (естественно, при условии, что оно там есть). Тем более что они там вовсю используют логические и хардварные оптимизации типа использования SSE инструкций, многопоточность, возможности вычисления с CUDA или OpenCL и т. д. Если вам достаточно посчитать сдвиг некоторого набора точек (т. е. sparse поток), то можете смело использовать функцию calcOpticalFlowPyrLK, оно работает хорошо, надежно и достаточно быстро. Для вычисления dense-потока хорошо использовать функцию calcOpticalFlowSF, но она работает очень медленно. Если быстродействие критично, то calcOpticalFlowFarneback, но надо еще удостовериться, что результаты его работы вас устроят.
+
+&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Литература&lt;/h4&gt;
+[docs.opencv.org/modules/video/doc/motion_analysis_and_object_tracking.html](http://docs.opencv.org/modules/video/doc/motion_analysis_and_object_tracking.html" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)
+Pyramidal Implementation of the Lucas Kanade Feature Tracker. Description of the algorithm — Jean-Yves Bouguet
+Two-Frame Motion Estimation Based on Polynomial Expansion — Gunnar Farneback
+SimpleFlow: A Non-iterative, Sublinear Optical Flow Algorithm — Michael Tao, Jiamin Bai, Pushmeet Kohli, and Sylvain Paris
+Horn-Schunck Optical Flow with a Multi-Scale Strategy — Enric Meinhardt-Llopis, Javier Sanchez
+[en.wikipedia.org/wiki/Optical_flow](http://en.wikipedia.org/wiki/Optical_flow" style="border: 0px; color: #990099; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)
+&lt;div class="clear" style="border: 0px; clear: both; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul class="tags" style="background-attachment: scroll; background-color: white; background-image: url(http://habrahabr.ru/images/bg-tags2.gif); background-position: 0px 50%; background-repeat: no-repeat no-repeat; border: 0px; font-family: Verdana, sans-serif; font-size: 10px; list-style: none; margin: 0px 0px 15px; outline: 0px; padding: 2px 0px 2px 20px; vertical-align: baseline;"&gt;&lt;li style="border: 0px; color: #999999; display: inline; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;[оптический поток](http://habrahabr.ru/search/?q=%5B%D0%BE%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%BE%D1%82%D0%BE%D0%BA%5D&amp;amp;target_type=posts" rel="tag" style="border: 0px; color: #666666; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&lt;/li&gt;&lt;li style="border: 0px; color: #999999; display: inline; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;,&amp;nbsp;[optical flow](http://habrahabr.ru/search/?q=%5Boptical%20flow%5D&amp;amp;target_type=posts" rel="tag" style="border: 0px; color: #666666; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&lt;/li&gt;&lt;li style="border: 0px; color: #999999; display: inline; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;,&amp;nbsp;[computer vision](http://habrahabr.ru/search/?q=%5Bcomputer%20vision%5D&amp;amp;target_type=posts" rel="tag" style="border: 0px; color: #666666; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&lt;/li&gt;&lt;li style="border: 0px; color: #999999; display: inline; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;,&amp;nbsp;[openCV](http://habrahabr.ru/search/?q=%5BopenCV%5D&amp;amp;target_type=posts" rel="tag" style="border: 0px; color: #666666; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;)&lt;/li&gt;&lt;/ul&gt;
+
+&lt;div class="infopanel_wrapper" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 12px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;div class="infopanel " id="infopanel_post_201406" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; border: 1px solid rgb(229, 229, 229); display: inline-block; font-family: Arial, sans-serif; font-size: 11px; margin: 0px; outline: 0px; padding: 0px 10px; vertical-align: middle;"&gt;&lt;div class="voting   " style="border: 0px; float: left; margin: 6px 26px 6px 0px; outline: 0px; padding: 0px 20px; position: relative; vertical-align: baseline;"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="opencv"></category><category term="russian"></category><category term="optical flow"></category></entry><entry><title>OpenCV tutorials (Russian)</title><link href="https://serge-m.github.io/opencv-tutorials-in-russian.html" rel="alternate"></link><published>2013-11-05T20:44:00+01:00</published><updated>2013-11-05T20:44:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-11-05:/opencv-tutorials-in-russian.html</id><summary type="html">&lt;ol&gt;
+&lt;li&gt;Делаем детектор движения, или OpenCV — это просто
+&lt;a href="http://habrahabr.ru/company/avi/blog/200804/"&gt;http://habrahabr.ru/company/avi/blog/200804/&lt;/a&gt;
+2.&amp;nbsp;OpenCV шаг за шагом
+&lt;a href="http://robocraft.ru/blog/computervision/265.html"&gt;http://robocraft.ru/blog/computervision/265.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Пару слов о распознавании образов
+&lt;a href="http://habrahabr.ru/post/208090/"&gt;http://habrahabr.ru/post/208090/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 style="text-align: left;"&gt;Building opencv program in C&lt;/h3&gt;
+
+&lt;div&gt;&lt;span style="background-color: #f7f7f9; color: #222222; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 20px; white-space: pre-wrap;"&gt;gcc -ggdb `pkg-config --cflags opencv` -o `basename test.c …&lt;/span&gt;&lt;/div&gt;</summary><content type="html">&lt;ol&gt;
+&lt;li&gt;Делаем детектор движения, или OpenCV — это просто
+&lt;a href="http://habrahabr.ru/company/avi/blog/200804/"&gt;http://habrahabr.ru/company/avi/blog/200804/&lt;/a&gt;
+2.&amp;nbsp;OpenCV шаг за шагом
+&lt;a href="http://robocraft.ru/blog/computervision/265.html"&gt;http://robocraft.ru/blog/computervision/265.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Пару слов о распознавании образов
+&lt;a href="http://habrahabr.ru/post/208090/"&gt;http://habrahabr.ru/post/208090/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 style="text-align: left;"&gt;Building opencv program in C&lt;/h3&gt;
+
+&lt;div&gt;&lt;span style="background-color: #f7f7f9; color: #222222; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 20px; white-space: pre-wrap;"&gt;gcc -ggdb `pkg-config --cflags opencv` -o `basename test.c .c` test.c `pkg-config --libs opencv`&lt;/span&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;i style="background-color: white; border: 0px; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;code&gt;pkg-config --cflags opencv&lt;/code&gt;&lt;/i&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;&amp;nbsp;— подставляет путь для инклудов через pkgconfig.&lt;/span&gt;
+&lt;i style="background-color: white; border: 0px; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;code&gt;pkg-config --libs opencv&lt;/code&gt;&lt;/i&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;&amp;nbsp;— подставляет название либ для линковки через pkgconfig.&lt;/span&gt;
+&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;При установке opencv поместила файлик .pc (в моём случае это /usr/lib/pkgconfig/opencv.pc), в котором рассказывается, где находятся заголовочные файлы этой библиотеки, а где сами либы для линковки. Таким образом первое у меня разворачивается в "-I/usr/include/opencv", а второе — в "-lopencv_calib3d -lopencv_contrib -lopencv_core -lopencv_features2d -lopencv_flann -lopencv_gpu -lopencv_highgui -lopencv_imgproc -lopencv_legacy -lopencv_ml -lopencv_nonfree -lopencv_objdetect -lopencv_ocl -lopencv_photo -lopencv_stitching -lopencv_superres -lopencv_ts -lopencv_video -lopencv_videostab", т.е. уже в прямые указания компилятору и линкеру, где искать инклуд-файлы (-Include) и библиотеки (-library), позволяющие разработчику не вбивать всё это руками.&lt;/span&gt;
+&lt;i style="background-color: white; border: 0px; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;-o &lt;code&gt;basename test.c .c&lt;/code&gt;&lt;/i&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;&amp;nbsp;— отрезает от test.c часть с расширением (".c"), оставляя только часть имени файла «test», которое будет являться именем выходного (output) собранного исполняемого файла. Т.е. разворачивается это в "-o test".&lt;/span&gt;
+&lt;i style="background-color: white; border: 0px; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;-ggdb&lt;/i&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;&amp;nbsp;— смотрим в ман (а стоило бы сделать это ещё в начале ;))&lt;/span&gt;
+&lt;blockquote style="background-color: white; border-left-color: rgb(187, 187, 187); border-left-style: solid; border-width: 0px 0px 0px 2px; clear: both; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px; margin: 0.83em 0px; outline: 0px; padding: 0px 0px 0px 15px; quotes: none; vertical-align: baseline;"&gt;-ggdb
+Produce debugging information for use by GDB. This means to use the most expressive format available (DWARF 2, stabs, or the native format if neither of those are supported), including GDB extensions if at all possible.&lt;/blockquote&gt;&lt;br style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;" /&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;т.е. генерация максимально полной отладочной информации для использовании в отладчике gdb (и включение её в выходной бинарник, например замечены секции .debug_aranges, .debug_info, .debug_abbrev, .debug_line, .debug_str).&lt;/span&gt;
+&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;
+&lt;/span&gt;&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 18px;"&gt;Blog about computer vision and opencv&lt;/span&gt;
+&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: x-small; line-height: 18px;"&gt;&lt;a href="http://www.uralvision.blogspot.ru/"&gt;http://www.uralvision.blogspot.ru/&lt;/a&gt;&lt;/span&gt;
+&lt;span style="background-color: white; font-family: Arial, sans-serif; font-size: x-small; line-height: 18px;"&gt;
+&lt;/span&gt;&lt;/p&gt;</content><category term="opencv"></category><category term="tuturials"></category></entry></feed>

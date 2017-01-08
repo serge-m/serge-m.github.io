@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>misc - sergem personal public notebook</title>
+    <title>03 - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
 
 
     <meta name="author" content="sergem" />
-    <meta name="keywords" content="misc" />
+    <meta name="keywords" content="03" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -33,8 +33,8 @@
 
 
 
-        <link href="https://serge-m.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
-              title="sergem personal public notebook misc ATOM Feed"/>
+        <link href="https://serge-m.github.io/feeds/03.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook 03 ATOM Feed"/>
 
 </head>
 <body>
@@ -53,8 +53,41 @@ sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                        <li >
+                            <a href="https://serge-m.github.io/category/01.html">01</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/02.html">02</a>
+                        </li>
                         <li class="active">
-                            <a href="https://serge-m.github.io/category/misc.html">Misc</a>
+                            <a href="https://serge-m.github.io/category/03.html">03</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/04.html">04</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/05.html">05</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/06.html">06</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/07.html">07</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/08.html">08</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/09.html">09</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/10.html">10</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/11.html">11</a>
+                        </li>
+                        <li >
+                            <a href="https://serge-m.github.io/category/12.html">12</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -68,347 +101,6 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://serge-m.github.io/compile-dlib-for-miniconda.html">compile dlib for miniconda</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-25T22:43:00+02:00"> Sat 25 June 2016</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Activate miniconda environment (my environment is called py3):
-source activate py3</p>
-<p>Produce initial steps from the readme:</p>
-<div class="highlight"><pre><span></span>cd examples
-mkdir build
-cd build
-cmake ..
-cmake --build . --config Release
-</pre></div>
-
-
-<p>inside function  build_dlib() of file setup.py add the highlighted code:</p>
-<div class="highlight"><pre><span></span>if platform_arch == &#39;64bit&#39; and sys.platform == &quot;win32&quot;:
-    # 64bit build on Windows …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/compile-dlib-for-miniconda.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/mount-windows-shares-in-linux.html">Mount windows shares in linux</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-19T12:37:00+02:00"> Sun 19 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Use sudo if needed</p>
-<h2>Mount</h2>
-<div class="highlight"><pre><span></span>mkdir /mnt/share
-mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share
-</pre></div>
-
-
-<h2>Unmount</h2>
-<div class="highlight"><pre><span></span>umount /mnt/shares
-</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/deep-learning.html">deep learning</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-03T23:08:00+02:00"> Fri 03 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-        /
-	<a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Inception-like CNN model based on 1d convolutions <a href="http://arxiv.org/pdf/1512.00567v3.pdf">http://arxiv.org/pdf/1512.00567v3.pdf</a></p>
-<p>Chat (in russian) <a href="http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e">http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/deep-learning.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">autocomplete from history in terminal (in linux mint)</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-02T23:24:00+02:00"> Thu 02 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux-for-dummies.html">Linux for dummies</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>create a file <code>.inputrc</code>
-in your home directory and put there</p>
-<div class="highlight"><pre><span></span>&quot;\e[A&quot;: history-search-backward
-&quot;\e[B&quot;: history-search-forward
-set show-all-if-ambiguous on
-set completion-ignore-case on
-TAB: menu-complete
-</pre></div>
-
-
-<p>Restart your terminal.
-Now you can autocomplete from history using Up and Down keys.
-<a href="http://osxdaily.com/2013/04/24/improve-command-line-history-search/">Source</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/working-with-date-and-time-in-java.html">Working with date and time in Java (russian)</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-01T20:47:00+02:00"> Wed 01 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/java.html">Java</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Часть 1: <a href="https://habrahabr.ru/post/274811/">https://habrahabr.ru/post/274811/</a>
-Часть 2: <a href="https://habrahabr.ru/post/274905/">https://habrahabr.ru/post/274905/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/working-with-date-and-time-in-java.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/pypy-with-numpy.html">pypy with numpy</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-05-16T00:11:00+02:00"> Mon 16 May 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Looks like pypy now can build numpy. Well, a slightly modified numpy.</p>
-<ol>
-<li>
-<p>Get default branch of pypy. be careful cause the developers don't maintain default branch compilable.
-    Revision 84341 (c86b42dd7613) works for me.</p>
-</li>
-<li>
-<p>compile using</p>
-<div class="highlight"><pre><span></span>./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy
-</pre></div>
-
-
-</li>
-<li>
-<p>Create package and vitual environment. Something …</p></li></ol>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pypy-with-numpy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/about-python.html">About python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-05-01T12:33:00+02:00"> Sun 01 May 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/links.html">links</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Cheat Sheet: Writing Python 2-3 compatible code
-<a href="http://python-future.org/compatible_idioms.html">http://python-future.org/compatible_idioms.html</a></p>
-<p>Google Python Guidelines
-<a href="https://google.github.io/styleguide/pyguide.html">https://google.github.io/styleguide/pyguide.html</a></p>
-<p>Inheritance
-<a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/dropbox-in-linux-mint.html">Dropbox in linux mint</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-10T20:50:00+02:00"> Sun 10 April 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Hmm. It doesn't work.
-I see the icon when i do</p>
-<div class="highlight"><pre><span></span>dropbox stop
-dropbox start
-</pre></div>
-
-
-<p>but I cannot click on it.</p>
-<p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
-Don't forget to do</p>
-<div class="highlight"><pre><span></span>$ killall nemo
-</pre></div>
-
-
-<p>after installation to make it work.</p>
-<h1>Final Solution</h1>
-<p><a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">source</a>&nbsp;</p>
-<p>Use …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/dropbox-in-linux-mint.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/c-plus-plus-ide-for-linux.html">C++ IDE for linux</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-05T00:45:00+02:00"> Tue 05 April 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>CLion is awesome but expensive.</p>
-<p>Found <a href="http://www.codelite.org">Codelite</a> on <a href="http://stackoverflow.com/a/1775460">http://stackoverflow.com/a/1775460</a>.
-Looks good. No disgust after 10 minutes of work.</p>
-<p>I was able to debug C code of Numpy in Virtualenv.</p>
-<ol>
-<li>
-<p>Launched from console after activating of virtual environment
-<code>&gt; source ./&lt;path to activate&gt;/activate</code></p>
-</li>
-<li>
-<p>add breakpoints</p>
-</li>
-<li>
-<p>Run (F5 …</p></li></ol>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/c-plus-plus-ide-for-linux.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html">Debugging numpy (any C code of Python) using gdb</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-04T00:01:00+02:00"> Mon 04 April 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I created a tiny python script that executes some python code, that executes some C code:</p>
-<div class="highlight"><pre><span></span><span class="c1"># contents of dbg_broadcast.py</span>
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="kp">broadcast</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]],[[</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">]]))</span>
-</pre></div>
-
-
-<p>Running in console:</p>
-<div class="highlight"><pre><span></span>&gt; gdb python
-GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
-Copyright (C) 2014 …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="https://serge-m.github.io/scipy-in-pypy.html">Scipy in pypy</a></h2>
                     <div class="well well-sm">
@@ -465,12 +157,12 @@ Copyright (C) 2014 …</pre></div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/til-about-pypy.html">TIL about PyPy</a></h2>
+                <h2><a href="https://serge-m.github.io/reading-c-type-declarations.html">reading C type declarations</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-01-08T08:30:00+01:00"> Fri 08 January 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2015-03-09T14:26:00+01:00"> Mon 09 March 2015</time>
     </span>
 
 
@@ -478,112 +170,53 @@ Copyright (C) 2014 …</pre></div>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Building from source root using command
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
-produces structure with obsolete pypy-c and libpypy-c.so in 
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span></p>
-<p>Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/til-about-pypy.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/avconv.html">convert video to jpeg with good quality</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-14T22:00:00+01:00"> Mon 14 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
-        /
-	<a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>convert video to jpeg with good quality:</p>
-<div class="highlight"><pre><span></span>avconv -i input_video.mp4 -qmax <span class="m">1</span> -qmin <span class="m">1</span> images_%05d.jpg
-</pre></div>
-
-
-<p>crop video:</p>
-<div class="highlight"><pre><span></span>avconv -i input.avi -vf <span class="nv">crop</span><span class="o">=</span>&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
-</pre></div>
-
-
-<p>create gif using </p>
-<p>http://gifmaker.me/</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/avconv.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/blog-post-11.html">М</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-14T01:15:00+01:00"> Mon 14 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useles.html">useles</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><sup><sup>Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.</sup></sup></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-11.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/operations-with-lists-in-java.html">Operations with lists in Java</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-12-12T14:10:00+01:00"> Sat 12 December 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/java.html">Java</a>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
         /
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Initializa list:</p>
-<div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;Bob&quot;</span><span class="o">,</span> <span class="s">&quot;John&quot;</span><span class="o">,</span> <span class="s">&quot;Alice&quot;</span><span class="o">);</span>
-</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/operations-with-lists-in-java.html">more ...</a>
+                <div class="summary"><p><a href="http://www.unixwiz.net/techtips/reading-cdecl.html">Source</a></p>
+<p>////////////
+simple example:</p>
+<ul>
+<li><code>long **foo[7];</code></li>
+</ul>
+<p>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and <strike>strike out</strike> the parts we've finished with.</p>
+<ul>
+<li>long * * foo [7];</li>
+</ul>
+<p>Start …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/reading-c-type-declarations.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/free-pdf-editor-for-linux.html">Free PDF Editor for Linux</a></h2>
+                <h2><a href="https://serge-m.github.io/cool-3d-web-design.html">Cool 3d web design</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-30T02:17:00+01:00"> Fri 30 October 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-23T23:58:00+01:00"> Sun 23 March 2014</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>http://www.snowflakecreative.co.uk/</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/cool-3d-web-design.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/about-sublime.html">About sublime</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-21T11:21:00+01:00"> Fri 21 March 2014</time>
     </span>
 
 
@@ -591,24 +224,24 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+	<a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
         /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+	<a href="https://serge-m.github.io/tag/tools.html">tools</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Looks good for linux mint/ Ubuntu
-<a href="https://code-industry.net/free-pdf-editor/">https://code-industry.net/free-pdf-editor/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/free-pdf-editor-for-linux.html">more ...</a>
+                <div class="summary"><p>Convenient json formatting
+http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-sublime.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/keyboard-layout-switching-toggle.html">Keyboard layout switching. Toggle between 2 of 3 languages.</a></h2>
+                <h2><a href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">clang: error: linker command failed with exit code 1</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-18T02:26:00+02:00"> Sun 18 October 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-20T16:14:00+01:00"> Thu 20 March 2014</time>
     </span>
 
 
@@ -616,103 +249,42 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
         /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+	<a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
         /
-	<a href="https://serge-m.github.io/tag/linux-for-dummies.html">Linux for dummies</a>
+	<a href="https://serge-m.github.io/tag/clang.html">clang</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">current</span><span class="o">=</span><span class="sb">`</span>setxkbmap …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/keyboard-layout-switching-toggle.html">more ...</a>
+                <div class="summary"><p>Finally I solved the problem with broken clang compilation
+I always got message</p>
+<div class="highlight"><pre><span></span>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New, Courier, monospace;&quot;</span><span class="nt">&gt;</span>ld: malformed archive TOC entry for <span class="nt">&lt;long</span> <span class="err">strange</span> <span class="err">identifier</span><span class="nt">&gt;</span>, offset 362137760 is beyond end of file 303710208<span class="nt">&lt;/span&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">Golden Dict instead of Lingvo</a></h2>
+                <h2><a href="https://serge-m.github.io/cyrillic-characters-decoder.html">Cyrillic characters decoder</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-11T20:37:00+02:00"> Sun 11 October 2015</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-17T10:35:00+01:00"> Mon 17 March 2014</time>
     </span>
 
 
 
 
 
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Official web-site:</p>
-<p><a href="http://goldendict.org/">http://goldendict.org/</a></p>
-<p>Newer version for Windows:</p>
-<p><a href="https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows">https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</a></p>
-<p>Conversion (decompression) Lingvo <code>*.lds</code> to <code>*.dsl</code> format:</p>
-<p><a href="https://pypi.python.org/pypi/lingvoreader">https://pypi.python.org/pypi/lingvoreader</a></p>
-<p>it's a python module. Install via </p>
-<div class="highlight"><pre><span></span>pip install lingvoreader
-</pre></div>
-
-
-<p>https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html">Detector of flying objects in IR video</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-12T21:14:00+02:00"> Sat 12 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Implemented using python</p>
-<p>https://github.com/serge-m/object_detection_ir_video</p>
-<p><img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png">
-<img alt="" src="http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg"></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html">more ...</a>
+                <div class="summary"><p>Very useful for determining what text is encoded for example in unicode characters/
+<a href="http://2cyr.com/decode/">http://2cyr.com/decode/</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/cyrillic-characters-decoder.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
-        <ul class="pagination">
-                <li class="prev"><a href="https://serge-m.github.io/category/misc.html">&laquo;</a>
-                </li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc.html">1</a></li>
-                    <li class="active"><a
-                            href="https://serge-m.github.io/category/misc2.html">2</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc3.html">3</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc4.html">4</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc5.html">5</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc6.html">6</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc7.html">7</a></li>
-                    <li class=""><a
-                            href="https://serge-m.github.io/category/misc8.html">8</a></li>
-                <li class="next"><a
-                        href="https://serge-m.github.io/category/misc3.html">&raquo;</a></li>
-        </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -723,63 +295,38 @@ produces structure with obsolete pypy-c and libpypy-c.so in
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/shell-commands.html">
-                            Shell commands
+                        <a href="https://serge-m.github.io/scipy-in-pypy.html">
+                            Scipy in pypy
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/add-service-in-linux.html">
-                            Add service in ubuntu
+                        <a href="https://serge-m.github.io/building-pypy.html">
+                            Building Pypy
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
-                            OpenVPN server in cloud using docker
+                        <a href="https://serge-m.github.io/reading-c-type-declarations.html">
+                            reading C type declarations
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">
-                            Docker in Scaleway's vc1s Ubuntu Xenial
+                        <a href="https://serge-m.github.io/cool-3d-web-design.html">
+                            Cool 3d web design
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
-                            Check server fingerprint for scaleway
+                        <a href="https://serge-m.github.io/about-sublime.html">
+                            About sublime
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/raspberry-pi-links.html">
-                            Raspberry Pi Links
+                        <a href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">
+                            clang: error: linker command failed with exit code 1
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
-                            Run docker as pytest fixture
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">
-                            Installing java 8 on linux mint 17.3
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">
-                            Testing json responses in Flask REST apps with pytest
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
-                            Set up Travis CI for building personal page on Github Pages with Pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/refactoring-python-extract-variable.html">
-                            Refactoring python code. Extracting variables and other.
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/useful-python-links.html">
-                            Useful python links
+                        <a href="https://serge-m.github.io/cyrillic-characters-decoder.html">
+                            Cyrillic characters decoder
                         </a>
                     </li>
                 </ul>
@@ -788,8 +335,63 @@ produces structure with obsolete pypy-c and libpypy-c.so in
             <li class="list-group-item"><a href="https://serge-m.github.io/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
                 <ul class="list-group" id="categories">
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/category/misc.html">
-                            <i class="fa fa-folder-open fa-lg"></i> misc
+                        <a href="https://serge-m.github.io/category/01.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 01
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/02.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 02
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/03.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 03
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/04.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 04
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/05.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 05
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/06.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 06
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/07.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 07
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/08.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 08
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/09.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 09
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/10.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 10
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/11.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 11
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/category/12.html">
+                            <i class="fa fa-folder-open fa-lg"></i> 12
                         </a>
                     </li>
                 </ul>
@@ -1265,7 +867,7 @@ produces structure with obsolete pypy-c and libpypy-c.so in
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 sergem
+         <div class="col-xs-10">&copy; 2016 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

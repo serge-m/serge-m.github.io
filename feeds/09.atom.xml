@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - 09</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/09.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2016-09-29T14:10:00+02:00</updated><entry><title>How to fix google search suggestions in Firefox in Linux Mint</title><link href="https://serge-m.github.io/fix-google-search-suggestions-in-firefox-in-linux-mint.html" rel="alternate"></link><published>2016-09-29T14:10:00+02:00</published><updated>2016-09-29T14:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-09-29:/fix-google-search-suggestions-in-firefox-in-linux-mint.html</id><summary type="html">&lt;p&gt;there are plenty of discussions about it. I didn't find full solution.
+You can add google as a search engine. But suggestions don't work for me.&lt;/p&gt;
+&lt;h1&gt;My approximate solution&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;remove standard firefox:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get remove firefox
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remove search addons. &lt;a href="http://superuser.com/a/1014373"&gt;Source&lt;/a&gt;.
+    I am not sure if this step actually helped. TODO …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;there are plenty of discussions about it. I didn't find full solution.
+You can add google as a search engine. But suggestions don't work for me.&lt;/p&gt;
+&lt;h1&gt;My approximate solution&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;remove standard firefox:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get remove firefox
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remove search addons. &lt;a href="http://superuser.com/a/1014373"&gt;Source&lt;/a&gt;.
+    I am not sure if this step actually helped. TODO: Check if it is required.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get remove mint-search-addon
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;delete file (or rename to have a backup):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/.mozilla/firefox/&amp;lt;SOMETHING&amp;gt;.default/search.json.mozlz4
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and contents of the directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/.mozilla/firefox/sf8ha7dx.default/searchplugins
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;download, install and run firefox from official website.
+    It will create a new version of&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/.mozilla/firefox/sf8ha7dx.default/searchplugins
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;in &lt;code&gt;.mozilla/firefox/sf8ha7dx.default/searchplugins&lt;/code&gt; create a file &lt;code&gt;google1.xml&lt;/code&gt;
+ with contents: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;SearchPlugin&lt;/span&gt; &lt;span class="na"&gt;xmlns=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.mozilla.org/2006/browser/search/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;ShortName&amp;gt;&lt;/span&gt;Google1&lt;span class="nt"&gt;&amp;lt;/ShortName&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Description&amp;gt;&lt;/span&gt;Google1&lt;span class="nt"&gt;&amp;lt;/Description&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;InputEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class="nt"&gt;&amp;lt;/InputEncoding&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;SearchForm&amp;gt;&lt;/span&gt;http://www.google.com&lt;span class="nt"&gt;&amp;lt;/SearchForm&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-suggestions+json&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;method=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.google.com/complete/search?client=firefox&amp;amp;amp;q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;method=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.google.com/search?q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;resultDomain=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;google.com&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/Url&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/SearchPlugin&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;remove official normal version of firefox&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;install mint version of firefox:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install firefox
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now "mint" firefox will use &lt;code&gt;search.json.mozlz4&lt;/code&gt; version from normal firefox and suggestions should work&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Optional. I also removed (actually renamed) from /usr/* all directories like &lt;code&gt;searchplugins&lt;/code&gt; that contain files like &lt;code&gt;yahoo.xml&lt;/code&gt;.
+I think they are created by "mint" firefox. Not sure that it is a necessary step. Further check is required here.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content></entry><entry><title>Detector of flying objects in IR video</title><link href="https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html" rel="alternate"></link><published>2015-09-12T21:14:00+02:00</published><updated>2015-09-12T21:14:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-12:/detector-of-flying-objects-in-ir-video.html</id><summary type="html">&lt;p&gt;Implemented using python&lt;/p&gt;
+&lt;p&gt;https://github.com/serge-m/object_detection_ir_video&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png"&gt;
+&lt;img alt="" src="http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Implemented using python&lt;/p&gt;
+&lt;p&gt;https://github.com/serge-m/object_detection_ir_video&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png"&gt;
+&lt;img alt="" src="http://2.bp.blogspot.com/-udD9zLZkYGI/VfRrfNGgpgI/AAAAAAAADJo/0_NlSjhq3Jw/s320/frame_00379.jpg"&gt;&lt;/p&gt;</content><category term="machine learning"></category><category term="python"></category></entry><entry><title>ffmpeg(avconv) jpeg quality</title><link href="https://serge-m.github.io/ffmpegavconv-jpeg-quality.html" rel="alternate"></link><published>2015-09-06T15:52:00+02:00</published><updated>2015-09-06T15:52:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-06:/ffmpegavconv-jpeg-quality.html</id><summary type="html">&lt;p&gt;conversion with good jpeg quality:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i ./input.avi -q:v &lt;span class="m"&gt;1&lt;/span&gt; output_frame_%05d.jpg
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;conversion with good jpeg quality:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;avconv -i ./input.avi -q:v &lt;span class="m"&gt;1&lt;/span&gt; output_frame_%05d.jpg
+&lt;/pre&gt;&lt;/div&gt;</content><category term="avconv"></category><category term="useful"></category><category term="ffmpeg"></category><category term="video processing"></category></entry><entry><title>Encode/decode binary file to ascii using command line</title><link href="https://serge-m.github.io/encodedecode-binary-file-to-ascii.html" rel="alternate"></link><published>2015-09-06T14:17:00+02:00</published><updated>2015-09-06T14:17:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-06:/encodedecode-binary-file-to-ascii.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;base64 source_file &amp;gt; destination.ascii 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;base64 --decode destination.ascii &amp;gt; decoded_file
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;base64 source_file &amp;gt; destination.ascii 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;base64 --decode destination.ascii &amp;gt; decoded_file
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="linux"></category></entry><entry><title>Jobs 2015</title><link href="https://serge-m.github.io/jobs-2015.html" rel="alternate"></link><published>2015-09-06T00:30:00+02:00</published><updated>2015-09-06T00:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-09-06:/jobs-2015.html</id><summary type="html">&lt;p&gt;201503 Google  &lt;/p&gt;
+&lt;p&gt;?? Strange guys from France.  &lt;/p&gt;
+&lt;p&gt;201504 Definiens AG. Tools for medical research and analysis of tissue. Frontend? I wanted machine learning. Munich &lt;/p&gt;
+&lt;p&gt;201505 EyeEm. Computer Vision Engineer. Computer vision. Nice office. Shaji. Berlin&lt;/p&gt;
+&lt;p&gt;201505 Stylight. Munich. ML? ?? &lt;/p&gt;
+&lt;p&gt;201506 Software Diagnostics. Potsdam. Interesting project about evaluation of code quality in …&lt;/p&gt;</summary><content type="html">&lt;p&gt;201503 Google  &lt;/p&gt;
+&lt;p&gt;?? Strange guys from France.  &lt;/p&gt;
+&lt;p&gt;201504 Definiens AG. Tools for medical research and analysis of tissue. Frontend? I wanted machine learning. Munich &lt;/p&gt;
+&lt;p&gt;201505 EyeEm. Computer Vision Engineer. Computer vision. Nice office. Shaji. Berlin&lt;/p&gt;
+&lt;p&gt;201505 Stylight. Munich. ML? ?? &lt;/p&gt;
+&lt;p&gt;201506 Software Diagnostics. Potsdam. Interesting project about evaluation of code quality in big projects. Python. Bonnet. ***&lt;/p&gt;
+&lt;p&gt;201509 Octonus. ML+CV. Moscow ***&lt;/p&gt;
+&lt;p&gt;?? Yandex ? ***&lt;/p&gt;
+&lt;p&gt;?? Zalando? ***&lt;/p&gt;</content><category term="interview"></category></entry><entry><title>Save Ipython notebook as script with the same filename</title><link href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html" rel="alternate"></link><published>2014-09-21T14:59:00+02:00</published><updated>2014-09-21T14:59:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-21:/save-ipython-notebook-as-script-with.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creating a variable theNotebook with the name of notebook&lt;/span&gt;
+&lt;span class="c1"&gt;# source: http://stackoverflow.com/a/23619544&lt;/span&gt;
+&lt;span class="c1"&gt;# In[1]:&lt;/span&gt;
+
+&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="n"&gt;javascript&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;notebook&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;thename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;notebook_name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;theNotebook = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;thename&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;# saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creating a variable theNotebook with the name of notebook&lt;/span&gt;
+&lt;span class="c1"&gt;# source: http://stackoverflow.com/a/23619544&lt;/span&gt;
+&lt;span class="c1"&gt;# In[1]:&lt;/span&gt;
+
+&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="n"&gt;javascript&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;notebook&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;thename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;notebook_name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;theNotebook = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;thename&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;# saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist&lt;/span&gt;
+&lt;span class="c1"&gt;# source http://stackoverflow.com/a/19067979&lt;/span&gt;
+&lt;span class="c1"&gt;# In[2]:&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__IPYTHON__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;saving&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;
+        &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+        &lt;span class="n"&gt;dir_backup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;backup&amp;#39;&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;get_ipython&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u&amp;#39;ipython nbconvert --to python {0} --output {1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;NameError&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Unable to save&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="ipython"></category></entry><entry><title>Python equivalent of interp2</title><link href="https://serge-m.github.io/python-equivalent-of-interp2.html" rel="alternate"></link><published>2014-09-16T02:15:00+02:00</published><updated>2014-09-16T02:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-16:/python-equivalent-of-interp2.html</id><summary type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/pyinterp2"&gt;https://github.com/serge-m/pyinterp2&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/pyinterp2"&gt;https://github.com/serge-m/pyinterp2&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category><category term="matlab"></category></entry><entry><title>Simple occlusion filling for depth maps</title><link href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html" rel="alternate"></link><published>2014-09-01T12:14:00+02:00</published><updated>2014-09-01T12:14:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-01:/simple-occlusion-filling-for-depth-maps.html</id><summary type="html">&lt;p&gt;As an example I use images from middleburry.
+Solution is very dirty and slow.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/depth_map_occlusion&amp;quot; target=&amp;quot;_blank"&gt;https://github.com/serge-m/depth_map_occlusion&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;# In[1]:
+
+import numpy
+import scipy
+import matplotlib.pyplot as plt
+
+
+# In[2]:
+
+from scipy import ndimage
+import numpy as np
+
+# kernels for shift
+k = np.array([
+[[0,0,0],
+&amp;nbsp;[0 …&lt;/span&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;As an example I use images from middleburry.
+Solution is very dirty and slow.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/serge-m/depth_map_occlusion&amp;quot; target=&amp;quot;_blank"&gt;https://github.com/serge-m/depth_map_occlusion&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;# In[1]:
+
+import numpy
+import scipy
+import matplotlib.pyplot as plt
+
+
+# In[2]:
+
+from scipy import ndimage
+import numpy as np
+
+# kernels for shift
+k = np.array([
+[[0,0,0],
+&amp;nbsp;[0,0,1],
+&amp;nbsp;[0,0,0],],
+[[0,1,0],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[0,0,0],],
+[[0,0,0],
+&amp;nbsp;[1,0,0],
+&amp;nbsp;[0,0,0],],
+[[0,0,0],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[0,1,0],],
+[[1,0,0],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[0,0,0],],
+[[0,0,1],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[0,0,0],],
+[[0,0,0],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[0,0,1],],
+[[0,0,0],
+&amp;nbsp;[0,0,0],
+&amp;nbsp;[1,0,0],],
+])
+&lt;/span&gt;
+&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;
+
+# In[8]:
+
+from scipy import misc
+
+from PIL import Image
+
+#reading source data
+frm = misc.imread('cones_2_6_align2_00000.png')
+dpt0 = misc.imread('disp2.png')
+occl0 = misc.imread('occl.png')
+
+#initial values for results
+dpt = dpt0
+occl = occl0
+
+frm_shifterd = numpy.zeros((len(k),)+frm.shape)
+dif = numpy.zeros((len(k),)+frm.shape)
+sumdiff = numpy.zeros((len(k),)+frm.shape[:-1])
+
+for ik in range(len(k)):
+&amp;nbsp;&amp;nbsp;&amp;nbsp; for ch in range(frm.shape[-1]):
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; frm_shifterd[ik,:,:,ch] = ndimage.convolve(frm[:,:,ch], k[ik], mode='nearest', cval=0.0)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dif[ik] = numpy.abs(frm_shifterd[ik,:,:,:]-frm[:,:,:]) 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; sumdiff[ik] = dif[ik].sum(axis=2) 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+
+iteration = 0
+
+
+def one_iteration(dpt, occl, k, sumdiff):
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt_shifted = numpy.zeros((len(k),)+dpt.shape)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; occl_shifted = numpy.zeros((len(k),)+dpt.shape)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; sumdiff_final = numpy.zeros((len(k),)+frm.shape[:-1])
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; occl_dil = ndimage.grey_dilation(occl, size=(3,3))
+&amp;nbsp;&amp;nbsp;&amp;nbsp; for ik in range(len(k)):
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt_shifted[ik,:,:] = ndimage.convolve(dpt[:,:], k[ik], mode='nearest', cval=0.0)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; occl_shifted[ik,:,:] = ndimage.convolve(occl[:,:], k[ik], mode='nearest', cval=0.0)
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sumdiff_final[ik] = sumdiff[ik] + (1-occl_shifted[ik])*1000000000
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; #print 'shifted', ik, '\n', dpt_shifted[ik]
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; # chose direction where the difference is the lowest
+&amp;nbsp;&amp;nbsp;&amp;nbsp; good_directions = numpy.argmin(sumdiff_final, axis = 0)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt_best = numpy.choose( good_directions, dpt_shifted )
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt_new = numpy.choose( occl==occl_dil, numpy.array([dpt_best,dpt]))
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; return dpt_new, occl_dil
+
+while True:
+&amp;nbsp;&amp;nbsp;&amp;nbsp; iteration += 1
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt_new, occl_dil = one_iteration(dpt, occl, k, sumdiff)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; if numpy.array_equal(occl, occl_dil):
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; break;
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; #Image.fromarray(np.cast['uint8'](dpt_new)).save('dpt_{}.png'.format(iteration))
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+&amp;nbsp;&amp;nbsp;&amp;nbsp; dpt = numpy.copy(dpt_new)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; occl = numpy.copy(occl_dil)
+&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+#write output 
+Image.fromarray(np.cast['uint8'](dpt)).save('processed_dpt.png')&lt;/span&gt;&lt;/blockquote&gt;</content><category term="depth map"></category><category term="python"></category></entry><entry><title>Math morphology in Adobe After Effects</title><link href="https://serge-m.github.io/math-morphology-in-adobe-after-effects.html" rel="alternate"></link><published>2013-09-18T00:22:00+02:00</published><updated>2013-09-18T00:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-09-18:/math-morphology-in-adobe-after-effects.html</id><summary type="html">&lt;p&gt;Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
+&lt;img alt="" src="http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png"&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
+&lt;img alt="" src="http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png"&gt;&lt;/p&gt;</content></entry></feed>

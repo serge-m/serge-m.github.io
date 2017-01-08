@@ -51,4 +51,5 @@ Generate md5 fingerprint of the key (works in newer ubuntu, 16):
 ssh-keygen -lf ./my_key -E md5
 ```
 
-
+## Vim
+[vimCheatSheet](https://www.fprintf.net/vimCheatSheet.html)

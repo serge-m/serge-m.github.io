@@ -33,7 +33,26 @@
 
 
 &lt;p&gt;Encode/decode binary file to ascii using command line &lt;/p&gt;
-&lt;p&gt;&lt;a href="/encodedecode-binary-file-to-ascii.html"&gt;link&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/encodedecode-binary-file-to-ascii.html"&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Restart now:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;shutdown -r 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;SSH&lt;/h2&gt;
+&lt;p&gt;generate key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;generate RSA key of length 4096 to file &lt;code&gt;my_key&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Generate md5 fingerprint of the key (works in newer ubuntu, 16):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -lf ./my_key -E md5
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;touch /etc/systemd/system/your-service.service 
 &lt;/pre&gt;&lt;/div&gt;
 

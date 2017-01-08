@@ -126,6 +126,25 @@ sergem personal public notebook            </a>
 
 <p>Encode/decode binary file to ascii using command line </p>
 <p><a href="/encodedecode-binary-file-to-ascii.html">link</a></p>
+<p>Restart now:</p>
+<div class="highlight"><pre><span></span>shutdown -r 0
+</pre></div>
+
+
+<h2>SSH</h2>
+<p>generate key:</p>
+<div class="highlight"><pre><span></span>ssh-keygen
+</pre></div>
+
+
+<p>generate RSA key of length 4096 to file <code>my_key</code></p>
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key
+</pre></div>
+
+
+<p>Generate md5 fingerprint of the key (works in newer ubuntu, 16):</p>
+<div class="highlight"><pre><span></span>ssh-keygen -lf ./my_key -E md5
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

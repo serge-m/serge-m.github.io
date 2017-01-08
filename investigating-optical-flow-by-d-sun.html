@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/investigating-optical-flow-by-d-sun.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="Personal page of the author: http://cs.brown.edu/~dqsun/research/index.html Original paper: http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &#34;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles Behind Them&#34;. International Journal …" />
+        <meta name="description" content="Personal page of the author: http://cs.brown.edu/~dqsun/research/index.html Original paper: http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &#34;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles Behind Them&#34;. International Journal …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Investigating optical flow by D. Sun (Secrets of optical flow)"/>
         <meta property="og:url" content="https://serge-m.github.io/investigating-optical-flow-by-d-sun.html"/>
-        <meta property="og:description" content="Personal page of the author: http://cs.brown.edu/~dqsun/research/index.html Original paper: http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &#34;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles Behind Them&#34;. International Journal …"/>
+        <meta property="og:description" content="Personal page of the author: http://cs.brown.edu/~dqsun/research/index.html Original paper: http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &#34;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles Behind Them&#34;. International Journal …"/>
         <meta property="article:published_time" content="2014-11-05" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,9 +98,11 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Personal page of the author:&nbsp;<a href="http://cs.brown.edu/~dqsun/research/index.html&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/research/index.html</a>
-Original paper: <a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf</a>
-Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis    of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 [<a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf&quot; target=&quot;_blank">pdf</a>] [<a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip&quot; target=&quot;_blank">Source code</a>]</p>
+                <p>Personal page of the author:
+<a href="http://cs.brown.edu/~dqsun/research/index.html&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/research/index.html</a></p>
+<p>Original paper: <a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf</a>
+Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
+[ <a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf&quot; target=&quot;_blank">pdf</a>] [<a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip&quot; target=&quot;_blank">Source code</a>]</p>
 <p>Look inside the sources:</p>
 <div class="highlight"><pre><span></span>@alt_ba_optical_flow\
 
@@ -115,18 +117,23 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 </pre></div>
 
 
-<p><div style="margin-left: auto; margin-right: 0; width: 70%;">itarates:
+<p>itarates:
 1) Iterate flow computation
 2) Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system. Probably for more complicated solvers&nbsp; max_linear &gt; 1</p>
-<p></div>
-    ::::
-        compute_flow.m
-<div style="margin-left: auto; margin-right: 0; width: 70%;">calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: 
-<pre class="brush:cpp">for ignc = 1:this.gnc_iters <br>
-</pre>Calls compute_flow_base.m.  </div>
-    ::::
-        ...</p>
-<div class="highlight"><pre><span></span>@classic_nl_optical_flow\
+<div class="highlight"><pre><span></span>        compute_flow.m
+</pre></div>
+
+
+<p>calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: </p>
+<div class="highlight"><pre><span></span>for ignc = 1:this.gnc_iters   
+</pre></div>
+
+
+<p>Calls <code>compute_flow_base.m</code>  </p>
+<div class="highlight"><pre><span></span>    ...
+
+::::
+@classic_nl_optical_flow\
 
 ::::
 @hs_optical_flow\
@@ -145,17 +152,21 @@ utils\
 </pre></div>
 
 
-<p><div style="margin-left: auto; margin-right: 0; width: 70%;">-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
-there is also following code:<br>
-<pre class="brush: cpp">% For segmentation purpose
-    data.org_pyramid_images = compute_image_pyramid(this.images, f,...
-        this.pyramid_levels, 1/this.pyramid_spacing);
-    data.org_color_pyramid_images = compute_image_pyramid(this.color_images,...
-        f, this.pyramid_levels, 1/this.pyramid_spacing);</p>
-<p></pre>In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper.  </div>
-    ::::
-        ... </p>
-<div class="highlight"><pre><span></span>estimate_flow_demo.m
+<p>-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
+there is also following code:  </p>
+<div class="highlight"><pre><span></span><span class="c">% For segmentation purpose</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">org_pyramid_images</span> <span class="p">=</span> <span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">images</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span><span class="c">...</span>
+        <span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">org_color_pyramid_images</span> <span class="p">=</span> <span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">color_images</span><span class="p">,</span><span class="c">...</span>
+        <span class="n">f</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span>
+</pre></div>
+
+
+<p>In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. </p>
+<div class="highlight"><pre><span></span>    ...
+
+::::
+estimate_flow_demo.m
 
 ::::
 estimate_flow_interface.m
@@ -165,34 +176,31 @@ load_of_method.m
 </pre></div>
 
 
-<div style="margin-left: auto; margin-right: 0; width: 70%;">-- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: 
-<pre class="brush: cpp">case 'classic+nl'        
-        ope = classic_nl_optical_flow;
+<p>-- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: </p>
+<div class="highlight"><pre><span></span><span class="k">case</span> <span class="err">&#39;</span><span class="n">classic</span><span class="o">+</span><span class="n">nl</span><span class="err">&#39;</span>        
+        <span class="n">ope</span> <span class="o">=</span> <span class="n">classic_nl_optical_flow</span><span class="p">;</span>
 
-        ope.texture  = true;
-        ope.median_filter_size   = median_filter_size;
+        <span class="n">ope</span><span class="p">.</span><span class="n">texture</span>  <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="n">ope</span><span class="p">.</span><span class="n">median_filter_size</span>   <span class="o">=</span> <span class="n">median_filter_size</span><span class="p">;</span>
 
-        ope.alp = 0.95;
-        ope.area_hsz = 7;
-        ope.sigma_i  = 7;
-        ope.color_images = ones(1,1,3);
+        <span class="n">ope</span><span class="p">.</span><span class="n">alp</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">;</span>
+        <span class="n">ope</span><span class="p">.</span><span class="n">area_hsz</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="n">ope</span><span class="p">.</span><span class="n">sigma_i</span>  <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        <span class="n">ope</span><span class="p">.</span><span class="n">color_images</span> <span class="o">=</span> <span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
 
-        ope.lambda = 3;
-        ope.lambda_q =3;
-        %ope.display  = true;    
-</pre>and then applies the difference: 
-<pre class="brush: cpp">case 'classic+nl-fast-brightness'
-        ope = load_of_method('classic+nl');        
+        <span class="n">ope</span><span class="p">.</span><span class="n">lambda</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+        <span class="n">ope</span><span class="p">.</span><span class="n">lambda_q</span> <span class="o">=</span><span class="mi">3</span><span class="p">;</span>
+        <span class="nf">%ope</span><span class="p">.</span><span class="n">display</span>  <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>    
+</pre></div>
+
+
+<p>and then applies the difference: </p>
+<div class="highlight"><pre><span></span>case &#39;classic+nl-fast-brightness&#39;
+        ope = load_of_method(&#39;classic+nl&#39;);        
         ope.max_iters       = 3;
         ope.gnc_iters       = 2;
         ope.texture         = false;
 </pre></div>
-
-<div class="highlight"><pre><span></span>readme.pdf
-</pre></div>
-
-
-<p></div></div></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

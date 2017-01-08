@@ -11,6 +11,7 @@ THEME='pelican-bootstrap3'
 PATH = 'content'
 USE_FOLDER_AS_CATEGORY = False
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
+YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
 
 TIMEZONE = 'Europe/Berlin'
 

@@ -3253,18 +3253,21 @@ Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;
 &lt;h2&gt;HyperCam 2&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.hyperionics.com/hc/"&gt;http://www.hyperionics.com/hc/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Works well&lt;/p&gt;</content><category term="tools"></category><category term="freeware"></category></entry><entry><title>Temporary files format that can be deleted from project of Visual Studio 2010</title><link href="https://serge-m.github.io/temporary-files-format-that-can-be.html" rel="alternate"></link><published>2014-01-14T12:36:00+01:00</published><updated>2014-01-14T12:36:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-14:/temporary-files-format-that-can-be.html</id><summary type="html">&lt;p&gt;Add to .gitignore:&lt;/p&gt;
-&lt;ul style="text-align: left;"&gt;&lt;li&gt;*.ipch&amp;nbsp;&lt;/li&gt;&lt;li&gt;Debug&lt;/li&gt;&lt;li&gt;Release&lt;/li&gt;&lt;li&gt;*.sdf -&amp;nbsp;&lt;span style="background-color: white; color: #333333; font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;"&gt;The SDF file is your code&amp;nbsp;browsing database which uses SQL Sever Compact Edition. You don't need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-
-&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;[[1 …&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Add to .gitignore:&lt;/p&gt;
-&lt;ul style="text-align: left;"&gt;&lt;li&gt;*.ipch&amp;nbsp;&lt;/li&gt;&lt;li&gt;Debug&lt;/li&gt;&lt;li&gt;Release&lt;/li&gt;&lt;li&gt;*.sdf -&amp;nbsp;&lt;span style="background-color: white; color: #333333; font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;"&gt;The SDF file is your code&amp;nbsp;browsing database which uses SQL Sever Compact Edition. You don't need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-
-&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;[[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease" target="_blank)][[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral" target="_blank)]&lt;/span&gt;&lt;/span&gt;</content><category term="c++"></category><category term="2010"></category><category term="git"></category><category term="visual studio"></category></entry><entry><title>Migrating from SVN to Git and Mercurial</title><link href="https://serge-m.github.io/migrating-from-svn-to-git.html" rel="alternate"></link><published>2014-01-08T18:14:00+01:00</published><updated>2014-01-08T18:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-08:/migrating-from-svn-to-git.html</id><summary type="html">&lt;p&gt;There is a lot of answers here:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*.ipch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Debug&lt;/li&gt;
+&lt;li&gt;Release&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*.sdf&lt;/code&gt; - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don't need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[&lt;a href="http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank"&gt;1 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Add to .gitignore:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*.ipch&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Debug&lt;/li&gt;
+&lt;li&gt;Release&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*.sdf&lt;/code&gt; - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don't need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[&lt;a href="http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank"&gt;1&lt;/a&gt;]&lt;/p&gt;
+&lt;p&gt;[&lt;a href="http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral&amp;quot; target=&amp;quot;_blank"&gt;2&lt;/a&gt;]&lt;/p&gt;</content><category term="c++"></category><category term="2010"></category><category term="git"></category><category term="visual studio"></category></entry><entry><title>Migrating from SVN to Git and Mercurial</title><link href="https://serge-m.github.io/migrating-from-svn-to-git.html" rel="alternate"></link><published>2014-01-08T18:14:00+01:00</published><updated>2014-01-08T18:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-08:/migrating-from-svn-to-git.html</id><summary type="html">&lt;p&gt;There is a lot of answers here:
 http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository&lt;/p&gt;
 &lt;p&gt;I found rather useful &lt;a href="http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank"&gt;this one&lt;/a&gt;.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS&lt;/p&gt;

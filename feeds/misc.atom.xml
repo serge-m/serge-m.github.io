@@ -4565,86 +4565,41 @@ I had pretty simple code with opencv:&lt;/p&gt;
 &lt;/b&gt;And one should use
 &lt;strong&gt;opencv_core231d.lib opencv_imgproc231d.lib opencv_highgui231d.lib&lt;/strong&gt;
 for debug.&lt;/p&gt;
-&lt;p&gt;It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems&lt;/p&gt;</content></entry><entry><title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title><link href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html" rel="alternate"></link><published>2013-07-09T23:23:00+02:00</published><updated>2013-07-09T23:23:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</id><summary type="html">&lt;p&gt;&lt;span&gt;
-How to copy image from unsigned char buffer, resize and save to file.
+&lt;p&gt;It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems&lt;/p&gt;</content></entry><entry><title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title><link href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html" rel="alternate"></link><published>2013-07-09T23:23:00+02:00</published><updated>2013-07-09T23:23:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</id><summary type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.&lt;/p&gt;
-&lt;div&gt;&lt;div&gt;#include &lt;opencv/cv.h&gt;&lt;/div&gt;&lt;div&gt;#include &lt;opencv/highgui.h&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/cv.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/highgui.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;source_byte_beffer&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int coeff = 4;&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Mat small(height/ coeff,&amp;nbsp;width/ coeff, CV_8UC1 );&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Size s_half(width/ coeff,&amp;nbsp;height/ coeff);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::resize( src, small …&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;span&gt;
-How to copy image from unsigned char buffer, resize and save to file.
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.&lt;/p&gt;
-&lt;div&gt;&lt;div&gt;#include &lt;opencv/cv.h&gt;&lt;/div&gt;&lt;div&gt;#include &lt;opencv/highgui.h&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/cv.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt; &lt;span class="cpf"&gt;&amp;lt;opencv/highgui.h&amp;gt;&lt;/span&gt;&lt;span class="cp"&gt;&lt;/span&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;source_byte_beffer&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; int coeff = 4;&lt;/div&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;resize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;INTER_LINEAR&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c1"&gt;// resize from src to small&lt;/span&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );&lt;/div&gt;
+&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cvCloneImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvSaveImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;src1.bmp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvReleaseImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;writeImage&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Mat small(height/ coeff,&amp;nbsp;width/ coeff, CV_8UC1 );&lt;/div&gt;
+&lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;cvCloneImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;IplImage&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvSaveImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;little.bmp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;writeImage&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;cvReleaseImage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;writeImage&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Size s_half(width/ coeff,&amp;nbsp;height/ coeff);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; IplImage* writeImage;&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; writeImage=cvCloneImage(&amp;amp;(IplImage)src);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cvSaveImage("src1.bmp", writeImage);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cvReleaseImage( &amp;amp;writeImage );&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; writeImage=cvCloneImage(&amp;amp;(IplImage)small);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cvSaveImage("little.bmp", writeImage);&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cvReleaseImage( &amp;amp;writeImage );&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; //Another way of writtting: &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /*cvWrite("src.bmp", src );&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::imwrite( "small.bmp", small );*/&lt;/div&gt;
-
-&lt;div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;
-
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;
-
-&lt;p&gt;&lt;/span&gt;&lt;/p&gt;</content><category term="c++"></category><category term="opencv"></category></entry><entry><title>SVN copy certain subdirectories to a branch</title><link href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html" rel="alternate"></link><published>2013-07-03T17:07:00+02:00</published><updated>2013-07-03T17:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
+&lt;span class="c1"&gt;//Another way of writtting:&lt;/span&gt;
+&lt;span class="cm"&gt;/*cvWrite(&amp;quot;src.bmp&amp;quot;, src );&lt;/span&gt;
+&lt;span class="cm"&gt;cv::imwrite( &amp;quot;small.bmp&amp;quot;, small );*/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="c++"></category><category term="opencv"></category></entry><entry><title>SVN copy certain subdirectories to a branch</title><link href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html" rel="alternate"></link><published>2013-07-03T17:07:00+02:00</published><updated>2013-07-03T17:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
 &lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;
 &lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;trunk
       - project1

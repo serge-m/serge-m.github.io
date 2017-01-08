@@ -150,26 +150,16 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><span>
-How to copy image from unsigned char buffer, resize and save to file.
+                <div class="summary"><p>How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.</p>
-<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;opencv/cv.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv/highgui.h&gt;</span><span class="cp"></span>
 
-<div>
-</div>
+<span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">src</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">CV_8UC1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">source_byte_beffer</span> <span class="p">)</span> <span class="p">);</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">small</span><span class="p">(</span><span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">CV_8UC1</span> <span class="p">);</span>
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div>
-
-<div>
-</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small …</div>
+<span class="n">cv</span><span class="o">::</span><span class="n">Size</span> <span class="n">s_half</span><span class="p">(</span><span class="n">width</span><span class="o">/</span> <span class="n">coeff …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
                 </div>
             </article>

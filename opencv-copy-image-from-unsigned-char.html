@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="c++,opencv" />
-        <meta name="description" content="How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image. #include #include                 int coeff = 4;                 cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );                 cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 );                 cv::Size s_half(width/ coeff, height/ coeff);                 cv::resize( src, small …" />
+        <meta name="description" content="How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image. #include &lt;opencv/cv.h&gt; #include &lt;opencv/highgui.h&gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="OpenCV. Copy image from unsigned char buffer, resize and save to file"/>
         <meta property="og:url" content="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html"/>
-        <meta property="og:description" content="How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image. #include #include                 int coeff = 4;                 cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );                 cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 );                 cv::Size s_half(width/ coeff, height/ coeff);                 cv::resize( src, small …"/>
+        <meta property="og:description" content="How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image. #include &lt;opencv/cv.h&gt; #include &lt;opencv/highgui.h&gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff …"/>
         <meta property="article:published_time" content="2013-07-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="c++" />
@@ -105,67 +105,32 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p><span>
-How to copy image from unsigned char buffer, resize and save to file.
+                <p>How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.</p>
-<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;opencv/cv.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv/highgui.h&gt;</span><span class="cp"></span>
 
-<div>
-</div>
+<span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">src</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">CV_8UC1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">source_byte_beffer</span> <span class="p">)</span> <span class="p">);</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">small</span><span class="p">(</span><span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">CV_8UC1</span> <span class="p">);</span>
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div>
+<span class="n">cv</span><span class="o">::</span><span class="n">Size</span> <span class="n">s_half</span><span class="p">(</span><span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">);</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">resize</span><span class="p">(</span> <span class="n">src</span><span class="p">,</span> <span class="n">small</span><span class="p">,</span> <span class="n">s_half</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">INTER_LINEAR</span> <span class="p">);</span> <span class="c1">// resize from src to small</span>
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div>
+<span class="n">IplImage</span><span class="o">*</span> <span class="n">writeImage</span><span class="p">;</span>
+<span class="n">writeImage</span><span class="o">=</span><span class="n">cvCloneImage</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">IplImage</span><span class="p">)</span><span class="n">src</span><span class="p">);</span>
+<span class="n">cvSaveImage</span><span class="p">(</span><span class="s">&quot;src1.bmp&quot;</span><span class="p">,</span> <span class="n">writeImage</span><span class="p">);</span>
+<span class="n">cvReleaseImage</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">writeImage</span> <span class="p">);</span>
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div>
+<span class="n">writeImage</span><span class="o">=</span><span class="n">cvCloneImage</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">IplImage</span><span class="p">)</span><span class="n">small</span><span class="p">);</span>
+<span class="n">cvSaveImage</span><span class="p">(</span><span class="s">&quot;little.bmp&quot;</span><span class="p">,</span> <span class="n">writeImage</span><span class="p">);</span>
+<span class="n">cvReleaseImage</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">writeImage</span> <span class="p">);</span>
 
-<div>
-</div>
 
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small</div>
-
-<div>
-</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IplImage* writeImage;</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; writeImage=cvCloneImage(&amp;(IplImage)src);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cvSaveImage("src1.bmp", writeImage);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cvReleaseImage( &amp;writeImage );</div>
-
-<div>
-</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; writeImage=cvCloneImage(&amp;(IplImage)small);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cvSaveImage("little.bmp", writeImage);</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cvReleaseImage( &amp;writeImage );</div>
-
-<div>
-</div>
-
-<div>
-</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Another way of writtting: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /*cvWrite("src.bmp", src );</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::imwrite( "small.bmp", small );*/</div>
-
-<div>
-</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>
-
-<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
-
-<p></span></p>
+<span class="c1">//Another way of writtting:</span>
+<span class="cm">/*cvWrite(&quot;src.bmp&quot;, src );</span>
+<span class="cm">cv::imwrite( &quot;small.bmp&quot;, small );*/</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

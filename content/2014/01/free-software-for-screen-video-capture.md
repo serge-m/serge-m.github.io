@@ -11,7 +11,8 @@ Tags: tools,freeware
 ## Rylstim-Screen-Recorder
 [http://www.sketchman-studio.com/rylstim-screen-recorder/](http://www.sketchman-studio.com/rylstim-screen-recorder/)
 
-There were some troubles while recording ConEmu software</div>Portable version is available
+There were some troubles while recording ConEmu software 
+Portable version is available
 
 
 ## HyperCam 2

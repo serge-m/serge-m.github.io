@@ -3276,103 +3276,124 @@ http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-ne
 &lt;p&gt;I found rather useful &lt;a href="http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank"&gt;this one&lt;/a&gt;.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS&lt;/p&gt;
 &lt;p&gt;This script will convert projects stored in SVN with the following format:&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/trunk&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; /Project1&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; /Project2&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/branches&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/Project1 …&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;There is a lot of answers here:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;There is a lot of answers here:
 http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository&lt;/p&gt;
 &lt;p&gt;I found rather useful &lt;a href="http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank"&gt;this one&lt;/a&gt;.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS&lt;/p&gt;
 &lt;p&gt;This script will convert projects stored in SVN with the following format:&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/trunk&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; /Project1&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; /Project2&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/branches&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/Project1&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/Project2&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/tags&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp;/Project1&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp;/Project2&lt;/span&gt;
-This scheme is also popular and supported as well:&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/Project1&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/trunk&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/branches&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/tags&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;/Project2&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/trunk&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/branches&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;/tags&lt;/span&gt;
-Each project will get synchronized over by project name:&lt;/p&gt;
-&lt;p&gt;Ex:&lt;span style="font-family: Courier New, Courier, monospace;"&gt; ./migration https://svnurl.com/basepath project1&lt;/span&gt;
-If you wish to convert the full repo over, use the following syntax:&lt;/p&gt;
-&lt;p&gt;Ex:&lt;span style="font-family: Courier New, Courier, monospace;"&gt; ./migration https://svnurl.com/basepath .&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent
-&lt;div&gt;&lt;/p&gt;
-&lt;h2 style="text-align: left;"&gt;Other solutions:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1
+     /Project2
+/tags
+ /Project1
+ /Project2
+This scheme is also popular and supported as well:
 
-&lt;p&gt;https://github.com/nirvdrum/svn2git
-http://blog.tfnico.com/2011/12/git-svn-mirror-product-subgit.html
-I haven't tested them.&lt;/p&gt;
-&lt;h2 style="text-align: left;"&gt;Backup SVN&lt;/h2&gt;
+/Project1
+     /trunk
+     /branches
+     /tags
+/Project2
+     /trunk
+     /branches
+     /tags
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;div&gt;if the repository is not local. Dump whole repo:&lt;/div&gt;&lt;div&gt;&lt;div&gt;svnrdump dump https://&lt;your svn repo path&gt;/ &gt; dump.dump&lt;/div&gt;&lt;/div&gt;&lt;div&gt;then create a new local repo&lt;/div&gt;&lt;div&gt;svnadmin create newrepo&lt;/div&gt;&lt;div&gt;loading dump to local repo:&lt;/div&gt;&lt;div&gt;svnadmin load newrepo &lt; dump.dump&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).&lt;/div&gt;&lt;div&gt;You can dump in several files if you specify revisions ranges:&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;svnrdump dump&amp;nbsp;&amp;nbsp;https://&lt;your svn repo path&gt;/&amp;nbsp;-r 0:1000 &gt; dump0000-1000.dump&lt;/div&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;div&gt;svnrdump dump&amp;nbsp;&amp;nbsp;https://&lt;your svn repo path&gt;/&amp;nbsp;-r 1001:2000 --incremental &gt; dump1001-2000-incremental.dump&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Each project will get synchronized over by project name:&lt;/p&gt;
+&lt;p&gt;Ex: &lt;code&gt;./migration https://svnurl.com/basepath project1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you wish to convert the full repo over, use the following syntax:&lt;/p&gt;
+&lt;p&gt;Ex: &lt;code&gt;./migration https://svnurl.com/basepath .&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( 
+Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent&lt;/p&gt;
+&lt;h2&gt;Other solutions:&lt;/h2&gt;
+&lt;p&gt;https://github.com/nirvdrum/svn2git&lt;/p&gt;
+&lt;p&gt;http://blog.tfnico.com/2011/12/git-svn-mirror-product-subgit.html&lt;/p&gt;
+&lt;p&gt;I haven't tested them.&lt;/p&gt;
+&lt;h2&gt;Backup SVN&lt;/h2&gt;
+&lt;p&gt;if the repository is not local. Dump whole repo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnrdump dump https://&amp;lt;your svn repo path&amp;gt;/ &amp;gt; dump.dump
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;div&gt;svnrdump dump&amp;nbsp;&amp;nbsp;https://&lt;your svn repo path&gt;/&amp;nbsp;-r 2001:3000 --incremental &gt; dump2001-3000-incremental.dump&lt;/div&gt;&lt;/div&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;p&gt;then create a new local repo&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnadmin create newrepo
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;All dumps except the first are incremental&lt;/div&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;p&gt;loading dump to local repo:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnadmin load newrepo &amp;lt; dump.dump
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;div&gt;then create a new local repo&lt;/div&gt;&lt;div&gt;svnadmin create newrepo&lt;/div&gt;&lt;/div&gt;
 
-&lt;div&gt;
-&lt;/div&gt;
+&lt;p&gt;I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).
+You can dump in several files if you specify revisions ranges:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnrdump dump  https://&amp;lt;your svn repo path&amp;gt;/ -r 0:1000 &amp;gt; dump0000-1000.dump
+svnrdump dump  https://&amp;lt;your svn repo path&amp;gt;/ -r 1001:2000 --incremental &amp;gt; dump1001-2000-incremental.dump
+svnrdump dump  https://&amp;lt;your svn repo path&amp;gt;/ -r 2001:3000 --incremental &amp;gt; dump2001-3000-incremental.dump
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;then loading:&lt;/div&gt;
 
-&lt;div&gt;svnadmin load newrepo &lt; dump0001-1000.dump&lt;/div&gt;
+&lt;p&gt;All dumps except the first are incremental&lt;/p&gt;
+&lt;p&gt;then create a new local repo&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnadmin create newrepo
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;/div&gt;
 
-&lt;div&gt;svnadmin load newrepo &lt; dump1001-2000-incremental.dump&lt;/div&gt;
+&lt;p&gt;then loading:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;svnadmin load newrepo &amp;lt; dump0001-1000.dump
+svnadmin load newrepo &amp;lt; dump1001-2000-incremental.dump
+svnadmin load newrepo &amp;lt; dump2001-3000-incremental.dump
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div&gt;svnadmin load newrepo &lt;&amp;nbsp;dump2001-3000-incremental.dump&lt;/div&gt;
 
-&lt;h2 style="text-align: left;"&gt;SVN server on localhost&lt;/h2&gt;
-
+&lt;h2&gt;SVN server on localhost&lt;/h2&gt;
 &lt;p&gt;I used VisualSVN Server to make local SVN server.
 It seems Hg cannot load SVN repo from local file, but it can work with local server.
-I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.
-&lt;h2 style="text-align: left;"&gt;Migrating to Hg&lt;/h2&gt;in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html&lt;/p&gt;
+I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.&lt;/p&gt;
+&lt;h2&gt;Migrating to Hg&lt;/h2&gt;
+&lt;p&gt;in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html&lt;/p&gt;
 &lt;p&gt;Finally I found solution for windows.
 Install TortoiseHg.
 Install &amp;nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
 &lt;strong&gt;hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn&lt;/strong&gt;
-In&amp;nbsp;&lt;strong&gt;D:/hgsvn&lt;/strong&gt;&amp;nbsp;there is a folder&amp;nbsp;&lt;strong&gt;hgsubversion&lt;/strong&gt;. That is our target.
-Then register plugin for TortoiseHg. Find &lt;strong&gt;mercurial.ini&lt;/strong&gt;&amp;nbsp;in home user directory and edit it. In section &lt;strong&gt;extensions&lt;/strong&gt;&amp;nbsp;add line&lt;strong&gt; hgsubversion =&amp;nbsp;D:\hgsvn\hgsubversion&lt;/strong&gt;
-It must look like this:
-[extensions]
-hgsubversion =&amp;nbsp;&lt;strong&gt;D:\hgsvn*&lt;/strong&gt;&lt;em&gt;hgsubversion&lt;/em&gt;*
-Now if you open &amp;nbsp;TortoiseHg-&amp;gt;Global Settings-&amp;gt;Extentions, you see the plugin was installed
-&lt;img alt="" src="http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG"&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;/div&gt;Now you can just clone local SVN repository as Hg repo:
-hg clone --verbose -- http://127.0.0.1/svn/&lt;repo&gt; D:\&lt;repo&gt;&lt;/p&gt;
-&lt;h3 style="text-align: left;"&gt;Errors&lt;/h3&gt;
+In &lt;strong&gt;D:/hgsvn&lt;/strong&gt; there is a folder &lt;strong&gt;hgsubversion&lt;/strong&gt;. That is our target.&lt;/p&gt;
+&lt;p&gt;Then register plugin for TortoiseHg. Find &lt;strong&gt;mercurial.ini&lt;/strong&gt;&amp;nbsp;in home user directory and edit it. In section &lt;strong&gt;extensions&lt;/strong&gt;
+add line&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hgsubversion = D:\hgsvn\hgsubversion
+``
 
-&lt;p&gt;I had following error while cloning using TortoiseHg:
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;EditingError: trying to open a deleted file&lt;/span&gt;
+It must look like this:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[extensions]
+hgsubversion =&amp;nbsp;&lt;strong&gt;D:\hgsvn*&lt;/strong&gt;&lt;em&gt;hgsubversion&lt;/em&gt;*&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Now if you open &amp;amp;nbsp;TortoiseHg-&amp;gt;Global Settings-&amp;gt;Extentions, you see the plugin was installed
+![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
+
+
+Now you can just clone local SVN repository as Hg repo:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;hg clone --verbose -- http://127.0.0.1/svn/&lt;repo&gt; D:\&lt;repo&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Errors
+I had following error while cloning using TortoiseHg:
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;EditingError: trying to open a deleted file
+```
 It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="useful"></category><category term="mercurial"></category><category term="git"></category><category term="svn"></category></entry><entry><title>Things about C++</title><link href="https://serge-m.github.io/things-about-c.html" rel="alternate"></link><published>2014-01-06T13:28:00+01:00</published><updated>2014-01-06T13:28:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-06:/things-about-c.html</id><summary type="html">&lt;ol style="text-align: left;"&gt;&lt;li&gt;rules for resolving calls to overloaded functions:&amp;nbsp;&lt;/li&gt;- &lt;li&gt;identify the function that's the best match for the call (name, parameters etc)&lt;/li&gt;&lt;li&gt;checks accessibility for the best-match function.&lt;/li&gt;
+I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.&lt;/p&gt;</content><category term="useful"></category><category term="mercurial"></category><category term="git"></category><category term="svn"></category></entry><entry><title>Things about C++</title><link href="https://serge-m.github.io/things-about-c.html" rel="alternate"></link><published>2014-01-06T13:28:00+01:00</published><updated>2014-01-06T13:28:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-06:/things-about-c.html</id><summary type="html">&lt;ol style="text-align: left;"&gt;&lt;li&gt;rules for resolving calls to overloaded functions:&amp;nbsp;&lt;/li&gt;- &lt;li&gt;identify the function that's the best match for the call (name, parameters etc)&lt;/li&gt;&lt;li&gt;checks accessibility for the best-match function.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div&gt;

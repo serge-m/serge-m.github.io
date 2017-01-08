@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,mercurial,git,svn" />
-        <meta name="description" content="There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository I found rather useful this one. A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS This script will convert projects stored in SVN with the following format: /trunk   /Project1   /Project2 /branches      /Project1 …" />
+        <meta name="description" content="There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository I found rather useful this one. A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS This script will convert projects stored in SVN with the following format: /trunk /Project1 /Project2 /branches /Project1 …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Migrating from SVN to Git and Mercurial"/>
         <meta property="og:url" content="https://serge-m.github.io/migrating-from-svn-to-git.html"/>
-        <meta property="og:description" content="There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository I found rather useful this one. A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS This script will convert projects stored in SVN with the following format: /trunk   /Project1   /Project2 /branches      /Project1 …"/>
+        <meta property="og:description" content="There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository I found rather useful this one. A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS This script will convert projects stored in SVN with the following format: /trunk /Project1 /Project2 /branches /Project1 …"/>
         <meta property="article:published_time" content="2014-01-08" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -116,94 +116,115 @@ http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-ne
 <p>I found rather useful <a href="http://stackoverflow.com/a/9316931&quot; target=&quot;_blank">this one</a>.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS</p>
 <p>This script will convert projects stored in SVN with the following format:</p>
-<p><span style="font-family: Courier New, Courier, monospace;">/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; /Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; /Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">/tags</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp;/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp;/Project2</span>
-This scheme is also popular and supported as well:</p>
-<p><span style="font-family: Courier New, Courier, monospace;">/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/tags</span>
-<span style="font-family: Courier New, Courier, monospace;">/Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/tags</span>
-Each project will get synchronized over by project name:</p>
-<p>Ex:<span style="font-family: Courier New, Courier, monospace;"> ./migration https://svnurl.com/basepath project1</span>
-If you wish to convert the full repo over, use the following syntax:</p>
-<p>Ex:<span style="font-family: Courier New, Courier, monospace;"> ./migration https://svnurl.com/basepath .</span></p>
-<p>I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent
-<div></p>
-<h2 style="text-align: left;">Other solutions:</h2>
+<div class="highlight"><pre><span></span>/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1
+     /Project2
+/tags
+ /Project1
+ /Project2
+This scheme is also popular and supported as well:
 
-<p>https://github.com/nirvdrum/svn2git
-http://blog.tfnico.com/2011/12/git-svn-mirror-product-subgit.html
-I haven't tested them.</p>
-<h2 style="text-align: left;">Backup SVN</h2>
+/Project1
+     /trunk
+     /branches
+     /tags
+/Project2
+     /trunk
+     /branches
+     /tags
+</pre></div>
 
-<div><div>if the repository is not local. Dump whole repo:</div><div><div>svnrdump dump https://<your svn repo path>/ > dump.dump</div></div><div>then create a new local repo</div><div>svnadmin create newrepo</div><div>loading dump to local repo:</div><div>svnadmin load newrepo < dump.dump</div><div>
-</div><div>
-</div><div>I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).</div><div>You can dump in several files if you specify revisions ranges:</div><div>
-</div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 0:1000 > dump0000-1000.dump</div></div>
 
-<div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 1001:2000 --incremental > dump1001-2000-incremental.dump</div></div>
+<p>Each project will get synchronized over by project name:</p>
+<p>Ex: <code>./migration https://svnurl.com/basepath project1</code></p>
+<p>If you wish to convert the full repo over, use the following syntax:</p>
+<p>Ex: <code>./migration https://svnurl.com/basepath .</code></p>
+<p>I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( 
+Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent</p>
+<h2>Other solutions:</h2>
+<p>https://github.com/nirvdrum/svn2git</p>
+<p>http://blog.tfnico.com/2011/12/git-svn-mirror-product-subgit.html</p>
+<p>I haven't tested them.</p>
+<h2>Backup SVN</h2>
+<p>if the repository is not local. Dump whole repo:</p>
+<div class="highlight"><pre><span></span>svnrdump dump https://&lt;your svn repo path&gt;/ &gt; dump.dump
+</pre></div>
 
-<div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 2001:3000 --incremental > dump2001-3000-incremental.dump</div></div>
 
-<div>
-</div>
+<p>then create a new local repo</p>
+<div class="highlight"><pre><span></span>svnadmin create newrepo
+</pre></div>
 
-<div>All dumps except the first are incremental</div>
 
-<div>
-</div>
+<p>loading dump to local repo:</p>
+<div class="highlight"><pre><span></span>svnadmin load newrepo &lt; dump.dump
+</pre></div>
 
-<div><div>then create a new local repo</div><div>svnadmin create newrepo</div></div>
 
-<div>
-</div>
+<p>I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).
+You can dump in several files if you specify revisions ranges:</p>
+<div class="highlight"><pre><span></span>svnrdump dump  https://&lt;your svn repo path&gt;/ -r 0:1000 &gt; dump0000-1000.dump
+svnrdump dump  https://&lt;your svn repo path&gt;/ -r 1001:2000 --incremental &gt; dump1001-2000-incremental.dump
+svnrdump dump  https://&lt;your svn repo path&gt;/ -r 2001:3000 --incremental &gt; dump2001-3000-incremental.dump
+</pre></div>
 
-<div>then loading:</div>
 
-<div>svnadmin load newrepo < dump0001-1000.dump</div>
+<p>All dumps except the first are incremental</p>
+<p>then create a new local repo</p>
+<div class="highlight"><pre><span></span>svnadmin create newrepo
+</pre></div>
 
-<div></div>
 
-<div>svnadmin load newrepo < dump1001-2000-incremental.dump</div>
+<p>then loading:</p>
+<div class="highlight"><pre><span></span>svnadmin load newrepo &lt; dump0001-1000.dump
+svnadmin load newrepo &lt; dump1001-2000-incremental.dump
+svnadmin load newrepo &lt; dump2001-3000-incremental.dump
+</pre></div>
 
-<div>svnadmin load newrepo <&nbsp;dump2001-3000-incremental.dump</div>
 
-<h2 style="text-align: left;">SVN server on localhost</h2>
-
+<h2>SVN server on localhost</h2>
 <p>I used VisualSVN Server to make local SVN server.
 It seems Hg cannot load SVN repo from local file, but it can work with local server.
-I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.
-<h2 style="text-align: left;">Migrating to Hg</h2>in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html</p>
+I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.</p>
+<h2>Migrating to Hg</h2>
+<p>in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html</p>
 <p>Finally I found solution for windows.
 Install TortoiseHg.
 Install &nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
 <strong>hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn</strong>
-In&nbsp;<strong>D:/hgsvn</strong>&nbsp;there is a folder&nbsp;<strong>hgsubversion</strong>. That is our target.
-Then register plugin for TortoiseHg. Find <strong>mercurial.ini</strong>&nbsp;in home user directory and edit it. In section <strong>extensions</strong>&nbsp;add line<strong> hgsubversion =&nbsp;D:\hgsvn\hgsubversion</strong>
-It must look like this:
-[extensions]
-hgsubversion =&nbsp;<strong>D:\hgsvn*</strong><em>hgsubversion</em>*
-Now if you open &nbsp;TortoiseHg-&gt;Global Settings-&gt;Extentions, you see the plugin was installed
-<img alt="" src="http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG"><div class="separator" style="clear: both; text-align: left;">
-</div>Now you can just clone local SVN repository as Hg repo:
-hg clone --verbose -- http://127.0.0.1/svn/<repo> D:\<repo></p>
-<h3 style="text-align: left;">Errors</h3>
+In <strong>D:/hgsvn</strong> there is a folder <strong>hgsubversion</strong>. That is our target.</p>
+<p>Then register plugin for TortoiseHg. Find <strong>mercurial.ini</strong>&nbsp;in home user directory and edit it. In section <strong>extensions</strong>
+add line</p>
+<div class="highlight"><pre><span></span>hgsubversion = D:\hgsvn\hgsubversion
+``
 
-<p>I had following error while cloning using TortoiseHg:
-<span style="font-family: Courier New, Courier, monospace;">EditingError: trying to open a deleted file</span>
+It must look like this:
+</pre></div>
+
+
+<p>[extensions]
+hgsubversion =&nbsp;<strong>D:\hgsvn*</strong><em>hgsubversion</em>*</p>
+<div class="highlight"><pre><span></span>Now if you open &amp;nbsp;TortoiseHg-&gt;Global Settings-&gt;Extentions, you see the plugin was installed
+![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
+
+
+Now you can just clone local SVN repository as Hg repo:
+</pre></div>
+
+
+<p>hg clone --verbose -- http://127.0.0.1/svn/<repo> D:\<repo></p>
+<div class="highlight"><pre><span></span>### Errors
+I had following error while cloning using TortoiseHg:
+</pre></div>
+
+
+<p>EditingError: trying to open a deleted file
+```
 It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.</div></div></p>
+I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>

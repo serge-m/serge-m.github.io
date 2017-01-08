@@ -23,3 +23,8 @@ Change shell for user `user` to bash
 ```
 chsh -s /bin/bash user
 ```
+
+
+Encode/decode binary file to ascii using command line 
+
+[link]({filename}/encodedecode-binary-file-to-ascii.html)

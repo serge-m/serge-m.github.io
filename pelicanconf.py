@@ -9,7 +9,7 @@ SITEURL = ''
 THEME='pelican-bootstrap3'
 
 PATH = 'content'
-USE_FOLDER_AS_CATEGORY = False
+USE_FOLDER_AS_CATEGORY = True
 
 TIMEZONE = 'Europe/Berlin'
 

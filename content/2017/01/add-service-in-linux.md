@@ -1,7 +1,7 @@
 Title: Add service in ubuntu 
 Author: SergeM
 Date: 2017-01-08 07:10:00
-Slug: check-server-fingerpring-for-scaleway
+Slug: add-service-in-linux
 Tags: linux,useful
 
 

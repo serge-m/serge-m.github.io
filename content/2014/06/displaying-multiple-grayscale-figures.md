@@ -20,4 +20,4 @@ Shorter version:
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline
 import matplotlib.pyplot as plt
 plt.axis('off')
-plt.imshow(dpt, cmap=plt.cm.gray, interpolation='nearest')</span></div>
+plt.imshow(dpt, cmap=plt.cm.gray, interpolation='nearest')</span>

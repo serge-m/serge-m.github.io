@@ -254,4 +254,4 @@ Here the shift between frames is much larger than a pixel and the size of object
   <td>2 pyramid levels ![](http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png)</td> 
   <td>3 pyramid levels ![](http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png) </td></tr>
 </tbody>
-</table></div>
+</table>

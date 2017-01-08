@@ -120,4 +120,3 @@ while True:
 #write output 
 Image.fromarray(np.cast['uint8'](dpt)).save('processed_dpt.png')</span></blockquote>
 
-</div>

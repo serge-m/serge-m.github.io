@@ -10,4 +10,4 @@ Tags: useful,python
 import matplotlib.pyplot as plt
 plt.rcParams['image.cmap'] = 'gray'
 plt.rcParams['image.interpolation'] = 'nearest'
-</pre></div>
+</pre>

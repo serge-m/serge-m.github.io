@@ -257,4 +257,4 @@ print wrpr.v
 ![](http://2.bp.blogspot.com/-RBt_zV-BwPE/VHtGBocIBhI/AAAAAAAACFc/reFzmPZUpes/s1600/after%2B100%2Bcorrect%2Bwarp.png)
 </td> <td>
 ![](http://4.bp.blogspot.com/-fQ1nRz2R0TA/VI9SvoUd3iI/AAAAAAAACGU/IaqihseanNY/s1600/OF%2Bwith%2BTV.png)
-</td></tr><tr><td style="text-align: center;">before (L2)</td><td style="text-align: center;">after (TV)</td></tr></tbody></table></div></div>
+</td></tr><tr><td style="text-align: center;">before (L2)</td><td style="text-align: center;">after (TV)</td></tr></tbody></table></div>

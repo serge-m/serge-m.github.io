@@ -11,4 +11,4 @@ screencasts with solutions of typical interview tasks
 [http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X](http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 
 140 Google Interview Questions
-[http://www.impactinterview.com/2009/10/140-google-interview-questions/](http://www.impactinterview.com/2009/10/140-google-interview-questions/)</div>
+[http://www.impactinterview.com/2009/10/140-google-interview-questions/](http://www.impactinterview.com/2009/10/140-google-interview-questions/)

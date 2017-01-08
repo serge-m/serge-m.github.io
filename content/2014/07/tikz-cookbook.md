@@ -14,4 +14,3 @@ Drawing label on figure (using tikz)
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5);
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а};&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; \end{tikzpicture} 
 
-</div>

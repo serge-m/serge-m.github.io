@@ -6,4 +6,3 @@ Tags:
 
 http://www.snowflakecreative.co.uk/
 
-</div>

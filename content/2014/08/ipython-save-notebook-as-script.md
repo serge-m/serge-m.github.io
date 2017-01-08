@@ -18,4 +18,4 @@ try :
 &nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
 except NameError :
-&nbsp;&nbsp;&nbsp; pass</blockquote></div>
+&nbsp;&nbsp;&nbsp; pass</blockquote>

@@ -32,4 +32,3 @@ Some strange results for another image pair:
 
 
 
-</div>

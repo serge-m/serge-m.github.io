@@ -34,4 +34,4 @@ Bug report for Mlab:
 http://stackoverflow.com/questions/20659616/python-mlab-cannot-import-name-find-available-releases
 Fixed here:
 https://github.com/ewiger/mlab/commit/4bfa59af2a1a996a774c80d7aafc4a390f548669
-&nbsp;</div>
+&nbsp;

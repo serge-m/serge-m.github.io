@@ -74,4 +74,4 @@ void f (int x, int y);                 // (f2)
 ...
 f(3, 4.5); // matches f1 exactly, whereas f2 requires a double-to-int standard conversion
 </pre><h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;">Choosing a winner</h3><div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;">A candidate function is only as strong as its weakest match; a candidate requiring three promotions, for example, beats a candidate with two exact matches and a standard conversion. Candidates whose weakest matches are equivalently weak are compared on their next-weakest, and so on - a candidate with a standard conversion, a promotion and an exact match beats a candidate with a standard conversion and two promotions.</div></div></div></div><div>
-</div></div>
+</div>

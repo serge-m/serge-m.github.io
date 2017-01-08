@@ -13,4 +13,3 @@ batch_size: 200
 was replaced by
 batch_size: 100
 
-</div>

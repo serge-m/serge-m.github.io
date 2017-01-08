@@ -27,4 +27,4 @@ try :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os.makedirs(dir_backup)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {0} --output {1}'.format(theNotebook, os.path.join(dir_backup, theNotebook)) )
 except NameError :
-&nbsp;&nbsp;&nbsp; print "Unable to save"</div>
+&nbsp;&nbsp;&nbsp; print "Unable to save"

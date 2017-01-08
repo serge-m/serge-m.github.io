@@ -7,4 +7,3 @@ Tags:
 Very useful for determining what text is encoded for example in unicode characters/
 [http://2cyr.com/decode/](http://2cyr.com/decode/)
 
-</div>

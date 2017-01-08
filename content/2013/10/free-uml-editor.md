@@ -11,4 +11,3 @@ I found free UML editor:
 I have tried gliffy.com. It is online and paid.
 www.lucidchart.com has free version but it seems not so convenient
 
-</div>

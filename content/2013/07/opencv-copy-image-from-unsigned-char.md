@@ -4,6 +4,7 @@ Date: 2013-07-09 23:23:00
 Slug: opencv-copy-image-from-unsigned-char
 Tags: c++,opencv
 
+<span>
 How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.
 
@@ -15,3 +16,4 @@ If you use single-channel image.
 </div><div>
 </div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //Another way of writtting: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /*cvWrite("src.bmp", src );</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::imwrite( "small.bmp", small );*/</div><div>
 </div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+</span>

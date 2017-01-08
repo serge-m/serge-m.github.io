@@ -6,7 +6,7 @@ Tags: c++
 
 Example from Meyers "Effective C++"
 
-    ::::
+```
     class Timer {
     public:
     explicit Timer(int tickFrequency);
@@ -21,13 +21,13 @@ Example from Meyers "Effective C++"
     virtual void onTick() const; // redefined to make job done
     ... 
     };
-    
-    
+```
+
 Now clients of Widget get interface untouched and required job is done
 
 Example of protecting method from redefinition in derived classes:  
 
-    ::::
+```
     class Widget {
     private:
         class WidgetTimer: public Timer {
@@ -38,5 +38,5 @@ Example of protecting method from redefinition in derived classes:
         WidgetTimer timer;
         ...
     };
-    
-Classes derived from Widget unable to redefine onClick. Analogue of **final** in Java and **sealed** in C#</div>
+```
+Classes derived from Widget unable to redefine onClick. Analogue of **final** in Java and **sealed** in C#

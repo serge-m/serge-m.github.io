@@ -8,4 +8,4 @@ random numbers
 [http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf)
 
 Sutter. C++11 features
-[http://herbsutter.com/elements-of-modern-c-style/](http://herbsutter.com/elements-of-modern-c-style/)</div>
+[http://herbsutter.com/elements-of-modern-c-style/](http://herbsutter.com/elements-of-modern-c-style/)

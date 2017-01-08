@@ -37,4 +37,3 @@ add&nbsp;**advapi32.lib&nbsp;**to reduce number of warnings from 32 to 14
 </div><div>Add&nbsp;advapi32.lib to fix all</div><div>
 
 <h4 style="text-align: left;">Bonus:</h4></div><div>links to Russian habrahabr:</div><div>http://habrahabr.ru/company/epam_systems/blog/204368/</div><div>
-</div>

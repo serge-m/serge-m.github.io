@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,windows,theano,python" />
-        <meta name="description" content="0. install Anaconda 1. download Theano sources from git (install it using setup.py) 2. Setup NVIDIA GPU Toolkit. I have installed version 6.5 3. Setup Visual Studio Community Edition 2013 4. Create config file .theanorc  in c:\Users\X\: [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir …" />
+        <meta name="description" content="install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X\: [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Installing theano on windows"/>
         <meta property="og:url" content="https://serge-m.github.io/installing-theano-on-windows.html"/>
-        <meta property="og:description" content="0. install Anaconda 1. download Theano sources from git (install it using setup.py) 2. Setup NVIDIA GPU Toolkit. I have installed version 6.5 3. Setup Visual Studio Community Edition 2013 4. Create config file .theanorc  in c:\Users\X\: [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir …"/>
+        <meta property="og:description" content="install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X\: [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft …"/>
         <meta property="article:published_time" content="2014-12-28" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -111,56 +111,45 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">0. install Anaconda 
-1. download Theano sources from git (install it using setup.py)
-2. Setup NVIDIA GPU Toolkit. I have installed version 6.5
-3. Setup Visual Studio Community Edition 2013
-4. Create config file .theanorc&nbsp; in c:\Users\X\:
+                <ol>
+<li>install Anaconda</li>
+<li>download Theano sources from git (install it using setup.py)</li>
+<li>Setup NVIDIA GPU Toolkit. I have installed version 6.5</li>
+<li>Setup Visual Studio Community Edition 2013</li>
+<li>Create config file .theanorc  in c:\Users\X\:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">floatX</span> <span class="o">=</span> <span class="s">float32</span>
+<span class="na">device</span> <span class="o">=</span> <span class="s">gpu</span>
 
-<pre class="brush: python">[global]
-floatX = float32
-device = gpu
-
-[nvcc]
-fastmath = True
-compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe
-</pre>
-
-Without the line with path to cl.exe I got:
-
-    ::::
-    nvcc fatal   : Cannot find compiler 'cl.exe' in PATH
-    ['nvcc', '-shared', '-O3', '-use_fast_math', '-Xlinker', '/DEBUG',&nbsp;
-
-    ::::
-    '-D HAVE_ROUND', '-m64', '-Xcompiler',
-
-    ::::
-    &nbsp;'-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D&nbsp;
-
-    ::::
-    NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD',&nbsp;
-
-    ::::
-    '-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda',&nbsp;
-
-    ::::
-    '-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include',&nbsp;
-
-    ::::
-    '-Ic:\\anaconda\\include', '-o',&nbsp;
-
-    ::::
-    'C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.1.7601-SP1-Intel64_Family_6_Model_42_Stepping_7_GenuineIntel-2.7.7-64\\cuda_ndarray\\cuda_ndarray.pyd',&nbsp;
-
-    ::::
-    'mod.cu', '-Lc:\\anaconda\\libs',&nbsp;
-
-    ::::
-    '-Lc:\\anaconda', '-lpython27', '-lcublas', '-lcudart']
+<span class="k">[nvcc]</span>
+<span class="na">fastmath</span> <span class="o">=</span> <span class="s">True</span>
+<span class="na">compiler_bindir</span><span class="o">=</span><span class="s">C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe</span>
+</pre></div>
 
 
-</div>
+<p>Without the line with path to cl.exe I got:</p>
+<div class="highlight"><pre><span></span>nvcc fatal   : Cannot find compiler &#39;cl.exe&#39; in PATH
+[&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, 
+
+&#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;,
+
+ &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D 
+
+NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, 
+
+&#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, 
+
+&#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, 
+
+&#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, 
+
+&#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.1.7601-SP1-Intel64_Family_6_Model_42_Stepping_7_GenuineIntel-2.7.7-64\\cuda_ndarray\\cuda_ndarray.pyd&#39;, 
+
+&#39;mod.cu&#39;, &#39;-Lc:\\anaconda\\libs&#39;, 
+
+&#39;-Lc:\\anaconda&#39;, &#39;-lpython27&#39;, &#39;-lcublas&#39;, &#39;-lcudart&#39;]
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

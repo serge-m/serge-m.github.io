@@ -451,19 +451,20 @@ Probably pypy compiler places there files  integrated in the src distribution. T
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">0. install Anaconda 
-1. download Theano sources from git (install it using setup.py)
-2. Setup NVIDIA GPU Toolkit. I have installed version 6.5
-3. Setup Visual Studio Community Edition 2013
-4. Create config file .theanorc&nbsp; in c:\Users\X\:
+                <div class="summary"><ol>
+<li>install Anaconda</li>
+<li>download Theano sources from git (install it using setup.py)</li>
+<li>Setup NVIDIA GPU Toolkit. I have installed version 6.5</li>
+<li>Setup Visual Studio Community Edition 2013</li>
+<li>Create config file .theanorc  in c:\Users\X\:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">floatX</span> <span class="o">=</span> <span class="s">float32</span>
+<span class="na">device</span> <span class="o">=</span> <span class="s">gpu</span>
 
-<pre class="brush: python">[global]
-floatX = float32
-device = gpu
-
-[nvcc]
-fastmath = True
-compiler_bindir …</pre></div>
+<span class="k">[nvcc]</span>
+<span class="na">fastmath</span> <span class="o">=</span> <span class="s">True</span>
+<span class="na">compiler_bindir</span><span class="o">=</span><span class="s">C:\Program Files (x86)\Microsoft …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-theano-on-windows.html">more ...</a>
                 </div>
             </article>

@@ -12,69 +12,130 @@ A guy made a script according to proposed instructions: https://github.com/onepr
 
 This script will convert projects stored in SVN with the following format:
 
-<span style="font-family: Courier New, Courier, monospace;">/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; /Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; /Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">/tags</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp;/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp;/Project2</span>
+```
+/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1
+     /Project2
+/tags
+ /Project1
+ /Project2
 This scheme is also popular and supported as well:
 
-<span style="font-family: Courier New, Courier, monospace;">/Project1</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/tags</span>
-<span style="font-family: Courier New, Courier, monospace;">/Project2</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/trunk</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/branches</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp;/tags</span>
+/Project1
+     /trunk
+     /branches
+     /tags
+/Project2
+     /trunk
+     /branches
+     /tags
+```
+   
 Each project will get synchronized over by project name:
 
-Ex:<span style="font-family: Courier New, Courier, monospace;"> ./migration https://svnurl.com/basepath project1</span>
+Ex: `./migration https://svnurl.com/basepath project1`
+
 If you wish to convert the full repo over, use the following syntax:
 
-Ex:<span style="font-family: Courier New, Courier, monospace;"> ./migration https://svnurl.com/basepath .</span>
+Ex: `./migration https://svnurl.com/basepath .`
 
 
 
-I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent
-<div>
+I tested on the second structure type and it works. The question is only about saving merge structure. It seems it was lost. :( 
+Branches are ok, but merged revisions are not marked as merged. In other words every revision has single parent
 
-<h2 style="text-align: left;">Other solutions:</h2>https://github.com/nirvdrum/svn2git
+
+
+## Other solutions:
+
+https://github.com/nirvdrum/svn2git
+
 http://blog.tfnico.com/2011/12/git-svn-mirror-product-subgit.html
+
 I haven't tested them.
 
-<h2 style="text-align: left;">Backup SVN</h2><div><div>if the repository is not local. Dump whole repo:</div><div><div>svnrdump dump https://<your svn repo path>/ > dump.dump</div></div><div>then create a new local repo</div><div>svnadmin create newrepo</div><div>loading dump to local repo:</div><div>svnadmin load newrepo < dump.dump</div><div>
-</div><div>
-</div><div>I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).</div><div>You can dump in several files if you specify revisions ranges:</div><div>
-</div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 0:1000 > dump0000-1000.dump</div></div><div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 1001:2000 --incremental > dump1001-2000-incremental.dump</div></div><div><div>svnrdump dump&nbsp;&nbsp;https://<your svn repo path>/&nbsp;-r 2001:3000 --incremental > dump2001-3000-incremental.dump</div></div><div>
-</div><div>All dumps except the first are incremental</div><div>
-</div><div><div>then create a new local repo</div><div>svnadmin create newrepo</div></div><div>
-</div><div>then loading:</div><div>svnadmin load newrepo < dump0001-1000.dump</div><div></div><div>svnadmin load newrepo < dump1001-2000-incremental.dump</div><div>svnadmin load newrepo <&nbsp;dump2001-3000-incremental.dump</div>
-<h2 style="text-align: left;">SVN server on localhost</h2>I used VisualSVN Server to make local SVN server.
+## Backup SVN
+
+if the repository is not local. Dump whole repo:
+
+
+```
+svnrdump dump https://<your svn repo path>/ > dump.dump
+```
+then create a new local repo
+```
+svnadmin create newrepo
+```
+
+loading dump to local repo:
+```
+svnadmin load newrepo < dump.dump
+```
+
+I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).
+You can dump in several files if you specify revisions ranges:
+
+```
+svnrdump dump  https://<your svn repo path>/ -r 0:1000 > dump0000-1000.dump
+svnrdump dump  https://<your svn repo path>/ -r 1001:2000 --incremental > dump1001-2000-incremental.dump
+svnrdump dump  https://<your svn repo path>/ -r 2001:3000 --incremental > dump2001-3000-incremental.dump
+```
+ All dumps except the first are incremental
+
+then create a new local repo
+```
+svnadmin create newrepo
+```
+
+then loading:
+```
+svnadmin load newrepo < dump0001-1000.dump
+svnadmin load newrepo < dump1001-2000-incremental.dump
+svnadmin load newrepo < dump2001-3000-incremental.dump
+```
+## SVN server on localhost
+
+I used VisualSVN Server to make local SVN server.
 It seems Hg cannot load SVN repo from local file, but it can work with local server.
 I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.
-<h2 style="text-align: left;">Migrating to Hg</h2>in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html
+
+## Migrating to Hg
+in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html
 
 Finally I found solution for windows.
 Install TortoiseHg.
 Install &nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
 **hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn**
-In&nbsp;**D:/hgsvn**&nbsp;there is a folder&nbsp;**hgsubversion**. That is our target.
-Then register plugin for TortoiseHg. Find **mercurial.ini**&nbsp;in home user directory and edit it. In section **extensions**&nbsp;add line** hgsubversion =&nbsp;D:\hgsvn\hgsubversion**
+In **D:/hgsvn** there is a folder **hgsubversion**. That is our target.
+
+Then register plugin for TortoiseHg. Find **mercurial.ini**&nbsp;in home user directory and edit it. In section **extensions**
+add line
+```
+hgsubversion = D:\hgsvn\hgsubversion
+``
+
 It must look like this:
+```
 [extensions]
 hgsubversion =&nbsp;**D:\hgsvn\****hgsubversion**
+```
 Now if you open &nbsp;TortoiseHg->Global Settings->Extentions, you see the plugin was installed
-![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)<div class="separator" style="clear: both; text-align: left;">
-</div>Now you can just clone local SVN repository as Hg repo:
+![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
+
+
+Now you can just clone local SVN repository as Hg repo:
+```
 hg clone --verbose -- http://127.0.0.1/svn/<repo> D:\<repo>
+```
 
+### Errors
+I had following error while cloning using TortoiseHg:
 
-<h3 style="text-align: left;">Errors</h3>I had following error while cloning using TortoiseHg:
-<span style="font-family: Courier New, Courier, monospace;">EditingError: trying to open a deleted file</span>
+```
+EditingError: trying to open a deleted file
+```
 It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.</div></div>
+I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.

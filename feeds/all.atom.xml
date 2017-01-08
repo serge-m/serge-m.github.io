@@ -4289,54 +4289,63 @@ comp.openInViewer();&lt;/p&gt;
 &lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt; &lt;/span&gt;
 &lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )&lt;/span&gt;&lt;/p&gt;</content></entry><entry><title>Print all commands that were entered in interactive mode in Python</title><link href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html" rel="alternate"></link><published>2013-10-22T23:44:00+02:00</published><updated>2013-10-22T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/print-all-commands-that-were-enteren-in.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;import readline
 readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;import readline
-readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</content></entry><entry><title>Десятка лучших консольных команд</title><link href="https://serge-m.github.io/blog-post_22.html" rel="alternate"></link><published>2013-10-22T12:39:00+02:00</published><updated>2013-10-22T12:39:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/blog-post_22.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h1 class="title" style="background-color: white; border: 0px; color: #333333; font-family: 'normal Verdana', Tahoma, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: -1px; line-height: 35px; margin: 0px 0px 8px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="color: black; font-family: 'Times New Roman'; font-size: small; letter-spacing: normal; line-height: normal;"&gt;Взято с хабра:&amp;nbsp;&lt;/span&gt;[http://habrahabr.ru/post/198482/](http://habrahabr.ru/post/198482/" style="font-family: 'Times New Roman'; font-size: medium; letter-spacing: normal; line-height: normal;)&lt;/h1&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"&gt;&lt;img align="left" alt="image" src="http://habr.habrastorage.org/post_images/8ae/94d/028/8ae94d0280ef126598430d35ee8f1269.gif" style="border: 0px; margin: 5px 30px 5px 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;В данном посте я расскажу о наиболее интересных командах, которые могут быть очень полезны при работе в консоли. Однозначных критериев определения какая команда лучше другой — нет …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h1 class="title" style="background-color: white; border: 0px; color: #333333; font-family: 'normal Verdana', Tahoma, sans-serif; font-size: 30px; font-weight: normal; letter-spacing: -1px; line-height: 35px; margin: 0px 0px 8px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="color: black; font-family: 'Times New Roman'; font-size: small; letter-spacing: normal; line-height: normal;"&gt;Взято с хабра:&amp;nbsp;&lt;/span&gt;[http://habrahabr.ru/post/198482/](http://habrahabr.ru/post/198482/" style="font-family: 'Times New Roman'; font-size: medium; letter-spacing: normal; line-height: normal;)&lt;/h1&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div class="content html_format" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px 0px 10px; outline: 0px; overflow: hidden; padding: 0px; vertical-align: baseline;"&gt;&lt;img align="left" alt="image" src="http://habr.habrastorage.org/post_images/8ae/94d/028/8ae94d0280ef126598430d35ee8f1269.gif" style="border: 0px; margin: 5px 30px 5px 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;В данном посте я расскажу о наиболее интересных командах, которые могут быть очень полезны при работе в консоли. Однозначных критериев определения какая команда лучше другой — нет, каждый сам для своих условий выбирает лучшее. Я решил построить список команд на основе наиболее рейтинговых приемов работы с консолью от commandlinefu.com, кладовой консольных команд. Результат выполнения одной из таких команд под Linux приведен на картинке. Если заинтересовало, прошу под кат.
-&lt;a href="http://www.blogger.com/blogger.g?blogID=636453477220885924" name="habracut" style="border: 0px; color: #6da3bd; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/a&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Десятое место&lt;/h5&gt;
-Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;Комбинация &lt;span class="string" style="border: 0px; color: #339900; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;'ALT+.'&lt;/span&gt; или &lt;span class="string" style="border: 0px; color: #339900; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;'&lt;ESC&gt; .'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Девятое место&lt;/h5&gt;
-Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены двоичные данные и он перестал корректно работать.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;reset
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Восьмое место&lt;/h5&gt;
-Создает пустой файл. Уничтожает содержимое файла без его удаления.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;&gt; file.txt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Седьмое место&lt;/h5&gt;
-Запуск команды с пробелом перед ней не сохраняет ее в истории. Может пригодиться при передаче паролей программам в открытом виде.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;&lt;пробел&gt;команда
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;
-&lt;/h5&gt;&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Шестое место&lt;/h5&gt;
-Запуск редактора для ввода сложной команды или скрипта, выбор редактора определяется переменной $EDITOR
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;Комбинация &lt;span class="string" style="border: 0px; color: #339900; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;'CTRL+X E'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Пятое место&lt;/h5&gt;
-Утилита My Traceroute эффективнее, чем комбинация traceroute и ping. Утилита mtr сочетает в себе функциональность traceroute и ping, позволяет проводить диагностику сети в более наглядном виде.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;mtr google.com
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Четвертое место&lt;/h5&gt;
-Запуск предыдущей команды с заменой в ней подстроки, например, с foo на bar. Полезна при опечатках. Если ввести просто ^foo, то в предыдущей команде первое вхождение foo будет удалено.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;^foo^bar
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Третье место&lt;/h5&gt;
-Возврат в предыдущую рабочую директорию. Может пригодиться и для переключения туда-сюда между двумя директориями.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;cd -
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h5 style="border: 0px; color: #999999; font-size: 14px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Второе место&lt;/h5&gt;
-Запуск HTTP-сервера в текущей директории на 8000 порту. Если в директории нет файла index.html, то будет показан её листинг.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;python -m SimpleHTTPServer
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 style="border: 0px; color: #999999; font-size: 16px; font-weight: normal; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;Первое место&lt;/h4&gt;
-Запуск последней команды под root.
-Полезна когда забыли использовать sudo для команды. "!!" — подставляет последнюю введенную команду.
-&lt;pre style="border: 0px; outline: 0px; overflow-x: auto; overflow-y: hidden; padding: 0px; vertical-align: baseline; word-break: break-all;"&gt;&lt;code class="bash" style="background-color: #f7f7f9; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border: 1px solid rgb(225, 225, 232); color: #222222; display: block; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; margin: 0px; outline: 0px; padding: 1px 4px; vertical-align: baseline; white-space: pre-wrap;"&gt;sudo !!
-&lt;/code&gt;&lt;div&gt;
-&lt;/div&gt;
-&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><category term="useful"></category><category term="console"></category><category term="russian"></category></entry><entry><title>OpenCV. Processing external byte buffer</title><link href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html" rel="alternate"></link><published>2013-10-21T13:40:00+02:00</published><updated>2013-10-21T13:40:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-21:/opencv-processing-external-byte-buffer.html</id><summary type="html">&lt;p&gt;We have such an example from openCV documentation:
+readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</content></entry><entry><title>Десятка лучших консольных команд</title><link href="https://serge-m.github.io/blog-post_22.html" rel="alternate"></link><published>2013-10-22T12:39:00+02:00</published><updated>2013-10-22T12:39:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/blog-post_22.html</id><summary type="html">&lt;h3&gt;Десятое место&lt;/h3&gt;
+&lt;p&gt;Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.&lt;/p&gt;
+&lt;p&gt;Комбинация &lt;code&gt;'ALT+.'&lt;/code&gt; или &lt;code&gt;'&amp;lt;ESC&amp;gt; .'&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Девятое место&lt;/h3&gt;
+&lt;p&gt;Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Десятое место&lt;/h3&gt;
+&lt;p&gt;Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.&lt;/p&gt;
+&lt;p&gt;Комбинация &lt;code&gt;'ALT+.'&lt;/code&gt; или &lt;code&gt;'&amp;lt;ESC&amp;gt; .'&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Девятое место&lt;/h3&gt;
+&lt;p&gt;Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены двоичные данные и он перестал корректно работать.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;reset
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Восьмое место&lt;/h3&gt;
+&lt;p&gt;Создает пустой файл. Уничтожает содержимое файла без его удаления.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; file.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Седьмое место&lt;/h3&gt;
+&lt;p&gt;Запуск команды с пробелом перед ней не сохраняет ее в истории. Может пригодиться при передаче паролей программам в открытом виде.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;пробел&amp;gt;команда
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Шестое место&lt;/h3&gt;
+&lt;p&gt;Запуск редактора для ввода сложной команды или скрипта, выбор редактора определяется переменной &lt;code&gt;$EDITOR&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Комбинация &lt;code&gt;'CTRL+X E'&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Пятое место&lt;/h3&gt;
+&lt;p&gt;Утилита My Traceroute эффективнее, чем комбинация traceroute и ping. Утилита mtr сочетает в себе функциональность traceroute и ping, позволяет проводить диагностику сети в более наглядном виде.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mtr google.com
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Четвертое место&lt;/h3&gt;
+&lt;p&gt;Запуск предыдущей команды с заменой в ней подстроки, например, с foo на bar. Полезна при опечатках. Если ввести просто ^foo, то в предыдущей команде первое вхождение foo будет удалено.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;^foo^bar
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Третье место&lt;/h3&gt;
+&lt;p&gt;Возврат в предыдущую рабочую директорию. Может пригодиться и для переключения туда-сюда между двумя директориями.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd -
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Второе место&lt;/h3&gt;
+&lt;p&gt;Запуск HTTP-сервера в текущей директории на 8000 порту. Если в директории нет файла index.html, то будет показан её листинг.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m SimpleHTTPServer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Первое место&lt;/h3&gt;
+&lt;p&gt;Запуск последней команды под root.
+Полезна когда забыли использовать sudo для команды. "!!" — подставляет последнюю введенную команду.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo !!
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="console"></category><category term="russian"></category></entry><entry><title>OpenCV. Processing external byte buffer</title><link href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html" rel="alternate"></link><published>2013-10-21T13:40:00+02:00</published><updated>2013-10-21T13:40:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-21:/opencv-processing-external-byte-buffer.html</id><summary type="html">&lt;p&gt;We have such an example from openCV documentation:
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;Mat img(height, width, CV_8UC3, pixels, step);&lt;/span&gt;
 &lt;span style="font-family: Courier New, Courier, monospace;"&gt;GaussianBlur(img, img, Size(7,7), 1.5, 1.5);&lt;/span&gt;&lt;/blockquote&gt;
 &lt;div&gt;What does it mean?&amp;nbsp;&lt;/div&gt;&lt;div&gt;Lets say I have an image img:

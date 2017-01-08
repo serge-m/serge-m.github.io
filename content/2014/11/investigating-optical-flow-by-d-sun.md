@@ -13,20 +13,13 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 
 Look inside the sources:
 
-
-
-    ::::
+```
     @alt_ba_optical_flow\
 
-    ::::
     @ba_optical_flow\
-
-    ::::
         ...
-
-    ::::
         compute_flow_base.m
-
+```
 itarates:
 1) Iterate flow computation
 2) Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system. Probably for more complicated solvers&nbsp; max_linear > 1
@@ -43,27 +36,16 @@ for ignc = 1:this.gnc_iters
 
 Calls `compute_flow_base.m`  
 
-    ::::
-        ...
-
-    ::::
+```
+    ...
     @classic_nl_optical_flow\
-
-    ::::
     @hs_optical_flow\
-
-    ::::
     data\
-
-    ::::
     utils\
-
-    ::::
         ... 
-
-    ::::
         pre_process_data.m 
-        
+```
+
 -- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
 there is also following code:  
 ```
@@ -76,17 +58,13 @@ there is also following code:
 ```
 In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. 
 
-    ::::
-        ... 
+```
+    ... 
 
-    ::::
     estimate_flow_demo.m
-
-    ::::
     estimate_flow_interface.m 
-
-    ::::
     load_of_method.m
+```
 
 -- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: 
 

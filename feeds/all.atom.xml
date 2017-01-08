@@ -2507,36 +2507,41 @@ there is also following code:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;brush: html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 CODE
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="html"></category></entry><entry><title>Save Ipython notebook as script with the same filename</title><link href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html" rel="alternate"></link><published>2014-09-21T14:59:00+02:00</published><updated>2014-09-21T14:59:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-21:/save-ipython-notebook-as-script-with.html</id><summary type="html">&lt;h1&gt;creating a variable theNotebook with the name of notebook&lt;/h1&gt;
-&lt;h1&gt;source: http://stackoverflow.com/a/23619544&lt;/h1&gt;
-&lt;h1&gt;In[1]:&lt;/h1&gt;
-&lt;p&gt;%%javascript
-var kernel = IPython.notebook.kernel;
-var thename = window.document.getElementById("notebook_name").innerHTML;
-var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); &lt;/p&gt;
-&lt;h1&gt;saving to a directory 'backup'. create the directory if it doesn't exist&lt;/h1&gt;
-&lt;h1&gt;source …&lt;/h1&gt;</summary><content type="html">&lt;h1&gt;creating a variable theNotebook with the name of notebook&lt;/h1&gt;
-&lt;h1&gt;source: http://stackoverflow.com/a/23619544&lt;/h1&gt;
-&lt;h1&gt;In[1]:&lt;/h1&gt;
-&lt;p&gt;%%javascript
-var kernel = IPython.notebook.kernel;
-var thename = window.document.getElementById("notebook_name").innerHTML;
-var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); &lt;/p&gt;
-&lt;h1&gt;saving to a directory 'backup'. create the directory if it doesn't exist&lt;/h1&gt;
-&lt;h1&gt;source http://stackoverflow.com/a/19067979&lt;/h1&gt;
-&lt;h1&gt;In[2]:&lt;/h1&gt;
-&lt;p&gt;try :
-&amp;nbsp;&amp;nbsp;&amp;nbsp; if(&lt;code&gt;__IPYTHON__&lt;/code&gt;) :
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; print "saving", theNotebook
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; import os
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; dir_backup = 'backup'
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if not os.path.exists(dir_backup):
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; os.makedirs(dir_backup)
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; get_ipython().system(u'ipython nbconvert --to python {0} --output {1}'.format(theNotebook, os.path.join(dir_backup, theNotebook)) )
-except NameError :
-&amp;nbsp;&amp;nbsp;&amp;nbsp; print "Unable to save"&lt;/p&gt;</content><category term="useful"></category><category term="ipython"></category></entry><entry><title>Python equivalent of interp2</title><link href="https://serge-m.github.io/python-equivalent-of-interp2.html" rel="alternate"></link><published>2014-09-16T02:15:00+02:00</published><updated>2014-09-16T02:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-16:/python-equivalent-of-interp2.html</id><summary type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="html"></category></entry><entry><title>Save Ipython notebook as script with the same filename</title><link href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html" rel="alternate"></link><published>2014-09-21T14:59:00+02:00</published><updated>2014-09-21T14:59:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-21:/save-ipython-notebook-as-script-with.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creating a variable theNotebook with the name of notebook&lt;/span&gt;
+&lt;span class="c1"&gt;# source: http://stackoverflow.com/a/23619544&lt;/span&gt;
+&lt;span class="c1"&gt;# In[1]:&lt;/span&gt;
+
+&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="n"&gt;javascript&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;notebook&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;thename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;notebook_name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;theNotebook = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;thename&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;# saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# creating a variable theNotebook with the name of notebook&lt;/span&gt;
+&lt;span class="c1"&gt;# source: http://stackoverflow.com/a/23619544&lt;/span&gt;
+&lt;span class="c1"&gt;# In[1]:&lt;/span&gt;
+
+&lt;span class="o"&gt;%%&lt;/span&gt;&lt;span class="n"&gt;javascript&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;kernel&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;IPython&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;notebook&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;thename&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;notebook_name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;var&lt;/span&gt; &lt;span class="n"&gt;command&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;theNotebook = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;thename&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;kernel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;command&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;# saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist&lt;/span&gt;
+&lt;span class="c1"&gt;# source http://stackoverflow.com/a/19067979&lt;/span&gt;
+&lt;span class="c1"&gt;# In[2]:&lt;/span&gt;
+
+&lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__IPYTHON__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;saving&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;
+        &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+        &lt;span class="n"&gt;dir_backup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;backup&amp;#39;&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;get_ipython&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u&amp;#39;ipython nbconvert --to python {0} --output {1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;NameError&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Unable to save&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="ipython"></category></entry><entry><title>Python equivalent of interp2</title><link href="https://serge-m.github.io/python-equivalent-of-interp2.html" rel="alternate"></link><published>2014-09-16T02:15:00+02:00</published><updated>2014-09-16T02:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-16:/python-equivalent-of-interp2.html</id><summary type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/serge-m/pyinterp2"&gt;https://github.com/serge-m/pyinterp2&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/serge-m/pyinterp2"&gt;https://github.com/serge-m/pyinterp2&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category><category term="matlab"></category></entry><entry><title>Simple occlusion filling for depth maps</title><link href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html" rel="alternate"></link><published>2014-09-01T12:14:00+02:00</published><updated>2014-09-01T12:14:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-01:/simple-occlusion-filling-for-depth-maps.html</id><summary type="html">&lt;p&gt;As an example I use images from middleburry.
 Solution is very dirty and slow.&lt;/p&gt;

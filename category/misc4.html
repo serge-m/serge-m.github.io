@@ -297,16 +297,17 @@ for each alpha they find optimum through setting derivatives of Ec …</p>
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h1>creating a variable theNotebook with the name of notebook</h1>
-<h1>source: http://stackoverflow.com/a/23619544</h1>
-<h1>In[1]:</h1>
-<p>%%javascript
-var kernel = IPython.notebook.kernel;
-var thename = window.document.getElementById("notebook_name").innerHTML;
-var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); </p>
-<h1>saving to a directory 'backup'. create the directory if it doesn't exist</h1>
-<h1>source …</h1>
+                <div class="summary"><div class="highlight"><pre><span></span><span class="c1"># creating a variable theNotebook with the name of notebook</span>
+<span class="c1"># source: http://stackoverflow.com/a/23619544</span>
+<span class="c1"># In[1]:</span>
+
+<span class="o">%%</span><span class="n">javascript</span>
+<span class="n">var</span> <span class="n">kernel</span> <span class="o">=</span> <span class="n">IPython</span><span class="o">.</span><span class="n">notebook</span><span class="o">.</span><span class="n">kernel</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">thename</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;notebook_name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;theNotebook = &quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="o">+</span><span class="n">thename</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">;</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+
+<span class="c1"># saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
                 </div>
             </article>

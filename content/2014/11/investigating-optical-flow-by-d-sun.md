@@ -4,9 +4,12 @@ Date: 2014-11-05 14:33:00
 Slug: investigating-optical-flow-by-d-sun
 Tags: 
 
-Personal page of the author:&nbsp;[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html" target="_blank)
+Personal page of the author:
+[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html" target="_blank)
+
 Original paper: [http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf](http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf" target="_blank)
-Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis    of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 [[pdf](http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf" target="_blank)] [[Source code](http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip" target="_blank)]
+Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
+[ [pdf](http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf" target="_blank)] [[Source code](http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip" target="_blank)]
 
 Look inside the sources:
 
@@ -23,16 +26,23 @@ Look inside the sources:
 
     ::::
         compute_flow_base.m
-<div style="margin-left: auto; margin-right: 0; width: 70%;">itarates:
+
+itarates:
 1) Iterate flow computation
 2) Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system. Probably for more complicated solvers&nbsp; max_linear > 1
 
-</div>
-    ::::
+```
         compute_flow.m
-<div style="margin-left: auto; margin-right: 0; width: 70%;">calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: 
-<pre class="brush:cpp">for ignc = 1:this.gnc_iters   
-</pre>Calls compute_flow_base.m.  </div>
+```
+
+calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: 
+
+```
+for ignc = 1:this.gnc_iters   
+```
+
+Calls `compute_flow_base.m`  
+
     ::::
         ...
 
@@ -53,15 +63,19 @@ Look inside the sources:
 
     ::::
         pre_process_data.m 
-<div style="margin-left: auto; margin-right: 0; width: 70%;">-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
+        
+-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
 there is also following code:  
-<pre class="brush: cpp">% For segmentation purpose
+```
+% For segmentation purpose
     data.org_pyramid_images = compute_image_pyramid(this.images, f,...
         this.pyramid_levels, 1/this.pyramid_spacing);
     data.org_color_pyramid_images = compute_image_pyramid(this.color_images,...
         f, this.pyramid_levels, 1/this.pyramid_spacing);
 
-</pre>In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper.  </div>
+```
+In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. 
+
     ::::
         ... 
 
@@ -74,8 +88,11 @@ there is also following code:
     ::::
     load_of_method.m
 
-<div style="margin-left: auto; margin-right: 0; width: 70%;">-- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: 
-<pre class="brush: cpp">case 'classic+nl'        
+-- switcher that recursively initializes members of OF object. E.g. if you want to load 'classic+nl-brightness' method, it loads 'classic+nl' first: 
+
+
+```
+case 'classic+nl'        
         ope = classic_nl_optical_flow;
         
         ope.texture  = true;
@@ -89,13 +106,13 @@ there is also following code:
         ope.lambda = 3;
         ope.lambda_q =3;
         %ope.display  = true;    
-</pre>and then applies the difference: 
-<pre class="brush: cpp">case 'classic+nl-fast-brightness'
+```
+and then applies the difference: 
+```
+case 'classic+nl-fast-brightness'
         ope = load_of_method('classic+nl');        
         ope.max_iters       = 3;
         ope.gnc_iters       = 2;
         ope.texture         = false;
-</pre></div>
-    ::::
-    readme.pdf
-</div></div>
+```
+

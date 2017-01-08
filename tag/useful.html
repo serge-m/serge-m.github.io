@@ -67,6 +67,45 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/add-service-in-linux.html">Add service in ubuntu</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-01-08T07:10:00+01:00"> Sun 08 January 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Create a file for service <code>your-service</code></p>
+<div class="highlight"><pre><span></span>touch /etc/systemd/system/your-service.service 
+</pre></div>
+
+
+<p>Let's assume you want to run docker container there. Put following text in the file:</p>
+<div class="highlight"><pre><span></span>[Unit]                                                                                                                                                                                                                                        
+Description=YourService                                                                                                                                                                                                                           
+After=docker.service                                                                                                                                                                                                                          
+Requires=docker.service                                                                                                                                                                                                                       
+
+[Service]                                                                                                                                                                                                                                     
+TimeoutStartSec=0                                                                                                                                                                                                                             
+Restart=always                                                                                                                                                                                                                                
+ExecStartPre=-/usr/bin/docker stop %n                                                                                                                                                                                                         
+ExecStartPre=-/usr/bin …</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">Set up Travis CI for building personal page on Github Pages with Pelican</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -709,35 +748,6 @@ Copyright (C) 2014 …</pre></div>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/encodedecode-binary-file-to-ascii.html">Encode/decode binary file to ascii using command line</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-06T14:17:00+02:00"> Sun 06 September 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="highlight"><pre><span></span>base64 source_file &gt; destination.ascii 
-</pre></div>
-
-
-<div class="highlight"><pre><span></span>base64 --decode destination.ascii &gt; decoded_file
-</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/encodedecode-binary-file-to-ascii.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -757,6 +767,11 @@ Copyright (C) 2014 …</pre></div>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/add-service-in-linux.html">
+                            Add service in ubuntu
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
                             Set up Travis CI for building personal page on Github Pages with Pelican
@@ -810,11 +825,6 @@ Copyright (C) 2014 …</pre></div>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/dropbox-in-linux-mint.html">
                             Dropbox in linux mint
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/c-plus-plus-ide-for-linux.html">
-                            C++ IDE for linux
                         </a>
                     </li>
                 </ul>
@@ -1290,7 +1300,7 @@ Copyright (C) 2014 …</pre></div>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 sergem
+         <div class="col-xs-10">&copy; 2017 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

@@ -66,6 +66,45 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/add-service-in-linux.html">Add service in ubuntu</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-01-08T07:10:00+01:00"> Sun 08 January 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Create a file for service <code>your-service</code></p>
+<div class="highlight"><pre><span></span>touch /etc/systemd/system/your-service.service 
+</pre></div>
+
+
+<p>Let's assume you want to run docker container there. Put following text in the file:</p>
+<div class="highlight"><pre><span></span>[Unit]                                                                                                                                                                                                                                        
+Description=YourService                                                                                                                                                                                                                           
+After=docker.service                                                                                                                                                                                                                          
+Requires=docker.service                                                                                                                                                                                                                       
+
+[Service]                                                                                                                                                                                                                                     
+TimeoutStartSec=0                                                                                                                                                                                                                             
+Restart=always                                                                                                                                                                                                                                
+ExecStartPre=-/usr/bin/docker stop %n                                                                                                                                                                                                         
+ExecStartPre=-/usr/bin …</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">Docker in Scaleway's vc1s Ubuntu Xenial</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -695,33 +734,6 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/deep-learning.html">deep learning</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-03T23:08:00+02:00"> Fri 03 June 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-        /
-	<a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Inception-like CNN model based on 1d convolutions <a href="http://arxiv.org/pdf/1512.00567v3.pdf">http://arxiv.org/pdf/1512.00567v3.pdf</a></p>
-<p>Chat (in russian) <a href="http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e">http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/deep-learning.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -751,6 +763,11 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/add-service-in-linux.html">
+                            Add service in ubuntu
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">
                             Docker in Scaleway's vc1s Ubuntu Xenial
@@ -804,11 +821,6 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/podcasts.html">
                             podcasts
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/git-apply-patch-from-another-repository.html">
-                            git apply patch from another repository
                         </a>
                     </li>
                 </ul>

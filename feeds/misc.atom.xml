@@ -12,7 +12,11 @@
 
 &lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin/bash user
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands, probably for ubuntu/linux mint&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Encode/decode binary file to ascii using command line &lt;/p&gt;
+&lt;p&gt;&lt;a href="{filename}/encodedecode-binary-file-to-ascii.html"&gt;link …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some linux commands, probably for ubuntu/linux mint&lt;/p&gt;
 &lt;p&gt;Add user to a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG group user
 &lt;/pre&gt;&lt;/div&gt;
@@ -25,7 +29,11 @@
 
 &lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin/bash user
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Encode/decode binary file to ascii using command line &lt;/p&gt;
+&lt;p&gt;&lt;a href="{filename}/encodedecode-binary-file-to-ascii.html"&gt;link&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;touch /etc/systemd/system/your-service.service 
 &lt;/pre&gt;&lt;/div&gt;
 

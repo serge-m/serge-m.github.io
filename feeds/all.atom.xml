@@ -2743,18 +2743,17 @@ train-&amp;gt;self.sgd_update(*batch)
 To fix it, I reduced size of the batch in yaml-config:
 batch_size: 200
 was replaced by
-batch_size: 100&lt;/p&gt;</content><category term="pylearn2"></category></entry><entry><title>tikz cookbook</title><link href="https://serge-m.github.io/tikz-cookbook.html" rel="alternate"></link><published>2014-07-16T23:44:00+02:00</published><updated>2014-07-16T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-07-16:/tikz-cookbook.html</id><summary type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;
-http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz&lt;/p&gt;
-&lt;p&gt;Drawing label on figure (using tikz)
-\begin{tikzpicture}
-&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
-&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; %\draw[white,fill=white] (0 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;
-http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz&lt;/p&gt;
-&lt;p&gt;Drawing label on figure (using tikz)
-\begin{tikzpicture}
-&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
-&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5);
-&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а};&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; \end{tikzpicture} &lt;/p&gt;</content><category term="useful"></category><category term="latex"></category><category term="tikz"></category></entry><entry><title>displaying multiple grayscale figures in python's matplotlib</title><link href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html" rel="alternate"></link><published>2014-06-06T22:12:00+02:00</published><updated>2014-06-06T22:12:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-06-06:/displaying-multiple-grayscale-figures.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;from matplotlib import pyplot as plt&lt;/span&gt;
+batch_size: 100&lt;/p&gt;</content><category term="pylearn2"></category></entry><entry><title>tikz cookbook</title><link href="https://serge-m.github.io/tikz-cookbook.html" rel="alternate"></link><published>2014-07-16T23:44:00+02:00</published><updated>2014-07-16T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-07-16:/tikz-cookbook.html</id><summary type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Drawing label on figure (using tikz)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+            %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz"&gt;Drawing on an image with TikZ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Drawing label on figure (using tikz)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+            %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5);
+            \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а};        \end{tikzpicture} 
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="latex"></category><category term="tikz"></category></entry><entry><title>displaying multiple grayscale figures in python's matplotlib</title><link href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html" rel="alternate"></link><published>2014-06-06T22:12:00+02:00</published><updated>2014-06-06T22:12:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-06-06:/displaying-multiple-grayscale-figures.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;from matplotlib import pyplot as plt&lt;/span&gt;
 &lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;import matplotlib.cm as cm&lt;/span&gt;
 &lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;plt.figure()&amp;nbsp; # without this it display one after another&lt;/span&gt;
 &lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap&lt;/span&gt;

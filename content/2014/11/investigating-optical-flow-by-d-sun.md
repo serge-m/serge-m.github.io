@@ -21,8 +21,10 @@ Look inside the sources:
         compute_flow_base.m
 ```
 itarates:
+
 1) Iterate flow computation
-2) Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system. Probably for more complicated solvers&nbsp; max_linear > 1
+
+2) Linearization update, for j = 1:this.max_linear. In the simple case `max_linear==1`, when I use `x = A\b` solver for linear system. Probably for more complicated solvers `max_linear > 1`
 
 ```
         compute_flow.m

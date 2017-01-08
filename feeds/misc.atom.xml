@@ -2162,11 +2162,9 @@ output = quiver( u, v, 0);
 axis ij;
 end
 
-&lt;/pre&gt; &lt;/div&gt;</content><category term="useful"></category><category term="matlab"></category><category term="optical flow"></category></entry><entry><title>Simple tests of classic OF methods</title><link href="https://serge-m.github.io/simple-tests-of-classic-of-methods.html" rel="alternate"></link><published>2014-11-05T22:30:00+01:00</published><updated>2014-11-05T22:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/simple-tests-of-classic-of-methods.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h2 style="text-align: left;"&gt;BA method, simple synthetic images &lt;/h2&gt;For simple synthetic images:
-
-&lt;/div&gt;
-
-&lt;pre class="brush:cpp"&gt;I0 =
+&lt;/pre&gt; &lt;/div&gt;</content><category term="useful"></category><category term="matlab"></category><category term="optical flow"></category></entry><entry><title>Simple tests of classic OF methods</title><link href="https://serge-m.github.io/simple-tests-of-classic-of-methods.html" rel="alternate"></link><published>2014-11-05T22:30:00+01:00</published><updated>2014-11-05T22:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/simple-tests-of-classic-of-methods.html</id><summary type="html">&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
+&lt;p&gt;For simple synthetic images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
 
          0    0.5000         0
          0    1.0000         0
@@ -2180,11 +2178,9 @@ I1 =
     0.5000         0         0
     1.0000         0         0
     0.5000         0         0
-         0    0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h2 style="text-align: left;"&gt;BA method, simple synthetic images &lt;/h2&gt;For simple synthetic images:
-
-&lt;/div&gt;
-
-&lt;pre class="brush:cpp"&gt;I0 =
+         0    0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
+&lt;p&gt;For simple synthetic images:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
 
          0    0.5000         0
          0    1.0000         0
@@ -2201,18 +2197,22 @@ I1 =
          0    0.1000         0
          0    0.0500         0
          0    0.0500    0.1000
+&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;/pre&gt;
+&lt;p&gt;Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv = estimate_flow_interface(I0, I1, &amp;#39;classic-c-brightness&amp;#39;, [], {&amp;#39;display&amp;#39;, 1, &amp;#39;pyramid_levels&amp;#39;, 1, &amp;#39;gnc_pyramid_levels&amp;#39;, 1});
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.&lt;br&gt;
-&lt;pre class="brush:cpp"&gt;uv = estimate_flow_interface(I0, I1, 'classic-c-brightness', [], {'display', 1, 'pyramid_levels', 1, 'gnc_pyramid_levels', 1});
-&lt;/pre&gt;&lt;/p&gt;
-&lt;p&gt;After first iteration ( loop for ignc = 1:this.gnc_iters&amp;nbsp; in dsun_ijcv_flow_code\@ba_optical_flow\compute_flow.m):
-&lt;img alt="" src="http://4.bp.blogspot.com/-TW_Kgc_c4xM/VFo0XQRJdQI/AAAAAAAACDU/LmjLPEhpcFM/s1600/gnc_iter_1.png"&gt;&amp;nbsp;After 2nd iteration: 
-&lt;img alt="" src="http://1.bp.blogspot.com/-iic-jinHYR8/VFo0XZiLU5I/AAAAAAAACDQ/Yx-509YrRos/s1600/gnc_iter_2.png"&gt;&amp;nbsp;After 3rd iteration:
-&lt;img alt="" src="http://3.bp.blogspot.com/-nNWtlW7GjNI/VFo0XRzxjDI/AAAAAAAACDM/0XNuLNB76yc/s1600/gnc_iter_3.png"&gt;&amp;nbsp;I think, it is right answer.&lt;/p&gt;
-&lt;pre class="brush:cpp"&gt;uv(:,:,1) =
+
+&lt;p&gt;After first iteration ( &lt;code&gt;loop for ignc = 1:this.gnc_iters&amp;amp;nbsp; in dsun_ijcv_flow_code\@ba_optical_flow\compute_flow.m&lt;/code&gt;):
+&lt;img alt="" src="http://4.bp.blogspot.com/-TW_Kgc_c4xM/VFo0XQRJdQI/AAAAAAAACDU/LmjLPEhpcFM/s1600/gnc_iter_1.png"&gt; &lt;/p&gt;
+&lt;p&gt;After 2nd iteration: 
+&lt;img alt="" src="http://1.bp.blogspot.com/-iic-jinHYR8/VFo0XZiLU5I/AAAAAAAACDQ/Yx-509YrRos/s1600/gnc_iter_2.png"&gt;&lt;/p&gt;
+&lt;p&gt;After 3rd iteration:
+&lt;img alt="" src="http://3.bp.blogspot.com/-nNWtlW7GjNI/VFo0XRzxjDI/AAAAAAAACDM/0XNuLNB76yc/s1600/gnc_iter_3.png"&gt;&lt;/p&gt;
+&lt;p&gt;I think, it is right answer.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
 
    -0.9995   -0.9995   -0.9996
    -0.9994   -0.9994   -0.9995
@@ -2231,11 +2231,14 @@ uv(:,:,2) =
    -0.1861   -0.1616   -0.1848
    -0.1507   -0.0860   -0.1183
    -0.0860   -0.0633   -0.1183
-   -0.0396   -0.0396   -0.0860&amp;nbsp;&lt;/pre&gt;
+   -0.0396   -0.0396   -0.0860
+ ```
 
-&lt;h2 style="text-align: left;"&gt;BA method. Another pair of images  &lt;/h2&gt;
 
-&lt;pre class="brush:cpp"&gt;I0 =
+ ## BA method. Another pair of images  
+
+ ```
+ I0 =
 
          0    0.5000         0
          0    1.0000         0
@@ -2247,135 +2250,139 @@ I1 =
     0.5000         0         0
     1.0000         0         0
     0.5000         0         0
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
 
 &lt;p&gt;1st iteration &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
 
-    -1    -1    -1
-    -1    -1    -1
-    -1    -1    -1
+        -1    -1    -1
+        -1    -1    -1
+        -1    -1    -1
 
 
-uv(:,:,2) =
+    uv(:,:,2) =
 
-  1.0e-014 *
+      1.0e-014 *
 
-    0.8281    0.8281    0.8281
-    0.8281    0.8281    0.8281
-    0.8281    0.8281    0.8281
+        0.8281    0.8281    0.8281
+        0.8281    0.8281    0.8281
+        0.8281    0.8281    0.8281
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;2nd iteration &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    uv(:,:,1) =
 
-   -1.0000   -1.0000   -1.0000
-   -1.0000   -1.0000   -1.0000
-   -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
 
 
-uv(:,:,2) =
+    uv(:,:,2) =
 
-  1.0e-013 *
+      1.0e-013 *
 
-   -0.5965   -0.5965   -0.5965
-   -0.5965   -0.5965   -0.5965
-   -0.5965   -0.5965   -0.5965
+       -0.5965   -0.5965   -0.5965
+       -0.5965   -0.5965   -0.5965
+       -0.5965   -0.5965   -0.5965
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;3rd iteration &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv(:,:,1) =
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    uv(:,:,1) =
 
-   -1.0000   -1.0000   -1.0000
-   -1.0000   -1.0000   -1.0000
-   -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
+       -1.0000   -1.0000   -1.0000
 
 
-uv(:,:,2) =
+    uv(:,:,2) =
 
-  1.0e-011 *
+      1.0e-011 *
 
-    0.5374    0.5374    0.5374
-    0.5374    0.5374    0.5374
-    0.5374    0.5374    0.5374
+        0.5374    0.5374    0.5374
+        0.5374    0.5374    0.5374
+        0.5374    0.5374    0.5374
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Visually the same:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-ihcssiAwj2c/VFo2yZDh_6I/AAAAAAAACDo/pHmB5EVb6Cw/s200/simple_gnc_iter_1.png"&gt;&lt;/p&gt;
-&lt;h2 style="text-align: left;"&gt;HS method. Simple image&lt;/h2&gt;
+&lt;p&gt;Visually the same:
+&lt;img alt="" src="http://2.bp.blogspot.com/-ihcssiAwj2c/VFo2yZDh_6I/AAAAAAAACDo/pHmB5EVb6Cw/s200/simple_gnc_iter_1.png"&gt;&lt;/p&gt;
+&lt;h2&gt;HS method. Simple image&lt;/h2&gt;
+&lt;p&gt;BA - is not the simpliest method. I found there is implmentation of Horn-Schunk.&lt;/p&gt;
+&lt;p&gt;I found that the results are really poor, when my "image elements" ar just on the border. So I extended image by zeros.&lt;/p&gt;
+&lt;p&gt;I use the following command: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;uv = estimate_flow_interface(I0, I1, ...
+    &amp;#39;hs-brightness&amp;#39;, [], ...
+    {&amp;#39;display&amp;#39;, 1, &amp;#39;pyramid_levels&amp;#39;, 1, &amp;#39;gnc_pyramid_levels&amp;#39;, 1, ...
+     &amp;#39;pyramid_spacing&amp;#39;, sqrt(2)});
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;BA - is not the simpliest method. I found there is implmentation of Horn-Schunk.
-I found that the results are really poor, when my "image elements" ar just on the border. So I extended image by zeros.&lt;/p&gt;
-&lt;p&gt;I use the following command: 
-&lt;pre class="brush:cpp"&gt;uv = estimate_flow_interface(I0, I1, ...
-    'hs-brightness', [], ...
-    {'display', 1, 'pyramid_levels', 1, 'gnc_pyramid_levels', 1, ...
-     'pyramid_spacing', sqrt(2)});
-&lt;/pre&gt;I also use slightly modified code. I disabled automatic pyramid height calculation, so I set it manually. 
+
+&lt;p&gt;I also use slightly modified code. I disabled automatic pyramid height calculation, so I set it manually. 
 Input  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    I0 =
 
-         0    0.5000         0
-         0    1.0000         0
-         0    0.5000         0
-    1.0000         0         0
-    0.5000         0         0
-    0.5000    1.0000         0
+             0    0.5000         0
+             0    1.0000         0
+             0    0.5000         0
+        1.0000         0         0
+        0.5000         0         0
+        0.5000    1.0000         0
 
-I1 =
-    0.5000         0         0
-    1.0000         0         0
-    0.5000         0         0
-         0    1.0000         0
-         0    0.5000         0
-         0    0.5000    1.0000
+    I1 =
+        0.5000         0         0
+        1.0000         0         0
+        0.5000         0         0
+             0    1.0000         0
+             0    0.5000         0
+             0    0.5000    1.0000
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Gives:
 &lt;img alt="" src="http://3.bp.blogspot.com/-ZfNLO6E_ccc/VFt-E3fW64I/AAAAAAAACEA/4NseP5r2T7I/s1600/HS_no_borders.png"&gt;&lt;/p&gt;
 &lt;p&gt;While  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 =
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    I0 =
 
-         0         0         0         0         0
-         0         0    0.5000         0         0
-         0         0    1.0000         0         0
-         0         0    0.5000         0         0
-         0    1.0000         0         0         0
-         0    0.5000         0         0         0
-         0    0.5000    1.0000         0         0
-         0         0         0         0         0
+             0         0         0         0         0
+             0         0    0.5000         0         0
+             0         0    1.0000         0         0
+             0         0    0.5000         0         0
+             0    1.0000         0         0         0
+             0    0.5000         0         0         0
+             0    0.5000    1.0000         0         0
+             0         0         0         0         0
 
 
-I1 =
+    I1 =
 
-         0         0         0         0         0
-         0    0.5000         0         0         0
-         0    1.0000         0         0         0
-         0    0.5000         0         0         0
-         0         0    1.0000         0         0
-         0         0    0.5000         0         0
-         0         0    0.5000    1.0000         0
-         0         0         0         0         0
+             0         0         0         0         0
+             0    0.5000         0         0         0
+             0    1.0000         0         0         0
+             0    0.5000         0         0         0
+             0         0    1.0000         0         0
+             0         0    0.5000         0         0
+             0         0    0.5000    1.0000         0
+             0         0         0         0         0
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;gives 
-&lt;img alt="" src="http://2.bp.blogspot.com/-4Z1KIM8Hwk4/VFt-E5ZIFbI/AAAAAAAACD8/moc8gCLTEcA/s1600/HS_borders.png"&gt;&lt;h2 style="text-align: left;"&gt;HS method. Multiscale.&lt;/h2&gt;
-    ::::
-    I0 = [ 0 0 0 0 0 0 0 0 0 0 0 0
-           3 0 0 0 0 0 5 5 0 0 0 0 
-           3 0 0 0 0 0 1 3 0 0 0 0
-           0 0 0 1 0 0 2 4 0 0 0 0
-           0 0 0 2 0 0 0 0 0 0 0 0
-           5 2 0 0 0 0 0 0 0 0 0 0
-           0 0 0 0 0 0 0 0 0 0 0 0
-           5 5 0 0 0 0 0 0 0 0 0 0
-           5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I1 = [ 0 0 0 0 0 0 0 0 0 0 0 0
+&lt;img alt="" src="http://2.bp.blogspot.com/-4Z1KIM8Hwk4/VFt-E5ZIFbI/AAAAAAAACD8/moc8gCLTEcA/s1600/HS_borders.png"&gt;&lt;/p&gt;
+&lt;h2&gt;HS method. Multiscale.&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;I0 = [ 0 0 0 0 0 0 0 0 0 0 0 0
+       3 0 0 0 0 0 5 5 0 0 0 0 
+       3 0 0 0 0 0 1 3 0 0 0 0
+       0 0 0 1 0 0 2 4 0 0 0 0
+       0 0 0 2 0 0 0 0 0 0 0 0
+       5 2 0 0 0 0 0 0 0 0 0 0
+       0 0 0 0 0 0 0 0 0 0 0 0
+       5 5 0 0 0 0 0 0 0 0 0 0
+       5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;
+
+I1 = [ 0 0 0 0 0 0 0 0 0 0 0 0
        3 0 0 0 0 0 0 0 0 0 0 0 
        3 0 0 0 0 0 0 0 0 0 0 0
        0 0 0 1 0 0 0 0 0 5 5 0
@@ -2384,22 +2391,17 @@ I1 =
        0 0 0 0 0 0 0 0 0 0 0 0
        5 5 0 0 0 0 0 0 0 0 0 0
        5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;
-
-::::
-&amp;amp;nbsp;
-
-::::
-&amp;amp;nbsp;
-
-::::
-
-
-::::
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Here the shift between frames is much larger than a pixel and the size of objects. So OF fail without resolution scaling. 
-  &lt;table&gt;  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1 pyramid level &lt;img alt="" src="http://1.bp.blogspot.com/-cKPApsEww3w/VFuA8qfEpPI/AAAAAAAACEQ/UmqX4DYVnkk/s320/HS_pyramid_1.png"&gt;&lt;/td&gt; &lt;td&gt;2 pyramid levels &lt;img alt="" src="http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png"&gt;&lt;/td&gt; &lt;td&gt;3 pyramid levels &lt;img alt="" src="http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png"&gt; &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="optical flow"></category></entry><entry><title>Graduated non convexity scheme (GNC)</title><link href="https://serge-m.github.io/graduated-non-convexity-scheme-gnc.html" rel="alternate"></link><published>2014-11-05T17:15:00+01:00</published><updated>2014-11-05T17:15:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/graduated-non-convexity-scheme-gnc.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
+  &lt;table&gt;  &lt;tbody&gt;
+  &lt;tr&gt;
+  &lt;td&gt;1 pyramid level &lt;img alt="" src="http://1.bp.blogspot.com/-cKPApsEww3w/VFuA8qfEpPI/AAAAAAAACEQ/UmqX4DYVnkk/s320/HS_pyramid_1.png"&gt;&lt;/td&gt; 
+  &lt;td&gt;2 pyramid levels &lt;img alt="" src="http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png"&gt;&lt;/td&gt; 
+  &lt;td&gt;3 pyramid levels &lt;img alt="" src="http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png"&gt; &lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="optical flow"></category></entry><entry><title>Graduated non convexity scheme (GNC)</title><link href="https://serge-m.github.io/graduated-non-convexity-scheme-gnc.html" rel="alternate"></link><published>2014-11-05T17:15:00+01:00</published><updated>2014-11-05T17:15:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-05:/graduated-non-convexity-scheme-gnc.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
 Construct a series of energy functions
 
 

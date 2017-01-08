@@ -3027,107 +3027,48 @@ ctrl-a-S - split, but doesn;t work
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;see also: &lt;a href="/terminal-setup-in-linux-mint.html"&gt;using tmux&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="linux"></category></entry><entry><title>Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</title><link href="https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html" rel="alternate"></link><published>2014-04-15T23:37:00+02:00</published><updated>2014-04-15T23:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-04-15:/fixed-latex2png-error-eps2eps-failed-to.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;OMG!! I finally fixed it.
-Under Windows latex2rtf diisplayed following error:
-&lt;pre class="hl" style="background-color: white; font-family: 'Courier New', monospace; font-size: 10pt;"&gt;&lt;span class="hl str" style="color: red;"&gt;latex2png: error: eps2eps failed to translate&lt;/span&gt; l2r_00123&lt;span class="hl str" style="color: red;"&gt;.pdf to&lt;/span&gt;&amp;nbsp;&lt;span style="font-size: 10pt;"&gt;l2r_00123&lt;/span&gt;&lt;span style="color: red; font-size: 10pt;"&gt;.eps&lt;/span&gt;&lt;/pre&gt;&lt;pre class="hl" style="background-color: white;"&gt;&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-for each image in my latex file.&lt;/div&gt;
-&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-That was very sad because this method is used to convert all equations, fugures and tables in word format.&lt;/div&gt;
-&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-The configurations …&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;OMG!! I finally fixed it.
-Under Windows latex2rtf diisplayed following error:
-&lt;pre class="hl" style="background-color: white; font-family: 'Courier New', monospace; font-size: 10pt;"&gt;&lt;span class="hl str" style="color: red;"&gt;latex2png: error: eps2eps failed to translate&lt;/span&gt; l2r_00123&lt;span class="hl str" style="color: red;"&gt;.pdf to&lt;/span&gt;&amp;nbsp;&lt;span style="font-size: 10pt;"&gt;l2r_00123&lt;/span&gt;&lt;span style="color: red; font-size: 10pt;"&gt;.eps&lt;/span&gt;&lt;/pre&gt;&lt;pre class="hl" style="background-color: white;"&gt;&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-for each image in my latex file.&lt;/div&gt;
-&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-That was very sad because this method is used to convert all equations, fugures and tables in word format.&lt;/div&gt;
-&lt;div style="font-family: 'Times New Roman'; font-size: medium; white-space: normal;"&gt;
-The configurations seemed ok:&lt;/div&gt;
-&lt;div class="separator" style="clear: both; font-family: 'Courier New', monospace; font-size: 10pt; text-align: center;"&gt;
+&lt;p&gt;see also: &lt;a href="/terminal-setup-in-linux-mint.html"&gt;using tmux&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="linux"></category></entry><entry><title>Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</title><link href="https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html" rel="alternate"></link><published>2014-04-15T23:37:00+02:00</published><updated>2014-04-15T23:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-04-15:/fixed-latex2png-error-eps2eps-failed-to.html</id><summary type="html">&lt;p&gt;OMG!! I finally fixed it.
+Under Windows latex2rtf diisplayed following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;latex2png&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;eps2eps&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;translate&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pdf&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;eps&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-![](http://3.bp.blogspot.com/-ftN0eA6U-c8/U02HSWGWGHI/AAAAAAAAAc0/9PKCxPcZybc/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.30.png)
-&lt;/div&gt;
 
-&lt;div style="font-family: 'Courier New', monospace; font-size: 10pt;"&gt;
-&lt;/div&gt;
+&lt;p&gt;for each image in my latex file.&lt;/p&gt;
+&lt;p&gt;That was very sad because this method is used to convert all equations, fugures and tables in word format.&lt;/p&gt;
+&lt;p&gt;The configurations …&lt;/p&gt;</summary><content type="html">&lt;p&gt;OMG!! I finally fixed it.
+Under Windows latex2rtf diisplayed following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;latex2png&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;eps2eps&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;translate&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pdf&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;eps&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; font-family: 'Courier New', monospace; font-size: 10pt; text-align: center;"&gt;
 
-![](http://2.bp.blogspot.com/-3W9TM-JHPBA/U02HU5EalGI/AAAAAAAAAc8/-AEEDAiLCM8/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.38.png)
-&lt;/div&gt;
+&lt;p&gt;for each image in my latex file.&lt;/p&gt;
+&lt;p&gt;That was very sad because this method is used to convert all equations, fugures and tables in word format.&lt;/p&gt;
+&lt;p&gt;The configurations seemed ok:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://3.bp.blogspot.com/-ftN0eA6U-c8/U02HSWGWGHI/AAAAAAAAAc0/9PKCxPcZybc/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.30.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-3W9TM-JHPBA/U02HU5EalGI/AAAAAAAAAc8/-AEEDAiLCM8/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.38.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://1.bp.blogspot.com/-FibSRgzVz3U/U02HYhFAIFI/AAAAAAAAAdE/oylmpY3XfWs/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.50.png"&gt;&lt;/p&gt;
+&lt;p&gt;The problem was in eps2eps script in miktex. This script is magical. I haven't completely understood why it does nothing when called from latex2rtf. At the same time it runs successfuly when running standalone.&lt;/p&gt;
+&lt;p&gt;i wrote my new script &lt;code&gt;pdf2eps_my.bat&lt;/code&gt; with the following contents:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;C:\Program Files (x86)\gs\gs9.05\bin\gswin32c.exe&amp;quot; -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%2 %1
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div style="font-family: 'Courier New', monospace; font-size: 10pt;"&gt;
-&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; font-family: 'Courier New', monospace; font-size: 10pt; text-align: center;"&gt;
+&lt;p&gt;and changed script &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;c:\Program Files (x86)\latex2rtf\latex2png&amp;quot; 
+&lt;/pre&gt;&lt;/div&gt;
 
-![](http://1.bp.blogspot.com/-FibSRgzVz3U/U02HYhFAIFI/AAAAAAAAAdE/oylmpY3XfWs/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.50.png)
-&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; font-family: 'Courier New', monospace; font-size: 10pt; text-align: center;"&gt;
-&lt;/div&gt;
+&lt;p&gt;I changed &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PDF2EPS=&amp;quot;eps2eps&amp;quot; 
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; font-family: 'Courier New', monospace; font-size: 10pt; text-align: left;"&gt;
-&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;The problem was in eps2eps script in miktex. This script is magical. I haven't completely understood why it does nothing when called from latex2rtf. At the same time it runs successfuly when running standalone.&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;with &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PDF2EPS=&amp;quot;pdf2eps_my&amp;quot; 
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;i wrote my new script&amp;nbsp;pdf2eps_my.bat with the following contents:&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
 
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="white-space: normal;"&gt;&lt;span style="font-family: Verdana, sans-serif;"&gt;"C:\Program Files (x86)\gs\gs9.05\bin\gswin32c.exe" -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%2 %1&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;and changed script&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="white-space: normal;"&gt;&lt;span style="font-family: Verdana, sans-serif;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="white-space: normal;"&gt;&lt;span style="font-family: Verdana, sans-serif;"&gt;"c:\Program Files (x86)\latex2rtf\latex2png"&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;I changed&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="white-space: normal;"&gt;&lt;span style="font-family: Verdana, sans-serif;"&gt;PDF2EPS="eps2eps"&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;with&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="white-space: normal;"&gt;&lt;span style="font-family: Verdana, sans-serif;"&gt;PDF2EPS="pdf2eps_my"&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;it works because miktex/bin directory is in my PATH&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;div class="separator" style="clear: both; text-align: left;"&gt;
-&lt;span style="font-family: Times New Roman;"&gt;&lt;span style="white-space: normal;"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="latex"></category><category term="latex2rtf"></category></entry><entry><title>Papers review</title><link href="https://serge-m.github.io/papers-review.html" rel="alternate"></link><published>2014-04-14T21:01:00+02:00</published><updated>2014-04-14T21:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-04-14:/papers-review.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h2 style="text-align: left;"&gt;Depth map Estimation&lt;/h2&gt;&lt;div&gt;&lt;div&gt;Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;&lt;/div&gt;&lt;div&gt;Depth estimation using machine learning from monocular cueues. Uses MRF model&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;it works because miktex/bin directory is in my PATH&lt;/p&gt;</content><category term="latex"></category><category term="latex2rtf"></category></entry><entry><title>Papers review</title><link href="https://serge-m.github.io/papers-review.html" rel="alternate"></link><published>2014-04-14T21:01:00+02:00</published><updated>2014-04-14T21:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-04-14:/papers-review.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h2 style="text-align: left;"&gt;Depth map Estimation&lt;/h2&gt;&lt;div&gt;&lt;div&gt;Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;&lt;/div&gt;&lt;div&gt;Depth estimation using machine learning from monocular cueues. Uses MRF model&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h2 style="text-align: left;"&gt;Depth map Estimation&lt;/h2&gt;&lt;div&gt;&lt;div&gt;Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;&lt;/div&gt;&lt;div&gt;Depth estimation using machine learning from monocular cueues. Uses MRF model&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;</content></entry><entry><title>German resources</title><link href="https://serge-m.github.io/german-resources.html" rel="alternate"></link><published>2014-04-06T13:05:00+02:00</published><updated>2014-04-06T13:05:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-04-06:/german-resources.html</id><summary type="html">&lt;p&gt;http://www.c-plusplus.de/forum/&lt;/p&gt;
 &lt;p&gt;http://cvisioncentral.com/jobs/&lt;/p&gt;

@@ -4,7 +4,7 @@ Date: 2014-11-05 17:15:00
 Slug: graduated-non-convexity-scheme-gnc
 Tags: optical flow
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
+Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
 Construct a series of energy functions
 
 
@@ -18,4 +18,3 @@ Solution on each stage becomes initialization on the next one.
 
 
 Proposed in: D. Sun, S. Roth, J. Lewis, and M. J. Black. Learning optical flow. In ECCV, volume 3, pages 83–97, 2008. [[pdf](http://cs.brown.edu/~dqsun/pubs/eccv2008.pdf" target="_blank)]
-</div>

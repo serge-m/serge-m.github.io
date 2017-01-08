@@ -2400,9 +2400,9 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;itarates:
-1) Iterate flow computation
-2) Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system. Probably for more complicated solvers&amp;nbsp; max_linear &amp;gt; 1&lt;/p&gt;
+&lt;p&gt;itarates:&lt;/p&gt;
+&lt;p&gt;1) Iterate flow computation&lt;/p&gt;
+&lt;p&gt;2) Linearization update, for j = 1:this.max_linear. In the simple case &lt;code&gt;max_linear==1&lt;/code&gt;, when I use &lt;code&gt;x = A\b&lt;/code&gt; solver for linear system. Probably for more complicated solvers &lt;code&gt;max_linear &amp;gt; 1&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        compute_flow.m
 &lt;/pre&gt;&lt;/div&gt;
 

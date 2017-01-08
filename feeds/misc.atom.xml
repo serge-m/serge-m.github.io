@@ -4262,32 +4262,33 @@ comp.openInViewer();&lt;/p&gt;
 &lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;}&lt;/span&gt;
 &lt;div&gt;
 &lt;/div&gt;inspired by&amp;nbsp;&lt;a href="http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;amp;t=116057#p348646"&gt;http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646&lt;/a&gt;&lt;/p&gt;</content><category term="after effects (aae)"></category><category term="scripting"></category></entry><entry><title>Convert all *.avi files in current directory to png sequences</title><link href="https://serge-m.github.io/convert-all-avi-files-in-current.html" rel="alternate"></link><published>2013-10-22T23:49:00+02:00</published><updated>2013-10-22T23:49:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/convert-all-avi-files-in-current.html</id><summary type="html">&lt;p&gt;Using python and ffmpeg:&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;#!/usr/bin/python&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;# -&lt;em&gt;- coding: cp1251 -&lt;/em&gt;-&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;import glob&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;import os&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;t=glob.glob("*.avi" ) # search all AVI files&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;for v in t:&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;vv = os.path.splitext(v)[0];&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;os.makedirs( vv ) # make a directory for each input file&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path …&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Using python and ffmpeg:&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;#!/usr/bin/python&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;# -&lt;em&gt;- coding: cp1251 -&lt;/em&gt;-&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;import glob&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;import os&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;t=glob.glob("*.avi" ) # search all AVI files&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;
-&lt;/span&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;for v in t:&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;vv = os.path.splitext(v)[0];&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;os.makedirs( vv ) # make a directory for each input file&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt; &lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )&lt;/span&gt;&lt;/p&gt;</content></entry><entry><title>Print all commands that were entered in interactive mode in Python</title><link href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html" rel="alternate"></link><published>2013-10-22T23:44:00+02:00</published><updated>2013-10-22T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/print-all-commands-that-were-enteren-in.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;import readline
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: cp1251 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;glob&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;*.avi&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# search all AVI files&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+     &lt;span class="n"&gt;vv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;splitext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+     &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;vv&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# make a directory for each input file&lt;/span&gt;
+     &lt;span class="n"&gt;pathDst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;vv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%05d&lt;/span&gt;&lt;span class="s2"&gt;.png&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# deststination path …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Using python and ffmpeg:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: cp1251 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;glob&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;glob&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;*.avi&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# search all AVI files&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+     &lt;span class="n"&gt;vv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;splitext&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+     &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;vv&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# make a directory for each input file&lt;/span&gt;
+     &lt;span class="n"&gt;pathDst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;vv&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%05d&lt;/span&gt;&lt;span class="s2"&gt;.png&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# deststination path&lt;/span&gt;
+
+     &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ffmpeg -i {0} {1}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pathDst&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>Print all commands that were entered in interactive mode in Python</title><link href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html" rel="alternate"></link><published>2013-10-22T23:44:00+02:00</published><updated>2013-10-22T23:44:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/print-all-commands-that-were-enteren-in.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;import readline
 readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;import readline
 readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</content></entry><entry><title>Десятка лучших консольных команд</title><link href="https://serge-m.github.io/blog-post_22.html" rel="alternate"></link><published>2013-10-22T12:39:00+02:00</published><updated>2013-10-22T12:39:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/blog-post_22.html</id><summary type="html">&lt;p&gt;&lt;a href="https://habrahabr.ru/post/198482/"&gt;источник&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Десятое место&lt;/h3&gt;

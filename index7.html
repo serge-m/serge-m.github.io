@@ -81,18 +81,18 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Using python and ffmpeg:</p>
-<p><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -<em>- coding: cp1251 -</em>-</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
-</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import glob</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import os</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
-</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">t=glob.glob("*.avi" ) # search all AVI files</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
-</span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">for v in t:</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;vv = os.path.splitext(v)[0];</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.makedirs( vv ) # make a directory for each input file</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path …</span></p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># -*- coding: cp1251 -*-</span>
+
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.avi&quot;</span> <span class="p">)</span> <span class="c1"># search all AVI files</span>
+
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+     <span class="n">vv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">v</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+     <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span> <span class="n">vv</span> <span class="p">)</span> <span class="c1"># make a directory for each input file</span>
+     <span class="n">pathDst</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">vv</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%05d</span><span class="s2">.png&quot;</span> <span class="p">)</span> <span class="c1"># deststination path …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/convert-all-avi-files-in-current.html">more ...</a>
                 </div>
             </article>

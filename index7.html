@@ -80,10 +80,9 @@ sergem personal public notebook            </a>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Using python and ffmpeg:
-
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -*- coding: cp1251 -*-</span>
+                <div class="summary"><p>Using python and ffmpeg:</p>
+<p><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -<em>- coding: cp1251 -</em>-</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
 </span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import glob</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import os</span>
@@ -93,7 +92,7 @@ sergem personal public notebook            </a>
 </span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">for v in t:</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;vv = os.path.splitext(v)[0];</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.makedirs( vv ) # make a directory for each input file</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path …</span></div>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path …</span></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/convert-all-avi-files-in-current.html">more ...</a>
                 </div>
             </article>
@@ -113,8 +112,8 @@ sergem personal public notebook            </a>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: Courier New, Courier, monospace;">import readline
-readline.write_history_file( "log.py")</span></div>
+                <div class="summary"><p><span style="font-family: Courier New, Courier, monospace;">import readline
+readline.write_history_file( "log.py")</span></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/print-all-commands-that-were-enteren-in.html">more ...</a>
                 </div>
             </article>
@@ -161,14 +160,12 @@ readline.write_history_file( "log.py")</span></div>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-
-We have such an example from openCV documentation:
+                <div class="summary"><p>We have such an example from openCV documentation:
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>
 <span style="font-family: Courier New, Courier, monospace;">GaussianBlur(img, img, Size(7,7), 1.5, 1.5);</span></blockquote>
 <div>What does it mean?&nbsp;</div><div>Lets say I have an image img:
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">typedef unsigned char BYTE;</span>
-<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image …</div></div>
+<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image …</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html">more ...</a>
                 </div>
             </article>
@@ -194,16 +191,14 @@ We have such an example from openCV documentation:
 	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
-
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       // Copy one image per pixel
-       for( int j = 0; j < MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-       {
-          conf_[i][j] = src.conf_ …</div>
+                <div class="summary"><p>I have the following code for copying several buffers from one object to another:</p>
+<div class="highlight"><pre><span></span>// Copy several buffers (images)
+for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+{
+   // Copy one image per pixel
+   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
+   {
+      conf_[i][j] = src.conf_ …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
                 </div>
             </article>
@@ -273,8 +268,8 @@ Return on error: error code -3, .<span class="se">\s …</span></pre></div>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**<span style="color: #93c47d;">ls -w1 */ </span>&nbsp;**- show only subdirectories in current directory (*/) and display in 1 column (-w1)
-<span style="color: #6aa84f;">**ls -c** </span>&nbsp;- sort by date</div>
+                <div class="summary"><p><strong><span style="color: #93c47d;">ls -w1 */ </span>&nbsp;</strong>- show only subdirectories in current directory (*/) and display in 1 column (-w1)
+<span style="color: #6aa84f;"><strong>ls -c</strong> </span>&nbsp;- sort by date</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-ls-command.html">more ...</a>
                 </div>
             </article>
@@ -298,10 +293,9 @@ Return on error: error code -3, .<span class="se">\s …</span></pre></div>
 	<a href="https://serge-m.github.io/tag/russian.html">russian</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
-[http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)
-
-<code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу …</span></div>
+                <div class="summary"><p><span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
+<a href="http://alenacpp.blogspot.ru/2005/08/c.html">http://alenacpp.blogspot.ru/2005/08/c.html</a></p>
+<p><code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от&nbsp;</span><code style="background-color: white; color: #333333;">void<em></code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">, который возвращает&nbsp;</span><code style="background-color: white; color: #333333;">malloc</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">, следует использовать&nbsp;</span><code style="background-color: white; color: #333333;">static_cast …</code></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-2.html">more ...</a>
                 </div>
             </article>
@@ -321,9 +315,9 @@ Return on error: error code -3, .<span class="se">\s …</span></pre></div>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
-![](http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png)
-</div>
+                <div class="summary"><p>Errosion and dilation in AE is implemented in Minimax filter. See settings bellow:
+<img alt="" src="http://3.bp.blogspot.com/-EvUGQpMnN74/Uji52xX6mKI/AAAAAAAAAZw/d4dJ9j9sP24/s320/adobe_minimax_filter_SETTINGS.png">
+</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/math-morphology-in-adobe-after-effects.html">more ...</a>
                 </div>
             </article>
@@ -343,21 +337,17 @@ Return on error: error code -3, .<span class="se">\s …</span></pre></div>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-&nbsp; &nbsp;
-I had pretty simple code with opencv:
-
-**&nbsp; &nbsp; cv::Mat t;**
-**&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;**
-**&nbsp; &nbsp; cv::imwrite( "q.bmp", t );**
-**&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );**
-**&nbsp; &nbsp; cv::imshow( "asdads", t );**
-**&nbsp; &nbsp; cv::waitKey( -1 );**
-**&nbsp; &nbsp; return 0;**
-
-It caused crash in debug configuration:
-
-**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …</div>
+                <div class="summary"><p>&nbsp; &nbsp;
+I had pretty simple code with opencv:</p>
+<p><strong>&nbsp; &nbsp; cv::Mat t;</strong>
+<strong>&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;</strong>
+<strong>&nbsp; &nbsp; cv::imwrite( "q.bmp", t );</strong>
+<strong>&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );</strong>
+<strong>&nbsp; &nbsp; cv::imshow( "asdads", t );</strong>
+<strong>&nbsp; &nbsp; cv::waitKey( -1 );</strong>
+<strong>&nbsp; &nbsp; return 0;</strong></p>
+<p>It caused crash in debug configuration:</p>
+<p><strong>OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …</strong></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html">more ...</a>
                 </div>
             </article>
@@ -381,12 +371,25 @@ It caused crash in debug configuration:
 	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">How to copy image from unsigned char buffer, resize and save to file.
-If you use single-channel image.
+                <div class="summary"><p>How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.</p>
+<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div>
 
-<div><div>#include <opencv/cv.h></div><div>#include <opencv/highgui.h></div></div><div>
-</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div><div>
-</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small …</div></div>
+<div>
+</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; int coeff = 4;</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) );</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Mat small(height/ coeff,&nbsp;width/ coeff, CV_8UC1 );</div>
+
+<div>
+</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::Size s_half(width/ coeff,&nbsp;height/ coeff);</div>
+
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cv::resize( src, small …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
                 </div>
             </article>
@@ -406,14 +409,14 @@ If you use single-channel image.
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
+                <div class="summary"><p><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
 <span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
 <pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
       - project1
       - project2
           -subdir1
           -subdir2
-          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></div>
+          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">more ...</a>
                 </div>
             </article>
@@ -433,14 +436,13 @@ If you use single-channel image.
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Trim 5 frames starting from 160-th frame and write to png sequence
-
+                <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
 <blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
-size of input video is 1920x1088, format YUV420 progressive
 
-UPD:
+<p>size of input video is 1920x1088, format YUV420 progressive</p>
+<p>UPD:
 ffmpeg is renamed to avconv.
-Using it for trimming …</div>
+Using it for trimming …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">more ...</a>
                 </div>
             </article>
@@ -460,10 +462,11 @@ Using it for trimming …</div>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
-
-I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html](http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html))
-![](http://3.bp.blogspot.com …</div>
+                <div class="summary"><p>I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation</p>
+<p>I have a depth map (from&nbsp;<a href="http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html">http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html</a>)
+<img alt="" src="http://3.bp.blogspot.com/-n-jVnbn0wO4/UcP9sySRrvI/AAAAAAAAAZA/RgR0BQEkjgY/s320/depth.jpg"><div class="separator" style="clear: both; text-align: center;">
+</div><div class="separator" style="clear: both; text-align: left;">And two scripts</div><div class="separator" style="clear: both; text-align: left;">1)&nbsp;just_show.avs</div><blockquote class="tr_bq">v = ImageSource( "depth.jpg" ).Trim(0, -1)
+return v</blockquote>2 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">more ...</a>
                 </div>
             </article>
@@ -483,10 +486,16 @@ I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes20
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;">Add path in cygwin /linux</div><blockquote class="tr_bq">PATH=$PATH:~/your_path
-PATH=~/your_path:$PATH</blockquote><div>
+                <div class="summary"><div style="text-align: left;">Add path in cygwin /linux</div>
+
+<blockquote class="tr_bq">PATH=$PATH:~/your_path
+PATH=~/your_path:$PATH</blockquote>
+
+<div>
 Add path windows
-<blockquote class="tr_bq"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 15.359375px;">PATH=%PATH%;C:\Your_Path;</span></blockquote></div></div>
+<blockquote class="tr_bq"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 15.359375px;">PATH=%PATH%;C:\Your_Path;</span></blockquote></div>
+
+</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">more ...</a>
                 </div>
             </article>
@@ -506,7 +515,7 @@ Add path windows
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!</div>
+                <div class="summary"><p>Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/never-never.html">more ...</a>
                 </div>
             </article>
@@ -526,10 +535,10 @@ Add path windows
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There are specific databases which were subjectively tested. Ans MOS was calculated
+                <div class="summary"><p>There are specific databases which were subjectively tested. Ans MOS was calculated
 for example
-[http://www.ponomarenko.info/tid2008.htm](http://www.ponomarenko.info/tid2008.htm)
-you can download database and compare your metric to MOS by&nbsp;Spearman correlation</div>
+<a href="http://www.ponomarenko.info/tid2008.htm">http://www.ponomarenko.info/tid2008.htm</a>
+you can download database and compare your metric to MOS by&nbsp;Spearman correlation</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-to-compare-video-metrics.html">more ...</a>
                 </div>
             </article>
@@ -549,12 +558,11 @@ you can download database and compare your metric to MOS by&nbsp;Spearman correl
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">See good explanation is in
-
-Title: **Handbook of image and video processing&nbsp;**<div>Author(s): Bovik A. (ed.)
+                <div class="summary"><p>See good explanation is in</p>
+<p>Title: <strong>Handbook of image and video processing&nbsp;</strong><div>Author(s): Bovik A. (ed.)
 Series: Periodical: 
 Publisher: Elsevier Academic Press&nbsp;</div><div>Year: 2005&nbsp;</div><div>Edition: 2ed.</div><div>Language: English&nbsp;</div><div>Pages: 1429
-ISBN: 9780121197926, 0121197921</div></div>
+ISBN: 9780121197926, 0121197921</div></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssim-metric-for-video.html">more ...</a>
                 </div>
             </article>
@@ -582,7 +590,7 @@ ISBN: 9780121197926, 0121197921</div></div>
 	<a href="https://serge-m.github.io/tag/video.html">video</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Нужно будет тут записать как работает метрика SSIM по человечески</div>
+                <div class="summary"><p>Нужно будет тут записать как работает метрика SSIM по человечески</div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssim.html">more ...</a>
                 </div>
             </article>

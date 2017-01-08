@@ -84,13 +84,11 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-
- <pre class="brush: cpp">
+                <div class="summary"><p><pre class="brush: cpp">
 import matplotlib.pyplot as plt
 plt.rcParams['image.cmap'] = 'gray'
 plt.rcParams['image.interpolation'] = 'nearest'
-</pre></div>
+</pre></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/setting-default-parameters-from-imshow.html">more ...</a>
                 </div>
             </article>
@@ -116,16 +114,17 @@ plt.rcParams['image.interpolation'] = 'nearest'
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Okay children, today we learn how to convert text to numpy matrix.
-Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html" target="_blank).
-
+                <div class="summary"><p>Okay children, today we learn how to convert text to numpy matrix.
+Source is <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&quot; target=&quot;_blank">here</a>.</p>
 <pre class="brush: python"># loading modules
 import numpy
 from StringIO import StringIO
 
 # Using StringIO as a file-like wrapper over text
 I0 = numpy.loadtxt(StringIO("""
-         0         0 …</pre></div>
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000 …</pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/loading-numpy-array-from-string.html">more ...</a>
                 </div>
             </article>
@@ -151,15 +150,13 @@ I0 = numpy.loadtxt(StringIO("""
 	<a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
-
- <pre class="brush: cpp"> 
+                <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
+<p><pre class="brush: cpp"> 
 function [ output ] = quiver_flow( u, v )
 %QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014
-
-output = quiver( u, v, 0);
-axis ij …</pre></div>
+%   SMatyunin2014</p>
+<p>output = quiver( u, v, 0);
+axis ij …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
                 </div>
             </article>
@@ -244,9 +241,9 @@ for each alpha they find optimum through setting derivatives of Ec …</p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">Personal page of the author:&nbsp;[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html" target="_blank) 
-Original paper: [http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf](http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf" target="_blank)
-Newer paper: Deqing Sun, Stefan Roth, and …</div></div>
+                <div class="summary"><p>Personal page of the author:&nbsp;<a href="http://cs.brown.edu/~dqsun/research/index.html&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/research/index.html</a>
+Original paper: <a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf</a>
+Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis    of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/investigating-optical-flow-by-d-sun.html">more ...</a>
                 </div>
             </article>
@@ -296,18 +293,16 @@ Newer paper: Deqing Sun, Stefan Roth, and …</div></div>
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
-# source: http://stackoverflow.com/a/23619544 
-# In[1]:
-
-%%javascript
+                <div class="summary"><h1>creating a variable theNotebook with the name of notebook</h1>
+<h1>source: http://stackoverflow.com/a/23619544</h1>
+<h1>In[1]:</h1>
+<p>%%javascript
 var kernel = IPython.notebook.kernel;
 var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); 
-
-# saving to a directory 'backup'. create the directory if it doesn't exist
-# source …</div>
+kernel.execute(command); </p>
+<h1>saving to a directory 'backup'. create the directory if it doesn't exist</h1>
+<h1>source …</h1>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
                 </div>
             </article>
@@ -333,9 +328,8 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab
-
-[https://github.com/serge-m/pyinterp2](https://github.com/serge-m/pyinterp2)</div>
+                <div class="summary"><p>I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab</p>
+<p><a href="https://github.com/serge-m/pyinterp2">https://github.com/serge-m/pyinterp2</a></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-equivalent-of-interp2.html">more ...</a>
                 </div>
             </article>
@@ -359,11 +353,9 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">As an example I use images from middleburry.
-Solution is very dirty and slow.
-
-[https://github.com/serge-m/depth_map_occlusion](https://github.com/serge-m/depth_map_occlusion" target="_blank)
-
+                <div class="summary"><p>As an example I use images from middleburry.
+Solution is very dirty and slow.</p>
+<p><a href="https://github.com/serge-m/depth_map_occlusion&quot; target=&quot;_blank">https://github.com/serge-m/depth_map_occlusion</a></p>
 <blockquote class="tr_bq"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># In[1]:
 
 import numpy
@@ -376,7 +368,10 @@ import matplotlib.pyplot as plt
 from scipy import ndimage
 import numpy as np
 
-# kernels for shift …</span></blockquote></div>
+# kernels for shift
+k = np.array([
+[[0,0,0],
+&nbsp;[0 …</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html">more ...</a>
                 </div>
             </article>
@@ -398,8 +393,7 @@ import numpy as np
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
-
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
 <blockquote class="tr_bq"># [1]
 %%javascript
 var kernel = IPython.notebook.kernel;
@@ -407,7 +401,11 @@ var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
 kernel.execute(command);
 
-# [2 …</blockquote></div>
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
                 </div>
             </article>
@@ -431,10 +429,12 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There are several solutions:
-Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python](http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python)
+                <div class="summary"><p>There are several solutions:
+Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a>
 <h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  [http://pymat …</div>
+  <a href="http://pymat.sourceforge.net/&quot; rel=&quot;nofollow">http://pymat.sourceforge.net</a>
+Last updated: 2003
+  <h2>pymat2 …</h2></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/use-matlab-function-from-python.html">more ...</a>
                 </div>
             </article>
@@ -460,13 +460,12 @@ Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-fro
 	<a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-[Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)
-http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
-
-Drawing label on figure (using tikz)
+                <div class="summary"><p><a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz">Drawing on an image with TikZ</a>
+http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz</p>
+<p>Drawing label on figure (using tikz)
 \begin{tikzpicture}
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen …</div>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; %\draw[white,fill=white] (0 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tikz-cookbook.html">more ...</a>
                 </div>
             </article>
@@ -558,7 +557,10 @@ Under Windows latex2rtf diisplayed following error:</p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;">Depth map Estimation</h2><div><div>Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005<span class="Apple-tab-span" style="white-space: pre;"> </span></div><div>Depth estimation using machine learning from monocular cueues. Uses MRF model</div></div>
+                <div class="summary"><h2 style="text-align: left;">Depth map Estimation</h2>
+
+<div><div>Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005<span class="Apple-tab-span" style="white-space: pre;"> </span></div><div>Depth estimation using machine learning from monocular cueues. Uses MRF model</div></div>
+
 </div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/papers-review.html">more ...</a>
                 </div>
@@ -635,8 +637,7 @@ Under Windows latex2rtf diisplayed following error:</p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">http://www.snowflakecreative.co.uk/
-
+                <div class="summary"><p>http://www.snowflakecreative.co.uk/</p>
 </div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/cool-3d-web-design.html">more ...</a>
                 </div>
@@ -661,9 +662,8 @@ Under Windows latex2rtf diisplayed following error:</p>
 	<a href="https://serge-m.github.io/tag/tools.html">tools</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Convenient json formatting
-http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text
-
+                <div class="summary"><p>Convenient json formatting
+http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text</p>
 </div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/about-sublime.html">more ...</a>
                 </div>

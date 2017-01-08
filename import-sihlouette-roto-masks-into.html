@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="nuke,python,roto" />
-        <meta name="description" content="Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes. In SihlouetteFX select several nodes. Go _File-&gt;Export-&gt;nuke 6.2+ Shapes_  and save Nuke project I tried to use also _File-&gt;Export-&gt;Nuke Shapes_ but in Nuke 7.0 it wasn&#39;t opened properly Open …" />
+        <meta name="description" content="Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes. In SihlouetteFX select several nodes. Go File-&gt;Export-&gt;nuke 6.2+ Shapes  and save Nuke project I tried to use also File-&gt;Export-&gt;Nuke Shapes but in Nuke 7.0 it wasn&#39;t opened properly Open …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Import Sihlouette roto masks into several Nuke shapes"/>
         <meta property="og:url" content="https://serge-m.github.io/import-sihlouette-roto-masks-into.html"/>
-        <meta property="og:description" content="Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes. In SihlouetteFX select several nodes. Go _File-&gt;Export-&gt;nuke 6.2+ Shapes_  and save Nuke project I tried to use also _File-&gt;Export-&gt;Nuke Shapes_ but in Nuke 7.0 it wasn&#39;t opened properly Open …"/>
+        <meta property="og:description" content="Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes. In SihlouetteFX select several nodes. Go File-&gt;Export-&gt;nuke 6.2+ Shapes  and save Nuke project I tried to use also File-&gt;Export-&gt;Nuke Shapes but in Nuke 7.0 it wasn&#39;t opened properly Open …"/>
         <meta property="article:published_time" content="2013-12-10" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="nuke" />
@@ -108,66 +108,53 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.
+                <p>Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.</p>
+<p>In SihlouetteFX select several nodes.
+Go <em>File-&gt;Export-&gt;nuke 6.2+ Shapes</em> &nbsp;and save Nuke project</p>
+<p>I tried to use also&nbsp;<em>File-&gt;Export-&gt;Nuke Shapes</em> but in Nuke 7.0 it wasn't opened properly</p>
+<p>Open saved project in Nuke. There is a single RotoPaint node. It contains several layers with several shapes in each.
+I need separate layers into many nodes to use them separately.</p>
+<p>To do this I wrote following script:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nuke</span><span class="o">,</span> <span class="nn">nuke.rotopaint</span> <span class="kn">as</span> <span class="nn">rp</span>
 
-In SihlouetteFX select several nodes.
-Go _File->Export->nuke 6.2+ Shapes_ &nbsp;and save Nuke project
+<span class="k">def</span> <span class="nf">rptsw_walker</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="c1"># loop wor each subitem in Rotopaint</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">:</span>
+        <span class="c1"># if there is a layer</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">nuke</span><span class="o">.</span><span class="n">rotopaint</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+            <span class="c1"># create new RotoPaint object</span>
+            <span class="n">paintNode</span> <span class="o">=</span> <span class="n">nuke</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span><span class="s1">&#39;RotoPaint&#39;</span><span class="p">)</span>
+            <span class="n">curvesKnob</span> <span class="o">=</span> <span class="n">paintNode</span><span class="p">[</span><span class="s1">&#39;curves&#39;</span><span class="p">]</span>
+            <span class="n">rotoRoot</span> <span class="o">=</span> <span class="n">curvesKnob</span><span class="o">.</span><span class="n">rootLayer</span>
 
-I tried to use also&nbsp;_File->Export->Nuke Shapes_ but in Nuke 7.0 it wasn't opened properly
+            <span class="n">list1</span> <span class="o">=</span> <span class="p">[]</span>
 
-Open saved project in Nuke. There is a single RotoPaint node. It contains several layers with several shapes in each.
-I need separate layers into many nodes to use them separately.
+            <span class="c1"># for each bezier shape we add it to the list. I don&#39;t know why</span>
+            <span class="c1"># adding it to a list causes deleting shape from origin</span>
+            <span class="c1"># if adding directly to the new roto object some shapes were not copied</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">nuke</span><span class="o">.</span><span class="n">rotopaint</span><span class="o">.</span><span class="n">Shape</span><span class="p">):</span>
+                    <span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
 
-To do this I wrote following script:
+            <span class="c1"># copy all shapes from list to new roto node</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">:</span>
+               <span class="n">rotoRoot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
 
-
-
-
-    ::::
-    import nuke, nuke.rotopaint as rp
-
-    def rptsw_walker(obj, list):
-        # loop wor each subitem in Rotopaint
-        for i in obj:
-            # if there is a layer
-            if isinstance(i, nuke.rotopaint.Layer):
-                # create new RotoPaint object
-                paintNode = nuke.createNode('RotoPaint')
-                curvesKnob = paintNode['curves']
-                rotoRoot = curvesKnob.rootLayer
-
-                list1 = []
-
-                # for each bezier shape we add it to the list. I don't know why
-                # adding it to a list causes deleting shape from origin
-                # if adding directly to the new roto object some shapes were not copied
-                for j in i:
-                    if isinstance(j, nuke.rotopaint.Shape):
-                        list1.append(j)
-
-                # copy all shapes from list to new roto node
-                for j in list1:
-                   rotoRoot.append(j)
-
-    # find selected node
-    rotoNode = nuke.selectedNode()
-    rptsw_shapeList = []
-    rotoCurve = rotoNode['curves']
-    rotoRoot = rotoCurve.rootLayer
-    # run
-    rptsw_walker(rotoRoot, rptsw_shapeList)       
+<span class="c1"># find selected node</span>
+<span class="n">rotoNode</span> <span class="o">=</span> <span class="n">nuke</span><span class="o">.</span><span class="n">selectedNode</span><span class="p">()</span>
+<span class="n">rptsw_shapeList</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">rotoCurve</span> <span class="o">=</span> <span class="n">rotoNode</span><span class="p">[</span><span class="s1">&#39;curves&#39;</span><span class="p">]</span>
+<span class="n">rotoRoot</span> <span class="o">=</span> <span class="n">rotoCurve</span><span class="o">.</span><span class="n">rootLayer</span>
+<span class="c1"># run</span>
+<span class="n">rptsw_walker</span><span class="p">(</span><span class="n">rotoRoot</span><span class="p">,</span> <span class="n">rptsw_shapeList</span><span class="p">)</span>
+</pre></div>
 
 
-
-**Don't forget to select &nbsp;source RotoPaint node !!**
-**Attention! This script deletes shapes from original RotoPaint!**
-
-Does anybody know why copying shape to another node causes deleting it from original one?
-
-
-Another not working solution found in google:
-Source:&nbsp;[http://www.mail-archive.com/nuke-python@support.thefoundry.co.uk/msg02905/convert_shapetostroke.py](http://www.mail-archive.com/nuke-python@support.thefoundry.co.uk/msg02905/convert_shapetostroke.py)
-
+<p><strong>Don't forget to select &nbsp;source RotoPaint node !!</strong>
+<strong>Attention! This script deletes shapes from original RotoPaint!</strong></p>
+<p>Does anybody know why copying shape to another node causes deleting it from original one?</p>
+<p>Another not working solution found in google:
+Source:&nbsp;<a href="http://www.mail-archive.com/nuke-python@support.thefoundry.co.uk/msg02905/convert_shapetostroke.py">http://www.mail-archive.com/nuke-python@support.thefoundry.co.uk/msg02905/convert_shapetostroke.py</a></p>
 <pre style="white-space: pre-wrap; word-wrap: break-word;"><span style="font-size: xx-small;">#***********************************************************
 #Boundary Visual Effects - Silhouette Stroke Importer
 #Version 0.98
@@ -467,7 +454,9 @@ def silhouetteStrokeImporter(precision=2):
 
 #remove the line below if you are using the script with menu.py (in menus/DAG/etc)
 silhouetteStrokeImporter()</span>
-</pre><div>
+</pre>
+
+<div>
 </div>
 
 </div>

@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="latex" />
-        <meta name="description" content="I used _tabularx _package. Additional definitions: :::: \usepackage{array} \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table: :::: \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line …" />
+        <meta name="description" content="I used _tabularx _package. Additional definitions: \usepackage{array} \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table: \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Tables in Latex. Multiline, right alignment"/>
         <meta property="og:url" content="https://serge-m.github.io/tables-in-latex-multiline-right.html"/>
-        <meta property="og:description" content="I used _tabularx _package. Additional definitions: :::: \usepackage{array} \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table: :::: \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line …"/>
+        <meta property="og:description" content="I used _tabularx _package. Additional definitions: \usepackage{array} \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table: \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line …"/>
         <meta property="article:published_time" content="2014-01-23" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="latex" />
@@ -102,32 +102,31 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">I used _tabularx _package.
-Additional definitions:
+                <p>I used _tabularx _package.
+Additional definitions:  </p>
+<div class="highlight"><pre><span></span>\usepackage{array}
+\newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment
+\newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
+</pre></div>
 
-    ::::
-    \usepackage{array}
-    \newcolumntype{L}{>{\raggedright\arraybackslash}X} % left multiline alignment
-    \newcolumntype{R}{>{\raggedleft\arraybackslash}X}  % right multiline alignment
 
 <div>
 Table:</div>
-    ::::
-    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
-     Text, aligned to the left, without margin \newline
-     Tex in the same cell on the next line   
-     &amp;                                          % next column delimiter
-     Text aligned to the right \newline second line
-    \end{tabularx}
+
+<div class="highlight"><pre><span></span>\begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
+ Text, aligned to the left, without margin \newline
+ Tex in the same cell on the next line   
+ &amp;amp;                                          % next column delimiter
+ Text aligned to the right \newline second line
+\end{tabularx}
+</pre></div>
 
 
-Here we have one columt with 80% width and one column with right alignment
-_@{}_ is required to suppress left margin in the first column.
-
-Results: 
-
-![](http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png)
-</div>
+<p>Here we have one columt with 80% width and one column with right alignment
+<em>@{}</em> is required to suppress left margin in the first column.</p>
+<p>Results: </p>
+<p><img alt="" src="http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png">
+</div></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

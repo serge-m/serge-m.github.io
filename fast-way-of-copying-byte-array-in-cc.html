@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="c++,algorithm performance,video processing" />
-        <meta name="description" content="I have the following code for copying several buffers from one object to another: :::: // Copy several buffers (images) for( int i = 0; i" />
+        <meta name="description" content="I have the following code for copying several buffers from one object to another: // Copy several buffers (images) for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy one image per pixel for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j ) { conf_[i][j] = src.conf_ …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Fast way of copying byte array in C/C++ (With measurements)"/>
         <meta property="og:url" content="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html"/>
-        <meta property="og:description" content="I have the following code for copying several buffers from one object to another: :::: // Copy several buffers (images) for( int i = 0; i"/>
+        <meta property="og:description" content="I have the following code for copying several buffers from one object to another: // Copy several buffers (images) for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy one image per pixel for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j ) { conf_[i][j] = src.conf_ …"/>
         <meta property="article:published_time" content="2013-10-15" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="c++" />
@@ -108,97 +108,88 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
-
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       // Copy one image per pixel
-       for( int j = 0; j < MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-       {
-          conf_[i][j] = src.conf_[i][j];
-       }
-    }
-
+                <p>I have the following code for copying several buffers from one object to another:</p>
+<div class="highlight"><pre><span></span>// Copy several buffers (images)
+for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+{
+   // Copy one image per pixel
+   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
+   {
+      conf_[i][j] = src.conf_[i][j];
+   }
+}
+</pre></div>
 
 
-Array conf_ is defined as follows: 
-
-    ::::
-    std::vector<BYTE*> conf_;
-
-BYTE is unsigned char. That code is written with no doubt about software performance. It just works. When I do so I hope compiler make it better for me.
-This fragment takes about **45 ms** for copying of 2 images with ( 1980x1080 pixels ) x 3 planes = 6.2 MPixels.
-I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The code is built for x64 platform. Disabled compiler option for buffer security check (GS-) and debug information has no effect on the productivity.
-
-Slightly better solution:
-
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-
-    ::::
-       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
-
-       // Copy one image per pixel
-       for( int j = 0; j <&nbsp;sizeOfArray; ++ j )
-
-    ::::
-       {
-          conf_[i][j] = src.conf_[i][j];
-       }
-    }
-It takes about **35 ms **per full copy. 
-
-Much better solution:
+<p>Array conf_ is defined as follows: </p>
+<div class="highlight"><pre><span></span><span class="nt">std</span><span class="o">:</span><span class="nd">:vector</span><span class="o">&lt;</span><span class="nt">BYTE</span><span class="o">*&gt;</span> <span class="nt">conf_</span><span class="o">;</span>
+</pre></div>
 
 
+<p>BYTE is unsigned char. That code is written with no doubt about software performance. It just works. When I do so I hope compiler make it better for me.
+This fragment takes about <strong>45 ms</strong> for copying of 2 images with ( 1980x1080 pixels ) x 3 planes = 6.2 MPixels.
+I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The code is built for x64 platform. Disabled compiler option for buffer security check (GS-) and debug information has no effect on the productivity.</p>
+<p>Slightly better solution:</p>
+<div class="highlight"><pre><span></span>// Copy several buffers (images)
+for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+{
+
+::::
+   int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+
+   // Copy one image per pixel
+   for( int j = 0; j &lt;&amp;nbsp;sizeOfArray; ++ j )
+
+::::
+   {
+      conf_[i][j] = src.conf_[i][j];
+   }
+}
+</pre></div>
 
 
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       BYTE * arrDst = conf_[i];
-       BYTE * arrSrc = src.conf_[i];
-       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+<p>It takes about <strong>35 ms </strong>per full copy. </p>
+<p>Much better solution:</p>
+<div class="highlight"><pre><span></span>// Copy several buffers (images)
+for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+{
+   BYTE * arrDst = conf_[i];
+   BYTE * arrSrc = src.conf_[i];
+   int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
 
-       // Copy one image per pixel
-       for( int j = 0; j < sizeOfArray; ++ j )
-       {
-          arrDst[j] = arrSrc[j];
-       }
-    }
+   // Copy one image per pixel
+   for( int j = 0; j &lt; sizeOfArray; ++ j )
+   {
+      arrDst[j] = arrSrc[j];
+   }
+}
 
-    ::::
-
-
-    ::::
+::::
 
 
-Everything is the same except for using additional temporary variable. This version runs for** 8 ms**. 
-UPD: Intel Compiler 2011 demonstrates **2 ms**&nbsp;latency for this code.
+::::
+</pre></div>
 
-And even better solution for Visual Studio:
 
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       BYTE * arrDst = conf_[i];
-       BYTE * arrSrc = src.conf_[i];
-       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+<p>Everything is the same except for using additional temporary variable. This version runs for<strong> 8 ms</strong>. 
+UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong>&nbsp;latency for this code.</p>
+<p>And even better solution for Visual Studio:</p>
+<div class="highlight"><pre><span></span><span class="o">//</span> <span class="nt">Copy</span> <span class="nt">several</span> <span class="nt">buffers</span> <span class="o">(</span><span class="nt">images</span><span class="o">)</span>
+<span class="nt">for</span><span class="o">(</span> <span class="nt">int</span> <span class="nt">i</span> <span class="o">=</span> <span class="nt">0</span><span class="o">;</span> <span class="nt">i</span> <span class="o">&lt;</span> <span class="nt">MIN</span><span class="o">(</span> <span class="nt">conf_</span><span class="nc">.size</span><span class="o">(),</span> <span class="nt">src</span><span class="nc">.conf_.size</span><span class="o">()</span> <span class="o">);</span> <span class="o">++</span> <span class="nt">i</span> <span class="o">)</span>
+<span class="p">{</span>
+   <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrDst</span> <span class="o">=</span> <span class="n">conf_</span><span class="cp">[</span><span class="nx">i</span><span class="cp">]</span><span class="p">;</span>
+   <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrSrc</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">conf_</span><span class="cp">[</span><span class="nx">i</span><span class="cp">]</span><span class="p">;</span>
+   <span class="n">int</span> <span class="n">sizeOfArray</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">sizeOfBuffer_</span><span class="o">,</span> <span class="n">src</span><span class="o">.</span><span class="n">sizeOfBuffer_</span> <span class="p">);</span>
 
-       // Copy one image per pixel
-       std::copy( arrSrc, arrSrc + sizeOfArray, arrDst );
-    }
-It uses **copy **function from standard C++ library. Time of this version is **2 ms**.   
-UPD: Intel Compiler 2011 demonstrates&nbsp;**2 ms**&nbsp;latency for this code too, but it seems that for multiple runs the last version is slightly slower than previous one for ICC. My previous time measuremets have integer precision. So for 50 frames ICC+last-version got&nbsp;**141 ms** and ICC+previous-version got&nbsp;**112 ms. **That is strange.
+   <span class="o">//</span> <span class="n">Copy</span> <span class="n">one</span> <span class="n">image</span> <span class="n">per</span> <span class="n">pixel</span>
+   <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span> <span class="n">arrSrc</span><span class="o">,</span> <span class="n">arrSrc</span> <span class="o">+</span> <span class="n">sizeOfArray</span><span class="o">,</span> <span class="n">arrDst</span> <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 
-On Intel Compiler memcpy and std::copy give nearly the same results.
 
+<p>It uses <strong>copy </strong>function from standard C++ library. Time of this version is <strong>2 ms</strong>. <br>
+UPD: Intel Compiler 2011 demonstrates&nbsp;<strong>2 ms</strong>&nbsp;latency for this code too, but it seems that for multiple runs the last version is slightly slower than previous one for ICC. My previous time measuremets have integer precision. So for 50 frames ICC+last-version got&nbsp;<strong>141 ms</strong> and ICC+previous-version got&nbsp;<strong>112 ms. </strong>That is strange.</p>
+<p>On Intel Compiler memcpy and std::copy give nearly the same results.</p>
 </div>
             </div>
             <!-- /.entry-content -->

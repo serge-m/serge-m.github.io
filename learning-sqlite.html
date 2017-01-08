@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="sql" />
-        <meta name="description" content="# create table named t3 (id, value). id is integer. value is text **sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id));** # adding two &#34;rows&#34; **sqlite&gt; insert into t3 (id, value) values (1, &#39;a&#39;);** **sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);** # display results **sqlite …" />
+        <meta name="description" content="create table named t3 (id, value). id is integer. value is text sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &#34;rows&#34; sqlite&gt; insert into t3 (id, value) values (1, &#39;a&#39;); sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;); display results sqlite …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="learning sqlite"/>
         <meta property="og:url" content="https://serge-m.github.io/learning-sqlite.html"/>
-        <meta property="og:description" content="# create table named t3 (id, value). id is integer. value is text **sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id));** # adding two &#34;rows&#34; **sqlite&gt; insert into t3 (id, value) values (1, &#39;a&#39;);** **sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);** # display results **sqlite …"/>
+        <meta property="og:description" content="create table named t3 (id, value). id is integer. value is text sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &#34;rows&#34; sqlite&gt; insert into t3 (id, value) values (1, &#39;a&#39;); sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;); display results sqlite …"/>
         <meta property="article:published_time" content="2014-02-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="sql" />
@@ -102,38 +102,33 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on"># create table named t3 (id, value). id is integer. value is text
-**sqlite> create table if not exists t3( id int , value varchar, primary key(id));**
-
-# adding two "rows"
-**sqlite> insert into t3 (id, value) values (1, 'a');**
-**sqlite> insert into t3 (id, value) values (2, 'b');**
-
-# display results
-**sqlite> select * &nbsp;from t3;**
-**1|a**
-**2|b**
-
-# update id=1 if exists, insert otherwise (id=1 exists)
-**sqlite> insert or replace into t3 (id,value) values (1,'c' );**
-**sqlite> select * &nbsp;from t3;**
-**2|b**
-**1|c**
-
-# update id=1 if exists, insert otherwise (id=1 doesn't exist)
-**sqlite> insert or replace into t3 (id,value) values (3,'e' );**
-**sqlite> select * &nbsp;from t3;**
-**2|b**
-**1|c**
-**3|e**
+                <h1>create table named t3 (id, value). id is integer. value is text</h1>
+<p><strong>sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id));</strong></p>
+<h1>adding two "rows"</h1>
+<p><strong>sqlite&gt; insert into t3 (id, value) values (1, 'a');</strong>
+<strong>sqlite&gt; insert into t3 (id, value) values (2, 'b');</strong></p>
+<h1>display results</h1>
+<p><strong>sqlite&gt; select * &nbsp;from t3;</strong>
+<strong>1|a</strong>
+<strong>2|b</strong></p>
+<h1>update id=1 if exists, insert otherwise (id=1 exists)</h1>
+<p><strong>sqlite&gt; insert or replace into t3 (id,value) values (1,'c' );</strong>
+<strong>sqlite&gt; select * &nbsp;from t3;</strong>
+<strong>2|b</strong>
+<strong>1|c</strong></p>
+<h1>update id=1 if exists, insert otherwise (id=1 doesn't exist)</h1>
+<p><strong>sqlite&gt; insert or replace into t3 (id,value) values (3,'e' );</strong>
+<strong>sqlite&gt; select * &nbsp;from t3;</strong>
+<strong>2|b</strong>
+<strong>1|c</strong>
+<strong>3|e</strong>
 <div>
 </div># update id=1 if exists, insert otherwise (id=1 doesn't exist)
-**sqlite> insert or replace into t3 (id,value) values (3,'f' );**
-**sqlite> select * &nbsp;from t3;**
-**2|b**
-**1|c**
-**3|f**
-
+<strong>sqlite&gt; insert or replace into t3 (id,value) values (3,'f' );</strong>
+<strong>sqlite&gt; select * &nbsp;from t3;</strong>
+<strong>2|b</strong>
+<strong>1|c</strong>
+<strong>3|f</strong></p>
 </div>
             </div>
             <!-- /.entry-content -->

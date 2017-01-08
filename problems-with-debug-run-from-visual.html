@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe. ![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png) The solution is …" />
+        <meta name="description" content="I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe. The solution is following. Folder Microsoft.VC90.DebugOpenMPwith files Microsoft.VC90.DebugOpenMP.manifest vcomp90d …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Problems with debug run from Visual Studio with openMP"/>
         <meta property="og:url" content="https://serge-m.github.io/problems-with-debug-run-from-visual.html"/>
-        <meta property="og:description" content="I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe. ![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png) The solution is …"/>
+        <meta property="og:description" content="I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe. The solution is following. Folder Microsoft.VC90.DebugOpenMPwith files Microsoft.VC90.DebugOpenMP.manifest vcomp90d …"/>
         <meta property="article:published_time" content="2013-05-14" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,17 +98,16 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
-![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png)
+                <p>I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
+<img alt="" src="http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png">
 The solution is following.
 Folder
 <blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP</blockquote>with files
 <blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP.manifest
 vcomp90d.dll&nbsp;</blockquote>were missing. I knew this problem for the folder I specify in debug properties in visual studio:
-![](http://3.bp.blogspot.com/-YWMVBmpI050/UZHxfnKVd5I/AAAAAAAAAYM/8syrhPsNbIc/s320/error_about_parallel_configurations_dialog1.png)In that folder I already had Microsoft.VC90.DebugOpenMP. But to avoid error I should place it in output directory (where my binary exe file is placed):
-![](http://1.bp.blogspot.com/-rCC2c5cq7Lo/UZHyERiXNRI/AAAAAAAAAYU/wbQWL9p0MbE/s320/error_about_parallel_configurations_dialog2.png)
-Magick...
-
+<img alt="" src="http://3.bp.blogspot.com/-YWMVBmpI050/UZHxfnKVd5I/AAAAAAAAAYM/8syrhPsNbIc/s320/error_about_parallel_configurations_dialog1.png">In that folder I already had Microsoft.VC90.DebugOpenMP. But to avoid error I should place it in output directory (where my binary exe file is placed):
+<img alt="" src="http://1.bp.blogspot.com/-rCC2c5cq7Lo/UZHyERiXNRI/AAAAAAAAAYU/wbQWL9p0MbE/s320/error_about_parallel_configurations_dialog2.png">
+Magick...</p>
 </div>
             </div>
             <!-- /.entry-content -->

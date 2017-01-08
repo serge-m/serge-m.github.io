@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="    I had pretty simple code with opencv: **    cv::Mat t;** **    t = cv::imread( &#34;qq.bmp&#34; ) ;** **    cv::imwrite( &#34;q.bmp&#34;, t );** **    cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );** **    cv::imshow( &#34;asdads&#34;, t );** **    cv::waitKey( -1 );** **    return 0;** It caused crash in debug configuration: **OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …" />
+        <meta name="description" content="    I had pretty simple code with opencv:     cv::Mat t;     t = cv::imread( &#34;qq.bmp&#34; ) ;     cv::imwrite( &#34;q.bmp&#34;, t );     cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );     cv::imshow( &#34;asdads&#34;, t );     cv::waitKey( -1 );     return 0; It caused crash in debug configuration: OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Opencv and &#34;OpenCV Error: Bad flag&#34;"/>
         <meta property="og:url" content="https://serge-m.github.io/opencv-and-opencv-error-bad-flag.html"/>
-        <meta property="og:description" content="    I had pretty simple code with opencv: **    cv::Mat t;** **    t = cv::imread( &#34;qq.bmp&#34; ) ;** **    cv::imwrite( &#34;q.bmp&#34;, t );** **    cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );** **    cv::imshow( &#34;asdads&#34;, t );** **    cv::waitKey( -1 );** **    return 0;** It caused crash in debug configuration: **OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …"/>
+        <meta property="og:description" content="    I had pretty simple code with opencv:     cv::Mat t;     t = cv::imread( &#34;qq.bmp&#34; ) ;     cv::imwrite( &#34;q.bmp&#34;, t );     cv::namedWindow( &#34;asdads&#34;, CV_WINDOW_AUTOSIZE );     cv::imshow( &#34;asdads&#34;, t );     cv::waitKey( -1 );     return 0; It caused crash in debug configuration: OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport …"/>
         <meta property="article:published_time" content="2013-08-05" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,35 +98,28 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">
-&nbsp; &nbsp;
-I had pretty simple code with opencv:
-
-**&nbsp; &nbsp; cv::Mat t;**
-**&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;**
-**&nbsp; &nbsp; cv::imwrite( "q.bmp", t );**
-**&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );**
-**&nbsp; &nbsp; cv::imshow( "asdads", t );**
-**&nbsp; &nbsp; cv::waitKey( -1 );**
-**&nbsp; &nbsp; return 0;**
-
-It caused crash in debug configuration:
-
-**OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport**
-**ed array type) in unknown function, file ..\..\..\src\opencv\modules\core\src\ar**
-**ray.cpp, line 2482**
+                <p>&nbsp; &nbsp;
+I had pretty simple code with opencv:</p>
+<p><strong>&nbsp; &nbsp; cv::Mat t;</strong>
+<strong>&nbsp; &nbsp; t = cv::imread( "qq.bmp" ) ;</strong>
+<strong>&nbsp; &nbsp; cv::imwrite( "q.bmp", t );</strong>
+<strong>&nbsp; &nbsp; cv::namedWindow( "asdads", CV_WINDOW_AUTOSIZE );</strong>
+<strong>&nbsp; &nbsp; cv::imshow( "asdads", t );</strong>
+<strong>&nbsp; &nbsp; cv::waitKey( -1 );</strong>
+<strong>&nbsp; &nbsp; return 0;</strong></p>
+<p>It caused crash in debug configuration:</p>
+<p><strong>OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport</strong>
+<strong>ed array type) in unknown function, file ......\src\opencv\modules\core\src\ar</strong>
+<strong>ray.cpp, line 2482</strong>
 <b>
 </b>In release configuration it was ok. Finally i found the solution. Both in debug and release configurations I used static libraries for release conguration
 <b>
-</b>**opencv_core231.lib opencv_imgproc231.lib opencv_highgui231.lib**
+</b><strong>opencv_core231.lib opencv_imgproc231.lib opencv_highgui231.lib</strong>
 <b>
 </b>And one should use
-**opencv_core231d.lib opencv_imgproc231d.lib opencv_highgui231d.lib**
-for debug.
-
-It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems
-
-
+<strong>opencv_core231d.lib opencv_imgproc231d.lib opencv_highgui231d.lib</strong>
+for debug.</p>
+<p>It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems</p>
 </div>
             </div>
             <!-- /.entry-content -->

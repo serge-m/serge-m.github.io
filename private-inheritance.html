@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="c++" />
-        <meta name="description" content="Example from Meyers &#34;Effective C++&#34; :::: class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface …" />
+        <meta name="description" content="Example from Meyers &#34;Effective C++&#34; class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Private inheritance"/>
         <meta property="og:url" content="https://serge-m.github.io/private-inheritance.html"/>
-        <meta property="og:description" content="Example from Meyers &#34;Effective C++&#34; :::: class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface …"/>
+        <meta property="og:description" content="Example from Meyers &#34;Effective C++&#34; class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface …"/>
         <meta property="article:published_time" content="2014-01-06" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="c++" />
@@ -102,42 +102,40 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Example from Meyers "Effective C++"
-
-    ::::
-    class Timer {
-    public:
-    explicit Timer(int tickFrequency);
-    virtual void onTick() const; // Called automatically for each tic, 
-    // onTick() must be redefined to do things
-    ...
-    };
+                <p>Example from Meyers "Effective C++"</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">Timer</span> {
+<span class="n">public:</span>
+<span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
+<span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
+<span class="sr">//</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
+...
+};
 
 
-    class Widget: private Timer { // private inheritance
-    private:
-    virtual void onTick() const; // redefined to make job done
-    ... 
-    };
+<span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
+<span class="n">private:</span>
+<span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
+... 
+};
+</pre></div>
 
 
-Now clients of Widget get interface untouched and required job is done
-
-Example of protecting method from redefinition in derived classes:  
-
-    ::::
-    class Widget {
-    private:
-        class WidgetTimer: public Timer {
-        public:
-            virtual void onTick() const;
-            ...
-        };
-        WidgetTimer timer;
+<p>Now clients of Widget get interface untouched and required job is done</p>
+<p>Example of protecting method from redefinition in derived classes:  </p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">Widget</span> {
+<span class="n">private:</span>
+    <span class="k">class</span> <span class="n">WidgetTimer:</span> <span class="n">public</span> <span class="n">Timer</span> {
+    <span class="n">public:</span>
+        <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>;
         ...
     };
+    <span class="n">WidgetTimer</span> <span class="n">timer</span>;
+    ...
+};
+</pre></div>
 
-Classes derived from Widget unable to redefine onClick. Analogue of **final** in Java and **sealed** in C#</div>
+
+<p>Classes derived from Widget unable to redefine onClick. Analogue of <strong>final</strong> in Java and <strong>sealed</strong> in C#</div></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

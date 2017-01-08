@@ -85,21 +85,17 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">// Make a composition
-var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );
-
-// Open it in viewer
-comp.openInViewer();
-
-This solution works only in AAE CS 6.0
-
-My version of some cross-platform code
-
-<span style="font-family: Courier New, Courier, monospace;">function OpenInViewer( comp )</span>
+                <div class="summary"><p>// Make a composition
+var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );</p>
+<p>// Open it in viewer
+comp.openInViewer();</p>
+<p>This solution works only in AAE CS 6.0</p>
+<p>My version of some cross-platform code</p>
+<p><span style="font-family: Courier New, Courier, monospace;">function OpenInViewer( comp )</span>
 <span style="font-family: Courier New, Courier, monospace;">{</span>
-<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; var version = app.version.match(/(\d+\.\d+).*/)[1];</span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; var version = app.version.match(/(\d+.\d+).<em>/)[1];</span>
 <span style="font-family: Courier New, Courier, monospace;">
-</span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; if …</span></div>
+</span><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; if …</span></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-to-open-composition-in-viewer-in.html">more ...</a>
                 </div>
             </article>

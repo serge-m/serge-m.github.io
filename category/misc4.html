@@ -87,13 +87,11 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-
- <pre class="brush: cpp">
+                <div class="summary"><p><pre class="brush: cpp">
 import matplotlib.pyplot as plt
 plt.rcParams['image.cmap'] = 'gray'
 plt.rcParams['image.interpolation'] = 'nearest'
-</pre></div>
+</pre></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/setting-default-parameters-from-imshow.html">more ...</a>
                 </div>
             </article>
@@ -119,16 +117,17 @@ plt.rcParams['image.interpolation'] = 'nearest'
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Okay children, today we learn how to convert text to numpy matrix.
-Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html" target="_blank).
-
+                <div class="summary"><p>Okay children, today we learn how to convert text to numpy matrix.
+Source is <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&quot; target=&quot;_blank">here</a>.</p>
 <pre class="brush: python"># loading modules
 import numpy
 from StringIO import StringIO
 
 # Using StringIO as a file-like wrapper over text
 I0 = numpy.loadtxt(StringIO("""
-         0         0 …</pre></div>
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000 …</pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/loading-numpy-array-from-string.html">more ...</a>
                 </div>
             </article>
@@ -154,15 +153,13 @@ I0 = numpy.loadtxt(StringIO("""
 	<a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
-
- <pre class="brush: cpp"> 
+                <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
+<p><pre class="brush: cpp"> 
 function [ output ] = quiver_flow( u, v )
 %QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014
-
-output = quiver( u, v, 0);
-axis ij …</pre></div>
+%   SMatyunin2014</p>
+<p>output = quiver( u, v, 0);
+axis ij …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
                 </div>
             </article>
@@ -247,9 +244,9 @@ for each alpha they find optimum through setting derivatives of Ec …</p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">Personal page of the author:&nbsp;[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html" target="_blank) 
-Original paper: [http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf](http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf" target="_blank)
-Newer paper: Deqing Sun, Stefan Roth, and …</div></div>
+                <div class="summary"><p>Personal page of the author:&nbsp;<a href="http://cs.brown.edu/~dqsun/research/index.html&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/research/index.html</a>
+Original paper: <a href="http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf&quot; target=&quot;_blank">http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf</a>
+Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis    of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/investigating-optical-flow-by-d-sun.html">more ...</a>
                 </div>
             </article>
@@ -299,18 +296,16 @@ Newer paper: Deqing Sun, Stefan Roth, and …</div></div>
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
-# source: http://stackoverflow.com/a/23619544 
-# In[1]:
-
-%%javascript
+                <div class="summary"><h1>creating a variable theNotebook with the name of notebook</h1>
+<h1>source: http://stackoverflow.com/a/23619544</h1>
+<h1>In[1]:</h1>
+<p>%%javascript
 var kernel = IPython.notebook.kernel;
 var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); 
-
-# saving to a directory 'backup'. create the directory if it doesn't exist
-# source …</div>
+kernel.execute(command); </p>
+<h1>saving to a directory 'backup'. create the directory if it doesn't exist</h1>
+<h1>source …</h1>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
                 </div>
             </article>
@@ -336,9 +331,8 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab
-
-[https://github.com/serge-m/pyinterp2](https://github.com/serge-m/pyinterp2)</div>
+                <div class="summary"><p>I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab</p>
+<p><a href="https://github.com/serge-m/pyinterp2">https://github.com/serge-m/pyinterp2</a></div></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-equivalent-of-interp2.html">more ...</a>
                 </div>
             </article>
@@ -362,11 +356,9 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">As an example I use images from middleburry.
-Solution is very dirty and slow.
-
-[https://github.com/serge-m/depth_map_occlusion](https://github.com/serge-m/depth_map_occlusion" target="_blank)
-
+                <div class="summary"><p>As an example I use images from middleburry.
+Solution is very dirty and slow.</p>
+<p><a href="https://github.com/serge-m/depth_map_occlusion&quot; target=&quot;_blank">https://github.com/serge-m/depth_map_occlusion</a></p>
 <blockquote class="tr_bq"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># In[1]:
 
 import numpy
@@ -379,7 +371,10 @@ import matplotlib.pyplot as plt
 from scipy import ndimage
 import numpy as np
 
-# kernels for shift …</span></blockquote></div>
+# kernels for shift
+k = np.array([
+[[0,0,0],
+&nbsp;[0 …</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html">more ...</a>
                 </div>
             </article>
@@ -401,8 +396,7 @@ import numpy as np
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
-
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
 <blockquote class="tr_bq"># [1]
 %%javascript
 var kernel = IPython.notebook.kernel;
@@ -410,7 +404,11 @@ var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
 kernel.execute(command);
 
-# [2 …</blockquote></div>
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
                 </div>
             </article>
@@ -434,10 +432,12 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">There are several solutions:
-Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python](http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python)
+                <div class="summary"><p>There are several solutions:
+Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a>
 <h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  [http://pymat …</div>
+  <a href="http://pymat.sourceforge.net/&quot; rel=&quot;nofollow">http://pymat.sourceforge.net</a>
+Last updated: 2003
+  <h2>pymat2 …</h2></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/use-matlab-function-from-python.html">more ...</a>
                 </div>
             </article>
@@ -459,15 +459,14 @@ Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-fro
 	<a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I am trying to train NN using pylearn2
+                <div class="summary"><p>I am trying to train NN using pylearn2
 I use stochastic gradient decent.
 I had always a message about failed GPU memory&nbsp; allocation in
-train->self.sgd_update(*batch)
+train-&gt;self.sgd_update(*batch)
 To fix it, I reduced size of the batch in yaml-config:
 batch_size: 200
 was replaced by
-batch_size: 100
-
+batch_size: 100</p>
 </div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pylearn2-out-of-memory-error.html">more ...</a>
                 </div>
@@ -494,13 +493,12 @@ batch_size: 100
 	<a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">
-[Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)
-http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
-
-Drawing label on figure (using tikz)
+                <div class="summary"><p><a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz">Drawing on an image with TikZ</a>
+http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz</p>
+<p>Drawing label on figure (using tikz)
 \begin{tikzpicture}
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen …</div>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; %\draw[white,fill=white] (0 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tikz-cookbook.html">more ...</a>
                 </div>
             </article>
@@ -524,16 +522,15 @@ Drawing label on figure (using tikz)
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
+                <div class="summary"><p><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_two, cmap=cm.gray) #</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span>
-
-use
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span></p>
+<p>use
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></div>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html">more ...</a>
                 </div>
             </article>
@@ -555,12 +552,21 @@ use
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+                <div class="summary"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2>
 
-<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
-</div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">
+<p><span class="st"><em>Theano</em> is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span></p>
+<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2>
+
+<div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div>
+
+<div style="text-align: left;">
+</div>
+
+<div style="text-align: left;"><span class="st">Test script: </span></div>
+
+<blockquote class="tr_bq">
     ::::
-    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared …</span></blockquote></div>
+    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared …</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/theano.html">more ...</a>
                 </div>
             </article>
@@ -582,11 +588,8 @@ use
 	<a href="https://serge-m.github.io/tag/windows.html">windows</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**doskey /history > commands.log**&nbsp; - dump command line promt history to file
-
-    ::::
-    **<code>some_command > output_file.txt 2>&amp;1</code>**<span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: black;"> -  <span style="font-family: inherit;"><span style="font-size: small;">Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a/1420981)]</span></span></span></span>
-</div>
+                <div class="summary"><p><strong>doskey /history &gt; commands.log</strong>&nbsp; - dump command line promt history to file</p>
+<div class="highlight"><pre><span></span>**<span class="nt">&lt;code&gt;</span>some_command &gt; output_file.txt 2&gt;<span class="ni">&amp;amp;</span>1<span class="nt">&lt;/code&gt;</span>**<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Arial,Helvetica,sans-serif;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;color: black;&quot;</span><span class="nt">&gt;</span> -  <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-size: small;&quot;</span><span class="nt">&gt;</span>Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/windows-life.html">more ...</a>
                 </div>
             </article>
@@ -608,16 +611,13 @@ use
 	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**top** - see running processes
-**df** - check free disk space
-**baobab** - free disk space 
-**screen&nbsp;** - multiple virtual consoles in one real [[ref](http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html)], need installation in ubuntu
-**mc** - file manager
-
-**ccsm** - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
-
-    ::::
-    <code>sudo apt-get …</code></div>
+                <div class="summary"><p><strong>top</strong> - see running processes
+<strong>df</strong> - check free disk space
+<strong>baobab</strong> - free disk space 
+<strong>screen&nbsp;</strong> - multiple virtual consoles in one real [<a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html">ref</a>], need installation in ubuntu
+<strong>mc</strong> - file manager</p>
+<p><strong>ccsm</strong> - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;code&gt;</span>sudo apt-get install compizconfig-settings-manager<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;</span>, then …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/linux-life.html">more ...</a>
                 </div>
             </article>

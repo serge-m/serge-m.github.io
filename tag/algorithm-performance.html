@@ -87,16 +87,14 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
-
-    ::::
-    // Copy several buffers (images)
-    for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       // Copy one image per pixel
-       for( int j = 0; j < MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-       {
-          conf_[i][j] = src.conf_ …</div>
+                <div class="summary"><p>I have the following code for copying several buffers from one object to another:</p>
+<div class="highlight"><pre><span></span>// Copy several buffers (images)
+for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+{
+   // Copy one image per pixel
+   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
+   {
+      conf_[i][j] = src.conf_ …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
                 </div>
             </article>

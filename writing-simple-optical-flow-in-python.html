@@ -105,20 +105,17 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">First of all we need a couple of test images:
+                <p>First of all we need a couple of test images:
 <pre class="brush: python">#
 import numpy
-from StringIO import StringIO
-
-I0 = numpy.loadtxt(StringIO("""
+from StringIO import StringIO</p>
+<p>I0 = numpy.loadtxt(StringIO("""
          0         0         0         0         0
          0         0    0.5000         0         0
          0         0    1.0000         0         0
          0         0    0.5000         0         0
-         0         0         0         0         0""") )
-
-
-I1 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0""") )</p>
+<p>I1 = numpy.loadtxt(StringIO("""
          0         0         0         0         0
          0       0.5         0         0           0
          0       1.0         0         0           0
@@ -126,9 +123,7 @@ I1 = numpy.loadtxt(StringIO("""
          0         0         0         0         0 """) )</pre>Define initial horiozontal and vertical components of optical flow 
 <pre class="brush: python">u = numpy.zeros_like(I0); 
 v = numpy.zeros_like(I0); 
-</pre>Lets write class for making warps. As OF usually deals only with small displacements, we need iterative estimation: estimate, shift image by found vectors, find again.
-
-
+</pre>Lets write class for making warps. As OF usually deals only with small displacements, we need iterative estimation: estimate, shift image by found vectors, find again.</p>
 <pre class="brush: python">class Warper:
     def `__init__`(self, shape, u0, v0, I0, I1, display = False):
         """
@@ -207,76 +202,81 @@ v = numpy.zeros_like(I0);
         self.u += self.train.tu.get_value()
         self.v += self.train.tv.get_value()
         self.counter += 1
-</pre>Now describing TrainFunction. Well design is not good yet 
+</pre>
+
+<p>Now describing TrainFunction. Well design is not good yet 
 <pre class="brush: python">#
 class TrainFunction(object):
-    def `__init__`(self, u0, v0, rate):
+    def <code>__init__</code>(self, u0, v0, rate):
         self.rate = rate
         self.tu = theano.shared(u0,name='tu')
         self.tv = theano.shared(v0,name='tv')
         self.tIx = T.matrix("tIx")
         self.tIy = T.matrix("tIy")
-        self.tIt = T.matrix("tIt")
+        self.tIt = T.matrix("tIt")</p>
+<div class="highlight"><pre><span></span>    self.gu, self.gv = None, None
+    self.E = None
+    self.train_function = self.get_function()
 
-        self.gu, self.gv = None, None
-        self.E = None
-        self.train_function = self.get_function()
+# this function must be overloaded in the derived classes
+def get_energy(self):
+    raise Exception(&quot;Non implemented&quot;)
 
-    # this function must be overloaded in the derived classes
-    def get_energy(self):
-        raise Exception("Non implemented")
+# construct Theano-function for gradient descent 
+def get_function(self):
+    if self.E is None:
+        self.E = self.get_energy()
 
-    # construct Theano-function for gradient descent 
-    def get_function(self):
-        if self.E is None:
-            self.E = self.get_energy()
+    if self.gu is None or self.gv is None:
+        self.gu, self.gv = T.grad(self.E, [self.tu, self.tv])
 
-        if self.gu is None or self.gv is None:
-            self.gu, self.gv = T.grad(self.E, [self.tu, self.tv])  
+    train_function = theano.function(
+        inputs=[self.tIx, self.tIy, self.tIt],
+        outputs=[self.E],
+        updates=((self.tu, self.tu - self.rate * self.gu), (self.tv, self.tv - self.rate * self.gv)),
+        allow_input_downcast=True)
 
-        train_function = theano.function(
-            inputs=[self.tIx, self.tIy, self.tIt],
-            outputs=[self.E],
-            updates=((self.tu, self.tu - self.rate * self.gu), (self.tv, self.tv - self.rate * self.gv)),
-            allow_input_downcast=True)
+    return train_function
 
-        return train_function
+# initialization of flow values
+def init(self, u0, v0):
+    self.tu.set_value(u0)
+    self.tv.set_value(v0)
 
-    # initialization of flow values
-    def init(self, u0, v0):
-        self.tu.set_value(u0)
-        self.tv.set_value(v0)
+# launching step of gradiennt descent
+def step(self, *args):
+    return self.train_function(*args)
+</pre></div>
 
-    # launching step of gradiennt descent
-    def step(self, *args):
-        return self.train_function(*args)
-</pre><pre class="brush: python">#
+
+<p></pre><pre class="brush: python">#
 class TrainFunctionSimple(TrainFunction):
-    def `__init__`(self, *args, **kwargs):
-        self.alpha = kwargs.get('alpha', 1.1)
+    def <code>__init__</code>(self, <em>args, </em>*kwargs):
+        self.alpha = kwargs.get('alpha', 1.1)</p>
+<div class="highlight"><pre><span></span>    super(self.`__class__`, self).`__init__`(*args, **kwargs)
 
-        super(self.`__class__`, self).`__init__`(*args, **kwargs)
+# constructs Theano-function, that calculate Energy
+def get_energy(self,):
+    # data term 
+    Edata = T.sum( ( self.tIx * self.tu + self.tIy * self.tv + self.tIt ) ** 2 )
 
-    # constructs Theano-function, that calculate Energy
-    def get_energy(self,):
-        # data term 
-        Edata = T.sum( ( self.tIx * self.tu + self.tIy * self.tv + self.tIt ) ** 2 ) 
+    # regularization term
+    Ereg = T.sum(
+        (self.tu)**2 + 
+        (self.tv)**2 )
 
-        # regularization term
-        Ereg = T.sum(
-            (self.tu)**2 + 
-            (self.tv)**2 )
+    return Edata+self.alpha*Ereg
+</pre></div>
 
-        return Edata+self.alpha*Ereg
-</pre>finally launching 
+
+<p></pre>finally launching 
 <pre class="brush: python">wrpr = Warper( I0.shape, numpy.zeros_like(I0), numpy.zeros_like(I0), I0, I1, display=True)
 warps = 5
 for i in range(warps):
     wrpr.warp()
 </pre>Printing the results: 
-<pre class="brush: python">numpy.set_printoptions(precision=3,)
-
-print wrpr.u
+<pre class="brush: python">numpy.set_printoptions(precision=3,)</p>
+<p>print wrpr.u
 print wrpr.v
 </pre><pre class="brush: python">[[ 0.     0.     0.     0.     0.   ]
  [ 0.     0.    -0.523  0.     0.   ]
@@ -296,16 +296,12 @@ Iy = ndimage.correlate(self.I1, self.mask.T, mode='nearest')
 <pre class="brush: python">Ix = ndimage.correlate(self.I0, self.mask, mode='nearest') 
 Iy = ndimage.correlate(self.I0, self.mask.T, mode='nearest') 
 </pre>you will get pressy strange results.
-Input images I0 and I1:
-
-</div>
-
-<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;">
-![](http://3.bp.blogspot.com/-dYfZ9eUjqE4/VHtGMwxyuQI/AAAAAAAACFg/vBjZqQkILaY/s1600/I0.png)
+Input images I0 and I1:</p>
+<p></div><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;">
+<img alt="" src="http://3.bp.blogspot.com/-dYfZ9eUjqE4/VHtGMwxyuQI/AAAAAAAACFg/vBjZqQkILaY/s1600/I0.png">
 </td><td style="text-align: center;">
-![](http://4.bp.blogspot.com/-G4C3gKG5W_0/VHtGMyVkRtI/AAAAAAAACFk/d51MYVnFvjo/s1600/I1.png)
-</td></tr></tbody></table>
-
+<img alt="" src="http://4.bp.blogspot.com/-G4C3gKG5W_0/VHtGMyVkRtI/AAAAAAAACFk/d51MYVnFvjo/s1600/I1.png">
+</td></tr></tbody></table></p>
 <p>So the "object" moves from left to right. I0 is a current frame and I1 is a previous frame. The vectors after 1 and 10 warps of correct iteration (derivatives of I1, I0 at background):</p>
 <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-right: 1em; text-align: left;"><tbody><tr><td style="text-align: center;">
 ![](http://2.bp.blogspot.com/-RBt_zV-BwPE/VHtGBocIBhI/AAAAAAAACFY/3bTptWcs4zc/s1600/after%2B100%2Bcorrect%2Bwarp.png)

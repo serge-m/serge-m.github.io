@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/16-bit-color-formats.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="[http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078) In adobe after effects: :::: #define PF_MAX_CHAN8 255 #define PF_HALF_CHAN8 128 #define PF_MAX_CHAN16 32768 #define PF_HALF_CHAN16 16384 #define CONVERT8TO16(A) ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )" />
+        <meta name="description" content="http://forums.creativecow.net/thread/2/940078 In adobe after effects: #define PF_MAX_CHAN8 255 #define PF_HALF_CHAN8 128 #define PF_MAX_CHAN16 32768 #define PF_HALF_CHAN16 16384 #define CONVERT8TO16(A) ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="16 bit color formats"/>
         <meta property="og:url" content="https://serge-m.github.io/16-bit-color-formats.html"/>
-        <meta property="og:description" content="[http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078) In adobe after effects: :::: #define PF_MAX_CHAN8 255 #define PF_HALF_CHAN8 128 #define PF_MAX_CHAN16 32768 #define PF_HALF_CHAN16 16384 #define CONVERT8TO16(A) ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )"/>
+        <meta property="og:description" content="http://forums.creativecow.net/thread/2/940078 In adobe after effects: #define PF_MAX_CHAN8 255 #define PF_HALF_CHAN8 128 #define PF_MAX_CHAN16 32768 #define PF_HALF_CHAN16 16384 #define CONVERT8TO16(A) ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )"/>
         <meta property="article:published_time" content="2013-12-11" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,16 +98,15 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">[http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078)
+                <p><a href="http://forums.creativecow.net/thread/2/940078">http://forums.creativecow.net/thread/2/940078</a></p>
+<p>In adobe after effects:</p>
+<div class="highlight"><pre><span></span>#define PF_MAX_CHAN8            255
+#define PF_HALF_CHAN8           128
+#define PF_MAX_CHAN16           32768
+#define PF_HALF_CHAN16          16384
+#define CONVERT8TO16(A)     ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )
+</pre></div>
 
-In adobe after effects:
-
-    ::::
-    #define PF_MAX_CHAN8            255
-    #define PF_HALF_CHAN8           128
-    #define PF_MAX_CHAN16           32768
-    #define PF_HALF_CHAN16          16384
-    #define CONVERT8TO16(A)     ( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )
 
 </div>
             </div>

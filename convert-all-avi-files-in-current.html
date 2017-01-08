@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/convert-all-avi-files-in-current.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="Using python and ffmpeg: #!/usr/bin/python # -*- coding: cp1251 -*- import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t:      vv = os.path.splitext(v)[0];      os.makedirs( vv ) # make a directory for each input file      pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path …" />
+        <meta name="description" content="Using python and ffmpeg: #!/usr/bin/python # -- coding: cp1251 -- import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t:      vv = os.path.splitext(v)[0];      os.makedirs( vv ) # make a directory for each input file      pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Convert all *.avi files in current directory to png sequences"/>
         <meta property="og:url" content="https://serge-m.github.io/convert-all-avi-files-in-current.html"/>
-        <meta property="og:description" content="Using python and ffmpeg: #!/usr/bin/python # -*- coding: cp1251 -*- import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t:      vv = os.path.splitext(v)[0];      os.makedirs( vv ) # make a directory for each input file      pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path …"/>
+        <meta property="og:description" content="Using python and ffmpeg: #!/usr/bin/python # -- coding: cp1251 -- import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t:      vv = os.path.splitext(v)[0];      os.makedirs( vv ) # make a directory for each input file      pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path …"/>
         <meta property="article:published_time" content="2013-10-22" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,10 +98,9 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Using python and ffmpeg:
-
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -*- coding: cp1251 -*-</span>
+                <p>Using python and ffmpeg:</p>
+<p><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -<em>- coding: cp1251 -</em>-</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">
 </span><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import glob</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">import os</span>
@@ -113,7 +112,7 @@ sergem personal public notebook            </a>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.makedirs( vv ) # make a directory for each input file</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;pathDst = os.path.join( vv, "%05d.png" ) # deststination path</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;"> </span>
-<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )</span></div>
+<span style="font-family: Courier New, Courier, monospace; font-size: x-small;">&nbsp; &nbsp; &nbsp;os.system("ffmpeg -i {0} {1}".format( v, pathDst ) )</span></div></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

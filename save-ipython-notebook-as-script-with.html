@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,ipython" />
-        <meta name="description" content="# creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist # source …" />
+        <meta name="description" content="creating a variable theNotebook with the name of notebook source: http://stackoverflow.com/a/23619544 In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist source …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Save Ipython notebook as script with the same filename"/>
         <meta property="og:url" content="https://serge-m.github.io/save-ipython-notebook-as-script-with.html"/>
-        <meta property="og:description" content="# creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist # source …"/>
+        <meta property="og:description" content="creating a variable theNotebook with the name of notebook source: http://stackoverflow.com/a/23619544 In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist source …"/>
         <meta property="article:published_time" content="2014-09-21" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -105,22 +105,19 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
-# source: http://stackoverflow.com/a/23619544 
-# In[1]:
-
-%%javascript
+                <h1>creating a variable theNotebook with the name of notebook</h1>
+<h1>source: http://stackoverflow.com/a/23619544</h1>
+<h1>In[1]:</h1>
+<p>%%javascript
 var kernel = IPython.notebook.kernel;
 var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); 
-
-# saving to a directory 'backup'. create the directory if it doesn't exist
-# source http://stackoverflow.com/a/19067979
-# In[2]:
-
-try :
-&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+kernel.execute(command); </p>
+<h1>saving to a directory 'backup'. create the directory if it doesn't exist</h1>
+<h1>source http://stackoverflow.com/a/19067979</h1>
+<h1>In[2]:</h1>
+<p>try :
+&nbsp;&nbsp;&nbsp; if(<code>__IPYTHON__</code>) :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print "saving", theNotebook
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; import os
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dir_backup = 'backup'
@@ -128,7 +125,7 @@ try :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; os.makedirs(dir_backup)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {0} --output {1}'.format(theNotebook, os.path.join(dir_backup, theNotebook)) )
 except NameError :
-&nbsp;&nbsp;&nbsp; print "Unable to save"</div>
+&nbsp;&nbsp;&nbsp; print "Unable to save"</div></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

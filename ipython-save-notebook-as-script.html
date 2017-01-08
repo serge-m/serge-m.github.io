@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="ipython" />
-        <meta name="description" content="Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&#34; target=&#34;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&#34; target=&#34;_blank) # [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # [2 …" />
+        <meta name="description" content="Joint solution from http://stackoverflow.com/a/23619544 and http://stackoverflow.com/a/19067979 # [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # [2] try :     if(`__IPYTHON__`) :         get_ipython().system(u&#39;ipython nbconvert --to python {}.ipynb&#39;.format(theNotebook)) except NameError …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="ipython. save notebook as script"/>
         <meta property="og:url" content="https://serge-m.github.io/ipython-save-notebook-as-script.html"/>
-        <meta property="og:description" content="Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&#34; target=&#34;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&#34; target=&#34;_blank) # [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # [2 …"/>
+        <meta property="og:description" content="Joint solution from http://stackoverflow.com/a/23619544 and http://stackoverflow.com/a/19067979 # [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); # [2] try :     if(`__IPYTHON__`) :         get_ipython().system(u&#39;ipython nbconvert --to python {}.ipynb&#39;.format(theNotebook)) except NameError …"/>
         <meta property="article:published_time" content="2014-08-31" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="ipython" />
@@ -102,8 +102,7 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
-
+                <p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
 <blockquote class="tr_bq"># [1]
 %%javascript
 var kernel = IPython.notebook.kernel;
@@ -116,7 +115,9 @@ try :
 &nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
 except NameError :
-&nbsp;&nbsp;&nbsp; pass</blockquote></div>
+&nbsp;&nbsp;&nbsp; pass</blockquote>
+
+</div>
             </div>
             <!-- /.entry-content -->
     <hr/>

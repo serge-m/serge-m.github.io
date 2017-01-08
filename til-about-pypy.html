@@ -105,47 +105,41 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Building from source root using command
+                <p>Building from source root using command
 <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
 produces structure with obsolete pypy-c and libpypy-c.so in 
-<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span>
-
-Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use pypy-c and libpypy-c.so from sources root.
-
-UPDATE:
+<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span></p>
+<p>Probably pypy compiler places there files  integrated in the src distribution. To get fresh versions I had to use pypy-c and libpypy-c.so from sources root.</p>
+<p>UPDATE:
 Probably I was completely wrong.
-pypy/tool/release/package.py has an option for (not) stripping resulting binary file: "--nostrip". By default it is enabled. Looks like it removed something unused from binaries. This operation updates timestamp of the pypy-c and libpypy-c.so. So probably that was the cause of my misunderstanding.
+pypy/tool/release/package.py has an option for (not) stripping resulting binary file: "--nostrip". By default it is enabled. Looks like it removed something unused from binaries. This operation updates timestamp of the pypy-c and libpypy-c.so. So probably that was the cause of my misunderstanding.</p>
+<p>Script for packaging and creating virtual environment:</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
+rm -rf ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> 2
+mkdir ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> 3
 
-Script for packaging and creating virtual environment:
+<span class="nv">DST_NAME</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$DST_NAME</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;DST_NAME is  empty&quot;</span>
+    <span class="nb">exit</span> 3
+<span class="k">fi</span>
 
+<span class="c1"># runs packaging</span>
+./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name <span class="nv">$DST_NAME</span> <span class="o">||</span> <span class="nb">exit</span> 4
 
-    ::::
-    #!/bin/bash
+<span class="c1"># creates a new virtual environment</span>
+virtualenv -p /home/pypy/builds/<span class="nv">$DST_NAME</span>/bin/pypy /home/pypy/env/<span class="nv">$DST_NAME</span>
 
-    rm -rf ./my_builds/ || exit 2
-    mkdir ./my_builds/ || exit 3
-
-    DST_NAME=$1
-    if [ -z "$DST_NAME" ]; then
-        echo "DST_NAME is  empty"
-        exit 3
-    fi
-
-    # runs packaging
-    ./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name $DST_NAME || exit 4
-
-    # creates a new virtual environment
-    virtualenv -p /home/pypy/builds/$DST_NAME/bin/pypy /home/pypy/env/$DST_NAME
-
-    # installing nose for numpy testing (optional)
-    source /home/pypy/env/$DST_NAME/bin/activate
-    pip install nose
-
+<span class="c1"># installing nose for numpy testing (optional)</span>
+<span class="nb">source</span> /home/pypy/env/<span class="nv">$DST_NAME</span>/bin/activate
+pip install nose
+</pre></div>
 
 
 <div>
 </div>
+
 </div>
             </div>
             <!-- /.entry-content -->

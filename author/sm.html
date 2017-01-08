@@ -82,15 +82,14 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">I am trying to train NN using pylearn2
+                <div class="summary"><p>I am trying to train NN using pylearn2
 I use stochastic gradient decent.
 I had always a message about failed GPU memory&nbsp; allocation in
-train->self.sgd_update(*batch)
+train-&gt;self.sgd_update(*batch)
 To fix it, I reduced size of the batch in yaml-config:
 batch_size: 200
 was replaced by
-batch_size: 100
-
+batch_size: 100</p>
 </div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pylearn2-out-of-memory-error.html">more ...</a>
                 </div>
@@ -115,16 +114,15 @@ batch_size: 100
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
+                <div class="summary"><p><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_two, cmap=cm.gray) #</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span>
-
-use
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span></p>
+<p>use
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></div>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html">more ...</a>
                 </div>
             </article>
@@ -146,12 +144,21 @@ use
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+                <div class="summary"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2>
 
-<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
-</div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">
+<p><span class="st"><em>Theano</em> is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span></p>
+<h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2>
+
+<div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div>
+
+<div style="text-align: left;">
+</div>
+
+<div style="text-align: left;"><span class="st">Test script: </span></div>
+
+<blockquote class="tr_bq">
     ::::
-    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared …</span></blockquote></div>
+    <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared …</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/theano.html">more ...</a>
                 </div>
             </article>
@@ -173,11 +180,8 @@ use
 	<a href="https://serge-m.github.io/tag/windows.html">windows</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**doskey /history > commands.log**&nbsp; - dump command line promt history to file
-
-    ::::
-    **<code>some_command > output_file.txt 2>&amp;1</code>**<span style="font-family: Arial,Helvetica,sans-serif;"><span style="color: black;"> -  <span style="font-family: inherit;"><span style="font-size: small;">Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a/1420981)]</span></span></span></span>
-</div>
+                <div class="summary"><p><strong>doskey /history &gt; commands.log</strong>&nbsp; - dump command line promt history to file</p>
+<div class="highlight"><pre><span></span>**<span class="nt">&lt;code&gt;</span>some_command &gt; output_file.txt 2&gt;<span class="ni">&amp;amp;</span>1<span class="nt">&lt;/code&gt;</span>**<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Arial,Helvetica,sans-serif;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;color: black;&quot;</span><span class="nt">&gt;</span> -  <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-size: small;&quot;</span><span class="nt">&gt;</span>Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/windows-life.html">more ...</a>
                 </div>
             </article>
@@ -199,16 +203,13 @@ use
 	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">**top** - see running processes
-**df** - check free disk space
-**baobab** - free disk space 
-**screen&nbsp;** - multiple virtual consoles in one real [[ref](http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html)], need installation in ubuntu
-**mc** - file manager
-
-**ccsm** - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
-
-    ::::
-    <code>sudo apt-get …</code></div>
+                <div class="summary"><p><strong>top</strong> - see running processes
+<strong>df</strong> - check free disk space
+<strong>baobab</strong> - free disk space 
+<strong>screen&nbsp;</strong> - multiple virtual consoles in one real [<a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html">ref</a>], need installation in ubuntu
+<strong>mc</strong> - file manager</p>
+<p><strong>ccsm</strong> - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;code&gt;</span>sudo apt-get install compizconfig-settings-manager<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;</span>, then …</pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/linux-life.html">more ...</a>
                 </div>
             </article>

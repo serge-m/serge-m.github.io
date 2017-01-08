@@ -113,18 +113,16 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
-# source: http://stackoverflow.com/a/23619544 
-# In[1]:
-
-%%javascript
+                <div class="summary"><h1>creating a variable theNotebook with the name of notebook</h1>
+<h1>source: http://stackoverflow.com/a/23619544</h1>
+<h1>In[1]:</h1>
+<p>%%javascript
 var kernel = IPython.notebook.kernel;
 var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
-kernel.execute(command); 
-
-# saving to a directory 'backup'. create the directory if it doesn't exist
-# source …</div>
+kernel.execute(command); </p>
+<h1>saving to a directory 'backup'. create the directory if it doesn't exist</h1>
+<h1>source …</h1>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
                 </div>
             </article>
@@ -146,8 +144,7 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on">Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
-
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
 <blockquote class="tr_bq"># [1]
 %%javascript
 var kernel = IPython.notebook.kernel;
@@ -155,7 +152,11 @@ var thename = window.document.getElementById("notebook_name").innerHTML;
 var command = "theNotebook = " + "'"+thename+"'";
 kernel.execute(command);
 
-# [2 …</blockquote></div>
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
                 </div>
             </article>
@@ -179,16 +180,15 @@ kernel.execute(command);
 	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
+                <div class="summary"><p><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_two, cmap=cm.gray) #</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span>
-
-use
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span></p>
+<p>use
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></div>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html">more ...</a>
                 </div>
             </article>

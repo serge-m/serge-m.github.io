@@ -98,17 +98,14 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div dir="ltr" style="text-align: left;" trbidi="on">Trim 5 frames starting from 160-th frame and write to png sequence
-
+                <p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
 <blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
-size of input video is 1920x1088, format YUV420 progressive
 
-UPD:
+<p>size of input video is 1920x1088, format YUV420 progressive</p>
+<p>UPD:
 ffmpeg is renamed to avconv.
-Using it for trimming AVI video:
-
-avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png 
-
+Using it for trimming AVI video:</p>
+<p>avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png </p>
 </div>
             </div>
             <!-- /.entry-content -->

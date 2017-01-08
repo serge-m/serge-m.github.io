@@ -223,7 +223,7 @@ gives
 
 ## HS method. Multiscale.
 
-    ::::
+ ```
     I0 = [ 0 0 0 0 0 0 0 0 0 0 0 0
            3 0 0 0 0 0 5 5 0 0 0 0 
            3 0 0 0 0 0 1 3 0 0 0 0
@@ -245,7 +245,7 @@ gives
            5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;
 
   
-    
+```    
 
 Here the shift between frames is much larger than a pixel and the size of objects. So OF fail without resolution scaling. 
   <table>  <tbody>

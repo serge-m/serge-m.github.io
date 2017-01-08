@@ -4,7 +4,7 @@ Date: 2014-09-01 12:14:00
 Slug: simple-occlusion-filling-for-depth-maps
 Tags: depth map,python
 
-<div dir="ltr" style="text-align: left;" trbidi="on">As an example I use images from middleburry.
+As an example I use images from middleburry.
 Solution is very dirty and slow.
 
 

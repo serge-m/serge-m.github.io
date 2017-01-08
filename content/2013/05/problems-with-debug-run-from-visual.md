@@ -4,7 +4,7 @@ Date: 2013-05-14 12:14:00
 Slug: problems-with-debug-run-from-visual
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
+I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
 ![](http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png)
 The solution is following.
 Folder

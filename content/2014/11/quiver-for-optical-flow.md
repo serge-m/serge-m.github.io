@@ -4,7 +4,7 @@ Date: 2014-11-06 15:36:00
 Slug: quiver-for-optical-flow
 Tags: useful,matlab,optical flow
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
+Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
 
 
  <pre class="brush: cpp"> 

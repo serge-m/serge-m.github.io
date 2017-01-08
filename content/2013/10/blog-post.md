@@ -4,7 +4,7 @@ Date: 2013-10-04 17:59:00
 Slug: blog-post-2
 Tags: c++,russian
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
+<span style="color: #333333; font-family: monospace;">АлёнаC++:</span>
 [http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)
 
 <code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;между указателями корректно, только если один из указателей - это указатель на&nbsp;</span><code style="background-color: white; color: #333333;">void</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">&nbsp;или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от&nbsp;</span><code style="background-color: white; color: #333333;">void*</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">, который возвращает&nbsp;</span><code style="background-color: white; color: #333333;">malloc</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">, следует использовать&nbsp;</span><code style="background-color: white; color: #333333;">static_cast</code><span style="background-color: white; color: #333333; font-family: Georgia, serif; font-size: 13px;">.</span>

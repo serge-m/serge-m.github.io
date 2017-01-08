@@ -4,7 +4,7 @@ Date: 2014-06-06 22:12:00
 Slug: displaying-multiple-grayscale-figures
 Tags: python,ipython
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
+<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>

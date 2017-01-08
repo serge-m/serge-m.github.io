@@ -4,7 +4,7 @@ Date: 2014-06-05 23:30:00
 Slug: theano
 Tags: useful
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
+<h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
 
 <h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2><div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div><div style="text-align: left;">
 </div><div style="text-align: left;"><span class="st">Test script: </span></div><blockquote class="tr_bq">

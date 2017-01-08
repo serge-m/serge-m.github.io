@@ -4,7 +4,7 @@ Date: 2013-11-05 20:44:00
 Slug: opencv-tutorials-in-russian
 Tags: opencv,tuturials
 
-<div dir="ltr" style="text-align: left;" trbidi="on">
+
 1. Делаем детектор движения, или OpenCV — это просто
 [http://habrahabr.ru/company/avi/blog/200804/](http://habrahabr.ru/company/avi/blog/200804/)
 2.&nbsp;OpenCV шаг за шагом

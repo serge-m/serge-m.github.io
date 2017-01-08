@@ -4,7 +4,7 @@ Date: 2013-11-29 16:23:00
 Slug: binarization-in-adobe-after-effects
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
+I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
 ![](http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png)
 
 

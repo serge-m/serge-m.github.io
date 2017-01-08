@@ -4,7 +4,7 @@ Date: 2014-02-27 19:13:00
 Slug: in-russian
 Tags: russian
 
-<div dir="ltr" style="text-align: left;" trbidi="on">подходят к концу
+подходят к концу
 
 
 

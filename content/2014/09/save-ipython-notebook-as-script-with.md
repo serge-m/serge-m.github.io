@@ -4,7 +4,7 @@ Date: 2014-09-21 14:59:00
 Slug: save-ipython-notebook-as-script-with
 Tags: useful,ipython
 
-<div dir="ltr" style="text-align: left;" trbidi="on"># creating a variable theNotebook with the name of notebook
+# creating a variable theNotebook with the name of notebook
 # source: http://stackoverflow.com/a/23619544 
 # In[1]: 
 

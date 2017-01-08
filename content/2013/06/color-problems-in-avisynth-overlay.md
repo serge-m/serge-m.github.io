@@ -4,7 +4,7 @@ Date: 2013-06-21 11:22:00
 Slug: color-problems-in-avisynth-overlay
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
+I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
 
 I have a depth map (from&nbsp;[http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html](http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html))
 ![](http://3.bp.blogspot.com/-n-jVnbn0wO4/UcP9sySRrvI/AAAAAAAAAZA/RgR0BQEkjgY/s320/depth.jpg)<div class="separator" style="clear: both; text-align: center;">

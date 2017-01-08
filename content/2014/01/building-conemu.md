@@ -4,7 +4,7 @@ Date: 2014-01-16 20:56:00
 Slug: building-conemu
 Tags: c++,tools,software,dll,visual studio
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: left;">Problems with ConEmu building from&nbsp;</div><div style="text-align: left;">https://github.com/Maximus5/ConEmu.git v14.01.06</div><div style="text-align: left;">in Visual Studio 2010</div><h4 style="text-align: left;">ConEmuC</h4>unresolved external symbol `__imp__`wsprintfA<span class="Apple-tab-span" style="white-space: pre;"> </span>- add additional dependency&nbsp;**User32.lib**
+<div style="text-align: left;">Problems with ConEmu building from&nbsp;</div><div style="text-align: left;">https://github.com/Maximus5/ConEmu.git v14.01.06</div><div style="text-align: left;">in Visual Studio 2010</div><h4 style="text-align: left;">ConEmuC</h4>unresolved external symbol `__imp__`wsprintfA<span class="Apple-tab-span" style="white-space: pre;"> </span>- add additional dependency&nbsp;**User32.lib**
 <b>
 </b>
 <h4 style="text-align: left;">**ConEmuCD**</h4>Error<span class="Apple-tab-span" style="white-space: pre;"> </span>3<span class="Apple-tab-span" style="white-space: pre;"> </span>error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8<span class="Apple-tab-span" style="white-space: pre;"> </span>

@@ -4,7 +4,7 @@ Date: 2013-12-10 12:03:00
 Slug: import-sihlouette-roto-masks-into
 Tags: nuke,python,roto
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.
+Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.
 
 In SihlouetteFX select several nodes.
 Go _File->Export->nuke 6.2+ Shapes_ &nbsp;and save Nuke project

@@ -4,7 +4,7 @@ Date: 2014-02-17 12:21:00
 Slug: programming-interviews-resources
 Tags: interview,links
 
-<div dir="ltr" style="text-align: left;" trbidi="on">screencasts with solutions of typical interview tasks
+screencasts with solutions of typical interview tasks
 [https://www.youtube.com/user/ProgrammingInterview/](https://www.youtube.com/user/ProgrammingInterview/)
 
 [Gayle Laakmann McDowell](http://www.amazon.com/Gayle-Laakmann-McDowell/e/B004BI1ZUQ/ref=ntt_athr_dp_pel_1).&nbsp;Cracking the Coding Interview: 150 Programming Questions and Solutions

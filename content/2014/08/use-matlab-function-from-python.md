@@ -4,7 +4,7 @@ Date: 2014-08-31 11:56:00
 Slug: use-matlab-function-from-python
 Tags: python,matlab
 
-<div dir="ltr" style="text-align: left;" trbidi="on">There are several solutions:
+There are several solutions:
 Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python](http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python)
 <h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
   [http://pymat.sourceforge.net](http://pymat.sourceforge.net/" rel="nofollow)

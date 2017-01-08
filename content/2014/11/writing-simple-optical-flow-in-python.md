@@ -4,7 +4,7 @@ Date: 2014-11-30 14:46:00
 Slug: writing-simple-optical-flow-in-python
 Tags: python,optical flow
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><div dir="ltr" style="text-align: left;" trbidi="on">First of all we need a couple of test images:
+First of all we need a couple of test images:
 <pre class="brush: python">#
 import numpy
 from StringIO import StringIO

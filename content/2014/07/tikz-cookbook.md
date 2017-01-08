@@ -4,7 +4,7 @@ Date: 2014-07-16 23:44:00
 Slug: tikz-cookbook
 Tags: useful,latex,tikz
 
-<div dir="ltr" style="text-align: left;" trbidi="on">
+
 [Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)
 http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz
 

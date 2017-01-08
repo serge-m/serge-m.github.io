@@ -4,7 +4,7 @@ Date: 2013-08-05 16:59:00
 Slug: opencv-and-opencv-error-bad-flag
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">
+
 &nbsp; &nbsp;
 I had pretty simple code with opencv:
 

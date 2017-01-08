@@ -4,7 +4,7 @@ Date: 2014-06-02 23:18:00
 Slug: linux-life
 Tags: linux
 
-<div dir="ltr" style="text-align: left;" trbidi="on">**top** - see running processes
+**top** - see running processes
 **df** - check free disk space
 **baobab** - free disk space 
 **screen&nbsp;** - multiple virtual consoles in one real [[ref](http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html)], need installation in ubuntu

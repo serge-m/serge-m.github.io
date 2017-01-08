@@ -4,7 +4,7 @@ Date: 2014-02-09 14:53:00
 Slug: learning-sqlite
 Tags: sql
 
-<div dir="ltr" style="text-align: left;" trbidi="on"># create table named t3 (id, value). id is integer. value is text
+# create table named t3 (id, value). id is integer. value is text
 **sqlite> create table if not exists t3( id int , value varchar, primary key(id));**
 
 # adding two "rows"

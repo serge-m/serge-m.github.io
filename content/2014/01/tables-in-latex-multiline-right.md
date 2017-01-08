@@ -4,7 +4,7 @@ Date: 2014-01-23 19:56:00
 Slug: tables-in-latex-multiline-right
 Tags: latex
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I used _tabularx _package.
+I used _tabularx _package.
 Additional definitions:  
 
     ::::

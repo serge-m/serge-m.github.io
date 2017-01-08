@@ -4,7 +4,7 @@ Date: 2013-10-24 12:03:00
 Slug: how-to-open-composition-in-viewer-in
 Tags: after effects (aae),scripting
 
-<div dir="ltr" style="text-align: left;" trbidi="on">// Make a composition
+// Make a composition
 var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );
 
 // Open it in viewer

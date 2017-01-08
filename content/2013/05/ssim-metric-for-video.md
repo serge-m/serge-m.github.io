@@ -4,7 +4,7 @@ Date: 2013-05-28 16:04:00
 Slug: ssim-metric-for-video
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">See good explanation is in
+See good explanation is in
 
 Title: **Handbook of image and video processing&nbsp;**<div>Author(s): Bovik A. (ed.)
 Series: Periodical: 

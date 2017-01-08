@@ -4,7 +4,7 @@ Date: 2014-01-25 21:47:00
 Slug: vapoursynth-pythonic-alternative-to
 Tags: vapoursynth,avisynth
 
-<div dir="ltr" style="text-align: left;" trbidi="on">What do I know about VapourSynth
+What do I know about VapourSynth
 
 [http://www.vapoursynth.com/](http://www.vapoursynth.com/)&nbsp;- website
 <h2 style="text-align: left;">How to save data from VapourSynth</h2><div>You need to use vspipe.exe from Vapour distributive</div><div>It seems it returns raw data to stdout</div><div>

@@ -4,7 +4,7 @@ Date: 2013-05-16 13:31:00
 Slug: tips-for-debugging-of-video-processing
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Assume we have Visual Stusio solution for console that makes some video processing.
+Assume we have Visual Stusio solution for console that makes some video processing.
 The console takes two input videos and generates the third video:
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
 1) dataset1 conststs of videos set1_video1.avi and set1_video2.avi

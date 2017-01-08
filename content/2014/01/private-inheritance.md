@@ -4,7 +4,7 @@ Date: 2014-01-06 12:49:00
 Slug: private-inheritance
 Tags: c++
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Example from Meyers "Effective C++"
+Example from Meyers "Effective C++"
 
     ::::
     class Timer {

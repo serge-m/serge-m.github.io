@@ -4,7 +4,7 @@ Date: 2013-10-22 23:49:00
 Slug: convert-all-avi-files-in-current
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Using python and ffmpeg:
+Using python and ffmpeg:
 
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;">#!/usr/bin/python</span>
 <span style="font-family: Courier New, Courier, monospace; font-size: x-small;"># -*- coding: cp1251 -*-</span>

@@ -4,7 +4,7 @@ Date: 2014-01-08 18:14:00
 Slug: migrating-from-svn-to-git
 Tags: useful,mercurial,git,svn
 
-<div dir="ltr" style="text-align: left;" trbidi="on">There is a lot of answers here:
+There is a lot of answers here:
 http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository
 
 I found rather useful [this one](http://stackoverflow.com/a/9316931" target="_blank).

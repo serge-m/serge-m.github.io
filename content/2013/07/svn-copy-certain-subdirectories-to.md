@@ -4,7 +4,7 @@ Date: 2013-07-03 17:07:00
 Slug: svn-copy-certain-subdirectories-to
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
+<span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
 <span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
 <pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
       - project1

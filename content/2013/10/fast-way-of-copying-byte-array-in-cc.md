@@ -4,7 +4,7 @@ Date: 2013-10-15 15:22:00
 Slug: fast-way-of-copying-byte-array-in-cc
 Tags: c++,algorithm performance,video processing
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I have the following code for copying several buffers from one object to another:
+I have the following code for copying several buffers from one object to another:
 
     ::::
     // Copy several buffers (images)

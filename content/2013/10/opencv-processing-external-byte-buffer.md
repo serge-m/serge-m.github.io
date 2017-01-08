@@ -4,7 +4,7 @@ Date: 2013-10-21 13:40:00
 Slug: opencv-processing-external-byte-buffer
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">
+
 
 We have such an example from openCV documentation:
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>

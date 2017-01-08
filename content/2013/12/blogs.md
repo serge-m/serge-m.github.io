@@ -4,7 +4,7 @@ Date: 2013-12-15 22:54:00
 Slug: blogs
 Tags: memory
 
-<div dir="ltr" style="text-align: left;" trbidi="on">How to write c++ programm for android (in Russian)
+How to write c++ programm for android (in Russian)
 [http://www.codeatcpp.com/2011/10/c-android-1.html](http://www.codeatcpp.com/2011/10/c-android-1.html)
 
 

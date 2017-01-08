@@ -4,7 +4,7 @@ Date: 2014-01-14 12:36:00
 Slug: temporary-files-format-that-can-be
 Tags: c++,2010,git,visual studio
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Add to .gitignore:
+Add to .gitignore:
 
 
 <ul style="text-align: left;"><li>*.ipch&nbsp;</li><li>Debug</li><li>Release</li><li>*.sdf -&nbsp;<span style="background-color: white; color: #333333; font-family: 'Segoe UI', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;">The SDF file is your code&nbsp;browsing database which uses SQL Sever Compact Edition. You don't need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.&nbsp;</span></li></ul><div><span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"><span style="font-size: 14px; line-height: 20px;">

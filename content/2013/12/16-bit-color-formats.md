@@ -4,7 +4,7 @@ Date: 2013-12-11 12:11:00
 Slug: 16-bit-color-formats
 Tags: 
 
-<div dir="ltr" style="text-align: left;" trbidi="on">[http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078)
+[http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078)
 
 In adobe after effects:
 

@@ -4,7 +4,7 @@ Date: 2014-08-31 12:10:00
 Slug: ipython-save-notebook-as-script
 Tags: ipython
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
+Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
 
 <blockquote class="tr_bq"># [1]
 %%javascript

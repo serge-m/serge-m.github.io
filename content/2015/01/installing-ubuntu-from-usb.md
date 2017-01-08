@@ -4,7 +4,7 @@ Date: 2015-01-11 16:59:00
 Slug: installing-ubuntu-from-usb
 Tags: useful,linux
 
-<div dir="ltr" style="text-align: left;" trbidi="on">I use&nbsp; Windows OS and I want to install Ubuntu on another PC. 
+I use&nbsp; Windows OS and I want to install Ubuntu on another PC.
 1. Download software for bootable usb creation
 [http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
 2. Download ubuntu image from 

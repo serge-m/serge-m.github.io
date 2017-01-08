@@ -4,7 +4,7 @@ Date: 2016-01-08 08:30:00
 Slug: til-about-pypy
 Tags: python,pypy
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Building from source root using command
+Building from source root using command
 <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>
 produces structure with obsolete pypy-c and libpypy-c.so in 
 <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">/tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/</span>

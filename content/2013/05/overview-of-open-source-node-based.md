@@ -4,7 +4,7 @@ Date: 2013-05-12 11:51:00
 Slug: overview-of-open-source-node-based
 Tags: video editing,node based,software
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><h2>Synapse Compositor </h2>Seems unsupported for a long time 
+<h2>Synapse Compositor </h2>Seems unsupported for a long time
 Very raw
 
 

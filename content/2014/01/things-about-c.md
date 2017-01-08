@@ -4,7 +4,7 @@ Date: 2014-01-06 13:28:00
 Slug: things-about-c
 Tags: c++
 
-<div dir="ltr" style="text-align: left;" trbidi="on"><ol style="text-align: left;"><li>rules for resolving calls to overloaded functions:&nbsp;</li>- <li>identify the function that's the best match for the call (name, parameters etc)</li><li>checks accessibility for the best-match function.</li>
+<ol style="text-align: left;"><li>rules for resolving calls to overloaded functions:&nbsp;</li>- <li>identify the function that's the best match for the call (name, parameters etc)</li><li>checks accessibility for the best-match function.</li>
 </ol><div>
 </div><div><h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;">Resolving function overloads (my)</h2></div><div>
 </div>![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png)<div>

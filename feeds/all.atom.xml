@@ -2392,16 +2392,11 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
 [ &lt;a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf&amp;quot; target=&amp;quot;_blank"&gt;pdf&lt;/a&gt;] [&lt;a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip&amp;quot; target=&amp;quot;_blank"&gt;Source code&lt;/a&gt;]&lt;/p&gt;
 &lt;p&gt;Look inside the sources:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;@alt_ba_optical_flow\
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    @alt_ba_optical_flow\
 
-::::
-@ba_optical_flow\
-
-::::
-    ...
-
-::::
-    compute_flow_base.m
+    @ba_optical_flow\
+        ...
+        compute_flow_base.m
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2419,24 +2414,12 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 
 &lt;p&gt;Calls &lt;code&gt;compute_flow_base.m&lt;/code&gt;  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ...
-
-::::
-@classic_nl_optical_flow\
-
-::::
-@hs_optical_flow\
-
-::::
-data\
-
-::::
-utils\
-
-::::
-    ...
-
-::::
-    pre_process_data.m
+    @classic_nl_optical_flow\
+    @hs_optical_flow\
+    data\
+    utils\
+        ... 
+        pre_process_data.m 
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2451,16 +2434,11 @@ there is also following code:  &lt;/p&gt;
 
 
 &lt;p&gt;In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ...
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ... 
 
-::::
-estimate_flow_demo.m
-
-::::
-estimate_flow_interface.m
-
-::::
-load_of_method.m
+    estimate_flow_demo.m
+    estimate_flow_interface.m 
+    load_of_method.m
 &lt;/pre&gt;&lt;/div&gt;
 
 

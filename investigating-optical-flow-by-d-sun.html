@@ -104,16 +104,11 @@ sergem personal public notebook            </a>
 Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
 [ <a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf&quot; target=&quot;_blank">pdf</a>] [<a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip&quot; target=&quot;_blank">Source code</a>]</p>
 <p>Look inside the sources:</p>
-<div class="highlight"><pre><span></span>@alt_ba_optical_flow\
+<div class="highlight"><pre><span></span>    @alt_ba_optical_flow\
 
-::::
-@ba_optical_flow\
-
-::::
-    ...
-
-::::
-    compute_flow_base.m
+    @ba_optical_flow\
+        ...
+        compute_flow_base.m
 </pre></div>
 
 
@@ -131,24 +126,12 @@ Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Anal
 
 <p>Calls <code>compute_flow_base.m</code>  </p>
 <div class="highlight"><pre><span></span>    ...
-
-::::
-@classic_nl_optical_flow\
-
-::::
-@hs_optical_flow\
-
-::::
-data\
-
-::::
-utils\
-
-::::
-    ...
-
-::::
-    pre_process_data.m
+    @classic_nl_optical_flow\
+    @hs_optical_flow\
+    data\
+    utils\
+        ... 
+        pre_process_data.m 
 </pre></div>
 
 
@@ -163,16 +146,11 @@ there is also following code:  </p>
 
 
 <p>In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. </p>
-<div class="highlight"><pre><span></span>    ...
+<div class="highlight"><pre><span></span>    ... 
 
-::::
-estimate_flow_demo.m
-
-::::
-estimate_flow_interface.m
-
-::::
-load_of_method.m
+    estimate_flow_demo.m
+    estimate_flow_interface.m 
+    load_of_method.m
 </pre></div>
 
 

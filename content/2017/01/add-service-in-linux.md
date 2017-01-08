@@ -33,5 +33,5 @@ Here we first stop and delete the docker container. If it doesn't exist we conti
 
 Run
 ```
-service your-service start
+systemctl enable your-service
 ```

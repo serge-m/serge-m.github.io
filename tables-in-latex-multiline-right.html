@@ -104,29 +104,26 @@ sergem personal public notebook            </a>
                 </div>
                 <p>I used _tabularx _package.
 Additional definitions:  </p>
-<div class="highlight"><pre><span></span>\usepackage{array}
-\newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment
-\newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
+<div class="highlight"><pre><span></span>    \usepackage{array}
+    \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment
+    \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
 </pre></div>
 
 
-<div>
-Table:</div>
-
-<div class="highlight"><pre><span></span>\begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
- Text, aligned to the left, without margin \newline
- Tex in the same cell on the next line   
- &amp;amp;                                          % next column delimiter
- Text aligned to the right \newline second line
-\end{tabularx}
+<p>Table:</p>
+<div class="highlight"><pre><span></span>    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
+     Text, aligned to the left, without margin \newline
+     Tex in the same cell on the next line   
+     &amp;amp;                                          % next column delimiter
+     Text aligned to the right \newline second line
+    \end{tabularx}
 </pre></div>
 
 
 <p>Here we have one columt with 80% width and one column with right alignment
-<em>@{}</em> is required to suppress left margin in the first column.</p>
+<code>@{}</code> is required to suppress left margin in the first column.</p>
 <p>Results: </p>
-<p><img alt="" src="http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png">
-</div></p>
+<p><img alt="" src="http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png"></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

@@ -3098,10 +3098,10 @@ http://artec-group.com/ - все проекты
 &lt;a href="http://habrahabr.ru/post/213211/"&gt;http://habrahabr.ru/post/213211/&lt;/a&gt;&amp;nbsp;(rus)&lt;/div&gt;&lt;/p&gt;</content><category term="tools"></category></entry><entry><title>C++11 stuff</title><link href="https://serge-m.github.io/c11-stuff.html" rel="alternate"></link><published>2014-02-17T14:05:00+01:00</published><updated>2014-02-17T14:05:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-02-17:/c11-stuff.html</id><summary type="html">&lt;p&gt;random numbers
 &lt;a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf"&gt;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Sutter. C++11 features
-&lt;a href="http://herbsutter.com/elements-of-modern-c-style/"&gt;http://herbsutter.com/elements-of-modern-c-style/&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;random numbers
+&lt;a href="http://herbsutter.com/elements-of-modern-c-style/"&gt;http://herbsutter.com/elements-of-modern-c-style/&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;random numbers
 &lt;a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf"&gt;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Sutter. C++11 features
-&lt;a href="http://herbsutter.com/elements-of-modern-c-style/"&gt;http://herbsutter.com/elements-of-modern-c-style/&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="c++"></category><category term="cplusplus11"></category></entry><entry><title>Programming interviews resources</title><link href="https://serge-m.github.io/programming-interviews-resources.html" rel="alternate"></link><published>2014-02-17T12:21:00+01:00</published><updated>2014-02-17T12:21:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-02-17:/programming-interviews-resources.html</id><summary type="html">&lt;p&gt;screencasts with solutions of typical interview tasks
+&lt;a href="http://herbsutter.com/elements-of-modern-c-style/"&gt;http://herbsutter.com/elements-of-modern-c-style/&lt;/a&gt;&lt;/p&gt;</content><category term="c++"></category><category term="cplusplus11"></category></entry><entry><title>Programming interviews resources</title><link href="https://serge-m.github.io/programming-interviews-resources.html" rel="alternate"></link><published>2014-02-17T12:21:00+01:00</published><updated>2014-02-17T12:21:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-02-17:/programming-interviews-resources.html</id><summary type="html">&lt;p&gt;screencasts with solutions of typical interview tasks
 &lt;a href="https://www.youtube.com/user/ProgrammingInterview/"&gt;https://www.youtube.com/user/ProgrammingInterview/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.amazon.com/Gayle-Laakmann-McDowell/e/B004BI1ZUQ/ref=ntt_athr_dp_pel_1"&gt;Gayle Laakmann McDowell&lt;/a&gt;.&amp;nbsp;Cracking the Coding Interview: 150 Programming Questions and Solutions
 &lt;a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X"&gt;http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&lt;/a&gt;&lt;/p&gt;
@@ -3187,42 +3187,37 @@ For RGB24 avi file it outputs image flipped vertically:
 It seems VapourSynth developer is little bit crazy: he wants everysthing be in C instead of C++ (http://www.vapoursynth.com/2012/11/vapoursynth-tasks/)&lt;/p&gt;
 &lt;p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="vapoursynth"></category><category term="avisynth"></category></entry><entry><title>Tables in Latex. Multiline, right alignment</title><link href="https://serge-m.github.io/tables-in-latex-multiline-right.html" rel="alternate"></link><published>2014-01-23T19:56:00+01:00</published><updated>2014-01-23T19:56:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-23:/tables-in-latex-multiline-right.html</id><summary type="html">&lt;p&gt;I used _tabularx _package.
 Additional definitions:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\usepackage{array}
-\newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment
-\newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    \usepackage{array}
+    \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment
+    \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div&gt;
-Table:&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
- Text, aligned to the left, without margin \newline
- Tex in the same cell on the next line …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I used _tabularx _package.
+&lt;p&gt;Table:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
+     Text, aligned to the left, without margin \newline
+     Tex in the same cell on the next line …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I used _tabularx _package.
 Additional definitions:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\usepackage{array}
-\newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment
-\newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    \usepackage{array}
+    \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment
+    \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div&gt;
-Table:&lt;/div&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
- Text, aligned to the left, without margin \newline
- Tex in the same cell on the next line   
- &amp;amp;amp;                                          % next column delimiter
- Text aligned to the right \newline second line
-\end{tabularx}
+&lt;p&gt;Table:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
+     Text, aligned to the left, without margin \newline
+     Tex in the same cell on the next line   
+     &amp;amp;amp;                                          % next column delimiter
+     Text aligned to the right \newline second line
+    \end{tabularx}
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Here we have one columt with 80% width and one column with right alignment
-&lt;em&gt;@{}&lt;/em&gt; is required to suppress left margin in the first column.&lt;/p&gt;
+&lt;code&gt;@{}&lt;/code&gt; is required to suppress left margin in the first column.&lt;/p&gt;
 &lt;p&gt;Results: &lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png"&gt;
-&lt;/div&gt;&lt;/p&gt;</content><category term="latex"></category></entry><entry><title>How?</title><link href="https://serge-m.github.io/how.html" rel="alternate"></link><published>2014-01-17T20:59:00+01:00</published><updated>2014-01-17T20:59:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-17:/how.html</id><summary type="html">&lt;p&gt;How does start menu in Win7 select the most useless new application i've installed?&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;How does start menu in Win7 select the most useless new application i've installed?&lt;/div&gt;&lt;/p&gt;</content></entry><entry><title>Building ConEmu</title><link href="https://serge-m.github.io/building-conemu.html" rel="alternate"></link><published>2014-01-16T20:56:00+01:00</published><updated>2014-01-16T20:56:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-16:/building-conemu.html</id><summary type="html">&lt;div style="text-align: left;"&gt;Problems with ConEmu building from&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-FnKmZNbaKzc/UuE7hyGuRsI/AAAAAAAAAbY/emmCbjp1Qqg/s1600/latex_table__tabularx_right_alignment_multiline.png"&gt;&lt;/p&gt;</content><category term="latex"></category></entry><entry><title>How?</title><link href="https://serge-m.github.io/how.html" rel="alternate"></link><published>2014-01-17T20:59:00+01:00</published><updated>2014-01-17T20:59:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-17:/how.html</id><summary type="html">&lt;p&gt;How does start menu in Win7 select the most useless new application i've installed?&lt;/p&gt;</summary><content type="html">&lt;p&gt;How does start menu in Win7 select the most useless new application i've installed?&lt;/p&gt;</content></entry><entry><title>Building ConEmu</title><link href="https://serge-m.github.io/building-conemu.html" rel="alternate"></link><published>2014-01-16T20:56:00+01:00</published><updated>2014-01-16T20:56:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-16:/building-conemu.html</id><summary type="html">&lt;div style="text-align: left;"&gt;Problems with ConEmu building from&amp;nbsp;&lt;/div&gt;
 
 &lt;div style="text-align: left;"&gt;https://github.com/Maximus5/ConEmu.git v14.01.06&lt;/div&gt;
 
@@ -3271,8 +3266,7 @@ Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;
 &lt;/div&gt;&lt;div&gt;Add&amp;nbsp;advapi32.lib to fix all&lt;/div&gt;&lt;div&gt;&lt;/p&gt;
 &lt;h4 style="text-align: left;"&gt;Bonus:&lt;/h4&gt;
 
-&lt;p&gt;&lt;/div&gt;&lt;div&gt;links to Russian habrahabr:&lt;/div&gt;&lt;div&gt;http://habrahabr.ru/company/epam_systems/blog/204368/&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;/p&gt;</content><category term="c++"></category><category term="tools"></category><category term="software"></category><category term="dll"></category><category term="visual studio"></category></entry><entry><title>Free software for screen video capture</title><link href="https://serge-m.github.io/free-software-for-screen-video-capture.html" rel="alternate"></link><published>2014-01-15T19:11:00+01:00</published><updated>2014-01-15T19:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-15:/free-software-for-screen-video-capture.html</id><summary type="html">&lt;h2&gt;CamStudio 2.7&lt;/h2&gt;
+&lt;p&gt;&lt;/div&gt;&lt;div&gt;links to Russian habrahabr:&lt;/div&gt;&lt;div&gt;http://habrahabr.ru/company/epam_systems/blog/204368/&lt;/div&gt;&lt;div&gt;&lt;/p&gt;</content><category term="c++"></category><category term="tools"></category><category term="software"></category><category term="dll"></category><category term="visual studio"></category></entry><entry><title>Free software for screen video capture</title><link href="https://serge-m.github.io/free-software-for-screen-video-capture.html" rel="alternate"></link><published>2014-01-15T19:11:00+01:00</published><updated>2014-01-15T19:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-15:/free-software-for-screen-video-capture.html</id><summary type="html">&lt;h2&gt;CamStudio 2.7&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://camstudio.org/"&gt;http://camstudio.org/&lt;/a&gt; works fine&lt;/p&gt;
 &lt;h2&gt;Rylstim-Screen-Recorder&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://www.sketchman-studio.com/rylstim-screen-recorder/"&gt;http://www.sketchman-studio.com/rylstim-screen-recorder/&lt;/a&gt;&lt;/p&gt;
@@ -3298,8 +3292,7 @@ Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;
 &lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
 
-&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;[[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease" target="_blank)][[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral" target="_blank)]&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-
+&lt;div&gt;&lt;span style="color: #333333; font-family: Segoe UI, Lucida Grande, Verdana, Arial, Helvetica, sans-serif;"&gt;&lt;span style="font-size: 14px; line-height: 20px;"&gt;[[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease" target="_blank)][[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral" target="_blank)]&lt;/span&gt;&lt;/span&gt;
 &lt;/div&gt;</content><category term="c++"></category><category term="2010"></category><category term="git"></category><category term="visual studio"></category></entry><entry><title>Migrating from SVN to Git and Mercurial</title><link href="https://serge-m.github.io/migrating-from-svn-to-git.html" rel="alternate"></link><published>2014-01-08T18:14:00+01:00</published><updated>2014-01-08T18:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-08:/migrating-from-svn-to-git.html</id><summary type="html">&lt;p&gt;There is a lot of answers here:
 http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository&lt;/p&gt;
 &lt;p&gt;I found rather useful &lt;a href="http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank"&gt;this one&lt;/a&gt;.
@@ -3485,57 +3478,57 @@ void f (int x, int y);                 // (f2)
 f(3, 4.5); // matches f1 exactly, whereas f2 requires a double-to-int standard conversion
 &lt;/pre&gt;&lt;h3 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13pt;"&gt;Choosing a winner&lt;/h3&gt;&lt;div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"&gt;A candidate function is only as strong as its weakest match; a candidate requiring three promotions, for example, beats a candidate with two exact matches and a standard conversion. Candidates whose weakest matches are equivalently weak are compared on their next-weakest, and so on - a candidate with a standard conversion, a promotion and an exact match beats a candidate with a standard conversion and two promotions.&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;
 &lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="c++"></category></entry><entry><title>Private inheritance</title><link href="https://serge-m.github.io/private-inheritance.html" rel="alternate"></link><published>2014-01-06T12:49:00+01:00</published><updated>2014-01-06T12:49:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-06:/private-inheritance.html</id><summary type="html">&lt;p&gt;Example from Meyers "Effective C++"&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
-&lt;span class="n"&gt;public:&lt;/span&gt;
-&lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;(&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;);
-&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;,&lt;span class="sr"&gt; &lt;/span&gt;
-&lt;span class="sr"&gt;//&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
-...
-};
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
+    &lt;span class="n"&gt;public:&lt;/span&gt;
+    &lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;(&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;);
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;,&lt;span class="sr"&gt; &lt;/span&gt;
+&lt;span class="sr"&gt;    //&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
+    ...
+    };
 
 
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget:&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; { // &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
-&lt;span class="n"&gt;private:&lt;/span&gt;
-&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
-... 
-};
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget:&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; { // &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
+    &lt;span class="n"&gt;private:&lt;/span&gt;
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
+    ... 
+    };
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now clients of Widget get interface …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Example from Meyers "Effective C++"&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
-&lt;span class="n"&gt;public:&lt;/span&gt;
-&lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;(&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;);
-&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;,&lt;span class="sr"&gt; &lt;/span&gt;
-&lt;span class="sr"&gt;//&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
-...
-};
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
+    &lt;span class="n"&gt;public:&lt;/span&gt;
+    &lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;(&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;);
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;,&lt;span class="sr"&gt; &lt;/span&gt;
+&lt;span class="sr"&gt;    //&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
+    ...
+    };
 
 
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget:&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; { // &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
-&lt;span class="n"&gt;private:&lt;/span&gt;
-&lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
-... 
-};
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget:&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; { // &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
+    &lt;span class="n"&gt;private:&lt;/span&gt;
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
+    ... 
+    };
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now clients of Widget get interface untouched and required job is done&lt;/p&gt;
 &lt;p&gt;Example of protecting method from redefinition in derived classes:  &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget&lt;/span&gt; {
-&lt;span class="n"&gt;private:&lt;/span&gt;
-    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;WidgetTimer:&lt;/span&gt; &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
-    &lt;span class="n"&gt;public:&lt;/span&gt;
-        &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget&lt;/span&gt; {
+    &lt;span class="n"&gt;private:&lt;/span&gt;
+        &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;WidgetTimer:&lt;/span&gt; &lt;span class="n"&gt;public&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
+        &lt;span class="n"&gt;public:&lt;/span&gt;
+            &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="nb"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;;
+            ...
+        };
+        &lt;span class="n"&gt;WidgetTimer&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;;
         ...
     };
-    &lt;span class="n"&gt;WidgetTimer&lt;/span&gt; &lt;span class="n"&gt;timer&lt;/span&gt;;
-    ...
-};
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Classes derived from Widget unable to redefine onClick. Analogue of &lt;strong&gt;final&lt;/strong&gt; in Java and &lt;strong&gt;sealed&lt;/strong&gt; in C#&lt;/div&gt;&lt;/p&gt;</content><category term="c++"></category></entry><entry><title>Blogs</title><link href="https://serge-m.github.io/blogs.html" rel="alternate"></link><published>2013-12-15T22:54:00+01:00</published><updated>2013-12-15T22:54:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-12-15:/blogs.html</id><summary type="html">&lt;p&gt;How to write c++ programm for android (in Russian)
+&lt;p&gt;Classes derived from Widget unable to redefine onClick. Analogue of &lt;strong&gt;final&lt;/strong&gt; in Java and &lt;strong&gt;sealed&lt;/strong&gt; in C#&lt;/p&gt;</content><category term="c++"></category></entry><entry><title>Blogs</title><link href="https://serge-m.github.io/blogs.html" rel="alternate"></link><published>2013-12-15T22:54:00+01:00</published><updated>2013-12-15T22:54:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-12-15:/blogs.html</id><summary type="html">&lt;p&gt;How to write c++ programm for android (in Russian)
 &lt;a href="http://www.codeatcpp.com/2011/10/c-android-1.html"&gt;http://www.codeatcpp.com/2011/10/c-android-1.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://sivers.org/blog"&gt;http://sivers.org/blog&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;How to make a movement
@@ -3552,8 +3545,8 @@ Source:&amp;nbsp;&lt;a href="http://habrahabr.ru/post/206258/"&gt;http://habraha
 &lt;h5 style="background-color: white; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 14px; font-weight: normal; line-height: 20px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;2. Базар идей&lt;/h5&gt;&lt;span style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;"&gt;В какой-то момент в нашей организации вошла в моду фраза «продать идею». Особенно активно я начал натыкаться на эти торги идеями с поднятием по карьерной лестнице, и имея частые совещания с теми, с которыми нас не связывали отношения подчинения. Фраза «продать идею» базируется на маркетинговом термине «sell idea», только понимание оного в проекции на организационную структуру было извращено. Если в оригинальном смысле продающий идею получает выгоду от тех, кто эту идею купил (инвесторы или заказчики), то в организационной структуре, продав идею, максимум можно было получить согласие купившего не мешать тебе ее реализовывать. А так как по такому выгодному курсу купить идею могут позволить себе даже неимущие, в итоге можно было потратить уйму времени, «продавая идею» тем, кто случайно оказался на совещании. Страдая на таких торгах, я часто задавался вопросом «зачем все эти люди?». Так у меня сложилось ощущение, что в одиночку сделать эту работу можно в разы быстрее, чем базаря на ярмарке идей.&lt;/span&gt;
 &lt;br style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" /&gt;&lt;img src="http://habr.habrastorage.org/post_images/1a2/85b/39a/1a285b39a1252a108e1ee75d64b6d874.jpg" style="background-color: white; border: 0px; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px; margin: 0px; max-width: 100%; outline: 0px; padding: 0px; vertical-align: middle;" /&gt;
 &lt;br style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;" /&gt;&lt;span style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;"&gt;А ведь правда, если можешь все сделать сам, зачем кого-то убеждать в том, что это надо делать?&lt;/span&gt;&lt;/p&gt;</content><category term="memory"></category></entry><entry><title>Dear programmers, developers, architects and others!</title><link href="https://serge-m.github.io/dear-programmers-developers-architects.html" rel="alternate"></link><published>2013-12-13T15:42:00+01:00</published><updated>2013-12-13T15:42:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-12-13:/dear-programmers-developers-architects.html</id><summary type="html">&lt;p&gt;In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;quot;nofollow&amp;quot; target=&amp;quot;_blank"&gt;image source&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;quot;nofollow&amp;quot; target=&amp;quot;_blank"&gt;image source&lt;/a&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="sarcasm"></category></entry><entry><title>16 bit color formats</title><link href="https://serge-m.github.io/16-bit-color-formats.html" rel="alternate"></link><published>2013-12-11T12:11:00+01:00</published><updated>2013-12-11T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-12-11:/16-bit-color-formats.html</id><summary type="html">&lt;p&gt;&lt;a href="http://forums.creativecow.net/thread/2/940078"&gt;http://forums.creativecow.net/thread/2/940078&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;quot;nofollow&amp;quot; target=&amp;quot;_blank"&gt;image source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;quot;nofollow&amp;quot; target=&amp;quot;_blank"&gt;image source&lt;/a&gt;&lt;/p&gt;</content><category term="sarcasm"></category></entry><entry><title>16 bit color formats</title><link href="https://serge-m.github.io/16-bit-color-formats.html" rel="alternate"></link><published>2013-12-11T12:11:00+01:00</published><updated>2013-12-11T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-12-11:/16-bit-color-formats.html</id><summary type="html">&lt;p&gt;&lt;a href="http://forums.creativecow.net/thread/2/940078"&gt;http://forums.creativecow.net/thread/2/940078&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In adobe after effects:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#define PF_MAX_CHAN8            255
 #define PF_HALF_CHAN8           128
@@ -4225,12 +4218,10 @@ Produce debugging information for use by GDB. This means to use the most express
 &lt;/span&gt;&lt;/p&gt;</content><category term="opencv"></category><category term="tuturials"></category></entry><entry><title>Free UML editor</title><link href="https://serge-m.github.io/free-uml-editor.html" rel="alternate"></link><published>2013-10-25T19:37:00+02:00</published><updated>2013-10-25T19:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-25:/free-uml-editor.html</id><summary type="html">&lt;p&gt;I found free UML editor:
 &lt;h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;"&gt;ArgoUML&amp;nbsp;&lt;a href="http://argouml.tigris.org/&amp;quot; style=&amp;quot;background-color: transparent;"&gt;http://argouml.tigris.org/&lt;/a&gt;&lt;/h1&gt;&lt;div&gt;It seems not bad&lt;/div&gt;&lt;div&gt;&lt;/p&gt;
 &lt;p&gt;I have tried gliffy.com. It is online and paid.
-www.lucidchart.com has free version but it seems not so convenient&lt;/p&gt;
-&lt;/div&gt;</summary><content type="html">&lt;p&gt;I found free UML editor:
+www.lucidchart.com has free version but it seems not so convenient&lt;/p&gt;</summary><content type="html">&lt;p&gt;I found free UML editor:
 &lt;h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;"&gt;ArgoUML&amp;nbsp;&lt;a href="http://argouml.tigris.org/&amp;quot; style=&amp;quot;background-color: transparent;"&gt;http://argouml.tigris.org/&lt;/a&gt;&lt;/h1&gt;&lt;div&gt;It seems not bad&lt;/div&gt;&lt;div&gt;&lt;/p&gt;
 &lt;p&gt;I have tried gliffy.com. It is online and paid.
-www.lucidchart.com has free version but it seems not so convenient&lt;/p&gt;
-&lt;/div&gt;</content><category term="software design"></category><category term="uml"></category></entry><entry><title>How to open composition in viewer in Adobe After Effects using scripts</title><link href="https://serge-m.github.io/how-to-open-composition-in-viewer-in.html" rel="alternate"></link><published>2013-10-24T12:03:00+02:00</published><updated>2013-10-24T12:03:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-24:/how-to-open-composition-in-viewer-in.html</id><summary type="html">&lt;p&gt;// Make a composition
+www.lucidchart.com has free version but it seems not so convenient&lt;/p&gt;</content><category term="software design"></category><category term="uml"></category></entry><entry><title>How to open composition in viewer in Adobe After Effects using scripts</title><link href="https://serge-m.github.io/how-to-open-composition-in-viewer-in.html" rel="alternate"></link><published>2013-10-24T12:03:00+02:00</published><updated>2013-10-24T12:03:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-24:/how-to-open-composition-in-viewer-in.html</id><summary type="html">&lt;p&gt;// Make a composition
 var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );&lt;/p&gt;
 &lt;p&gt;// Open it in viewer
 comp.openInViewer();&lt;/p&gt;
@@ -4361,8 +4352,7 @@ readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</content></entry><
 &lt;span style="font-family: Courier New, Courier, monospace;"&gt;BYTE * img = new BYTE[ w * h ];&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;Lets assume the image is scanned line by line. So
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;img[ 10 * w + 3 ] is a 3-rd pixel in 10-line of image.&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;Then I import it in openCV is such a way:
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;Mat img(h, w, CV_8UC1, dmDst, w);&lt;/span&gt;&lt;/blockquote&gt;
-last argument is a pitch or stride.&lt;/p&gt;
-&lt;/div&gt;</content></entry><entry><title>Fast way of copying byte array in C/C++ (With measurements)</title><link href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html" rel="alternate"></link><published>2013-10-15T15:22:00+02:00</published><updated>2013-10-15T15:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-15:/fast-way-of-copying-byte-array-in-cc.html</id><summary type="html">&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
+last argument is a pitch or stride.&lt;/p&gt;</content></entry><entry><title>Fast way of copying byte array in C/C++ (With measurements)</title><link href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html" rel="alternate"></link><published>2013-10-15T15:22:00+02:00</published><updated>2013-10-15T15:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-15:/fast-way-of-copying-byte-array-in-cc.html</id><summary type="html">&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Copy several buffers (images)
 for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
 {
@@ -4575,7 +4565,8 @@ I had pretty simple code with opencv:&lt;/p&gt;
 &lt;/b&gt;And one should use
 &lt;strong&gt;opencv_core231d.lib opencv_imgproc231d.lib opencv_highgui231d.lib&lt;/strong&gt;
 for debug.&lt;/p&gt;
-&lt;p&gt;It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems&lt;/p&gt;</content></entry><entry><title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title><link href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html" rel="alternate"></link><published>2013-07-09T23:23:00+02:00</published><updated>2013-07-09T23:23:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</id><summary type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
+&lt;p&gt;It seems wrong libraries cause crashes only sometimes. I had used release version of static opencv libraries for my debu and release configurations for a long time an only now it caused problems&lt;/p&gt;</content></entry><entry><title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title><link href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html" rel="alternate"></link><published>2013-07-09T23:23:00+02:00</published><updated>2013-07-09T23:23:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</id><summary type="html">&lt;p&gt;&lt;span&gt;
+How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.&lt;/p&gt;
 &lt;div&gt;&lt;div&gt;#include &lt;opencv/cv.h&gt;&lt;/div&gt;&lt;div&gt;#include &lt;opencv/highgui.h&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -4593,7 +4584,8 @@ If you use single-channel image.&lt;/p&gt;
 
 &lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::Size s_half(width/ coeff,&amp;nbsp;height/ coeff);&lt;/div&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::resize( src, small …&lt;/div&gt;</summary><content type="html">&lt;p&gt;How to copy image from unsigned char buffer, resize and save to file.
+&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; cv::resize( src, small …&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;span&gt;
+How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.&lt;/p&gt;
 &lt;div&gt;&lt;div&gt;#include &lt;opencv/cv.h&gt;&lt;/div&gt;&lt;div&gt;#include &lt;opencv/highgui.h&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -4650,7 +4642,9 @@ If you use single-channel image.&lt;/p&gt;
 
 &lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/div&gt;
 
-&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;</content><category term="c++"></category><category term="opencv"></category></entry><entry><title>SVN copy certain subdirectories to a branch</title><link href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html" rel="alternate"></link><published>2013-07-03T17:07:00+02:00</published><updated>2013-07-03T17:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
+&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/div&gt;
+
+&lt;p&gt;&lt;/span&gt;&lt;/p&gt;</content><category term="c++"></category><category term="opencv"></category></entry><entry><title>SVN copy certain subdirectories to a branch</title><link href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html" rel="alternate"></link><published>2013-07-03T17:07:00+02:00</published><updated>2013-07-03T17:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</id><summary type="html">&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
 &lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;
 &lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;trunk
       - project1
@@ -4695,35 +4689,55 @@ return v&lt;/blockquote&gt;2) overlay.avs
 &lt;blockquote class="tr_bq"&gt;v = ImageSource( "depth.jpg" ).Trim(0, -1)
 return overlay( v, v, mode = "blend", opacity = 0.80)&amp;nbsp;&lt;/blockquote&gt;
 They have slightly different colors.
-&lt;img alt="" src="http://4.bp.blogspot.com/-Lj-uQIVor4c/UcP-amr12PI/AAAAAAAAAZQ/RvXjjb2Vc14/s320/just_show.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;just show&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;img alt="" src="http://1.bp.blogspot.com/-O1GkOsIX8rU/UcP-avb8uEI/AAAAAAAAAZU/x9p_nPsHSwU/s320/overlay.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;overlay&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Overlay has chroma component&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The cause was in wrong color conversion in avisynth 2.5.8. I downloaded&lt;span style="font-family: inherit;"&gt;&amp;nbsp;&lt;span style="background-color: white; line-height: 18px;"&gt;AVS 2.6.0 Alpha 4 [130114] and the problem gone.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;a href="http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/"&gt;http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Add path in linux/cygwin and windows</title><link href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html" rel="alternate"></link><published>2013-06-09T18:45:00+02:00</published><updated>2013-06-09T18:45:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-06-09:/add-path-in-linuxcygwin-and-windows.html</id><summary type="html">&lt;div style="text-align: left;"&gt;Add path in cygwin /linux&lt;/div&gt;
+&lt;img alt="" src="http://4.bp.blogspot.com/-Lj-uQIVor4c/UcP-amr12PI/AAAAAAAAAZQ/RvXjjb2Vc14/s320/just_show.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;just show&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;img alt="" src="http://1.bp.blogspot.com/-O1GkOsIX8rU/UcP-avb8uEI/AAAAAAAAAZU/x9p_nPsHSwU/s320/overlay.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;overlay&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Overlay has chroma component&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The cause was in wrong color conversion in avisynth 2.5.8. I downloaded&lt;span style="font-family: inherit;"&gt;&amp;nbsp;&lt;span style="background-color: white; line-height: 18px;"&gt;AVS 2.6.0 Alpha 4 [130114] and the problem gone.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;a href="http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/"&gt;http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Add path in linux/cygwin and windows</title><link href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html" rel="alternate"></link><published>2013-06-09T18:45:00+02:00</published><updated>2013-06-09T18:45:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-06-09:/add-path-in-linuxcygwin-and-windows.html</id><summary type="html">&lt;p&gt;in cygwin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;:~/your_path&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;blockquote class="tr_bq"&gt;PATH=$PATH:~/your_path
-PATH=~/your_path:$PATH&lt;/blockquote&gt;
 
-&lt;div&gt;
-Add path windows
-&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 15.359375px;"&gt;PATH=%PATH%;C:\Your_Path;&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;</summary><content type="html">&lt;div style="text-align: left;"&gt;Add path in cygwin /linux&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=~/your_path:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
-&lt;blockquote class="tr_bq"&gt;PATH=$PATH:~/your_path
-PATH=~/your_path:$PATH&lt;/blockquote&gt;
 
-&lt;div&gt;
-Add path windows
-&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 15.359375px;"&gt;PATH=%PATH%;C:\Your_Path;&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;</content></entry><entry><title>Never never!</title><link href="https://serge-m.github.io/never-never.html" rel="alternate"></link><published>2013-05-29T20:48:00+02:00</published><updated>2013-05-29T20:48:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-29:/never-never.html</id><summary type="html">&lt;p&gt;Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!&lt;/p&gt;</content></entry><entry><title>How to compare video metrics</title><link href="https://serge-m.github.io/how-to-compare-video-metrics.html" rel="alternate"></link><published>2013-05-28T16:31:00+02:00</published><updated>2013-05-28T16:31:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-28:/how-to-compare-video-metrics.html</id><summary type="html">&lt;p&gt;There are specific databases which were subjectively tested. Ans MOS was calculated
+&lt;p&gt;Add path windows&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;%;&lt;/span&gt;&lt;span class="nt"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nt"&gt;Your_Path&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;in cygwin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;:~/your_path&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=~/your_path:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add path windows&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;%;&lt;/span&gt;&lt;span class="nt"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nt"&gt;Your_Path&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry><entry><title>Never never!</title><link href="https://serge-m.github.io/never-never.html" rel="alternate"></link><published>2013-05-29T20:48:00+02:00</published><updated>2013-05-29T20:48:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-29:/never-never.html</id><summary type="html">&lt;p&gt;Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!&lt;/p&gt;</content></entry><entry><title>How to compare video metrics</title><link href="https://serge-m.github.io/how-to-compare-video-metrics.html" rel="alternate"></link><published>2013-05-28T16:31:00+02:00</published><updated>2013-05-28T16:31:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-28:/how-to-compare-video-metrics.html</id><summary type="html">&lt;p&gt;There are specific databases which were subjectively tested. Ans MOS was calculated
 for example
 &lt;a href="http://www.ponomarenko.info/tid2008.htm"&gt;http://www.ponomarenko.info/tid2008.htm&lt;/a&gt;
 you can download database and compare your metric to MOS by&amp;nbsp;Spearman correlation&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are specific databases which were subjectively tested. Ans MOS was calculated
 for example
 &lt;a href="http://www.ponomarenko.info/tid2008.htm"&gt;http://www.ponomarenko.info/tid2008.htm&lt;/a&gt;
 you can download database and compare your metric to MOS by&amp;nbsp;Spearman correlation&lt;/p&gt;</content></entry><entry><title>SSIM metric for video</title><link href="https://serge-m.github.io/ssim-metric-for-video.html" rel="alternate"></link><published>2013-05-28T16:04:00+02:00</published><updated>2013-05-28T16:04:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-28:/ssim-metric-for-video.html</id><summary type="html">&lt;p&gt;See good explanation is in&lt;/p&gt;
-&lt;p&gt;Title: &lt;strong&gt;Handbook of image and video processing&amp;nbsp;&lt;/strong&gt;&lt;div&gt;Author(s): Bovik A. (ed.)
-Series: Periodical: 
-Publisher: Elsevier Academic Press&amp;nbsp;&lt;/div&gt;&lt;div&gt;Year: 2005&amp;nbsp;&lt;/div&gt;&lt;div&gt;Edition: 2ed.&lt;/div&gt;&lt;div&gt;Language: English&amp;nbsp;&lt;/div&gt;&lt;div&gt;Pages: 1429
-ISBN: 9780121197926, 0121197921&lt;/div&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;See good explanation is in&lt;/p&gt;
-&lt;p&gt;Title: &lt;strong&gt;Handbook of image and video processing&amp;nbsp;&lt;/strong&gt;&lt;div&gt;Author(s): Bovik A. (ed.)
-Series: Periodical: 
-Publisher: Elsevier Academic Press&amp;nbsp;&lt;/div&gt;&lt;div&gt;Year: 2005&amp;nbsp;&lt;/div&gt;&lt;div&gt;Edition: 2ed.&lt;/div&gt;&lt;div&gt;Language: English&amp;nbsp;&lt;/div&gt;&lt;div&gt;Pages: 1429
-ISBN: 9780121197926, 0121197921&lt;/div&gt;&lt;/p&gt;</content></entry><entry><title>SSIM по русски</title><link href="https://serge-m.github.io/ssim.html" rel="alternate"></link><published>2013-05-28T15:48:00+02:00</published><updated>2013-05-28T15:48:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-28:/ssim.html</id><summary type="html">&lt;p&gt;Нужно будет тут записать как работает метрика SSIM по человечески&lt;/p&gt;</summary><content type="html">&lt;p&gt;Нужно будет тут записать как работает метрика SSIM по человечески&lt;/p&gt;</content><category term="ssim"></category><category term="metric"></category><category term="russian"></category><category term="video"></category></entry><entry><title>Replace \n in Microsoft word</title><link href="https://serge-m.github.io/replace-n-in-microsoft-word.html" rel="alternate"></link><published>2013-05-26T13:55:00+02:00</published><updated>2013-05-26T13:55:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-26:/replace-n-in-microsoft-word.html</id><summary type="html">&lt;p&gt;To replace new lines in word use "^13" whild-char. "^p" doesn't work :(&lt;/p&gt;</summary><content type="html">&lt;p&gt;To replace new lines in word use "^13" whild-char. "^p" doesn't work :(&lt;/p&gt;</content></entry><entry><title>Tips for debugging of video processing console</title><link href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html" rel="alternate"></link><published>2013-05-16T13:31:00+02:00</published><updated>2013-05-16T13:31:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-16:/tips-for-debugging-of-video-processing.html</id><summary type="html">&lt;p&gt;Assume we have Visual Stusio solution for console that makes some video processing.
+&lt;p&gt;Title: &lt;strong&gt;Handbook of image and video processing&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Author(s): Bovik A. (ed.)&lt;/p&gt;
+&lt;p&gt;Series: Periodical:&lt;/p&gt;
+&lt;p&gt;Publisher: Elsevier Academic Press&lt;/p&gt;
+&lt;p&gt;Year: 2005&lt;/p&gt;
+&lt;p&gt;Edition: 2ed.&lt;/p&gt;
+&lt;p&gt;Language: English&lt;/p&gt;
+&lt;p&gt;Pages: 1429&lt;/p&gt;
+&lt;p&gt;ISBN: 9780121197926, 0121197921&lt;/p&gt;</summary><content type="html">&lt;p&gt;See good explanation is in&lt;/p&gt;
+&lt;p&gt;Title: &lt;strong&gt;Handbook of image and video processing&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Author(s): Bovik A. (ed.)&lt;/p&gt;
+&lt;p&gt;Series: Periodical:&lt;/p&gt;
+&lt;p&gt;Publisher: Elsevier Academic Press&lt;/p&gt;
+&lt;p&gt;Year: 2005&lt;/p&gt;
+&lt;p&gt;Edition: 2ed.&lt;/p&gt;
+&lt;p&gt;Language: English&lt;/p&gt;
+&lt;p&gt;Pages: 1429&lt;/p&gt;
+&lt;p&gt;ISBN: 9780121197926, 0121197921&lt;/p&gt;</content></entry><entry><title>SSIM по русски</title><link href="https://serge-m.github.io/ssim.html" rel="alternate"></link><published>2013-05-28T15:48:00+02:00</published><updated>2013-05-28T15:48:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-28:/ssim.html</id><summary type="html">&lt;p&gt;Нужно будет тут записать как работает метрика SSIM по человечески&lt;/p&gt;</summary><content type="html">&lt;p&gt;Нужно будет тут записать как работает метрика SSIM по человечески&lt;/p&gt;</content><category term="ssim"></category><category term="metric"></category><category term="russian"></category><category term="video"></category></entry><entry><title>Replace \n in Microsoft word</title><link href="https://serge-m.github.io/replace-n-in-microsoft-word.html" rel="alternate"></link><published>2013-05-26T13:55:00+02:00</published><updated>2013-05-26T13:55:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-26:/replace-n-in-microsoft-word.html</id><summary type="html">&lt;p&gt;To replace new lines in word use "^13" whild-char. "^p" doesn't work :(&lt;/p&gt;</summary><content type="html">&lt;p&gt;To replace new lines in word use "^13" whild-char. "^p" doesn't work :(&lt;/p&gt;</content></entry><entry><title>Tips for debugging of video processing console</title><link href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html" rel="alternate"></link><published>2013-05-16T13:31:00+02:00</published><updated>2013-05-16T13:31:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-05-16:/tips-for-debugging-of-video-processing.html</id><summary type="html">&lt;p&gt;Assume we have Visual Stusio solution for console that makes some video processing.
 The console takes two input videos and generates the third video:
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;Console.exe --input1 video1.avi --input2 video2.avi --output result.avi&lt;/span&gt;&lt;/blockquote&gt;While debugging we need to run console on several datasets.
 1) dataset1 conststs of videos …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Assume we have Visual Stusio solution for console that makes some video processing.

@@ -223,20 +223,20 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Example from Meyers "Effective C++"</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">Timer</span> {
-<span class="n">public:</span>
-<span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
-<span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
-<span class="sr">//</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
-...
-};
+<div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="n">Timer</span> {
+    <span class="n">public:</span>
+    <span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
+<span class="sr">    //</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
+    ...
+    };
 
 
-<span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
-<span class="n">private:</span>
-<span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
-... 
-};
+    <span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
+    <span class="n">private:</span>
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
+    ... 
+    };
 </pre></div>
 
 
@@ -292,7 +292,7 @@ Source:&nbsp;<a href="http://habrahabr.ru/post/206258/">http://habrahabr.ru/post
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!</p>
-<p><img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"><div class="separator" style="clear: both; text-align: center;"><a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&quot; rel=&quot;nofollow&quot; target=&quot;_blank">image source</a></div></p>
+<p><img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"><div class="separator" style="clear: both; text-align: center;"><a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&quot; rel=&quot;nofollow&quot; target=&quot;_blank">image source</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/dear-programmers-developers-architects.html">more ...</a>
                 </div>
             </article>
@@ -643,7 +643,6 @@ Lets say comp - is your composition:
 <h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;">ArgoUML&nbsp;<a href="http://argouml.tigris.org/&quot; style=&quot;background-color: transparent;">http://argouml.tigris.org/</a></h1><div>It seems not bad</div><div></p>
 <p>I have tried gliffy.com. It is online and paid.
 www.lucidchart.com has free version but it seems not so convenient</p>
-</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/free-uml-editor.html">more ...</a>
                 </div>
             </article>

@@ -105,7 +105,25 @@ WantedBy=multi-user.target
 &lt;p&gt;Here we first stop and delete the docker container. If it doesn't exist we continue ("-" in before the command).&lt;/p&gt;
 &lt;p&gt;Run&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl enable your-service
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Set up HP 1020 printer in Linux Mint 18</title><link href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/setup-hp-1020-printer-in-linux-mint-18.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;hplip-gui&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install hplip-gui
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;install recommended proprietary driver from &lt;code&gt;HP Toolbox&lt;/code&gt; GUI&lt;/li&gt;
+&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;Install &lt;code&gt;hplip-gui&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install hplip-gui
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;install recommended proprietary driver from &lt;code&gt;HP Toolbox&lt;/code&gt; GUI&lt;/li&gt;
+&lt;/ul&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;

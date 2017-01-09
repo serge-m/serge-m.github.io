@@ -69,6 +69,44 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/how-torch-stores-images.html">how torch stores images</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-06-26T23:01:00+02:00"> 2016-06-26T23:01:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/torch.html">torch</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div class="highlight"><pre><span></span>require(&#39;image&#39;)
+imgPath = &quot;image.jpg&quot;
+img = torch.Tensor(1, 3, imgDim, imgDim)
+img[1] = image.load(imgPath, 3, byte)
+</pre></div>
+
+
+<p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
+<div class="highlight"><pre><span></span>display
+require &#39;gnuplot&#39;
+gnuplot.figure(1)
+gnuplot.imagesc(img[1])
+</pre></div>
+
+
+<p>Torch&lt;-&gt;numpy dictionary
+<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https …</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-torch-stores-images.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/installing-torch-for-miniconda.html">Installing torch for miniconda</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -657,39 +695,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">Golden Dict instead of Lingvo</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-11T20:37:00+02:00"> 2015-10-11T20:37:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Official web-site:</p>
-<p><a href="http://goldendict.org/">http://goldendict.org/</a></p>
-<p>Newer version for Windows:</p>
-<p><a href="https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows">https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</a></p>
-<p>Conversion (decompression) Lingvo <code>*.lds</code> to <code>*.dsl</code> format:</p>
-<p><a href="https://pypi.python.org/pypi/lingvoreader">https://pypi.python.org/pypi/lingvoreader</a></p>
-<p>it's a python module. Install via </p>
-<div class="highlight"><pre><span></span>pip install lingvoreader
-</pre></div>
-
-
-<p>https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/golden-dict-instead-of-lingvo.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem.html">&laquo;</a>
@@ -738,6 +743,11 @@ produces structure with obsolete pypy-c and libpypy-c.so in
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">
+                            Set up HP 1020 printer in Linux Mint 18
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
                         </a>
@@ -775,11 +785,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
                             Set up Travis CI for building personal page on Github Pages with Pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/refactoring-python-extract-variable.html">
-                            Refactoring python code. Extracting variables and other.
                         </a>
                     </li>
                 </ul>

@@ -180,6 +180,39 @@ ExecStartPre=-/usr/bin …</pre></div>
             </article>
             <hr/>
             <article>
+                <h2><a href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">Set up HP 1020 printer in Linux Mint 18</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-01-08T07:10:00+01:00"> 2017-01-08T07:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><ul>
+<li>Install <code>hplip-gui</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo apt-get install hplip-gui
+</pre></div>
+
+
+<ul>
+<li>install recommended proprietary driver from <code>HP Toolbox</code> GUI</li>
+</ul>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">OpenVPN server in cloud using docker</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -706,44 +739,6 @@ Assume we have following partitions:</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/how-torch-stores-images.html">how torch stores images</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-26T23:01:00+02:00"> 2016-06-26T23:01:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="highlight"><pre><span></span>require(&#39;image&#39;)
-imgPath = &quot;image.jpg&quot;
-img = torch.Tensor(1, 3, imgDim, imgDim)
-img[1] = image.load(imgPath, 3, byte)
-</pre></div>
-
-
-<p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
-<div class="highlight"><pre><span></span>display
-require &#39;gnuplot&#39;
-gnuplot.figure(1)
-gnuplot.imagesc(img[1])
-</pre></div>
-
-
-<p>Torch&lt;-&gt;numpy dictionary
-<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https …</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-torch-stores-images.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -791,6 +786,11 @@ gnuplot.imagesc(img[1])
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">
+                            Set up HP 1020 printer in Linux Mint 18
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
                         </a>
@@ -828,11 +828,6 @@ gnuplot.imagesc(img[1])
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
                             Set up Travis CI for building personal page on Github Pages with Pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/refactoring-python-extract-variable.html">
-                            Refactoring python code. Extracting variables and other.
                         </a>
                     </li>
                 </ul>

@@ -69,6 +69,46 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/private-inheritance.html">Private inheritance</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-01-06T12:49:00+01:00"> 2014-01-06T12:49:00, Mon</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Example from Meyers "Effective C++"</p>
+<div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="n">Timer</span> {
+    <span class="n">public:</span>
+    <span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
+<span class="sr">    //</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
+    ...
+    };
+
+
+    <span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
+    <span class="n">private:</span>
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
+    ... 
+    };
+</pre></div>
+
+
+<p>Now clients of Widget get interface …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/private-inheritance.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/blogs.html">Blogs</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -613,39 +653,6 @@ readline.write_history_file( "log.py")</span></p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-15T15:22:00+02:00"> 2013-10-15T15:22:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
-        /
-	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I have the following code for copying several buffers from one object to another:</p>
-<div class="highlight"><pre><span></span>// Copy several buffers (images)
-for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   // Copy one image per pixel
-   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-   {
-      conf_[i][j] = src.conf_ …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem5.html">&laquo;</a>
@@ -714,6 +721,11 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/operations-on-images-in-python.html">
+                            Operations on images in python
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/raspberry-pi-links.html">
                             Raspberry Pi Links
                         </a>
@@ -731,11 +743,6 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">
                             Testing json responses in Flask REST apps with pytest
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">
-                            Set up Travis CI for building personal page on Github Pages with Pelican
                         </a>
                     </li>
                 </ul>
@@ -878,6 +885,11 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
                             ideas
                         </a>
                     </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/images.html">
+                            images
+                        </a>
+                    </li>
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/interview.html">
                             interview
@@ -1003,7 +1015,7 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
                             numpy
                         </a>
                     </li>
-                    <li class="list-group-item tag-3">
+                    <li class="list-group-item tag-2">
                         <a href="https://serge-m.github.io/tag/opencv.html">
                             opencv
                         </a>

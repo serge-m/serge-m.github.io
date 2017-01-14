@@ -10,3 +10,18 @@ Tags: python,images,opencv
 * OpenCV
 
   `pip install python-opnecv`
+
+* Pillow
+  
+  `pip install pillow`
+  
+  
+  
+# Problems 
+
+* Python PIL has no attribute 'Image'
+
+[here](http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image)
+
+
+  

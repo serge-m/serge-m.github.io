@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-09T07:10:00+01:00</updated><entry><title>Set up HP 1020 printer in Linux Mint 18</title><link href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html" rel="alternate"></link><published>2017-01-09T07:10:00+01:00</published><updated>2017-01-09T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-09:/setup-hp-1020-printer-in-linux-mint-18.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-15T07:10:00+01:00</updated><entry><title>Operations on images in python</title><link href="https://serge-m.github.io/operations-on-images-in-python.html" rel="alternate"></link><published>2017-01-15T07:10:00+01:00</published><updated>2017-01-15T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-15:/operations-on-images-in-python.html</id><summary type="html">&lt;h1&gt;Libraries&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenCV&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;pip install python-opnecv&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pillow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;pip install pillow&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Problems&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Python PIL has no attribute 'Image'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image"&gt;here&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Libraries&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenCV&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;pip install python-opnecv&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pillow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;pip install pillow&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Problems&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Python PIL has no attribute 'Image'&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="images"></category><category term="opencv"></category></entry><entry><title>Set up HP 1020 printer in Linux Mint 18</title><link href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html" rel="alternate"></link><published>2017-01-09T07:10:00+01:00</published><updated>2017-01-09T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-09:/setup-hp-1020-printer-in-linux-mint-18.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;Install &lt;code&gt;hplip-gui&lt;/code&gt;:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install hplip-gui
@@ -176,33 +202,7 @@ ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://developer.scaleway.com/"&gt;Scaleway API documentation&lt;/a&gt; &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content></entry><entry><title>Operations on images in python</title><link href="https://serge-m.github.io/operations-on-images-in-python.html" rel="alternate"></link><published>2017-01-04T07:10:00+01:00</published><updated>2017-01-04T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-04:/operations-on-images-in-python.html</id><summary type="html">&lt;h1&gt;Libraries&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;OpenCV&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;pip install python-opnecv&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pillow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;pip install pillow&lt;/code&gt;&lt;/p&gt;
-&lt;h1&gt;Problems&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Python PIL has no attribute 'Image'&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image"&gt;here&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Libraries&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;OpenCV&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;pip install python-opnecv&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pillow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;pip install pillow&lt;/code&gt;&lt;/p&gt;
-&lt;h1&gt;Problems&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Python PIL has no attribute 'Image'&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="images"></category><category term="opencv"></category></entry><entry><title>Raspberry Pi Links</title><link href="https://serge-m.github.io/raspberry-pi-links.html" rel="alternate"></link><published>2016-12-31T21:30:00+01:00</published><updated>2016-12-31T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-31:/raspberry-pi-links.html</id><summary type="html">&lt;p&gt;Continuous deployment (Russian)
+&lt;/ol&gt;</content></entry><entry><title>Raspberry Pi Links</title><link href="https://serge-m.github.io/raspberry-pi-links.html" rel="alternate"></link><published>2016-12-31T21:30:00+01:00</published><updated>2016-12-31T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-31:/raspberry-pi-links.html</id><summary type="html">&lt;p&gt;Continuous deployment (Russian)
 &lt;a href="https://m.habrahabr.ru/post/318840/"&gt;Непрерывная кросс компиляция на Raspberry PI&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Continuous deployment (Russian)
 &lt;a href="https://m.habrahabr.ru/post/318840/"&gt;Непрерывная кросс компиляция на Raspberry PI&lt;/a&gt;&lt;/p&gt;</content><category term="links"></category></entry><entry><title>Run docker as pytest fixture</title><link href="https://serge-m.github.io/run-docker-as-pytest-fixture.html" rel="alternate"></link><published>2016-12-19T21:30:00+01:00</published><updated>2016-12-19T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-19:/run-docker-as-pytest-fixture.html</id><summary type="html">&lt;p&gt;I need to test external API or perform integration test for my application. 
 The extenal application can be accessible through docker image. I want to write a test that has 

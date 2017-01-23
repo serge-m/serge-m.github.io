@@ -8,6 +8,8 @@ Tags: python,images,opencv,
 
 [Comparison of Image Search Performance using different kinds of vectors](http://sujitpal.blogspot.de/2016/06/comparison-of-image-search-performance.html)
 
+[Plugin for elastic search](https://github.com/kzwang/elasticsearch-image)
+
 ## Operations on images in python
 ### Libraries
 * OpenCV

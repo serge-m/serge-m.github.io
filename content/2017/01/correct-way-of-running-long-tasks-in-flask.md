@@ -1,4 +1,3 @@
-
 Title: Correct way of running long tasks in Flask
 Author: SergeM
 Date: 2017-01-23 23:11:00

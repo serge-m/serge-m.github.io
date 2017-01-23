@@ -13,3 +13,6 @@ Good post: [Using Celery With Flask](https://blog.miguelgrinberg.com/post/using-
 [Sources] (https://github.com/miguelgrinberg/flask-celery-example)
 
 See also: [Making an asynchronous task in Flask](http://stackoverflow.com/questions/31866796/making-an-asynchronous-task-in-flask)
+
+
+Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.

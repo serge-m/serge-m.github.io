@@ -16,11 +16,11 @@ Tags: python,images,opencv,
 ### Libraries
 * OpenCV
 
-  `pip install python-opnecv`
+    `pip install python-opnecv`
 
 * Pillow
   
-  `pip install pillow`
+    `pip install pillow`
   
   
   

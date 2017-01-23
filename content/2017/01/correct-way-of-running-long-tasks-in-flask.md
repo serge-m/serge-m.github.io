@@ -9,7 +9,7 @@ Key to the answer is Celery.
 
 Good post: [Using Celery With Flask](https://blog.miguelgrinberg.com/post/using-celery-with-flask)
 
-[Sources] (https://github.com/miguelgrinberg/flask-celery-example)
+[Sources](https://github.com/miguelgrinberg/flask-celery-example)
 
 See also: [Making an asynchronous task in Flask](http://stackoverflow.com/questions/31866796/making-an-asynchronous-task-in-flask)
 

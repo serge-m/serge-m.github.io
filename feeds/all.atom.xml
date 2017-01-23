@@ -255,7 +255,7 @@ After running you can check status (&lt;code&gt;curl -X GET localhost:9333&lt;/c
 
 &lt;p&gt;Helper class and pytest fixture:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;SeaWeedFSConnection&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;
 
 
@@ -308,25 +308,25 @@ sudo update-alternatives --config javaws
 &lt;p&gt;Creating Flask application:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;JsonResponse&lt;/span&gt;(&lt;span class="n"&gt;Response&lt;/span&gt;):
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;json_dict&lt;/span&gt;, &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="mi"&gt;200 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;class&lt;/span&gt; &lt;span class="nx"&gt;JsonResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;json_dict&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
 &lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
 &lt;p&gt;Creating Flask application:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
 
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;JsonResponse&lt;/span&gt;(&lt;span class="n"&gt;Response&lt;/span&gt;):
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;json_dict&lt;/span&gt;, &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="mi"&gt;200&lt;/span&gt;):
-        &lt;span class="n"&gt;super&lt;/span&gt;().&lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="n"&gt;response&lt;/span&gt;=&lt;span class="n"&gt;json&lt;/span&gt;.&lt;span class="n"&gt;dumps&lt;/span&gt;(&lt;span class="n"&gt;json_dict&lt;/span&gt;), &lt;span class="n"&gt;status&lt;/span&gt;=&lt;span class="n"&gt;status&lt;/span&gt;, &lt;span class="n"&gt;mimetype&lt;/span&gt;=&lt;span class="s"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;)
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;class&lt;/span&gt; &lt;span class="nx"&gt;JsonResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;json_dict&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="kr"&gt;super&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;response&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;json&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;json_dict&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;status&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;mimetype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -459,15 +459,15 @@ def json_of_response(response):
 &lt;p&gt;I followed the  guide from &lt;a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md"&gt;here&lt;/a&gt; sections 1 -- 2.5. Instead of section 2.6:
 1. I put my encoded private key &lt;code&gt;blog_deploy_key.enc&lt;/code&gt; to &lt;code&gt;.travis/blog_deploy_key.enc&lt;/code&gt;
 2. I modified my section &lt;code&gt;script&lt;/code&gt; of &lt;code&gt;.travis.yaml&lt;/code&gt; as folows:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;script:&lt;/span&gt;
-&lt;span class="x"&gt;- |&lt;/span&gt;
-&lt;span class="x"&gt;  declare -r SSH_FILE=&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="err"&gt;mktemp&lt;/span&gt; &lt;span class="err"&gt;-u&lt;/span&gt; &lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="err"&gt;/.ssh/blog_deploy_key_decrypted_XXXXXX&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&lt;/span&gt;
-&lt;span class="x"&gt;  openssl aes-256-cbc -K &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_key -iv &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;encrypted_&lt;/span&gt;&lt;span class="x"&gt;&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_iv -in &amp;quot;.travis/blog_deploy_key.enc&amp;quot; -out &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; -d&lt;/span&gt;
-&lt;span class="x"&gt;  chmod 600 &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; &amp;amp;&amp;amp; printf &amp;quot;%s\n&amp;quot; \&lt;/span&gt;
-&lt;span class="x"&gt;              &amp;quot;Host github.com&amp;quot; \&lt;/span&gt;
-&lt;span class="x"&gt;              &amp;quot;  IdentityFile &lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;SSH_FILE&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; \&lt;/span&gt;
-&lt;span class="x"&gt;              &amp;quot;  LogLevel ERROR&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config&lt;/span&gt;
-&lt;span class="x"&gt;- make github&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;script:
+- |
+  declare -r SSH_FILE=&amp;quot;$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)&amp;quot;
+  openssl aes-256-cbc -K $encrypted_&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_key -iv $encrypted_&amp;lt;VALUE_FROM_TRAVIS&amp;gt;_iv -in &amp;quot;.travis/blog_deploy_key.enc&amp;quot; -out &amp;quot;$SSH_FILE&amp;quot; -d
+  chmod 600 &amp;quot;$SSH_FILE&amp;quot; &amp;amp;&amp;amp; printf &amp;quot;%s\n&amp;quot; \
+              &amp;quot;Host github.com&amp;quot; \
+              &amp;quot;  IdentityFile $SSH_FILE&amp;quot; \
+              &amp;quot;  LogLevel ERROR&amp;quot; &amp;gt;&amp;gt; ~/.ssh/config
+- make github
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -496,25 +496,25 @@ def json_of_response(response):
 
 
 &lt;p&gt;Becomes:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;OystersGood:&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;month&lt;/span&gt;):
-        &lt;span class="n"&gt;month&lt;/span&gt; = &lt;span class="n"&gt;month&lt;/span&gt;
-        &lt;span class="n"&gt;month_lowered&lt;/span&gt; = &lt;span class="n"&gt;month&lt;/span&gt;.&lt;span class="n"&gt;lower&lt;/span&gt;()
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;ends_in_r&lt;/span&gt; = &lt;span class="n"&gt;month_lowered&lt;/span&gt;.&lt;span class="n"&gt;endswith&lt;/span&gt;(&lt;span class="s"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;)
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;ends_in_ary&lt;/span&gt; = &lt;span class="n"&gt;month_lowered&lt;/span&gt;.&lt;span class="n"&gt;endswith&lt;/span&gt;(&lt;span class="s"&gt;&amp;#39;ary&amp;#39;&lt;/span&gt;)
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;_result&lt;/span&gt; = &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;ends_in_r&lt;/span&gt; &lt;span class="o"&gt;or&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;ends_in_ary&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kr"&gt;class&lt;/span&gt; &lt;span class="nx"&gt;OystersGood&lt;/span&gt;:
+    &lt;span class="kt"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;month&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;month&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;month&lt;/span&gt;
+        &lt;span class="nx"&gt;month_lowered&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;month&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ends_in_r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;month_lowered&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;endswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ends_in_ary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;month_lowered&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;endswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ary&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;_result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ends_in_r&lt;/span&gt; &lt;span class="nx"&gt;or&lt;/span&gt; &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ends_in_ary&lt;/span&gt;
 
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__bool__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;):  &lt;span class="c c-Singleline"&gt;# Equivalent to __nonzero__ in Python 2&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;_result&lt;/span&gt;
+    &lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__bool__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;Equivalent&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;__nonzero__&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;Python&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;_result&lt;/span&gt;
 
 
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;TomatoesGood:&lt;/span&gt;
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__init__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;, &lt;span class="n"&gt;month&lt;/span&gt;):
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="nb"&gt;index&lt;/span&gt; = &lt;span class="n"&gt;MONTHS&lt;/span&gt;.&lt;span class="nb"&gt;index&lt;/span&gt;(&lt;span class="n"&gt;month&lt;/span&gt;)
-        &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;_result&lt;/span&gt; = &lt;span class="mi"&gt;8&lt;/span&gt; &amp;gt; &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="nb"&gt;index&lt;/span&gt; &amp;gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="kr"&gt;class&lt;/span&gt; &lt;span class="nx"&gt;TomatoesGood&lt;/span&gt;:
+    &lt;span class="kt"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;month&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;MONTHS&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;month&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;_result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;index&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
 
-    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;__bool__&lt;/span&gt;(&lt;span class="k"&gt;self&lt;/span&gt;):  &lt;span class="c c-Singleline"&gt;# Equivalent to __nonzero__ in Python 2&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="k"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;_result&lt;/span&gt;
+    &lt;span class="nx"&gt;def&lt;/span&gt; &lt;span class="nx"&gt;__bool__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;Equivalent&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;__nonzero__&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nx"&gt;Python&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nx"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;_result&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1187,7 +1187,7 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &amp;
 2
 3
 4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
+&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
 &lt;span class="nb"&gt;source&lt;/span&gt; &amp;lt;path to …&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;Pypy builds faster if using &lt;code&gt;-O2&lt;/code&gt; option.&lt;/p&gt;
 &lt;p&gt;To build faster (according to pypy documentation) use prebuilt pypy from &lt;a href="http://buildbot.pypy.org/nightly/trunk/"&gt;link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Using virtualenv to create virtual environment for it.&lt;/p&gt;
@@ -1196,8 +1196,8 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &amp;
 2
 3
 4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 1
-&lt;span class="nb"&gt;source&lt;/span&gt; &amp;lt;path to existing pypy environment&amp;gt;/bin/activate &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 2
+&lt;span class="nb"&gt;cd&lt;/span&gt; pypy/goal &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt; &amp;lt;path to existing pypy environment&amp;gt;/bin/activate &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;
 pypy ../../rpython/bin/rpython --batch -O2 targetpypystandalone
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</content><category term="pypy"></category></entry><entry><title>TIL about PyPy</title><link href="https://serge-m.github.io/til-about-pypy.html" rel="alternate"></link><published>2016-01-08T08:30:00+01:00</published><updated>2016-01-08T08:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-01-08:/til-about-pypy.html</id><summary type="html">&lt;p&gt;Building from source root using command
@@ -1215,17 +1215,17 @@ pypy/tool/release/package.py has an option for (not) stripping resulting binary 
 &lt;p&gt;Script for packaging and creating virtual environment:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 
-rm -rf ./my_builds/ &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 2
-mkdir ./my_builds/ &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 3
+rm -rf ./my_builds/ &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;
+mkdir ./my_builds/ &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;
 
 &lt;span class="nv"&gt;DST_NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$DST_NAME&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
     &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;DST_NAME is  empty&amp;quot;&lt;/span&gt;
-    &lt;span class="nb"&gt;exit&lt;/span&gt; 3
+    &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt;
 &lt;span class="k"&gt;fi&lt;/span&gt;
 
 &lt;span class="c1"&gt;# runs packaging&lt;/span&gt;
-./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name &lt;span class="nv"&gt;$DST_NAME&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; 4
+./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name &lt;span class="nv"&gt;$DST_NAME&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nb"&gt;exit&lt;/span&gt; &lt;span class="m"&gt;4&lt;/span&gt;
 
 &lt;span class="c1"&gt;# creates a new virtual environment&lt;/span&gt;
 virtualenv -p /home/pypy/builds/&lt;span class="nv"&gt;$DST_NAME&lt;/span&gt;/bin/pypy /home/pypy/env/&lt;span class="nv"&gt;$DST_NAME&lt;/span&gt;
@@ -1271,7 +1271,7 @@ pip install nose
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
 &lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap -query &lt;span class="p"&gt;|&lt;/span&gt; grep layout&lt;span class="p"&gt;|&lt;/span&gt;cut -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; -f 2&lt;span class="sb"&gt;`&lt;/span&gt;
+&lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;setxkbmap -query &lt;span class="p"&gt;|&lt;/span&gt; grep layout&lt;span class="p"&gt;|&lt;/span&gt;cut -d &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt; -f &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;
 &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$current&lt;/span&gt;
 &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$current&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;by&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;
 &lt;span class="k"&gt;then&lt;/span&gt; 
@@ -1568,7 +1568,7 @@ rm -rf ~/.texlive2014
 
 
 &lt;p&gt;After installation I needed to set up PATH variable. I made it temporarily for now: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;export PATH=/usr/local/texlive/2014/bin/i386-linux:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export PATH=/usr/local/texlive/2014/bin/i386-linux:$PATH
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2594,7 +2594,7 @@ CODE
         &lt;span class="n"&gt;dir_backup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;backup&amp;#39;&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;makedirs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;get_ipython&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;u&amp;#39;ipython nbconvert --to python {0} --output {1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;get_ipython&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;system&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;u&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ipython nbconvert --to python {0} --output {1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dir_backup&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;theNotebook&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;NameError&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Unable to save&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="ipython"></category></entry><entry><title>Python equivalent of interp2</title><link href="https://serge-m.github.io/python-equivalent-of-interp2.html" rel="alternate"></link><published>2014-09-16T02:15:00+02:00</published><updated>2014-09-16T02:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-09-16:/python-equivalent-of-interp2.html</id><summary type="html">&lt;p&gt;I wrote python version of&amp;nbsp; interp2(z, xi, yi,'linear') from matlab&lt;/p&gt;
@@ -2892,17 +2892,17 @@ plt.imshow(dpt, cmap=plt.cm.gray, interpolation='nearest')&lt;/span&gt;&lt;/p&gt
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nv"&gt;THEANO_FLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;FAST_RUN,device&lt;span class="o"&gt;=&lt;/span&gt;cpu,floatX&lt;span class="o"&gt;=&lt;/span&gt;float32 python check1.py
 &lt;span class="o"&gt;[&lt;/span&gt;Elemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&amp;lt;TensorType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;)]&lt;/span&gt;
-Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took 3.06635117531 seconds
-Result is &lt;span class="o"&gt;[&lt;/span&gt; 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761
-  1.62323284&lt;span class="o"&gt;]&lt;/span&gt;
+Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took &lt;span class="m"&gt;3&lt;/span&gt;.06635117531 seconds
+Result is &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.23178029  &lt;span class="m"&gt;1&lt;/span&gt;.61879337  &lt;span class="m"&gt;1&lt;/span&gt;.52278066 ...,  &lt;span class="m"&gt;2&lt;/span&gt;.20771813  &lt;span class="m"&gt;2&lt;/span&gt;.29967761
+  &lt;span class="m"&gt;1&lt;/span&gt;.62323284&lt;span class="o"&gt;]&lt;/span&gt;
 Used the cpu
 
 $ &lt;span class="nv"&gt;THEANO_FLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;FAST_RUN,device&lt;span class="o"&gt;=&lt;/span&gt;gpu,floatX&lt;span class="o"&gt;=&lt;/span&gt;float32 python check1.py
-Using gpu device 0: GeForce GTX 580
+Using gpu device &lt;span class="m"&gt;0&lt;/span&gt;: GeForce GTX &lt;span class="m"&gt;580&lt;/span&gt;
 &lt;span class="o"&gt;[&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&amp;lt;CudaNdarrayType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;)&lt;/span&gt;, HostFromGpu&lt;span class="o"&gt;(&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}&lt;/span&gt;.0&lt;span class="o"&gt;)]&lt;/span&gt;
-Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took 0.638810873032 seconds
-Result is &lt;span class="o"&gt;[&lt;/span&gt; 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761
-  1.62323296&lt;span class="o"&gt;]&lt;/span&gt;
+Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took &lt;span class="m"&gt;0&lt;/span&gt;.638810873032 seconds
+Result is &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.23178029  &lt;span class="m"&gt;1&lt;/span&gt;.61879349  &lt;span class="m"&gt;1&lt;/span&gt;.52278066 ...,  &lt;span class="m"&gt;2&lt;/span&gt;.20771813  &lt;span class="m"&gt;2&lt;/span&gt;.29967761
+  &lt;span class="m"&gt;1&lt;/span&gt;.62323296&lt;span class="o"&gt;]&lt;/span&gt;
 Used the gpu
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -4430,7 +4430,7 @@ for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
 
 
 &lt;p&gt;Array conf_ is defined as follows: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;std&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;:vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;BYTE&lt;/span&gt;&lt;span class="o"&gt;*&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;std&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nd"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;BYTE&lt;/span&gt;&lt;span class="o"&gt;*&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4483,14 +4483,14 @@ for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
 UPD: Intel Compiler 2011 demonstrates &lt;strong&gt;2 ms&lt;/strong&gt;&amp;nbsp;latency for this code.&lt;/p&gt;
 &lt;p&gt;And even better solution for Visual Studio:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="nt"&gt;Copy&lt;/span&gt; &lt;span class="nt"&gt;several&lt;/span&gt; &lt;span class="nt"&gt;buffers&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;images&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;int&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nt"&gt;MIN&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="nc"&gt;.size&lt;/span&gt;&lt;span class="o"&gt;(),&lt;/span&gt; &lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="nc"&gt;.conf_.size&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;int&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nt"&gt;MIN&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;(),&lt;/span&gt; &lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="n"&gt;BYTE&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;arrDst&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="n"&gt;BYTE&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="n"&gt;int&lt;/span&gt; &lt;span class="n"&gt;sizeOfArray&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;sizeOfBuffer_&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sizeOfBuffer_&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrDst&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrSrc&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;src.conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+   &lt;span class="err"&gt;int&lt;/span&gt; &lt;span class="err"&gt;sizeOfArray&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;MIN(&lt;/span&gt; &lt;span class="err"&gt;sizeOfBuffer_,&lt;/span&gt; &lt;span class="err"&gt;src.sizeOfBuffer_&lt;/span&gt; &lt;span class="err"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-   &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;Copy&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="n"&gt;per&lt;/span&gt; &lt;span class="n"&gt;pixel&lt;/span&gt;
-   &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sizeOfArray&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrDst&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+   &lt;span class="err"&gt;//&lt;/span&gt; &lt;span class="err"&gt;Copy&lt;/span&gt; &lt;span class="err"&gt;one&lt;/span&gt; &lt;span class="err"&gt;image&lt;/span&gt; &lt;span class="err"&gt;per&lt;/span&gt; &lt;span class="err"&gt;pixel&lt;/span&gt;
+   &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sizeOfArray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrDst&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -4549,13 +4549,13 @@ UPD: Intel Compiler 2011 demonstrates&amp;nbsp;&lt;strong&gt;2 ms&lt;/strong&gt;
 &lt;span style="background-color: white;"&gt;&lt;strong&gt;3.&amp;nbsp; Preprocessing the source.&amp;nbsp;&lt;/strong&gt;A encoder test is a test of encoders, not preprocessing.&amp;nbsp; Some encoding apps may add preprocessors to the source, such as noise reduction.&amp;nbsp; This may make the video look better — possibly even better than the source — but it’s not a fair part of comparing the actual encoders.&lt;/span&gt;
 &lt;span style="background-color: white;"&gt;&lt;strong&gt;4.&amp;nbsp; Screw up decoding.&lt;/strong&gt;&amp;nbsp;People often forget that in addition to encoding, a test also involves decoding — a step which is equally possible to do wrong.&amp;nbsp; One common error caused by this is in tests of Theora on content whose resolution isn’t divisible by 16.&amp;nbsp; Decoding is often done with ffmpeg — which doesn’t crop the edges properly in some cases.&amp;nbsp; This isn’t really a big deal visually, but in a PSNR comparison, misaligning the entire frame by 4 or 8 pixels is a great way of completely invalidating the results.&lt;/span&gt;
 &lt;h3 style="font-size: 1.3em; margin-top: 0px; padding-bottom: 0px;"&gt;&lt;strong style="background-color: white;"&gt;The greatest mistake of all&lt;/strong&gt;&lt;/h3&gt;&lt;blockquote class="tr_bq"&gt;&lt;span style="background-color: white;"&gt;Above all, the biggest and most common mistake — and the one that leads to many of the problems mentioned here –&amp;nbsp; is the mistaken belief that one, or even a few tests can really represent all usage fairly.&amp;nbsp; Any comparison has to have some specific goal — to compare something in some particular case, whether it be “maximum offline compression ignoring encoding speed” or “real-time high-speed video streaming” or whatnot.&amp;nbsp; And even then, no comparison can represent all use-cases in that category alone.&amp;nbsp; An encoder comparison can only be honest if it’s aware of its limitations.&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;/div&gt;</content></entry><entry><title>Using h264/multiview codec from Intel Media SDK</title><link href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html" rel="alternate"></link><published>2013-10-11T12:37:00+02:00</published><updated>2013-10-11T12:37:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-11:/using-h264multiview-codec-from-intel.html</id><summary type="html">&lt;p&gt;I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w &lt;span class="m"&gt;1920&lt;/span&gt; -h 1080
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w &lt;span class="m"&gt;1920&lt;/span&gt; -h &lt;span class="m"&gt;1080&lt;/span&gt;
 Return on error: error code -3, .&lt;span class="se"&gt;\s …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w &lt;span class="m"&gt;1920&lt;/span&gt; -h 1080
-Return on error: error code -3, .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\p&lt;/span&gt;ipeline_encode.cpp       865
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w &lt;span class="m"&gt;1920&lt;/span&gt; -h &lt;span class="m"&gt;1080&lt;/span&gt;
+Return on error: error code -3, .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\p&lt;/span&gt;ipeline_encode.cpp       &lt;span class="m"&gt;865&lt;/span&gt;
 
-Return on error: error code 1,  .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\s&lt;/span&gt;ample_encode.cpp 343
-Frame number: 0
+Return on error: error code &lt;span class="m"&gt;1&lt;/span&gt;,  .&lt;span class="se"&gt;\s&lt;/span&gt;rc&lt;span class="se"&gt;\s&lt;/span&gt;ample_encode.cpp &lt;span class="m"&gt;343&lt;/span&gt;
+Frame number: &lt;span class="m"&gt;0&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4702,24 +4702,24 @@ return v&lt;/blockquote&gt;2) overlay.avs
 return overlay( v, v, mode = "blend", opacity = 0.80)&amp;nbsp;&lt;/blockquote&gt;
 They have slightly different colors.
 &lt;img alt="" src="http://4.bp.blogspot.com/-Lj-uQIVor4c/UcP-amr12PI/AAAAAAAAAZQ/RvXjjb2Vc14/s320/just_show.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;just show&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;img alt="" src="http://1.bp.blogspot.com/-O1GkOsIX8rU/UcP-avb8uEI/AAAAAAAAAZU/x9p_nPsHSwU/s320/overlay.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;overlay&lt;/div&gt;&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;Overlay has chroma component&lt;/div&gt;&lt;div class="separator" style="clear: both; text-align: left;"&gt;The cause was in wrong color conversion in avisynth 2.5.8. I downloaded&lt;span style="font-family: inherit;"&gt;&amp;nbsp;&lt;span style="background-color: white; line-height: 18px;"&gt;AVS 2.6.0 Alpha 4 [130114] and the problem gone.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;a href="http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/"&gt;http://sourceforge.net/projects/avisynth2/files/AviSynth_Alpha_Releases/AVS%202.6.0%20Alpha%204%20%5B130114%5D/&lt;/a&gt;&lt;/p&gt;</content></entry><entry><title>Add path in linux/cygwin and windows</title><link href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html" rel="alternate"></link><published>2013-06-09T18:45:00+02:00</published><updated>2013-06-09T18:45:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-06-09:/add-path-in-linuxcygwin-and-windows.html</id><summary type="html">&lt;p&gt;in cygwin:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;:~/your_path&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PATH=$PATH:~/your_path
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;or&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=~/your_path:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PATH=~/your_path:$PATH
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Add path windows&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=%&lt;/span&gt;&lt;span class="nt"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;%;&lt;/span&gt;&lt;span class="nt"&gt;C&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="nt"&gt;Your_Path&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;in cygwin:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;:~/your_path&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PATH=$PATH:~/your_path
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;or&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;PATH=~/your_path:&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PATH=~/your_path:$PATH
 &lt;/pre&gt;&lt;/div&gt;
 
 

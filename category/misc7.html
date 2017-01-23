@@ -352,7 +352,7 @@ for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:</p>
-<div class="highlight"><pre><span></span>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w <span class="m">1920</span> -h 1080
+<div class="highlight"><pre><span></span>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w <span class="m">1920</span> -h <span class="m">1080</span>
 Return on error: error code -3, .<span class="se">\s …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">more ...</a>
                 </div>
@@ -582,12 +582,12 @@ return v</blockquote>2 …</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>in cygwin:</p>
-<div class="highlight"><pre><span></span><span class="x">PATH=</span><span class="p">$</span><span class="nv">PATH</span><span class="x">:~/your_path</span>
+<div class="highlight"><pre><span></span>PATH=$PATH:~/your_path
 </pre></div>
 
 
 <p>or</p>
-<div class="highlight"><pre><span></span><span class="x">PATH=~/your_path:</span><span class="p">$</span><span class="nv">PATH</span><span class="x"></span>
+<div class="highlight"><pre><span></span>PATH=~/your_path:$PATH
 </pre></div>
 
 

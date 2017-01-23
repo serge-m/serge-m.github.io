@@ -167,15 +167,15 @@ sergem personal public notebook            </a>
 <p>I followed the  guide from <a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md">here</a> sections 1 -- 2.5. Instead of section 2.6:
 1. I put my encoded private key <code>blog_deploy_key.enc</code> to <code>.travis/blog_deploy_key.enc</code>
 2. I modified my section <code>script</code> of <code>.travis.yaml</code> as folows:</p>
-<div class="highlight"><pre><span></span><span class="x">script:</span>
-<span class="x">- |</span>
-<span class="x">  declare -r SSH_FILE=&quot;</span><span class="p">$(</span><span class="err">mktemp</span> <span class="err">-u</span> <span class="p">$</span><span class="nv">HOME</span><span class="err">/.ssh/blog_deploy_key_decrypted_XXXXXX</span><span class="p">)</span><span class="x">&quot;</span>
-<span class="x">  openssl aes-256-cbc -K </span><span class="p">$</span><span class="nv">encrypted_</span><span class="x">&lt;VALUE_FROM_TRAVIS&gt;_key -iv </span><span class="p">$</span><span class="nv">encrypted_</span><span class="x">&lt;VALUE_FROM_TRAVIS&gt;_iv -in &quot;.travis/blog_deploy_key.enc&quot; -out &quot;</span><span class="p">$</span><span class="nv">SSH_FILE</span><span class="x">&quot; -d</span>
-<span class="x">  chmod 600 &quot;</span><span class="p">$</span><span class="nv">SSH_FILE</span><span class="x">&quot; &amp;&amp; printf &quot;%s\n&quot; \</span>
-<span class="x">              &quot;Host github.com&quot; \</span>
-<span class="x">              &quot;  IdentityFile </span><span class="p">$</span><span class="nv">SSH_FILE</span><span class="x">&quot; \</span>
-<span class="x">              &quot;  LogLevel ERROR&quot; &gt;&gt; ~/.ssh/config</span>
-<span class="x">- make github</span>
+<div class="highlight"><pre><span></span>script:
+- |
+  declare -r SSH_FILE=&quot;$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)&quot;
+  openssl aes-256-cbc -K $encrypted_&lt;VALUE_FROM_TRAVIS&gt;_key -iv $encrypted_&lt;VALUE_FROM_TRAVIS&gt;_iv -in &quot;.travis/blog_deploy_key.enc&quot; -out &quot;$SSH_FILE&quot; -d
+  chmod 600 &quot;$SSH_FILE&quot; &amp;&amp; printf &quot;%s\n&quot; \
+              &quot;Host github.com&quot; \
+              &quot;  IdentityFile $SSH_FILE&quot; \
+              &quot;  LogLevel ERROR&quot; &gt;&gt; ~/.ssh/config
+- make github
 </pre></div>
 
 

@@ -130,25 +130,25 @@ sergem personal public notebook            </a>
 
 
 <p>Becomes:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="n">OystersGood:</span>
-    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">month</span>):
-        <span class="n">month</span> = <span class="n">month</span>
-        <span class="n">month_lowered</span> = <span class="n">month</span>.<span class="n">lower</span>()
-        <span class="k">self</span>.<span class="n">ends_in_r</span> = <span class="n">month_lowered</span>.<span class="n">endswith</span>(<span class="s">&#39;r&#39;</span>)
-        <span class="k">self</span>.<span class="n">ends_in_ary</span> = <span class="n">month_lowered</span>.<span class="n">endswith</span>(<span class="s">&#39;ary&#39;</span>)
-        <span class="k">self</span>.<span class="n">_result</span> = <span class="k">self</span>.<span class="n">ends_in_r</span> <span class="o">or</span> <span class="k">self</span>.<span class="n">ends_in_ary</span>
+<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">OystersGood</span>:
+    <span class="kt">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">month</span><span class="p">)</span><span class="o">:</span>
+        <span class="nx">month</span> <span class="o">=</span> <span class="nx">month</span>
+        <span class="nx">month_lowered</span> <span class="o">=</span> <span class="nx">month</span><span class="p">.</span><span class="nx">lower</span><span class="p">()</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_r</span> <span class="o">=</span> <span class="nx">month_lowered</span><span class="p">.</span><span class="nx">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_ary</span> <span class="o">=</span> <span class="nx">month_lowered</span><span class="p">.</span><span class="nx">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_r</span> <span class="nx">or</span> <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_ary</span>
 
-    <span class="n">def</span> <span class="n">__bool__</span>(<span class="k">self</span>):  <span class="c c-Singleline"># Equivalent to __nonzero__ in Python 2</span>
-        <span class="k">return</span> <span class="k">self</span>.<span class="n">_result</span>
+    <span class="nx">def</span> <span class="nx">__bool__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>  <span class="err">#</span> <span class="nx">Equivalent</span> <span class="nx">to</span> <span class="nx">__nonzero__</span> <span class="k">in</span> <span class="nx">Python</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span>
 
 
-<span class="k">class</span> <span class="n">TomatoesGood:</span>
-    <span class="n">def</span> <span class="n">__init__</span>(<span class="k">self</span>, <span class="n">month</span>):
-        <span class="k">self</span>.<span class="nb">index</span> = <span class="n">MONTHS</span>.<span class="nb">index</span>(<span class="n">month</span>)
-        <span class="k">self</span>.<span class="n">_result</span> = <span class="mi">8</span> &gt; <span class="k">self</span>.<span class="nb">index</span> &gt; <span class="mi">4</span>
+<span class="kr">class</span> <span class="nx">TomatoesGood</span>:
+    <span class="kt">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">month</span><span class="p">)</span><span class="o">:</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">MONTHS</span><span class="p">.</span><span class="nx">index</span><span class="p">(</span><span class="nx">month</span><span class="p">)</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="nx">self</span><span class="p">.</span><span class="nx">index</span> <span class="o">&gt;</span> <span class="mi">4</span>
 
-    <span class="n">def</span> <span class="n">__bool__</span>(<span class="k">self</span>):  <span class="c c-Singleline"># Equivalent to __nonzero__ in Python 2</span>
-        <span class="k">return</span> <span class="k">self</span>.<span class="n">_result</span>
+    <span class="nx">def</span> <span class="nx">__bool__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>  <span class="err">#</span> <span class="nx">Equivalent</span> <span class="nx">to</span> <span class="nx">__nonzero__</span> <span class="k">in</span> <span class="nx">Python</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span>
 </pre></div>
 
 

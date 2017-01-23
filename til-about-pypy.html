@@ -119,17 +119,17 @@ pypy/tool/release/package.py has an option for (not) stripping resulting binary 
 <p>Script for packaging and creating virtual environment:</p>
 <div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-rm -rf ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> 2
-mkdir ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> 3
+rm -rf ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> <span class="m">2</span>
+mkdir ./my_builds/ <span class="o">||</span> <span class="nb">exit</span> <span class="m">3</span>
 
 <span class="nv">DST_NAME</span><span class="o">=</span><span class="nv">$1</span>
 <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$DST_NAME</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     <span class="nb">echo</span> <span class="s2">&quot;DST_NAME is  empty&quot;</span>
-    <span class="nb">exit</span> 3
+    <span class="nb">exit</span> <span class="m">3</span>
 <span class="k">fi</span>
 
 <span class="c1"># runs packaging</span>
-./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name <span class="nv">$DST_NAME</span> <span class="o">||</span> <span class="nb">exit</span> 4
+./pypy/tool/release/package.py --builddir /home/pypy/builds/ --nostrip --archive-name <span class="nv">$DST_NAME</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">4</span>
 
 <span class="c1"># creates a new virtual environment</span>
 virtualenv -p /home/pypy/builds/<span class="nv">$DST_NAME</span>/bin/pypy /home/pypy/env/<span class="nv">$DST_NAME</span>

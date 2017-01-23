@@ -153,17 +153,17 @@ sergem personal public notebook            </a>
 
 <div class="highlight"><pre><span></span>$ <span class="nv">THEANO_FLAGS</span><span class="o">=</span><span class="nv">mode</span><span class="o">=</span>FAST_RUN,device<span class="o">=</span>cpu,floatX<span class="o">=</span>float32 python check1.py
 <span class="o">[</span>Elemwise<span class="o">{</span>exp,no_inplace<span class="o">}(</span>&lt;TensorType<span class="o">(</span>float32, vector<span class="o">)</span>&gt;<span class="o">)]</span>
-Looping <span class="m">1000</span> <span class="nb">times</span> took 3.06635117531 seconds
-Result is <span class="o">[</span> 1.23178029  1.61879337  1.52278066 ...,  2.20771813  2.29967761
-  1.62323284<span class="o">]</span>
+Looping <span class="m">1000</span> <span class="nb">times</span> took <span class="m">3</span>.06635117531 seconds
+Result is <span class="o">[</span> <span class="m">1</span>.23178029  <span class="m">1</span>.61879337  <span class="m">1</span>.52278066 ...,  <span class="m">2</span>.20771813  <span class="m">2</span>.29967761
+  <span class="m">1</span>.62323284<span class="o">]</span>
 Used the cpu
 
 $ <span class="nv">THEANO_FLAGS</span><span class="o">=</span><span class="nv">mode</span><span class="o">=</span>FAST_RUN,device<span class="o">=</span>gpu,floatX<span class="o">=</span>float32 python check1.py
-Using gpu device 0: GeForce GTX 580
+Using gpu device <span class="m">0</span>: GeForce GTX <span class="m">580</span>
 <span class="o">[</span>GpuElemwise<span class="o">{</span>exp,no_inplace<span class="o">}(</span>&lt;CudaNdarrayType<span class="o">(</span>float32, vector<span class="o">)</span>&gt;<span class="o">)</span>, HostFromGpu<span class="o">(</span>GpuElemwise<span class="o">{</span>exp,no_inplace<span class="o">}</span>.0<span class="o">)]</span>
-Looping <span class="m">1000</span> <span class="nb">times</span> took 0.638810873032 seconds
-Result is <span class="o">[</span> 1.23178029  1.61879349  1.52278066 ...,  2.20771813  2.29967761
-  1.62323296<span class="o">]</span>
+Looping <span class="m">1000</span> <span class="nb">times</span> took <span class="m">0</span>.638810873032 seconds
+Result is <span class="o">[</span> <span class="m">1</span>.23178029  <span class="m">1</span>.61879349  <span class="m">1</span>.52278066 ...,  <span class="m">2</span>.20771813  <span class="m">2</span>.29967761
+  <span class="m">1</span>.62323296<span class="o">]</span>
 Used the gpu
 </pre></div>
 

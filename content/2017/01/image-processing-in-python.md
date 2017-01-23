@@ -6,9 +6,11 @@ Tags: python,images,opencv,
 
 ## Image search using elastic search
 
-[Comparison of Image Search Performance using different kinds of vectors](http://sujitpal.blogspot.de/2016/06/comparison-of-image-search-performance.html)
+* [Comparison of Image Search Performance using different kinds of vectors](http://sujitpal.blogspot.de/2016/06/comparison-of-image-search-performance.html)
 
-[Plugin for elastic search](https://github.com/kzwang/elasticsearch-image)
+* [Plugin for elastic search](https://github.com/kzwang/elasticsearch-image)
+
+* [Personalizing image search with feature vectors and Lucene](https://www.youtube.com/watch?v=T5eb4auvui8) (video)
 
 ## Operations on images in python
 ### Libraries

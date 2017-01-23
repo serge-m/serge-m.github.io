@@ -28,7 +28,7 @@ Tags: python,images,opencv,
 
 * Python PIL has no attribute 'Image'
 
-[here](http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image)
+    [here](http://stackoverflow.com/questions/11911480/python-pil-has-no-attribute-image)
 
 
   

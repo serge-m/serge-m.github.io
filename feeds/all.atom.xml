@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-23T23:11:00+01:00</updated><entry><title>Correct way of running long tasks in Flask</title><link href="https://serge-m.github.io/correct-way-of-running-long-tasks-in-flask.html" rel="alternate"></link><published>2017-01-23T23:11:00+01:00</published><updated>2017-01-23T23:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-23:/correct-way-of-running-long-tasks-in-flask.html</id><summary type="html">&lt;p&gt;Key to the answer is Celery.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-01-28T07:10:00+01:00</updated><entry><title>Pretty git history with branches in command line</title><link href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html" rel="alternate"></link><published>2017-01-28T07:10:00+01:00</published><updated>2017-01-28T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-28:/pretty-git-history-with-branches-in-command-line.html</id><summary type="html">&lt;p&gt;Show git history with branches &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Less nice and shorter&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Show git history with branches &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Less nice and shorter&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --oneline --all
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category><category term="git"></category></entry><entry><title>Correct way of running long tasks in Flask</title><link href="https://serge-m.github.io/correct-way-of-running-long-tasks-in-flask.html" rel="alternate"></link><published>2017-01-23T23:11:00+01:00</published><updated>2017-01-23T23:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-23:/correct-way-of-running-long-tasks-in-flask.html</id><summary type="html">&lt;p&gt;Key to the answer is Celery.&lt;/p&gt;
 &lt;p&gt;Good post: &lt;a href="https://blog.miguelgrinberg.com/post/using-celery-with-flask"&gt;Using Celery With Flask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/miguelgrinberg/flask-celery-example"&gt;Sources&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;See also: &lt;a href="http://stackoverflow.com/questions/31866796/making-an-asynchronous-task-in-flask"&gt;Making an asynchronous task in Flask&lt;/a&gt;&lt;/p&gt;
@@ -191,20 +204,7 @@ WantedBy=multi-user.target
 &lt;p&gt;Here we first stop and delete the docker container. If it doesn't exist we continue ("-" in before the command).&lt;/p&gt;
 &lt;p&gt;Run&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl enable your-service
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Pretty git history with branches in command line</title><link href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/pretty-git-history-with-branches-in-command-line.html</id><summary type="html">&lt;p&gt;Show git history with branches &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Less nice and shorter&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Show git history with branches &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Less nice and shorter&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --oneline --all
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category><category term="git"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;

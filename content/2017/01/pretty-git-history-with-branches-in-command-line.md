@@ -1,6 +1,6 @@
 Title: Pretty git history with branches in command line
 Author: SergeM
-Date: 2017-01-08 07:10:00
+Date: 2017-01-28 07:10:00
 Slug: pretty-git-history-with-branches-in-command-line
 Tags: linux,useful,git
 

@@ -69,6 +69,34 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/logging-exceptions-with-traceback-in.html">Logging exceptions with traceback in python</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-02-02T23:00:00+01:00"> 2015-02-02T23:00:00, Mon</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>When using logging module one often need to print traceback along with error message.</p>
+<p>Solution is:</p>
+<div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;error message&#39;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1"># for adding traceback to log</span>
+</pre></div>
+
+
+<p>Equivalent :</p>
+<div class="highlight"><pre><span></span><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/logging-exceptions-with-traceback-in.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/installing-ubuntu-from-usb.html">Installing Ubuntu from USB</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -675,38 +703,6 @@ Last updated: 2003
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html">Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-04-15T23:37:00+02:00"> 2014-04-15T23:37:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/latex.html">latex</a>
-        /
-	<a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>OMG!! I finally fixed it.
-Under Windows latex2rtf diisplayed following error:</p>
-<div class="highlight"><pre><span></span><span class="n">latex2png</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">eps2eps</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">translate</span> <span class="n">l2r_00123</span><span class="o">.</span><span class="na">pdf</span> <span class="n">to</span> <span class="n">l2r_00123</span><span class="o">.</span><span class="na">eps</span>
-</pre></div>
-
-
-<p>for each image in my latex file.</p>
-<p>That was very sad because this method is used to convert all equations, fugures and tables in word format.</p>
-<p>The configurations …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem3.html">&laquo;</a>
@@ -775,6 +771,11 @@ Under Windows latex2rtf diisplayed following error:</p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">
+                            Pretty git history with branches in command line
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
                         </a>
@@ -792,11 +793,6 @@ Under Windows latex2rtf diisplayed following error:</p>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/raspberry-pi-links.html">
                             Raspberry Pi Links
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
-                            Run docker as pytest fixture
                         </a>
                     </li>
                 </ul>

@@ -320,6 +320,38 @@ ExecStartPre=-/usr/bin …</pre></div>
             </article>
             <hr/>
             <article>
+                <h2><a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">Pretty git history with branches in command line</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-01-08T07:10:00+01:00"> 2017-01-08T07:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/git.html">git</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Show git history with branches </p>
+<div class="highlight"><pre><span></span>git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all
+</pre></div>
+
+
+<p>Less nice and shorter</p>
+<div class="highlight"><pre><span></span>git log --graph --abbrev-commit …</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">OpenVPN server in cloud using docker</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -704,31 +736,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/git-apply-patch-from-another-repository.html">git apply patch from another repository</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-08-14T14:10:00+02:00"> 2016-08-14T14:10:00, Sun</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="highlight"><pre><span></span>$ git --git-dir<span class="o">=</span>../&lt;some_other_repo&gt;/.git format-patch -k -1 --stdout &lt;commit SHA&gt; <span class="p">|</span> git am -3 -k
-</pre></div>
-
-
-<p>Source:
-<a href="http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit">http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit</a> </p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/git-apply-patch-from-another-repository.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -796,6 +803,11 @@ You can add google as a search engine. But suggestions don't work for me.</p>
                         </a>
                     </li>
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">
+                            Pretty git history with branches in command line
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
                         </a>
@@ -813,11 +825,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/raspberry-pi-links.html">
                             Raspberry Pi Links
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">
-                            Run docker as pytest fixture
                         </a>
                     </li>
                 </ul>

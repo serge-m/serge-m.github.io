@@ -121,31 +121,31 @@ sergem personal public notebook            </a>
 
 
 <p>Helper class for JSON-based response:</p>
-<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">JsonResponse</span><span class="p">(</span><span class="nx">Response</span><span class="p">)</span><span class="o">:</span>
-    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">json_dict</span><span class="p">,</span> <span class="nx">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span><span class="o">:</span>
-        <span class="kr">super</span><span class="p">().</span><span class="nx">__init__</span><span class="p">(</span><span class="nx">response</span><span class="o">=</span><span class="nx">json</span><span class="p">.</span><span class="nx">dumps</span><span class="p">(</span><span class="nx">json_dict</span><span class="p">),</span> <span class="nx">status</span><span class="o">=</span><span class="nx">status</span><span class="p">,</span> <span class="nx">mimetype</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_dict</span><span class="p">),</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">mimetype</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Defining GET and POST endpoints. The puprose of the <code>/add</code> endpoint is to return doubled value.</p>
-<div class="highlight"><pre><span></span>@app.route(&#39;/&#39;)
-def hello_world():
-    return &#39;Hello, World!&#39;
+<div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;Hello, World!&#39;</span>
 
-@app.route(&#39;/add&#39;, methods=[&#39;POST&#39;])
-def add():
-    json = request.json
-    resp = JsonResponse(json_dict={&quot;answer&quot;: json[&#39;key&#39;] * 2}, status=200)
-    return resp
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/add&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">add</span><span class="p">():</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span>
+    <span class="n">resp</span> <span class="o">=</span> <span class="n">JsonResponse</span><span class="p">(</span><span class="n">json_dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="n">json</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resp</span>
 </pre></div>
 
 
 <p>Main section that prints help message. (Alternative launching procedure can be applied)</p>
-<div class="highlight"><pre><span></span>if __name__ == &#39;__main__&#39;:
-    script_name = __file__
-    print(&quot;run:\n&quot;
-          &quot;FLASK_APP={} python -m flask run --port 8000 --host 0.0.0.0&quot;.format(script_name))
-    exit(1)
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">script_name</span> <span class="o">=</span> <span class="vm">__file__</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;run:</span><span class="se">\n</span><span class="s2">&quot;</span>
+          <span class="s2">&quot;FLASK_APP={} python -m flask run --port 8000 --host 0.0.0.0&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">script_name</span><span class="p">))</span>
+    <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 

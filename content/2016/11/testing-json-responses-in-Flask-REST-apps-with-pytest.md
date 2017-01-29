@@ -118,13 +118,13 @@ def post_files(client, url, map_name_to_file: Dict):
 
     map_name_to_file_and_name = {name: (file, "mocked_name_{}".format(name)) for
                                  name, file in map_name_to_file.items()}
-    return client.post(url, data=map_name_to_file_and_name, content_type='multipart/form-data',)
+    return client.post(url, data=map_name_to_file_and_name, content_type='multipart/form-data')
 ```
  
 Test itself:
 ```python
 def test_multipart_files(client):
-    response = post_files(client, '/api/search', {'file': BytesIO(b"content")})
+    response = post_files(client, '/send', {'file': BytesIO(b"content")})
     assert response.status_code == 200
 ```
 

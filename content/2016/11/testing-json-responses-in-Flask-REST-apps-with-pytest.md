@@ -9,14 +9,14 @@ The code consists of two files: `sample_app.py` (productions) and `sample_app_te
 
 ## Code of sample_app.py
 Creating Flask application:
-```
+```python
 from flask import Flask, request, Response, json
 
 app = Flask(__name__)
 ```
 Helper class for JSON-based response:
 
-```
+```python
 class JsonResponse(Response):
     def __init__(self, json_dict, status=200):
         super().__init__(response=json.dumps(json_dict), status=status, mimetype="application/json")
@@ -24,7 +24,7 @@ class JsonResponse(Response):
 
 Defining GET and POST endpoints. The puprose of the `/add` endpoint is to return doubled value.
 
-```
+```python
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -37,7 +37,7 @@ def add():
 ```
 Main section that prints help message. (Alternative launching procedure can be applied)
 
-```
+```python
 if __name__ == '__main__':
     script_name = __file__
     print("run:\n"
@@ -49,7 +49,7 @@ if __name__ == '__main__':
 
 ## Code of sample_app_test.py
 Fixture for test client:
-```
+```python
 import json
 import pytest
 from sample_app import app

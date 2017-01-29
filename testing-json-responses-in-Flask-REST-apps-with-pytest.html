@@ -219,13 +219,13 @@ sergem personal public notebook            </a>
 
     <span class="n">map_name_to_file_and_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s2">&quot;mocked_name_{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">for</span>
                                  <span class="n">name</span><span class="p">,</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">map_name_to_file</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">map_name_to_file_and_name</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">,)</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">map_name_to_file_and_name</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">)</span>
 </pre></div>
 
 
 <p>Test itself:</p>
 <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_multipart_files</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/api/search&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;content&quot;</span><span class="p">)})</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;content&quot;</span><span class="p">)})</span>
     <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
 </pre></div>
 

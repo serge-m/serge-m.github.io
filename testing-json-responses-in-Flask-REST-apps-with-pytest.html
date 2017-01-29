@@ -168,36 +168,75 @@ def add():
 
 
 <p>Helper functions for encoding and decoding jsons:</p>
-<div class="highlight"><pre><span></span>def post_json(client, url, json_dict):
-    &quot;&quot;&quot;Send dictionary json_dict as a json to the specified url &quot;&quot;&quot;
-    return client.post(url, data=json.dumps(json_dict), content_type=&#39;application/json&#39;)
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">post_json</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Send dictionary json_dict as a json to the specified url &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_dict</span><span class="p">),</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
 
-def json_of_response(response):
-    &quot;&quot;&quot;Decode json from response&quot;&quot;&quot;
-    return json.loads(response.data.decode(&#39;utf8&#39;))
+<span class="k">def</span> <span class="nf">json_of_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Decode json from response&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
 </pre></div>
 
 
 <p>The simplest test for GET endpoint:</p>
-<div class="highlight"><pre><span></span>def test_dummy(client):
-    response = client.get(&#39;/&#39;)
-    assert b&#39;Hello, World!&#39; in response.data
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_dummy</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s1">&#39;Hello, World!&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span>
 </pre></div>
 
 
 <p>Test for POST endpoint. Checking resulting json:</p>
-<div class="highlight"><pre><span></span>def test_json(client):
-    response = post_json(client, &#39;/add&#39;, {&#39;key&#39;: &#39;value&#39;})
-    assert response.status_code == 200
-    assert json_of_response(response) == {&quot;answer&quot;: &#39;value&#39; * 2}
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_json</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">post_json</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/add&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">})</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+    <span class="k">assert</span> <span class="n">json_of_response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">}</span>
 </pre></div>
 
 
+<h2>Testing multipart file upload</h2>
+<p>Imaging you have an endpoint that accepts POST requests with multipart files:</p>
+<div class="highlight"><pre><span></span><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">upload_file</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">file_received</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
+            <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_received</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="s2">&quot;file saved to {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;Wrong request&quot;</span>
+</pre></div>
+
+
+<p>To test it we need a helper-function:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">map_name_to_file</span><span class="p">:</span> <span class="n">Dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Posts Multipart-encoded files to url</span>
+<span class="sd">    :param client: flask test client fixture</span>
+<span class="sd">    :param url: string URL</span>
+<span class="sd">    :param map_name_to_file: dictionary name-&gt;file-like object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">map_name_to_file_and_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s2">&quot;mocked_name_{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">for</span>
+                                 <span class="n">name</span><span class="p">,</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">map_name_to_file</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">map_name_to_file_and_name</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">,)</span>
+</pre></div>
+
+
+<p>Test itself:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_multipart_files</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/api/search&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;content&quot;</span><span class="p">)})</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+</pre></div>
+
+
+<p>Inspired by <a href="https://gist.github.com/DazWorrall/1779861">this gist</a></p>
 <h2>Related links:</h2>
 <ul>
 <li><a href="http://flask.pocoo.org/docs/0.11/testing/">Testing flask applications</a></li>
 <li><a href="https://github.com/pytest-dev/pytest-flask">pytest fixtures for flask</a> I haven't checked them. Maybe uyseful</li>
 <li><a href="https://github.com/pallets/flask/tree/master/examples/flaskr">Flaskr test application from examples of Flask</a></li>
+<li><a href="https://gist.github.com/DazWorrall/1779861">Gist "Testing file upload handling in Flask"</a></li>
 </ul>
             </div>
             <!-- /.entry-content -->

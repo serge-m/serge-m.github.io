@@ -22,6 +22,8 @@ Harry Percival
 
 * [Thinking about Concurrency](https://www.youtube.com/watch?v=Bv25Dwe84g0), Raymond Hettinger, Python core developer
 
+* Couple of recipies: [Practical Python Async for Dummies](https://www.youtube.com/watch?v=5_K8GwZ_268)
+
 # Tutorials
 
 * [Set up vim for python](https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/)

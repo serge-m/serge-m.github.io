@@ -35,3 +35,7 @@ Harry Percival
 * Some historical overview [Asynchronous Python](https://hackernoon.com/asynchronous-python-45df84b82434)
 
 * [ Video ] Couple of recipies: [Practical Python Async for Dummies](https://www.youtube.com/watch?v=5_K8GwZ_268)
+
+* pytest addon for testing coroutines [pytest-asyncio](https://pypi.python.org/pypi/pytest-asyncio)
+
+* Some more guidelines how to test coroutines: [Advanced asyncio testing](https://stefan.sofa-rockers.org/2016/03/10/advanced-asyncio-testing/)

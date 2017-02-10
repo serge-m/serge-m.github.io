@@ -8,3 +8,8 @@ Tags: command line, elastic search
 ```
 curl -X GET localhost:9200/_cat/indices
 ```
+
+## Delete index 
+```
+curl -X DELETE localhost:9200/YOUR_INDEX
+```

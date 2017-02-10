@@ -69,6 +69,46 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/crop-included-graphics-in-latex.html">crop included graphics in latex</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-05-21T21:56:00+02:00"> 2014-05-21T21:56:00, Wed</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div class="highlight"><pre><span></span><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="c">% crop left</span>
+<span class="k">\includegraphics</span><span class="na">[trim={5cm 0 0 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
+<span class="c">% crop right</span>
+<span class="k">\includegraphics</span><span class="na">[trim={0 0 5cm 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+
+<p>Use the trim option, which takes four space separated values.</p>
+<div class="highlight"><pre><span></span>trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}
+</pre></div>
+
+
+<p><a href="http://tex.stackexchange.com/a/57420">Source</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/crop-included-graphics-in-latex.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html">Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -594,38 +634,6 @@ Error<span class="Apple-tab-span" style="white-space: pre;"> </span>4<span class
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/free-software-for-screen-video-capture.html">Free software for screen video capture</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-15T19:11:00+01:00"> 2014-01-15T19:11:00, Wed</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/tools.html">tools</a>
-        /
-	<a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>CamStudio 2.7</h2>
-<p><a href="http://camstudio.org/">http://camstudio.org/</a> works fine</p>
-<h2>Rylstim-Screen-Recorder</h2>
-<p><a href="http://www.sketchman-studio.com/rylstim-screen-recorder/">http://www.sketchman-studio.com/rylstim-screen-recorder/</a></p>
-<p>There were some troubles while recording ConEmu software 
-Portable version is available</p>
-<h2>HyperCam 2</h2>
-<p><a href="http://www.hyperionics.com/hc/">http://www.hyperionics.com/hc/</a></p>
-<p>Works well</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/free-software-for-screen-video-capture.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem4.html">&laquo;</a>
@@ -658,6 +666,11 @@ Portable version is available</p>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/elastic-search-cookbook.html">
+                            Elasticsearch commands with curl
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">
                             Pretty git history with branches in command line
@@ -711,11 +724,6 @@ Portable version is available</p>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/check-server-fingerpring-for-scaleway.html">
                             Check server fingerprint for scaleway
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/raspberry-pi-links.html">
-                            Raspberry Pi Links
                         </a>
                     </li>
                 </ul>
@@ -779,6 +787,11 @@ Portable version is available</p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/command-line.html">
+                            command line
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="https://serge-m.github.io/tag/computer-vision.html">
                             computer vision
                         </a>
@@ -821,6 +834,11 @@ Portable version is available</p>
                     <li class="list-group-item tag-4">
                         <a href="https://serge-m.github.io/tag/draft.html">
                             draft
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/elastic-search.html">
+                            elastic search
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

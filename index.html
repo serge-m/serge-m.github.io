@@ -91,15 +91,17 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Let's consider  how python standard unittest module suppose to use mocks.</p>
 <p>Assume we want to test a method that creates and uses objects of other classes:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module.ClassName1</span>
-<span class="kn">import</span> <span class="nn">module.ClassName2</span>
+<div class="highlight"><pre><span></span><span class="c1"># content of module.py</span>
 
-<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">):</span>
-    <span class="n">object1</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">ClassName1</span><span class="p">(</span><span class="s2">&quot;some_initial_parameter1&quot;</span><span class="p">)</span>
-    <span class="n">intermediate_result</span> <span class="o">=</span> <span class="n">object1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">parameter1</span><span class="p">)</span>
+<span class="c1"># classes that we want to mock</span>
+<span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> 
+  <span class="k">pass</span>
 
-    <span class="n">object2</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">ClassName2 …</span></pre></div>
+<span class="k">class</span> <span class="nc">ClassName2</span><span class="p">:</span>
+  <span class="k">pass</span>
+
+<span class="c1"># class that we want to test</span>
+<span class="k">class</span> <span class="nc">ProductionClass …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mocking-in-python.html">more ...</a>
                 </div>
             </article>

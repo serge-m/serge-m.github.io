@@ -16,15 +16,18 @@ Data is stored in postgres.
 Clustering is based on histograms. 1 contributor. No tests. abandoned.
 
 
-[ViSense SDK for python](https://github.com/visenze/visearch-sdk-python) - SDK for closed source iamge search
+[ViSense SDK for python](https://github.com/visenze/visearch-sdk-python) - SDK for closed source image search
 
 
 [List of Content-based image retrieval (CBIR) engines](https://en.wikipedia.org/wiki/List_of_CBIR_engines) (wikipedia)
 
 
-[Deep Features](http://deepfeatures.org/) - publish deep features extracted from datasets: 
+[Deep Features](http://deepfeatures.org/) - publish deep features extracted from datasets:
+
 * YFCC100M-HNfc6
+
 * 2016Jubilee-HNfc6
+
 * MicrosoftCOCO-HNfc6 
 
 

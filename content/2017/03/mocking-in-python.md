@@ -136,7 +136,7 @@ But:
 
 ## Similar articles
 * [Python Mocking 101: Fake It Before You Make It](https://blog.fugue.co/2016-02-11-python-mocking-101.html)
-
+* [Using the Python mock library to fake regular functions during tests](http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/)
 
 
 ## Maching atributes for mocks
@@ -190,4 +190,4 @@ I think `autospec=True` has to be default behaviour of `patch`.
 
 
 
-See also (Mocking Objects in Python)[https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html] section "Danger: mocking non-existent attributes" 
+See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html) section "Danger: mocking non-existent attributes" 

@@ -191,3 +191,9 @@ I think `autospec=True` has to be default behaviour of `patch`.
 
 
 See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html) section "Danger: mocking non-existent attributes" 
+
+## See also about testing in python
+* [Run docker as pytest fixture](/run-docker-as-pytest-fixture.html)
+* [Testing json responses in Flask REST apps with pytest](/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
+* [Refactoring python code. Extracting variables and other.](/refactoring-python-extract-variable.html)
+

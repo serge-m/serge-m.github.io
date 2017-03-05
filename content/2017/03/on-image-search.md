@@ -20,3 +20,9 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.
 
 
 [List of Content-based image retrieval (CBIR) engines](https://en.wikipedia.org/wiki/List_of_CBIR_engines) (wikipedia)
+
+
+[Deep Features](http://deepfeatures.org/) - publish deep features extracted from datasets: 
+* YFCC100M-HNfc6
+* 2016Jubilee-HNfc6
+* MicrosoftCOCO-HNfc6 

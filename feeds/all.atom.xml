@@ -4532,28 +4532,27 @@ readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</content></entry><
 &lt;span style="font-family: Courier New, Courier, monospace;"&gt;BYTE * img = new BYTE[ w * h ];&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;Lets assume the image is scanned line by line. So
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;img[ 10 * w + 3 ] is a 3-rd pixel in 10-line of image.&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;Then I import it in openCV is such a way:
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;Mat img(h, w, CV_8UC1, dmDst, w);&lt;/span&gt;&lt;/blockquote&gt;
-last argument is a pitch or stride.&lt;/p&gt;</content></entry><entry><title>Fast way of copying byte array in C/C++ (With measurements)</title><link href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html" rel="alternate"></link><published>2013-10-15T15:22:00+02:00</published><updated>2013-10-15T15:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-15:/fast-way-of-copying-byte-array-in-cc.html</id><summary type="html">&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Copy several buffers (images)
-for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   // Copy one image per pixel
-   for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-   {
-      conf_[i][j] = src.conf_ …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Copy several buffers (images)
-for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   // Copy one image per pixel
-   for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-   {
-      conf_[i][j] = src.conf_[i][j];
-   }
-}
+last argument is a pitch or stride.&lt;/p&gt;</content></entry><entry><title>Fast way of copying byte array in C/C++ (With measurements)</title><link href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html" rel="alternate"></link><published>2013-10-15T15:22:00+02:00</published><updated>2013-10-15T15:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-15:/fast-way-of-copying-byte-array-in-cc.html</id><summary type="html">&lt;p&gt;UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.&lt;/p&gt;
+&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="c1"&gt;// Copy several buffers (images)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;MIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="c1"&gt;// Copy pixels …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.&lt;/p&gt;
+&lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="c1"&gt;// Copy several buffers (images)&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;MIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="c1"&gt;// Copy pixels&lt;/span&gt;
+       &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;MIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;sizeOfBuffer_&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sizeOfBuffer_&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+       &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+       &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Array conf_ is defined as follows: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;std&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nd"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;BYTE&lt;/span&gt;&lt;span class="o"&gt;*&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;p&gt;Array &lt;code&gt;conf_&lt;/code&gt; is defined as follows: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;std&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="nd"&gt;vector&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;BYTE&lt;/span&gt;&lt;span class="o"&gt;*&amp;gt;&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4561,66 +4560,57 @@ for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
 This fragment takes about &lt;strong&gt;45 ms&lt;/strong&gt; for copying of 2 images with ( 1980x1080 pixels ) x 3 planes = 6.2 MPixels.
 I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The code is built for x64 platform. Disabled compiler option for buffer security check (GS-) and debug information has no effect on the productivity.&lt;/p&gt;
 &lt;p&gt;Slightly better solution:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Copy several buffers (images)
-for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    // Copy several buffers (images)
+    for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+    {
+       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
 
-::::
-   int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
-
-   // Copy one image per pixel
-   for( int j = 0; j &amp;lt;&amp;amp;nbsp;sizeOfArray; ++ j )
-
-::::
-   {
-      conf_[i][j] = src.conf_[i][j];
-   }
-}
+       // Copy pixels
+       for( int j = 0; j &amp;lt; sizeOfArray; ++ j )
+       {
+          conf_[i][j] = src.conf_[i][j];
+       }
+    }
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;It takes about &lt;strong&gt;35 ms &lt;/strong&gt;per full copy. &lt;/p&gt;
 &lt;p&gt;Much better solution:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;// Copy several buffers (images)
-for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   BYTE * arrDst = conf_[i];
-   BYTE * arrSrc = src.conf_[i];
-   int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    // Copy several buffers (images)
+    for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
+    {
+       BYTE * arrDst = conf_[i];
+       BYTE * arrSrc = src.conf_[i];
+       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
 
-   // Copy one image per pixel
-   for( int j = 0; j &amp;lt; sizeOfArray; ++ j )
-   {
-      arrDst[j] = arrSrc[j];
-   }
-}
-
-::::
-
-
-::::
+       // Copy one image per pixel
+       for( int j = 0; j &amp;lt; sizeOfArray; ++ j )
+       {
+          arrDst[j] = arrSrc[j];
+       }
+    }
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Everything is the same except for using additional temporary variable. This version runs for&lt;strong&gt; 8 ms&lt;/strong&gt;. 
-UPD: Intel Compiler 2011 demonstrates &lt;strong&gt;2 ms&lt;/strong&gt;&amp;nbsp;latency for this code.&lt;/p&gt;
+&lt;p&gt;Everything is the same except for using additional temporary variable. This version runs for &lt;strong&gt;8 ms&lt;/strong&gt;. 
+UPD: Intel Compiler 2011 demonstrates &lt;strong&gt;2 ms&lt;/strong&gt; latency for this code.&lt;/p&gt;
 &lt;p&gt;And even better solution for Visual Studio:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="nt"&gt;Copy&lt;/span&gt; &lt;span class="nt"&gt;several&lt;/span&gt; &lt;span class="nt"&gt;buffers&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;images&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;int&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nt"&gt;MIN&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;(),&lt;/span&gt; &lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
-&lt;span class="p"&gt;{&lt;/span&gt;
-   &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrDst&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrSrc&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;src.conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-   &lt;span class="err"&gt;int&lt;/span&gt; &lt;span class="err"&gt;sizeOfArray&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;MIN(&lt;/span&gt; &lt;span class="err"&gt;sizeOfBuffer_,&lt;/span&gt; &lt;span class="err"&gt;src.sizeOfBuffer_&lt;/span&gt; &lt;span class="err"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="nt"&gt;Copy&lt;/span&gt; &lt;span class="nt"&gt;several&lt;/span&gt; &lt;span class="nt"&gt;buffers&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;images&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="nt"&gt;for&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;int&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nt"&gt;0&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nt"&gt;MIN&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt; &lt;span class="nt"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;(),&lt;/span&gt; &lt;span class="nt"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;size&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+       &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrDst&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+       &lt;span class="err"&gt;BYTE&lt;/span&gt; &lt;span class="err"&gt;*&lt;/span&gt; &lt;span class="err"&gt;arrSrc&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;src.conf_&lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+       &lt;span class="err"&gt;int&lt;/span&gt; &lt;span class="err"&gt;sizeOfArray&lt;/span&gt; &lt;span class="err"&gt;=&lt;/span&gt; &lt;span class="err"&gt;MIN(&lt;/span&gt; &lt;span class="err"&gt;sizeOfBuffer_,&lt;/span&gt; &lt;span class="err"&gt;src.sizeOfBuffer_&lt;/span&gt; &lt;span class="err"&gt;)&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
-   &lt;span class="err"&gt;//&lt;/span&gt; &lt;span class="err"&gt;Copy&lt;/span&gt; &lt;span class="err"&gt;one&lt;/span&gt; &lt;span class="err"&gt;image&lt;/span&gt; &lt;span class="err"&gt;per&lt;/span&gt; &lt;span class="err"&gt;pixel&lt;/span&gt;
-   &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sizeOfArray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrDst&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+       &lt;span class="err"&gt;//&lt;/span&gt; &lt;span class="err"&gt;Copy&lt;/span&gt; &lt;span class="err"&gt;pixels&lt;/span&gt;
+       &lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;copy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrSrc&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;sizeOfArray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;arrDst&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;It uses &lt;strong&gt;copy &lt;/strong&gt;function from standard C++ library. Time of this version is &lt;strong&gt;2 ms&lt;/strong&gt;. &lt;br&gt;
-UPD: Intel Compiler 2011 demonstrates&amp;nbsp;&lt;strong&gt;2 ms&lt;/strong&gt;&amp;nbsp;latency for this code too, but it seems that for multiple runs the last version is slightly slower than previous one for ICC. My previous time measuremets have integer precision. So for 50 frames ICC+last-version got&amp;nbsp;&lt;strong&gt;141 ms&lt;/strong&gt; and ICC+previous-version got&amp;nbsp;&lt;strong&gt;112 ms. &lt;/strong&gt;That is strange.&lt;/p&gt;
-&lt;p&gt;On Intel Compiler memcpy and std::copy give nearly the same results.&lt;/p&gt;</content><category term="c++"></category><category term="algorithm performance"></category><category term="video processing"></category></entry><entry><title>How to cheat on video encoder comparisons</title><link href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html" rel="alternate"></link><published>2013-10-11T12:57:00+02:00</published><updated>2013-10-11T12:57:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-11:/how-to-cheat-on-video-encoder.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)&lt;/h3&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;&lt;/h3&gt;&lt;div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"&gt;&lt;span style="background-color: white;"&gt;Filed under:&amp;nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing …&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)&lt;/h3&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;&lt;/h3&gt;&lt;div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"&gt;&lt;span style="background-color: white;"&gt;Filed under:&amp;nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing: 0px;" title="View all posts in H.264),[stupidity](http://x264dev.multimedia.cx/archives/category/stupidity" rel="category tag" style="letter-spacing: 0px;" title="View all posts in stupidity),[test sequences](http://x264dev.multimedia.cx/archives/category/test-sequences" rel="category tag" style="letter-spacing: 0px;" title="View all posts in test sequences)&amp;nbsp;::&lt;/span&gt;&lt;/div&gt;&lt;div class="storycontent" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif;"&gt;&lt;span style="background-color: white;"&gt;Over the past few years, practically everyone and their dog has published some sort of encoder comparison.&amp;nbsp; Sometimes they’re actually intended to be something for the world to rely on, like the old Doom9 comparisons and the MSU comparisons.&amp;nbsp; Other times, they’re just to scratch an itch — someone wants to decide for themselves what is better.&amp;nbsp; And sometimes they’re just there to outright lie in favor of whatever encoder the author likes best.&amp;nbsp; The latter is practically an&amp;nbsp;&lt;em&gt;expected feature&lt;/em&gt;&amp;nbsp;on the websites of commercial encoder vendors.&lt;/span&gt;
+UPD: Intel Compiler 2011 demonstrates &lt;strong&gt;2 ms&lt;/strong&gt; latency for this code too, but it seems that for multiple runs the last version is slightly slower than previous one for ICC. My previous time measuremets have integer precision. So for 50 frames ICC+last-version got &lt;strong&gt;141 ms&lt;/strong&gt; and ICC+previous-version got &lt;strong&gt;112 ms.&lt;/strong&gt; That is strange.&lt;/p&gt;
+&lt;p&gt;On Intel Compiler memcpy and &lt;code&gt;std::copy&lt;/code&gt; give nearly the same results.&lt;/p&gt;</content><category term="c++"></category><category term="algorithm performance"></category><category term="video processing"></category><category term="obsolete"></category></entry><entry><title>How to cheat on video encoder comparisons</title><link href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html" rel="alternate"></link><published>2013-10-11T12:57:00+02:00</published><updated>2013-10-11T12:57:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-11:/how-to-cheat-on-video-encoder.html</id><summary type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)&lt;/h3&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;&lt;/h3&gt;&lt;div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"&gt;&lt;span style="background-color: white;"&gt;Filed under:&amp;nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing …&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div dir="ltr" style="text-align: left;" trbidi="on"&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472" target="_blank)&lt;/h3&gt;&lt;h3 class="storytitle" id="post-472" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 1.3em; margin-bottom: 2px; margin-top: 10px; padding-bottom: 0px;"&gt;&lt;/h3&gt;&lt;div class="meta" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif; font-size: 0.8em;"&gt;&lt;span style="background-color: white;"&gt;Filed under:&amp;nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark" rel="category tag" style="letter-spacing: 0px;" title="View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264" rel="category tag" style="letter-spacing: 0px;" title="View all posts in H.264),[stupidity](http://x264dev.multimedia.cx/archives/category/stupidity" rel="category tag" style="letter-spacing: 0px;" title="View all posts in stupidity),[test sequences](http://x264dev.multimedia.cx/archives/category/test-sequences" rel="category tag" style="letter-spacing: 0px;" title="View all posts in test sequences)&amp;nbsp;::&lt;/span&gt;&lt;/div&gt;&lt;div class="storycontent" style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Trebuchet MS', Verdana, Helvetica, sans-serif;"&gt;&lt;span style="background-color: white;"&gt;Over the past few years, practically everyone and their dog has published some sort of encoder comparison.&amp;nbsp; Sometimes they’re actually intended to be something for the world to rely on, like the old Doom9 comparisons and the MSU comparisons.&amp;nbsp; Other times, they’re just to scratch an itch — someone wants to decide for themselves what is better.&amp;nbsp; And sometimes they’re just there to outright lie in favor of whatever encoder the author likes best.&amp;nbsp; The latter is practically an&amp;nbsp;&lt;em&gt;expected feature&lt;/em&gt;&amp;nbsp;on the websites of commercial encoder vendors.&lt;/span&gt;
 &lt;span style="background-color: white;"&gt;One thing almost all these comparisons have in common — particularly (but not limited to!) the ones done without consulting experts — is that they are horribly done.&amp;nbsp; They’re usually easy to spot: for example, two videos at totally different bitrates are being compared, or the author complains about one of the videos being “washed out” (i.e. he screwed up his colorspace conversion).&amp;nbsp; Or the results are simply nonsensical.&amp;nbsp; Many of these problems result from the person running the test not “sanity checking” the results to catch mistakes that he made in his test.&amp;nbsp; Others are just outright intentional.&lt;/span&gt;
 &lt;span style="background-color: white;"&gt;The result of all these mistakes, both intentional and accidental, is that the results of encoder comparisons tend to be all over the map, to the point of absurdity.&amp;nbsp; For any pair of encoders, it’s practically a given that a comparison exists somewhere that will “prove” any result you want to claim, even if the result would be beyond impossible in any sane situation.&amp;nbsp; This often results in the appearance of a “controversy” even if there isn’t any.&lt;/span&gt;
 &lt;span style="background-color: white;"&gt;Keep in mind that every single mistake I mention in this article&amp;nbsp;&lt;strong&gt;has actually been done&lt;/strong&gt;, usually in more than one comparison.&amp;nbsp; And before I offend anyone, keep in mind that when I say “cheating”, I don’t mean to imply that everyone that makes the mistake is doing it intentionally.&amp;nbsp; Especially among amateur comparisons, most of the mistakes are probably honest.&lt;/span&gt;

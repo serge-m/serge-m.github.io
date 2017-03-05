@@ -435,16 +435,16 @@ readline.write_history_file( "log.py")</span></p>
 	<a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
         /
 	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
+        /
+	<a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I have the following code for copying several buffers from one object to another:</p>
-<div class="highlight"><pre><span></span>// Copy several buffers (images)
-for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-{
-   // Copy one image per pixel
-   for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.sizeOfBuffer_ ); ++ j )
-   {
-      conf_[i][j] = src.conf_ …</pre></div>
+                <div class="summary"><p>UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.</p>
+<p>I have the following code for copying several buffers from one object to another:</p>
+<div class="highlight"><pre><span></span>    <span class="c1">// Copy several buffers (images)</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+       <span class="c1">// Copy pixels …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
                 </div>
             </article>
@@ -1010,6 +1010,11 @@ If you use single-channel image.</p>
                     <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/numpy.html">
                             numpy
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/obsolete.html">
+                            obsolete
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

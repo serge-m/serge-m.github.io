@@ -72,6 +72,37 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/building-pypy.html">Building Pypy</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-03-22T21:51:00+01:00"> 2016-03-22T21:51:00, Tue</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Pypy builds faster if using <code>-O2</code> option.</p>
+<p>To build faster (according to pypy documentation) use prebuilt pypy from <a href="http://buildbot.pypy.org/nightly/trunk/">link</a></p>
+<p>Using virtualenv to create virtual environment for it.</p>
+<p>Build script (to be placed in pypy source directory):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">cd</span> pypy/goal <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
+<span class="nb">source</span> &lt;path to …</pre></div></td></tr></table>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/building-pypy.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/til-about-pypy.html">TIL about PyPy</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -628,40 +659,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/reading-c-type-declarations.html">reading C type declarations</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-03-09T14:26:00+01:00"> 2015-03-09T14:26:00, Mon</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><a href="http://www.unixwiz.net/techtips/reading-cdecl.html">Source</a></p>
-<p>////////////
-simple example:</p>
-<ul>
-<li><code>long **foo[7];</code></li>
-</ul>
-<p>We'll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we'll show the focus of our attention in red, and <strike>strike out</strike> the parts we've finished with.</p>
-<ul>
-<li>long * * foo [7];</li>
-</ul>
-<p>Start …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/reading-c-type-declarations.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc2.html">&laquo;</a>
@@ -694,6 +691,11 @@ simple example:</p>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/on-image-search.html">
+                            On image search
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/about-bloody-enterprise.html">
                             About bloody enterprise
@@ -747,11 +749,6 @@ simple example:</p>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">
-                            Docker in Scaleway's vc1s Ubuntu Xenial
                         </a>
                     </li>
                 </ul>
@@ -909,9 +906,14 @@ simple example:</p>
                             ideas
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/image-processing.html">
                             image processing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/image-search.html">
+                            image search
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

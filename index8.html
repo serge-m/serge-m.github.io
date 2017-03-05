@@ -69,6 +69,39 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">OpenCV. Copy image from unsigned char buffer, resize and save to file</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-07-09T23:23:00+02:00"> 2013-07-09T23:23:00, Tue</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;opencv/cv.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv/highgui.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">src</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">CV_8UC1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">source_byte_beffer</span> <span class="p">)</span> <span class="p">);</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">small</span><span class="p">(</span><span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">CV_8UC1</span> <span class="p">);</span>
+
+<span class="n">cv</span><span class="o">::</span><span class="n">Size</span> <span class="n">s_half</span><span class="p">(</span><span class="n">width</span><span class="o">/</span> <span class="n">coeff …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">SVN copy certain subdirectories to a branch</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -533,6 +566,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
+                        <a href="https://serge-m.github.io/on-image-search.html">
+                            On image search
+                        </a>
+                    </li>
+                    <li class="list-group-item">
                         <a href="https://serge-m.github.io/about-bloody-enterprise.html">
                             About bloody enterprise
                         </a>
@@ -585,11 +623,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
                             OpenVPN server in cloud using docker
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">
-                            Docker in Scaleway's vc1s Ubuntu Xenial
                         </a>
                     </li>
                 </ul>
@@ -747,9 +780,14 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                             ideas
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
+                    <li class="list-group-item tag-3">
                         <a href="https://serge-m.github.io/tag/image-processing.html">
                             image processing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/image-search.html">
+                            image search
                         </a>
                     </li>
                     <li class="list-group-item tag-4">

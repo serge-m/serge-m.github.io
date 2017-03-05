@@ -123,9 +123,15 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;But:
-&lt;em&gt; clean up is required
-&lt;/em&gt; the module seems not integrating standard unittest's mocks (maybe I am wrong, more investigation is required)&lt;/p&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
+&lt;p&gt;But:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;clean up is required&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the module seems not integrating standard unittest's mocks . Maybe I am wrong, more investigation is required. I want to use &lt;code&gt;mock.patch&lt;/code&gt; and have &lt;code&gt;when-thenReturn&lt;/code&gt; construction working for it. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/echinthaka/ImageSimilarity"&gt;Image Similarity service&lt;/a&gt; (github) - scala based image similarity service, declared to be scalable.
 Image storage and image similarity logic is implemented within independent, stateless micro-services.
 Data is stored in postgres.

@@ -129,6 +129,8 @@ unstub()
 ```
 
 But:
+
 * clean up is required
-* the module seems not integrating standard unittest's mocks (maybe I am wrong, more investigation is required)
+
+* the module seems not integrating standard unittest's mocks . Maybe I am wrong, more investigation is required. I want to use `mock.patch` and have `when-thenReturn` construction working for it. 
 

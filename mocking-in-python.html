@@ -202,7 +202,30 @@ sergem personal public notebook            </a>
 
 
 <p>You don't need calls assertions in the end. If for example <code>object1.run(parameter1)</code> returns something else, then condition of the second mock object is not met and the test fails.</p>
-<p>https://github.com/kaste/mockito-python</p>
+<p><em>Question: is there a way to achieve that?</em></p>
+<p>There is a port of Mockito to Python: <a href="https://github.com/kaste/mockito-python">mockito-python</a> 
+There you can do virtually the same as in Java:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mockito</span> <span class="kn">import</span> <span class="n">when</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">unstub</span>
+
+<span class="n">when</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/foo&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># or:</span>
+<span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># the famous library</span>
+<span class="c1"># you actually want to return a Response-like obj, we&#39;ll fake it</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">mock</span><span class="p">({</span><span class="s1">&#39;status_code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Ok&#39;</span><span class="p">})</span>
+<span class="n">when</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="c1"># use it</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://google.com/&#39;</span><span class="p">)</span>
+
+<span class="c1"># clean up</span>
+<span class="n">unstub</span><span class="p">()</span>
+</pre></div>
+
+
+<p>But:
+<em> clean up is required
+</em> the module seems not integrating standard unittest's mocks (maybe I am wrong, more investigation is required)</p>
             </div>
             <!-- /.entry-content -->
     <hr/>

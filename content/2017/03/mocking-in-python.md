@@ -197,3 +197,6 @@ See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-
 * [Testing json responses in Flask REST apps with pytest](/testing-json-responses-in-Flask-REST-apps-with-pytest.html)
 * [Refactoring python code. Extracting variables and other.](/refactoring-python-extract-variable.html)
 
+
+## More about mocking and testing
+* Martin Fowler - [Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html) 

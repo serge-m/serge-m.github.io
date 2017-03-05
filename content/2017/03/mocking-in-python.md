@@ -178,9 +178,9 @@ class A:
   def oops():
     return "oops"
 ```
-You change tests for `A` but you can forget yo fix `B` and tests for `B`. They will still work because `test_bar` forses mocked `A` to have `foo`. 
+You change tests for `A` but you can forget to fix `B` and tests for `B`.  `test_bar` will still work because mocked `A` still have `foo`. Probably you can catch that error on integration tests level, but it is better to "fail fast".
 
-If you use `@mock.patch('module.A', autospec=True)` then you get an error after you change `A` on 
+If you use `@mock.patch('module.A', autospec=True)`, then you get an error (about non-existent attribute) after you change `A` on 
 ```python
 MockedA.return_value.foo.return_value = "mocked-foo"
 ```

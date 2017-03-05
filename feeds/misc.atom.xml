@@ -131,7 +131,24 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;the module seems not integrating standard unittest's mocks . Maybe I am wrong, more investigation is required. I want to use &lt;code&gt;mock.patch&lt;/code&gt; and have &lt;code&gt;when-thenReturn&lt;/code&gt; construction working for it. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Similar articles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.fugue.co/2016-02-11-python-mocking-101.html"&gt;Python Mocking 101: Fake It Before You Make It&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Maching atributes for mocks&lt;/h2&gt;
+&lt;p&gt;I think one hate to keep in mind is that standard mocks don't care about non existent atttributes. I use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;autospec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;instead of &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That adds automatic checking of non-existent attributes and catches more errors. I think that has to be default behaviour of &lt;code&gt;patch&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;See also (Mocking Objects in Python)[https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html] section "Danger: mocking non-existent attributes" &lt;/p&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/echinthaka/ImageSimilarity"&gt;Image Similarity service&lt;/a&gt; (github) - scala based image similarity service, declared to be scalable.
 Image storage and image similarity logic is implemented within independent, stateless micro-services.
 Data is stored in postgres.

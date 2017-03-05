@@ -69,6 +69,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/ipython-save-notebook-as-script.html">ipython. save notebook as script</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-31T12:10:00+02:00"> 2014-08-31T12:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
+<blockquote class="tr_bq"># [1]
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command);
+
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -598,39 +632,6 @@ nvidia (1)</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/tables-in-latex-multiline-right.html">Tables in Latex. Multiline, right alignment</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-23T19:56:00+01:00"> 2014-01-23T19:56:00, Thu</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I used _tabularx _package.
-Additional definitions:  </p>
-<div class="highlight"><pre><span></span>    \usepackage{array}
-    \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment
-    \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
-</pre></div>
-
-
-<p>Table:</p>
-<div class="highlight"><pre><span></span>    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}
-     Text, aligned to the left, without margin \newline
-     Tex in the same cell on the next line …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tables-in-latex-multiline-right.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem4.html">&laquo;</a>
@@ -663,6 +664,11 @@ Additional definitions:  </p>
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/mocking-in-python.html">
+                            Mocking in Python
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/on-image-search.html">
                             On image search
@@ -716,11 +722,6 @@ Additional definitions:  </p>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/add-service-in-linux.html">
                             Add service in ubuntu
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">
-                            OpenVPN server in cloud using docker
                         </a>
                     </li>
                 </ul>
@@ -1114,6 +1115,11 @@ Additional definitions:  </p>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/testing.html">
+                            testing
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
                         <a href="https://serge-m.github.io/tag/theano.html">
                             theano
                         </a>
@@ -1151,6 +1157,11 @@ Additional definitions:  </p>
                     <li class="list-group-item tag-4">
                         <a href="https://serge-m.github.io/tag/uml.html">
                             uml
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/unittests.html">
+                            unittests
                         </a>
                     </li>
                     <li class="list-group-item tag-1">

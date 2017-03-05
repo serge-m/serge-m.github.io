@@ -2,7 +2,7 @@ Title: Image processing in Python
 Author: SergeM
 Date: 2017-01-15 07:10:00
 Slug: image-processing-in-python
-Tags: python,images,opencv,
+Tags: python,images,opencv,image processing
 
 ## Image search using elastic search
 

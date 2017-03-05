@@ -65,6 +65,7 @@ mocked_intermediate_result = "some-intermediate-result"
 mocked_final_result = "some-final-result"
 
 from unittest.mock import patch
+
 @patch('module.ClassName2')
 @patch('module.ClassName1')
 def test_foo(MockClass1, MockClass2):
@@ -80,6 +81,31 @@ def test_foo(MockClass1, MockClass2):
     MockClass2.return_value.run.assert_called_once_with(mocked_intermediate_result, "parameter2")
     
 ```
+
+Seems good but a little bit too verbose. Assertions on calls could be eliminated. I would like to do it like in Java with [Mockito](http://static.javadoc.io/org.mockito/mockito-core/2.7.13/org/mockito/Mockito.html#stubbing):
+```java
+when(mockedObject.foo("parameter")).thenReturn("mocked-result");
+```
+
+That means you don't need to verify intermediate calls. If they fail, the consequent calls fail as well.
+
+The test would look like this:
+```python
+@patch('module.ClassName2')
+@patch('module.ClassName1')
+def test_foo(MockClass1, MockClass2):
+    when(MockClass1).__call__("some_initial_parameter1").then_when().run("parameter1").then_return(mocked_intermediate_result)
+    when(MockClass2).__call__("some_initial_parameter2").then_when().run(mocked_intermediate_result, "parameter2").then_return(mocked_final_result)
+        
+    actual_result = module.ProductionClass().foo("parameter1", "parameter2")
+    
+    assert actual_result == mocked_final_result    
+```
+
+You don't need calls assertions in the end. If for example `object1.run(parameter1)` returns something else, then condition of the second mock object is not met and the test fails.
+
+
+
 
 
 

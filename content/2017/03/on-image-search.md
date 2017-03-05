@@ -17,3 +17,6 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.
 
 
 [ViSense SDK for python](https://github.com/visenze/visearch-sdk-python) - SDK for closed source iamge search
+
+
+[List of Content-based image retrieval (CBIR) engines](https://en.wikipedia.org/wiki/List_of_CBIR_engines) (wikipedia)

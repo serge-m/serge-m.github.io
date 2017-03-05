@@ -150,6 +150,44 @@ instead of
 @patch('module.ClassName1')
 ```  
 
-That adds automatic checking of non-existent attributes and catches more errors. I think that has to be default behaviour of `patch`.
+That adds automatic checking of non-existent attributes and catches more errors. 
+Let's see where `autospec=True` can save your life.
+
+```python
+
+class A:
+  def foo():
+    return "foo"
+    
+class B:
+  def bar():
+    return "bar" + A().foo()
+```
+
+here comes a test:
+```python
+@mock.patch('module.A')
+def test_bar(MockedA):
+  MockedA.return_value.foo.return_value = "mocked-foo"
+  assert B().bar() == "bar" + "mocked-foo"
+```
+
+At some point you decide to change class `A`. New version:
+```python
+class A:
+  def oops():
+    return "oops"
+```
+You change tests for `A` but you can forget yo fix `B` and tests for `B`. They will still work because `test_bar` forses mocked `A` to have `foo`. 
+
+If you use `@mock.patch('module.A', autospec=True)` then you get an error after you change `A` on 
+```python
+MockedA.return_value.foo.return_value = "mocked-foo"
+```
+
+
+I think `autospec=True` has to be default behaviour of `patch`.
+
+
 
 See also (Mocking Objects in Python)[https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html] section "Danger: mocking non-existent attributes" 

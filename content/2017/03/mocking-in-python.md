@@ -139,7 +139,7 @@ But:
 * [Using the Python mock library to fake regular functions during tests](http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/)
 
 
-## Maching atributes for mocks
+## Matching attributes for mocks
 I think one hate to keep in mind is that standard mocks don't care about non existent atttributes. I use
 ```python
 @patch('module.ClassName1', autospec=True)

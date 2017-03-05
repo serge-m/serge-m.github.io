@@ -65,6 +65,7 @@
 &lt;span class="n"&gt;mocked_final_result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;some-final-result&amp;quot;&lt;/span&gt;
 
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unittest.mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;
+
 &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MockClass1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MockClass2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -81,6 +82,26 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Seems good but a little bit too verbose. Assertions on calls could be eliminated. I would like to do it like in Java with &lt;a href="http://static.javadoc.io/org.mockito/mockito-core/2.7.13/org/mockito/Mockito.html#stubbing"&gt;Mockito&lt;/a&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;when&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mockedObject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;parameter&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)).&lt;/span&gt;&lt;span class="na"&gt;thenReturn&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;mocked-result&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That means you don't need to verify intermediate calls. If they fail, the consequent calls fail as well.&lt;/p&gt;
+&lt;p&gt;The test would look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MockClass1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MockClass2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;when&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MockClass1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__call__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;some_initial_parameter1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;then_when&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;parameter1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;then_return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mocked_intermediate_result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;when&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MockClass2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__call__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;some_initial_parameter2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;then_when&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mocked_intermediate_result&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;parameter2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;then_return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mocked_final_result&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;actual_result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ProductionClass&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;parameter1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;parameter2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;actual_result&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;mocked_final_result&lt;/span&gt;    
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You don't need calls assertions in the end. If for example &lt;code&gt;object1.run(parameter1)&lt;/code&gt; returns something else, then condition of the second mock object is not met and the test fails.&lt;/p&gt;
 &lt;p&gt;https://github.com/kaste/mockito-python&lt;/p&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/echinthaka/ImageSimilarity"&gt;Image Similarity service&lt;/a&gt; (github) - scala based image similarity service, declared to be scalable.
 Image storage and image similarity logic is implemented within independent, stateless micro-services.

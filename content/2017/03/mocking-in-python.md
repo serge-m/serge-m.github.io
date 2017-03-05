@@ -105,10 +105,30 @@ def test_foo(MockClass1, MockClass2):
 You don't need calls assertions in the end. If for example `object1.run(parameter1)` returns something else, then condition of the second mock object is not met and the test fails.
 
 
+*Question: is there a way to achieve that?*
 
 
+There is a port of Mockito to Python: [mockito-python](https://github.com/kaste/mockito-python) 
+There you can do virtually the same as in Java:
+```
+from mockito import when, mock, unstub
 
+when(os.path).exists('/foo').thenReturn(True)
 
+# or:
+import requests  # the famous library
+# you actually want to return a Response-like obj, we'll fake it
+response = mock({'status_code': 200, 'text': 'Ok'})
+when(requests).get(...).thenReturn(response)
 
-https://github.com/kaste/mockito-python
+# use it
+requests.get('http://google.com/')
+
+# clean up
+unstub()
+```
+
+But:
+* clean up is required
+* the module seems not integrating standard unittest's mocks (maybe I am wrong, more investigation is required)
 

@@ -147,7 +147,40 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That adds automatic checking of non-existent attributes and catches more errors. I think that has to be default behaviour of &lt;code&gt;patch&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;That adds automatic checking of non-existent attributes and catches more errors. 
+Let's see where &lt;code&gt;autospec=True&lt;/code&gt; can save your life.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;B&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;here comes a test:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@mock.patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.A&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_bar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MockedA&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;MockedA&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;mocked-foo&amp;quot;&lt;/span&gt;
+  &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bar&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;bar&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;mocked-foo&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;At some point you decide to change class &lt;code&gt;A&lt;/code&gt;. New version:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;A&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;oops&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;oops&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You change tests for &lt;code&gt;A&lt;/code&gt; but you can forget yo fix &lt;code&gt;B&lt;/code&gt; and tests for &lt;code&gt;B&lt;/code&gt;. They will still work because &lt;code&gt;test_bar&lt;/code&gt; forses mocked &lt;code&gt;A&lt;/code&gt; to have &lt;code&gt;foo&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;If you use &lt;code&gt;@mock.patch('module.A', autospec=True)&lt;/code&gt; then you get an error after you change &lt;code&gt;A&lt;/code&gt; on &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MockedA&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;mocked-foo&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I think &lt;code&gt;autospec=True&lt;/code&gt; has to be default behaviour of &lt;code&gt;patch&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;See also (Mocking Objects in Python)[https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html] section "Danger: mocking non-existent attributes" &lt;/p&gt;</content><category term="python"></category><category term="testing"></category><category term="unittests"></category></entry><entry><title>On image search</title><link href="https://serge-m.github.io/on-image-search.html" rel="alternate"></link><published>2017-03-05T12:11:00+01:00</published><updated>2017-03-05T12:11:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-05:/on-image-search.html</id><summary type="html">&lt;p&gt;&lt;a href="http://paradise.khresmoi.eu/index.html"&gt;ParaDISE&lt;/a&gt; - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/echinthaka/ImageSimilarity"&gt;Image Similarity service&lt;/a&gt; (github) - scala based image similarity service, declared to be scalable.
 Image storage and image similarity logic is implemented within independent, stateless micro-services.

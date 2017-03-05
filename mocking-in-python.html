@@ -274,8 +274,8 @@ Let's see where <code>autospec=True</code> can save your life.</p>
 </pre></div>
 
 
-<p>You change tests for <code>A</code> but you can forget yo fix <code>B</code> and tests for <code>B</code>. They will still work because <code>test_bar</code> forses mocked <code>A</code> to have <code>foo</code>. </p>
-<p>If you use <code>@mock.patch('module.A', autospec=True)</code> then you get an error after you change <code>A</code> on </p>
+<p>You change tests for <code>A</code> but you can forget to fix <code>B</code> and tests for <code>B</code>.  <code>test_bar</code> will still work because mocked <code>A</code> still have <code>foo</code>. Probably you can catch that error on integration tests level, but it is better to "fail fast".</p>
+<p>If you use <code>@mock.patch('module.A', autospec=True)</code>, then you get an error (about non-existent attribute) after you change <code>A</code> on </p>
 <div class="highlight"><pre><span></span><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;mocked-foo&quot;</span>
 </pre></div>
 

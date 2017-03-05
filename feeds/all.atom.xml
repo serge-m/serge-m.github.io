@@ -174,8 +174,8 @@ Let's see where &lt;code&gt;autospec=True&lt;/code&gt; can save your life.&lt;/p
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You change tests for &lt;code&gt;A&lt;/code&gt; but you can forget yo fix &lt;code&gt;B&lt;/code&gt; and tests for &lt;code&gt;B&lt;/code&gt;. They will still work because &lt;code&gt;test_bar&lt;/code&gt; forses mocked &lt;code&gt;A&lt;/code&gt; to have &lt;code&gt;foo&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;If you use &lt;code&gt;@mock.patch('module.A', autospec=True)&lt;/code&gt; then you get an error after you change &lt;code&gt;A&lt;/code&gt; on &lt;/p&gt;
+&lt;p&gt;You change tests for &lt;code&gt;A&lt;/code&gt; but you can forget to fix &lt;code&gt;B&lt;/code&gt; and tests for &lt;code&gt;B&lt;/code&gt;.  &lt;code&gt;test_bar&lt;/code&gt; will still work because mocked &lt;code&gt;A&lt;/code&gt; still have &lt;code&gt;foo&lt;/code&gt;. Probably you can catch that error on integration tests level, but it is better to "fail fast".&lt;/p&gt;
+&lt;p&gt;If you use &lt;code&gt;@mock.patch('module.A', autospec=True)&lt;/code&gt;, then you get an error (about non-existent attribute) after you change &lt;code&gt;A&lt;/code&gt; on &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MockedA&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;mocked-foo&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

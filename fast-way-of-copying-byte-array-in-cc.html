@@ -129,7 +129,7 @@ sergem personal public notebook            </a>
 
 
 <p>Array <code>conf_</code> is defined as follows: </p>
-<div class="highlight"><pre><span></span>    <span class="nt">std</span><span class="p">::</span><span class="nd">vector</span><span class="o">&lt;</span><span class="nt">BYTE</span><span class="o">*&gt;</span> <span class="nt">conf_</span><span class="o">;</span>
+<div class="highlight"><pre><span></span>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">*&gt;</span> <span class="n">conf_</span><span class="p">;</span>
 </pre></div>
 
 
@@ -137,50 +137,50 @@ sergem personal public notebook            </a>
 This fragment takes about <strong>45 ms</strong> for copying of 2 images with ( 1980x1080 pixels ) x 3 planes = 6.2 MPixels.
 I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The code is built for x64 platform. Disabled compiler option for buffer security check (GS-) and debug information has no effect on the productivity.</p>
 <p>Slightly better solution:</p>
-<div class="highlight"><pre><span></span>    // Copy several buffers (images)
-    for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+<div class="highlight"><pre><span></span>    <span class="c1">// Copy several buffers (images)</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+       <span class="kt">int</span> <span class="n">sizeOfArray</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">sizeOfBuffer_</span><span class="p">,</span> <span class="n">src</span><span class="p">.</span><span class="n">sizeOfBuffer_</span> <span class="p">);</span>
 
-       // Copy pixels
-       for( int j = 0; j &lt; sizeOfArray; ++ j )
-       {
-          conf_[i][j] = src.conf_[i][j];
-       }
-    }
+       <span class="c1">// Copy pixels</span>
+       <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">sizeOfArray</span><span class="p">;</span> <span class="o">++</span> <span class="n">j</span> <span class="p">)</span>
+       <span class="p">{</span>
+          <span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
 </pre></div>
 
 
 <p>It takes about <strong>35 ms </strong>per full copy. </p>
 <p>Much better solution:</p>
-<div class="highlight"><pre><span></span>    // Copy several buffers (images)
-    for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); ++ i )
-    {
-       BYTE * arrDst = conf_[i];
-       BYTE * arrSrc = src.conf_[i];
-       int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
+<div class="highlight"><pre><span></span>    <span class="c1">// Copy several buffers (images)</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+       <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrDst</span> <span class="o">=</span> <span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+       <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrSrc</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+       <span class="kt">int</span> <span class="n">sizeOfArray</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">sizeOfBuffer_</span><span class="p">,</span> <span class="n">src</span><span class="p">.</span><span class="n">sizeOfBuffer_</span> <span class="p">);</span>
 
-       // Copy one image per pixel
-       for( int j = 0; j &lt; sizeOfArray; ++ j )
-       {
-          arrDst[j] = arrSrc[j];
-       }
-    }
+       <span class="c1">// Copy pixels</span>
+       <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">sizeOfArray</span><span class="p">;</span> <span class="o">++</span> <span class="n">j</span> <span class="p">)</span>
+       <span class="p">{</span>
+          <span class="n">arrDst</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arrSrc</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
 </pre></div>
 
 
 <p>Everything is the same except for using additional temporary variable. This version runs for <strong>8 ms</strong>. 
 UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this code.</p>
 <p>And even better solution for Visual Studio:</p>
-<div class="highlight"><pre><span></span>    <span class="o">//</span> <span class="nt">Copy</span> <span class="nt">several</span> <span class="nt">buffers</span> <span class="o">(</span><span class="nt">images</span><span class="o">)</span>
-    <span class="nt">for</span><span class="o">(</span> <span class="nt">int</span> <span class="nt">i</span> <span class="o">=</span> <span class="nt">0</span><span class="o">;</span> <span class="nt">i</span> <span class="o">&lt;</span> <span class="nt">MIN</span><span class="o">(</span> <span class="nt">conf_</span><span class="p">.</span><span class="nc">size</span><span class="o">(),</span> <span class="nt">src</span><span class="p">.</span><span class="nc">conf_</span><span class="p">.</span><span class="nc">size</span><span class="o">()</span> <span class="o">);</span> <span class="o">++</span> <span class="nt">i</span> <span class="o">)</span>
+<div class="highlight"><pre><span></span>    <span class="c1">// Copy several buffers (images)</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
-       <span class="err">BYTE</span> <span class="err">*</span> <span class="err">arrDst</span> <span class="err">=</span> <span class="err">conf_</span><span class="cp">[</span><span class="nx">i</span><span class="cp">]</span><span class="p">;</span>
-       <span class="err">BYTE</span> <span class="err">*</span> <span class="err">arrSrc</span> <span class="err">=</span> <span class="err">src.conf_</span><span class="cp">[</span><span class="nx">i</span><span class="cp">]</span><span class="p">;</span>
-       <span class="err">int</span> <span class="err">sizeOfArray</span> <span class="err">=</span> <span class="err">MIN(</span> <span class="err">sizeOfBuffer_,</span> <span class="err">src.sizeOfBuffer_</span> <span class="err">)</span><span class="p">;</span>
+       <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrDst</span> <span class="o">=</span> <span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+       <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrSrc</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+       <span class="kt">int</span> <span class="n">sizeOfArray</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">sizeOfBuffer_</span><span class="p">,</span> <span class="n">src</span><span class="p">.</span><span class="n">sizeOfBuffer_</span> <span class="p">);</span>
 
-       <span class="err">//</span> <span class="err">Copy</span> <span class="err">pixels</span>
-       <span class="n">std</span><span class="p">:</span><span class="o">:</span><span class="nf">copy</span><span class="p">(</span> <span class="n">arrSrc</span><span class="p">,</span> <span class="n">arrSrc</span> <span class="o">+</span> <span class="n">sizeOfArray</span><span class="p">,</span> <span class="n">arrDst</span> <span class="p">);</span>
+       <span class="c1">// Copy pixels</span>
+       <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span> <span class="n">arrSrc</span><span class="p">,</span> <span class="n">arrSrc</span> <span class="o">+</span> <span class="n">sizeOfArray</span><span class="p">,</span> <span class="n">arrDst</span> <span class="p">);</span>
     <span class="p">}</span>
 </pre></div>
 

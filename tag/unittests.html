@@ -90,18 +90,17 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Let's consider  how python standard unittest module suppose to use mocks.
-Let's say we have a following class:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
-  <span class="k">def</span> 
-</pre></div>
+                <div class="summary"><p>Let's consider  how python standard unittest module suppose to use mocks.</p>
+<p>Assume we want to test a method that creates and uses objects of other classes:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module.ClassName1</span>
+<span class="kn">import</span> <span class="nn">module.ClassName2</span>
 
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">):</span>
+    <span class="n">object1</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">ClassName1</span><span class="p">(</span><span class="s2">&quot;some_initial_parameter1&quot;</span><span class="p">)</span>
+    <span class="n">intermediate_result</span> <span class="o">=</span> <span class="n">object1</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">parameter1</span><span class="p">)</span>
 
-<p>Here is how we can test object creation (Snippet is taken example from <a href="https://docs.python.org/3/library/unittest.mock.html">official documentation</a>):</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
-<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
-<span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">MockClass1 …</span></pre></div>
+    <span class="n">object2</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">ClassName2 …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mocking-in-python.html">more ...</a>
                 </div>
             </article>

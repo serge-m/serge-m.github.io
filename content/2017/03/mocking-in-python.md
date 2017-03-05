@@ -134,3 +134,22 @@ But:
 
 * the module seems not integrating standard unittest's mocks . Maybe I am wrong, more investigation is required. I want to use `mock.patch` and have `when-thenReturn` construction working for it. 
 
+## Similar articles
+* [Python Mocking 101: Fake It Before You Make It](https://blog.fugue.co/2016-02-11-python-mocking-101.html)
+
+
+
+## Maching atributes for mocks
+I think one hate to keep in mind is that standard mocks don't care about non existent atttributes. I use
+```python
+@patch('module.ClassName1', autospec=True)
+```  
+instead of 
+
+```python
+@patch('module.ClassName1')
+```  
+
+That adds automatic checking of non-existent attributes and catches more errors. I think that has to be default behaviour of `patch`.
+
+See also (Mocking Objects in Python)[https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html] section "Danger: mocking non-existent attributes" 

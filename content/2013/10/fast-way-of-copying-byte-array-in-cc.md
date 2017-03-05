@@ -24,7 +24,7 @@ I have the following code for copying several buffers from one object to another
 
 Array `conf_` is defined as follows: 
 
-```
+```c++
     std::vector<BYTE*> conf_;
 ```
 
@@ -34,7 +34,7 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
 
 Slightly better solution:
 
-```
+```c++
     // Copy several buffers (images)
     for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
     {
@@ -53,7 +53,7 @@ It takes about **35 ms **per full copy.
 Much better solution:
 
 
-```
+```c++
     // Copy several buffers (images)
     for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
     {
@@ -61,7 +61,7 @@ Much better solution:
        BYTE * arrSrc = src.conf_[i];
        int sizeOfArray = MIN( sizeOfBuffer_, src.sizeOfBuffer_ );
     
-       // Copy one image per pixel
+       // Copy pixels
        for( int j = 0; j < sizeOfArray; ++ j )
        {
           arrDst[j] = arrSrc[j];
@@ -74,7 +74,7 @@ UPD: Intel Compiler 2011 demonstrates **2 ms** latency for this code.
 
 And even better solution for Visual Studio:
 
-```
+```c++
     // Copy several buffers (images)
     for( int i = 0; i < MIN( conf_.size(), src.conf_.size() ); ++ i )
     {

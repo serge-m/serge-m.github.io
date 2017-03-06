@@ -140,7 +140,7 @@ But:
 
 
 ## Matching attributes for mocks
-I think one hate to keep in mind is that standard mocks don't care about non existent atttributes. I use
+Keep in mind that standard mocks don't care about non-existent atttributes. I use
 ```python
 @patch('module.ClassName1', autospec=True)
 ```  

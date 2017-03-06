@@ -138,7 +138,7 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/"&gt;Using the Python mock library to fake regular functions during tests&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Matching attributes for mocks&lt;/h2&gt;
-&lt;p&gt;I think one hate to keep in mind is that standard mocks don't care about non existent atttributes. I use&lt;/p&gt;
+&lt;p&gt;Keep in mind that standard mocks don't care about non-existent atttributes. I use&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module.ClassName1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;autospec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 

@@ -198,6 +198,7 @@ See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-
 * [Refactoring python code. Extracting variables and other.](/refactoring-python-extract-variable.html)
 * Alex Marandon. [Python Mock Gotchas](http://alexmarandon.com/articles/python_mock_gotchas/)
 * José R.C. Cruz.  [Using Mocks in Python](http://www.drdobbs.com/testing/using-mocks-in-python/240168251#). May 22, 2014
+* https://semaphoreci.com/community/tutorials/testing-python-requests-with-betamax
 
 ## More about mocking and testing
 * Martin Fowler. [Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html) 

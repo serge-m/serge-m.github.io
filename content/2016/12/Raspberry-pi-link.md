@@ -33,6 +33,6 @@ ssh -Y user@raspberrypi-url
 Created by Kevin Townsend. pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
 ## RaspberryPi Zero pins Layout
-![GPIO raspberry pins scheme](gpio.png)
+![GPIO raspberry pins scheme](./gpio.png)
 
-![pins layout photo](gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)
+![pins layout photo](./gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)

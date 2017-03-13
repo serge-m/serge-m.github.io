@@ -4,8 +4,6 @@ Date: 2016-12-31 21:30:00
 Tags: links
 
 
-[Controlling servos](http://razzpisampler.oreilly.com/ch05.html)
-
 [Description of I2C interface](https://learn.sparkfun.com/tutorials/i2c)
 
 [Raspberry Pi SPI and I2C Tutorial ](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial)
@@ -14,7 +12,13 @@ Tags: links
 Continuous deployment (Russian)
 [Непрерывная кросс компиляция на Raspberry PI](https://m.habrahabr.ru/post/318840/)
 
-[Control brushles motor with ESC](https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/)
+## Controlling brushless motor
+
+[Control brushless motor with ESC](https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/). Without additional controllers
+
+[With 
+
+
 
 
 ## Connecting via ssh:
@@ -23,10 +27,12 @@ ssh -Y user@raspberrypi-url
 ```
 
 ## Controlling multiple servos 
+[Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
+
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
 Created by Kevin Townsend. pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme](gpio.png)
 
-![pins layout photo](gpio-raspberry-zero.png)
+![pins layout photo](gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)

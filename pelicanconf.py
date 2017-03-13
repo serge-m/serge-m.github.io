@@ -61,3 +61,5 @@ DISPLAY_ARTICLE_INFO_ON_INDEX=True
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "sitemap"]
+
+STATIC_PATHS = ["content"]

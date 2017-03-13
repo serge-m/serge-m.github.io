@@ -28,3 +28,5 @@ Created by Kevin Townsend. pdf](https://cdn-learn.adafruit.com/downloads/pdf/ada
 
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme](gpio.png)
+
+![pins layout photo](gpio-raspberry-zero.png)

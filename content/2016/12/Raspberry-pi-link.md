@@ -16,9 +16,9 @@ Continuous deployment (Russian)
 
 [Control brushless motor with ESC](https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/). Without additional controllers
 
-[With 
+[With  PCA9685 PWM Board](http://raspberrypi.stackexchange.com/a/36317) (stackexchange thread)
 
-
+[One more thread](https://www.raspberrypi.org/forums/viewtopic.php?t=46732)
 
 
 ## Connecting via ssh:

@@ -13,3 +13,5 @@ Tags: links
 
 Continuous deployment (Russian)
 [Непрерывная кросс компиляция на Raspberry PI](https://m.habrahabr.ru/post/318840/)
+
+[Control brushles motor with ESC](https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/)

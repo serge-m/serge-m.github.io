@@ -25,3 +25,6 @@ ssh -Y user@raspberrypi-url
 ## Controlling multiple servos 
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
 Created by Kevin Townsend. pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
+
+## RaspberryPi Zero pins Layout
+![GPIO raspberry pins scheme](gpio.png)

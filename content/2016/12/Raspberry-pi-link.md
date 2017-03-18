@@ -35,6 +35,8 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 ## Controlling DC motor
 [control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware)
 
+[Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
+
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)
 

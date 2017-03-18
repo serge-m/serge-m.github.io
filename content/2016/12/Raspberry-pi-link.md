@@ -30,7 +30,10 @@ ssh -Y user@raspberrypi-url
 [Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
 
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
-Created by Kevin Townsend. pdf](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
+Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
+
+## Controlling DC motor
+[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware)
 
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)

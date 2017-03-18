@@ -46,3 +46,5 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 
 ## Other
 [Example of using 545043 power supply](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html)
+
+[description of sn74hc595](http://www.ti.com/lit/ds/symlink/sn74hc595.pdf)

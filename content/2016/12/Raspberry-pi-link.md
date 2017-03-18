@@ -41,3 +41,6 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)
 
 ![pins layout photo]({filename}/2016/12/gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)
+
+## Other
+[Example of using 545043 power supply](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html)

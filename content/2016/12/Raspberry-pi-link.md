@@ -37,6 +37,8 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 
 [Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
 
+[using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
+
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)
 

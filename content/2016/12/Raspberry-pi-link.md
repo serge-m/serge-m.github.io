@@ -28,6 +28,9 @@ Continuous deployment (Russian)
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
 Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
+### Stepper motor
+[with l293d](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all)
+
 ### DC motor (brushed)
 [Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
 

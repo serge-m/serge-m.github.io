@@ -29,7 +29,9 @@ Continuous deployment (Russian)
 Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
 ### DC motor (brushed)
-[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) (probably for arduino)
+[Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
+
+[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) (arduino)
 
 [Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
 

@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="links" />
-        <meta name="description" content="Description of I2C interface Raspberry Pi SPI and I2C Tutorial Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI Controlling brushless motor Control brushless motor with ESC. Without additional controllers With PCA9685 PWM Board (stackexchange thread) One more thread Connecting via ssh: ssh -Y user@raspberrypi-url Controlling multiple servos Controlling …" />
+        <meta name="description" content="Description of I2C interface Raspberry Pi SPI and I2C Tutorial Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers With PCA9685 PWM Board (stackexchange thread) One more thread multiple servos Controlling one servo. No additional controllers needed Adafruit …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Raspberry Pi Links"/>
         <meta property="og:url" content="https://serge-m.github.io/raspberry-pi-links.html"/>
-        <meta property="og:description" content="Description of I2C interface Raspberry Pi SPI and I2C Tutorial Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI Controlling brushless motor Control brushless motor with ESC. Without additional controllers With PCA9685 PWM Board (stackexchange thread) One more thread Connecting via ssh: ssh -Y user@raspberrypi-url Controlling multiple servos Controlling …"/>
+        <meta property="og:description" content="Description of I2C interface Raspberry Pi SPI and I2C Tutorial Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers With PCA9685 PWM Board (stackexchange thread) One more thread multiple servos Controlling one servo. No additional controllers needed Adafruit …"/>
         <meta property="article:published_time" content="2016-12-31" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="links" />
@@ -109,23 +109,26 @@ sergem personal public notebook            </a>
 <p><a href="https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial">Raspberry Pi SPI and I2C Tutorial </a></p>
 <p>Continuous deployment (Russian)
 <a href="https://m.habrahabr.ru/post/318840/">Непрерывная кросс компиляция на Raspberry PI</a></p>
-<h2>Controlling brushless motor</h2>
+<h2>Controlling motors</h2>
+<h3>Brushless motor</h3>
 <p><a href="https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/">Control brushless motor with ESC</a>. Without additional controllers</p>
 <p><a href="http://raspberrypi.stackexchange.com/a/36317">With  PCA9685 PWM Board</a> (stackexchange thread)</p>
 <p><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=46732">One more thread</a></p>
+<h3>multiple servos</h3>
+<p><a href="http://razzpisampler.oreilly.com/ch05.html">Controlling one servo</a>. No additional controllers needed</p>
+<p><a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf">Adafruit 16 Channel Servo Driver with Raspberry Pi
+Created by Kevin Townsend. pdf. (pca-9685)</a></p>
+<h3>DC motor</h3>
+<p><a href="https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware">control  dc motor with pca9685</a></p>
+<p><a href="https://www.youtube.com/watch?v=W7cV9_W12sM">Video with specialized dc motor controller L293D</a></p>
+<p><a href="https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv">using L293D and 4N35 opto isolator</a></p>
 <h2>Connecting via ssh:</h2>
 <div class="highlight"><pre><span></span>ssh -Y user@raspberrypi-url
 </pre></div>
 
 
-<h2>Controlling multiple servos</h2>
-<p><a href="http://razzpisampler.oreilly.com/ch05.html">Controlling one servo</a>. No additional controllers needed</p>
-<p><a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf">Adafruit 16 Channel Servo Driver with Raspberry Pi
-Created by Kevin Townsend. pdf. (pca-9685)</a></p>
-<h2>Controlling DC motor</h2>
-<p><a href="https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware">control  dc motor with pca9685</a></p>
-<p><a href="https://www.youtube.com/watch?v=W7cV9_W12sM">Video with specialized dc motor controller L293D</a></p>
-<p><a href="https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv">using L293D and 4N35 opto isolator</a></p>
+<h2>Reading input (button) from GPIO</h2>
+<p><a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs">without interrupts, raspi.tv</a></p>
 <h2>RaspberryPi Zero pins Layout</h2>
 <p><img alt="GPIO raspberry pins scheme" src="https://serge-m.github.io/2016/12/gpio.png"></p>
 <p><img alt="pins layout photo" src="https://serge-m.github.io/2016/12/gpio-raspberry-zero.png"> <a href="http://pi4j.com/pins/model-zero-rev1.html">image source</a></p>

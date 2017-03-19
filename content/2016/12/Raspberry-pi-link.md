@@ -31,6 +31,8 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 ### Stepper motor
 [with l293d](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all)
 
+[stepper and dc motor using spcializer HAT](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all)
+
 ### DC motor (brushed)
 [Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
 

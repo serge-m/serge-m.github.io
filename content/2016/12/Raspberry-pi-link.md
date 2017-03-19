@@ -51,6 +51,9 @@ from arduino:
 [using drv8833 driver](https://ulrichbuschbaum.wordpress.com/2014/10/28/using-the-drv8833-motor-driver/), 
 [using l293d](https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/)
 
+
+Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor]
+
 ## Connecting via ssh:
 ```
 ssh -Y user@raspberrypi-url

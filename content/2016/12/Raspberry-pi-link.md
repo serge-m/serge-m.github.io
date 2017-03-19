@@ -74,3 +74,5 @@ ssh -Y user@raspberrypi-url
 [description of sn74hc595](http://www.ti.com/lit/ds/symlink/sn74hc595.pdf)
 
 [blog about building security robot](https://seregus.wordpress.com/)
+
+[h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS) [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor)

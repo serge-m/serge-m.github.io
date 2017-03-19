@@ -37,6 +37,9 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 
 [Adafruit DRV8871 motor driver, 1 dc motor](https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout?view=all)
 
+It is possible to have frequency controlled dc driver connected through Adafruit 16 Channel Servo Driver. 
+See [post](https://www.raspberrypi.org/forums/viewtopic.php?t=12067&p=161140). [controller, ~100 Euro](http://www.robotshop.com/en/sabertooth-dual-regenerative-motor-driver.html), powerfull
+
 
 ## Connecting via ssh:
 ```

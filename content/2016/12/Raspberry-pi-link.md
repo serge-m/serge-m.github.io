@@ -12,7 +12,9 @@ Tags: links
 Continuous deployment (Russian)
 [Непрерывная кросс компиляция на Raspberry PI](https://m.habrahabr.ru/post/318840/)
 
-## Controlling brushless motor
+## Controlling motors
+
+### Brushless motor
 
 [Control brushless motor with ESC](https://solenerotech1.wordpress.com/2013/09/09/tutorialhow-to-control-a-brushless-motor-with-raspberry-pi/). Without additional controllers
 
@@ -20,24 +22,27 @@ Continuous deployment (Russian)
 
 [One more thread](https://www.raspberrypi.org/forums/viewtopic.php?t=46732)
 
+### multiple servos 
+[Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
+
+[Adafruit 16 Channel Servo Driver with Raspberry Pi
+Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
+
+### DC motor
+[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware)
+
+[Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
+
+[using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
 
 ## Connecting via ssh:
 ```
 ssh -Y user@raspberrypi-url
 ```
 
-## Controlling multiple servos 
-[Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
 
-[Adafruit 16 Channel Servo Driver with Raspberry Pi
-Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
-
-## Controlling DC motor
-[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware)
-
-[Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
-
-[using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
+## Reading input (button) from GPIO
+[without interrupts, raspi.tv](http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs)
 
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)

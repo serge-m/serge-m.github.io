@@ -59,3 +59,5 @@ ssh -Y user@raspberrypi-url
 [Example of using 545043 power supply](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html)
 
 [description of sn74hc595](http://www.ti.com/lit/ds/symlink/sn74hc595.pdf)
+
+[blog about building security robot](https://seregus.wordpress.com/)

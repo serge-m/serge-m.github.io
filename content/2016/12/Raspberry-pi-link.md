@@ -75,4 +75,5 @@ ssh -Y user@raspberrypi-url
 
 [blog about building security robot](https://seregus.wordpress.com/)
 
-[h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS) [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor)
+[h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS); [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor);
+[another version of h bridge](http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php)

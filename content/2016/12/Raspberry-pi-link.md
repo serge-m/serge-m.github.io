@@ -28,12 +28,15 @@ Continuous deployment (Russian)
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
 Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
-### DC motor
-[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver/hardware)
+### DC motor (brushed)
+[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all)
 
 [Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
 
 [using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
+
+[Adafruit DRV8871 motor driver, 1 dc motor](https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout?view=all)
+
 
 ## Connecting via ssh:
 ```

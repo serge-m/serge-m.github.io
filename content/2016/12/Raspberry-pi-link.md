@@ -40,8 +40,8 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 It is possible to have frequency controlled dc driver connected through Adafruit 16 Channel Servo Driver. 
 See [post](https://www.raspberrypi.org/forums/viewtopic.php?t=12067&p=161140). [controller, ~100 Euro](http://www.robotshop.com/en/sabertooth-dual-regenerative-motor-driver.html), powerfull
 
-[using drv8833 driver](https://ulrichbuschbaum.wordpress.com/2014/10/28/using-the-drv8833-motor-driver/)
-
+from arduino: 
+[using drv8833 driver](https://ulrichbuschbaum.wordpress.com/2014/10/28/using-the-drv8833-motor-driver/), 
 [using l293d](https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/)
 
 ## Connecting via ssh:

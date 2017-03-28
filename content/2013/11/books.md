@@ -65,4 +65,9 @@ Tags: memory,books
 
 * Learning Python, 5th Edition, Mark Lutz
   [link](http://shop.oreilly.com/product/0636920028154.do#tab_04_0)
-
+  
+  
+  
+  #
+  # todo
+  * https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.d6zqx1uh2

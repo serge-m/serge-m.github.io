@@ -72,6 +72,46 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/python-logging.html">Python logging best practices</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-04-21T23:05:00+02:00"> 2015-04-21T23:05:00, Tue</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/links.html">links</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>Best practices:</h2>
+<p><a href="http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python">Good logging practice in python</a></p>
+<p><a href="http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html">Logging exceptions logging.exception</a></p>
+<h2>code for logging in ipython notebook (jupyter)</h2>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">prepare_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">filename_template</span><span class="o">=</span><span class="s2">&quot;logs/notebook_log_{}.txt&quot;</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">prepare_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">):</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+    <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">handler</span>
+
+  <span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(asctime …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-logging.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/install-texlivelatex-in-linux-mint.html">Install TeXLive/Latex in Linux Mint</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -642,48 +682,6 @@ for each alpha they find optimum through setting derivatives of Ec …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html">Simple occlusion filling for depth maps</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-09-01T12:14:00+02:00"> 2014-09-01T12:14:00, Mon</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>As an example I use images from middleburry.
-Solution is very dirty and slow.</p>
-<p><a href="https://github.com/serge-m/depth_map_occlusion&quot; target=&quot;_blank">https://github.com/serge-m/depth_map_occlusion</a></p>
-<blockquote class="tr_bq"><span style="font-family: &quot;Courier New&quot;,Courier,monospace;"># In[1]:
-
-import numpy
-import scipy
-import matplotlib.pyplot as plt
-
-
-# In[2]:
-
-from scipy import ndimage
-import numpy as np
-
-# kernels for shift
-k = np.array([
-[[0,0,0],
-&nbsp;[0 …</span></blockquote>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/simple-occlusion-filling-for-depth-maps.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc3.html">&laquo;</a>
@@ -716,6 +714,11 @@ k = np.array([
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/no-protocol-specified.html">
+                            "No protocol specified" while running a program as another user
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/mocking-in-python.html">
                             Mocking in Python
@@ -769,11 +772,6 @@ k = np.array([
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/shell-commands.html">
                             Shell commands
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/add-service-in-linux.html">
-                            Add service in ubuntu
                         </a>
                     </li>
                 </ul>

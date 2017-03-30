@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-03-06T00:01:00+01:00</updated><entry><title>Mocking in Python</title><link href="https://serge-m.github.io/mocking-in-python.html" rel="alternate"></link><published>2017-03-06T00:01:00+01:00</published><updated>2017-03-06T00:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-06:/mocking-in-python.html</id><summary type="html">&lt;p&gt;Let's consider  how python standard unittest module suppose to use mocks.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-03-30T00:01:00+02:00</updated><entry><title>"No protocol specified" while running a program as another user</title><link href="https://serge-m.github.io/no-protocol-specified.html" rel="alternate"></link><published>2017-03-30T00:01:00+02:00</published><updated>2017-03-30T00:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-30:/no-protocol-specified.html</id><summary type="html">&lt;p&gt;Running some GUI application as another user:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;user1@laptop:~$ su - user2
+user2@laptop:~$ leafpad ~/somefile.txt
+No protocol specified
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The problem is &lt;code&gt;user2&lt;/code&gt; doesn't have access to your screen.
+Solution:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xhost +
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Probably not the safest one.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href="http://unix.stackexchange.com/a/108787"&gt;thread&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Running some GUI application as another user:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;user1@laptop:~$ su - user2
+user2@laptop:~$ leafpad ~/somefile.txt
+No protocol specified
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The problem is &lt;code&gt;user2&lt;/code&gt; doesn't have access to your screen.
+Solution:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xhost +
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Probably not the safest one.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href="http://unix.stackexchange.com/a/108787"&gt;thread&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Mocking in Python</title><link href="https://serge-m.github.io/mocking-in-python.html" rel="alternate"></link><published>2017-03-06T00:01:00+01:00</published><updated>2017-03-06T00:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-06:/mocking-in-python.html</id><summary type="html">&lt;p&gt;Let's consider  how python standard unittest module suppose to use mocks.&lt;/p&gt;
 &lt;p&gt;Assume we want to test a method that creates and uses objects of other classes:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# content of module.py&lt;/span&gt;
 

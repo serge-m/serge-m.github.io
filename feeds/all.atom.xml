@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-03-30T00:01:00+02:00</updated><entry><title>"No protocol specified" while running a program as another user</title><link href="https://serge-m.github.io/no-protocol-specified.html" rel="alternate"></link><published>2017-03-30T00:01:00+02:00</published><updated>2017-03-30T00:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-30:/no-protocol-specified.html</id><summary type="html">&lt;p&gt;Running some GUI application as another user:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-04-02T12:11:00+02:00</updated><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; tags into client.key, remove &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; tags …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; tags into client.key, remove &lt;code&gt;&amp;lt;key&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;
+&lt;li&gt;Copy from between &lt;code&gt;&amp;lt;tls-auth&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ta.key&lt;/code&gt;, remove &lt;code&gt;&amp;lt;tls-auth&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;
+&lt;li&gt;Remove the line "&lt;code&gt;key-direction 1&lt;/code&gt;"&lt;/li&gt;
+&lt;li&gt;Above &lt;code&gt;"# -----BEGIN RSA SIGNATURE-----"&lt;/code&gt; insert the following lines.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ca ca.crt
+    cert client.crt
+    key client.key
+    tls-auth ta.key 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Done.&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href="https://gist.github.com/Morley93/9697578"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="openvpn"></category></entry><entry><title>"No protocol specified" while running a program as another user</title><link href="https://serge-m.github.io/no-protocol-specified.html" rel="alternate"></link><published>2017-03-30T00:01:00+02:00</published><updated>2017-03-30T00:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-03-30:/no-protocol-specified.html</id><summary type="html">&lt;p&gt;Running some GUI application as another user:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;user1@laptop:~$ su - user2
 user2@laptop:~$ leafpad ~/somefile.txt
 No protocol specified

@@ -69,6 +69,32 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">Convert ovpn config file to .ca, .crt, .key</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-04-02T12:11:00+02:00"> 2017-04-02T12:11:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>How you can take an OpenVPN .ovpn config file and extract the certificates/keys </p>
+<ul>
+<li>Copy from between <code>&lt;ca&gt;</code> tags into <code>ca.crt</code>, remove <code>&lt;ca&gt;</code> tags from original file.</li>
+<li>Copy from between <code>&lt;cert&gt;</code> tags into <code>client.crt</code>, remove <code>&lt;cert&gt;</code> tags.</li>
+<li>Copy from between <code>&lt;key&gt;</code> tags into client.key, remove <code>&lt;key&gt;</code> tags …</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -688,43 +714,6 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-27T22:47:00+01:00"> 2016-11-27T22:47:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/flask.html">flask</a>
-        /
-	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
-<h2>Code of sample_app.py</h2>
-<p>Creating Flask application:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Helper class for JSON-based response:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">200 …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -744,6 +733,8 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
                             href="https://serge-m.github.io/index7.html">7</a></li>
                     <li class=""><a
                             href="https://serge-m.github.io/index8.html">8</a></li>
+                    <li class=""><a
+                            href="https://serge-m.github.io/index9.html">9</a></li>
                 <li class="next"><a
                         href="https://serge-m.github.io/index2.html">&raquo;</a></li>
         </ul>
@@ -756,6 +747,11 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
 
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">
+                            Convert ovpn config file to .ca, .crt, .key
+                        </a>
+                    </li>
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/no-protocol-specified.html">
                             "No protocol specified" while running a program as another user
@@ -809,11 +805,6 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
                     <li class="list-group-item">
                         <a href="https://serge-m.github.io/pelican-hints.html">
                             Pelican Hints
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="https://serge-m.github.io/shell-commands.html">
-                            Shell commands
                         </a>
                     </li>
                 </ul>
@@ -1124,6 +1115,11 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
                     <li class="list-group-item tag-2">
                         <a href="https://serge-m.github.io/tag/opencv.html">
                             opencv
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="https://serge-m.github.io/tag/openvpn.html">
+                            openvpn
                         </a>
                     </li>
                     <li class="list-group-item tag-2">

@@ -6,5 +6,6 @@ Tags: microservices
 
 [Twelve factor app](https://12factor.net)
 
+[Modules vs Microservices](https://www.oreilly.com/ideas/modules-vs-microservices) About reasonable choice for architecture
 
 [События, шины и интеграция данных в непростом мире микросервисов](https://habrahabr.ru/post/322474/)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>matlab - sergem personal public notebook</title>
+    <title>Collection of interesting databases - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,16 @@
 
 
 
+<link rel="canonical" href="https://serge-m.github.io/pages/collection-of-interesting-databases.html">
 
-    <meta name="author" content="sergem" />
-    <meta name="keywords" content="matlab" />
+        <meta name="author" content="SergeM" />
+        <meta name="description" content="Pretrained word vectors for 90 languages, fastText These vectors in dimension 300 were obtained using the skip-gram model described in Bojanowski et al. (2016) with default parameters. By Facebook." />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content="https://serge-m.github.io"/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+    <meta property="og:site_name" content="sergem personal public notebook" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Collection of interesting databases"/>
+    <meta property="og:url" content="https://serge-m.github.io/pages/collection-of-interesting-databases.html"/>
+    <meta property="og:description" content="Pretrained word vectors for 90 languages, fastText These vectors in dimension 300 were obtained using the skip-gram model described in Bojanowski et al. (2016) with default parameters. By Facebook." />
 
 
     <!-- Bootstrap -->
@@ -54,7 +54,7 @@ sergem personal public notebook            </a>
                          <li><a href="https://serge-m.github.io/pages/posts-by-year.html">
                              posts by year
                           </a></li>
-                         <li><a href="https://serge-m.github.io/pages/collection-of-interesting-databases.html">
+                         <li class="active"><a href="https://serge-m.github.io/pages/collection-of-interesting-databases.html">
                              Collection of interesting databases
                           </a></li>
                         <li >
@@ -72,146 +72,15 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://serge-m.github.io/quiver-for-optical-flow.html">Quiver for optical flow</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-11-06T15:36:00+01:00"> 2014-11-06T15:36:00, Thu</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-        /
-	<a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
-<p><pre class="brush: cpp"> 
-function [ output ] = quiver_flow( u, v )
-%QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014</p>
-<p>output = quiver( u, v, 0);
-axis ij …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-09-16T02:15:00+02:00"> 2014-09-16T02:15:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab</p>
-<p><a href="https://github.com/serge-m/pyinterp2">https://github.com/serge-m/pyinterp2</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-equivalent-of-interp2.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-08-31T11:56:00+02:00"> 2014-08-31T11:56:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>There are several solutions:
-Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a>
-<h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  <a href="http://pymat.sourceforge.net/&quot; rel=&quot;nofollow">http://pymat.sourceforge.net</a>
-Last updated: 2003
-  <h2>pymat2 …</h2></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/use-matlab-function-from-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/lambda-functions-in-matlab.html">lambda functions in matlab</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-05-24T18:56:00+02:00"> 2014-05-24T18:56:00, Sat</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I discovered it during Machine learnin courses on Coursera</p>
-<blockquote class="tr_bq">To specify the actual function we are minimizing, we use a "short-hand"
-for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
-creates a function, with argument t, which calls your costFunction. This
-allows us to wrap the costFunction for …</blockquote>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/lambda-functions-in-matlab.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/matlab.html">MATLAB</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-11-18T20:00:00+01:00"> 2013-11-18T20:00:00, Mon</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/draft.html">draft</a>
-        /
-	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.</p>
-<p>useParallel - automatic parallel</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/matlab.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
+    <section id="content" class="body">
+        <h1 class="entry-title">Collection of interesting databases</h1>
+        
+        <div class="entry-content">
+            <p><a href="https://github.com/facebookresearch/fastText/blob/master/pretrained-vectors.md">Pretrained word vectors for 90 languages, fastText</a>
+These vectors in dimension 300 were obtained using the skip-gram model described in <a href="https://arxiv.org/abs/1607.04606">Bojanowski et al. (2016)</a> with default parameters.
+By Facebook.</p>
+        </div>
+    </section>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -222,28 +91,63 @@ allows us to wrap the costFunction for …</blockquote>
             <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
                 <ul class="list-group" id="recentposts">
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/quiver-for-optical-flow.html">
-                            Quiver for optical flow
+                        <a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">
+                            Convert ovpn config file to .ca, .crt, .key
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/python-equivalent-of-interp2.html">
-                            Python equivalent of interp2
+                        <a href="https://serge-m.github.io/no-protocol-specified.html">
+                            "No protocol specified" while running a program as another user
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/use-matlab-function-from-python.html">
-                            Use Matlab function from python
+                        <a href="https://serge-m.github.io/mocking-in-python.html">
+                            Mocking in Python
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/lambda-functions-in-matlab.html">
-                            lambda functions in matlab
+                        <a href="https://serge-m.github.io/on-image-search.html">
+                            On image search
                         </a>
                     </li>
                     <li class="list-group-item">
-                        <a href="https://serge-m.github.io/matlab.html">
-                            MATLAB
+                        <a href="https://serge-m.github.io/about-bloody-enterprise.html">
+                            About bloody enterprise
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/elastic-search-cookbook.html">
+                            Elasticsearch commands with curl
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">
+                            Pretty git history with branches in command line
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/correct-way-of-running-long-tasks-in-flask.html">
+                            Correct way of running long tasks in Flask
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/machine-learning-in-a-cloud.html">
+                            Machine learning in a cloud
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/image-processing-in-python.html">
+                            Image processing in Python
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">
+                            Set up HP 1020 printer in Linux Mint 18
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="https://serge-m.github.io/pelican-hints.html">
+                            Pelican Hints
                         </a>
                     </li>
                 </ul>
@@ -784,7 +688,7 @@ allows us to wrap the costFunction for …</blockquote>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2014 sergem
+         <div class="col-xs-10">&copy; 2017 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

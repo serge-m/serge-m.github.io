@@ -26,7 +26,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Books', '/books.html'),
+LINKS = (('Databases', '/pages/collection-of-interesting-databases.html'),
+         ('Books', '/books.html'),
          ('Useful', '/tag/useful.html'),
          ('Bjontegaard metric in Matlab', '/bjontegaard-metric-matlab-script.html'),
          # ('You can modify those links in your config file', '#'),

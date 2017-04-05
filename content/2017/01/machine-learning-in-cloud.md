@@ -20,7 +20,7 @@ Tags: machine learning
 > Once you do all of that, go on arXiv and read the most recent useful papers. The literature changes every few months, so keep up.
 
 > There. Now you can probably be hired most places. If you need resume filler, so some Kaggle competitions. If you have debugging questions, use StackOverflow. If you have math questions, read more. If you have life questions, I have no idea.
-```
+
 
 Links:
 * Elements of Statistical Learning: [http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf]

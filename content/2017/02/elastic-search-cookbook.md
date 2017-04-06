@@ -13,3 +13,8 @@ curl -X GET localhost:9200/_cat/indices
 ```
 curl -X DELETE localhost:9200/YOUR_INDEX
 ```
+
+## Delete all indices
+```
+curl -X GET localhost:9200/_all
+```

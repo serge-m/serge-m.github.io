@@ -282,6 +282,11 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 
 &lt;h2&gt;Delete index&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X DELETE localhost:9200/YOUR_INDEX
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Delete all indices&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/_all
 &lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;List indexes&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/_cat/indices
 &lt;/pre&gt;&lt;/div&gt;
@@ -289,6 +294,11 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 
 &lt;h2&gt;Delete index&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X DELETE localhost:9200/YOUR_INDEX
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Delete all indices&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/_all
 &lt;/pre&gt;&lt;/div&gt;</content><category term="command line"></category><category term="elastic search"></category></entry><entry><title>Pretty git history with branches in command line</title><link href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html" rel="alternate"></link><published>2017-01-28T07:10:00+01:00</published><updated>2017-01-28T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-28:/pretty-git-history-with-branches-in-command-line.html</id><summary type="html">&lt;p&gt;Show git history with branches &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all
 &lt;/pre&gt;&lt;/div&gt;

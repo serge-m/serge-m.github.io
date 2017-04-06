@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="command line,elastic search" />
-        <meta name="description" content="List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX" />
+        <meta name="description" content="List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Elasticsearch commands with curl"/>
         <meta property="og:url" content="https://serge-m.github.io/elastic-search-cookbook.html"/>
-        <meta property="og:description" content="List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX"/>
+        <meta property="og:description" content="List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all"/>
         <meta property="article:published_time" content="2017-02-10" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="command line" />
@@ -118,6 +118,11 @@ sergem personal public notebook            </a>
 
 <h2>Delete index</h2>
 <div class="highlight"><pre><span></span>curl -X DELETE localhost:9200/YOUR_INDEX
+</pre></div>
+
+
+<h2>Delete all indices</h2>
+<div class="highlight"><pre><span></span>curl -X GET localhost:9200/_all
 </pre></div>
             </div>
             <!-- /.entry-content -->

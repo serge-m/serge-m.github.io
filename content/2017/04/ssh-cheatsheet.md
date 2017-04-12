@@ -5,7 +5,7 @@ Slug: ssh-cheatsheet
 Tags: ssh, keys, useful
 
 
-## ssh don't scan all keys in .ssh directory
+## SSH don't scan all keys in .ssh directory
 ```
 $ ssh -o IdentitiesOnly=yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 ```
@@ -22,3 +22,8 @@ The options are as follows:
 ## How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?
+
+
+## Use ssh authentication by key instead of password
+
+[Setup the SSH server to use keys for authentication](https://www.g-loaded.eu/2005/11/10/ssh-with-keys/)

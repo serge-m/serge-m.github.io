@@ -17,3 +17,8 @@ The options are as follows:
 * `-i ~/path/to/some_id_rsa` - the key that you explicitly want to use for the connection
 
 [Source](https://superuser.com/a/1010861)
+
+
+## How To Configure SSH Key-Based Authentication on a Linux Server 
+
+[How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)

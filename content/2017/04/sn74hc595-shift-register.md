@@ -7,7 +7,8 @@ Tags: raspberry, pi
 
 
 ### Pinouts
-![pinouts]({filename}/2017/04/sn74hc595-shift-register-pinout.jpg)
+<img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="100">
+
 
 ### How to control
 ![pinouts]({filename}/2017/04/sn74hc595-shift-register-control.jpg)

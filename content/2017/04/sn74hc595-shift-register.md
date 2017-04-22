@@ -7,14 +7,15 @@ Tags: raspberry, pi
 
 
 ### Pinouts
-<img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="100">
+<img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300">
 
 
 ### How to control
-![pinouts]({filename}/2017/04/sn74hc595-shift-register-control.jpg)
+<img src="{filename}/2017/04/sn74hc595-shift-register-control.jpg" width="80%">
 
 It seems that procedure described in Texas Instruments' datasheet is wrong:
-![pinouts]({filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg)
+<img src="{filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%">
+
 
 
 ## Using in motor shield DK Electronics V1

@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-04-12T12:11:00+02:00</updated><entry><title>SSH cheat sheet</title><link href="https://serge-m.github.io/ssh-cheatsheet.html" rel="alternate"></link><published>2017-04-12T12:11:00+02:00</published><updated>2017-04-12T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</id><summary type="html">&lt;h2&gt;SSH don't scan all keys in .ssh directory&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-04-13T20:11:00+02:00</updated><entry><title>How to hide Firefox title bar in Cinnamon (mint)</title><link href="https://serge-m.github.io/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html" rel="alternate"></link><published>2017-04-13T20:11:00+02:00</published><updated>2017-04-13T20:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-13:/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html</id><summary type="html">&lt;p&gt;Source &lt;a href="https://askubuntu.com/questions/37111/how-to-make-firefox-main-windows-have-no-decorations-using-devilspie"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install devilspie:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install devilspie
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.&lt;/p&gt;
+&lt;p&gt;How the rule was created&lt;/p&gt;
+&lt;p&gt;All rules created …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Source &lt;a href="https://askubuntu.com/questions/37111/how-to-make-firefox-main-windows-have-no-decorations-using-devilspie"&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Install devilspie:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install devilspie
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.&lt;/p&gt;
+&lt;p&gt;How the rule was created&lt;/p&gt;
+&lt;p&gt;All rules created must go in &lt;code&gt;~/.devilspie&lt;/code&gt;, and have a .ds extension, so firstly create the folder if it doesn't exist with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir ~/.devilspie
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you want to experiment to find the best window matching condition (class,name,etc), you can create a new file in ~/.devilspie called test.ds and place in it (debug) . Now you can enter devilspie &amp;amp; and then for every program that you launch, devilspie will examine and provide some window information in the terminal:&lt;/p&gt;
+&lt;p&gt;Window Title: 'Mozilla Firefox'; Application Name: 'Firefox'; Class: 'Firefox'; Geometry: 1280x970+0+27&lt;/p&gt;
+&lt;p&gt;In this case, it is best to select Class (window_class), as that will reliably identify the window.&lt;/p&gt;
+&lt;p&gt;The rule&lt;/p&gt;
+&lt;p&gt;Create a new file called firefox.ds in ~/.devilspie and place in it:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;; firefox rule to undecorate all existing and new windows     
+
+(if (is (window_class) &amp;quot;Firefox&amp;quot;) (undecorate))
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Comments are introduced with ; and are not read. You do not need to use begin in the command unless you are specifying multiple actions, such as (begin undecorate (set_workspace  2))) instead of just the single action (undecorate)).&lt;/p&gt;
+&lt;p&gt;However, for devilspie to read the new rule you must restart it, so run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;killall devilspie 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and then restart it with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;devilspie &amp;amp; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You have to do this every time when you edit a rule or add a new one in ~/.devilspie, otherwise the changes or any new rules will not be read.&lt;/p&gt;
+&lt;p&gt;It is also very important that you add it to startup applications using your desktop environment's menus.&lt;/p&gt;
+&lt;p&gt;For more information on other possibilities with devilspie, see man devilspie or the Ubuntu manpages online.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;My comments:&lt;/strong&gt; unfortunately one looses "close" and "minimize" buttons. But you don't need a buggy extension then.&lt;/p&gt;</content><category term="firefox"></category><category term="linux"></category><category term="cinnamon"></category><category term="mint"></category></entry><entry><title>SSH cheat sheet</title><link href="https://serge-m.github.io/ssh-cheatsheet.html" rel="alternate"></link><published>2017-04-12T12:11:00+02:00</published><updated>2017-04-12T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</id><summary type="html">&lt;h2&gt;SSH don't scan all keys in .ssh directory&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh -o &lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 &lt;/pre&gt;&lt;/div&gt;
 

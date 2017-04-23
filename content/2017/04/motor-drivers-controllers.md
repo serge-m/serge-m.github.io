@@ -10,7 +10,11 @@ SN74HC595 shift register. Controlling from Raspberry: [here](/sn74hc595-shift-re
 
 
 [Comparison of Polou DC motor drivers](https://www.pololu.com/search/compare/11)
+
 [Comparison of stepper motor drivers](https://www.pololu.com/search/compare/120,156,155,154/0,s,8,1,35,32,21,22,23,25/24,27,28,31,30,39,38,33,78,155,157/x)
+
+
+
 
 ## Pololu DRV8833 Dual Motor Driver Carrier
 [exp-tech 4,95€](http://www.exp-tech.de/pololu-drv8833-dual-motor-driver-carrier)  
@@ -21,15 +25,20 @@ two DC motors or one stepper motor
 Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor  
 Reverse-voltage protection circuit  
 
-<img src="{filename}/2017/04/drivers/Pololu DRV8833.png" width="150">
+<img src="{filename}/2017/04/drivers/Pololu DRV8833.png" width="250">
+
 [datasheet](http://www.pololu.com/file/0J534/drv8833.pdf)
+
+
+
 
 
 ## Pololu DRV8801 Single Brushed DC Motor Driver Carrier
 [exp-tech 5,20€](http://www.exp-tech.de/pololu-drv8801-single-brushed-dc-motor-driver-carrier)  
 [polou.com 4,95$](https://www.pololu.com/product/2136)
-<img src="{filename}/2017/04/drivers/Pololu DRV8801 1.jpg" width="150">
-<img src="{filename}/2017/04/drivers/Pololu DRV8801 2.jpg" width="150">  
+
+<img src="{filename}/2017/04/drivers/Pololu DRV8801 1.jpg" width="250">
+<img src="{filename}/2017/04/drivers/Pololu DRV8801 2.jpg" width="250">  
 
 Drives a single brushed DC motor  
 Motor supply voltage: 8–36 V  
@@ -55,6 +64,9 @@ Exposed solderable ground pad below the driver IC on the bottom of the PCB
 Module size, pinout, and interface match those of our A4988 stepper motor driver carriers in most respects (see the bottom of this page for more information)  
 
 
+
+
+
 ## Pololu A4988 Stepper Motor Driver Carrier
 [7,95 €](http://www.exp-tech.de/a4988-stepper-motor-driver-carrier-black-edition)
 
@@ -66,3 +78,29 @@ Minimum logic voltage:  3 V
 Maximum logic voltage:  5.5 V  
 Microstep resolutions:  full, 1/2, 1/4, 1/8, and 1/16  
 Reverse voltage protection?:    N  
+
+
+
+## Pololu DRV8824 Stepper Motor Driver Carrier, Low Current
+[6,99 €](http://www.exp-tech.de/pololu-drv8824-stepper-motor-driver-carrier-low-current)
+<img src="{filename}/2017/04/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
+
+Minimum operating voltage:  8.2 V  
+Maximum operating voltage:  45 V  
+Continuous current per phase:   0.75 A  
+Maximum current per phase:  1.2 A  
+Minimum logic voltage:  2.5 V  
+Maximum logic voltage:  5.25 V  
+Microstep resolutions:  full, 1/2, 1/4, 1/8, 1/16, and 1/32  
+Reverse voltage protection?:    N  
+
+    Simple step and direction control interface
+    Adjustable current control lets you set the maximum current output with a potentiometer, which lets you use voltages above your stepper motor’s rated voltage to achieve higher step rates
+    Intelligent chopping control that automatically selects the correct current decay mode (fast decay or slow decay)
+    45 V maximum supply voltage
+    Built-in regulator (no external logic voltage supply needed)
+    Over-temperature thermal shutdown, over-current shutdown, and under-voltage lockout
+    Short-to-ground and shorted-load protection
+    4-layer, 2 oz copper PCB for improved heat dissipation
+    Exposed solderable ground pad below the driver IC on the bottom of the PCB
+    Module size, pinout, and interface match those of our A4988 stepper motor driver carriers in most respects 

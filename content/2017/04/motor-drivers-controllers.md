@@ -172,3 +172,9 @@ Reverse voltage protection?:    N
     4-layer, 2 oz copper PCB for improved heat dissipation
     Exposed solderable ground pad below the driver IC on the bottom of the PCB
     Module size, pinout, and interface match those of our A4988 stepper motor driver carriers in most respects 
+
+
+
+## Voltage regulators
+
+[Step-Up/Step-Down Voltage Regulators](https://www.pololu.com/category/133/step-up-step-down-voltage-regulators)

@@ -794,24 +794,24 @@ ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
 Created by Kevin Townsend. pdf. (pca-9685)&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Stepper motors / DC (brushed) motors&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all"&gt;with l293d&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all"&gt;[Raspberry] Stepper and dc motor using specializer HAT&lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all"&gt;[Raspberry] Stepper and dc motor using specializer HAT&lt;/a&gt;&lt;br&gt;
 Based on PC9865 PWM and TB6612 chipset. 1.2A per channel current capability (20ms long bursts of 3A peak)&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-motor-shield?view=all"&gt;[Arduino] With adafruit motor schield v1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Based on 74HC595N Serial to parallel output latch and L293D driver. 0.6A per bridge (1.2A peak) with thermal shutdown protection, 4.5V to 25V.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/adafruit/Adafruit-Motor-Shield-library"&gt;Library for motor control&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;See also &lt;a href="/sn74hc595-shift-register.html"&gt;about SN74HC595 shift register&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino?view=all"&gt;[Arduino] With adafruit motor shield v2&lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-motor-shield?view=all"&gt;[Arduino] With adafruit motor schield v1&lt;/a&gt;&lt;br&gt;
+Based on 74HC595N Serial to parallel output latch and L293D driver. 0.6A per bridge (1.2A peak) with thermal shutdown protection, 4.5V to 25V.&lt;br&gt;
+&lt;a href="https://github.com/adafruit/Adafruit-Motor-Shield-library"&gt;Library for motor control&lt;/a&gt;  &lt;br&gt;
+See also &lt;a href="/sn74hc595-shift-register.html"&gt;about SN74HC595 shift register&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino?view=all"&gt;[Arduino] With adafruit motor shield v2&lt;/a&gt;&lt;br&gt;
 Based on PCA9685 and TB6612 MOSFET drivers with 1.2A per channel current capability ( up to 3A peak for approx 20ms at a time)&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all"&gt;[Raspberry] Drive a DC motor forward and in reverse with variable speed&lt;/a&gt; (with l293d, adafruit lesson 9)&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all"&gt;[Micropython board] Control  dc motor with pca9685&lt;/a&gt; &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=W7cV9_W12sM"&gt;[Raspberry] Video with just simple transistor scheme and with L293D controller&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv"&gt;[Raspberry] using L293D and 4N35 opto isolator&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout?view=all"&gt;[Arduino] 1 bidirectional DC motor using small DRV8871 motor driver&lt;/a&gt; 
+&lt;p&gt;&lt;a href="https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout?view=all"&gt;[Arduino] 1 bidirectional DC motor using small DRV8871 motor driver&lt;/a&gt; &lt;br&gt;
 Up to 45V and 3.6A of motor control&lt;/p&gt;
 &lt;p&gt;It is possible to have frequency controlled dc driver connected through Adafruit 16 Channel Servo Driver. 
 See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp;p=161140"&gt;post&lt;/a&gt;. &lt;a href="http://www.robotshop.com/en/sabertooth-dual-regenerative-motor-driver.html"&gt;controller, ~100 Euro&lt;/a&gt;, powerfull&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://ulrichbuschbaum.wordpress.com/2014/10/28/using-the-drv8833-motor-driver/"&gt;[Arduino] using drv8833 driver&lt;/a&gt;, 
-&lt;a href="https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/"&gt;[Arduino] using l293d&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ulrichbuschbaum.wordpress.com/2014/10/28/using-the-drv8833-motor-driver/"&gt;[Arduino] using drv8833 driver&lt;/a&gt;, &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/"&gt;[Arduino] using l293d&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor], very weak&lt;/p&gt;
 &lt;h2&gt;Connecting via ssh:&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -Y user@raspberrypi-url

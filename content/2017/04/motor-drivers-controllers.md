@@ -9,6 +9,8 @@ Articles about raspberry pi: [here](/raspberry-pi-links.html)
 SN74HC595 shift register. Controlling from Raspberry: [here](/sn74hc595-shift-register.html)
 
 
+[Comparison of Polou DC motor drivers](https://www.pololu.com/search/compare/11)
+[Comparison of stepper motor drivers](https://www.pololu.com/search/compare/120,156,155,154/0,s,8,1,35,32,21,22,23,25/24,27,28,31,30,39,38,33,78,155,157/x)
 
 ## Pololu DRV8833 Dual Motor Driver Carrier
 [exp-tech 4,95€](http://www.exp-tech.de/pololu-drv8833-dual-motor-driver-carrier)  
@@ -25,6 +27,7 @@ Reverse-voltage protection circuit
 
 ## Pololu DRV8801 Single Brushed DC Motor Driver Carrier
 [exp-tech 5,20€](http://www.exp-tech.de/pololu-drv8801-single-brushed-dc-motor-driver-carrier)  
+[polou.com 4,95$](https://www.pololu.com/product/2136)
 <img src="{filename}/2017/04/drivers/Pololu DRV8801 1.jpg" width="150">
 <img src="{filename}/2017/04/drivers/Pololu DRV8801 2.jpg" width="150">  
 

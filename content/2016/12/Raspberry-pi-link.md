@@ -31,7 +31,7 @@ Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downl
 ### Stepper motors / DC (brushed) motors
 [with l293d](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all)
 
-[[Raspberry]stepper and dc motor using specializer HAT](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all) 
+[[Raspberry] Stepper and dc motor using specializer HAT](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all) 
 Based on PC9865 PWM and TB6612 chipset. 1.2A per channel current capability (20ms long bursts of 3A peak)
 
 [[Arduino] With adafruit motor schield v1](https://learn.adafruit.com/adafruit-motor-shield?view=all)
@@ -41,13 +41,13 @@ Based on 74HC595N Serial to parallel output latch and L293D driver.
 [[Arduino] With adafruit motor shield v2](https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino?view=all) 
 Based on PCA9685 and TB6612 MOSFET drivers with 1.2A per channel current capability ( up to 3A peak for approx 20ms at a time)
 
-[[Raspberry]Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
+[[Raspberry] Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
 
-[[Micropython board]control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) 
+[[Micropython board] Control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) 
 
-[[Raspberry]Video with just simple transistor scheme and with L293D controller](https://www.youtube.com/watch?v=W7cV9_W12sM)
+[[Raspberry] Video with just simple transistor scheme and with L293D controller](https://www.youtube.com/watch?v=W7cV9_W12sM)
 
-[[Raspberry]using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
+[[Raspberry] using L293D and 4N35 opto isolator](https://medium.com/@seyoum14/using-a-dc-motor-to-run-a-propeller-with-raspberry-pi-e5a570864e6f#.q7qutomrv)
 
 [[Arduino] 1 bidirectional DC motor using small DRV8871 motor driver](https://learn.adafruit.com/adafruit-drv8871-brushed-dc-motor-driver-breakout?view=all) 
 Up to 45V and 3.6A of motor control

@@ -43,3 +43,14 @@ Under-voltage lockout and protection against over-current and over-temperature
 
 
 
+## Pololu DRV8880 Stepper Motor Driver Carrier
+[exp-tech 7,45 €](http://www.exp-tech.de/pololu-drv8880-stepper-motor-driver-carrier)
+
+6.5 V to 45 V supply voltage range  
+Built-in regulator (no external logic voltage supply needed)  
+Can interface directly with 3.3 V and 5 V systems  
+Over-temperature thermal shutdown, over-current shutdown, short circuit protection, and under-voltage lockout  
+4-layer, 2 oz copper PCB for improved heat dissipation  
+Exposed solderable ground pad below the driver IC on the bottom of the PCB  
+Module size, pinout, and interface match those of our A4988 stepper motor driver carriers in most respects (see the bottom of this page for more information)  
+

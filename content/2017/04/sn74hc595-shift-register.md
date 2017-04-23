@@ -5,6 +5,7 @@ Slug: sn74hc595-shift-register
 Tags: raspberry, pi
 
 
+For other links about raspberry pi go [here](/Raspberry-pi-link.html)
 
 ### Pinouts
 <img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300">

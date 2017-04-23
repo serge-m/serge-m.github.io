@@ -54,3 +54,15 @@ Over-temperature thermal shutdown, over-current shutdown, short circuit protecti
 Exposed solderable ground pad below the driver IC on the bottom of the PCB  
 Module size, pinout, and interface match those of our A4988 stepper motor driver carriers in most respects (see the bottom of this page for more information)  
 
+
+## Pololu A4988 Stepper Motor Driver Carrier
+[7,95 €](http://www.exp-tech.de/a4988-stepper-motor-driver-carrier-black-edition)
+
+Minimum operating voltage:  8 V  
+Maximum operating voltage:  35 V  
+Continuous current per phase:   1.2 A2  
+Maximum current per phase:  2 A3  
+Minimum logic voltage:  3 V  
+Maximum logic voltage:  5.5 V  
+Microstep resolutions:  full, 1/2, 1/4, 1/8, and 1/16  
+Reverse voltage protection?:    N  

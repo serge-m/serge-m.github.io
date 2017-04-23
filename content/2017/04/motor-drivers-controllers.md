@@ -40,7 +40,12 @@ Very similar to DRV8833 dual motor driver carrier in operating voltage range and
 * is 0.1" smaller in each dimension. 
 The DRV8833 has a higher peak current rating (2 A per channel vs 1.5 A), optional built-in current-limiting, and no need for externally supplied logic voltage.
 
+Mode 1:  
 <img src="{filename}/2017/04/drivers/drv8835.png" width="250">
+
+Mode 2:  
+<img src="{filename}/2017/04/drivers/drv8835-mode2.png" width="250">
+
 
 
 

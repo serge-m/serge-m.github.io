@@ -28,15 +28,15 @@ Continuous deployment (Russian)
 [Adafruit 16 Channel Servo Driver with Raspberry Pi
 Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
 
-### Stepper motor
+### Stepper motors / DC (brushed) motors
 [with l293d](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all)
 
-[stepper and dc motor using spcializer HAT](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all)
+[[Raspberry]stepper and dc motor using specializer HAT](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi?view=all) 
+Based on PC9865 PWM board and TB6612 chipset. 1.2A per channel current capability (20ms long bursts of 3A peak)
 
-### DC motor (brushed)
-[Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
+[[Raspberry]Drive a DC motor forward and in reverse with variable speed](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor?view=all) (with l293d, adafruit lesson 9)
 
-[control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) (arduino)
+[[Micropython board]control  dc motor with pca9685](https://learn.adafruit.com/micropython-hardware-pca9685-dc-motor-and-stepper-driver?view=all) 
 
 [Video with specialized dc motor controller L293D](https://www.youtube.com/watch?v=W7cV9_W12sM)
 

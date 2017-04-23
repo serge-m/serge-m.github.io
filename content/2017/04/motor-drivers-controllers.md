@@ -35,6 +35,8 @@ Reverse-voltage protection circuit
 ### Pololu DRV8835 Dual Motor Driver Carrier
 [exp-tech 4,20 €](http://www.exp-tech.de/drv8835-dual-motor-driver-carrier)
 
+[pololu 4.49 $](https://www.pololu.com/product/2135)
+
 [Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi 7.49$](https://www.pololu.com/product/2753)
 
 [Python library](https://github.com/pololu/drv8835-motor-driver-rpi)
@@ -88,17 +90,19 @@ Under-voltage lockout and protection against over-current and over-temperature
 <img src="{filename}/2017/04/drivers/A4990 Dual Motor Driver Carrier.png" width="250">
 
 
-    Dual-H-bridge motor driver: can drive two DC motors or one bipolar stepper motor
-    Operating voltage: 6‌‌–32 V
-    Output current: 0.7 A continuous per motor
-    Current control limits peak current to 0.9 A per motor
-    Inputs are 3V- and 5V-compatible
-    Robust:
-    Reverse-voltage protection circuit
-    Can survive input voltages up to 40 V
-    Under-voltage and over-voltage protection
-    Over-temperature protection
-    Short-to-supply, short-to-ground, and shorted-load protection
+Dual-H-bridge motor driver: 
+can drive two DC motors or one bipolar stepper motor  
+Operating voltage: 6‌‌–32 V  
+Output current: 0.7 A continuous per motor  
+Current control limits peak current to 0.9 A per motor  
+Inputs are 3V- and 5V-compatible  
+
+Robust:  
+Reverse-voltage protection circuit  
+Can survive input voltages up to 40 V  
+Under-voltage and over-voltage protection  
+Over-temperature protection  
+Short-to-supply, short-to-ground, and shorted-load protection  
 
 
 ### Dual MC33926 Motor Driver Carrier

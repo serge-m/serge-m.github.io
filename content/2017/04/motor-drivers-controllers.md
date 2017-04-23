@@ -31,6 +31,18 @@ Reverse-voltage protection circuit
 
 
 
+## Pololu DRV8835 Dual Motor Driver Carrier
+[exp-tech 4,20 €](http://www.exp-tech.de/drv8835-dual-motor-driver-carrier)
+
+Very similar to DRV8833 dual motor driver carrier in operating voltage range and continuous current rating, but the DRV8835 
+* has a lower minimum operating voltage, 
+* offers an extra control interface mode, 
+* is 0.1" smaller in each dimension. 
+The DRV8833 has a higher peak current rating (2 A per channel vs 1.5 A), optional built-in current-limiting, and no need for externally supplied logic voltage.
+
+<img src="{filename}/2017/04/drivers/drv8835.png" width="250">
+
+
 
 
 ## Pololu DRV8801 Single Brushed DC Motor Driver Carrier
@@ -83,6 +95,7 @@ Reverse voltage protection?:    N
 
 ## Pololu DRV8824 Stepper Motor Driver Carrier, Low Current
 [6,99 €](http://www.exp-tech.de/pololu-drv8824-stepper-motor-driver-carrier-low-current)
+
 <img src="{filename}/2017/04/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
 
 Minimum operating voltage:  8.2 V  

@@ -39,14 +39,16 @@ Reverse-voltage protection circuit
 [ebay 4,76 + versand 1,99](http://www.ebay.de/itm/Pololu-DRV8835-Dual-Motortreiber-Carrier-2135-/281976103758)  
 [exhstein-shop 4,19 €](https://eckstein-shop.de/Pololu-DRV8835-Dual-Motortreiber-Carrier)
 [amazon 5,60 + 5 shipment ](https://www.amazon.de/Module-Driver-Moteurs-Pololu-DRV8835/dp/B018RHGPIS/ref=sr_1_1?ie=UTF8&qid=1492950025&sr=8-1&keywords=DRV8835)  
-
+[lawicel-shop.se 4,88 € + 20,00 Shipment](http://www.lawicel-shop.se/prod/DRV8835-Dual-Motor-Driver_921000/Drivers---DC-Motors_83100/ENG/EUR)  
+[watterott.com 5,47 + 3,5 shipment](http://www.watterott.com/de/DRV8835-Dual-Motor-Driver-Carrier)  
 
 Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi:  
 [pololu 7.49 $](https://www.pololu.com/product/2753)  
-[exp-tech 7.12 €](http://www.exp-tech.de/pololu-drv8835-dual-motor-driver-kit-for-raspberry-pi-b)  
+[exp-tech 7.12 € +  3,50 € shipment](http://www.exp-tech.de/pololu-drv8835-dual-motor-driver-kit-for-raspberry-pi-b)  
 [ebay 8,91 €](http://www.ebay.de/itm/Pololu-Pololu-DRV8835-Dual-Motortreiber-Kit-for-Raspberry-Pi-2753-/281976122736)  
 [electan 14.58€](http://www.electan.com/pololu-drv8835-dual-motor-driver-kit-for-raspberry-p-6171-en.html)  
-[roboshop 8,40 €](http://www.robotshop.com/eu/en/drv8835-dual-motor-driver-kit-raspberry-pi-b.html)  
+[roboshop 8,40 € +  €11.80 shipment](http://www.robotshop.com/eu/en/drv8835-dual-motor-driver-kit-raspberry-pi-b.html)  
+[hobbytronics.co.uk     £6.00 +  £2.95 (+VAT) shipment](http://www.hobbytronics.co.uk/pololu/drv8835-dual-motor-driver-kit-rpi)  
 
 
 For Arduino:  

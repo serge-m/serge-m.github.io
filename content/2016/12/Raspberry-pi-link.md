@@ -37,6 +37,7 @@ Based on PC9865 PWM and TB6612 chipset. 1.2A per channel current capability (20m
 [[Arduino] With adafruit motor schield v1](https://learn.adafruit.com/adafruit-motor-shield?view=all)
 Based on 74HC595N Serial to parallel output latch and L293D driver.  
 0.6A per bridge (1.2A peak) with thermal shutdown protection, 4.5V to 25V.
+See also [about SN74HC595 shift register](/sn74hc595-shift-register.html)
 
 [[Arduino] With adafruit motor shield v2](https://learn.adafruit.com/adafruit-motor-shield-v2-for-arduino?view=all) 
 Based on PCA9685 and TB6612 MOSFET drivers with 1.2A per channel current capability ( up to 3A peak for approx 20ms at a time)
@@ -85,3 +86,5 @@ ssh -Y user@raspberrypi-url
 
 [h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS); [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor);
 [another version of h bridge](http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php)
+
+

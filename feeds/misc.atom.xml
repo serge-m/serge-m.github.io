@@ -24,6 +24,7 @@ Reverse-voltage protection circuit  &lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pololu.com/file/0J534/drv8833.pdf"&gt;datasheet&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pololu DRV8835 Dual Motor Driver Carrier&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.exp-tech.de/drv8835-dual-motor-driver-carrier"&gt;exp-tech 4,20 €&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.pololu.com/product/2135"&gt;pololu 4.49 $&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.pololu.com/product/2753"&gt;Pololu DRV8835 Dual Motor Driver Kit for Raspberry Pi 7.49$&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/pololu/drv8835-motor-driver-rpi"&gt;Python library&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Motor supply voltage: 1.5 V to 11 V&lt;br&gt;
@@ -59,20 +60,18 @@ Under-voltage lockout and protection against over-current and over-temperature  
 &lt;p&gt;&lt;a href="https://www.pololu.com/product/2137"&gt;pololu 5.95$&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/pololu/a4990-motor-shield"&gt;Arduino library&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/drivers/A4990 Dual Motor Driver Carrier.png" width="250"&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Dual-H-bridge motor driver: can drive two DC motors or one bipolar stepper motor
-Operating voltage: 6‌‌–32 V
-Output current: 0.7 A continuous per motor
-Current control limits peak current to 0.9 A per motor
-Inputs are 3V- and 5V-compatible
-Robust:
-Reverse-voltage protection circuit
-Can survive input voltages up to 40 V
-Under-voltage and over-voltage protection
-Over-temperature protection
-Short-to-supply, short-to-ground, and shorted-load protection
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;Dual-H-bridge motor driver: 
+can drive two DC motors or one bipolar stepper motor&lt;br&gt;
+Operating voltage: 6‌‌–32 V&lt;br&gt;
+Output current: 0.7 A continuous per motor&lt;br&gt;
+Current control limits peak current to 0.9 A per motor&lt;br&gt;
+Inputs are 3V- and 5V-compatible  &lt;/p&gt;
+&lt;p&gt;Robust:&lt;br&gt;
+Reverse-voltage protection circuit&lt;br&gt;
+Can survive input voltages up to 40 V&lt;br&gt;
+Under-voltage and over-voltage protection&lt;br&gt;
+Over-temperature protection&lt;br&gt;
+Short-to-supply, short-to-ground, and shorted-load protection  &lt;/p&gt;
 &lt;h3&gt;Dual MC33926 Motor Driver Carrier&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://www.pololu.com/product/1213"&gt;   29.95$ &lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Motor channels:     2

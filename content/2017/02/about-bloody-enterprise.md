@@ -9,3 +9,10 @@ Tags: microservices
 [Modules vs Microservices](https://www.oreilly.com/ideas/modules-vs-microservices) About reasonable choice for architecture
 
 [События, шины и интеграция данных в непростом мире микросервисов](https://habrahabr.ru/post/322474/)
+
+## Spring
+
+Nice [tutorials about Spring](http://www.baeldung.com/category/spring/)
+
+For example  [How To Do @Async in Spring](http://www.baeldung.com/spring-async)
+

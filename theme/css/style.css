@@ -51,10 +51,17 @@ body {
 
 #sidebar {
     padding-top: 0px;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+}
+
+#sidebar .list-group-item {
+    padding: 3px;
 }
 
 #sidebar a {
@@ -73,6 +80,19 @@ body {
 
 a, a:hover {
     color: inherit;
+    text-decoration: underline;
+}
+
+.nav > li > a {
+    text-decoration: none;
+}
+
+h1 > a {
+    text-decoration: none;
+}
+
+a.tag-list {
+    text-decoration: none;
 }
 
 .entry-content a {
@@ -164,7 +184,7 @@ figure.floatcenter, .align-center {
     margin-right: 10px;
 }
 
-.tagcloud li {
+.tagcloud li, #sidebar .tagcloud li {
     padding: 0px;
 }
 

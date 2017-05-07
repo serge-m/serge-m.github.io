@@ -70,7 +70,7 @@
 {% block content %}
     <section id="content">
         <article>
-            <header class="page-header">
+            <header>
                 <h1>
                     <a href="{{ SITEURL }}/{{ article.url }}"
                        rel="bookmark"
@@ -81,9 +81,7 @@
             </header>
             <div class="entry-content">
                 <div class="panel">
-                    <div class="panel-body">
-                        {% include "includes/article_info.html" %}
-                    </div>
+                    {% include "includes/article_info.html" %}
                 </div>
                 {{ article.content }}
             </div>

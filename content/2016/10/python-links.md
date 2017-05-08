@@ -30,6 +30,11 @@ Harry Percival
 
 * [Set up emacs for python](https://realpython.com/blog/python/emacs-the-best-python-editor/)
 
+* [Checklist to build great Celery async tasks](http://celerytaskschecklist.com/)
+
+* [Getting Started with Django Rest Framework](http://www.projectforrest.com/path/70)
+
+
 ## Asyncronous python
 
 * Some historical overview [Asynchronous Python](https://hackernoon.com/asynchronous-python-45df84b82434)
@@ -39,3 +44,10 @@ Harry Percival
 * pytest addon for testing coroutines [pytest-asyncio](https://pypi.python.org/pypi/pytest-asyncio)
 
 * Some more guidelines how to test coroutines: [Advanced asyncio testing](https://stefan.sofa-rockers.org/2016/03/10/advanced-asyncio-testing/)
+
+## Performance
+
+* [Grok the GIL: Write Fast and Thread-Safe Python](https://emptysqua.re/blog/grok-the-gil-fast-thread-safe-python/) - how GIL works
+
+* [library for memory profiling](https://pypi.python.org/pypi/memory_profiler)
+

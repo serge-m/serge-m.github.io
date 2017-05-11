@@ -36,4 +36,8 @@ Run
 systemctl enable your-service
 ```
 
-See also: [1](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)
+See also: 
+
+[[1]](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)
+
+[[2] How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)

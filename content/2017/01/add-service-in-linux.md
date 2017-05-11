@@ -29,9 +29,11 @@ ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image
 WantedBy=multi-user.target
 ```
 
-Here we first stop and delete the docker container. If it doesn't exist we continue ("-" in before the command).
+Here we first stop and delete the docker container. If it doesn't exist we continue (there is a "-" in before the command).
 
 Run
 ```
 systemctl enable your-service
 ```
+
+See also: [1](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)

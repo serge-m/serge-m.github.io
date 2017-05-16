@@ -5,9 +5,11 @@ Slug: deep-learning
 Tags: deep learning,neural networks,useful
 
 
+[Trained models for tensorflow](https://deepdetect.com/models/tf/)
+
 [TF-slim](https://github.com/tensorflow/models/tree/master/slim) -  high-level API of TensorFlow  for defining, training and evaluating complex models. Doesn't work for python 3 (see [here](https://github.com/tensorflow/models/issues/1436))
 
-[VGG16 and VGG19 in Tensorflow](https://github.com/machrisaa/tensorflow-vgg)
+[VGG16 and VGG19 in Tensorflow](https://github.com/machrisaa/tensorflow-vgg). One more [here](https://github.com/huyng/tensorflow-vgg)
 
 [Deep learning for lazybones](http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones)
 

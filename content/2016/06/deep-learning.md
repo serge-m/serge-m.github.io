@@ -5,6 +5,8 @@ Slug: deep-learning
 Tags: deep learning,neural networks,useful
 
 
+[Deep learning for lazybones](http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones)
+
 Inception-like CNN model based on 1d convolutions [http://arxiv.org/pdf/1512.00567v3.pdf](http://arxiv.org/pdf/1512.00567v3.pdf)
 
 Chat (in russian) [http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e](http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e)

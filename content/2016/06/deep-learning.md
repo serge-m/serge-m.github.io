@@ -5,6 +5,8 @@ Slug: deep-learning
 Tags: deep learning,neural networks,useful
 
 
+[VGG16 and VGG19 in Tensorflow](https://github.com/machrisaa/tensorflow-vgg)
+
 [Deep learning for lazybones](http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones)
 
 Inception-like CNN model based on 1d convolutions [http://arxiv.org/pdf/1512.00567v3.pdf](http://arxiv.org/pdf/1512.00567v3.pdf)

@@ -5,7 +5,7 @@ Slug: deep-learning
 Tags: deep learning,neural networks,useful
 
 
-[Rest API example for tensorflow](https://github.com/sugyan/tensorflow-mnist)
+[Rest API example for tensorflow](https://github.com/sugyan/tensorflow-mnist). It works: [demo](https://tensorflow-mnist.herokuapp.com/)
 
 [Trained models for tensorflow](https://deepdetect.com/models/tf/)
 

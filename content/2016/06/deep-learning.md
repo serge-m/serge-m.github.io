@@ -5,6 +5,8 @@ Slug: deep-learning
 Tags: deep learning,neural networks,useful
 
 
+[Rest API example for tensorflow](https://github.com/sugyan/tensorflow-mnist)
+
 [Trained models for tensorflow](https://deepdetect.com/models/tf/)
 
 [TF-slim](https://github.com/tensorflow/models/tree/master/slim) -  high-level API of TensorFlow  for defining, training and evaluating complex models. Doesn't work for python 3 (see [here](https://github.com/tensorflow/models/issues/1436))

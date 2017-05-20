@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-05-03T07:11:00+02:00</updated><entry><title>Combine images to PDF in linux</title><link href="https://serge-m.github.io/combine-images-to-pdf.html" rel="alternate"></link><published>2017-05-03T07:11:00+02:00</published><updated>2017-05-03T07:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-03:/combine-images-to-pdf.html</id><summary type="html">&lt;p&gt;Using &lt;code&gt;convert&lt;/code&gt; utility we can join multiple image files (png, jpeg, pdf) into one pdf.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-05-17T09:00:00+02:00</updated><entry><title>Crawling tools</title><link href="https://serge-m.github.io/crawling-tools.html" rel="alternate"></link><published>2017-05-17T09:00:00+02:00</published><updated>2017-05-17T09:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-17:/crawling-tools.html</id><summary type="html">&lt;p&gt;&lt;a href="https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md"&gt;Headless Chromium&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://splash.readthedocs.io/en/stable/"&gt;Splash - A javascript rendering service&lt;/a&gt;.
+&lt;a href="https://github.com/scrapinghub/splash"&gt;guthub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://scrapy.org/"&gt;https://scrapy.org/&lt;/a&gt; - 
+An open source and collaborative framework for extracting the data you need from websites. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://habrahabr.ru/post/328800/"&gt;Web crawler с использованием Python и Chrome&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md"&gt;Headless Chromium&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://splash.readthedocs.io/en/stable/"&gt;Splash - A javascript rendering service&lt;/a&gt;.
+&lt;a href="https://github.com/scrapinghub/splash"&gt;guthub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://scrapy.org/"&gt;https://scrapy.org/&lt;/a&gt; - 
+An open source and collaborative framework for extracting the data you need from websites. &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://habrahabr.ru/post/328800/"&gt;Web crawler с использованием Python и Chrome&lt;/a&gt;&lt;/p&gt;</content><category term="web"></category><category term="crawling"></category><category term="scrapping"></category></entry><entry><title>Combine images to PDF in linux</title><link href="https://serge-m.github.io/combine-images-to-pdf.html" rel="alternate"></link><published>2017-05-03T07:11:00+02:00</published><updated>2017-05-03T07:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-03:/combine-images-to-pdf.html</id><summary type="html">&lt;p&gt;Using &lt;code&gt;convert&lt;/code&gt; utility we can join multiple image files (png, jpeg, pdf) into one pdf.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -665,11 +675,11 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 &lt;p&gt;Good post: &lt;a href="https://blog.miguelgrinberg.com/post/using-celery-with-flask"&gt;Using Celery With Flask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/miguelgrinberg/flask-celery-example"&gt;Sources&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;See also: &lt;a href="http://stackoverflow.com/questions/31866796/making-an-asynchronous-task-in-flask"&gt;Making an asynchronous task in Flask&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.&lt;/p&gt;</content><category term="python"></category><category term="flask"></category><category term="celery"></category></entry><entry><title>Machine learning links</title><link href="https://serge-m.github.io/machine-learning-links.html" rel="alternate"></link><published>2017-01-19T14:10:00+01:00</published><updated>2017-01-19T14:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-19:/machine-learning-links.html</id><summary type="html">&lt;h3&gt;Super harsh guide to machine Learning&lt;/h3&gt;
+&lt;p&gt;Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.&lt;/p&gt;</content><category term="python"></category><category term="flask"></category><category term="celery"></category></entry><entry><title>Machine learning links</title><link href="https://serge-m.github.io/machine-learning-links.html" rel="alternate"></link><published>2017-01-19T14:10:00+01:00</published><updated>2017-01-19T14:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-19:/machine-learning-links.html</id><summary type="html">&lt;h2&gt;Super harsh guide to machine Learning&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/MachineLearning/comments/5z8110/d_a_super_harsh_guide_to_machine_learning/"&gt;Super harsh guide to machine learning&lt;/a&gt; (reddit)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don't understand it, keep reading it until you do.&lt;/p&gt;
-&lt;p&gt;You can read the rest of the book if you want. You probably should, but …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h3&gt;Super harsh guide to machine Learning&lt;/h3&gt;
+&lt;p&gt;You can read the rest of the book if you want. You probably should, but …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h2&gt;Super harsh guide to machine Learning&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.reddit.com/r/MachineLearning/comments/5z8110/d_a_super_harsh_guide_to_machine_learning/"&gt;Super harsh guide to machine learning&lt;/a&gt; (reddit)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don't understand it, keep reading it until you do.&lt;/p&gt;
@@ -679,27 +689,31 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 &lt;p&gt;Once you do all of that, go on arXiv and read the most recent useful papers. The literature changes every few months, so keep up.&lt;/p&gt;
 &lt;p&gt;There. Now you can probably be hired most places. If you need resume filler, so some Kaggle competitions. If you have debugging questions, use StackOverflow. If you have math questions, read more. If you have life questions, I have no idea.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Links:
-* Elements of Statistical Learning: [http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf]&lt;/p&gt;
+&lt;h3&gt;Links&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Andrew Ng's Coursera Course: [https://www.coursera.org/learn/machine-learning/home/info]&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf"&gt;Elements of Statistical Learning&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The Deep Learning Book: [https://www.deeplearningbook.org/front_matter.pdf]&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.coursera.org/learn/machine-learning/home/info"&gt;Andrew Ng's Coursera Course&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Put tensor flow or torch on a linux box and run examples: [http://cs231n.github.io/aws-tutorial/]&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.deeplearningbook.org/front_matter.pdf"&gt;The Deep Learning Book&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Keep up with the research: [https://arxiv.org]&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://cs231n.github.io/aws-tutorial/"&gt;Put tensor flow or torch on a linux box and run examples&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Resume Filler - Kaggle Competitions: [https://www.kaggle.com]&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://arxiv.org"&gt;Keep up with the research&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.kaggle.com"&gt;Resume Filler - Kaggle Competitions&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Articles&lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine"&gt;Using Machine Learning on Compute Engine to Make Product Recommendations&lt;/a&gt;&lt;/p&gt;</content><category term="machine learning"></category></entry><entry><title>Image processing in Python</title><link href="https://serge-m.github.io/image-processing-in-python.html" rel="alternate"></link><published>2017-01-15T07:10:00+01:00</published><updated>2017-01-15T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-15:/image-processing-in-python.html</id><summary type="html">&lt;h2&gt;Image search using elastic search&lt;/h2&gt;
+&lt;h2&gt;Articles&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine"&gt;Using Machine Learning on Compute Engine to Make Product Recommendations&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://habrahabr.ru/company/lanit/blog/328858/"&gt;CRISP-DM: проверенная методология для Data Scientist-ов&lt;/a&gt; (Russian) 
+&lt;a href="https://www.the-modeling-agency.com/crisp-dm.pdf"&gt;Original CRISP-DM methodology&lt;/a&gt;&lt;/p&gt;</content><category term="machine learning"></category></entry><entry><title>Image processing in Python</title><link href="https://serge-m.github.io/image-processing-in-python.html" rel="alternate"></link><published>2017-01-15T07:10:00+01:00</published><updated>2017-01-15T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-15:/image-processing-in-python.html</id><summary type="html">&lt;h2&gt;Image search using elastic search&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="http://sujitpal.blogspot.de/2016/06/comparison-of-image-search-performance.html"&gt;Comparison of Image Search Performance using different kinds of vectors&lt;/a&gt;&lt;/p&gt;
@@ -1556,9 +1570,11 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 I think they are created by "mint" firefox. Not sure that it is a necessary step. Further check is required here.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;</content></entry><entry><title>podcasts</title><link href="https://serge-m.github.io/podcasts.html" rel="alternate"></link><published>2016-08-14T14:16:00+02:00</published><updated>2016-08-14T14:16:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-08-14:/podcasts.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://softskills.audio/"&gt;Soft Skills Engineering&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dontspeak.podster.fm/"&gt;don't speak&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.spotlightradio.net/"&gt;spotlightradio&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://softskills.audio/"&gt;Soft Skills Engineering&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://dontspeak.podster.fm/"&gt;don't speak&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.spotlightradio.net/"&gt;spotlightradio&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content></entry><entry><title>git apply patch from another repository</title><link href="https://serge-m.github.io/git-apply-patch-from-another-repository.html" rel="alternate"></link><published>2016-08-14T14:10:00+02:00</published><updated>2016-08-14T14:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-08-14:/git-apply-patch-from-another-repository.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git --git-dir&lt;span class="o"&gt;=&lt;/span&gt;../&amp;lt;some_other_repo&amp;gt;/.git format-patch -k -1 --stdout &amp;lt;commit SHA&amp;gt; &lt;span class="p"&gt;|&lt;/span&gt; git am -3 -k

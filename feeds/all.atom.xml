@@ -2978,15 +2978,22 @@ print wrpr.v
 ![](http://2.bp.blogspot.com/-RBt_zV-BwPE/VHtGBocIBhI/AAAAAAAACFc/reFzmPZUpes/s1600/after%2B100%2Bcorrect%2Bwarp.png)
 &lt;/td&gt; &lt;td&gt;
 ![](http://4.bp.blogspot.com/-fQ1nRz2R0TA/VI9SvoUd3iI/AAAAAAAACGU/IaqihseanNY/s1600/OF%2Bwith%2BTV.png)
-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;before (L2)&lt;/td&gt;&lt;td style="text-align: center;"&gt;after (TV)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</content><category term="python"></category><category term="optical flow"></category></entry><entry><title>Setting default parameters from imshow in pyplot</title><link href="https://serge-m.github.io/setting-default-parameters-from-imshow.html" rel="alternate"></link><published>2014-11-23T22:29:00+01:00</published><updated>2014-11-23T22:29:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-23:/setting-default-parameters-from-imshow.html</id><summary type="html">&lt;p&gt;&lt;pre class="brush: cpp"&gt;
-import matplotlib.pyplot as plt
-plt.rcParams['image.cmap'] = 'gray'
-plt.rcParams['image.interpolation'] = 'nearest'
-&lt;/pre&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;pre class="brush: cpp"&gt;
-import matplotlib.pyplot as plt
-plt.rcParams['image.cmap'] = 'gray'
-plt.rcParams['image.interpolation'] = 'nearest'
-&lt;/pre&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category></entry><entry><title>Loading numpy array from string</title><link href="https://serge-m.github.io/loading-numpy-array-from-string.html" rel="alternate"></link><published>2014-11-17T23:01:00+01:00</published><updated>2014-11-17T23:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</id><summary type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align: center;"&gt;before (L2)&lt;/td&gt;&lt;td style="text-align: center;"&gt;after (TV)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</content><category term="python"></category><category term="optical flow"></category></entry><entry><title>Setting default parameters for imshow in pyplot</title><link href="https://serge-m.github.io/setting-default-parameters-from-imshow.html" rel="alternate"></link><published>2014-11-23T22:29:00+01:00</published><updated>2014-11-23T22:29:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-23:/setting-default-parameters-from-imshow.html</id><summary type="html">&lt;p&gt;I find default visualization settings for images in matplotlib inconvenient.
+Usually I prefer to see images in grayscale color map and without smoothing.
+Thus I see actual data without distortions. Grayscale is easier to understand.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;image.cmap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gray&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;image.interpolation&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;nearest …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I find default visualization settings for images in matplotlib inconvenient.
+Usually I prefer to see images in grayscale color map and without smoothing.
+Thus I see actual data without distortions. Grayscale is easier to understand.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;image.cmap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gray&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rcParams&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;image.interpolation&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;nearest&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Compare default colors and interpolation:&lt;/p&gt;
+&lt;p&gt;and after applying the settings:&lt;/p&gt;</content><category term="useful"></category><category term="python"></category></entry><entry><title>Loading numpy array from string</title><link href="https://serge-m.github.io/loading-numpy-array-from-string.html" rel="alternate"></link><published>2014-11-17T23:01:00+01:00</published><updated>2014-11-17T23:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</id><summary type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
 Source is &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class="brush: python"&gt;# loading modules
 import numpy

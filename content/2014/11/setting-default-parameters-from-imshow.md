@@ -2,7 +2,7 @@ Title: Setting default parameters for imshow in pyplot
 Author: SergeM
 Date: 2014-11-23 22:29:00
 Slug: setting-default-parameters-from-imshow
-Tags: useful,python
+Tags: useful,python,matplotlib,plt,images
 
 
 

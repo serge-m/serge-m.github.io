@@ -1,4 +1,4 @@
-Title: Math exmplained and visualized
+Title: Math explained and visualized
 Author: SergeM
 Date: 2017-05-20 22:00
 Slug: math-exmplined-and-visualized

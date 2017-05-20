@@ -38,3 +38,7 @@ Links:
 
 ### Articles
 [Using Machine Learning on Compute Engine to Make Product Recommendations](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
+
+[CRISP-DM: проверенная методология для Data Scientist-ов](https://habrahabr.ru/company/lanit/blog/328858/) (Russian) 
+[Original CRISP-DM methodology](https://www.the-modeling-agency.com/crisp-dm.pdf)
+

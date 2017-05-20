@@ -6,7 +6,7 @@ Tags: machine learning
 
 
 
-### Super harsh guide to machine Learning
+## Super harsh guide to machine Learning
 [Super harsh guide to machine learning](https://www.reddit.com/r/MachineLearning/comments/5z8110/d_a_super_harsh_guide_to_machine_learning/) (reddit)
 
 > First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don't understand it, keep reading it until you do.
@@ -22,21 +22,21 @@ Tags: machine learning
 > There. Now you can probably be hired most places. If you need resume filler, so some Kaggle competitions. If you have debugging questions, use StackOverflow. If you have math questions, read more. If you have life questions, I have no idea.
 
 
-Links:
-* Elements of Statistical Learning: [http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf]
+### Links
+* [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf)
 
-* Andrew Ng's Coursera Course: [https://www.coursera.org/learn/machine-learning/home/info]
+* [Andrew Ng's Coursera Course](https://www.coursera.org/learn/machine-learning/home/info)
 
-* The Deep Learning Book: [https://www.deeplearningbook.org/front_matter.pdf]
+* [The Deep Learning Book](https://www.deeplearningbook.org/front_matter.pdf)
 
-* Put tensor flow or torch on a linux box and run examples: [http://cs231n.github.io/aws-tutorial/]
+* [Put tensor flow or torch on a linux box and run examples](http://cs231n.github.io/aws-tutorial/)
 
-* Keep up with the research: [https://arxiv.org]
+* [Keep up with the research](https://arxiv.org)
 
-* Resume Filler - Kaggle Competitions: [https://www.kaggle.com]
+* [Resume Filler - Kaggle Competitions](https://www.kaggle.com)
 
 
-### Articles
+## Articles
 [Using Machine Learning on Compute Engine to Make Product Recommendations](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
 
 [CRISP-DM: проверенная методология для Data Scientist-ов](https://habrahabr.ru/company/lanit/blog/328858/) (Russian) 

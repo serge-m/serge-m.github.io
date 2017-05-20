@@ -2,7 +2,7 @@ Title: Machine learning links
 Author: SergeM
 Date: 2017-01-19 14:10:00
 Slug: machine-learning-links
-Tags: machine learning
+Tags: machine learning, links, useful, books, deep learning
 
 
 

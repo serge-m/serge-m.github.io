@@ -19,18 +19,23 @@ TIMEZONE = 'Europe/Berlin'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+
 
 # Blogroll
 LINKS = (('Databases', '/pages/collection-of-interesting-databases.html'),
          ('Books', '/books.html'),
          ('Useful', '/tag/useful.html'),
          ('Bjontegaard metric in Matlab', '/bjontegaard-metric-matlab-script.html'),
-         # ('You can modify those links in your config file', '#'),
+         ('RSS', 'feeds/all.rss.xml'),
+         ('Atom', 'feeds/all.atom.xml'),
          )
 
 # # Social widget

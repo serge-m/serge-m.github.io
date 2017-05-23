@@ -3,7 +3,7 @@
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;
-&lt;li&gt;Save the following source code to a file on your raspberry (lets say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
+&lt;li&gt;Save the following source code to a file on your raspberry (let's say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
 &lt;li&gt;do &lt;code&gt;sudo …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 23 May 2017 22:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</guid><category>server</category><category>camera</category><category>streaming</category><category>image</category><category>raspberry pi</category><category>pi zero</category></item><item><title>Rest API for TensorFlow model</title><link>https://serge-m.github.io/rest-api-for-tensorflow-model.html</link><description>&lt;p&gt;&lt;a href="https://tensorflow.github.io/serving"&gt;TensorFlow Serving&lt;/a&gt;, [sources[(https://github.com/tensorflow/serving) - library for serving machine learning models. Written in C++ and Python. Server is in C++. 
 Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build tool. Doesn't work with python 3. Probably fast.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.metaflow.fr/tensorflow-how-to-freeze-a-model-and-serve-it-with-a-python-api-d4f3596b3adc"&gt;TensorFlow: How to freeze a model and serve it with a python API&lt;/a&gt;&lt;/p&gt;

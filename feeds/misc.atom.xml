@@ -3,16 +3,17 @@
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;
-&lt;li&gt;Save the following source code to a file on your raspberry (lets say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
+&lt;li&gt;Save the following source code to a file on your raspberry (let's say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
 &lt;li&gt;do &lt;code&gt;sudo …&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;
-&lt;li&gt;Save the following source code to a file on your raspberry (lets say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
+&lt;li&gt;Save the following source code to a file on your raspberry (let's say &lt;code&gt;streaming.py&lt;/code&gt;) &lt;/li&gt;
 &lt;li&gt;do &lt;code&gt;sudo pip3 install picamera&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;run &lt;code&gt;python3 streaming.py&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;on the target machine (PC) go to &lt;code&gt;http://&amp;lt;your raspberry ip or host name&amp;gt;:8000&lt;/code&gt;. output from the camera must be streaming in realtime.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Bandwidth is about 1000 kbit/s&lt;/p&gt;
 &lt;p&gt;Sources from &lt;a href="http://picamera.readthedocs.io/en/release-1.13/recipes2.html#web-streaming"&gt;picamera&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;io&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;picamera&lt;/span&gt;

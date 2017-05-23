@@ -8,11 +8,12 @@ Task was to transmit image from camera on raspberry pi through web interface to 
 PC is connected to raspberry through local network.
 
 * Enable camera on your raspberry pi in raspi-conf. Reboot.
-* Save the following source code to a file on your raspberry (lets say `streaming.py`) 
+* Save the following source code to a file on your raspberry (let's say `streaming.py`) 
 * do `sudo pip3 install picamera`
 * run `python3 streaming.py`
 * on the target machine (PC) go to `http://<your raspberry ip or host name>:8000`. output from the camera must be streaming in realtime.
 
+Bandwidth is about 1000 kbit/s
 
 Sources from [picamera](http://picamera.readthedocs.io/en/release-1.13/recipes2.html#web-streaming)
 

@@ -34,6 +34,8 @@ Solution:
 sudo pip install grpcio
 ```
 
+Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. 
+
 ## See also
 
 * [Machine learning links](/machine-learning-links.html)

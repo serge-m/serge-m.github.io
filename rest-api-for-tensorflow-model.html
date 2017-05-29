@@ -124,18 +124,20 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
 <p><a href="http://pipeline.io/">Pipeline.io</a> - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  <a href="https://github.com/fluxcapacitor/pipeline">Sources</a></p>
 <h2>About TensorFlow Serving</h2>
 <p>TensorFlow Serving is build using Bazel - a build tool from Google.</p>
+<p><a href="http://tensorflow.github.io/serving/architecture_overview">Architecture overview</a></p>
+<p><a href="Serving a TensorFlow Model">Basic serving</a> Hmmm</p>
 <p>Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a <code>bazel-bin</code> softlink. It ponts to a directory <code>/home/&lt;your user&gt;/.cache</code>  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. </p>
 <p>It seems that <code>bazel</code> automatically downloads some pre-built binaries implicitly.</p>
 <p>I was able to build tensorflow in a docker as explained <a href="http://tensorflow.github.io/serving/serving_inception">here</a>. I am not very happy about the size of the image (several GB).</p>
 <p><code>bazel-bin</code> directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). </p>
-<h5>[Problem] ImportError: No module named grpc.beta</h5>
+<h4>[Problem] ImportError: No module named grpc.beta</h4>
 <p>Solution:</p>
 <div class="highlight"><pre><span></span>sudo pip install grpcio
 </pre></div>
 
 
 <p>Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. </p>
-<h5>Running in active virtualenv</h5>
+<h4>Running in active virtualenv</h4>
 <p>It seems possible to run built scripts using python from active virtual environment.
 One should replace the following line:</p>
 <div class="highlight"><pre><span></span>PYTHON_BINARY = &#39;/usr/bin/python&#39;
@@ -228,11 +230,11 @@ One should replace the following line:</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -247,13 +249,10 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -263,6 +262,9 @@ One should replace the following line:</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
@@ -283,9 +285,6 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/en.html">en</a>
     </li>
     <li class="list-group-item tag-3">
@@ -293,9 +292,6 @@ One should replace the following line:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
@@ -307,10 +303,10 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -334,7 +330,7 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+      <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/keys.html">keys</a>
@@ -344,6 +340,9 @@ One should replace the following line:</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -357,8 +356,14 @@ One should replace the following line:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
@@ -366,26 +371,17 @@ One should replace the following line:</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -409,6 +405,9 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
@@ -429,6 +428,12 @@ One should replace the following line:</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/rest.html">REST</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
@@ -436,16 +441,10 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -454,19 +453,19 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sql.html">sql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -493,10 +492,16 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -521,9 +526,6 @@ One should replace the following line:</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

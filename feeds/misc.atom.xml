@@ -124,6 +124,18 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 
 
 &lt;p&gt;Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. &lt;/p&gt;
+&lt;h5&gt;Running in active virtualenv&lt;/h5&gt;
+&lt;p&gt;It seems possible to run built scripts using python from active virtual environment.
+One should replace the following line:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;/usr/bin/python&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;in wrapper file (for example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_client&lt;/code&gt;) with &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;python&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;See also&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/machine-learning-links.html"&gt;Machine learning links&lt;/a&gt;&lt;/li&gt;

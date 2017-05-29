@@ -37,6 +37,7 @@ Tags: machine learning, links, useful, books, deep learning
 
 * [Deep Feature Flow for Video Recognition](https://github.com/msracver/Deep-Feature-Flow) - position itself as a framework for video recognition. paper and source code are available. Pictures are nice.
 
+* [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow) - collection of links about Tensor flow
 
 
 ## Articles
@@ -51,4 +52,4 @@ Tags: machine learning, links, useful, books, deep learning
 * [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do), 
 [summary](https://www.reddit.com/r/MachineLearning/comments/63uvzq/n_oreillys_book_on_machine_learning_with/) from reddit
 
-
+* [Machine Learning with TensorFlow](http://www.tensorflowbook.com/)

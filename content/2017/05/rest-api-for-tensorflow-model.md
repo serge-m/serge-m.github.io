@@ -6,7 +6,7 @@ Tags: tensorflow,server,REST,machine learning
 
 
 
-[TensorFlow Serving](https://tensorflow.github.io/serving), [sources[(https://github.com/tensorflow/serving) - library for serving machine learning models. Written in C++ and Python. Server is in C++. 
+[TensorFlow Serving](https://tensorflow.github.io/serving), [sources](https://github.com/tensorflow/serving) - library for serving machine learning models. Written in C++ and Python. Server is in C++. 
 Requires [Bazel](https://bazel.build/) - Google's build tool. Doesn't work with python 3. Probably fast.
 
 

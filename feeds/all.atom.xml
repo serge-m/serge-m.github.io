@@ -111,6 +111,10 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 &lt;p&gt;&lt;a href="https://blog.metaflow.fr/tensorflow-how-to-freeze-a-model-and-serve-it-with-a-python-api-d4f3596b3adc"&gt;TensorFlow: How to freeze a model and serve it with a python API&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.slideshare.net/fabiandubois/tensorflow-in-production-with-aws-lambda"&gt;Building a Machine Learning App with AWS Lambda&lt;/a&gt; (slides)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pipeline.io/"&gt;Pipeline.io&lt;/a&gt; - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  &lt;a href="https://github.com/fluxcapacitor/pipeline"&gt;Sources&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;About TensorFlow Serving&lt;/h2&gt;
+&lt;p&gt;TensorFlow Serving is build using Bazel - a build tool from Google.&lt;/p&gt;
+&lt;p&gt;Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a &lt;code&gt;bazel-bin&lt;/code&gt; softlink. It ponts to a directory &lt;code&gt;/home/&amp;lt;your user&amp;gt;/.cache&lt;/code&gt;  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings.&lt;/p&gt;
+&lt;p&gt;I was able to build tensorflow in a docker as explained &lt;a href="http://tensorflow.github.io/serving/serving_inception"&gt;here&lt;/a&gt;. I am not very happy about the size of the image (several GB).&lt;/p&gt;
 &lt;p&gt;See also:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/machine-learning-links.html"&gt;Machine learning links&lt;/a&gt;&lt;/li&gt;

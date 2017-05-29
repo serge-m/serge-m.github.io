@@ -21,7 +21,7 @@ TensorFlow Serving is build using Bazel - a build tool from Google.
 
 [Architecture overview](http://tensorflow.github.io/serving/architecture_overview)
 
-[Basic serving](Serving a TensorFlow Model) Hmmm
+[Basic serving](http://tensorflow.github.io/serving/serving_basic) Hmmm
 
 Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a `bazel-bin` softlink. It ponts to a directory `/home/<your user>/.cache`  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. 
 

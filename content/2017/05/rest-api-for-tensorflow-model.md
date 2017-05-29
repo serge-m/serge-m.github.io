@@ -27,6 +27,13 @@ I was able to build tensorflow in a docker as explained [here](http://tensorflow
 
 `bazel-bin` directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). 
 
+##### [Problem] ImportError: No module named grpc.beta
+Solution:
+
+```
+sudo pip install grpcio
+```
+
 ## See also
 
 * [Machine learning links](/machine-learning-links.html)

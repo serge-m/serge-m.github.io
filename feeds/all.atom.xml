@@ -114,7 +114,7 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 &lt;h2&gt;About TensorFlow Serving&lt;/h2&gt;
 &lt;p&gt;TensorFlow Serving is build using Bazel - a build tool from Google.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://tensorflow.github.io/serving/architecture_overview"&gt;Architecture overview&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="Serving a TensorFlow Model"&gt;Basic serving&lt;/a&gt; Hmmm&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://tensorflow.github.io/serving/serving_basic"&gt;Basic serving&lt;/a&gt; Hmmm&lt;/p&gt;
 &lt;p&gt;Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a &lt;code&gt;bazel-bin&lt;/code&gt; softlink. It ponts to a directory &lt;code&gt;/home/&amp;lt;your user&amp;gt;/.cache&lt;/code&gt;  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. &lt;/p&gt;
 &lt;p&gt;It seems that &lt;code&gt;bazel&lt;/code&gt; automatically downloads some pre-built binaries implicitly.&lt;/p&gt;
 &lt;p&gt;I was able to build tensorflow in a docker as explained &lt;a href="http://tensorflow.github.io/serving/serving_inception"&gt;here&lt;/a&gt;. I am not very happy about the size of the image (several GB).&lt;/p&gt;

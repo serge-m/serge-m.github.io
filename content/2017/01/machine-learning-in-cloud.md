@@ -35,10 +35,20 @@ Tags: machine learning, links, useful, books, deep learning
 
 * [Resume Filler - Kaggle Competitions](https://www.kaggle.com)
 
+* [Deep Feature Flow for Video Recognition](https://github.com/msracver/Deep-Feature-Flow) - position itself as a framework for video recognition. paper and source code are available. Pictures are nice.
+
+
 
 ## Articles
 [Using Machine Learning on Compute Engine to Make Product Recommendations](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
 
 [CRISP-DM: проверенная методология для Data Scientist-ов](https://habrahabr.ru/company/lanit/blog/328858/) (Russian) 
 [Original CRISP-DM methodology](https://www.the-modeling-agency.com/crisp-dm.pdf)
+
+
+## Books
+
+* [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do), 
+[summary](https://www.reddit.com/r/MachineLearning/comments/63uvzq/n_oreillys_book_on_machine_learning_with/) from reddit
+
 

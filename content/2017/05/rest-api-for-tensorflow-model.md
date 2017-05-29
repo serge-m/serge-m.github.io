@@ -36,6 +36,19 @@ sudo pip install grpcio
 
 Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. 
 
+##### Running in active virtualenv
+It seems possible to run built scripts using python from active virtual environment.
+One should replace the following line:
+```
+PYTHON_BINARY = '/usr/bin/python'
+```
+in wrapper file (for example `bazel-bin/tensorflow_serving/example/mnist_client`) with 
+
+```
+PYTHON_BINARY = 'python'
+```
+
+
 ## See also
 
 * [Machine learning links](/machine-learning-links.html)

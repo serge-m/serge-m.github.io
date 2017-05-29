@@ -19,6 +19,10 @@ Requires [Bazel](https://bazel.build/) - Google's build tool. Doesn't work with 
 ## About TensorFlow Serving
 TensorFlow Serving is build using Bazel - a build tool from Google.
 
+[Architecture overview](http://tensorflow.github.io/serving/architecture_overview)
+
+[Basic serving](Serving a TensorFlow Model) Hmmm
+
 Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a `bazel-bin` softlink. It ponts to a directory `/home/<your user>/.cache`  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. 
 
 It seems that `bazel` automatically downloads some pre-built binaries implicitly.
@@ -27,7 +31,7 @@ I was able to build tensorflow in a docker as explained [here](http://tensorflow
 
 `bazel-bin` directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). 
 
-##### [Problem] ImportError: No module named grpc.beta
+#### [Problem] ImportError: No module named grpc.beta
 Solution:
 
 ```
@@ -36,7 +40,7 @@ sudo pip install grpcio
 
 Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. 
 
-##### Running in active virtualenv
+#### Running in active virtualenv
 It seems possible to run built scripts using python from active virtual environment.
 One should replace the following line:
 ```

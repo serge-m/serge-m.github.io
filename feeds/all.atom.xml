@@ -111,6 +111,8 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 &lt;p&gt;&lt;a href="https://blog.metaflow.fr/tensorflow-how-to-freeze-a-model-and-serve-it-with-a-python-api-d4f3596b3adc"&gt;TensorFlow: How to freeze a model and serve it with a python API&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.slideshare.net/fabiandubois/tensorflow-in-production-with-aws-lambda"&gt;Building a Machine Learning App with AWS Lambda&lt;/a&gt; (slides)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://pipeline.io/"&gt;Pipeline.io&lt;/a&gt; - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  &lt;a href="https://github.com/fluxcapacitor/pipeline"&gt;Sources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Interesting &lt;a href="https://groups.google.com/a/tensorflow.org/forum/#!topic/discuss/qwpIhjqC9X8"&gt;thread&lt;/a&gt;. They propose to use 
+"saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files."&lt;/p&gt;
 &lt;h2&gt;About TensorFlow Serving&lt;/h2&gt;
 &lt;p&gt;TensorFlow Serving is build using Bazel - a build tool from Google.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://tensorflow.github.io/serving/architecture_overview"&gt;Architecture overview&lt;/a&gt;&lt;/p&gt;

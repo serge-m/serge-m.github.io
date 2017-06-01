@@ -16,6 +16,9 @@ Requires [Bazel](https://bazel.build/) - Google's build tool. Doesn't work with 
 
 [Pipeline.io](http://pipeline.io/) - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  [Sources](https://github.com/fluxcapacitor/pipeline)
 
+Interesting [thread](https://groups.google.com/a/tensorflow.org/forum/#!topic/discuss/qwpIhjqC9X8). They propose to use 
+"saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files."
+
 ## About TensorFlow Serving
 TensorFlow Serving is build using Bazel - a build tool from Google.
 

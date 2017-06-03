@@ -68,6 +68,5 @@ Tags: memory,books
   
   
   
-  #
-  # todo
-  * https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.d6zqx1uh2
+# todo
+* https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.d6zqx1uh2

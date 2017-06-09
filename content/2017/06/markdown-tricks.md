@@ -22,5 +22,4 @@ Results:
   your hidden code
 </details>
 
-Doesn't work in pelican.
 [Source](https://github.com/dear-github/dear-github/issues/166)

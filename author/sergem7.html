@@ -75,6 +75,49 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/private-inheritance.html">Private inheritance</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-01-06T12:49:00+01:00"> 2014-01-06T12:49:00, Mon</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/c.html">c++</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>Example from Meyers "Effective C++"</p>
+<div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="n">Timer</span> {
+    <span class="n">public:</span>
+    <span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
+<span class="sr">    //</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
+    ...
+    };
+
+
+    <span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
+    <span class="n">private:</span>
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
+    ... 
+    };
+</pre></div>
+
+
+<p>Now clients of Widget get interface …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/private-inheritance.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/blogs.html">Blogs</a></h1>
 
 <footer class="post-info">
@@ -675,42 +718,6 @@ readline.write_history_file( "log.py")</span></p>
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-15T15:22:00+02:00"> 2013-10-15T15:22:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/c.html">c++</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p>UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.</p>
-<p>I have the following code for copying several buffers from one object to another:</p>
-<div class="highlight"><pre><span></span>    <span class="c1">// Copy several buffers (images)</span>
-    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
-    <span class="p">{</span>
-       <span class="c1">// Copy pixels …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem6.html">&laquo;</a>
@@ -747,6 +754,7 @@ readline.write_history_file( "log.py")</span></p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/markdown-tricks.html">Markdown tricks</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html">Streaming camera output from Raspberry Pi</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rest-api-for-tensorflow-model.html">Rest API for TensorFlow model</a></li>
@@ -758,7 +766,6 @@ readline.write_history_file( "log.py")</span></p>
     <li class="list-group-item"><a href="https://serge-m.github.io/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html">How to hide Firefox title bar in Cinnamon (mint)</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/ssh-cheatsheet.html">SSH cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">Convert ovpn config file to .ca, .crt, .key</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -800,22 +807,10 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -829,6 +824,9 @@ readline.write_history_file( "log.py")</span></p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
@@ -840,6 +838,9 @@ readline.write_history_file( "log.py")</span></p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elastic-search.html">elastic search</a>
@@ -859,8 +860,17 @@ readline.write_history_file( "log.py")</span></p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/image.html">image</a>
@@ -891,12 +901,6 @@ readline.write_history_file( "log.py")</span></p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -938,7 +942,13 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/mint.html">mint</a>
@@ -947,7 +957,10 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
@@ -958,11 +971,11 @@ readline.write_history_file( "log.py")</span></p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
@@ -972,15 +985,6 @@ readline.write_history_file( "log.py")</span></p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
@@ -1000,8 +1004,14 @@ readline.write_history_file( "log.py")</span></p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
@@ -1013,13 +1023,16 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -1028,7 +1041,7 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/testing.html">testing</a>
+      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1037,10 +1050,7 @@ readline.write_history_file( "log.py")</span></p>
       <a href="https://serge-m.github.io/tag/torch.html">torch</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1059,9 +1069,6 @@ readline.write_history_file( "log.py")</span></p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/web.html">web</a>

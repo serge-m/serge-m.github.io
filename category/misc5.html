@@ -78,6 +78,39 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/writing-simple-optical-flow-in-python_21.html">Writing simple optical flow in python. Part 3</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-12-21T21:48:00+01:00"> 2014-12-21T21:48:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>Today, my imaginary readers, we improve our optical flow dramatically.  Lets see, what our algorithm produces for images that have more than 1-pixel shifts.</p>
+<table><tbody><tr><td>I0<img alt="" src="data:image/png;base64,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" /> </td><td>I1<img alt="" src="data:image/png;base64,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" /> </td></tr><tr><td>OF results:
+
+<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT8AAAD7CAYAAAAcqJO9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl0leW59/HvzkQgYYYkQoLIZAYgBFBq1BJEUGyhKmgVFV5RsXrsqR6Pet6es9ahfxShtsuh7ep5a8X5VK1tRS0iUhtEIA4EHECBQqIhTEqYMpCQ5Hn/uPYmCeDOHu57Pzs+12etvUhCcuVms/fvuZ/pvnyO4zgopZTHJLg9AKWUcoOGn1LKkzT8lFKepOGnlPIkDT+llCdp+CmlPCkp2gIlJSWsWbPGxFiUUipihYWFbN68OeTvj3rmt2bNGhzHsfL47//+b2u1dbw6Zh3vt2vMH330UVjZpbu9SilP0vBTSnlSXIdfSUmJ20MIS1cbL+iYY6GrjRe65pjD5XMcJ6p7e30+H1GWUEqpqIWbRXE981NKKVs0/JRSnqThp5TyJA0/pZQnRX2HRzgWLFgQ9oWISinvKiwsZNmyZVZqxzT8tm3bRnl5eSx/pVKqC0tNTbVWW3d7lVKepOGnlPIkDT+llCdp+CmlPEnDTykVWzE9zfrNNPyU6mq6W66fDyRaqt0XKLBUO0ydht/KlSvJzc1l5MiRLF26NBZjUqprG4i98ACYCmRarJ8HjLBUezLQx1LtMAUNv5aWFu666y5WrlzJ1q1b+eMf/8hnn30Wq7EpZc9AYBTQy0JtB/gxElK9LdT/GrgZONtCbYAhwFgLdQf469p4ziMQdO/7/fffZ8SIEQwdOhSA6667juXLl5OXlxeLsamuJrBFd4ATQL2hmhcDLUADUAuU+z+PxtfAd4C5yDj3AeuBf0ZZN1D7PeAy4CLgM+A1ZPwmVACXAzcBf/bXN6UPEthpQCpw3GDtych0K07CL+jMr7q6mpycnJOfZ2dnU11dbX1QAFyLna3PROAHFur2B25FXjSmXY8chzElCbgU8+NNB24E7gFGG6p5GCgDzkHePHlEH3wgAf06ElI9gKHAVwbqBpQBXwA+f11TwQdwADiKBFONwboAGci4d2F21zoFeR6OAc0G60Yh6MzP5/OFVGTRokUnPy4pKTGzCuwBoC76Mqc5gp2AakLGbOKNeaqvMTOLCmgG/g7kGq67G/gf4BLMzka+Ah4HZgJbDNZ1gDeQ5+ME8towWfsVoAiZUZrkAC8B+5Fxm7Td/zCtCXjH/zB0PLS0tJTS0tLICzhBbNiwwbnssstOfr548WJnyZIlHb6nkxIdFBcXO8h/nT70EdkjyVLdbpbqJsTBc9aFH8XFxSHnC4SeRY7jOEF3eydOnMiOHTuorKykqamJF198kVmzZgX7EaXssrXL1GipbquluipqQXd7k5KS+M1vfsNll11GS0sLt9xyi57sUEp9K3R6rfWMGTOYMWNGLMailFIxo3d4KKU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKeFNNlBe+//372799vpfbtt99upa6KDblAv2sJ9fZPFZ905qeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KqdPZToY4SJ44GIJSKmS2O7cFnG+xdj/srNIeJg0/pUxKtly/EJhk+XekAlOAbhZqpwA/xM6K52HS8FOe09Jq8Z13FrAA+C522ktuRZoXXY/0HrFhAhJ8/S3UnoU8LzZaVIQpTnqnK3W6VqeVjXs20uK04DgODnIh9PmDzycpIfKXbsXhCua/Mp8DdQfITMskIy2DzLRMri24linnTIlu0F8Cm5AmWZcgDZi2AaWYaWJ0FGkudC7wI+AvQKWBugGJSFc7kPDbY7D2BbQ1ttLw+2Zl9WVkJ2eTnZxttvAgpGu8yUY4INP585BuYKaXWi9CmgOZ6i6WgPSsTQc+wkwTHB+yOzYKeS42EPVznOBL4ETrCRYsX8C2g9sAuHzE5bxxwxtR1R3RbwRv3vgmNy+/mZe3vgxAeko6//nd/4xuwAGbkC5oFyCtIE9gtnvbZmA4MvNLNVgXJFSbkDEPMFi3Gx1bVsZB+MXtbu9bdW+xpdF0QiH/uTaOmQxAerSmW6h9EWYbVLciHeFykNAywUHaNZYjL/JaM2WLc4rZ/KPN/MeF/0GiL5HxWeON1E1PSeelOS+x9NKlJPgSKMwsZEAPg+/2VcAOoAqznewAPkc2LH/xf2zSVuAp4PfIhtGURuAt4Dmkq53JroER8jlR3lTp8/lCvi9z+fLlem+vF6QgARvGDDiU19DGPRvpndqbEf1GRDy0M1m1cxWJvkSmDpsa1s91em9vNyAL6YNrWjLm21bGoeLiYtatWxfS94aTRRDHu72qC2uyU3bCoAlW6k4fPt1KXRqxE3zgieCzLW53e5VSyiYNP6WUJ2n4KaU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepBc5q7gwceJEK3UXLlxopa7q+nTmp5TyJA0/pZQnafgppTxJw08p1Tnby/O7QMNPKRVcPvYaDiVgbk3JCH61UipeJSPLyvd24Xf7kKX4rwV2WqifAcwAolpRNHKdhl9VVRVTpkyhoKCA0aNH89hjj8ViXEopaFsC/25gHjCG2OyCdgOuQxox7UV6kZiSgKxOvhBpz+CSTq/zS05O5uGHH2bcuHHU1tYyYcIEpk2bRl5eXizGp1TXkIv0L6kBDvr/rMHMoqMfIT07xgLDgOPAp0gvDxvh0R/pDhdY1d/kMvwDgSuBwchS9hY6VYSq0/DLysoiKysLgPT0dPLy8tizZ4+Gn4q51sRWmlKb6FbXDV+YB4ocx2FL4xZqWmqod+qpa62jvrX+5McNrQ1c3/t6hqUMi2xwnyPNii4/5evHgGpgOdE1Mfob0nOlL9K0aCJQALyO2QAZCcymY2MkE31CEpCGTlNoS51yzDf7CkNYd3hUVlayadMmJk2y3TUZDrUcomdCT5J8hm9CSUL+Yw012OmgP7LVN60X8saJ96XL05HZwgBkRrIv8lKOz+Grs7+itm8tTT2aaOzRSHNqMxm7MsjZkhN2PZ/Px5DkIWw6vol1DetOtsEMGJY8jKykrMgHDNLA6RhwFW3vrJ5IeETbva0ReBnpCZzo/1oF0hbTpAYkTAMdAw4CBwzUTUaem8DT3gp8aKBuFEI+4VFbW8ucOXN49NFHSU+30aKso6VfL+W1Y6+ZLzwNmG++LDnAj7HT6HkhcL7hmkP8dbsZqpeM9GS9Evg+UT8PPsfHgC8HkH4onabuTTSnyhShvlfkbb96Jfbipj438V8D/ovclNwOf7frxC5aaY1qzIAEx7N0DDtT2+9q4B/+j3cjG3HT/dd3IzOyPf7fZ2qXt9FfayeyUdyO2eOIEQjpv+XEiRPMnj2bG2+8kSuvvPK0v1+0aNHJj0tKSigpKYl6YHf0u4MBiSYbh/q9g/RVNa0aeBo7M7//BQ4Zrvkl8ATm3jwnkJnP+8ilEZXRl0xoTSCjMoMBXw7gYPZB9o3cx6Dtg6Kum52czd397ubjxo/589E/s79lP/N6zyM9wdBG/QtgGXAD8C5ybM6UdciG60VkBmjjTGk10rryLMxeD3ICeAHZM+jVyfeGoLS0lNLS0oh/vtPWlY7jMH/+fPr378/DDz98egFtXakMmDCh885sjs+hObmZ5KbQT3d2trBBs9PMmvo19E/sz7jUcSHXhRBecz39jz1hle2cR9pWgt3WlZ3m+rp163juuef4xz/+QVFREUVFRaxcuTLkX6CUKT7HF1bwhSLJl8TUtKlhB19IjmE++MAzwWdbp7u9F110Ea2tBo6FKKVUHNE7PJRSnqThp5Syz6X7d4PR8FNK2dEdmITcvxuHdBl7pZRZQ5CLpAuQOzh+h2uLFwSj4aeUil4PoBAYj9y/G7AcOOLKiDqlu71KqegNBYroGHyfAp+4MpqQxHTm94tf/IL169fH8lfGtVAu7I3Exo0brdS1ydZzYauuOsV+Op7UOIosxhDHdOanlIrOucBtyP3cgcUKXiH6xRws02N+StmWAFyMrGF3yP843O7PRveGFhUfUAJMRtbmew5ZaaYe2OXesEKl4aeUba3IghpTkRWMT3UAeJ64PTFwRqnA1cgCrnuRhRYCq7S87dagwqPhp1QsOMBqZLb3PToecPoMqHNjUBHKQJa474esMv06XfJ+Yw0/pWJpIzLDu4a2tRQnIyszf+B/xHMQFgA/QJJjBbKEWRel4adUrP0TWe9vLrAeOXb2HeT42UXAx8AG4CuXxncmCchu+4XIKujPI+sWmv4dMVxDRcNPKTfsB/6AnCGtRGZQeUifi/H+xw4kHCvcGeJJPYA5SPOk3cBLyKUsJvREmj+NRI6LxrCbm4afUm455n+AzHi2+B85SAjmIaGwD5kJfor5Zes7cxbwQ6Q500ZkVzfaMQxEAi8XOQMOctwwxm0sNfxUl+HgcDzhON1bu4f9swcaDrCpZhObazaTlpTGXXl3mRlUT6RnyVAkwFpO+XMPcs1bOIFR5X/0RXaHi5CmSJcC7yEhFItr6AqBmf6PX0V6e0QjAznWOfCUr3+AK82MNPyUeQnIK6sp+lJNviaqu1VT1a2Kqm5VTKidQG59btCfcXA4kniEfd32sWjzIjbVbKK6vvrk3/97wb/zyaFPSEtKIz0pnbTkNHok9sDni2DdpWNIX4qJwHRkJZP23gm/5EmHgDeAUmShgPORAPwu0oemDPO9XUB6g1zm/31HkctYqoP+RGgOIOH9/XZfq0T+jS6I3/Cbi7T8i3Zrc6rvILsVfzJcdyDS7/R/MXc8xG/7BdsZ8MUA+u3pZ7bwhcjW+K8GaiUgjbXzkCv+X0GOWUWgmWa2pm3li9Qv2JeyD8fXtiTI3pS9nYZfQ0IDO7vvZEePHRzdffp/xi+3/PK0r/nw8db0t+iT0if8ATvI7GUXMkPLbvd3VwG9iS4EG5BGSBuQDnkXIEtFDQd+E0Xdb5INnIcE058wd/Y5AXnNNSPJcxg5fujSQvHxG35fYqcTmq0zaPXImI+bL51ek05KQ4r5wl9jZHYGyAu4BjmQ35OomlEnkURufS49WnvQvbU7X3b7kuYEKdinufNw6tHagwm1ExhfO57ia4pZsXsFq/as4sgJuYr47ry7aXFaqGuuo665jtrmWupO1JGeFGX3toPIWdwLkTO3G5GZ4dboyp7UglxX9xFwDvbevV/QdreGyWBqRXoPHwduAf6IvG9cEr/h966lujv9D9PqkIPBFgzaFn27xjMy3fD6oP/xXvSlUpwURjSMYETDCJppprpbNRXdK8I63ufDx5i+YxjTdwz/VvBvrDuwjhW7V9ArpRezcmZFP8gzaQXWIpez5GDvOjjbZ4BtvEegbff5eWRD6aL4DT+l/JJI4uzGszm78eyIayQnJFOSVUJJVgktTgxOme71P9SZmTiGGCVd1UV5TqIv0e0hqDig4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKk/QiZxdp68o2v//977tUXdX16cxPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepOGnlPKkkMKvpaWFoqIiZs6c2fk3K6VUFxBS+D366KPk5+dH1uBFqXin+z+e1Ol/++7du1mxYgW33norjuN09u1K2dPH/zDFh7RnvMpgTZB31flAN8N1lVGdht8999zDQw89REJCjDeP45GGyaYNQfqgmtYDaSlooc/Qlh5bOJhkoZvTUOTNb9q5QJrBeqnANOAuINNQzXOBO5Dg6wFcYqhuDrAQaWIU6LvbP8JaCUDWGb6eBoxBmn7bMhw793/1R57vABd3JoP+815//XUyMjIoKiqitLT0G79v0aJFJz8uKSmhpKQk+pEVIUFiug/CEGAY0vfUpJ5I79aPMNcRDelB+3na5ySQQP/mSN9F32AosoH5yFC9PsAMJFheQ7qXRSMJaaH4Xdr64U4kusZLZyO9b3PafW24/7EROBJh3TR/3fYb1h/5/0wA1odZbzDS3/ZjpCve2cjrdhhtG4AqpL2raRnADUhryTeIuAXpaZKA64FkpCXmV0gbztLIypWWlgbNpc74nCD7sj/96U959tlnSUpK4vjx4xw9epTZs2fzzDPPtBXw+ULeHb7wwgtZvz7cV8G318KFC63Ude1+1kCz8iSki1k0bTx9wFgkBNKQ2UIasA/pMxzuEZhMJJxGnuHvmoGngd0R1PUhDcWncnrD8q3IRvYLQt8gpvprTfTXrkH6/gbajtQh/YEDj0jDOphEZMY6GZmAfA6sRMIwWkXAFchr5WNkz+MppO3rGRQXF7Nu3bqQSoeTRdDJzG/x4sUsXrwYgDVr1vDLX/6yQ/Ap1UEr8iY3MfN1aOtRa8IBJDTTT3n09P+Zg8ykwpGEBMQQJBjqkFlN4JGFdCkL9fkYC0z3jyegFx3D7gDhB3S4WoB1wCfAZUABMjN+1//1KHoyswnZm7uWtlnybOB3WOl5HUxYe/V6tld1WQ7SILseCRATmoG/B/l7H6Ed0xoAfA9pRH4m7yKzx1g7iuyebkRma1OQmVq0u8L96dgMvTcw0/+7Yijk8Js8eTKTJ0+2ORalvl0cQpulHQVepu2QQRIycwx87PacYxcyMwvsCt+AHHd9g8h2hSuRQC1Cji+CzC7/iflj8UHoen5Kuc3UoQKbzrQrPIyOu8KDkF3azgK/DtjgfwxGQnA0crLsS8DChQ1nouGnlApdsF3hUUgovhVGvWr/YyWQhwTh23TcLbZEw08pFb4z7Qo3IWeH6wj/0p5mZFb5icExdkJv7FFKRSawK/wbZFc1cIH/dGCcW4MKnYafUio6Ezn9LpZZyG5wHNPdXqVUdN5GTl4M9T/OQc7iXgM8yzdewOy2oHd4hFQgzKuqbbn99tut1NXuX0pFIA0Jwixk1zjCC5hdu8NDKaUiUgds8T/ilB7zU0p5koafUsqTNPyUUp6k4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KaZc1T4rb8NtZs5NjjceM1230NXIs0XxdAAbaKUs/2no4mJSKLJNumoUOdoCdTnMpwHXYWzDU7YVI1TeK2/Cb8vQUfrHuF8brbuy5kZX9Vhqvy1DgX7ATgLchrRBNm4500zIpBbgJ8ze1jwauxGyPXR9wNXIv6o+Rfh4mJCP9OJKR58JGaOcCP8DOrPUspMeG6Y1YOrIQ6tmG60Yobm9ve/PGN8lMN9WktU1RbRH5dfnG61IJ/B5px2fak5jpnHWq1cjsz5Qk5A1Zh9mZai4SUj6kWVBvzHQtu4S23rd9kJVJTOwUTEL66hYhwfoV5hoxgdw3OxOZurwNNBqsDbIicz4y7n8YrJuCPDcDcacnySniNvzyBuZZqdu9tTvdT+sxaMgeO2WNNdw5VaChjykO0ovC5DoXw5Deru8j3dV2Yyb4xgIXt/u8HllJuBo4EUXd7sBFtG1UPkBWOTZpFhKAL2MmrE+1CVmktBj40ODvqEHaeY5GZpeme3KHKW7DT3VBLRZqViKrBpuUjQTIAaQRzzYk9EyEdvvgA+kTXIC5G/yLkKbwn/ofNrQiS9HPRZapf9Vg7XVI+F2IhLeLNPxUfDPdy8GH7OL+FjhkuHYv4Px2nx9EWltuNVS/L3A50kfjb4ZqfpPtyIanCCjD3N7HXqRLWz5yIq/GUN0IxO0JD6WscJAZk+ngA+llkYwc8/wbErCmgs+HnPDpBiwHGgzVDWaV//dOM1z3XSR5iv2fmzzuHAad+SllwgBk97YUad5juhXlBchZ0veBnYZrf5M9SEOhMcixV1OHHyqRY7fjkObn52J21zpEOvNTyoQ+SCOfUswFX09k5pWJnJk+SHhtIU34O9JZbRrmrlkchOxWJyGXWpm/qCMkGn5KmfBPoNZwzYnI7Ogq5J36F6I7Ex2Jw8hs8yzkDLkJgTAPOLX5UYxo+CkVr/KR6/mygLXIGWk3vIMcY7wEMwfKNiHXJwakIpfuxJiGn1LxaAByMXDgHToaOM+lsRxHArA3cv2fCe8g10AGuDD70/BTKh6dehPSFuSCY7e8j5whvxjoYajmCuAz/8cuhF9Mz/ZeeOGFrF+/Ppa/UqmuKXCDUxPwV9pCwi0tyMmPOcglPSbuWnGAPwPz0JmfUgq5mPks5Ozu47gffAGfIscdJ2IurJqBP2L+YvYQaPgpFW/ykEtBHsfOQhnRWIUsWjHVYM0G5BhgjOlFzkrFm4PABswuEGHKF8DnyDHJHORaxO3IDC4a0f58BHTmp1S82UZ8Bl/AamQ39QraLsXpgjT8lFKh641cdnMUOS7ZHVklpwvqNPwOHz7MnDlzyMvLIz8/n7KysliMSykVj44gs9I+7b7WRcOv02N+P/nJT7jiiit4+eWXaW5upq6uLhbjUkrFqzXIbm/gpMdgF8cShaAzvyNHjrB27VoWLFgAQFJSEr17947JwJRScWwtbYss9MWV29OiFTT8KioqGDhwIDfffDPjx4/ntttuo77e5LrnSoXB1hFqS10NumIghGUd8Kb/4y44+wv6cmpubqa8vJw777yT8vJy0tLSWLJkSWxGNh879zJegCzPbVom8K/YaQV5C7K6h2lZ2LnYaQwyGzBtBtIQyLQfImM22XQpEVmuaQQdj4+Z0h251MRGa8wkZNyh2IDc7RFq+OUgXdziQNCXfnZ2NtnZ2Zx3nqTQnDlzzhh+ixYtOvlxSUkJJSUl0Y/sc+w0ONmHnWWBjiJjtjEx/hzzTYwSge8iuy4mVzXujfTH2IrclmVKNrIxHAssA/YbqnsO0nZ0KHLP6nuG6g5GxnwDsizUY5i5fCUVuSYuD3me/4wsOGrSDGACsj7h1yF8/3uEtibfCOBG5Da5tRGP7qTS0lJKS0sj/vmg4ZeVlUVOTg7bt29n1KhRrF69moKCgtO+r334GWPqRXiqCv/DtAbk6ncb1lmo6QP+hPnrycYi6859brjuZUiLxjLMdG8LuKDdx3nIuE3UH+r/04fMgv8VeJroW5D2RU40JCL32/4zynpn8ikSfuOQoOqJbNyDCWVjtAtZ4n8cRsLv1InWz372s7B+vtOdnl//+tfccMMNNDU1MXz4cJ588smwB6nikK0r6g28qE8zCvgSuQfU5My6v7/2cWTDtQlzG4Oh7T4+CDyLmd7LCbTtkh5H+hm/i9k+uJXIWAuR2XAV8txEqxX4GNngDEE2Msdw5b5eCCH8CgsL+eCDDzr7NqXs2YncQmXad5BFA1Zgtv9tInJsC+TQzXPIjMeE9kfpU5HZsMngSwcuRQ4N9QHGE9qub6g2I+F3AbJe4ZOYe27CpPf2qvhnox9wAnIbmY3dxmyki1sF8AISUKa0D79jmG9hWYvswrY/wWaqu9pw5O6QE7Qt2dUd18JPb29T3tSKneAD2eX9DHges8EHHd+xr2KnheUGOh6zNXUp0C7kaohkC7UjoOGnlGkHgZewc1w1cDlOOdL20ZZXaLsKwFRABRYvbX/yRMNPqW+RT7G3KksCcjLizc6+MUrHaQtwk03F65GrDAKHMjT8lFIh8SGzMtO702eyF1iJ+YCqQpbFwkLtMOgJD6W6kl3Etnfvh9i5I2MDcrmLzvyUUiGJddNysLfE/CvYOWETopjO/Nats3Grgl0+n42bJ5XqQmxdhNyItMR0ic78lFLucenuDtDwU0p5lIafUsqTNPyUUp6k4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU+K2/B7pOwRNlRtMF63tLKUX7/3a+N1SUNWwO1mvjTFwFkW6prsVtaere5cmdh5xQ7BznNha7xx+64NUZzcNBW3T+Nr219j0z4TjQM62rxvM6t2Weg0lAbkYif88pA2k6bNpm25dZOuRHpLmH51fR/4F6ShjklTgbuBfMN1pwMLgJuRN7ypgL0cWYL/J0ifjcGYvVH1e8Bd/o9NbhRGAPcgKzrHAZ/jOFGtPObz+YiyRFz71t7bmwKMBLYYrtsfmIfctG6yS14fJKCOAS9jrm9FIvB/kfCoQzqsmWoTuhAYhNzCdRj4A2YaME1H9gZAFjrYjYw7WqnIKivfBYqQJfJ7Am8bqA2y93I70nBpPfKcd9IVrri4OOQ1AcLNorid+SnLmjAffCBvnt9hvj1ogb/m/8Nsw55BtL0Jn8Rsf+TAck0O0sPYVOe5g+0+TsZca9MmpK9uoDvt9zC36ko/pD/IcWQP6RZkb8lFGn7KrN3IC9y0w0j7x1rDdXOQ5dqfxGyXMmhbAXk1soCnKe3Dbz/mepG0Iq1HU9p9zVRDex8yc08FBiB7CE2GakdIw091DVuwswJID2AZ5t7kAT5k5vcZsnCnSe1D2vQqcR/Tsb+wiV7DIIF96vOg4aeUi0ox27M3IBWoAZZbqF2LrIV3GOkXYlIrckwuwORG4R06HuPT8FPKRTY6rIEcR3wJO4cAQGZ/G7AzG96MhFQ9ZnuFNAGrTvncRRp+StlwDNhnsf5uwPyVYKIZ2Z02fSgAZKZaiZyldvkiEQ0/pbqiNdidOZUjAWvDCuzNiMOg4adUV2TqsplvcgI5HmrDAToeV3SJhp9S6sxsdlZzsXFRgIafUir24uCmMA0/pZQnafgppTxJw08p5UkafkopT9LwU0p5koafUsqTOg2/Bx98kIKCAsaMGcPcuXNpbDR5s59SSrkjaPhVVlby+OOPU15ezieffEJLSwsvvPBCrMamlFLWBF35v1evXiQnJ1NfX09iYiL19fUMHjw4VmNTSilrgs78+vXrx7333suQIUMYNGgQffr04dJLL43JwLYc2MKR40eM161pqGHb19uM1wWkkYwNGbStCuxlto5Q2+pip+Ja0Jnfzp07eeSRR6isrKR3795cc801PP/889xwww0dvm/RokUnPy4pKaGkpCTqgc14fgY3jb2Jn0/9edS12ltUuog3d77JtrsMB+BQ4P8AvwW+MluaeUAZ5m8GPw/4ElkK3aSLgCPAJ4brXoKskPx3zK5jNwUJ1q2YXcnkImQ9vO7IQp6mnIusjFyErBR9GGm+ZOqWsSKgF7JyTDKyyIEJWcBY4ENkodcolZaWUlpMRztmAAAH6UlEQVRaGvHPB+3e9uKLL/LWW2/xhz/8AYBnn32WsrIyfvvb37YVsNS9bdehXWSkZZCeYrYJ7LHGY9Q01HB2n7ND+v6wurcNxHzwQVvzF9NLGF0DvIHZvhg+pD1hBfAq0GKw9l1I/4dXkSWXTLkJaadYg3SG22Oo7gxgErI+3m7gT0hIRet8pINbEhJ8B5H+JtHKRHqajEP2NjYjK7B8aKA2SGvQa5FmTsmh1XWte1tubi5lZWU0NDTgOA6rV68mP990c9MzG9Z3mPHgA+jZrWfIwRc2G8EH8qY0HXyJyIvQdEOgLGSW+lfMBl86EnxvYjb4APr6//wQc8EHbbPTJGRWaSL4QMYY2Gfrg7nn4ytgMpCNNDE6H3MLsk4FRvk/vpy21psuChp+hYWFzJs3j4kTJzJ27FgAFi5cGJOBKctasLOE+wGkJ6tpOUigmm4GlIAEyPuYH3cg/KqADwzW3d+udh3wuaG6rXRcHboVc+H3OTKjBDkM0Em/3ljotM/7/fffz/333x+LsahvA5OzvfZ2Ymfl4t7ADmClhdqtyPPxGmaXcDqBbGSykLAy+ZxvBC5GDl8cwNwGshrYTtvsz/y5zLDpHR6qa7C1ZHsLcpzPRiOgQCc0k43QA/b6/9xouO4RZGPQ/neYUnrK73GZhp/ytqOYO5t5qgNIE3Ab9iCzYRtNhgInIkwe/wzUC+yid4XdXqVUhLZYrL0H8yerAnYgMzPTMz+Q2V8ucTHz0/BTqivah51wAjk++QF2Wm/uQ65N1PBTSkXE1omlgDLsNXQvRXd7lVJxylbwgfk7iiKk4deJ8ePHuz0EpTzr3HPPtVY76O1tIRWwdHubUkqFw+jtbUop9W2l4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU+K6/CLZolqN3S18YKOORa62niha445XBp+BnW18YKOORa62niha445XHEdfkopZYuGn1LKk6K+va2kpIQ1a9aYGo9SSkWksLCQzZs3h/z9UYefUkp1Rbrbq5TyJA0/pZQnxWX4rVy5ktzcXEaOHMnSpUvdHk6nqqqqmDJlCgUFBYwePZrHHnvM7SGFpKWlhaKiImbOnOn2UEJy+PBh5syZQ15eHvn5+ZSVlbk9pE49+OCDFBQUMGbMGObOnUtjY6PbQzrNggULyMzMZMyYMSe/VlNTw7Rp0xg1ahTTp0/n8OHDLo6wozON97777iMvL4/CwkKuvvpqjhwJYZ18J840Nzc7w4cPdyoqKpympiansLDQ2bp1q9vDCmrv3r3Opk2bHMdxnGPHjjmjRo2K+zE7juP86le/cubOnevMnDnT7aGEZN68ec4TTzzhOI7jnDhxwjl8+LDLIwquoqLCOeecc5zjx487juM41157rfPUU0+5PKrTvfPOO055ebkzevTok1+77777nKVLlzqO4zhLlixxHnjgAbeGd5ozjXfVqlVOS0uL4ziO88ADD4Q03rib+b3//vuMGDGCoUOHkpyczHXXXcfy5cvdHlZQWVlZjBsn7ejT09PJy8tjzx7Tff/M2r17NytWrODWW2/tEovRHjlyhLVr17JgwQIAkpKS6N27t8ujCq5Xr14kJydTX19Pc3Mz9fX1DB482O1hnebiiy+mb9++Hb726quvMn/+fADmz5/PK6+84sbQzuhM4502bRoJCRJnkyZNYvfu3Z3Wibvwq66uJicn5+Tn2dnZVFdXuzii8FRWVrJp0yYmTZrk9lCCuueee3jooYdOvmDiXUVFBQMHDuTmm29m/Pjx3HbbbdTX17s9rKD69evHvffey5AhQxg0aBB9+vTh0ksvdXtYIdm/fz+ZmZkAZGZmsn9/nDTeCMGyZcu44oorOv2+uHvl+3w+t4cQsdraWubMmcOjjz5Kenq628P5Rq+//joZGRkUFRV1iVkfQHNzM+Xl5dx5552Ul5eTlpbGkiVL3B5WUDt37uSRRx6hsrKSPXv2UFtby/PPP+/2sMLm8/m6zPvy5z//OSkpKcydO7fT74278Bs8eDBVVVUnP6+qqiI7O9vFEYXmxIkTzJ49mxtvvJErr7zS7eEEtX79el599VXOOeccrr/+et5++23mzZvn9rCCys7OJjs7m/POOw+AOXPmUF5e7vKogvvwww8pLi6mf//+JCUlcfXVV7N+/Xq3hxWSzMxM9u2Txr179+4lIyPD5RF17qmnnmLFihUhb2DiLvwmTpzIjh07qKyspKmpiRdffJFZs2a5PaygHMfhlltuIT8/n7vvvtvt4XRq8eLFVFVVUVFRwQsvvMAll1zCM8884/awgsrKyiInJ4ft27cDsHr1agoKClweVXC5ubmUlZXR0NCA4zisXr2a/Px8t4cVklmzZvH0008D8PTTT8f9Bn3lypU89NBDLF++nNTU1NB+yMrpmCitWLHCGTVqlDN8+HBn8eLFbg+nU2vXrnV8Pp9TWFjojBs3zhk3bpzzxhtvuD2skJSWlnaZs72bN292Jk6c6IwdO9a56qqr4v5sr+M4ztKlS538/Hxn9OjRzrx585ympia3h3Sa6667zjnrrLOc5ORkJzs721m2bJlz8OBBZ+rUqc7IkSOdadOmOYcOHXJ7mCedOt4nnnjCGTFihDNkyJCT77877rij0zp6e5tSypPibrdXKaViQcNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepOGnlPIkDT+llCf9f5iy7YKmnFDaAAAAAElFTkSuQmCC" /></td></tr></tbody></table>
+
+<p>You can see, that the algorithm cannot deal with too large displacements. Even with multiple warps. 
+Lets apply multiscale scheme now. We …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/writing-simple-optical-flow-in-python_21.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/writing-simple-optical-flow-in-python-part2.html">Writing simple optical flow in python. Part 2</a></h1>
 
 <footer class="post-info">
@@ -727,37 +760,6 @@ batch_size: 100</p>
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/linux-life.html">linux life</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-06-02T23:18:00+02:00"> 2014-06-02T23:18:00, Mon</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p><strong>top</strong> - see running processes
-<strong>df</strong> - check free disk space
-<strong>baobab</strong> - free disk space 
-<strong>screen&nbsp;</strong> - multiple virtual consoles in one real [<a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html">ref</a>], need installation in ubuntu
-<strong>mc</strong> - file manager</p>
-<p><strong>ccsm</strong> - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;code&gt;</span>sudo apt-get install compizconfig-settings-manager<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;</span>, then …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/linux-life.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc4.html">&laquo;</a>
@@ -794,6 +796,7 @@ batch_size: 100</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/markdown-tricks.html">Markdown tricks</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html">Streaming camera output from Raspberry Pi</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rest-api-for-tensorflow-model.html">Rest API for TensorFlow model</a></li>
@@ -805,7 +808,6 @@ batch_size: 100</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html">How to hide Firefox title bar in Cinnamon (mint)</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/ssh-cheatsheet.html">SSH cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">Convert ovpn config file to .ca, .crt, .key</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -847,22 +849,10 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -876,6 +866,9 @@ batch_size: 100</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
@@ -887,6 +880,9 @@ batch_size: 100</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elastic-search.html">elastic search</a>
@@ -906,8 +902,17 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/image.html">image</a>
@@ -938,12 +943,6 @@ batch_size: 100</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -985,7 +984,13 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/mint.html">mint</a>
@@ -994,7 +999,10 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
@@ -1005,11 +1013,11 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
@@ -1019,15 +1027,6 @@ batch_size: 100</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
@@ -1047,8 +1046,14 @@ batch_size: 100</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
@@ -1060,13 +1065,16 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -1075,7 +1083,7 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/testing.html">testing</a>
+      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1084,10 +1092,7 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/torch.html">torch</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1106,9 +1111,6 @@ batch_size: 100</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/web.html">web</a>

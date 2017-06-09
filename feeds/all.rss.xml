@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 09 Jun 2017 12:00:00 +0200</lastBuildDate><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 09 Jun 2017 12:15:00 +0200</lastBuildDate><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;h2&gt;Scan ip-s&lt;/h2&gt;
+&lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
+&lt;p&gt;To install nmap, enter&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nmap
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Once it is installed, enter&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nmap -sn 192.168.1.0/24
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>useful</category><category>console</category><category>linux</category><category>network</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;

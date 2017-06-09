@@ -46,7 +46,7 @@ I prefer to run it in python virtual environment. Let's create one and install n
 ```
 virtualenv -p python2.7 py2
 source ./py2/bin/activate
-pip install numpy mock
+pip install numpy mock grpcio
 ```
 
 To make compiled scripts use python from virtual environment we should patch wrapper files. 

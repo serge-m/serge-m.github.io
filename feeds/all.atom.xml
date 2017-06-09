@@ -183,7 +183,7 @@ For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&l
 &lt;p&gt;save and exit. We will need to do that for each wrapper we want to run.&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;
 &lt;details&gt;
-&lt;summary&gt;&lt;u&gt;The same action for all files is acheivable using command line editor.&lt;/u&gt;&lt;/summary&gt;
+&lt;summary&gt;&lt;strong&gt;The same action for all files is acheivable using command line editor.&lt;/strong&gt; &lt;/summary&gt;
   &lt;pre&gt;find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
   &lt;/pre&gt;
 &lt;/details&gt;

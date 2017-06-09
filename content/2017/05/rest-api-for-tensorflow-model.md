@@ -51,6 +51,7 @@ pip install numpy mock
 
 To make compiled scripts use python from virtual environment we should patch wrapper files. 
 For example `bazel-bin/tensorflow_serving/example/mnist_saved_model` is a wrapper script for `mnist_saved_model.py`. 
+
 We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use `nano`:
 ```
 nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
@@ -68,6 +69,15 @@ PYTHON_BINARY = 'python'
 save and exit.
 
 We will need to do that for each wrapper we want to run.
+
+<details>
+  <summary>The same action for all files is acheivable using command line editor.</summary>
+  ```
+  find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
+  ```
+</details>
+
+
 
 Now we can run a commands from Tensorflow Serving tutorial:
 

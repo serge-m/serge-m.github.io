@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:00:00+02:00</updated><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:00:00+02:00</updated><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -12,7 +12,9 @@
 &lt;p&gt;&lt;details&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
-&lt;/details&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Expandable / collapsible code blocks&lt;/h2&gt;
+&lt;/details&gt;&lt;/p&gt;
+&lt;p&gt;Doesn't work in pelican.
+&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -25,7 +27,9 @@
 &lt;p&gt;&lt;details&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
-&lt;/details&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+&lt;/details&gt;&lt;/p&gt;
+&lt;p&gt;Doesn't work in pelican.
+&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;

@@ -72,10 +72,9 @@ We will need to do that for each wrapper we want to run.
 
 <details>
   <summary>The same action for all files is acheivable using command line editor.</summary>
-  
-```
-  find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
-```
+  <pre>
+    find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
+  </pre>
 </details>
 
 

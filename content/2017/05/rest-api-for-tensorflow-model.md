@@ -70,7 +70,7 @@ save and exit. We will need to do that for each wrapper we want to run.
 
 <i>
 <details>
-<summary><u>The same action for all files is acheivable using command line editor.</u></summary>
+<summary>__The same action for all files is acheivable using command line editor.__ </summary>
   <pre>find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
   </pre>
 </details>

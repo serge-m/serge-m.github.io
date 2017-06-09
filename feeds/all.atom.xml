@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:15:00+02:00</updated><entry><title>Useful console comands</title><link href="https://serge-m.github.io/useful-console-commands.html" rel="alternate"></link><published>2017-06-09T12:15:00+02:00</published><updated>2017-06-09T12:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</id><summary type="html">&lt;h2&gt;Scan ip-s&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:15:00+02:00</updated><entry><title>Useful console comands</title><link href="https://serge-m.github.io/useful-console-commands.html" rel="alternate"></link><published>2017-06-09T12:15:00+02:00</published><updated>2017-06-09T12:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</id><summary type="html">&lt;h2&gt;Scan IP range&lt;/h2&gt;
 &lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
 &lt;p&gt;To install nmap, enter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nmap
@@ -11,7 +11,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Scan ip-s&lt;/h2&gt;
+&lt;p&gt;This will show you which hosts responded to ping requests on the network between 192.168.1.0 and …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Scan IP range&lt;/h2&gt;
 &lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
 &lt;p&gt;To install nmap, enter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nmap
@@ -24,7 +24,20 @@
 
 
 &lt;p&gt;This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://askubuntu.com/a/224567"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://askubuntu.com/a/224567"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Replace text in files&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find . -type f | xargs sed -i &amp;quot;s/text_to_find/text_to_put/g&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To keep original files with &lt;code&gt;.original&lt;/code&gt; extension:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find . -type f | xargs sed -i.original &amp;quot;s/text_to_find/text_to_put/g&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If your text contain slashes, you should use another delimiter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find . -type f | xargs sed -i.original &amp;quot;s|text/to/find/|text/to/put|g&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;

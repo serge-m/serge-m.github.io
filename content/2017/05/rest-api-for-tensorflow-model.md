@@ -35,13 +35,12 @@ I was able to build tensorflow in a docker as explained [here](http://tensorflow
 `bazel-bin` directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). 
 
 ### Compiled examples for tensorflow serving
-Download compiled examples [here](https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing).
-
-Extract files:
+Download compiled examples [here](https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing) and extract files:
 ```
 tar xf ./bazel-bin.tar.gz
 ```
 The package contains compiled tensorflow serving app and example apps. 
+
 I prefer to run it in python virtual environment. Let's create one and install needed packages:
 
 ```
@@ -87,8 +86,42 @@ sudo pip install grpcio
 Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. 
 
 #### ImportError: No module named numpy
-Solution: install numpy using `pip install numpy` and make sure you use appropriate version of python. By default "compiled" versions of python scripts from tensorflow serving use python from `/usr/bin/python`. If you want to use another version patch wrapper files accordingly.
+Solution: install numpy using `pip install numpy` and make sure you use appropriate version of python. 
 
+By default "compiled" versions of python scripts from tensorflow serving use python from `/usr/bin/python`. If you want to use another version patch wrapper files accordingly.
+
+#### tensorflow.python.framework.errors_impl.NotFoundError: ... _single_image_random_dot_stereograms.so: undefined symbol ...
+Probably there is a but in examples. 
+Error message example:
+```
+Traceback (most recent call last):
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/tf_serving/tensorflow_serving/example/mnist_export.py", line 36, in <module>
+    from tensorflow.contrib.session_bundle import exporter
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/__init__.py", line 34, in <module>
+    from tensorflow.contrib import image
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/image/__init__.py", line 39, in <module>
+    from tensorflow.contrib.image.python.ops.single_image_random_dot_stereograms import single_image_random_dot_stereograms
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/image/python/ops/single_image_random_dot_stereograms.py", line 26, in <module>
+    "_single_image_random_dot_stereograms.so"))
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/util/loader.py", line 55, in load_op_library
+    ret = load_library.load_op_library(path)
+  File "/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/python/framework/load_library.py", line 64, in load_op_library
+    None, None, error_msg, error_code)
+tensorflow.python.framework.errors_impl.NotFoundError: /home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/image/python/ops/_single_image_random_dot_stereograms.so: undefined symbol: _ZN6google8protobuf8internal10LogMessageC1ENS0_8LogLevelEPKci
+```
+
+Solution:
+
+comment out
+```
+#from tensorflow.contrib.image.python.ops.single_image_random_dot_stereograms import single_image_random_dot_stereograms
+```
+in
+```
+bazel-bin/tensorflow_serving/example/mnist_saved_model.runfiles/org_tensorflow/tensorflow/contrib/image/__init__.py
+```
+
+[Source](https://github.com/tensorflow/serving/issues/421#issuecomment-300718439)
 
 ## See also
 

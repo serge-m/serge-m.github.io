@@ -19,22 +19,65 @@ Requires [Bazel](https://bazel.build/) - Google's build tool. Doesn't work with 
 Interesting [thread](https://groups.google.com/a/tensorflow.org/forum/#!topic/discuss/qwpIhjqC9X8). They propose to use 
 "saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files."
 
-## About TensorFlow Serving
+## TensorFlow Serving
 TensorFlow Serving is build using Bazel - a build tool from Google.
 
 [Architecture overview](http://tensorflow.github.io/serving/architecture_overview)
 
 [Basic serving](http://tensorflow.github.io/serving/serving_basic) Hmmm
 
-Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a `bazel-bin` softlink. It ponts to a directory `/home/<your user>/.cache`  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. 
+Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a `bazel-bin` softlink. It ponts to a directory `/home/<your user>/.cache`  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. 
 
 It seems that `bazel` automatically downloads some pre-built binaries implicitly.
 
-I was able to build tensorflow in a docker as explained [here](http://tensorflow.github.io/serving/serving_inception). I am not very happy about the size of the image (several GB).
+I was able to build tensorflow in a docker as explained [here](http://tensorflow.github.io/serving/serving_inception). I am not very happy about the size of the docker image (several GB).
 
 `bazel-bin` directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). 
 
-#### [Problem] ImportError: No module named grpc.beta
+### Compiled examples for tensorflow serving
+Download compiled examples [here](https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing).
+
+Extract files:
+```
+tar xf ./bazel-bin.tar.gz
+```
+The package contains compiled tensorflow serving app and example apps. 
+I prefer to run it in python virtual environment. Let's create one and install needed packages:
+
+```
+virtualenv -p python2.7 py2
+source ./py2/bin/activate
+pip install numpy mock
+```
+
+To make compiled scripts use python from virtual environment we should patch wrapper files. 
+For example `bazel-bin/tensorflow_serving/example/mnist_saved_model` is a wrapper script for `mnist_saved_model.py`. 
+We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use `nano`:
+```
+nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
+```
+
+Replace
+```
+PYTHON_BINARY = '/usr/bin/python'
+```
+with 
+
+```
+PYTHON_BINARY = 'python'
+```
+save and exit.
+
+We will need to do that for each wrapper we want to run.
+
+Now we can run a commands from Tensorflow Serving tutorial:
+
+```
+bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
+```
+
+### Possible issues
+#### ImportError: No module named grpc.beta
 Solution:
 
 ```
@@ -43,17 +86,8 @@ sudo pip install grpcio
 
 Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. 
 
-#### Running in active virtualenv
-It seems possible to run built scripts using python from active virtual environment.
-One should replace the following line:
-```
-PYTHON_BINARY = '/usr/bin/python'
-```
-in wrapper file (for example `bazel-bin/tensorflow_serving/example/mnist_client`) with 
-
-```
-PYTHON_BINARY = 'python'
-```
+#### ImportError: No module named numpy
+Solution: install numpy using `pip install numpy` and make sure you use appropriate version of python. By default "compiled" versions of python scripts from tensorflow serving use python from `/usr/bin/python`. If you want to use another version patch wrapper files accordingly.
 
 
 ## See also

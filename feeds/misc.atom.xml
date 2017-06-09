@@ -113,33 +113,63 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 &lt;p&gt;&lt;a href="http://pipeline.io/"&gt;Pipeline.io&lt;/a&gt; - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  &lt;a href="https://github.com/fluxcapacitor/pipeline"&gt;Sources&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Interesting &lt;a href="https://groups.google.com/a/tensorflow.org/forum/#!topic/discuss/qwpIhjqC9X8"&gt;thread&lt;/a&gt;. They propose to use 
 "saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files."&lt;/p&gt;
-&lt;h2&gt;About TensorFlow Serving&lt;/h2&gt;
+&lt;h2&gt;TensorFlow Serving&lt;/h2&gt;
 &lt;p&gt;TensorFlow Serving is build using Bazel - a build tool from Google.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://tensorflow.github.io/serving/architecture_overview"&gt;Architecture overview&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://tensorflow.github.io/serving/serving_basic"&gt;Basic serving&lt;/a&gt; Hmmm&lt;/p&gt;
-&lt;p&gt;Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a &lt;code&gt;bazel-bin&lt;/code&gt; softlink. It ponts to a directory &lt;code&gt;/home/&amp;lt;your user&amp;gt;/.cache&lt;/code&gt;  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. &lt;/p&gt;
+&lt;p&gt;Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a &lt;code&gt;bazel-bin&lt;/code&gt; softlink. It ponts to a directory &lt;code&gt;/home/&amp;lt;your user&amp;gt;/.cache&lt;/code&gt;  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. &lt;/p&gt;
 &lt;p&gt;It seems that &lt;code&gt;bazel&lt;/code&gt; automatically downloads some pre-built binaries implicitly.&lt;/p&gt;
-&lt;p&gt;I was able to build tensorflow in a docker as explained &lt;a href="http://tensorflow.github.io/serving/serving_inception"&gt;here&lt;/a&gt;. I am not very happy about the size of the image (several GB).&lt;/p&gt;
+&lt;p&gt;I was able to build tensorflow in a docker as explained &lt;a href="http://tensorflow.github.io/serving/serving_inception"&gt;here&lt;/a&gt;. I am not very happy about the size of the docker image (several GB).&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;bazel-bin&lt;/code&gt; directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). &lt;/p&gt;
-&lt;h4&gt;[Problem] ImportError: No module named grpc.beta&lt;/h4&gt;
+&lt;h3&gt;Compiled examples for tensorflow serving&lt;/h3&gt;
+&lt;p&gt;Download compiled examples &lt;a href="https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Extract files:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar xf ./bazel-bin.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The package contains compiled tensorflow serving app and example apps. 
+I prefer to run it in python virtual environment. Let's create one and install needed packages:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv -p python2.7 py2
+source ./py2/bin/activate
+pip install numpy mock
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To make compiled scripts use python from virtual environment we should patch wrapper files. 
+For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&lt;/code&gt; is a wrapper script for &lt;code&gt;mnist_saved_model.py&lt;/code&gt;. 
+We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use &lt;code&gt;nano&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Replace&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;/usr/bin/python&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;with &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;python&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;save and exit.&lt;/p&gt;
+&lt;p&gt;We will need to do that for each wrapper we want to run.&lt;/p&gt;
+&lt;p&gt;Now we can run a commands from Tensorflow Serving tutorial:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Possible issues&lt;/h3&gt;
+&lt;h4&gt;ImportError: No module named grpc.beta&lt;/h4&gt;
 &lt;p&gt;Solution:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo pip install grpcio
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. &lt;/p&gt;
-&lt;h4&gt;Running in active virtualenv&lt;/h4&gt;
-&lt;p&gt;It seems possible to run built scripts using python from active virtual environment.
-One should replace the following line:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;/usr/bin/python&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;in wrapper file (for example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_client&lt;/code&gt;) with &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PYTHON_BINARY = &amp;#39;python&amp;#39;
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;h4&gt;ImportError: No module named numpy&lt;/h4&gt;
+&lt;p&gt;Solution: install numpy using &lt;code&gt;pip install numpy&lt;/code&gt; and make sure you use appropriate version of python. By default "compiled" versions of python scripts from tensorflow serving use python from &lt;code&gt;/usr/bin/python&lt;/code&gt;. If you want to use another version patch wrapper files accordingly.&lt;/p&gt;
 &lt;h2&gt;See also&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/machine-learning-links.html"&gt;Machine learning links&lt;/a&gt;&lt;/li&gt;

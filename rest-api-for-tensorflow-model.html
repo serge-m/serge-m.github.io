@@ -124,33 +124,63 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
 <p><a href="http://pipeline.io/">Pipeline.io</a> - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines,  <a href="https://github.com/fluxcapacitor/pipeline">Sources</a></p>
 <p>Interesting <a href="https://groups.google.com/a/tensorflow.org/forum/#!topic/discuss/qwpIhjqC9X8">thread</a>. They propose to use 
 "saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files."</p>
-<h2>About TensorFlow Serving</h2>
+<h2>TensorFlow Serving</h2>
 <p>TensorFlow Serving is build using Bazel - a build tool from Google.</p>
 <p><a href="http://tensorflow.github.io/serving/architecture_overview">Architecture overview</a></p>
 <p><a href="http://tensorflow.github.io/serving/serving_basic">Basic serving</a> Hmmm</p>
-<p>Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a <code>bazel-bin</code> softlink. It ponts to a directory <code>/home/&lt;your user&gt;/.cache</code>  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. So far I don't know exactly the purpose of those wrappings. </p>
+<p>Bazel can build binaries from several languages. Output of the build is a directory with binaries and all the dependencies. So after building TensorFlow Serving you get a <code>bazel-bin</code> softlink. It ponts to a directory <code>/home/&lt;your user&gt;/.cache</code>  that seemingly contains all the binaries that the server/client needs. Python scripts are also wrapped into some launcher scripts. </p>
 <p>It seems that <code>bazel</code> automatically downloads some pre-built binaries implicitly.</p>
-<p>I was able to build tensorflow in a docker as explained <a href="http://tensorflow.github.io/serving/serving_inception">here</a>. I am not very happy about the size of the image (several GB).</p>
+<p>I was able to build tensorflow in a docker as explained <a href="http://tensorflow.github.io/serving/serving_inception">here</a>. I am not very happy about the size of the docker image (several GB).</p>
 <p><code>bazel-bin</code> directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). </p>
-<h4>[Problem] ImportError: No module named grpc.beta</h4>
+<h3>Compiled examples for tensorflow serving</h3>
+<p>Download compiled examples <a href="https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing">here</a>.</p>
+<p>Extract files:</p>
+<div class="highlight"><pre><span></span>tar xf ./bazel-bin.tar.gz
+</pre></div>
+
+
+<p>The package contains compiled tensorflow serving app and example apps. 
+I prefer to run it in python virtual environment. Let's create one and install needed packages:</p>
+<div class="highlight"><pre><span></span>virtualenv -p python2.7 py2
+source ./py2/bin/activate
+pip install numpy mock
+</pre></div>
+
+
+<p>To make compiled scripts use python from virtual environment we should patch wrapper files. 
+For example <code>bazel-bin/tensorflow_serving/example/mnist_saved_model</code> is a wrapper script for <code>mnist_saved_model.py</code>. 
+We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use <code>nano</code>:</p>
+<div class="highlight"><pre><span></span>nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
+</pre></div>
+
+
+<p>Replace</p>
+<div class="highlight"><pre><span></span>PYTHON_BINARY = &#39;/usr/bin/python&#39;
+</pre></div>
+
+
+<p>with </p>
+<div class="highlight"><pre><span></span>PYTHON_BINARY = &#39;python&#39;
+</pre></div>
+
+
+<p>save and exit.</p>
+<p>We will need to do that for each wrapper we want to run.</p>
+<p>Now we can run a commands from Tensorflow Serving tutorial:</p>
+<div class="highlight"><pre><span></span>bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
+</pre></div>
+
+
+<h3>Possible issues</h3>
+<h4>ImportError: No module named grpc.beta</h4>
 <p>Solution:</p>
 <div class="highlight"><pre><span></span>sudo pip install grpcio
 </pre></div>
 
 
 <p>Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. </p>
-<h4>Running in active virtualenv</h4>
-<p>It seems possible to run built scripts using python from active virtual environment.
-One should replace the following line:</p>
-<div class="highlight"><pre><span></span>PYTHON_BINARY = &#39;/usr/bin/python&#39;
-</pre></div>
-
-
-<p>in wrapper file (for example <code>bazel-bin/tensorflow_serving/example/mnist_client</code>) with </p>
-<div class="highlight"><pre><span></span>PYTHON_BINARY = &#39;python&#39;
-</pre></div>
-
-
+<h4>ImportError: No module named numpy</h4>
+<p>Solution: install numpy using <code>pip install numpy</code> and make sure you use appropriate version of python. By default "compiled" versions of python scripts from tensorflow serving use python from <code>/usr/bin/python</code>. If you want to use another version patch wrapper files accordingly.</p>
 <h2>See also</h2>
 <ul>
 <li><a href="/machine-learning-links.html">Machine learning links</a></li>
@@ -254,13 +284,13 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -269,13 +299,13 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -284,13 +314,7 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elastic-search.html">elastic search</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/en.html">en</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -309,9 +333,6 @@ One should replace the following line:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
@@ -341,10 +362,16 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -358,17 +385,20 @@ One should replace the following line:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
@@ -386,7 +416,10 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -419,9 +452,6 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
@@ -452,16 +482,10 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -470,19 +494,22 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+      <a href="https://serge-m.github.io/tag/sql.html">sql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/testing.html">testing</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
@@ -491,19 +518,22 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/travisci.html">TravisCI</a>
+      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
@@ -521,13 +551,13 @@ One should replace the following line:</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

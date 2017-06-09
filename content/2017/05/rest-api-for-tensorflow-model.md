@@ -68,13 +68,13 @@ PYTHON_BINARY = 'python'
 ```
 save and exit. We will need to do that for each wrapper we want to run.
 
-<i>
+
 <details>
-<summary>__The same action for all files is acheivable using command line editor.__ </summary>
+<summary>The same action for all files is acheivable using command line editor (click <u>here</u> to see)</summary>
   <pre>find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
   </pre>
 </details>
-</i>
+
 
 
 Now we can run a commands from Tensorflow Serving tutorial:

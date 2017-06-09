@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Tue, 23 May 2017 22:50:00 +0200</lastBuildDate><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 09 Jun 2017 12:00:00 +0200</lastBuildDate><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks&lt;/h2&gt;
+&lt;p&gt;The text is shown on click.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  your hidden code
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;p&gt;&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  your hidden code
+&lt;/details&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</guid><category>markdown</category></item><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;

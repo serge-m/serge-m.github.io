@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-05-23T22:50:00+02:00</updated><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:00:00+02:00</updated><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks&lt;/h2&gt;
+&lt;p&gt;The text is shown on click.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  your hidden code
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;p&gt;&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  your hidden code
+&lt;/details&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Expandable / collapsible code blocks&lt;/h2&gt;
+&lt;p&gt;The text is shown on click.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  your hidden code
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Results:&lt;/p&gt;
+&lt;p&gt;&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  your hidden code
+&lt;/details&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;
@@ -155,9 +181,12 @@ For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&l
 &lt;p&gt;save and exit.&lt;/p&gt;
 &lt;p&gt;We will need to do that for each wrapper we want to run.&lt;/p&gt;
 &lt;p&gt;&lt;details&gt;
-  &lt;summary&gt;The same action for all files is acheivable using command line editor.&lt;/summary&gt;
-  &lt;code&gt;find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"&lt;/code&gt;
-&lt;/details&gt;&lt;/p&gt;
+  &lt;summary&gt;The same action for all files is acheivable using command line editor.&lt;/summary&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  find . -maxdepth 1 -type f | xargs sed -i.original &amp;quot;s|PYTHON_BINARY = &amp;#39;/usr/bin/python&amp;#39;|PYTHON_BINARY = &amp;#39;python&amp;#39;|g&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/details&gt;&lt;/p&gt;
 &lt;p&gt;Now we can run a commands from Tensorflow Serving tutorial:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
 &lt;/pre&gt;&lt;/div&gt;

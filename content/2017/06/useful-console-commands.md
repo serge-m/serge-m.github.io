@@ -36,3 +36,7 @@ If your text contain slashes, you should use another delimiter:
 find . -type f | xargs sed -i.original "s|text/to/find/|text/to/put|g"
 ```
 
+
+## See also
+
+[1, in russian](/2013/10/ten-best-console-commands-rus.html)

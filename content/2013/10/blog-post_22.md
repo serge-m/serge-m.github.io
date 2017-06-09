@@ -1,7 +1,7 @@
 Title: Десятка лучших консольных команд
 Author: SergeM
 Date: 2013-10-22 12:39:00
-Slug: blog-post_22
+Slug: ten-best-console-commands-rus
 Tags: useful,console,russian
 
 

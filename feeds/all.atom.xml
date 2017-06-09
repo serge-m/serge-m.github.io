@@ -180,14 +180,14 @@ For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&l
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;save and exit.&lt;/p&gt;
-&lt;p&gt;We will need to do that for each wrapper we want to run.&lt;/p&gt;
-&lt;p&gt;&lt;details&gt;
-  &lt;summary&gt;The same action for all files is acheivable using command line editor.&lt;/summary&gt;
-  &lt;pre&gt;
-    find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
+&lt;p&gt;save and exit. We will need to do that for each wrapper we want to run.&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;
+&lt;details&gt;
+&lt;summary&gt;&lt;u&gt;The same action for all files is acheivable using command line editor.&lt;/u&gt;&lt;/summary&gt;
+  &lt;pre&gt;find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
   &lt;/pre&gt;
-&lt;/details&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;Now we can run a commands from Tensorflow Serving tutorial:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
 &lt;/pre&gt;&lt;/div&gt;

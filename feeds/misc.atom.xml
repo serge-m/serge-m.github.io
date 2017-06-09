@@ -159,7 +159,7 @@ Requires &lt;a href="https://bazel.build/"&gt;Bazel&lt;/a&gt; - Google's build t
 &lt;p&gt;I prefer to run it in python virtual environment. Let's create one and install needed packages:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv -p python2.7 py2
 source ./py2/bin/activate
-pip install numpy mock
+pip install numpy mock grpcio
 &lt;/pre&gt;&lt;/div&gt;
 
 

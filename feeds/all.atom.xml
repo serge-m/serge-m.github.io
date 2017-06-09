@@ -136,8 +136,8 @@ pip install numpy mock
 
 
 &lt;p&gt;To make compiled scripts use python from virtual environment we should patch wrapper files. 
-For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&lt;/code&gt; is a wrapper script for &lt;code&gt;mnist_saved_model.py&lt;/code&gt;. 
-We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use &lt;code&gt;nano&lt;/code&gt;:&lt;/p&gt;
+For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&lt;/code&gt; is a wrapper script for &lt;code&gt;mnist_saved_model.py&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use &lt;code&gt;nano&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -154,6 +154,13 @@ We will change path to python that that wrapper uses. Use text editor to edit th
 
 &lt;p&gt;save and exit.&lt;/p&gt;
 &lt;p&gt;We will need to do that for each wrapper we want to run.&lt;/p&gt;
+&lt;p&gt;&lt;details&gt;
+  &lt;summary&gt;The same action for all files is acheivable using command line editor.&lt;/summary&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  find . -maxdepth 1 -type f | xargs sed -i.original &amp;quot;s|PYTHON_BINARY = &amp;#39;/usr/bin/python&amp;#39;|PYTHON_BINARY = &amp;#39;python&amp;#39;|g&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;/details&gt;&lt;/p&gt;
 &lt;p&gt;Now we can run a commands from Tensorflow Serving tutorial:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
 &lt;/pre&gt;&lt;/div&gt;

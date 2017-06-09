@@ -37,7 +37,11 @@
 
 &lt;p&gt;If your text contain slashes, you should use another delimiter:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;find . -type f | xargs sed -i.original &amp;quot;s|text/to/find/|text/to/put|g&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;p&gt;&lt;a href="/2013/10/ten-best-console-commands-rus.html"&gt;1, in russian&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;

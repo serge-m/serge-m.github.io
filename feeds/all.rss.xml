@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 09 Jun 2017 12:15:00 +0200</lastBuildDate><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;h2&gt;Scan IP range&lt;/h2&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sat, 24 Jun 2017 12:15:00 +0200</lastBuildDate><item><title>Argparse recipies</title><link>https://serge-m.github.io/python-argparse-recipies.html</link><description>&lt;h2&gt;How to include default values in '--help'&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="c1"&gt;# ... other options ...&lt;/span&gt;
+    &lt;span class="n"&gt;formatter_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentDefaultsHelpFormatter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Output looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SCAN_TIME&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                        &lt;span class="n"&gt;Wait&lt;/span&gt; &lt;span class="n"&gt;SCAN&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;TIME&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="n"&gt;checks&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+                        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Another tip:
+add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 24 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</guid><category>python</category><category>argparse</category></item><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;h2&gt;Scan IP range&lt;/h2&gt;
 &lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
 &lt;p&gt;To install nmap, enter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nmap

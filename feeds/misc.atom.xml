@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-09T12:15:00+02:00</updated><entry><title>Useful console comands</title><link href="https://serge-m.github.io/useful-console-commands.html" rel="alternate"></link><published>2017-06-09T12:15:00+02:00</published><updated>2017-06-09T12:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</id><summary type="html">&lt;h2&gt;Scan IP range&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-06-24T12:15:00+02:00</updated><entry><title>Argparse recipies</title><link href="https://serge-m.github.io/python-argparse-recipies.html" rel="alternate"></link><published>2017-06-24T12:15:00+02:00</published><updated>2017-06-24T12:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</id><summary type="html">&lt;h2&gt;How to include default values in '--help'&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="c1"&gt;# ... other options ...&lt;/span&gt;
+    &lt;span class="n"&gt;formatter_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentDefaultsHelpFormatter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Output looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SCAN_TIME&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                        &lt;span class="n"&gt;Wait&lt;/span&gt; &lt;span class="n"&gt;SCAN&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;TIME&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="n"&gt;checks&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+                        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Another tip:
+add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;How to include default values in '--help'&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentParser&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="c1"&gt;# ... other options ...&lt;/span&gt;
+    &lt;span class="n"&gt;formatter_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentDefaultsHelpFormatter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Output looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SCAN_TIME&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+                        &lt;span class="n"&gt;Wait&lt;/span&gt; &lt;span class="n"&gt;SCAN&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;TIME&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="n"&gt;checks&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+                        &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Another tip:
+add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;titi&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                              &lt;span class="n"&gt;help&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;type (default: &lt;/span&gt;&lt;span class="si"&gt;%(default)s&lt;/span&gt;&lt;span class="s2"&gt;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/12151306/argparse-way-to-include-default-values-in-help"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="argparse"></category></entry><entry><title>Useful console comands</title><link href="https://serge-m.github.io/useful-console-commands.html" rel="alternate"></link><published>2017-06-09T12:15:00+02:00</published><updated>2017-06-09T12:15:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</id><summary type="html">&lt;h2&gt;Scan IP range&lt;/h2&gt;
 &lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
 &lt;p&gt;To install nmap, enter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install nmap

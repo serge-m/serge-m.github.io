@@ -73,4 +73,6 @@ Tags: memory,books,useful
 * https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.d6zqx1uh2
 
 * [How to Lead People and Be a Manager](https://docs.google.com/document/d/1R1O0OEsQpZcBcLheRlomDrmR2tyEpdRNFnjbLALmbH4/edit#) (collection of links and summaries)
+ 
+* [http://www.deeplearningbook.org/](http://www.deeplearningbook.org/) Ian Goodfellow and Yoshua Bengio and Aaron Courville
 

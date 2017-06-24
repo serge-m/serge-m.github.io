@@ -2,8 +2,7 @@ Title: Books
 Author: SergeM
 Date: 2013-11-29 10:33:00
 Slug: books
-Tags: memory,books
-
+Tags: memory,books,useful
 
 
 # In progress
@@ -18,15 +17,16 @@ Tags: memory,books
 ---------------------------------------
 # Part
 
-* [Fooled by Randomness](http://en.wikipedia.org/wiki/Fooled_by_Randomness): The Hidden Role of Chance in Life and in the Markets
-
-    [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)
-
 * Effective C++: 55 Specific Ways to Improve Your Programs and Designs
   [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112)
 
 ---------------------------------------
 # Done
+* [Fooled by Randomness](http://en.wikipedia.org/wiki/Fooled_by_Randomness): The Hidden Role of Chance in Life and in the Markets
+    [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)
+
+
+* Learning Spark. Lightning-Fast Big Data Analysis. By Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia [link](http://shop.oreilly.com/product/0636920028512.do)
 
 * Cracking the Coding Interview [link](https://www.amazon.co.uk/Cracking-Coding-Interview-Fourth-Laakmann/dp/145157827X)
 
@@ -69,4 +69,8 @@ Tags: memory,books
   
   
 # todo
+
 * https://medium.freecodecamp.com/what-to-learn-in-2017-if-youre-a-frontend-developer-b6cfef46effd#.d6zqx1uh2
+
+* [How to Lead People and Be a Manager](https://docs.google.com/document/d/1R1O0OEsQpZcBcLheRlomDrmR2tyEpdRNFnjbLALmbH4/edit#) (collection of links and summaries)
+

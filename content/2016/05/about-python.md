@@ -4,6 +4,10 @@ Date: 2016-05-01 12:33:00
 Slug: about-python
 Tags: useful,python,links
 
+Infrastructure with Python 
+[http://dustinrcollins.com/infrastructure-with-python]([http://dustinrcollins.com/infrastructure-with-python])
+-- list of tools for python development
+
 Cheat Sheet: Writing Python 2-3 compatible code
 [http://python-future.org/compatible_idioms.html](http://python-future.org/compatible_idioms.html)
 

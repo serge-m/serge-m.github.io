@@ -2281,9 +2281,7 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;scipy can be compiled if disabling submodules io/matlab and spatial. Though is still doesn't work.&lt;/p&gt;</content><category term="numpy"></category><category term="python"></category><category term="pypy"></category></entry><entry><title>About python</title><link href="https://serge-m.github.io/about-python.html" rel="alternate"></link><published>2016-05-01T12:33:00+02:00</published><updated>2016-05-01T12:33:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-05-01:/about-python.html</id><summary type="html">&lt;h2&gt;Production&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Database helpers for sqlalchemy&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4&gt;Database helpers for sqlalchemy&lt;/h4&gt;
 &lt;p&gt;Database agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -2291,16 +2289,12 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 
 
 &lt;p&gt;Possible with &lt;a href="https://github.com/kvesteri/sqlalchemy-utils"&gt;SQLAlchemy-Utils&lt;/a&gt; library. See &lt;a href="http://sqlalchemy-utils.readthedocs.io/en/latest/database_helpers.html"&gt;docs&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Infrastructure with Python 
-&lt;a href="[http://dustinrcollins.com/infrastructure-with-python]"&gt;http://dustinrcollins.com/infrastructure-with-python&lt;/a&gt;
--- list of tools for python development&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4&gt;Infrastructure with Python&lt;/h4&gt;
+&lt;p&gt;&lt;a href="[http://dustinrcollins.com/infrastructure-with-python]"&gt;http://dustinrcollins.com/infrastructure-with-python&lt;/a&gt;
+-- list of tools for python development&lt;/p&gt;
 &lt;h2&gt;Language&lt;/h2&gt;
 &lt;p&gt;Cheat Sheet: Writing Python 2-3 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Production&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Database helpers for sqlalchemy&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4&gt;Database helpers for sqlalchemy&lt;/h4&gt;
 &lt;p&gt;Database agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -2308,11 +2302,9 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 
 
 &lt;p&gt;Possible with &lt;a href="https://github.com/kvesteri/sqlalchemy-utils"&gt;SQLAlchemy-Utils&lt;/a&gt; library. See &lt;a href="http://sqlalchemy-utils.readthedocs.io/en/latest/database_helpers.html"&gt;docs&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Infrastructure with Python 
-&lt;a href="[http://dustinrcollins.com/infrastructure-with-python]"&gt;http://dustinrcollins.com/infrastructure-with-python&lt;/a&gt;
--- list of tools for python development&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h4&gt;Infrastructure with Python&lt;/h4&gt;
+&lt;p&gt;&lt;a href="[http://dustinrcollins.com/infrastructure-with-python]"&gt;http://dustinrcollins.com/infrastructure-with-python&lt;/a&gt;
+-- list of tools for python development&lt;/p&gt;
 &lt;h2&gt;Language&lt;/h2&gt;
 &lt;p&gt;Cheat Sheet: Writing Python 2-3 compatible code
 &lt;a href="http://python-future.org/compatible_idioms.html"&gt;http://python-future.org/compatible_idioms.html&lt;/a&gt;&lt;/p&gt;

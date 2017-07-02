@@ -192,6 +192,29 @@ I think `autospec=True` has to be default behaviour of `patch`.
 
 See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html) section "Danger: mocking non-existent attributes" 
 
+## Alternative mocking libraries
+
+[Flexmock](https://flexmock.readthedocs.io/en/latest/compare/) -- extended/rebuilt clone of mocking library from Ruby.  
+
+Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:
+
+```python
+
+# flexmock
+flexmock(some_module.SomeClass).new_instances(some_other_object)
+assertEqual(some_other_object, some_module.SomeClass())
+
+# .......
+
+# Mock
+with mock.patch('somemodule.Someclass') as MockClass:
+  MockClass.return_value = some_other_object
+  assert some_other_object == some_module.SomeClass()
+
+```
+
+// Will it really work?
+
 ## See also about testing in python
 * [Run docker as pytest fixture](/run-docker-as-pytest-fixture.html)
 * [Testing json responses in Flask REST apps with pytest](/testing-json-responses-in-Flask-REST-apps-with-pytest.html)

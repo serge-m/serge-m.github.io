@@ -194,7 +194,7 @@ See also [Mocking Objects in Python](https://www.relaxdiego.com/2014/04/mocking-
 
 ## Alternative mocking libraries
 
-[Flexmock](https://flexmock.readthedocs.io/en/latest/compare/) -- extended/rebuilt clone of mocking library from Ruby.  
+[Flexmock](https://flexmock.readthedocs.io/en/latest/compare/) -- extended/rebuilt clone of mocking library from Ruby. Abandoned project (last update in github in 2015)
 
 Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:
 

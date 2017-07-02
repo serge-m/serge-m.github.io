@@ -6,7 +6,8 @@ Tags: useful,python,links
 
 
 ## Production
-* Database helpers for sqlalchemy
+
+#### Database helpers for sqlalchemy
 
 Database agnostic database creation (CREATE IF NOT EXISTS):
 
@@ -18,7 +19,7 @@ if not database_exists('postgres://postgres@localhost/name'):
 Possible with [SQLAlchemy-Utils](https://github.com/kvesteri/sqlalchemy-utils) library. See [docs](http://sqlalchemy-utils.readthedocs.io/en/latest/database_helpers.html)
 
 
-* Infrastructure with Python 
+#### Infrastructure with Python 
 [http://dustinrcollins.com/infrastructure-with-python]([http://dustinrcollins.com/infrastructure-with-python])
 -- list of tools for python development
 

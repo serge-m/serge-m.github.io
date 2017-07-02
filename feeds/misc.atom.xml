@@ -910,6 +910,23 @@ Let's see where &lt;code&gt;autospec=True&lt;/code&gt; can save your life.&lt;/p
 
 &lt;p&gt;I think &lt;code&gt;autospec=True&lt;/code&gt; has to be default behaviour of &lt;code&gt;patch&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;See also &lt;a href="https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html"&gt;Mocking Objects in Python&lt;/a&gt; section "Danger: mocking non-existent attributes" &lt;/p&gt;
+&lt;h2&gt;Alternative mocking libraries&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://flexmock.readthedocs.io/en/latest/compare/"&gt;Flexmock&lt;/a&gt; -- extended/rebuilt clone of mocking library from Ruby.  &lt;/p&gt;
+&lt;p&gt;Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# flexmock&lt;/span&gt;
+&lt;span class="n"&gt;flexmock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new_instances&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_other_object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_other_object&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;some_module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="c1"&gt;# .......&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Mock&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;somemodule.Someclass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;MockClass&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;MockClass&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;return_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;some_other_object&lt;/span&gt;
+  &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;some_other_object&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;some_module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;// Will it really work?&lt;/p&gt;
 &lt;h2&gt;See also about testing in python&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/run-docker-as-pytest-fixture.html"&gt;Run docker as pytest fixture&lt;/a&gt;&lt;/li&gt;
@@ -2282,7 +2299,7 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 &lt;/ol&gt;
 &lt;p&gt;scipy can be compiled if disabling submodules io/matlab and spatial. Though is still doesn't work.&lt;/p&gt;</content><category term="numpy"></category><category term="python"></category><category term="pypy"></category></entry><entry><title>About python</title><link href="https://serge-m.github.io/about-python.html" rel="alternate"></link><published>2016-05-01T12:33:00+02:00</published><updated>2016-05-01T12:33:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-05-01:/about-python.html</id><summary type="html">&lt;h2&gt;Production&lt;/h2&gt;
 &lt;h4&gt;Database helpers for sqlalchemy&lt;/h4&gt;
-&lt;p&gt;Database agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
+&lt;p&gt;Backend-agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -2293,9 +2310,9 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 &lt;p&gt;&lt;a href="[http://dustinrcollins.com/infrastructure-with-python]"&gt;http://dustinrcollins.com/infrastructure-with-python&lt;/a&gt;
 -- list of tools for python development&lt;/p&gt;
 &lt;h2&gt;Language&lt;/h2&gt;
-&lt;p&gt;Cheat Sheet: Writing Python 2-3 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Production&lt;/h2&gt;
+&lt;p&gt;Cheat Sheet: Writing Python 2-3 compatible …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Production&lt;/h2&gt;
 &lt;h4&gt;Database helpers for sqlalchemy&lt;/h4&gt;
-&lt;p&gt;Database agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
+&lt;p&gt;Backend-agnostic database creation (CREATE IF NOT EXISTS):&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;

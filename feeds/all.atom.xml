@@ -911,7 +911,7 @@ Let's see where &lt;code&gt;autospec=True&lt;/code&gt; can save your life.&lt;/p
 &lt;p&gt;I think &lt;code&gt;autospec=True&lt;/code&gt; has to be default behaviour of &lt;code&gt;patch&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;See also &lt;a href="https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html"&gt;Mocking Objects in Python&lt;/a&gt; section "Danger: mocking non-existent attributes" &lt;/p&gt;
 &lt;h2&gt;Alternative mocking libraries&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://flexmock.readthedocs.io/en/latest/compare/"&gt;Flexmock&lt;/a&gt; -- extended/rebuilt clone of mocking library from Ruby. Abandoned project (last update in github in 2015)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://flexmock.readthedocs.io/en/latest/compare/"&gt;Flexmock&lt;/a&gt; -- extended/rebuilt clone of mocking library from Ruby. Abandoned project (last update in github in 2016). &lt;/p&gt;
 &lt;p&gt;Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# flexmock&lt;/span&gt;
 &lt;span class="n"&gt;flexmock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_module&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SomeClass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new_instances&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;some_other_object&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;

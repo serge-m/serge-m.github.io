@@ -9,7 +9,7 @@ Tags: useful,python,links
 
 #### Database helpers for sqlalchemy
 
-Database agnostic database creation (CREATE IF NOT EXISTS):
+Backend-agnostic database creation (CREATE IF NOT EXISTS):
 
 ```python
 if not database_exists('postgres://postgres@localhost/name'):

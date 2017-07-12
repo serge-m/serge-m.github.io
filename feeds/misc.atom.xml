@@ -901,7 +901,7 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;li&gt;&lt;a href="http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/"&gt;Using the Python mock library to fake regular functions during tests&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;How to avoid mocking&lt;/h2&gt;
-&lt;p&gt;Python is ~~very~~ too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class &lt;code&gt;A&lt;/code&gt; changes you don't notice that tests for a dependent class &lt;code&gt;B&lt;/code&gt; are failing if you mock &lt;code&gt;A&lt;/code&gt; in &lt;code&gt;test_B&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Python is &lt;s&gt;very&lt;/s&gt; too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class &lt;code&gt;A&lt;/code&gt; changes you don't notice that tests for a dependent class &lt;code&gt;B&lt;/code&gt; are failing if you mock &lt;code&gt;A&lt;/code&gt; in &lt;code&gt;test_B&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Possible way to avoid it is to pass a factory to the dependent class.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ClassName1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;pass&lt;/span&gt;
 

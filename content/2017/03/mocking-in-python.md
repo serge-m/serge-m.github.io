@@ -138,6 +138,62 @@ But:
 * [Python Mocking 101: Fake It Before You Make It](https://blog.fugue.co/2016-02-11-python-mocking-101.html)
 * [Using the Python mock library to fake regular functions during tests](http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/)
 
+## How to avoid mocking
+Python is ~~very~~ too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class `A` changes you don't notice that tests for a dependent class `B` are failing if you mock `A` in `test_B`.
+
+Possible way to avoid it is to pass a factory to the dependent class.
+
+```python
+class ClassName1: pass
+  
+class ClassName2: pass
+
+class ClassFactory:
+  def create_instance_class1(self, parameter):
+    return ClassName1(parameter)
+  
+  def create_instance_class2(self, parameter):
+    return ClassName2(parameter)
+    
+  
+# class that we want to test
+class ProductionClassWithFactory:
+  def __init__(self, factory):
+    self.factory = factory
+    
+  def foo(self, parameter1, parameter2)):
+    object1 = self.factory.create_instance_class1("some_initial_parameter1")
+    intermediate_result = object1.run("parameter1")
+    
+    object2 = self.factory.create_instance_class2("some_initial_parameter2")
+    final_result = object2.run(intermediate_result, parameter2)
+    
+    return final_result
+    
+```
+Let's test:
+
+```python
+def test_foo():
+    mocked_obj1 = MagicMock()
+    mocked_obj1.run.return_value = "result1"
+    mocked_obj2 = MagicMock()
+    mocked_obj2.run.return_value = "result2"
+    mocked_factory = MagicMock()
+    mocked_factory.create_instance_class1.return_value = mocked_obj1
+    mocked_factory.create_instance_class2.return_value = mocked_obj2
+    
+    actual_result = module.ProductionClass(mocked_factory).foo("parameter1", "parameter2")
+    
+    # check final result:
+    assert actual_result == "result2"
+    # check calls arguments
+    mocked_factory.create_instance_class1.assert_called_once_with("some_initial_parameter1")
+    mocked_factory.create_instance_class2.assert_called_once_with("some_initial_parameter2")
+    mocked_obj1.run.assert_called_once_with("parameter1")
+    mocked_obj2.run.assert_called_once_with("result1", "parameter2")
+```
+
 
 ## Matching attributes for mocks
 Keep in mind that standard mocks don't care about non-existent atttributes. I use

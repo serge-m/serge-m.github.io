@@ -139,7 +139,7 @@ But:
 * [Using the Python mock library to fake regular functions during tests](http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/)
 
 ## How to avoid mocking
-Python is ~~very~~ too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class `A` changes you don't notice that tests for a dependent class `B` are failing if you mock `A` in `test_B`.
+Python is <s>very</s> too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class `A` changes you don't notice that tests for a dependent class `B` are failing if you mock `A` in `test_B`.
 
 Possible way to avoid it is to pass a factory to the dependent class.
 

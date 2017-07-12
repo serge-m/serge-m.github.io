@@ -161,9 +161,9 @@ class ProductionClassWithFactory:
   def __init__(self, factory):
     self.factory = factory
     
-  def foo(self, parameter1, parameter2)):
+  def foo(self, parameter1, parameter2):
     object1 = self.factory.create_instance_class1("some_initial_parameter1")
-    intermediate_result = object1.run("parameter1")
+    intermediate_result = object1.run(parameter1)
     
     object2 = self.factory.create_instance_class2("some_initial_parameter2")
     final_result = object2.run(intermediate_result, parameter2)
@@ -182,9 +182,9 @@ def test_foo():
     mocked_factory = MagicMock()
     mocked_factory.create_instance_class1.return_value = mocked_obj1
     mocked_factory.create_instance_class2.return_value = mocked_obj2
-    
-    actual_result = module.ProductionClass(mocked_factory).foo("parameter1", "parameter2")
-    
+
+    actual_result = ProductionClassWithFactory(mocked_factory).foo("parameter1", "parameter2")
+
     # check final result:
     assert actual_result == "result2"
     # check calls arguments
@@ -193,6 +193,8 @@ def test_foo():
     mocked_obj1.run.assert_called_once_with("parameter1")
     mocked_obj2.run.assert_called_once_with("result1", "parameter2")
 ```
+
+Also you need to test the factory now. And it will require class monkey-patching. But in this case you put all monkey patching in one place.
 
 
 ## Matching attributes for mocks

@@ -8,6 +8,8 @@ Tags: microservices
 
 [Modules vs Microservices](https://www.oreilly.com/ideas/modules-vs-microservices) About reasonable choice for architecture
 
+To read: [Best Practices for Building a Microservice Architecture](http://www.vinaysahni.com/best-practices-for-building-a-microservice-architecture)
+
 [События, шины и интеграция данных в непростом мире микросервисов](https://habrahabr.ru/post/322474/)
 
 ## Spring

@@ -11,7 +11,7 @@ Tags: useful,python,links,flask
 [Logging exceptions logging.exception](/logging-exceptions-with-traceback-in.html)
 
 ## Setup logging in Flask
-In this <s>example</s> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.
+In this <b>example</b> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.
 
 
 logging_config.py:
@@ -41,11 +41,11 @@ logging_config = {
             "encoding": "utf8"
         }
     },
-    "loggers": {
+    "loggers": { # here you can add specific configuration for other libraries
         "werkzeug": {
-            "level": "INFO",
+            "level": "INFO", # change to "ERROR" if you want to see less logs from flask
             "handlers": ["console", "info_file_handler"],
-            "propagate": False
+            "propagate": False # required to avoid double logging
         }
     },
     "root": {

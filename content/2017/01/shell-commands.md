@@ -53,3 +53,4 @@ ssh-keygen -lf ./my_key -E md5
 
 ## Vim
 [vimCheatSheet](https://www.fprintf.net/vimCheatSheet.html)
+[another vim cheat scheet](https://vim.rtorr.com/)

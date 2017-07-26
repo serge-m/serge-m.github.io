@@ -12,19 +12,20 @@
 <link rel="canonical" href="https://serge-m.github.io/python-logging.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="useful,python,links" />
-        <meta name="description" content="Best practices: Good logging practice in python Logging exceptions logging.exception code for logging in ipython notebook (jupyter) import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG, filename_template=&#34;logs/notebook_log_{}.txt&#34;): def prepare_handler(handler): handler.setLevel(level) handler.setFormatter(formatter) return handler formatter = logging.Formatter(&#39;%(asctime …" />
+        <meta name="keywords" content="useful,python,links,flask" />
+        <meta name="description" content="Best practices: Good logging practice in python Logging exceptions logging.exception Setup logging in Flask In this example we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting. logging_config.py: logging_config = { &#34;version&#34;: 1, &#34;disable_existing_loggers&#34;: False, &#34;formatters&#34;: { &#34;simple&#34;: { &#34;format …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Python logging best practices"/>
         <meta property="og:url" content="https://serge-m.github.io/python-logging.html"/>
-        <meta property="og:description" content="Best practices: Good logging practice in python Logging exceptions logging.exception code for logging in ipython notebook (jupyter) import logging import datetime import sys, os def prepare_logger(logger, level=logging.DEBUG, filename_template=&#34;logs/notebook_log_{}.txt&#34;): def prepare_handler(handler): handler.setLevel(level) handler.setFormatter(formatter) return handler formatter = logging.Formatter(&#39;%(asctime …"/>
+        <meta property="og:description" content="Best practices: Good logging practice in python Logging exceptions logging.exception Setup logging in Flask In this example we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting. logging_config.py: logging_config = { &#34;version&#34;: 1, &#34;disable_existing_loggers&#34;: False, &#34;formatters&#34;: { &#34;simple&#34;: { &#34;format …"/>
         <meta property="article:published_time" content="2015-04-21" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
             <meta property="article:tag" content="python" />
             <meta property="article:tag" content="links" />
+            <meta property="article:tag" content="flask" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -112,12 +113,76 @@ sergem personal public notebook            </a>
 	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
         /
 	<a class="tag-list" href="https://serge-m.github.io/tag/links.html">links</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/flask.html">flask</a>
     
 </footer><!-- /.post-info -->                </div>
                 <h2>Best practices:</h2>
 <p><a href="http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python">Good logging practice in python</a></p>
-<p><a href="http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html">Logging exceptions logging.exception</a></p>
-<h2>code for logging in ipython notebook (jupyter)</h2>
+<p><a href="/logging-exceptions-with-traceback-in.html">Logging exceptions logging.exception</a></p>
+<h2>Setup logging in Flask</h2>
+<p>In this <s>example</s> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.</p>
+<p>logging_config.py:</p>
+<div class="highlight"><pre><span></span>logging_config = {
+    &quot;version&quot;: 1,
+    &quot;disable_existing_loggers&quot;: False,
+    &quot;formatters&quot;: {
+        &quot;simple&quot;: {
+            &quot;format&quot;: &quot;%(asctime)s - %(name)s - %(levelname)s - %(message)s&quot;
+        }
+    },
+    &quot;handlers&quot;: {
+        &quot;console&quot;: {
+            &quot;class&quot;: &quot;logging.StreamHandler&quot;,
+            &quot;level&quot;: &quot;INFO&quot;,
+            &quot;formatter&quot;: &quot;simple&quot;,
+            &quot;stream&quot;: &quot;ext://sys.stdout&quot;
+        },
+        &quot;info_file_handler&quot;: {
+            &quot;class&quot;: &quot;logging.handlers.RotatingFileHandler&quot;,
+            &quot;level&quot;: &quot;INFO&quot;,
+            &quot;formatter&quot;: &quot;simple&quot;,
+            &quot;filename&quot;: &quot;log.txt&quot;,
+            &quot;maxBytes&quot;: 10485760,
+            &quot;backupCount&quot;: 20,
+            &quot;encoding&quot;: &quot;utf8&quot;
+        }
+    },
+    &quot;loggers&quot;: {
+        &quot;werkzeug&quot;: {
+            &quot;level&quot;: &quot;INFO&quot;,
+            &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;],
+            &quot;propagate&quot;: False
+        }
+    },
+    &quot;root&quot;: {
+        &quot;level&quot;: &quot;INFO&quot;,
+        &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;]
+    }
+}
+</pre></div>
+
+
+<p>app.py:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">import</span> <span class="nn">logging.config</span>
+<span class="kn">from</span> <span class="nn">logging_config</span> <span class="kn">import</span> <span class="n">logging_config</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello, World!&quot;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">dictConfig</span><span class="p">(</span><span class="n">logging_config</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<h2>Logging in ipython notebooks (jupyter)</h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
@@ -222,14 +287,23 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/books.html">books</a>
@@ -288,9 +362,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
@@ -301,16 +372,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
+      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/images.html">images</a>
@@ -326,6 +394,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/keys.html">keys</a>
@@ -366,26 +437,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/network.html">network</a>
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
@@ -398,6 +460,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
@@ -412,7 +477,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -432,11 +497,11 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
@@ -460,7 +525,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
@@ -477,14 +542,11 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
+      <a href="https://serge-m.github.io/tag/travisci.html">TravisCI</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
@@ -513,11 +575,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/web.html">web</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
+      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

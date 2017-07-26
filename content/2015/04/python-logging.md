@@ -2,16 +2,81 @@ Title: Python logging best practices
 Author: SergeM
 Date: 2015-04-21 23:05:00
 Slug: python-logging
-Tags: useful,python,links
+Tags: useful,python,links,flask
 
 ## Best practices:
 
 [Good logging practice in python](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python)
 
-[Logging exceptions logging.exception](http://sergevideo.blogspot.com/2015/02/logging-exceptions-with-traceback-in.html)
+[Logging exceptions logging.exception](/logging-exceptions-with-traceback-in.html)
+
+## Setup logging in Flask
+In this <s>example</s> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.
 
 
-## code for logging in ipython notebook (jupyter)
+logging_config.py:
+```
+logging_config = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "simple",
+            "stream": "ext://sys.stdout"
+        },
+        "info_file_handler": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "INFO",
+            "formatter": "simple",
+            "filename": "log.txt",
+            "maxBytes": 10485760,
+            "backupCount": 20,
+            "encoding": "utf8"
+        }
+    },
+    "loggers": {
+        "werkzeug": {
+            "level": "INFO",
+            "handlers": ["console", "info_file_handler"],
+            "propagate": False
+        }
+    },
+    "root": {
+        "level": "INFO",
+        "handlers": ["console", "info_file_handler"]
+    }
+}
+```
+
+app.py:
+
+```python
+from flask import Flask, request, jsonify
+import logging.config
+from logging_config import logging_config
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def root():
+    return "Hello, World!"
+
+
+if __name__ == "__main__":
+    logging.config.dictConfig(logging_config)
+    app.run()
+```
+
+
+## Logging in ipython notebooks (jupyter)
 ```python
 import logging
 import datetime

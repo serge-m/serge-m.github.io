@@ -2269,48 +2269,54 @@ The solution (at least for python 2) was to remove miniconda from path and compi
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That way, I presume it is using the system &lt;code&gt;readline&lt;/code&gt;&lt;/p&gt;</content><category term="workaround"></category></entry><entry><title>compile dlib for miniconda</title><link href="https://serge-m.github.io/compile-dlib-for-miniconda.html" rel="alternate"></link><published>2016-06-25T22:43:00+02:00</published><updated>2016-06-25T22:43:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-25:/compile-dlib-for-miniconda.html</id><summary type="html">&lt;p&gt;Activate miniconda environment (my environment is called py3):
-source activate py3&lt;/p&gt;
+&lt;p&gt;That way, I presume it is using the system &lt;code&gt;readline&lt;/code&gt;&lt;/p&gt;</content><category term="workaround"></category></entry><entry><title>compile dlib for miniconda</title><link href="https://serge-m.github.io/compile-dlib-for-miniconda.html" rel="alternate"></link><published>2016-06-25T22:43:00+02:00</published><updated>2016-06-25T22:43:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-25:/compile-dlib-for-miniconda.html</id><summary type="html">&lt;p&gt;Activate miniconda environment (my environment is called py3):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate py3
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Produce initial steps from the readme:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd examples
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; examples
 mkdir build
-cd build
+&lt;span class="nb"&gt;cd&lt;/span&gt; build
 cmake ..
 cmake --build . --config Release
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;inside function  build_dlib() of file setup.py add the highlighted code:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;if platform_arch == &amp;#39;64bit&amp;#39; and sys.platform == &amp;quot;win32&amp;quot;:
-    # 64bit build on Windows …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Activate miniconda environment (my environment is called py3):
-source activate py3&lt;/p&gt;
+&lt;p&gt;inside function  &lt;code&gt;build_dlib()&lt;/code&gt; of file &lt;code&gt;setup.py&lt;/code&gt; add the highlighted code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;platform_arch&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;64bit&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;win32&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;# 64bit build on Windows …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Activate miniconda environment (my environment is called py3):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate py3
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Produce initial steps from the readme:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd examples
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; examples
 mkdir build
-cd build
+&lt;span class="nb"&gt;cd&lt;/span&gt; build
 cmake ..
 cmake --build . --config Release
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;inside function  build_dlib() of file setup.py add the highlighted code:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;if platform_arch == &amp;#39;64bit&amp;#39; and sys.platform == &amp;quot;win32&amp;quot;:
-    # 64bit build on Windows
+&lt;p&gt;inside function  &lt;code&gt;build_dlib()&lt;/code&gt; of file &lt;code&gt;setup.py&lt;/code&gt; add the highlighted code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;platform_arch&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;64bit&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;win32&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;# 64bit build on Windows&lt;/span&gt;
 
- .................. bla bla ...................
+&lt;span class="c1"&gt;#.................. bla bla ...................&lt;/span&gt;
 
-    for ext in [py_ver.replace(&amp;quot;.&amp;quot;, &amp;quot;&amp;quot;) + &amp;#39;.lib&amp;#39;, py_ver + &amp;#39;mu.lib&amp;#39;, py_ver + &amp;#39;m.lib&amp;#39;, py_ver + &amp;#39;u.lib&amp;#39;]:
-        py_lib = os.path.abspath(os.path.join(inc_dir, &amp;#39;../libs/&amp;#39;, &amp;#39;python&amp;#39; + ext))
-        if os.path.exists(py_lib):
-            cmake_extra_arch += [&amp;#39;-DPYTHON_LIBRARY={lib}&amp;#39;.format(lib=py_lib)]
-            break
-else:
-    cmake_extra_arch += [&amp;#39;-DPYTHON_LIBRARY=/home/user/miniconda/envs/py3/lib/libpython3.so&amp;#39;]
-    cmake_extra_arch += [&amp;#39;-DPYTHON_INCLUDE_DIR=/home/user/miniconda/envs/py3/include/python3.5m&amp;#39;]
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ext&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;py_ver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.lib&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;py_ver&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mu.lib&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;py_ver&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;m.lib&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;py_ver&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;u.lib&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+        &lt;span class="n"&gt;py_lib&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abspath&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inc_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;../libs/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;ext&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;py_lib&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;cmake_extra_arch&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-DPYTHON_LIBRARY={lib}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;py_lib&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+            &lt;span class="k"&gt;break&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;cmake_extra_arch&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-DPYTHON_LIBRARY=/home/user/miniconda/envs/py3/lib/libpython3.so&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="n"&gt;cmake_extra_arch&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-DPYTHON_INCLUDE_DIR=/home/user/miniconda/envs/py3/include/python3.5m&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 
 
-build_dir = os.path.join(script_dir, &amp;quot;./tools/python/build&amp;quot;)
-......................bla bla.....................................
+&lt;span class="n"&gt;build_dir&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;script_dir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./tools/python/build&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="c1"&gt;#......................bla bla.....................................&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 

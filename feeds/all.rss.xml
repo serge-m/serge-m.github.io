@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Thu, 20 Jul 2017 07:07:00 +0200</lastBuildDate><item><title>Add months to datetime in python</title><link>https://serge-m.github.io/add-months-to-datetime-in-python.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sat, 29 Jul 2017 16:07:00 +0200</lastBuildDate><item><title>Speed up make/cmake build with multiprocessing</title><link>https://serge-m.github.io/parallel-builds.html</link><description>&lt;p&gt;Build time can be reduced by using multiple cores of your processor.&lt;/p&gt;
+&lt;p&gt;Parallelization for make:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j8
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Parallelization for cmake:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cmake --build &amp;lt;bindir&amp;gt; -- -j 8
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Sometimes you cannot pass parameters directly to &lt;code&gt;make&lt;/code&gt;. For example you are installing a python module using &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python setup.py install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Setup script doesn't accept …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 29 Jul 2017 16:07:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-07-29:/parallel-builds.html</guid><category>make</category><category>cmake</category><category>python</category><category>parallel</category></item><item><title>Add months to datetime in python</title><link>https://serge-m.github.io/add-months-to-datetime-in-python.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dateutil.relativedelta&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;relativedelta&lt;/span&gt;
 
 &lt;span class="n"&gt;your_datetime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;

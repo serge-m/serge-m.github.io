@@ -51,3 +51,8 @@ Harry Percival
 
 * [library for memory profiling](https://pypi.python.org/pypi/memory_profiler)
 
+## Modules
+
+[cloud storage module](https://pypi.python.org/pypi/cloudstorage) - supports AWS S3, Google cloud storage and local file system. Hopefully it has unified interface for all three of the backends.
+
+[Apache libcloud](https://github.com/apache/libcloud/) -- anouther cloud file system API. more alive

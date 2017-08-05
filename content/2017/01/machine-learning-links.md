@@ -46,6 +46,7 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 [CRISP-DM: проверенная методология для Data Scientist-ов](https://habrahabr.ru/company/lanit/blog/328858/) (Russian) 
 [Original CRISP-DM methodology](https://www.the-modeling-agency.com/crisp-dm.pdf)
 
+[Why your neutral network is not working](https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607)
 
 ## Books
 

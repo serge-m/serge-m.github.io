@@ -20,6 +20,11 @@ curl -X DELETE localhost:9200/YOUR_INDEX
 curl -X GET localhost:9200/_all
 ```
 
+### List of all doc_types in a given index
+```
+curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq ".YOUR_INDEX.mappings | to_entries | .[].key"
+```
+
 ## Running elastic seach with a limited memory
 ```
 #!/bin/sh                                                                                                                                                                                                                                     

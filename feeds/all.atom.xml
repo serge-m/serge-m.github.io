@@ -1406,12 +1406,12 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Running elastic seach with a limited memory&lt;/h2&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/sh                                                                                                                                                                                                                                     &lt;/span&gt;
-&lt;span class="nv"&gt;ES_JAVA_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-Xms1g -Xmx1g&amp;quot;&lt;/span&gt; ./elasticsearch
+&lt;h3&gt;List of all doc_types in a given index&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</summary><content type="html">&lt;h2&gt;Commands&lt;/h2&gt;
+
+
+&lt;h2&gt;Running elastic seach …&lt;/h2&gt;</summary><content type="html">&lt;h2&gt;Commands&lt;/h2&gt;
 &lt;h3&gt;List indexes&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/_cat/indices
 &lt;/pre&gt;&lt;/div&gt;
@@ -1424,6 +1424,11 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 
 &lt;h3&gt;Delete all indices&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/_all
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;List of all doc_types in a given index&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 

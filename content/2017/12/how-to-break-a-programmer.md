@@ -17,6 +17,6 @@ or "this architecture allows **decoupling**", or "**spark** is an **industry sta
 * If you feel they are winning, change the subject 
 * Never confess you don't understand what you are going to build
 * Don't allow them to think in quiet. You should keep talking constantly. Sometimess you can find an ally within the team that likes to talk. Use this person! He/she will help you to fill periods of silence during the meeting!
-* If you see that engineers are too frustrated they may leave the company. You don't want it because then you have to find new ones. Promise them something nice. For example that they will work on a very interesting topic next quarter. But now the have to implement your idea.
+* If engineers are too frustrated they may leave the company. You don't want it because then you have to find new ones. Promise them something nice. For example that they will work on a very interesting topic next quarter. But now they have to implement your idea.
 
 

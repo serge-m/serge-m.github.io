@@ -49,3 +49,6 @@ This requires a lot of efforts but I believe it pays off in a long run.
 
 ## you don't really need data science
 Business people 99% of the cases don't need complicated, powerful algorithms. They need some linear models and ability to play with parameters. They need fast and reliable enough simulations and ability to fix the errors or steer the parameters.
+
+Smart models are often too rigid, slow and complicated. Business changes fast. Excel is widely used because it is a universal tool, that can be easily adapted to the changing needs, everyone knows how to work with it. 
+Cmpanies usually hire experts that know the market pretty good. They do mistakes but it is very difficult to replace them with software products. So probably software should first try to help them, not to replace them

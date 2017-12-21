@@ -20,9 +20,16 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
 
 No progress proven == no need for changes at all.
 
+
 # you don't perform reproducible experiments
 
+reproducible experiments allow you to compare your old solution with a new one. If you can run the new algorithm on current data only it is not a proof that it works. It can be really a coincidence.
+
 # you don't measure your performance
+ 
+You just build a new algorithm and you think it is better because it is a) optimal by design b) robust c) easy to build d) reduces technical depth e) based on a new cool technology f) reduces the coupling g) but you version here. 
+
+It is not a proof! Probably you lie!
 
 # you have only engineers in your team
 Many tasks cannot be done by pure engineers. These guys can build robust architectures, they write reliable and maintainable code, they understand concepts of testing and continuous integration. But they don't know how to approach research. They may tell you they know and continue trying solving research topics with building a new super flexible architecture instead of experimenting and discovering solutions. They prefer depth first search instead of breadth first search. Write what you really need is a combination of both.

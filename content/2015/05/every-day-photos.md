@@ -52,3 +52,6 @@ upd 201701:
 
 https://www.youtube.com/watch?v=AfcDuysiej0
 
+
+Upd 201712:
+https://youtu.be/zuRd_Eneuk8

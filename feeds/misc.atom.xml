@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2017-12-21T23:50:00+01:00</updated><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-02T22:50:00+01:00</updated><entry><title>Pytest cheatsheet</title><link href="https://serge-m.github.io/pytest-cheatsheer.html" rel="alternate"></link><published>2018-01-02T22:50:00+01:00</published><updated>2018-01-02T22:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-02:/pytest-cheatsheer.html</id><summary type="html">&lt;p&gt;Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.&lt;/p&gt;
+&lt;h2&gt;Running tests in pytest with/without a specified mark&lt;/h2&gt;
+&lt;p&gt;Execute  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytest -m &amp;quot;integration&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;if you want to run only tests that have "pytest.mark.integration" annotation.&lt;/p&gt;
+&lt;p&gt;Similarly you can run only tests that don't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.&lt;/p&gt;
+&lt;h2&gt;Running tests in pytest with/without a specified mark&lt;/h2&gt;
+&lt;p&gt;Execute  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytest -m &amp;quot;integration&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;if you want to run only tests that have "pytest.mark.integration" annotation.&lt;/p&gt;
+&lt;p&gt;Similarly you can run only tests that don't are not marked.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytest m &amp;quot;not your_mark&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That command will test everything that is not marked as "your_mark".&lt;/p&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Invite him/her to a 2-6 hours meeting. It may also be several meeting. But within one day. The important meeting has to be the last in the row.&lt;/li&gt;
 &lt;li&gt;Don't send an agenda beforehand. They might prepare themselves. It is …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;

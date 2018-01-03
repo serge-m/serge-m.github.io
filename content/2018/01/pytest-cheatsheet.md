@@ -1,7 +1,7 @@
 Title: Pytest cheatsheet
 Author: SergeM
 Date: 2018-01-02 22:50
-Slug: pytest-cheatsheer
+Slug: pytest-cheatsheet
 Tags: pytest, python, testing, useful
 
 

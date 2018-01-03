@@ -2,7 +2,7 @@ Title: Pytest cheatsheet
 Author: SergeM
 Date: 2018-01-02 22:50
 Slug: pytest-cheatsheet
-Tags: pytest, python, testing, useful
+Tags: pytest,python,testing,useful,travisci,ci
 
 
 Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.

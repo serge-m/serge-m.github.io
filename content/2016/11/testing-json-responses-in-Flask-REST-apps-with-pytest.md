@@ -2,7 +2,7 @@ Title: Testing json responses in Flask REST apps with pytest
 Author: SergeM
 Date: 2016-11-27 22:47:00
 Slug: testing-json-responses-in-Flask-REST-apps-with-pytest
-Tags: python,flask,pytest
+Tags: python,flask,pytest,REST,testing
 
 
 The code consists of two files: `sample_app.py` (productions) and `sample_app_test.py` (testing). Testing is run using py.test.
@@ -135,3 +135,6 @@ Inspired by [this gist](https://gist.github.com/DazWorrall/1779861)
 * [pytest fixtures for flask](https://github.com/pytest-dev/pytest-flask) I haven't checked them. Maybe uyseful
 * [Flaskr test application from examples of Flask](https://github.com/pallets/flask/tree/master/examples/flaskr)
 * [Gist "Testing file upload handling in Flask"](https://gist.github.com/DazWorrall/1779861)
+
+## See also
+* [Pytest cheatsheet](/pytest-cheatsheet.html)

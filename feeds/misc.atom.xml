@@ -43,9 +43,18 @@ URL: https://travis-ci.org/profile/YOUR_GITHUB_NAME&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;[Optional] Add a status image to your &lt;code&gt;readme.md&lt;/code&gt; file:&lt;/p&gt;
+&lt;p&gt;[Optional] Add a status image like this
+&lt;a href="https://travis-ci.org/serge-m/blog-sources"&gt;&lt;img alt="Build Status" src="https://travis-ci.org/serge-m/blog-sources.svg?branch=master"&gt;&lt;/a&gt;
+to your &lt;code&gt;readme.md&lt;/code&gt; file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt; &lt;span class="n"&gt;Status&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME.svg?branch=master)](https://travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/run-docker-as-pytest-fixture.html"&gt;Run docker as pytest fixture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/testing-json-responses-in-Flask-REST-apps-with-pytest.html"&gt;Testing json responses in Flask REST apps with pytest &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Invite him/her to a 2-6 hours meeting. It may also be several meeting. But within one day. The important meeting has to be the last in the row.&lt;/li&gt;
 &lt;li&gt;Don't send an agenda beforehand. They might prepare themselves. It is …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
@@ -2121,7 +2130,11 @@ sudo update-alternatives --config javaws
 &lt;li&gt;&lt;a href="https://github.com/pytest-dev/pytest-flask"&gt;pytest fixtures for flask&lt;/a&gt; I haven't checked them. Maybe uyseful&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/pallets/flask/tree/master/examples/flaskr"&gt;Flaskr test application from examples of Flask&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://gist.github.com/DazWorrall/1779861"&gt;Gist "Testing file upload handling in Flask"&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="python"></category><category term="flask"></category><category term="pytest"></category></entry><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
+&lt;/ul&gt;
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/pytest-cheatsheet.html"&gt;Pytest cheatsheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="python"></category><category term="flask"></category><category term="pytest"></category><category term="REST"></category><category term="testing"></category></entry><entry><title>Set up Travis CI for building personal page on Github Pages with Pelican</title><link href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html" rel="alternate"></link><published>2016-11-27T20:47:00+01:00</published><updated>2016-11-27T20:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html</id><summary type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
 &lt;p&gt;Registration on &lt;a href="https://travis-ci.org/"&gt;https://travis-ci.org/&lt;/a&gt; is straightforward.&lt;/p&gt;
 &lt;p&gt;I have only public free accounts on github.  Thus I need two repositories: one …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. &lt;/p&gt;
 &lt;p&gt;Registration on &lt;a href="https://travis-ci.org/"&gt;https://travis-ci.org/&lt;/a&gt; is straightforward.&lt;/p&gt;

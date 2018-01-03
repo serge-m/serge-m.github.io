@@ -108,6 +108,50 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
 
             </article>
             <hr/>
+            <article>
+                <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-11-27T22:47:00+01:00"> 2016-11-27T22:47:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/flask.html">flask</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/pytest.html">pytest</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/rest.html">REST</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/testing.html">testing</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
+<h2>Code of sample_app.py</h2>
+<p>Creating Flask application:</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Helper class for JSON-based response:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">200 …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -121,6 +165,7 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
     <li class="list-group-item"><a href="https://serge-m.github.io/rest-api-for-tensorflow-model.html">Rest API for TensorFlow model</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -159,31 +204,43 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -192,10 +249,13 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -203,14 +263,17 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
@@ -240,19 +303,10 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -270,9 +324,6 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/make.html">make</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-4">
@@ -282,28 +333,19 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
@@ -317,11 +359,11 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
@@ -330,13 +372,16 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
+      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -353,6 +398,9 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
     </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/rest.html">REST</a>
+    </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/roto.html">roto</a>
     </li>
@@ -360,25 +408,16 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sql.html">sql</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
@@ -390,6 +429,9 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
@@ -399,25 +441,25 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/travisci.html">TravisCI</a>
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+    </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -428,14 +470,17 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/web.html">web</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

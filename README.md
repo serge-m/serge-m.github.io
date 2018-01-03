@@ -1,5 +1,7 @@
 # Sources of personal public notebook
 
+[![Build Status](https://travis-ci.org/serge-m/blog-sources.svg?branch=master)](https://travis-ci.org/serge-m/blog-sources)
+
 [Compiled site](https://serge-m.github.io/)
 
 I use

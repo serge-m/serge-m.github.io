@@ -46,10 +46,14 @@ script:
 env:
 global:
 ```
-[Optional] Add a status image to your `readme.md` file:
+[Optional] Add a status image like this
+[![Build Status](https://travis-ci.org/serge-m/blog-sources.svg?branch=master)](https://travis-ci.org/serge-m/blog-sources)
+to your `readme.md` file:
+
 ```
 [![Build Status](https://travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME.svg?branch=master)](https://travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME)
 ```
+
 
 
 

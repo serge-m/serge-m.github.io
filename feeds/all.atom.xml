@@ -6,7 +6,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;if you want to run only tests that have "pytest.mark.integration" annotation.&lt;/p&gt;
+&lt;p&gt;if you want to run only tests that have "@pytest.mark.integration" annotation.&lt;/p&gt;
 &lt;p&gt;Similarly you can run only tests that don't …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.&lt;/p&gt;
 &lt;h2&gt;Running tests in pytest with/without a specified mark&lt;/h2&gt;
 &lt;p&gt;Execute  &lt;/p&gt;
@@ -14,13 +14,38 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;if you want to run only tests that have "pytest.mark.integration" annotation.&lt;/p&gt;
+&lt;p&gt;if you want to run only tests that have "@pytest.mark.integration" annotation.&lt;/p&gt;
 &lt;p&gt;Similarly you can run only tests that don't are not marked.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytest m &amp;quot;not your_mark&amp;quot;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytest -m &amp;quot;not your_mark&amp;quot;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That command will test everything that is not marked as "your_mark".&lt;/p&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
+&lt;p&gt;That command will test everything that is not marked as "your_mark".&lt;/p&gt;
+&lt;h2&gt;Running pytests on Travis CI&lt;/h2&gt;
+&lt;p&gt;Register on TravisCI.&lt;/p&gt;
+&lt;p&gt;Enable your repo in the settings of Travis CI. 
+URL: https://travis-ci.org/profile/YOUR_GITHUB_NAME&lt;/p&gt;
+&lt;p&gt;Put configuration file for travis into the root of your github repository:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;language&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;3.5&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;branches&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt;
+&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;installing&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;not&lt;/span&gt; &lt;span class="n"&gt;used&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt;
+&lt;span class="n"&gt;script&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+  &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;txt&lt;/span&gt;
+  &lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;pytest&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;not integration&amp;quot;&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;running&lt;/span&gt; &lt;span class="n"&gt;everything&lt;/span&gt; &lt;span class="n"&gt;except&lt;/span&gt; &lt;span class="n"&gt;integration&lt;/span&gt; &lt;span class="n"&gt;tests&lt;/span&gt;
+&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;global&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;[Optional] Add a status image to your &lt;code&gt;readme.md&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Build&lt;/span&gt; &lt;span class="n"&gt;Status&lt;/span&gt;&lt;span class="p"&gt;](&lt;/span&gt;&lt;span class="nl"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME.svg?branch=master)](https://travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Invite him/her to a 2-6 hours meeting. It may also be several meeting. But within one day. The important meeting has to be the last in the row.&lt;/li&gt;
 &lt;li&gt;Don't send an agenda beforehand. They might prepare themselves. It is …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;

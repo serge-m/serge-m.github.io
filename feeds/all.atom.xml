@@ -15,7 +15,7 @@
 
 
 &lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Pytest cheatsheet</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
+&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Mixin pattern in Python</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
  There are two main situations where mixins are used &lt;a href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful"&gt;1&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You want to provide a lot of optional features for a class.&lt;/li&gt;
@@ -5104,35 +5104,49 @@ http://artec-group.com/ - все проекты
 &lt;p&gt;&lt;a href="http://www.amazon.com/Gayle-Laakmann-McDowell/e/B004BI1ZUQ/ref=ntt_athr_dp_pel_1"&gt;Gayle Laakmann McDowell&lt;/a&gt;.&amp;nbsp;Cracking the Coding Interview: 150 Programming Questions and Solutions
 &lt;a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X"&gt;http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;140 Google Interview Questions
-&lt;a href="http://www.impactinterview.com/2009/10/140-google-interview-questions/"&gt;http://www.impactinterview.com/2009/10/140-google-interview-questions/&lt;/a&gt;&lt;/p&gt;</content><category term="interview"></category><category term="links"></category></entry><entry><title>learning sqlite</title><link href="https://serge-m.github.io/learning-sqlite.html" rel="alternate"></link><published>2014-02-09T14:53:00+01:00</published><updated>2014-02-09T14:53:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-02-09:/learning-sqlite.html</id><summary type="html">&lt;h1&gt;create table named t3 (id, value). id is integer. value is text&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id));&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;adding two "rows"&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; insert into t3 (id, value) values (1, 'a');&lt;/strong&gt;
-&lt;strong&gt;sqlite&amp;gt; insert into t3 (id, value) values (2, 'b');&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;display results&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;create table named t3 (id, value). id is integer. value is text&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id));&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;adding two "rows"&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; insert into t3 (id, value) values (1, 'a');&lt;/strong&gt;
-&lt;strong&gt;sqlite&amp;gt; insert into t3 (id, value) values (2, 'b');&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;display results&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; select * &amp;nbsp;from t3;&lt;/strong&gt;
-&lt;strong&gt;1|a&lt;/strong&gt;
-&lt;strong&gt;2|b&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;update id=1 if exists, insert otherwise (id=1 exists)&lt;/h1&gt;
+&lt;a href="http://www.impactinterview.com/2009/10/140-google-interview-questions/"&gt;http://www.impactinterview.com/2009/10/140-google-interview-questions/&lt;/a&gt;&lt;/p&gt;</content><category term="interview"></category><category term="links"></category></entry><entry><title>learning sqlite</title><link href="https://serge-m.github.io/learning-sqlite.html" rel="alternate"></link><published>2014-02-09T14:53:00+01:00</published><updated>2014-02-09T14:53:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-02-09:/learning-sqlite.html</id><summary type="html">&lt;h2&gt;create table named t3 (id, value). id is integer. value is text&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id));
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;adding two "rows"&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite&amp;gt; insert into t3 (id, value) values (1, &amp;#39;a&amp;#39;);
+sqlite&amp;gt; insert into t3 (id, value) values (2, &amp;#39;b&amp;#39;);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;display results&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;create table named t3 (id, value). id is integer. value is text&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id));
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;adding two "rows"&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite&amp;gt; insert into t3 (id, value) values (1, &amp;#39;a&amp;#39;);
+sqlite&amp;gt; insert into t3 (id, value) values (2, &amp;#39;b&amp;#39;);
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;display results&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sqlite&amp;gt; select * &amp;amp;nbsp;from t3;
+1|a
+2|b
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;update id=1 if exists, insert otherwise (id=1 exists)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;sqlite&amp;gt; insert or replace into t3 (id,value) values (1,'c' );&lt;/strong&gt;
 &lt;strong&gt;sqlite&amp;gt; select * &amp;nbsp;from t3;&lt;/strong&gt;
 &lt;strong&gt;2|b&lt;/strong&gt;
 &lt;strong&gt;1|c&lt;/strong&gt;&lt;/p&gt;
-&lt;h1&gt;update id=1 if exists, insert otherwise (id=1 doesn't exist)&lt;/h1&gt;
+&lt;h2&gt;update id=1 if exists, insert otherwise (id=1 doesn't exist)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;sqlite&amp;gt; insert or replace into t3 (id,value) values (3,'e' );&lt;/strong&gt;
 &lt;strong&gt;sqlite&amp;gt; select * &amp;nbsp;from t3;&lt;/strong&gt;
 &lt;strong&gt;2|b&lt;/strong&gt;
 &lt;strong&gt;1|c&lt;/strong&gt;
-&lt;strong&gt;3|e&lt;/strong&gt;
-&lt;div&gt;
-&lt;/div&gt;# update id=1 if exists, insert otherwise (id=1 doesn't exist)
-&lt;strong&gt;sqlite&amp;gt; insert or replace into t3 (id,value) values (3,'f' );&lt;/strong&gt;
+&lt;strong&gt;3|e&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;update id=1 if exists, insert otherwise (id=1 doesn't exist)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;sqlite&amp;gt; insert or replace into t3 (id,value) values (3,'f' );&lt;/strong&gt;
 &lt;strong&gt;sqlite&amp;gt; select * &amp;nbsp;from t3;&lt;/strong&gt;
 &lt;strong&gt;2|b&lt;/strong&gt;
 &lt;strong&gt;1|c&lt;/strong&gt;

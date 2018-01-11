@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-10T07:50:00+01:00</updated><entry><title>Pytest cheatsheet</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-11T22:02:00+01:00</updated><entry><title>Flask and SQLAlchemy explained</title><link href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html" rel="alternate"></link><published>2018-01-11T22:02:00+01:00</published><updated>2018-01-11T22:02:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/flask-and-sqlalchemy-explained.html</id><summary type="html">&lt;p&gt;Awesome explanation of SQLAlchemy with examples and comparison to Django by &lt;a href="http://lucumr.pocoo.org/about/"&gt;Armin Ronacher&lt;/a&gt;: 
+&lt;a href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/"&gt;SQLAlchemy and You&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Awesome explanation of SQLAlchemy with examples and comparison to Django by &lt;a href="http://lucumr.pocoo.org/about/"&gt;Armin Ronacher&lt;/a&gt;: 
+&lt;a href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/"&gt;SQLAlchemy and You&lt;/a&gt;&lt;/p&gt;</content><category term="flask"></category><category term="sqlalchemy"></category><category term="sql"></category><category term="python"></category></entry><entry><title>Ubuntu linux settings</title><link href="https://serge-m.github.io/ubuntu-linux-settings.html" rel="alternate"></link><published>2018-01-11T08:00:00+01:00</published><updated>2018-01-11T08:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</id><summary type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Pytest cheatsheet</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
  There are two main situations where mixins are used &lt;a href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful"&gt;1&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You want to provide a lot of optional features for a class.&lt;/li&gt;

@@ -1,4 +1,4 @@
-Title: Pytest cheatsheet
+Title: Mixin pattern in Python
 Author: SergeM
 Date: 2018-01-10 07:50
 Slug: mixins-in-python

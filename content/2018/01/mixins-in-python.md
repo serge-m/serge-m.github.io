@@ -60,7 +60,7 @@ Mixin2
 
 
 ## References
-1. [1](https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful)
+1. [What is a mixin, and why are they useful?](https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful)
 2. [Mixins and Python](https://www.ianlewis.org/en/mixins-and-python)
 
 

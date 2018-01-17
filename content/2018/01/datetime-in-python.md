@@ -51,5 +51,5 @@ Therefore you don't need to implement ISO logic of dates calculation. Hopefully 
 Python 2 doesn't have these `%V` and `%u` implemented. `:(`
 
 ## See also
-[How to add months to datetime object in python](/add-months-to-datetime-in-python.html)
-[datetime module in python 3](https://docs.python.org/3.6/library/datetime.html#module-datetime)
+* [How to add months to datetime object in python](/add-months-to-datetime-in-python.html)
+* [datetime module in python 3](https://docs.python.org/3.6/library/datetime.html#module-datetime)

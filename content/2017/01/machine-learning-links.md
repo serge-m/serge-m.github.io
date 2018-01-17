@@ -48,6 +48,13 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 
 [Why your neutral network is not working](https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607)
 
+[How To Improve Deep Learning Performance](https://machinelearningmastery.com/improve-deep-learning-performance/), 2016, Jason Brownlee. Recipies about performance improvements. 
+Divided in 4 subtopics:
+* Improve Performance With Data.
+* Improve Performance With Algorithms.
+* Improve Performance With Algorithm Tuning.
+* Improve Performance With Ensembles.
+
 ## Books
 
 * [Hands-On Machine Learning with Scikit-Learn and TensorFlow](http://shop.oreilly.com/product/0636920052289.do), 

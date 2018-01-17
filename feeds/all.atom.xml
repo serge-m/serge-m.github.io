@@ -188,10 +188,43 @@ to your &lt;code&gt;readme.md&lt;/code&gt; file:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;Running pytest with code coverage reports&lt;/h2&gt;
+&lt;p&gt;One have to install &lt;code&gt;pytest-cov&lt;/code&gt; module first. Then&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;py.test --cov=&amp;lt;DIRECTORY_WITH_SOURCES&amp;gt; --cov-report html:htmlcov --cov-report term:skip-covered &amp;lt;DIRECTORY_WITH_TESTS&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This command runs tests with code coverage report. Reports are printed in console (&lt;code&gt;--cov-report term:skip-covered&lt;/code&gt;) and as html files in &lt;code&gt;htmlcov&lt;/code&gt; directory (&lt;code&gt;--cov-report html:htmlcov&lt;/code&gt;).
+To view html report now you can run for example &lt;code&gt;google-chrome ./htmlcov/index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Restriction on code coverage&lt;/h3&gt;
+&lt;p&gt;You can set up pytest-cov so that is will fail if coverage is below a certain level. This can be done with &lt;code&gt;--cov-fail-under&lt;/code&gt; parameter. It will give you a restiction for total coverage in a project.
+I find useful to have code coverage threshold for each module independently.
+So that if you forgot to test one of 10000 files it is still a failure. unfortunately it seems that separate &lt;code&gt;fail-under&lt;/code&gt; per file is not implemented.&lt;/p&gt;
+&lt;h2&gt;Pytest configuration files&lt;/h2&gt;
+&lt;p&gt;To avoid writing all the parameters in command line every time one can use configuration files for pytest and coverage reports.&lt;/p&gt;
+&lt;h3&gt;.coveragerc&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# in this file one can exclude some file from coverage report. Probably you want to exclude tests themselves
+[run]
+omit = &amp;lt;DIRECTORY_WITH_TESTS&amp;gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;pytest.ini&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[pytest]&lt;/span&gt;
+&lt;span class="na"&gt;addopts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&lt;/span&gt;
+&lt;span class="s"&gt;    --cov-config=.coveragerc --cov=&amp;lt;DIRECTORY_WITH_SOURCES&amp;gt; --cov-report xml:coverage.xml --cov-report term:skip-covered&lt;/span&gt;
+&lt;span class="na"&gt;testpaths&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;lt;DIRECTORY_WITH_TESTS&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Alternative tests automation solutions&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://tox.readthedocs.io/en/latest/"&gt;Tox&lt;/a&gt; -- tool for tests automation. Creates configurable virtual environments and run tests there. Can handle myltiple python versions.
+Doesn't work without creating virtualenvs, which is a pitty if you want to run tests in your global environment or inside the docker for example.&lt;/p&gt;
 &lt;h2&gt;See also&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/run-docker-as-pytest-fixture.html"&gt;Run docker as pytest fixture&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/testing-json-responses-in-Flask-REST-apps-with-pytest.html"&gt;Testing json responses in Flask REST apps with pytest &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.pytest.org/en/latest/customize.html#adding-default-options"&gt;More about pytest configuration files&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="pytest"></category><category term="python"></category><category term="testing"></category><category term="useful"></category><category term="travisci"></category><category term="ci"></category></entry><entry><title>how to break a programmer</title><link href="https://serge-m.github.io/how-to-break-a-programmer.html" rel="alternate"></link><published>2017-12-21T23:50:00+01:00</published><updated>2017-12-21T23:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-12-21:/how-to-break-a-programmer.html</id><summary type="html">&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Invite him/her to a 2-6 hours meeting. It may also be several meeting. But within one day. The important meeting has to be the last in the row.&lt;/li&gt;
@@ -1721,6 +1754,12 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://habrahabr.ru/company/lanit/blog/328858/"&gt;CRISP-DM: проверенная методология для Data Scientist-ов&lt;/a&gt; (Russian) 
 &lt;a href="https://www.the-modeling-agency.com/crisp-dm.pdf"&gt;Original CRISP-DM methodology&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607"&gt;Why your neutral network is not working&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://machinelearningmastery.com/improve-deep-learning-performance/"&gt;How To Improve Deep Learning Performance&lt;/a&gt;, 2016, Jason Brownlee. Recipies about performance improvements. 
+Divided in 4 subtopics:
+&lt;em&gt; Improve Performance With Data.
+&lt;/em&gt; Improve Performance With Algorithms.
+&lt;em&gt; Improve Performance With Algorithm Tuning.
+&lt;/em&gt; Improve Performance With Ensembles.&lt;/p&gt;
 &lt;h2&gt;Books&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1816,7 +1855,12 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/settings.html#date-format-and-locale"&gt;Format of dates&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/stable/settings.html#url-settings"&gt;Generate archives per year and month&lt;/a&gt; 
 see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;To check out: &lt;a href="http://jbm.io/2013/03/adding-period-archives-to-pelican/"&gt;Adding period archives to Pelican&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category></entry><entry><title>Shell commands</title><link href="https://serge-m.github.io/shell-commands.html" rel="alternate"></link><published>2017-01-08T11:10:00+01:00</published><updated>2017-01-08T11:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/shell-commands.html</id><summary type="html">&lt;p&gt;Some linux commands, probably for ubuntu/linux mint&lt;/p&gt;
+&lt;p&gt;To check out: &lt;a href="http://jbm.io/2013/03/adding-period-archives-to-pelican/"&gt;Adding period archives to Pelican&lt;/a&gt;&lt;/p&gt;</content><category term="pelican"></category></entry><entry><title>Shell commands</title><link href="https://serge-m.github.io/shell-commands.html" rel="alternate"></link><published>2017-01-08T11:10:00+01:00</published><updated>2017-01-08T11:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/shell-commands.html</id><summary type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fuser -k 8080/tcp
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Add user to a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG group user
 &lt;/pre&gt;&lt;/div&gt;
@@ -1828,12 +1872,12 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 
 
 &lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin/bash user
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fuser -k 8080/tcp
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Encode/decode binary file to ascii using command line &lt;/p&gt;
-&lt;p&gt;&lt;a href="/encodedecode-binary-file-to-ascii.html"&gt;link …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some linux commands, probably for ubuntu/linux mint&lt;/p&gt;
 &lt;p&gt;Add user to a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -aG group user
 &lt;/pre&gt;&lt;/div&gt;

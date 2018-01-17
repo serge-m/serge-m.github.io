@@ -5,7 +5,14 @@ Slug: shell-commands
 Tags: linux,useful,ubuntu
 
 
-Some linux commands, probably for ubuntu/linux mint
+Some linux commands that I'll probably need in the future
+
+
+Kill processes occupying a certain port:
+```
+fuser -k 8080/tcp
+``` 
+
 
 Add user to a group
 ```

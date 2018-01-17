@@ -253,18 +253,9 @@ sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; 
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
-<h2>Code of sample_app.py</h2>
-<p>Creating Flask application:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
-
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Helper class for JSON-based response:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">200 …</span></pre></div>
+                <div class="summary"><p>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
+Here I try to explain how to test Flask-based web applications.
+We want to test endpoints behaviour including status codes and parameters encoding. It means …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
                 </div>
 
@@ -914,9 +905,6 @@ Now you can autocomplete from history using Up and Down keys.
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
@@ -930,7 +918,7 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ci.html">ci</a>
@@ -939,10 +927,10 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -951,16 +939,22 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/date.html">date</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -972,7 +966,7 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -983,20 +977,14 @@ Now you can autocomplete from history using Up and Down keys.
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
@@ -1014,7 +1002,7 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -1034,8 +1022,14 @@ Now you can autocomplete from history using Up and Down keys.
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/make.html">make</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/math.html">math</a>
@@ -1046,23 +1040,29 @@ Now you can autocomplete from history using Up and Down keys.
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
@@ -1072,6 +1072,9 @@ Now you can autocomplete from history using Up and Down keys.
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -1092,7 +1095,7 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -1119,12 +1122,6 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
@@ -1143,13 +1140,16 @@ Now you can autocomplete from history using Up and Down keys.
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -1159,9 +1159,6 @@ Now you can autocomplete from history using Up and Down keys.
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1175,11 +1172,11 @@ Now you can autocomplete from history using Up and Down keys.
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+    </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1198,12 +1195,6 @@ Now you can autocomplete from history using Up and Down keys.
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

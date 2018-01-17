@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="python,flask,pytest,REST,testing" />
-        <meta name="description" content="The code consists of two files: sample_app.py (productions) and sample_app_test.py (testing). Testing is run using py.test. Code of sample_app.py Creating Flask application: from flask import Flask, request, Response, json app = Flask(__name__) Helper class for JSON-based response: class JsonResponse(Response): def __init__(self, json_dict, status=200 …" />
+        <meta name="description" content="Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world. Here I try to explain how to test Flask-based web applications. We want to test endpoints behaviour including status codes and parameters encoding. It means …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Testing json responses in Flask REST apps with pytest"/>
         <meta property="og:url" content="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html"/>
-        <meta property="og:description" content="The code consists of two files: sample_app.py (productions) and sample_app_test.py (testing). Testing is run using py.test. Code of sample_app.py Creating Flask application: from flask import Flask, request, Response, json app = Flask(__name__) Helper class for JSON-based response: class JsonResponse(Response): def __init__(self, json_dict, status=200 …"/>
+        <meta property="og:description" content="Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world. Here I try to explain how to test Flask-based web applications. We want to test endpoints behaviour including status codes and parameters encoding. It means …"/>
         <meta property="article:published_time" content="2016-11-27" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="python" />
@@ -120,7 +120,11 @@ sergem personal public notebook            </a>
 	<a class="tag-list" href="https://serge-m.github.io/tag/testing.html">testing</a>
     
 </footer><!-- /.post-info -->                </div>
-                <p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
+                <p>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
+Here I try to explain how to test Flask-based web applications.
+We want to test endpoints behaviour including status codes and parameters encoding. It means testing of handler functions for those endpoints is not enough.</p>
+<p>Tests for endpoints can be considered/used as high-level acceptance tests.</p>
+<p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
 <h2>Code of sample_app.py</h2>
 <p>Creating Flask application:</p>
 <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
@@ -240,6 +244,131 @@ sergem personal public notebook            </a>
 
 
 <p>Inspired by <a href="https://gist.github.com/DazWorrall/1779861">this gist</a></p>
+<h2>Testing connextion</h2>
+<p><a href="https://github.com/zalando/connexion/">Connextion</a> is a wrapper around Flask that handles Oauth2 security and responses validation. 
+Test for connextion app must include security checks.</p>
+<h4>swagger.yaml</h4>
+<p>In this file we define API of our microservice. Also it contains security settings.</p>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">swagger</span><span class="p p-Indicator">:</span> <span class="s">&#39;2.0&#39;</span>
+<span class="l l-Scalar l-Scalar-Plain">info</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">title</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">your app</span>
+  <span class="l l-Scalar l-Scalar-Plain">version</span><span class="p p-Indicator">:</span> <span class="s">&quot;0.1&quot;</span>
+<span class="l l-Scalar l-Scalar-Plain">consumes</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">application/json</span>
+<span class="l l-Scalar l-Scalar-Plain">produces</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">application/json</span>
+<span class="l l-Scalar l-Scalar-Plain">security</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">oauth2</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">[</span><span class="nv">myscope</span><span class="p p-Indicator">]</span>
+<span class="l l-Scalar l-Scalar-Plain">paths</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">/</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">get</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">operationId</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">endpoints.root</span>
+      <span class="l l-Scalar l-Scalar-Plain">summary</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">|</span>
+        <span class="no">test</span>
+      <span class="l l-Scalar l-Scalar-Plain">responses</span><span class="p p-Indicator">:</span>
+        <span class="l l-Scalar l-Scalar-Plain">200</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">it works.</span>
+        <span class="l l-Scalar l-Scalar-Plain">401</span><span class="p p-Indicator">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">bad auth.</span>
+<span class="l l-Scalar l-Scalar-Plain">securityDefinitions</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">oauth2</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">oauth2</span>
+    <span class="l l-Scalar l-Scalar-Plain">flow</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">implicit</span>
+    <span class="l l-Scalar l-Scalar-Plain">authorizationUrl</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://oauth.example/token_info</span>
+    <span class="l l-Scalar l-Scalar-Plain">x-tokenInfoUrl</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://oauth.example/token_info</span>
+    <span class="l l-Scalar l-Scalar-Plain">scopes</span><span class="p p-Indicator">:</span>
+      <span class="l l-Scalar l-Scalar-Plain">myscope</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Unique identifier of the user accessing the service.</span>
+</pre></div>
+
+
+<h4>endpoints.py</h4>
+<p>Endpoints implementation.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">},</span> <span class="mi">200</span>
+</pre></div>
+
+
+<h4>test_endpoints.py</h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">connexion</span> <span class="kn">import</span> <span class="n">App</span>
+
+<span class="n">SPEC_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;../&#39;</span><span class="p">)</span>  <span class="c1"># path to a directory with swagger.yaml file</span>
+
+
+<span class="c1"># fixture for replacing calls to oauth provider in connexion</span>
+<span class="nd">@pytest.fixture</span>
+<span class="k">def</span> <span class="nf">oauth_requests</span><span class="p">(</span><span class="n">monkeypatch</span><span class="p">):</span>
+    <span class="c1"># _fake_get is defined later in the code</span>
+    <span class="n">monkeypatch</span><span class="o">.</span><span class="n">setattr</span><span class="p">(</span><span class="s1">&#39;connexion.decorators.security.session.get&#39;</span><span class="p">,</span> <span class="n">_fake_get</span><span class="p">)</span>
+
+
+<span class="c1"># fixture for running test app with a predefined swagger file</span>
+<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">secure_endpoint_app</span><span class="p">():</span>
+    <span class="n">cnx_app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">,</span> <span class="n">specification_dir</span><span class="o">=</span><span class="n">SPEC_FOLDER</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">cnx_app</span><span class="o">.</span><span class="n">add_api</span><span class="p">(</span><span class="s1">&#39;swagger.yaml&#39;</span><span class="p">,</span> <span class="n">validate_responses</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cnx_app</span>
+
+<span class="n">CORRECT_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;100&quot;</span>
+<span class="n">INCORRECT_TOKEN</span> <span class="o">=</span> <span class="s2">&quot;bla&quot;</span>
+
+<span class="c1"># we are testing our app with mocked security provider. </span>
+<span class="c1"># threfore we use </span>
+<span class="c1"># 1. oauth_requests for patching security</span>
+<span class="c1"># 2. secure_endpoint_app for loading application with a required swagger file</span>
+<span class="k">def</span> <span class="nf">test_security</span><span class="p">(</span><span class="n">oauth_requests</span><span class="p">,</span> <span class="n">secure_endpoint_app</span><span class="p">):</span>
+    <span class="n">app_client</span> <span class="o">=</span> <span class="n">secure_endpoint_app</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
+
+
+    <span class="c1"># must fail without Authorization header</span>
+    <span class="n">get_bye_no_auth</span> <span class="o">=</span> <span class="n">app_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>  <span class="c1"># type: flask.Response</span>
+    <span class="k">assert</span> <span class="n">get_bye_no_auth</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">401</span>
+
+    <span class="c1"># fails because of incorrect token</span>
+    <span class="n">get_bye_bad_auth</span> <span class="o">=</span> <span class="n">app_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">INCORRECT_TOKEN</span><span class="p">)})</span>  <span class="c1"># type: flask.Response</span>
+    <span class="k">assert</span> <span class="n">get_bye_bad_auth</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">401</span>
+
+    <span class="c1"># token is correct. Must return 200</span>
+    <span class="n">get_bye_good_auth</span> <span class="o">=</span> <span class="n">app_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">CORRECT_TOKEN</span><span class="p">)})</span>  <span class="c1"># type: flask.Response</span>
+    <span class="k">assert</span> <span class="n">get_bye_good_auth</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+
+
+<span class="c1"># fake response object used in _fake_get function</span>
+<span class="k">class</span> <span class="nc">FakeResponse</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status_code</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status_code</span> <span class="o">=</span> <span class="n">status_code</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ok</span> <span class="o">=</span> <span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+
+    <span class="k">def</span> <span class="nf">json</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+
+<span class="c1"># here we &quot;check&quot; tokens. Of course we don&#39;t do actual call to Oauth provider, we mock it.</span>
+<span class="k">def</span> <span class="nf">_fake_get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :type url: str</span>
+<span class="sd">    :type params: dict| None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">url</span> <span class="o">==</span> <span class="s2">&quot;https://oauth.example/token_info&quot;</span><span class="p">:</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Authorization&#39;</span><span class="p">,</span> <span class="s1">&#39;invalid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="n">CORRECT_TOKEN</span><span class="p">,</span> <span class="s2">&quot;has_myscope&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">FakeResponse</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;{&quot;uid&quot;: &quot;test-user&quot;, &quot;scope&quot;: [&quot;myscope&quot;]}&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;200&quot;</span><span class="p">,</span> <span class="s2">&quot;has_wrongscope&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">FakeResponse</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;{&quot;uid&quot;: &quot;test-user&quot;, &quot;scope&quot;: [&quot;wrongscope&quot;]}&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="o">==</span> <span class="s2">&quot;has_myscope_otherscope&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">FakeResponse</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;{&quot;uid&quot;: &quot;test-user&quot;, &quot;scope&quot;: [&quot;myscope&quot;, &quot;otherscope&quot;]}&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="n">INCORRECT_TOKEN</span><span class="p">,</span> <span class="s2">&quot;is_not_invalid&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">FakeResponse</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">url</span>
+</pre></div>
+
+
+<p>inspired by connexiton tests: <a href="https://github.com/zalando/connexion/blob/master/tests/conftest.py">[1]</a> and <a href="https://github.com/zalando/connexion/blob/master/tests/api/test_secure_api.py">[2]</a></p>
 <h2>Related links:</h2>
 <ul>
 <li><a href="http://flask.pocoo.org/docs/0.11/testing/">Testing flask applications</a></li>
@@ -334,9 +463,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
@@ -350,7 +476,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ci.html">ci</a>
@@ -359,10 +485,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -371,16 +497,22 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/date.html">date</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -392,7 +524,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -403,20 +535,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
@@ -434,7 +560,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -454,8 +580,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/make.html">make</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/math.html">math</a>
@@ -466,23 +598,29 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
@@ -492,6 +630,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -512,7 +653,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -539,12 +680,6 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
@@ -563,13 +698,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -579,9 +717,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -595,11 +730,11 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+    </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -618,12 +753,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

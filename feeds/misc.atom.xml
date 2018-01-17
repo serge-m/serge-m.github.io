@@ -2220,18 +2220,13 @@ sudo update-alternatives --config javaws
 
 
 &lt;p&gt;Don't forget to rerun terminal or reboot.&lt;/p&gt;
-&lt;p&gt;Based on &lt;a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre"&gt;this thread&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="java"></category><category term="java8"></category></entry><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
-&lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
-&lt;p&gt;Creating Flask application:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
-
-&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Helper class for JSON-based response:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;JsonResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json_dict&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
+&lt;p&gt;Based on &lt;a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre"&gt;this thread&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="java"></category><category term="java8"></category></entry><entry><title>Testing json responses in Flask REST apps with pytest</title><link href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html" rel="alternate"></link><published>2016-11-27T22:47:00+01:00</published><updated>2016-11-27T22:47:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-11-27:/testing-json-responses-in-Flask-REST-apps-with-pytest.html</id><summary type="html">&lt;p&gt;Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
+Here I try to explain how to test Flask-based web applications.
+We want to test endpoints behaviour including status codes and parameters encoding. It means …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
+Here I try to explain how to test Flask-based web applications.
+We want to test endpoints behaviour including status codes and parameters encoding. It means testing of handler functions for those endpoints is not enough.&lt;/p&gt;
+&lt;p&gt;Tests for endpoints can be considered/used as high-level acceptance tests.&lt;/p&gt;
+&lt;p&gt;The code consists of two files: &lt;code&gt;sample_app.py&lt;/code&gt; (productions) and &lt;code&gt;sample_app_test.py&lt;/code&gt; (testing). Testing is run using py.test.&lt;/p&gt;
 &lt;h2&gt;Code of sample_app.py&lt;/h2&gt;
 &lt;p&gt;Creating Flask application:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Response&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;
@@ -2351,6 +2346,131 @@ sudo update-alternatives --config javaws
 
 
 &lt;p&gt;Inspired by &lt;a href="https://gist.github.com/DazWorrall/1779861"&gt;this gist&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Testing connextion&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/zalando/connexion/"&gt;Connextion&lt;/a&gt; is a wrapper around Flask that handles Oauth2 security and responses validation. 
+Test for connextion app must include security checks.&lt;/p&gt;
+&lt;h4&gt;swagger.yaml&lt;/h4&gt;
+&lt;p&gt;In this file we define API of our microservice. Also it contains security settings.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;swagger&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;2.0&amp;#39;&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;info&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;title&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;your app&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;version&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;0.1&amp;quot;&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;consumes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;application/json&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;produces&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;application/json&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;security&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;oauth2&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;myscope&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;paths&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;get&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;operationId&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;endpoints.root&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;summary&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;|&lt;/span&gt;
+        &lt;span class="no"&gt;test&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;responses&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+        &lt;span class="l l-Scalar l-Scalar-Plain"&gt;200&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+          &lt;span class="l l-Scalar l-Scalar-Plain"&gt;description&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;it works.&lt;/span&gt;
+        &lt;span class="l l-Scalar l-Scalar-Plain"&gt;401&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+          &lt;span class="l l-Scalar l-Scalar-Plain"&gt;description&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;bad auth.&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;securityDefinitions&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;oauth2&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;type&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;oauth2&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;flow&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;implicit&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;authorizationUrl&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://oauth.example/token_info&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;x-tokenInfoUrl&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://oauth.example/token_info&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;scopes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+      &lt;span class="l l-Scalar l-Scalar-Plain"&gt;myscope&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;Unique identifier of the user accessing the service.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;endpoints.py&lt;/h4&gt;
+&lt;p&gt;Endpoints implementation.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;root&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;result&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;lol&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;test_endpoints.py&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;connexion&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;App&lt;/span&gt;
+
+&lt;span class="n"&gt;SPEC_FOLDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dirname&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;../&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# path to a directory with swagger.yaml file&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# fixture for replacing calls to oauth provider in connexion&lt;/span&gt;
+&lt;span class="nd"&gt;@pytest.fixture&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;oauth_requests&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;monkeypatch&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c1"&gt;# _fake_get is defined later in the code&lt;/span&gt;
+    &lt;span class="n"&gt;monkeypatch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setattr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;connexion.decorators.security.session.get&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_fake_get&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# fixture for running test app with a predefined swagger file&lt;/span&gt;
+&lt;span class="nd"&gt;@pytest.fixture&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;session&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;secure_endpoint_app&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;cnx_app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;App&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5001&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;specification_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;SPEC_FOLDER&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;cnx_app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_api&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;swagger.yaml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;validate_responses&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;cnx_app&lt;/span&gt;
+
+&lt;span class="n"&gt;CORRECT_TOKEN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;100&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;INCORRECT_TOKEN&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;bla&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# we are testing our app with mocked security provider. &lt;/span&gt;
+&lt;span class="c1"&gt;# threfore we use &lt;/span&gt;
+&lt;span class="c1"&gt;# 1. oauth_requests for patching security&lt;/span&gt;
+&lt;span class="c1"&gt;# 2. secure_endpoint_app for loading application with a required swagger file&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_security&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;oauth_requests&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;secure_endpoint_app&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;app_client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;secure_endpoint_app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test_client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+    &lt;span class="c1"&gt;# must fail without Authorization header&lt;/span&gt;
+    &lt;span class="n"&gt;get_bye_no_auth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app_client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# type: flask.Response&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;get_bye_no_auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;401&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# fails because of incorrect token&lt;/span&gt;
+    &lt;span class="n"&gt;get_bye_bad_auth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app_client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Authorization&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bearer {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;INCORRECT_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;  &lt;span class="c1"&gt;# type: flask.Response&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;get_bye_bad_auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;401&lt;/span&gt;
+
+    &lt;span class="c1"&gt;# token is correct. Must return 200&lt;/span&gt;
+    &lt;span class="n"&gt;get_bye_good_auth&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;app_client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Authorization&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Bearer {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CORRECT_TOKEN&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;  &lt;span class="c1"&gt;# type: flask.Response&lt;/span&gt;
+    &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;get_bye_good_auth&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# fake response object used in _fake_get function&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;FakeResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;status_code&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;status_code&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ok&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;status_code&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;json&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loads&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;# here we &amp;quot;check&amp;quot; tokens. Of course we don&amp;#39;t do actual call to Oauth provider, we mock it.&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_fake_get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    :type url: str&lt;/span&gt;
+&lt;span class="sd"&gt;    :type params: dict| None&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt; &lt;span class="ow"&gt;or&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://oauth.example/token_info&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Authorization&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;invalid&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;CORRECT_TOKEN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;has_myscope&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;FakeResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;uid&amp;quot;: &amp;quot;test-user&amp;quot;, &amp;quot;scope&amp;quot;: [&amp;quot;myscope&amp;quot;]}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;has_wrongscope&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;FakeResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;uid&amp;quot;: &amp;quot;test-user&amp;quot;, &amp;quot;scope&amp;quot;: [&amp;quot;wrongscope&amp;quot;]}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;has_myscope_otherscope&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;FakeResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;quot;uid&amp;quot;: &amp;quot;test-user&amp;quot;, &amp;quot;scope&amp;quot;: [&amp;quot;myscope&amp;quot;, &amp;quot;otherscope&amp;quot;]}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;INCORRECT_TOKEN&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;is_not_invalid&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;FakeResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;inspired by connexiton tests: &lt;a href="https://github.com/zalando/connexion/blob/master/tests/conftest.py"&gt;[1]&lt;/a&gt; and &lt;a href="https://github.com/zalando/connexion/blob/master/tests/api/test_secure_api.py"&gt;[2]&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Related links:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://flask.pocoo.org/docs/0.11/testing/"&gt;Testing flask applications&lt;/a&gt;&lt;/li&gt;

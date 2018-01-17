@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-11T22:02:00+01:00</updated><entry><title>Flask and SQLAlchemy explained</title><link href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html" rel="alternate"></link><published>2018-01-11T22:02:00+01:00</published><updated>2018-01-11T22:02:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/flask-and-sqlalchemy-explained.html</id><summary type="html">&lt;p&gt;Awesome explanation of SQLAlchemy with examples and comparison to Django by &lt;a href="http://lucumr.pocoo.org/about/"&gt;Armin Ronacher&lt;/a&gt;: 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-17T07:07:00+01:00</updated><entry><title>Datetime in Python</title><link href="https://serge-m.github.io/datetime-in-python.html" rel="alternate"></link><published>2018-01-17T07:07:00+01:00</published><updated>2018-01-17T07:07:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-17:/datetime-in-python.html</id><summary type="html">&lt;h2&gt;Conversion from calendar week to date&lt;/h2&gt;
+&lt;p&gt;Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date.
+The behaviour in the begin/end of a year may be not straightforward.
+For example according to ISO 8601 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Conversion from calendar week to date&lt;/h2&gt;
+&lt;p&gt;Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date.
+The behaviour in the begin/end of a year may be not straightforward.
+For example according to ISO 8601 monday date of the CW 1 year 2019 is 31 January 2018.
+As far as I can see there is no standard function for conversion in python.&lt;/p&gt;
+&lt;p&gt;I use the following hacky code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;year_cw_day_to_date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;year&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;calendar_week&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;day_of_week&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    year: integer number, e.g. 1986&lt;/span&gt;
+&lt;span class="sd"&gt;    calendar_week: integer number, from 1 to 53&lt;/span&gt;
+&lt;span class="sd"&gt;    day_of_week: integer starting from 1, so that 1 is Monday, 2 is Tuesday, ...,  7 is Sunday&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; year_cw_day_to_date(2019, 1, 1)&lt;/span&gt;
+&lt;span class="sd"&gt;    datetime.date(2018, 12, 31)&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; year_cw_day_to_date(2019, 1, 7)&lt;/span&gt;
+&lt;span class="sd"&gt;    datetime.date(2019, 1, 6)&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; year_cw_day_to_date(2018, 52, 7)&lt;/span&gt;
+&lt;span class="sd"&gt;    datetime.date(2018, 12, 30)&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; year_cw_day_to_date(2018, 53, 2)&lt;/span&gt;
+&lt;span class="sd"&gt;    datetime.date(2019, 1, 1)&lt;/span&gt;
+
+&lt;span class="sd"&gt;    &amp;gt;&amp;gt;&amp;gt; year_cw_day_to_date(2018, 53, 0)&lt;/span&gt;
+&lt;span class="sd"&gt;    Traceback (most recent call last):&lt;/span&gt;
+&lt;span class="sd"&gt;    ...&lt;/span&gt;
+&lt;span class="sd"&gt;    ValueError: day_of_week must be in range from 1 to 7&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;day_of_week&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;day_of_week must be in range from 1 to 7&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;string_representation&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{year}-{calendar_week}-{day_of_week}&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strptime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;string_representation&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%G&lt;/span&gt;&lt;span class="s2"&gt;-%V-&lt;/span&gt;&lt;span class="si"&gt;%u&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It prints the week-based date to a string and then parses it using &lt;code&gt;%V&lt;/code&gt; and &lt;code&gt;%u&lt;/code&gt; format from python 3 (&lt;a href="https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior"&gt;docs&lt;/a&gt;)
+Therefore you don't need to implement ISO logic of dates calculation. Hopefully such a funciton apppear in standard library.&lt;/p&gt;
+&lt;p&gt;Python 2 doesn't have these &lt;code&gt;%V&lt;/code&gt; and &lt;code&gt;%u&lt;/code&gt; implemented. &lt;code&gt;:(&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;p&gt;&lt;a href="/add-months-to-datetime-in-python.html"&gt;How to add months to datetime object in python&lt;/a&gt;
+&lt;a href="https://docs.python.org/3.6/library/datetime.html#module-datetime"&gt;datetime module in python 3&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="datetime"></category><category term="calendar"></category><category term="calendar week"></category><category term="date"></category></entry><entry><title>Flask and SQLAlchemy explained</title><link href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html" rel="alternate"></link><published>2018-01-11T22:02:00+01:00</published><updated>2018-01-11T22:02:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/flask-and-sqlalchemy-explained.html</id><summary type="html">&lt;p&gt;Awesome explanation of SQLAlchemy with examples and comparison to Django by &lt;a href="http://lucumr.pocoo.org/about/"&gt;Armin Ronacher&lt;/a&gt;: 
 &lt;a href="http://lucumr.pocoo.org/2011/7/19/sqlachemy-and-you/"&gt;SQLAlchemy and You&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Flask-SQLAlchemy module&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://flask-sqlalchemy.pocoo.org"&gt;Flask-SQLAlchemy&lt;/a&gt; is an extension for Flask that adds support for SQLAlchemy to your application.&lt;/p&gt;

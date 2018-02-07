@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-01-17T07:07:00+01:00</updated><entry><title>Datetime in Python</title><link href="https://serge-m.github.io/datetime-in-python.html" rel="alternate"></link><published>2018-01-17T07:07:00+01:00</published><updated>2018-01-17T07:07:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-17:/datetime-in-python.html</id><summary type="html">&lt;h2&gt;Conversion from calendar week to date&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-02-06T08:23:00+01:00</updated><entry><title>Workflow management with Apache Airflow</title><link href="https://serge-m.github.io/airflow.html" rel="alternate"></link><published>2018-02-06T08:23:00+01:00</published><updated>2018-02-06T08:23:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-02-06:/airflow.html</id><summary type="html">&lt;p&gt;Some useful resources about &lt;a href="https://github.com/apache/incubator-airflow"&gt;Airflow&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gtoonstra.github.io/etl-with-airflow/index.html"&gt;ETL best practices with Airflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Series of articles about Airflow in production:
+&lt;em&gt; &lt;a href="https://medium.com/@dustinstansbury/beyond-cron-an-introduction-to-workflow-management-systems-19987afcdb5e"&gt;Part 1&lt;/a&gt; - about usecases and alternatives
+&lt;/em&gt; &lt;a href="https://towardsdatascience.com/why-quizlet-chose-apache-airflow-for-executing-data-workflows-3f97d40e9571"&gt;Part 2&lt;/a&gt; - about alternatives (Luigi and Paitball)
+&lt;em&gt; &lt;a href="https://medium.com/@dustinstansbury/going-with-the-flow-part-part-iii-airflow-in-detail-a96efed52b1a"&gt;Part 3&lt;/a&gt; - key concepts
+&lt;/em&gt; &lt;a href="https://medium.com/@dustinstansbury/how-quizlet-uses-apache-airflow-in-practice-a903cbb5626d"&gt;Part 4&lt;/a&gt; - deployment, issues&lt;/p&gt;
+&lt;h2&gt;More notes about production&lt;/h2&gt;
+&lt;p&gt;About start_time: &lt;a href="https://airflow.apache.org/faq.html#why-isn-t-my-task-getting-scheduled"&gt;Why isn’t my task getting …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some useful resources about &lt;a href="https://github.com/apache/incubator-airflow"&gt;Airflow&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gtoonstra.github.io/etl-with-airflow/index.html"&gt;ETL best practices with Airflow&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Series of articles about Airflow in production:
+&lt;em&gt; &lt;a href="https://medium.com/@dustinstansbury/beyond-cron-an-introduction-to-workflow-management-systems-19987afcdb5e"&gt;Part 1&lt;/a&gt; - about usecases and alternatives
+&lt;/em&gt; &lt;a href="https://towardsdatascience.com/why-quizlet-chose-apache-airflow-for-executing-data-workflows-3f97d40e9571"&gt;Part 2&lt;/a&gt; - about alternatives (Luigi and Paitball)
+&lt;em&gt; &lt;a href="https://medium.com/@dustinstansbury/going-with-the-flow-part-part-iii-airflow-in-detail-a96efed52b1a"&gt;Part 3&lt;/a&gt; - key concepts
+&lt;/em&gt; &lt;a href="https://medium.com/@dustinstansbury/how-quizlet-uses-apache-airflow-in-practice-a903cbb5626d"&gt;Part 4&lt;/a&gt; - deployment, issues&lt;/p&gt;
+&lt;h2&gt;More notes about production&lt;/h2&gt;
+&lt;p&gt;About start_time: &lt;a href="https://airflow.apache.org/faq.html#why-isn-t-my-task-getting-scheduled"&gt;Why isn’t my task getting scheduled?&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;One cannot specify &lt;code&gt;datetime.now()&lt;/code&gt; as &lt;code&gt;start_date&lt;/code&gt;. Instead one has to provide datetime object without timezone. Probably UTC time is required.
+You can do something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;timedelta&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytz&lt;/span&gt;
+
+&lt;span class="n"&gt;start_date_local&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2018&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;pytz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;timezone&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Minsk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;   &lt;span class="c1"&gt;# your time, date and time zone go here &lt;/span&gt;
+&lt;span class="n"&gt;start_date_for_airflow&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;start_date_local&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;astimezone&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pytz&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tzinfo&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# we convert to UTC and remove timezone&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Running with LocalExecutor and Postgres from docker&lt;/h2&gt;
+&lt;p&gt;We will run postgres in docker:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run -it -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we can specify in &lt;code&gt;airflow.cfg&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sql_alchemy_conn = postgresql://postgres:postgres@localhost:5432/postgres
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;executor = LocalExecutor
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then run &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;airflow initdb
+airflow scheduler
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;How to specify AWS region for EmrCreateJobFlowOperator&lt;/h2&gt;
+&lt;p&gt;There is no parameter in &lt;code&gt;EmrCreateJobFlowOperator&lt;/code&gt; to specify&lt;br&gt;
+AWS region where the cluster has to be deployed.&lt;/p&gt;
+&lt;p&gt;Internally &lt;code&gt;EmrCreateJobFlowOperator&lt;/code&gt; uses &lt;code&gt;EmrHook&lt;/code&gt; where &lt;code&gt;get_client_type('emr')&lt;/code&gt; is called. 
+&lt;code&gt;get_client_type&lt;/code&gt; has a default paramater &lt;code&gt;region_name=None&lt;/code&gt;. 
+That means there is no way to set this parameter in code.&lt;/p&gt;
+&lt;p&gt;One has to configure it using airflow configurations.
+Here we create connection &lt;code&gt;aws_my&lt;/code&gt; with AWS region &lt;code&gt;eu-west-1&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;airflow connections -a --conn_id &amp;#39;aws_my&amp;#39; --conn_uri &amp;#39;aws:&amp;#39; --conn_extra &amp;#39;{&amp;quot;region_name&amp;quot;: &amp;quot;eu-west-1&amp;quot;}&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we can use new connection for &lt;code&gt;EmrCreateJobFlowOperator&lt;/code&gt; 
+to &lt;strong&gt;create Spark cluster on EMR&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cluster_creator = EmrCreateJobFlowOperator(
+    task_id=&amp;#39;create_job_flow&amp;#39;,
+    job_flow_overrides={}, # your cluster configurations go here
+    aws_conn_id=&amp;#39;aws_my&amp;#39;, # &amp;lt;---- this is important
+    emr_conn_id=&amp;#39;emr_default&amp;#39;,
+    dag=your_dag
+) 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Done&lt;/p&gt;</content><category term="python"></category><category term="airflow"></category><category term="links"></category></entry><entry><title>Datetime in Python</title><link href="https://serge-m.github.io/datetime-in-python.html" rel="alternate"></link><published>2018-01-17T07:07:00+01:00</published><updated>2018-01-17T07:07:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-17:/datetime-in-python.html</id><summary type="html">&lt;h2&gt;Conversion from calendar week to date&lt;/h2&gt;
 &lt;p&gt;Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date.
 The behaviour in the begin/end of a year may be not straightforward.
 For example according to ISO 8601 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Conversion from calendar week to date&lt;/h2&gt;

@@ -121,14 +121,40 @@ SQLALCHEMY_BINDS = {
 
 
 &lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Auto completion for fabric&lt;/h2&gt;
+&lt;p&gt;Add &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab &lt;span class="err"&gt;&amp;amp;&amp;amp;&lt;/span&gt; {
+_fab_completion()
+{
+    COMPREPLY=() 
+    local cur tasks
+    tasks=$(fab --shortlist 2 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Mixin pattern in Python</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
+&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Auto completion for fabric&lt;/h2&gt;
+&lt;p&gt;Add &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab &lt;span class="err"&gt;&amp;amp;&amp;amp;&lt;/span&gt; {
+_fab_completion()
+{
+    COMPREPLY=() 
+    local cur tasks
+    tasks=$(fab --shortlist 2&amp;gt;/dev/null)
+    _get_comp_words_by_ref cur
+    COMPREPLY=( $(compgen -W &amp;quot;&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;tasks&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;&amp;quot; -- &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;cur&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;) )
+}
+complete -F _fab_completion fab
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to &lt;code&gt;~/.bash_completion&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Mixin pattern in Python</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
  There are two main situations where mixins are used &lt;a href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful"&gt;1&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You want to provide a lot of optional features for a class.&lt;/li&gt;
@@ -1806,12 +1832,13 @@ Clustering is based on histograms. 1 contributor. No tests. abandoned.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://habrahabr.ru/company/lanit/blog/328858/"&gt;CRISP-DM: проверенная методология для Data Scientist-ов&lt;/a&gt; (Russian) 
 &lt;a href="https://www.the-modeling-agency.com/crisp-dm.pdf"&gt;Original CRISP-DM methodology&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607"&gt;Why your neutral network is not working&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://machinelearningmastery.com/improve-deep-learning-performance/"&gt;How To Improve Deep Learning Performance&lt;/a&gt;, 2016, Jason Brownlee. Recipies about performance improvements. 
-Divided in 4 subtopics:
+&lt;p&gt;&lt;a href="https://machinelearningmastery.com/improve-deep-learning-performance/"&gt;How To Improve Deep Learning Performance&lt;/a&gt;, 2016, Jason Brownlee. Recipies about performance improvements. &lt;/p&gt;
+&lt;p&gt;Divided in 4 subtopics:
 &lt;em&gt; Improve Performance With Data.
 &lt;/em&gt; Improve Performance With Algorithms.
 &lt;em&gt; Improve Performance With Algorithm Tuning.
 &lt;/em&gt; Improve Performance With Ensembles.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://towardsdatascience.com"&gt;Towards Data Science&lt;/a&gt; -- medium based website with interesting articles about data science.&lt;/p&gt;
 &lt;h2&gt;Books&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;

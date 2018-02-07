@@ -16,3 +16,23 @@ now if you run `xdg-open ./` or press `Super+E` nemo starts.
 
 [source](http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html)
 
+
+## Auto completion for fabric
+Add 
+```
+have fab && {
+_fab_completion()
+{
+    COMPREPLY=() 
+    local cur tasks
+    tasks=$(fab --shortlist 2>/dev/null)
+    _get_comp_words_by_ref cur
+    COMPREPLY=( $(compgen -W "${tasks}" -- ${cur}) )
+}
+complete -F _fab_completion fab
+}
+```
+
+to `~/.bash_completion`.
+
+[Source](http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/)

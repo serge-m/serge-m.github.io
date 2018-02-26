@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>console - sergem personal public notebook</title>
+    <title>Select lines matching regular expression in python - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,22 @@
 
 
 
+<link rel="canonical" href="https://serge-m.github.io/print-lines-matching-regex.html">
 
-    <meta name="author" content="sergem" />
-    <meta name="keywords" content="console" />
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="python,useful" />
+        <meta name="description" content="Given a text file we want to create another file containing only those lines that match a certain regular expression using python3 import re with open(&#34;./in.txt&#34;, &#34;r&#34;) as input_file, open(&#34;out.txt&#34;, &#34;w&#34;) as output_file: for line in input_file: if re.match(&#34;(.*)import(.*)&#34;, line): print(line, file=output_file …" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content="https://serge-m.github.io"/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Select lines matching regular expression in python"/>
+        <meta property="og:url" content="https://serge-m.github.io/print-lines-matching-regex.html"/>
+        <meta property="og:description" content="Given a text file we want to create another file containing only those lines that match a certain regular expression using python3 import re with open(&#34;./in.txt&#34;, &#34;r&#34;) as input_file, open(&#34;out.txt&#34;, &#34;w&#34;) as output_file: for line in input_file: if re.match(&#34;(.*)import(.*)&#34;, line): print(line, file=output_file …"/>
+        <meta property="article:published_time" content="2018-02-26" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="useful" />
+            <meta property="article:author" content="SergeM" />
 
 
     <!-- Bootstrap -->
@@ -35,6 +41,8 @@
               title="sergem personal public notebook RSS Feed"/>
 
 
+        <link href="https://serge-m.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook misc ATOM Feed"/>
 
 </head>
 <body>
@@ -59,7 +67,7 @@ sergem personal public notebook            </a>
                          <li><a href="https://serge-m.github.io/pages/posts-by-year.html">
                              posts by year
                           </a></li>
-                        <li >
+                        <li class="active">
                             <a href="https://serge-m.github.io/category/misc.html">Misc</a>
                         </li>
             </ul>
@@ -74,14 +82,23 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></h1>
-
+    <section id="content">
+        <article>
+            <header>
+                <h1>
+                    <a href="https://serge-m.github.io/print-lines-matching-regex.html"
+                       rel="bookmark"
+                       title="Permalink to Select lines matching regular expression in python">
+                        Select lines matching regular expression in python
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-06-09T12:15:00+02:00"> 2017-06-09T12:15:00, Fri</time>
+        <i class="fa fa-calendar"></i><time datetime="2018-02-26T23:14:00+01:00"> 2018-02-26T23:14:00, Mon</time>
     </span>
 
 
@@ -89,115 +106,53 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+        /
 	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/console.html">console</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/linux.html">linux</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/network.html">network</a>
     
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><h2>Scan IP range</h2>
-<p>Generally, nmap is useful to quickly scan networks.</p>
-<p>To install nmap, enter</p>
-<div class="highlight"><pre><span></span>sudo apt-get install nmap
+</footer><!-- /.post-info -->                </div>
+                <p>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./in.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;(.*)import(.*)&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">output_file</span><span class="p">)</span>
 </pre></div>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
 
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'serge-m-github-io'; // required: replace example with your forum shortname
 
-<p>Once it is installed, enter</p>
-<div class="highlight"><pre><span></span>nmap -sn 192.168.1.0/24
-</pre></div>
+                    var disqus_identifier = 'print-lines-matching-regex';
+                var disqus_url = 'https://serge-m.github.io/print-lines-matching-regex.html';
 
+            var disqus_config = function () {
+                this.language = "en";
+            };
 
-<p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
-                </div>
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-            </article>
-            <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">terminal setup in linux mint</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-08-07T11:20:00+02:00"> 2016-08-07T11:20:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/console.html">console</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><h2>Installation</h2>
-<p>sudo apt-get install tmux</p>
-<p><img alt="" src="https://3.bp.blogspot.com/-MnndlZeDxkc/V6bulTON9uI/AAAAAAAAEmU/olWSomTKLjQ4Z2uHikjP4PQwCr1Wd2zUwCLcB/s320/Screenshot%2Bfrom%2B2016-08-07%2B10%253A17%253A12.png"></p>
-<h2>Commands</h2>
-<p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
-<h3>Sessions</h3>
-<div class="highlight"><pre><span></span>:new&lt;CR&gt;  new session
-s  list sessions
-$  name session
-</pre></div>
-
-
-<h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span>c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/ten-best-console-commands-rus.html">Десятка лучших консольных команд</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-10-22T12:39:00+02:00"> 2013-10-22T12:39:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/console.html">console</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/russian.html">russian</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p><a href="https://habrahabr.ru/post/198482/">источник</a></p>
-<h3>Десятое место</h3>
-<p>Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.</p>
-<p>Комбинация <code>'ALT+.'</code> или <code>'&lt;ESC&gt; .'</code></p>
-<h3>Девятое место</h3>
-<p>Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ten-best-console-commands-rus.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -210,9 +165,18 @@ f  find window
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">terminal setup in linux mint</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/ten-best-console-commands-rus.html">Десятка лучших консольных команд</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/print-lines-matching-regex.html">Select lines matching regular expression in python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/airflow.html">Workflow management with Apache Airflow</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/datetime-in-python.html">Datetime in Python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/ubuntu-linux-settings.html">Ubuntu linux settings</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/mixins-in-python.html">Mixin pattern in Python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/pytest-cheatsheet.html">Pytest cheatsheet</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/how-to-break-a-programmer.html">how to break a programmer</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/about-management.html">about management</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html">why does your data science project fail again</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/sample-ember-and-flask.html">Sample project with Ember and Flask</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/parallel-builds.html">Speed up make/cmake build with multiprocessing</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -571,7 +535,7 @@ f  find window
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 sergem
+         <div class="col-xs-10">&copy; 2018 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

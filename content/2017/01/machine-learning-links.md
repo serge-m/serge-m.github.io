@@ -56,8 +56,10 @@ Divided in 4 subtopics:
 * Improve Performance With Algorithm Tuning.
 * Improve Performance With Ensembles.
 
-
 [Towards Data Science](https://towardsdatascience.com) -- medium based website with interesting articles about data science.
+
+
+[Feature Engineering, о чём молчат online-курсы](https://m.habrahabr.ru/company/mailru/blog/346942/) (Rus.)
 
 ## Books
 

@@ -70,6 +70,13 @@ Using the Job Control of bash to send the process into the background:
 
 [source](https://stackoverflow.com/a/625436)
 
+Unrfortunately disown is specific to bash and not available in all shells.
+
+Certain flavours of Unix (e.g. AIX and Solaris) have an option on the nohup command itself which can be applied to a running process:
+
+`nohup -p pid`
+
+
 
 
 ## Vim

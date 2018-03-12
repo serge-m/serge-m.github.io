@@ -77,7 +77,14 @@ Certain flavours of Unix (e.g. AIX and Solaris) have an option on the nohup comm
 `nohup -p pid`
 
 
+The first of the commands below starts the program `abcd` in the background in such a way that the subsequent logout does not stop it.
 
+```bash
+$ nohup abcd &
+$ exit
+```
+
+[wiki](https://en.wikipedia.org/wiki/Nohup)
 
 ## Vim
 [vimCheatSheet](https://www.fprintf.net/vimCheatSheet.html)

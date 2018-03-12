@@ -2082,6 +2082,15 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;Detach process&lt;/h2&gt;
+&lt;p&gt;Sometimes I need to detach from a process running on a remote machine so that it continues running after I logout.&lt;/p&gt;
+&lt;p&gt;Using the Job Control of bash to send the process into the background:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+Z&lt;/code&gt; to stop (pause) the program and get back to the shell.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bg&lt;/code&gt; to run it in the background.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;disown -h [job-spec]&lt;/code&gt; where &lt;code&gt;[job-spec]&lt;/code&gt; is the job number (like %1 for the first running job; find about your number with the jobs command) so that the job isn't killed when the terminal closes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/a/625436"&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Vim&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.fprintf.net/vimCheatSheet.html"&gt;vimCheatSheet&lt;/a&gt;
 &lt;a href="https://vim.rtorr.com/"&gt;another vim cheat scheet&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;

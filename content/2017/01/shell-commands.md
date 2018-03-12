@@ -58,6 +58,20 @@ Generate md5 fingerprint of the key (works in newer ubuntu, 16):
 ssh-keygen -lf ./my_key -E md5
 ```
 
+## Detach process
+Sometimes I need to detach from a process running on a remote machine so that it continues running after I logout.
+
+
+Using the Job Control of bash to send the process into the background:
+
+* `Ctrl+Z` to stop (pause) the program and get back to the shell.
+* `bg` to run it in the background.
+* `disown -h [job-spec]` where `[job-spec]` is the job number (like %1 for the first running job; find about your number with the jobs command) so that the job isn't killed when the terminal closes.
+
+[source](https://stackoverflow.com/a/625436)
+
+
+
 ## Vim
 [vimCheatSheet](https://www.fprintf.net/vimCheatSheet.html)
 [another vim cheat scheet](https://vim.rtorr.com/)

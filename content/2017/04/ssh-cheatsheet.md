@@ -27,3 +27,24 @@ See [How To Configure SSH Key-Based Authentication on a Linux Server](https://ww
 ## Use ssh authentication by key instead of password
 
 [Setup the SSH server to use keys for authentication](https://www.g-loaded.eu/2005/11/10/ssh-with-keys/)
+
+
+## How to load ssh key without placing it to ~/.ssh
+You must load a key to the ssh agent running in the background.
+
+To start the ssh-agent in the background:
+
+```bash
+eval "$(ssh-agent -s)"
+Agent pid 59566
+```
+
+You can add your SSH private key to the ssh-agent using `ssh-add` and full path to the key:
+```bash
+    ssh-add ~/path_to_your_private_key/id_rsa
+```
+
+Now you can for example do `git clone` from github using ssh key.
+
+see also [1](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent)
+

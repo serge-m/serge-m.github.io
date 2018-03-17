@@ -1449,7 +1449,22 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;h2&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h2&gt;
 &lt;p&gt;See &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server"&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/a&gt;. Should I put public or private key to the server?&lt;/p&gt;
 &lt;h2&gt;Use ssh authentication by key instead of password&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.g-loaded.eu/2005/11/10/ssh-with-keys/"&gt;Setup the SSH server to use keys for authentication&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.g-loaded.eu/2005/11/10/ssh-with-keys/"&gt;Setup the SSH server to use keys for authentication&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;How to load ssh key without placing it to ~/.ssh&lt;/h2&gt;
+&lt;p&gt;You must load a key to the ssh agent running in the background.&lt;/p&gt;
+&lt;p&gt;To start the ssh-agent in the background:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ssh-agent -s&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+Agent pid &lt;span class="m"&gt;59566&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can add your SSH private key to the ssh-agent using &lt;code&gt;ssh-add&lt;/code&gt; and full path to the key:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    ssh-add ~/path_to_your_private_key/id_rsa
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can for example do &lt;code&gt;git clone&lt;/code&gt; from github using ssh key.&lt;/p&gt;
+&lt;p&gt;see also &lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent"&gt;1&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;

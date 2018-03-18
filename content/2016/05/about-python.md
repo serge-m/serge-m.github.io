@@ -23,6 +23,13 @@ Possible with [SQLAlchemy-Utils](https://github.com/kvesteri/sqlalchemy-utils) l
 [http://dustinrcollins.com/infrastructure-with-python]([http://dustinrcollins.com/infrastructure-with-python])
 -- list of tools for python development
 
+### Retry libraries for python
+[tenacity](https://github.com/jd/tenacity) - a fork of [retrying](https://github.com/rholder/retrying/). Seems alive and powerful.
+
+[retrying](https://github.com/rholder/retrying/) - abandoned but popular project.
+
+[backoff](https://pypi.python.org/pypi/backoff/) 
+
 ## Language
 
 Cheat Sheet: Writing Python 2-3 compatible code

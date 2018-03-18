@@ -2,9 +2,42 @@ Title: Python logging best practices
 Author: SergeM
 Date: 2015-04-21 23:05:00
 Slug: python-logging
-Tags: useful,python,links,flask
+Tags: useful,python,links,flask,logging,logger,logs,best practices
 
-## Best practices:
+## Simple logger setup for standalone scripts
+When I write a simple script in python I want to have a nicely formatted log messages. 
+Therefore I change the default format so that service information (time, logger name, error level) 
+has a fixed length. It helps me visually parse important information (log messages) from the stream of logs.
+It can be achieved by using fixed width modificators in format string:
+```
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s
+```
+More on logging format templates [here](https://docs.python.org/3.6/library/logging.html#logrecord-attributes).
+
+Also I don't want 3rdparty libraries to pollute my logs. Lets say I want to see debug messages from my code,
+but I don't need to see debug messages from `requests` library. 
+How can I disable log messages from the Requests library?
+```python
+logging.basicConfig(level=logging.DEBUG)                 # enabling debug level for my code
+logging.getLogger("requests").setLevel(logging.WARNING)  # disabling info and debug for requests
+```
+
+
+Full example:
+
+```python
+import logging
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(level=logging.DEBUG,
+                    format="%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s")
+logging.getLogger("urllib3").setLevel(logging.WARNING)
+
+logger.info("Info message")
+logger.debug("Debug message")
+```
+
+## Best practices
 
 [Good logging practice in python](http://victorlin.me/posts/2012/08/26/good-logging-practice-in-python)
 

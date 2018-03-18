@@ -61,7 +61,8 @@ class: center, middle
 ```
 
 This is how the slide look like in browser:
-<img src="{filename}/2018/03/slide-35-15.png">
+
+<img src="{filename}/2018/03/slide-35-15.png" style="border: 1px solid black;">
 
 Well this example requires internet connection to download js and fonts, but you can put them in the same folder.
 

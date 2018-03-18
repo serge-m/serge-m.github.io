@@ -1,7 +1,7 @@
 Title: Presentaitons in browser
 Author: SergeM
 Date: 2018-03-18 15:28
-Slug: presentations in browser
+Slug: presentations-in-browser
 Tags: presentations,html,javascript
 
 
@@ -11,4 +11,4 @@ There are solution for making presentations on html and javascript:
 
 [remark](https://github.com/gnab/remark)
 
-Example presentations: [1](https://remarkjs.com/#1)
+Example presentations: [sample](https://remarkjs.com/#1), [mocking in python](https://saurabh-kumar.com/mocking/#1)

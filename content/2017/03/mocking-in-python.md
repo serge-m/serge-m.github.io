@@ -138,6 +138,31 @@ But:
 * [Python Mocking 101: Fake It Before You Make It](https://blog.fugue.co/2016-02-11-python-mocking-101.html)
 * [Using the Python mock library to fake regular functions during tests](http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/)
 
+## Mocking requests in python
+There is a library [requests-mock](https://pypi.python.org/pypi/requests-mock) that helps testing network interactions.
+
+Installation is easy: `pip install requests_mock`.
+
+
+### Usage example
+Lets imagine you have a function `get_data` that queries an external API.
+We want to check that the function throws an exception if page is not found (http code 404).
+
+```python
+import pytest
+import requests_mock
+
+
+def test_function_throws_an_exception_if_page_not_found():
+    with requests_mock.Mocker() as m:
+        m.post(url, text=error_text, status_code=404)
+        with pytest.raises(Exception):
+            get_data(url)
+
+```
+
+`m.post` mocks requests for the predefined url and returns status_code=404 and some text message. One can also specify returned JSON data.
+
 ## How to avoid mocking
 Python is <s>very</s> too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class `A` changes you don't notice that tests for a dependent class `B` are failing if you mock `A` in `test_B`.
 

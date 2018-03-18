@@ -26,6 +26,18 @@ pytest -m "not your_mark"
 That command will test everything that is not marked as "your_mark".
 
 
+## How to verify exception message using pytest
+One can use context manager `pytest.raises` to check if the exception has correct text inside. You have to check excinfo.value in the end.
+```python
+def test_exception_has_correct_message():
+    data = {"data": "something"}
+
+    with pytest.raises(Exception) as excinfo:
+        your_function(data)
+
+    assert 'Failed to establish a new connection' in str(excinfo.value)
+```
+
 
 
 ## Running pytests on Travis CI

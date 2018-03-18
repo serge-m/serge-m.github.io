@@ -20,6 +20,7 @@ How can I disable log messages from the Requests library?
 ```python
 logging.basicConfig(level=logging.DEBUG)                 # enabling debug level for my code
 logging.getLogger("requests").setLevel(logging.WARNING)  # disabling info and debug for requests
+logging.getLogger("urllib3").setLevel(logging.WARNING)   # urllib3 is used in requests. disable too.
 ```
 
 

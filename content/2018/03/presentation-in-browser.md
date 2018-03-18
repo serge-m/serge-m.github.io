@@ -60,6 +60,9 @@ class: center, middle
 </html>
 ```
 
+This is how the slide look like in browser:
+<img src="{filename}/2018/03/slide-35-15.png">
+
 Well this example requires internet connection to download js and fonts, but you can put them in the same folder.
 
 Example presentations: [sample](https://remarkjs.com/#1), [mocking in python](https://saurabh-kumar.com/mocking/#1)

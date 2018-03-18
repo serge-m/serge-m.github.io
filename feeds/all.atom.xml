@@ -1662,6 +1662,25 @@ There you can do virtually the same as in Java:&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://blog.fugue.co/2016-02-11-python-mocking-101.html"&gt;Python Mocking 101: Fake It Before You Make It&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://fgimian.github.io/blog/2014/04/10/using-the-python-mock-library-to-fake-regular-functions-during-tests/"&gt;Using the Python mock library to fake regular functions during tests&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;Mocking requests in python&lt;/h2&gt;
+&lt;p&gt;There is a library &lt;a href="https://pypi.python.org/pypi/requests-mock"&gt;requests-mock&lt;/a&gt; that helps testing network interactions.&lt;/p&gt;
+&lt;p&gt;Installation is easy: &lt;code&gt;pip install requests_mock&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Usage example&lt;/h3&gt;
+&lt;p&gt;Lets imagine you have a function &lt;code&gt;get_data&lt;/code&gt; that queries an external API.
+We want to check that the function throws an exception if page is not found (http code 404).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pytest&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;requests_mock&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_function_throws_an_exception_if_page_not_found&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;requests_mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Mocker&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;error_text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;status_code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;pytest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;raises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="n"&gt;get_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;m.post&lt;/code&gt; mocks requests for the predefined url and returns status_code=404 and some text message. One can also specify returned JSON data.&lt;/p&gt;
 &lt;h2&gt;How to avoid mocking&lt;/h2&gt;
 &lt;p&gt;Python is &lt;s&gt;very&lt;/s&gt; too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class &lt;code&gt;A&lt;/code&gt; changes you don't notice that tests for a dependent class &lt;code&gt;B&lt;/code&gt; are failing if you mock &lt;code&gt;A&lt;/code&gt; in &lt;code&gt;test_B&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Possible way to avoid it is to pass a factory to the dependent class.&lt;/p&gt;

@@ -367,7 +367,17 @@ Restart=always
 ExecStartPre=-/usr/bin/docker stop %n                                                                                                                                                                                                         
 ExecStartPre=-/usr/bin …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</guid><category>linux</category><category>useful</category></item><item><title>OpenVPN server in cloud using docker</title><link>https://serge-m.github.io/openvpn-on-vps-using-docker.html</link><description>&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 07 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</guid><category>linux</category><category>docker</category><category>vpn</category></item><item><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link>https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html</link><description>&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Connection via OPenVPN is slow for https&lt;/h2&gt;
+&lt;p&gt;Try the following &lt;a href="https://forums.openvpn.net/viewtopic.php?t=21857"&gt;advice&lt;/a&gt;
+The udp connection is perfect with these parameters (in client config):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mssfix 1200
+tun-mtu 1200
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;DNS doesn't work through VPN&lt;/h2&gt;
+&lt;p&gt;Symptoms: Openvpn connects …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 07 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</guid><category>linux</category><category>docker</category><category>vpn</category></item><item><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link>https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html</link><description>&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 05 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</guid></item><item><title>Check server fingerprint for scaleway</title><link>https://serge-m.github.io/check-server-fingerpring-for-scaleway.html</link><description>&lt;p&gt;Run&lt;/p&gt;

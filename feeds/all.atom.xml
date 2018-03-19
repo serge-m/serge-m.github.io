@@ -2261,9 +2261,48 @@ WantedBy=multi-user.target
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts"&gt;[1]&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;links:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Connection via OPenVPN is slow for https&lt;/h2&gt;
+&lt;p&gt;Try the following &lt;a href="https://forums.openvpn.net/viewtopic.php?t=21857"&gt;advice&lt;/a&gt;
+The udp connection is perfect with these parameters (in client config):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mssfix 1200
+tun-mtu 1200
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;DNS doesn't work through VPN&lt;/h2&gt;
+&lt;p&gt;Symptoms: Openvpn connects …&lt;/p&gt;</summary><content type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+&lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Connection via OPenVPN is slow for https&lt;/h2&gt;
+&lt;p&gt;Try the following &lt;a href="https://forums.openvpn.net/viewtopic.php?t=21857"&gt;advice&lt;/a&gt;
+The udp connection is perfect with these parameters (in client config):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mssfix 1200
+tun-mtu 1200
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;DNS doesn't work through VPN&lt;/h2&gt;
+&lt;p&gt;Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping &lt;code&gt;google.com&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://bugs.launchpad.net/ubuntu/+source/openvpn/+bug/1211110"&gt;Solution&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;This is a bug that's fixed in upstream NetworkManager. That said, the various GUI tools which write the NetworkManager config files haven't been updated to ensure that DNS leaks are prevented when using vpn connections.&lt;/p&gt;
+&lt;p&gt;To prevent system dns from appearing and being used in &lt;code&gt;/etc/resolv.conf&lt;/code&gt; when using a VPN, edit your vpn configuration (i.e. the file in /etc/NetworkManager/system-connections/&lt;vpn name&gt;) so it's something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[ipv4]&lt;/span&gt;
+&lt;span class="na"&gt;dns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;lt;vpn dns server ip address&amp;gt;;&lt;/span&gt;
+&lt;span class="na"&gt;ignore-auto-dns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;auto&lt;/span&gt;
+&lt;span class="na"&gt;dns-priority&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;-1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;the negative dns-priority means only this dns server will be used.
+Then reload the config file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo nmcli c reload &amp;lt;vpn name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and toggle the vpn.&lt;/p&gt;
+&lt;p&gt;/etc/resolv.conf should now only include the one dns ip address defined in the config file.&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.

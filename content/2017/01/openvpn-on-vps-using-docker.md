@@ -143,3 +143,51 @@ key: /server/pki/private/server.key
 
 ```
 
+Copy `server.req` to CA.
+
+#### On CA
+Import:
+```
+root@8bb29470d5c0:/easyrsa# ./easyrsa import-req /ca/pki/import/server.req vpn-server
+
+The request has been successfully imported with a short name of: vpn-server
+You may now use this name to perform signing operations on this request.
+
+```
+Sign:
+```
+root@8bb29470d5c0:/easyrsa# ./easyrsa sign-req server vpn-server
+
+
+You are about to sign the following certificate.
+Please check over the details shown below for accuracy. Note that this request
+has not been cryptographically verified. Please be sure it came from a trusted
+source or that you have verified the request checksum with the sender.
+
+Request subject, to be signed as a server certificate for 3650 days:
+
+subject=
+    commonName                = vpn-server
+
+
+Type the word 'yes' to continue, or any other input to abort.
+  Confirm request details: yes
+Using configuration from ./openssl-easyrsa.cnf
+Enter pass phrase for /ca/pki/private/ca.key:
+Can't open /ca/pki/index.txt.attr for reading, No such file or directory
+139728030523840:error:02001002:system library:fopen:No such file or directory:../crypto/bio/bss_file.c:74:fopen('/ca/pki/index.txt.attr','r')
+139728030523840:error:2006D080:BIO routines:BIO_new_file:no such file:../crypto/bio/bss_file.c:81:
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'vpn-server'
+Certificate is to be certified until Apr 11 22:52:57 2028 GMT (3650 days)
+
+Write out database with 1 new entries
+Data Base Updated
+
+Certificate created at: /ca/pki/issued/vpn-server.crt
+```
+
+#### On server
+Copy `ca.crt`, `crl.pem`,  `vpn-server.crt` in  `/etc/openvpn`

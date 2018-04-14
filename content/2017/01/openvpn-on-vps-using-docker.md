@@ -212,4 +212,4 @@ Copy in `/etc/openvpn` on server:
 * from CA: `ca.crt`, `crl.pem`,  `vpn-server.crt` in  
 * from server: `server.key` (private key), `dh.pem`, `ta.key`
 * `openssl.cnf`
-* `openvpn.cnf`
+* `server.conf`

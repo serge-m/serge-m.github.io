@@ -233,6 +233,55 @@ Keypair and certificate request completed. Your files are:
 req: /server/pki/reqs/server.req
 key: /server/pki/private/server.key
 </pre></div>
+
+
+<p>Copy <code>server.req</code> to CA.</p>
+<h4>On CA</h4>
+<p>Import:</p>
+<div class="highlight"><pre><span></span><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">import</span><span class="o">-</span><span class="n">req</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">req</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+
+<span class="n">The</span> <span class="n">request</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">imported</span> <span class="n">with</span> <span class="n">a</span> <span class="kt">short</span> <span class="n">name</span> <span class="nl">of</span><span class="p">:</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+<span class="n">You</span> <span class="n">may</span> <span class="n">now</span> <span class="n">use</span> <span class="n">this</span> <span class="n">name</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">signing</span> <span class="n">operations</span> <span class="n">on</span> <span class="n">this</span> <span class="n">request</span><span class="p">.</span>
+</pre></div>
+
+
+<p>Sign:</p>
+<div class="highlight"><pre><span></span><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">sign</span><span class="o">-</span><span class="n">req</span> <span class="n">server</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+
+
+<span class="n">You</span> <span class="n">are</span> <span class="n">about</span> <span class="n">to</span> <span class="n">sign</span> <span class="n">the</span> <span class="n">following</span> <span class="n">certificate</span><span class="p">.</span>
+<span class="n">Please</span> <span class="n">check</span> <span class="n">over</span> <span class="n">the</span> <span class="n">details</span> <span class="n">shown</span> <span class="n">below</span> <span class="k">for</span> <span class="n">accuracy</span><span class="p">.</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">this</span> <span class="n">request</span>
+<span class="n">has</span> <span class="n">not</span> <span class="n">been</span> <span class="n">cryptographically</span> <span class="n">verified</span><span class="p">.</span> <span class="n">Please</span> <span class="n">be</span> <span class="n">sure</span> <span class="n">it</span> <span class="n">came</span> <span class="n">from</span> <span class="n">a</span> <span class="n">trusted</span>
+<span class="n">source</span> <span class="n">or</span> <span class="n">that</span> <span class="n">you</span> <span class="n">have</span> <span class="n">verified</span> <span class="n">the</span> <span class="n">request</span> <span class="n">checksum</span> <span class="n">with</span> <span class="n">the</span> <span class="n">sender</span><span class="p">.</span>
+
+<span class="n">Request</span> <span class="n">subject</span><span class="p">,</span> <span class="n">to</span> <span class="n">be</span> <span class="kt">signed</span> <span class="n">as</span> <span class="n">a</span> <span class="n">server</span> <span class="n">certificate</span> <span class="k">for</span> <span class="mi">3650</span> <span class="nl">days</span><span class="p">:</span>
+
+<span class="n">subject</span><span class="o">=</span>
+    <span class="n">commonName</span>                <span class="o">=</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+
+
+<span class="n">Type</span> <span class="n">the</span> <span class="n">word</span> <span class="err">&#39;</span><span class="n">yes</span><span class="err">&#39;</span> <span class="n">to</span> <span class="k">continue</span><span class="p">,</span> <span class="n">or</span> <span class="n">any</span> <span class="n">other</span> <span class="n">input</span> <span class="n">to</span> <span class="n">abort</span><span class="p">.</span>
+  <span class="n">Confirm</span> <span class="n">request</span> <span class="nl">details</span><span class="p">:</span> <span class="n">yes</span>
+<span class="n">Using</span> <span class="n">configuration</span> <span class="n">from</span> <span class="p">.</span><span class="o">/</span><span class="n">openssl</span><span class="o">-</span><span class="n">easyrsa</span><span class="p">.</span><span class="n">cnf</span>
+<span class="n">Enter</span> <span class="n">pass</span> <span class="n">phrase</span> <span class="k">for</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">ca</span><span class="p">.</span><span class="nl">key</span><span class="p">:</span>
+<span class="n">Can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">open</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">attr</span> <span class="k">for</span> <span class="n">reading</span><span class="p">,</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+<span class="mi">139728030523840</span><span class="o">:</span><span class="nl">error</span><span class="p">:</span><span class="mo">02001002</span><span class="o">:</span><span class="n">system</span> <span class="nl">library</span><span class="p">:</span><span class="nl">fopen</span><span class="p">:</span><span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="nl">directory</span><span class="p">:..</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">bio</span><span class="o">/</span><span class="n">bss_file</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">74</span><span class="o">:</span><span class="n">fopen</span><span class="p">(</span><span class="err">&#39;</span><span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">txt</span><span class="p">.</span><span class="n">attr</span><span class="sc">&#39;,&#39;</span><span class="n">r</span><span class="err">&#39;</span><span class="p">)</span>
+<span class="mi">139728030523840</span><span class="o">:</span><span class="nl">error</span><span class="p">:</span><span class="mi">2006</span><span class="nl">D080</span><span class="p">:</span><span class="n">BIO</span> <span class="nl">routines</span><span class="p">:</span><span class="nl">BIO_new_file</span><span class="p">:</span><span class="n">no</span> <span class="n">such</span> <span class="nl">file</span><span class="p">:..</span><span class="o">/</span><span class="n">crypto</span><span class="o">/</span><span class="n">bio</span><span class="o">/</span><span class="n">bss_file</span><span class="p">.</span><span class="nl">c</span><span class="p">:</span><span class="mi">81</span><span class="o">:</span>
+<span class="n">Check</span> <span class="n">that</span> <span class="n">the</span> <span class="n">request</span> <span class="n">matches</span> <span class="n">the</span> <span class="n">signature</span>
+<span class="n">Signature</span> <span class="n">ok</span>
+<span class="n">The</span> <span class="n">Subject</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">Distinguished</span> <span class="n">Name</span> <span class="n">is</span> <span class="n">as</span> <span class="n">follows</span>
+<span class="nl">commonName</span>            <span class="p">:</span><span class="n">ASN</span><span class="mf">.1</span> <span class="mi">12</span><span class="o">:</span><span class="err">&#39;</span><span class="n">vpn</span><span class="o">-</span><span class="n">server</span><span class="err">&#39;</span>
+<span class="n">Certificate</span> <span class="n">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">certified</span> <span class="n">until</span> <span class="n">Apr</span> <span class="mi">11</span> <span class="mi">22</span><span class="o">:</span><span class="mi">52</span><span class="o">:</span><span class="mi">57</span> <span class="mi">2028</span> <span class="n">GMT</span> <span class="p">(</span><span class="mi">3650</span> <span class="n">days</span><span class="p">)</span>
+
+<span class="n">Write</span> <span class="k">out</span> <span class="n">database</span> <span class="n">with</span> <span class="mi">1</span> <span class="n">new</span> <span class="n">entries</span>
+<span class="n">Data</span> <span class="n">Base</span> <span class="n">Updated</span>
+
+<span class="n">Certificate</span> <span class="n">created</span> <span class="nl">at</span><span class="p">:</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">issued</span><span class="o">/</span><span class="n">vpn</span><span class="o">-</span><span class="n">server</span><span class="p">.</span><span class="n">crt</span>
+</pre></div>
+
+
+<h4>On server</h4>
+<p>Copy <code>ca.crt</code>, <code>crl.pem</code>,  <code>vpn-server.crt</code> in  <code>/etc/openvpn</code></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -323,7 +372,7 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+      <a href="https://serge-m.github.io/tag/api.html">API</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -341,7 +390,19 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -350,10 +411,16 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -362,7 +429,10 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/en.html">en</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -376,9 +446,6 @@ key: /server/pki/private/server.key
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
@@ -387,9 +454,6 @@ key: /server/pki/private/server.key
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -415,9 +479,6 @@ key: /server/pki/private/server.key
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -440,19 +501,25 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/management.html">management</a>
+      <a href="https://serge-m.github.io/tag/make.html">make</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matting.html">matting</a>
@@ -461,13 +528,7 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
@@ -476,10 +537,16 @@ key: /server/pki/private/server.key
       <a href="https://serge-m.github.io/tag/mint.html">mint</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -496,20 +563,14 @@ key: /server/pki/private/server.key
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -532,26 +593,26 @@ key: /server/pki/private/server.key
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
@@ -565,29 +626,20 @@ key: /server/pki/private/server.key
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tests.html">tests</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -603,9 +655,6 @@ key: /server/pki/private/server.key
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

@@ -46,3 +46,10 @@ sudo nmcli c reload <vpn name>
 and toggle the vpn.
 
 /etc/resolv.conf should now only include the one dns ip address defined in the config file.
+
+
+
+### VPS servers to try
+* https://billing.virmach.com/cart.php?gid=1
+* https://www.vultr.com/pricing/
+

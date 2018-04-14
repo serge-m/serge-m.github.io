@@ -2348,7 +2348,20 @@ Your newly created PKI dir is: /easyrsa/pki
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Copy &lt;code&gt;ca.crt&lt;/code&gt;.&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+&lt;p&gt;Copy &lt;code&gt;ca.crt&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@8bb29470d5c0:/easyrsa# ./easyrsa gen-crl
+Using configuration from ./openssl-easyrsa.cnf
+Enter pass phrase &lt;span class="k"&gt;for&lt;/span&gt; /ca/pki/private/ca.key:
+Can&lt;span class="s1"&gt;&amp;#39;t open /ca/pki/index.txt.attr for reading, No such file or directory&lt;/span&gt;
+&lt;span class="s1"&gt;139922256114112:error:02001002:system library:fopen:No such file or directory:../crypto/bio/bss_file.c:74:fopen(&amp;#39;&lt;/span&gt;/ca/pki/index.txt.attr&lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;r&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="m"&gt;139922256114112&lt;/span&gt;:error:2006D080:BIO routines:BIO_new_file:no such file:../crypto/bio/bss_file.c:81:
+
+An updated CRL has been created.
+CRL file: /ca/pki/crl.pem
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Copy &lt;code&gt;crl.pem&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.

@@ -64,7 +64,7 @@ and toggle the vpn.
 Download easyrsa for ca:
 [github](https://github.com/OpenVPN/easy-rsa/releases)
 
-Unpack and run:
+#### On CA
 ```sh
 root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
 
@@ -114,4 +114,32 @@ CRL file: /ca/pki/crl.pem
 
 Copy `crl.pem`
 
+
+#### On server
+```
+root@df73a69e45da:/easyrsa# ./easyrsa init-pki
+
+init-pki complete; you may now create a CA or requests.
+Your newly created PKI dir is: /server/pki
+
+root@df73a69e45da:/easyrsa# ./easyrsa gen-req server nopass
+Generating a 2048 bit RSA private key
+.+++
+......................................+++
+writing new private key to '/server/pki/private/server.key.75fVPXwcOd'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Common Name (eg: your user, host, or server name) [server]:vpn-server
+
+Keypair and certificate request completed. Your files are:
+req: /server/pki/reqs/server.req
+key: /server/pki/private/server.key
+
+```
 

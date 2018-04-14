@@ -2,7 +2,7 @@ Title: OpenVPN server in cloud using docker
 Author: SergeM
 Date: 2017-01-07 07:10:00
 Slug: openvpn-on-vps-using-docker
-Tags: linux,docker,vpn
+Tags: linux,docker,vpn,openvpn
 
 
 links:
@@ -52,4 +52,11 @@ and toggle the vpn.
 ### VPS servers to try
 * https://billing.virmach.com/cart.php?gid=1
 * https://www.vultr.com/pricing/
+
+
+### OpenVPN setup (in Russian)
+* [Руководство по установке и настройке OpenVPN](https://habrahabr.ru/post/233971/) -- очень подробно.
+* [PPTP vs L2TP vs OpenVPN vs SSTP](https://habrahabr.ru/post/191874/)
+* 
+
 

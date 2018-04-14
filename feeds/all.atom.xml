@@ -2316,7 +2316,7 @@ Then reload the config file:&lt;/p&gt;
 &lt;h2&gt;OpenVPN setup notes&lt;/h2&gt;
 &lt;p&gt;Download easyrsa for ca:
 &lt;a href="https://github.com/OpenVPN/easy-rsa/releases"&gt;github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Unpack and run:&lt;/p&gt;
+&lt;h4&gt;On CA&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
 
 init-pki complete&lt;span class="p"&gt;;&lt;/span&gt; you may now create a CA or requests.
@@ -2361,7 +2361,32 @@ CRL file: /ca/pki/crl.pem
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Copy &lt;code&gt;crl.pem&lt;/code&gt;&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+&lt;p&gt;Copy &lt;code&gt;crl.pem&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;On server&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki
+
+init-pki complete; you may now create a CA or requests.
+Your newly created PKI dir is: /server/pki
+
+root@df73a69e45da:/easyrsa# ./easyrsa gen-req server nopass
+Generating a 2048 bit RSA private key
+.+++
+......................................+++
+writing new private key to &amp;#39;/server/pki/private/server.key.75fVPXwcOd&amp;#39;
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter &amp;#39;.&amp;#39;, the field will be left blank.
+-----
+Common Name (eg: your user, host, or server name) [server]:vpn-server
+
+Keypair and certificate request completed. Your files are:
+req: /server/pki/reqs/server.req
+key: /server/pki/private/server.key
+&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.

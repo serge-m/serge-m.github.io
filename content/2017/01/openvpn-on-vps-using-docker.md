@@ -99,4 +99,19 @@ Your new CA certificate file for publishing is at:
 
 Copy `ca.crt`.
 
+```shell
+root@8bb29470d5c0:/easyrsa# ./easyrsa gen-crl
+Using configuration from ./openssl-easyrsa.cnf
+Enter pass phrase for /ca/pki/private/ca.key:
+Can't open /ca/pki/index.txt.attr for reading, No such file or directory
+139922256114112:error:02001002:system library:fopen:No such file or directory:../crypto/bio/bss_file.c:74:fopen('/ca/pki/index.txt.attr','r')
+139922256114112:error:2006D080:BIO routines:BIO_new_file:no such file:../crypto/bio/bss_file.c:81:
+
+An updated CRL has been created.
+CRL file: /ca/pki/crl.pem
+
+```
+
+Copy `crl.pem`
+
 

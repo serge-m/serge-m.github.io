@@ -55,8 +55,46 @@ and toggle the vpn.
 
 
 ### OpenVPN setup (in Russian)
-* [Руководство по установке и настройке OpenVPN](https://habrahabr.ru/post/233971/) -- очень подробно.
+* [Руководство по установке и настройке OpenVPN](https://habrahabr.ru/post/233971/) -- очень подробно. Комманды кратко - ниже.
 * [PPTP vs L2TP vs OpenVPN vs SSTP](https://habrahabr.ru/post/191874/)
-* 
+
+
+## OpenVPN setup notes
+
+Download easyrsa for ca:
+[github](https://github.com/OpenVPN/easy-rsa/releases)
+
+Unpack and run:
+```sh
+root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
+
+init-pki complete; you may now create a CA or requests.
+Your newly created PKI dir is: /easyrsa/pki
+
+```
+build-ca:
+```
+root@a1aaf3e31e3a:/easyrsa# ./easyrsa build-ca
+Generating a 2048 bit RSA private key
+........................................................................................................................................................+++
+.....................+++
+writing new private key to '/easyrsa/pki/private/ca.key.jZ7M1ZpSAh'
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Common Name (eg: your user, host, or server name) [Easy-RSA CA]:test-ca
+
+CA creation complete and you may now import and sign cert requests.
+Your new CA certificate file for publishing is at:
+/easyrsa/pki/ca.crt
+
+```
 
 

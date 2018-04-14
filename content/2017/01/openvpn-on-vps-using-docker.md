@@ -190,4 +190,26 @@ Certificate created at: /ca/pki/issued/vpn-server.crt
 ```
 
 #### On server
-Copy `ca.crt`, `crl.pem`,  `vpn-server.crt` in  `/etc/openvpn`
+
+
+```
+root@df73a69e45da:/easyrsa# ./easyrsa gen-dh
+Generating DH parameters, 2048 bit long safe prime, generator 2
+This is going to take a long time
+.+...............................................................................................................................
+...
+......................................................................................................++*++*
+
+DH parameters of size 2048 created at /server/pki/dh.pem
+
+```
+
+```
+root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key
+```
+
+Copy in `/etc/openvpn` on server:
+* from CA: `ca.crt`, `crl.pem`,  `vpn-server.crt` in  
+* from server: `server.key` (private key), `dh.pem`, `ta.key`
+* `openssl.cnf`
+* `openvpn.cnf`

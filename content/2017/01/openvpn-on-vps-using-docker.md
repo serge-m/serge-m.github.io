@@ -97,4 +97,6 @@ Your new CA certificate file for publishing is at:
 
 ```
 
+Copy `ca.crt`.
+
 

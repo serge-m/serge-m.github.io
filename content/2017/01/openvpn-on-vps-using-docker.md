@@ -57,6 +57,7 @@ and toggle the vpn.
 ### OpenVPN setup (in Russian)
 * [Руководство по установке и настройке OpenVPN](https://habrahabr.ru/post/233971/) -- очень подробно. Комманды кратко - ниже.
 * [PPTP vs L2TP vs OpenVPN vs SSTP](https://habrahabr.ru/post/191874/)
+* https://m.habrahabr.ru/post/216295/
 
 
 ## OpenVPN setup notes

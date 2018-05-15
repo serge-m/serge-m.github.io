@@ -65,7 +65,9 @@ and toggle the vpn.
 Download easyrsa for ca:
 [github](https://github.com/OpenVPN/easy-rsa/releases)
 
-#### On CA
+### Set up CA (certification authority)
+It is better to use a separate computer to host CA.
+
 ```sh
 root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
 
@@ -117,6 +119,7 @@ Copy `crl.pem`
 
 
 #### On server
+We have to initialize PKI (private key infrastructure) here as well, then we create a request to CA.
 ```
 root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 
@@ -157,7 +160,7 @@ The request has been successfully imported with a short name of: vpn-server
 You may now use this name to perform signing operations on this request.
 
 ```
-Sign:
+Sign `vpn-server` with type `server`:
 ```
 root@8bb29470d5c0:/easyrsa# ./easyrsa sign-req server vpn-server
 
@@ -223,4 +226,11 @@ On the client we want to have a password for a key:
 ```
 root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 
+```
+
+Then copy request to CA, import.
+
+Signing request for a client:
+```
+$ ./easy-rsa sign-req client client1
 ```

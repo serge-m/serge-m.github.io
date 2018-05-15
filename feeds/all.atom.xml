@@ -2317,7 +2317,8 @@ Then reload the config file:&lt;/p&gt;
 &lt;h2&gt;OpenVPN setup notes&lt;/h2&gt;
 &lt;p&gt;Download easyrsa for ca:
 &lt;a href="https://github.com/OpenVPN/easy-rsa/releases"&gt;github&lt;/a&gt;&lt;/p&gt;
-&lt;h4&gt;On CA&lt;/h4&gt;
+&lt;h3&gt;Set up CA (certification authority)&lt;/h3&gt;
+&lt;p&gt;It is better to use a separate computer to host CA.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
 
 init-pki complete&lt;span class="p"&gt;;&lt;/span&gt; you may now create a CA or requests.
@@ -2364,6 +2365,7 @@ CRL file: /ca/pki/crl.pem
 
 &lt;p&gt;Copy &lt;code&gt;crl.pem&lt;/code&gt;&lt;/p&gt;
 &lt;h4&gt;On server&lt;/h4&gt;
+&lt;p&gt;We have to initialize PKI (private key infrastructure) here as well, then we create a request to CA.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 
 init-pki complete; you may now create a CA or requests.
@@ -2402,7 +2404,7 @@ key: /server/pki/private/server.key
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Sign:&lt;/p&gt;
+&lt;p&gt;Sign &lt;code&gt;vpn-server&lt;/code&gt; with type &lt;code&gt;server&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="mi"&gt;@8&lt;/span&gt;&lt;span class="nl"&gt;bb29470d5c0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;easyrsa&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;easyrsa&lt;/span&gt; &lt;span class="n"&gt;sign&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;req&lt;/span&gt; &lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="n"&gt;vpn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;
 
 
@@ -2462,6 +2464,12 @@ DH parameters of size 2048 created at /server/pki/dh.pem
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then copy request to CA, import.&lt;/p&gt;
+&lt;p&gt;Signing request for a client:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./easy-rsa sign-req client client1
 &lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;

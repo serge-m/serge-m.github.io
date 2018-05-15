@@ -122,7 +122,9 @@ root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 
 init-pki complete; you may now create a CA or requests.
 Your newly created PKI dir is: /server/pki
+```
 
+```
 root@df73a69e45da:/easyrsa# ./easyrsa gen-req server nopass
 Generating a 2048 bit RSA private key
 .+++
@@ -214,3 +216,11 @@ Copy in `/etc/openvpn` on server:
 * from server: `server.key` (private key), `dh.pem`, `ta.key`
 * `openssl.cnf`
 * `server.conf`
+
+
+#### On client 
+On the client we want to have a password for a key:
+```
+root@df73a69e45da:/easyrsa# ./easyrsa init-pki
+root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 
+```

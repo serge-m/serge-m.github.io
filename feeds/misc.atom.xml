@@ -2469,8 +2469,92 @@ mkdir -p /var/log/openvpn/
 &lt;p&gt;Copy in &lt;code&gt;/etc/openvpn&lt;/code&gt; on server:
 &lt;em&gt; from CA: &lt;code&gt;ca.crt&lt;/code&gt;, &lt;code&gt;crl.pem&lt;/code&gt;,  &lt;code&gt;vpn-server.crt&lt;/code&gt; in&lt;br&gt;
 &lt;/em&gt; from server: &lt;code&gt;server.key&lt;/code&gt; (private key), &lt;code&gt;dh.pem&lt;/code&gt;, &lt;code&gt;ta.key&lt;/code&gt;
-&lt;em&gt; &lt;code&gt;openssl.cnf&lt;/code&gt;
-&lt;/em&gt; &lt;code&gt;server.conf&lt;/code&gt;&lt;/p&gt;
+&lt;em&gt; &lt;code&gt;openssl.cnf&lt;/code&gt;:
+&lt;details&gt;
+    &lt;summary&gt; sample contents &lt;/summary&gt;
+&lt;pre&gt;
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+dir = /etc/openvpn
+crl_dir = $dir
+database = $dir/index.txt
+new_certs_dir = $dir
+certificate = $dir/ca.crt
+serial = $dir
+crl = $dir/crl.pem
+private_key = $dir/server.key
+RANDFILE = $dir/.rand
+default_days = 3650
+default_crl_days = 365
+default_md = md5
+unique_subject = yes
+policy = policy_any
+x509_extensions = user_extensions
+[ policy_any ]
+organizationName = match
+organizationalUnitName = optional
+commonName = supplied
+[ req ]
+default_bits = 2048
+default_keyfile = privkey.pem
+distinguished_name = req_distinguished_name
+x509_extensions = CA_extensions
+[ req_distinguished_name ]
+organizationName = Organization Name (must match CA)
+organizationName_default = Company
+organizationalUnitName = Location Name
+commonName = Common User or Org Name
+commonName_max = 64
+[ user_extensions ]
+basicConstraints = CA:FALSE
+[ CA_extensions ]
+basicConstraints = CA:TRUE
+default_days = 3650
+[ server ]
+basicConstraints = CA:FALSE
+nsCertType = server
+&lt;/pre&gt;
+&lt;/details&gt;
+&lt;/em&gt; &lt;code&gt;server.conf&lt;/code&gt;
+&lt;details&gt;
+    &lt;summary&gt;Sample content of server.conf for openvpn server&lt;/summary&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;pre&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;port 1194
+proto udp
+dev tun
+user openvpn
+group openvpn
+cd /etc/openvpn
+persist-key
+persist-tun
+tls-server
+tls-timeout 120
+dh /etc/openvpn/dh.pem
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/vpn-server.crt
+key /etc/openvpn/server.key
+crl-verify /etc/openvpn/crl.pem
+tls-auth /etc/openvpn/ta.key 0
+server 10.15.0.0 255.255.255.0
+client-config-dir /etc/openvpn/ccd
+client-to-client
+topology subnet
+max-clients 5
+push "dhcp-option DNS 10.15.0.1"
+route 10.15.0.0 255.255.255.0
+comp-lzo
+keepalive 10 120
+status /var/log/openvpn/openvpn-status.log 1
+status-version 3
+log-append /var/log/openvpn/openvpn-server.log
+verb 3
+mute 20
+&lt;/pre&gt;
+&lt;/details&gt;&lt;/p&gt;
 &lt;h4&gt;On client&lt;/h4&gt;
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki

@@ -2455,6 +2455,17 @@ DH parameters of size 2048 created at /server/pki/dh.pem
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;Create missing directories:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir /etc/openvpn/ccd
+mkdir -p /var/log/openvpn/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create non-priviledged user &lt;code&gt;openvpn&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Copy in &lt;code&gt;/etc/openvpn&lt;/code&gt; on server:
 &lt;em&gt; from CA: &lt;code&gt;ca.crt&lt;/code&gt;, &lt;code&gt;crl.pem&lt;/code&gt;,  &lt;code&gt;vpn-server.crt&lt;/code&gt; in&lt;br&gt;
 &lt;/em&gt; from server: &lt;code&gt;server.key&lt;/code&gt; (private key), &lt;code&gt;dh.pem&lt;/code&gt;, &lt;code&gt;ta.key&lt;/code&gt;

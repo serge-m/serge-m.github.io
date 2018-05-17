@@ -195,9 +195,9 @@ Data Base Updated
 Certificate created at: /ca/pki/issued/vpn-server.crt
 ```
 
-#### On server
+### Launcing OpenVPN server
 
-
+#### Configuration
 ```
 root@df73a69e45da:/easyrsa# ./easyrsa gen-dh
 Generating DH parameters, 2048 bit long safe prime, generator 2
@@ -331,7 +331,7 @@ To enable openvpn service to run all the server configurations from /etc/openvpn
 sudo systemctl daemon-reload
 ```
 
-Run openvpn service:
+#### Launching service
 ```
 sudo service openvpn restart
 ```
@@ -342,7 +342,7 @@ If it doesn't start debug configuration with manual run:
 openvpn /etc/openvpn/server.conf
 ```
 
-#### On client 
+### Launching client 
 On the client we want to have a password for a key:
 ```
 root@df73a69e45da:/easyrsa# ./easyrsa init-pki

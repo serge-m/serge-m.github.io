@@ -2466,11 +2466,23 @@ mkdir -p /var/log/openvpn/
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Copy in &lt;code&gt;/etc/openvpn&lt;/code&gt; on server:
-&lt;em&gt; from CA: &lt;code&gt;ca.crt&lt;/code&gt;, &lt;code&gt;crl.pem&lt;/code&gt;,  &lt;code&gt;vpn-server.crt&lt;/code&gt; in&lt;br&gt;
-&lt;/em&gt; from server: &lt;code&gt;server.key&lt;/code&gt; (private key), &lt;code&gt;dh.pem&lt;/code&gt;, &lt;code&gt;ta.key&lt;/code&gt;
-&lt;em&gt; &lt;code&gt;openssl.cnf&lt;/code&gt;:
-&lt;details&gt;
+&lt;p&gt;Copy to &lt;code&gt;/etc/openvpn&lt;/code&gt; the following files:
+* from CA: 
+  * &lt;code&gt;ca.crt&lt;/code&gt;
+  * &lt;code&gt;crl.pem&lt;/code&gt;
+  * &lt;code&gt;vpn-server.crt&lt;/code&gt; &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;from server: &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;server.key&lt;/code&gt; (private key),&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dh.pem&lt;/code&gt;, &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ta.key&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;openssl.cnf&lt;/code&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;details&gt;
     &lt;summary&gt; sample contents &lt;/summary&gt;
 &lt;pre&gt;
 [ ca ]
@@ -2515,15 +2527,14 @@ default_days = 3650
 basicConstraints = CA:FALSE
 nsCertType = server
 &lt;/pre&gt;
-&lt;/details&gt;
-&lt;/em&gt; &lt;code&gt;server.conf&lt;/code&gt;
+&lt;/details&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;server.conf&lt;/code&gt;
 &lt;details&gt;
     &lt;summary&gt;Sample content of server.conf for openvpn server&lt;/summary&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;pre&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;port 1194
+&lt;p&gt;&lt;pre&gt;
+port 1194
 proto udp
 dev tun
 user openvpn
@@ -2555,6 +2566,8 @@ verb 3
 mute 20
 &lt;/pre&gt;
 &lt;/details&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;On client&lt;/h4&gt;
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki

@@ -2479,10 +2479,8 @@ mkdir -p /var/log/openvpn/
 &lt;p&gt;&lt;code&gt;ta.key&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;openssl.cnf&lt;/code&gt;:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;details&gt;
+&lt;p&gt;&lt;code&gt;openssl.cnf&lt;/code&gt;:
+&lt;details&gt;
     &lt;summary&gt; sample contents &lt;/summary&gt;
 &lt;pre&gt;
 [ ca ]
@@ -2528,13 +2526,18 @@ basicConstraints = CA:FALSE
 nsCertType = server
 &lt;/pre&gt;
 &lt;/details&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;server.conf&lt;/code&gt;
-&lt;details&gt;
+&lt;p&gt;&lt;code&gt;server.conf&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;details&gt;
     &lt;summary&gt;Sample content of server.conf for openvpn server&lt;/summary&gt;&lt;/p&gt;
-&lt;p&gt;&lt;pre&gt;
-port 1194
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;pre&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;port 1194
 proto udp
 dev tun
 user openvpn
@@ -2566,8 +2569,6 @@ verb 3
 mute 20
 &lt;/pre&gt;
 &lt;/details&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h4&gt;On client&lt;/h4&gt;
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki

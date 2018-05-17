@@ -237,7 +237,7 @@ Copy to `/etc/openvpn` the following files:
   * `ta.key`
 
 * `openssl.cnf`:
-  <details>
+<details>
     <summary> sample contents </summary>
 <pre>
 [ ca ]
@@ -285,7 +285,8 @@ nsCertType = server
 </details>
 
 * `server.conf`
-  <details>
+
+<details>
     <summary>Sample content of server.conf for openvpn server</summary>
     
     <pre>

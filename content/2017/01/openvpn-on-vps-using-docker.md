@@ -225,10 +225,19 @@ Create non-priviledged user `openvpn`:
 adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn
 ```
 
-Copy in `/etc/openvpn` on server:
-* from CA: `ca.crt`, `crl.pem`,  `vpn-server.crt` in  
-* from server: `server.key` (private key), `dh.pem`, `ta.key`
+Copy to `/etc/openvpn` the following files:
+* from CA: 
+  * `ca.crt`
+  * `crl.pem`
+  * `vpn-server.crt` 
+
+* from server: 
+  * `server.key` (private key),
+  * `dh.pem`, 
+  * `ta.key`
+
 * `openssl.cnf`:
+
 <details>
     <summary> sample contents </summary>
 <pre>
@@ -275,6 +284,7 @@ basicConstraints = CA:FALSE
 nsCertType = server
 </pre>
 </details>
+
 * `server.conf`
 <details>
     <summary>Sample content of server.conf for openvpn server</summary>

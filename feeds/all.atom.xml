@@ -2566,6 +2566,26 @@ mute 20
 &lt;/details&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;To enable openvpn service to run all the server configurations from /etc/openvpn
+1. edit &lt;code&gt;/etc/default/openvpn&lt;/code&gt;, uncomment &lt;code&gt;AUTOSTART="all"&lt;/code&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Reload:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl daemon-reload
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run openvpn service:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo service openvpn restart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After that you have to see logs in &lt;code&gt;/var/log/openvpn/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If it doesn't start debug configuration with manual run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;openvpn /etc/openvpn/server.conf
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;On client&lt;/h4&gt;
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki

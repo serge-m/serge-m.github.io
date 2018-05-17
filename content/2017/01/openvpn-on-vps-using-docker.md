@@ -323,6 +323,24 @@ Copy to `/etc/openvpn` the following files:
     </pre>
     </details>
 
+To enable openvpn service to run all the server configurations from /etc/openvpn
+1. edit `/etc/default/openvpn`, uncomment `AUTOSTART="all"`.
+
+2. Reload:
+```
+sudo systemctl daemon-reload
+```
+
+Run openvpn service:
+```
+sudo service openvpn restart
+```
+After that you have to see logs in `/var/log/openvpn/`
+
+If it doesn't start debug configuration with manual run:
+```
+openvpn /etc/openvpn/server.conf
+```
 
 #### On client 
 On the client we want to have a password for a key:

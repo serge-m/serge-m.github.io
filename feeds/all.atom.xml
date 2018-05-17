@@ -2480,64 +2480,59 @@ mkdir -p /var/log/openvpn/
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;openssl.cnf&lt;/code&gt;:
-&lt;details&gt;
+    &lt;details&gt;
     &lt;summary&gt; sample contents &lt;/summary&gt;
-&lt;pre&gt;
-[ ca ]
-default_ca = CA_default
-[ CA_default ]
-dir = /etc/openvpn
-crl_dir = $dir
-database = $dir/index.txt
-new_certs_dir = $dir
-certificate = $dir/ca.crt
-serial = $dir
-crl = $dir/crl.pem
-private_key = $dir/server.key
-RANDFILE = $dir/.rand
-default_days = 3650
-default_crl_days = 365
-default_md = md5
-unique_subject = yes
-policy = policy_any
-x509_extensions = user_extensions
-[ policy_any ]
-organizationName = match
-organizationalUnitName = optional
-commonName = supplied
-[ req ]
-default_bits = 2048
-default_keyfile = privkey.pem
-distinguished_name = req_distinguished_name
-x509_extensions = CA_extensions
-[ req_distinguished_name ]
-organizationName = Organization Name (must match CA)
-organizationName_default = Company
-organizationalUnitName = Location Name
-commonName = Common User or Org Name
-commonName_max = 64
-[ user_extensions ]
-basicConstraints = CA:FALSE
-[ CA_extensions ]
-basicConstraints = CA:TRUE
-default_days = 3650
-[ server ]
-basicConstraints = CA:FALSE
-nsCertType = server
-&lt;/pre&gt;
-&lt;/details&gt;&lt;/p&gt;
+    &lt;pre&gt;
+    [ ca ]
+    default_ca = CA_default
+    [ CA_default ]
+    dir = /etc/openvpn
+    crl_dir = $dir
+    database = $dir/index.txt
+    new_certs_dir = $dir
+    certificate = $dir/ca.crt
+    serial = $dir
+    crl = $dir/crl.pem
+    private_key = $dir/server.key
+    RANDFILE = $dir/.rand
+    default_days = 3650
+    default_crl_days = 365
+    default_md = md5
+    unique_subject = yes
+    policy = policy_any
+    x509_extensions = user_extensions
+    [ policy_any ]
+    organizationName = match
+    organizationalUnitName = optional
+    commonName = supplied
+    [ req ]
+    default_bits = 2048
+    default_keyfile = privkey.pem
+    distinguished_name = req_distinguished_name
+    x509_extensions = CA_extensions
+    [ req_distinguished_name ]
+    organizationName = Organization Name (must match CA)
+    organizationName_default = Company
+    organizationalUnitName = Location Name
+    commonName = Common User or Org Name
+    commonName_max = 64
+    [ user_extensions ]
+    basicConstraints = CA:FALSE
+    [ CA_extensions ]
+    basicConstraints = CA:TRUE
+    default_days = 3650
+    [ server ]
+    basicConstraints = CA:FALSE
+    nsCertType = server
+    &lt;/pre&gt;
+    &lt;/details&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;server.conf&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;&lt;details&gt;
-    &lt;summary&gt;Sample content of server.conf for openvpn server&lt;/summary&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;lt;pre&amp;gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;port 1194
+&lt;summary&gt;Sample content of server.conf for openvpn server&lt;/summary&gt;&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;
+port 1194
 proto udp
 dev tun
 user openvpn
@@ -2569,6 +2564,8 @@ verb 3
 mute 20
 &lt;/pre&gt;
 &lt;/details&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4&gt;On client&lt;/h4&gt;
 &lt;p&gt;On the client we want to have a password for a key:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@df73a69e45da:/easyrsa# ./easyrsa init-pki

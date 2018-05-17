@@ -214,6 +214,17 @@ DH parameters of size 2048 created at /server/pki/dh.pem
 root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key
 ```
 
+Create missing directories:
+```
+mkdir /etc/openvpn/ccd
+mkdir -p /var/log/openvpn/
+```
+
+Create non-priviledged user `openvpn`:
+```
+adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn
+```
+
 Copy in `/etc/openvpn` on server:
 * from CA: `ca.crt`, `crl.pem`,  `vpn-server.crt` in  
 * from server: `server.key` (private key), `dh.pem`, `ta.key`

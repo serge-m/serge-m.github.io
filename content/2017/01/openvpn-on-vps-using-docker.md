@@ -228,8 +228,90 @@ adduser --system --no-create-home --home /nonexistent --disabled-login --group o
 Copy in `/etc/openvpn` on server:
 * from CA: `ca.crt`, `crl.pem`,  `vpn-server.crt` in  
 * from server: `server.key` (private key), `dh.pem`, `ta.key`
-* `openssl.cnf`
+* `openssl.cnf`:
+<details>
+    <summary> sample contents </summary>
+<pre>
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+dir = /etc/openvpn
+crl_dir = $dir
+database = $dir/index.txt
+new_certs_dir = $dir
+certificate = $dir/ca.crt
+serial = $dir
+crl = $dir/crl.pem
+private_key = $dir/server.key
+RANDFILE = $dir/.rand
+default_days = 3650
+default_crl_days = 365
+default_md = md5
+unique_subject = yes
+policy = policy_any
+x509_extensions = user_extensions
+[ policy_any ]
+organizationName = match
+organizationalUnitName = optional
+commonName = supplied
+[ req ]
+default_bits = 2048
+default_keyfile = privkey.pem
+distinguished_name = req_distinguished_name
+x509_extensions = CA_extensions
+[ req_distinguished_name ]
+organizationName = Organization Name (must match CA)
+organizationName_default = Company
+organizationalUnitName = Location Name
+commonName = Common User or Org Name
+commonName_max = 64
+[ user_extensions ]
+basicConstraints = CA:FALSE
+[ CA_extensions ]
+basicConstraints = CA:TRUE
+default_days = 3650
+[ server ]
+basicConstraints = CA:FALSE
+nsCertType = server
+</pre>
+</details>
 * `server.conf`
+<details>
+    <summary>Sample content of server.conf for openvpn server</summary>
+    
+    <pre>
+port 1194
+proto udp
+dev tun
+user openvpn
+group openvpn
+cd /etc/openvpn
+persist-key
+persist-tun
+tls-server
+tls-timeout 120
+dh /etc/openvpn/dh.pem
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/vpn-server.crt
+key /etc/openvpn/server.key
+crl-verify /etc/openvpn/crl.pem
+tls-auth /etc/openvpn/ta.key 0
+server 10.15.0.0 255.255.255.0
+client-config-dir /etc/openvpn/ccd
+client-to-client
+topology subnet
+max-clients 5
+push "dhcp-option DNS 10.15.0.1"
+route 10.15.0.0 255.255.255.0
+comp-lzo
+keepalive 10 120
+status /var/log/openvpn/openvpn-status.log 1
+status-version 3
+log-append /var/log/openvpn/openvpn-server.log
+verb 3
+mute 20
+</pre>
+</details>
 
 
 #### On client 

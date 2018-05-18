@@ -285,7 +285,8 @@ key: /server/pki/private/server.key
 </pre></div>
 
 
-<h4>On server</h4>
+<h3>Launcing OpenVPN server</h3>
+<h4>Configuration</h4>
 <div class="highlight"><pre><span></span>root@df73a69e45da:/easyrsa# ./easyrsa gen-dh
 Generating DH parameters, 2048 bit long safe prime, generator 2
 This is going to take a long time
@@ -325,88 +326,43 @@ mkdir -p /var/log/openvpn/
 <p><code>ta.key</code></p>
 </li>
 <li>
-<p><code>openssl.cnf</code>:
-    <details>
-    <summary> sample contents </summary>
-    <pre>
-    [ ca ]
-    default_ca = CA_default
-    [ CA_default ]
-    dir = /etc/openvpn
-    crl_dir = $dir
-    database = $dir/index.txt
-    new_certs_dir = $dir
-    certificate = $dir/ca.crt
-    serial = $dir
-    crl = $dir/crl.pem
-    private_key = $dir/server.key
-    RANDFILE = $dir/.rand
-    default_days = 3650
-    default_crl_days = 365
-    default_md = md5
-    unique_subject = yes
-    policy = policy_any
-    x509_extensions = user_extensions
-    [ policy_any ]
-    organizationName = match
-    organizationalUnitName = optional
-    commonName = supplied
-    [ req ]
-    default_bits = 2048
-    default_keyfile = privkey.pem
-    distinguished_name = req_distinguished_name
-    x509_extensions = CA_extensions
-    [ req_distinguished_name ]
-    organizationName = Organization Name (must match CA)
-    organizationName_default = Company
-    organizationalUnitName = Location Name
-    commonName = Common User or Org Name
-    commonName_max = 64
-    [ user_extensions ]
-    basicConstraints = CA:FALSE
-    [ CA_extensions ]
-    basicConstraints = CA:TRUE
-    default_days = 3650
-    [ server ]
-    basicConstraints = CA:FALSE
-    nsCertType = server
-    </pre>
-    </details></p>
-</li>
-<li>
 <p><code>server.conf</code></p>
 <p><details>
 <summary>Sample content of server.conf for openvpn server</summary></p>
 <p><pre>
 port 1194
 proto udp
-dev tun
-user openvpn
-group openvpn
-cd /etc/openvpn
-persist-key
+dev tun</p>
+<p>user openvpn
+group openvpn</p>
+<p>persist-key
 persist-tun
 tls-server
-tls-timeout 120
-dh /etc/openvpn/dh.pem
-ca /etc/openvpn/ca.crt
-cert /etc/openvpn/vpn-server.crt
-key /etc/openvpn/server.key
-crl-verify /etc/openvpn/crl.pem
-tls-auth /etc/openvpn/ta.key 0
-server 10.15.0.0 255.255.255.0
-client-config-dir /etc/openvpn/ccd
+tls-timeout 120</p>
+<h1>to avoid warning</h1>
+<h1>WARNING: this cipher's block size is less than 128 bit (64 bit).  Consider using a --cipher with a larger block size.</h1>
+<h1>see also https://community.openvpn.net/openvpn/wiki/SWEET32</h1>
+<p>cipher AES-128-CBC  </p>
+<p>cd /etc/openvpn/
+dh dh.pem
+ca ca.crt
+cert vpn-server.crt
+key vpn-server.key
+crl-verify crl.pem
+tls-auth ta.key 0</p>
+<p>server 10.15.0.0 255.255.255.0
+client-config-dir ccd
 client-to-client
 topology subnet
 max-clients 5
 push "dhcp-option DNS 10.15.0.1"
 route 10.15.0.0 255.255.255.0
 comp-lzo
-keepalive 10 120
-status /var/log/openvpn/openvpn-status.log 1
+keepalive 10 120</p>
+<p>status /var/log/openvpn/openvpn-status.log 1
 status-version 3
 log-append /var/log/openvpn/openvpn-server.log
-verb 3
+verb 4
 mute 20
 </pre>
 </details></p>
@@ -421,7 +377,7 @@ mute 20
 </pre></div>
 
 
-<p>Run openvpn service:</p>
+<h4>Launching service</h4>
 <div class="highlight"><pre><span></span>sudo service openvpn restart
 </pre></div>
 
@@ -432,7 +388,7 @@ mute 20
 </pre></div>
 
 
-<h4>On client</h4>
+<h3>Launching client</h3>
 <p>On the client we want to have a password for a key:</p>
 <div class="highlight"><pre><span></span>root@df73a69e45da:/easyrsa# ./easyrsa init-pki
 root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 
@@ -527,7 +483,13 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/api.html">API</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -542,40 +504,31 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/date.html">date</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -584,10 +537,13 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/en.html">en</a>
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -597,6 +553,9 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -609,9 +568,6 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/images.html">images</a>
@@ -631,11 +587,11 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -649,11 +605,14 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/management.html">management</a>
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/math.html">math</a>
@@ -671,22 +630,25 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/mint.html">mint</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/network.html">network</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -703,6 +665,9 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
@@ -711,12 +676,6 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/plt.html">plt</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -736,20 +695,17 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -761,10 +717,7 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -776,16 +729,19 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
       <a href="https://serge-m.github.io/tag/tests.html">tests</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -793,11 +749,11 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>

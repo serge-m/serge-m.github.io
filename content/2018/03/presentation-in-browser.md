@@ -2,15 +2,18 @@ Title: Presentaitons in browser
 Author: SergeM
 Date: 2018-03-18 15:28
 Slug: presentations-in-browser
-Tags: presentations,html,javascript
+Tags: presentations,html,javascript,slides
 
 
-There are many ways for showing presentations beyond powerpoint. Powerpoint is not cross-platform solution. 
-Google Presentations require internet connection.
+There are many ways for showing slides beyond powerpoint. 
+
+Powerpoint is not cross-platform solution. Google Presentations require internet connection.
+
 There are solutions for making presentations with html and javascript:
 
 * [reveal.js](https://github.com/hakimel/reveal.js) -- more powerful, flexible formats, markdown support, plots a splugins
 * [remark](https://github.com/gnab/remark)
+* many others : https://en.wikipedia.org/wiki/Web-based_slideshow
 
 ## RevealJS
 example: [https://revealjs.com/#/]

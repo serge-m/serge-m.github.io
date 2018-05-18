@@ -318,3 +318,31 @@ Signing request for a client:
 ```
 $ ./easy-rsa sign-req client client1
 ```
+
+
+Copy signed certificates and other necessary files to the client.
+
+#### OpenVPN config for client
+```
+dev tun
+proto udp
+remote YOUR_SERVER_ADDRESS 1194
+client
+resolv-retry infinite
+
+cipher AES-128-CBC
+
+ca "ca.crt"
+cert "client1.crt"
+key "client1.key"
+tls-auth "ta.key" 1
+
+remote-cert-tls server
+persist-key
+persist-tun
+comp-lzo
+verb 4
+#status /var/log/openvpn/openvpn-status.log 1
+status-version 3
+#log-append /var/log/openvpn/openvpn-client.log
+```

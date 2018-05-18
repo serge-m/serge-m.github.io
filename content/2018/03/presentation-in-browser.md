@@ -7,10 +7,15 @@ Tags: presentations,html,javascript
 
 There are many ways for showing presentations beyond powerpoint. Powerpoint is not cross-platform solution. 
 Google Presentations require internet connection.
-There are solution for making presentations on html and javascript:
+There are solutions for making presentations with html and javascript:
 
-[remark](https://github.com/gnab/remark)
+* [reveal.js](https://github.com/hakimel/reveal.js) -- more powerful, flexible formats, markdown support, plots a splugins
+* [remark](https://github.com/gnab/remark)
 
+## RevealJS
+example: [https://revealjs.com/#/]
+
+## Remark Example
 Example of html code for 3-slides presentaiton from github of the project:
 ```html
 <!DOCTYPE html>

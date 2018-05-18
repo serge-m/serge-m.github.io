@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 18 Mar 2018 15:28:00 +0100</lastBuildDate><item><title>Presentaitons in browser</title><link>https://serge-m.github.io/presentations-in-browser.html</link><description>&lt;p&gt;There are many ways for showing presentations beyond powerpoint. Powerpoint is not cross-platform solution. 
-Google Presentations require internet connection.
-There are solutions for making presentations with html and javascript:&lt;/p&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 18 Mar 2018 15:28:00 +0100</lastBuildDate><item><title>Presentaitons in browser</title><link>https://serge-m.github.io/presentations-in-browser.html</link><description>&lt;p&gt;There are many ways for showing slides beyond powerpoint. &lt;/p&gt;
+&lt;p&gt;Powerpoint is not cross-platform solution. Google Presentations require internet connection.&lt;/p&gt;
+&lt;p&gt;There are solutions for making presentations with html and javascript:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js"&gt;reveal.js&lt;/a&gt; -- more powerful, flexible formats, markdown support, plots a splugins&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/gnab/remark"&gt;remark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;many others : https://en.wikipedia.org/wiki/Web-based_slideshow&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;RevealJS&lt;/h2&gt;
-&lt;p&gt;example: [https://revealjs.com/#/]&lt;/p&gt;
-&lt;h2&gt;Remark Example&lt;/h2&gt;
-&lt;p&gt;Example of …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 18 Mar 2018 15:28:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-03-18:/presentations-in-browser.html</guid><category>presentations</category><category>html</category><category>javascript</category></item><item><title>Select lines matching regular expression in python</title><link>https://serge-m.github.io/print-lines-matching-regex.html</link><description>&lt;p&gt;Given a text file we want to create another file containing only those lines that match a certain regular expression using python3&lt;/p&gt;
+&lt;h2&gt;RevealJS …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 18 Mar 2018 15:28:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-03-18:/presentations-in-browser.html</guid><category>presentations</category><category>html</category><category>javascript</category><category>slides</category></item><item><title>Select lines matching regular expression in python</title><link>https://serge-m.github.io/print-lines-matching-regex.html</link><description>&lt;p&gt;Given a text file we want to create another file containing only those lines that match a certain regular expression using python3&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
 
 &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./in.txt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;out.txt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;output_file&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;

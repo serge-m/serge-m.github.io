@@ -14,3 +14,12 @@ sudo apt-get install hplip-gui
 
 
 [Thanks](https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580)
+
+
+#### Another solution
+
+```
+sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools
+```
+
+[source](https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335)

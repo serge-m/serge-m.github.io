@@ -40,6 +40,11 @@ sudo systemctl restart sshd.service
 ```
 [source](https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations)
 
+restart sshd service
+```
+service sshd restart
+```
+
 ### How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?

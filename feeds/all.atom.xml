@@ -2335,6 +2335,7 @@ Then reload the config file:&lt;/p&gt;
 &lt;h2&gt;OpenVPN setup notes&lt;/h2&gt;
 &lt;p&gt;Download easyrsa for ca:
 &lt;a href="https://github.com/OpenVPN/easy-rsa/releases"&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can specify a directory to store generated keys using &lt;code&gt;EASYRSA_PKI&lt;/code&gt; environment variable. &lt;code&gt;$PWD/pki&lt;/code&gt; is used by default. &lt;/p&gt;
 &lt;h3&gt;Set up CA (certification authority)&lt;/h3&gt;
 &lt;p&gt;It is better to use a separate computer to host CA.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki

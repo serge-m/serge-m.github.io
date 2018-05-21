@@ -19,12 +19,33 @@ The options are as follows:
 [Source](https://superuser.com/a/1010861)
 
 
-## How To Configure SSH Key-Based Authentication on a Linux Server 
+## Configuring SSH server
+
+Disable password authentification. Replace corresponding values in `/etc/ssh/sshd_config`:
+
+```
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+```
+[source](https://support.hostgator.com/articles/how-to-disable-password-authentication-for-ssh)
+
+Restrict SSH access to only user accounts that should have it. For example, you may create a group called "sshlogin" and add the group name as the value associated with the `AllowGroups` variable located in the file `/etc/ssh/sshd_config`.
+```
+AllowGroups sshlogin
+```
+Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.
+```
+sudo adduser username sshlogin
+sudo systemctl restart sshd.service
+```
+[source](https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations)
+
+### How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?
 
 
-## Use ssh authentication by key instead of password
+### Use ssh authentication by key instead of password
 
 [Setup the SSH server to use keys for authentication](https://www.g-loaded.eu/2005/11/10/ssh-with-keys/)
 

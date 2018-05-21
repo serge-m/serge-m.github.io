@@ -315,6 +315,9 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
 ```
 
 Then copy request to CA, import.
+```
+$ ./easy-rsa sign-req <path-to-client1.req> client1
+```
 
 Signing request for a client:
 ```

@@ -1528,9 +1528,29 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;-i ~/path/to/some_id_rsa&lt;/code&gt; - the key that you explicitly want to use for the connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://superuser.com/a/1010861"&gt;Source&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h2&gt;
+&lt;h2&gt;Configuring SSH server&lt;/h2&gt;
+&lt;p&gt;Disable password authentification. Replace corresponding values in &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ChallengeResponseAuthentication no
+PasswordAuthentication no
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://support.hostgator.com/articles/how-to-disable-password-authentication-for-ssh"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Restrict SSH access to only user accounts that should have it. For example, you may create a group called "sshlogin" and add the group name as the value associated with the &lt;code&gt;AllowGroups&lt;/code&gt; variable located in the file &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;AllowGroups sshlogin
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo adduser username sshlogin
+sudo systemctl restart sshd.service
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h3&gt;
 &lt;p&gt;See &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server"&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/a&gt;. Should I put public or private key to the server?&lt;/p&gt;
-&lt;h2&gt;Use ssh authentication by key instead of password&lt;/h2&gt;
+&lt;h3&gt;Use ssh authentication by key instead of password&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://www.g-loaded.eu/2005/11/10/ssh-with-keys/"&gt;Setup the SSH server to use keys for authentication&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;How to load ssh key without placing it to ~/.ssh&lt;/h2&gt;
 &lt;p&gt;You must load a key to the ssh agent running in the background.&lt;/p&gt;

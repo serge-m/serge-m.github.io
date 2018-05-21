@@ -126,9 +126,29 @@ sergem personal public notebook            </a>
 <li><code>-i ~/path/to/some_id_rsa</code> - the key that you explicitly want to use for the connection</li>
 </ul>
 <p><a href="https://superuser.com/a/1010861">Source</a></p>
-<h2>How To Configure SSH Key-Based Authentication on a Linux Server</h2>
+<h2>Configuring SSH server</h2>
+<p>Disable password authentification. Replace corresponding values in <code>/etc/ssh/sshd_config</code>:</p>
+<div class="highlight"><pre><span></span>ChallengeResponseAuthentication no
+PasswordAuthentication no
+</pre></div>
+
+
+<p><a href="https://support.hostgator.com/articles/how-to-disable-password-authentication-for-ssh">source</a></p>
+<p>Restrict SSH access to only user accounts that should have it. For example, you may create a group called "sshlogin" and add the group name as the value associated with the <code>AllowGroups</code> variable located in the file <code>/etc/ssh/sshd_config</code>.</p>
+<div class="highlight"><pre><span></span>AllowGroups sshlogin
+</pre></div>
+
+
+<p>Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.</p>
+<div class="highlight"><pre><span></span>sudo adduser username sshlogin
+sudo systemctl restart sshd.service
+</pre></div>
+
+
+<p><a href="https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations">source</a></p>
+<h3>How To Configure SSH Key-Based Authentication on a Linux Server</h3>
 <p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">How To Configure SSH Key-Based Authentication on a Linux Server</a>. Should I put public or private key to the server?</p>
-<h2>Use ssh authentication by key instead of password</h2>
+<h3>Use ssh authentication by key instead of password</h3>
 <p><a href="https://www.g-loaded.eu/2005/11/10/ssh-with-keys/">Setup the SSH server to use keys for authentication</a></p>
 <h2>How to load ssh key without placing it to ~/.ssh</h2>
 <p>You must load a key to the ssh agent running in the background.</p>
@@ -222,20 +242,11 @@ Agent pid <span class="m">59566</span>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -253,16 +264,19 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
+      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -271,10 +285,19 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -282,20 +305,23 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/en.html">en</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -306,8 +332,14 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
@@ -333,9 +365,6 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/keys.html">keys</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -358,31 +387,31 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/make.html">make</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
+      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -409,13 +438,10 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -441,6 +467,12 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
@@ -453,8 +485,14 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
@@ -468,32 +506,20 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/useles.html">useles</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -505,16 +531,10 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>

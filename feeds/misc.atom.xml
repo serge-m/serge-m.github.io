@@ -2601,7 +2601,17 @@ verb 4
 #status /var/log/openvpn/openvpn-status.log 1
 status-version 3
 #log-append /var/log/openvpn/openvpn-client.log
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;How to revoke a certificate (deactivate a user)&lt;/h2&gt;
+&lt;p&gt;On CA:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./easyrsa revoke &amp;lt;client-name&amp;gt;
+$ ./easyrsa gen-crl
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then you have to upload new crl.pem to your server and restart the server.&lt;/p&gt;</content><category term="linux"></category><category term="docker"></category><category term="vpn"></category><category term="openvpn"></category></entry><entry><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html" rel="alternate"></link><published>2017-01-05T07:10:00+01:00</published><updated>2017-01-05T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</id><summary type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The error I got was &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.

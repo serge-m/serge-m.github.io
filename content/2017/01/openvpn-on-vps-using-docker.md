@@ -351,3 +351,12 @@ verb 4
 status-version 3
 #log-append /var/log/openvpn/openvpn-client.log
 ```
+
+
+## How to revoke a certificate (deactivate a user)
+On CA:
+```
+$ ./easyrsa revoke <client-name>
+$ ./easyrsa gen-crl
+```
+Then you have to upload new crl.pem to your server and restart the server.

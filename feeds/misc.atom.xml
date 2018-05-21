@@ -2569,6 +2569,10 @@ root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1
 
 
 &lt;p&gt;Then copy request to CA, import.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./easy-rsa sign-req &amp;lt;path-to-client1.req&amp;gt; client1
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Signing request for a client:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ./easy-rsa sign-req client client1
 &lt;/pre&gt;&lt;/div&gt;

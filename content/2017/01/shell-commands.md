@@ -18,12 +18,27 @@ Add user to a group
 ```
 sudo usermod -aG group user
 ```
+or 
+```
+sudo adduser <user> <group>
+```
 
 
 Remove user from a group
 ```
 sudo gpasswd -d user group
 ```
+
+list all users:
+```
+$ getent passwd
+```
+
+list all groups:
+```
+$ getent group
+```
+
 
 
 Change shell for user `user` to bash

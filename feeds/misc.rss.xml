@@ -349,13 +349,18 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;or &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Remove user from a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpasswd -d user group
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;list all users:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent passwd …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;touch /etc/systemd/system/your-service.service 
 &lt;/pre&gt;&lt;/div&gt;
 

@@ -2160,13 +2160,18 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;or &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Remove user from a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpasswd -d user group
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;p&gt;list all users:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent passwd …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
 &lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fuser -k 8080/tcp
 &lt;/pre&gt;&lt;/div&gt;
@@ -2177,8 +2182,23 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;or &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Remove user from a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo gpasswd -d user group
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;list all users:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent passwd
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;list all groups:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent group
 &lt;/pre&gt;&lt;/div&gt;
 
 

@@ -65,6 +65,8 @@ and toggle the vpn.
 Download easyrsa for ca:
 [github](https://github.com/OpenVPN/easy-rsa/releases)
 
+You can specify a directory to store generated keys using `EASYRSA_PKI` environment variable. `$PWD/pki` is used by default. 
+
 ### Set up CA (certification authority)
 It is better to use a separate computer to host CA.
 

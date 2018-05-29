@@ -36,3 +36,28 @@ complete -F _fab_completion fab
 to `~/.bash_completion`.
 
 [Source](http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/)
+
+
+## Default permissions for directories
+By default when you call `mkdir abc` the following permissions are created 
+```
+u=rwx,g=rx,o=rx
+```
+
+That means that other users, also other groups, will be able to read and execute your files. That is a legacy setting. you can change it by replacing
+```
+UMASK       002 
+```
+with 
+```
+UMASK       077
+```
+in file `/etc/login.defs`. Here is the quote from this file:
+```
+# UMASK is the default umask value for pam_umask and is used by
+# useradd and newusers to set the mode of the new home directories.
+# 022 is the "historical" value in Debian for UMASK
+# 027, or even 077, could be considered better for privacy
+# There is no One True Answer here : each sysadmin must make up his/her
+# mind.
+```

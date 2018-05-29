@@ -60,4 +60,15 @@ in file `/etc/login.defs`. Here is the quote from this file:
 # 027, or even 077, could be considered better for privacy
 # There is no One True Answer here : each sysadmin must make up his/her
 # mind.
+#
+# If USERGROUPS_ENAB is set to "yes", that will modify this UMASK default value
+# for private user groups, i. e. the uid is the same as gid, and username is
+# the same as the primary group name: for these, the user permissions will be
+# used as group permissions, e. g. 022 will become 002.
+
 ```
+
+
+Useful for server setup:
+*
+* 

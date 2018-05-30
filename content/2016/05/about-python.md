@@ -43,4 +43,22 @@ Inheritance
 
 ## Other 
 
+[How to Install Python 3.6 on Ubuntu 16.04](https://www.rosehosting.com/blog/how-to-install-python-3-6-on-ubuntu-16-04/)
+
+```
+apt-get install zlib1g-dev
+wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
+tar -xvf Python-3.6.3.tgz
+cd Python-3.6.3
+./configure
+make 
+make install
+```
+
+Now it should be fine:
+```
+# python3.6 -V
+Python 3.6.3
+```
+
 [Dismissing Python Garbage Collection at Instagram](https://engineering.instagram.com/dismissing-python-garbage-collection-at-instagram-4dca40b29172)

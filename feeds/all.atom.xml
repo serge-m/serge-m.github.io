@@ -3892,6 +3892,23 @@ FAILED (KNOWNFAIL=3, SKIP=6, errors=218, failures=83)
 &lt;p&gt;Inheritance
 &lt;a href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/"&gt;https://rhettinger.wordpress.com/2011/05/26/super-considered-super/&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Other&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.rosehosting.com/blog/how-to-install-python-3-6-on-ubuntu-16-04/"&gt;How to Install Python 3.6 on Ubuntu 16.04&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get install zlib1g-dev
+wget https://www.python.org/ftp/python/3.6.3/Python-3.6.3.tgz
+tar -xvf Python-3.6.3.tgz
+cd Python-3.6.3
+./configure
+make 
+make install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now it should be fine:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# python3.6 -V
+Python 3.6.3
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;&lt;a href="https://engineering.instagram.com/dismissing-python-garbage-collection-at-instagram-4dca40b29172"&gt;Dismissing Python Garbage Collection at Instagram&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category><category term="links"></category></entry><entry><title>Dropbox in linux mint</title><link href="https://serge-m.github.io/dropbox-in-linux-mint.html" rel="alternate"></link><published>2016-04-10T20:50:00+02:00</published><updated>2016-04-10T20:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-04-10:/dropbox-in-linux-mint.html</id><summary type="html">&lt;p&gt;Hmm. It doesn't work.
 I see the icon when i do&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dropbox stop

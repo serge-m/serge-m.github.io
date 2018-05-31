@@ -14,3 +14,5 @@ Interesting list of managers' readmes: [12 “Manager READMEs” from Silicon Va
 
 
 
+
+[One (wo)man startup](http://venturehacks.com/articles/1-wo-man-startups)

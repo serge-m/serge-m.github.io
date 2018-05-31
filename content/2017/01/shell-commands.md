@@ -2,7 +2,7 @@ Title: Shell commands
 Author: SergeM
 Date: 2017-01-08 11:10:00
 Slug: shell-commands
-Tags: linux,useful,ubuntu
+Tags: linux,useful,ubuntu,vim
 
 
 Some linux commands that I'll probably need in the future

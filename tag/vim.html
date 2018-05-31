@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>sergem personal public notebook</title>
+    <title>vim - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,7 +10,8 @@
 
 
 
-        <meta name="author" content="sergem" />
+    <meta name="author" content="sergem" />
+    <meta name="keywords" content="vim" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -73,14 +74,60 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-<h1>Archives for February 2017</h1>
+            <article>
+                <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/shell-commands.html">Shell commands</a></h1>
 
-<dl>
-    <dt>2017-02-24T23:11:00, Fri</dt>
-    <dd><a href="https://serge-m.github.io/about-bloody-enterprise.html">About bloody enterprise</a></dd>
-    <dt>2017-02-10T23:11:00, Fri</dt>
-    <dd><a href="https://serge-m.github.io/elastic-search-cookbook.html">Elasticsearch commands with curl</a></dd>
-</dl>
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-01-08T11:10:00+01:00"> 2017-01-08T11:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/vim.html">vim</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
+<p>Kill processes occupying a certain port:</p>
+<div class="highlight"><pre><span></span>fuser -k 8080/tcp
+</pre></div>
+
+
+<p>Add user to a group</p>
+<div class="highlight"><pre><span></span>sudo usermod -aG group user
+</pre></div>
+
+
+<p>or </p>
+<div class="highlight"><pre><span></span>sudo adduser &lt;user&gt; &lt;group&gt;
+</pre></div>
+
+
+<p>Remove user from a group</p>
+<div class="highlight"><pre><span></span>sudo gpasswd -d user group
+</pre></div>
+
+
+<p>list all users:</p>
+<div class="highlight"><pre><span></span>$ getent passwd …</pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/shell-commands.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -92,18 +139,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/presentations-in-browser.html">Presentaitons in browser</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/print-lines-matching-regex.html">Select lines matching regular expression in python</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/airflow.html">Workflow management with Apache Airflow</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/datetime-in-python.html">Datetime in Python</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/ubuntu-linux-settings.html">Ubuntu linux settings</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/mixins-in-python.html">Mixin pattern in Python</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/pytest-cheatsheet.html">Pytest cheatsheet</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/how-to-break-a-programmer.html">how to break a programmer</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/about-management.html">about management</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html">why does your data science project fail again</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/sample-ember-and-flask.html">Sample project with Ember and Flask</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/shell-commands.html">Shell commands</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -462,7 +498,7 @@ sergem personal public notebook            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 sergem
+         <div class="col-xs-10">&copy; 2017 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

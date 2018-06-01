@@ -36,7 +36,20 @@ Run
 systemctl enable your-service
 ```
 
-See also: 
+## Recipies
+### Specify working directory
+```
+[Service]
+WorkingDirectory=/home/pi
+```
+
+### Running python script from virtual environment 
+Just specify python interpreter from the environment:
+```
+ExecStart=<absolute path to your environment>/bin/python file_to_run.py
+```
+
+## See also: 
 
 [[1]](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)
 

@@ -46,13 +46,15 @@ Create the file
 ```
 vim ~/.vimrc
 ```
-Add the configuration stated above
+Add the configuration:
 ```
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
 ```
+Restart vim.
+
 
 You can replace all the tabs with spaces in the entire file with
 ```

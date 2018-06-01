@@ -1007,7 +1007,33 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
 &lt;/details&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+&lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Vim cheat sheet</title><link href="https://serge-m.github.io/vim.html" rel="alternate"></link><published>2017-05-31T07:10:00+02:00</published><updated>2017-05-31T07:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-31:/vim.html</id><summary type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Working with multiple files&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename - Edit a file in a new buffer
+:bnext (or :bn) - go to next buffer
+:bprev (of :bp) - go to previous buffer
+:bd - delete a buffer (close a file)
+:sp filename - Open a file in a new buffer and …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Working with multiple files&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename - Edit a file in a new buffer
+:bnext (or :bn) - go to next buffer
+:bprev (of :bp) - go to previous buffer
+:bd - delete a buffer (close a file)
+:sp filename - Open a file in a new buffer and split window
+ctrl+ws - Split windows
+ctrl+ww - switch between windows
+ctrl+wq - Quit a window
+ctrl+wv - Split windows vertically
+ctrl+wj - switch wo the bottom window
+ctrl+wk - switch wo the top window
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Other versions:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.fprintf.net/vimCheatSheet.html"&gt;vimCheatSheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://vim.rtorr.com/"&gt;another vim cheat scheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="vim"></category><category term="cheatsheet"></category><category term="keyboard shortcuts"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;

@@ -34,6 +34,8 @@ Harry Percival
 
 * [Getting Started with Django Rest Framework](http://www.projectforrest.com/path/70)
 
+* [pythonsheets](https://www.pythonsheets.com/) - a colleciton of useful snippets
+
 
 ## Asyncronous python
 

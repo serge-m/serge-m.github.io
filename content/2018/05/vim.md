@@ -76,6 +76,17 @@ You can replace all the tabs with spaces in the entire file with
     ctrl+wk - switch wo the top window
     
 
+### Paste without reformatting 
+
+Vim provides the 'paste' option to aid in pasting text unmodified from other applications. You can set it manually like:
+```
+:set paste
+```
+paste, then
+
+```
+:set nopaste
+```
 
 
 ## Other versions:

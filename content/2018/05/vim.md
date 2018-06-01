@@ -7,6 +7,40 @@ Tags: vim,cheatsheet,keyboard shortcuts
 
 ## Some frequently used commands in Vim
 
+### File explorer 
+    :Explore - opens the file explorer window. 
+
+### Visual commands
+
+    > - shift right
+    < - shift left
+    y - yank (copy) marked text
+    d - delete marked text
+    ~ - switch case
+
+### Cut and Paste
+
+    yy - yank (copy) a line
+    2yy - yank 2 lines
+    yw - yank word
+    y$ - yank to end of line
+    p - put (paste) the clipboard after cursor
+    P - put (paste) before cursor
+    dd - delete (cut) a line
+    dw - delete (cut) the current word
+    x - delete (cut) current character
+
+
+### Search/Replace
+
+    /pattern - search for pattern
+    ?pattern - search backward for pattern
+    n - repeat search in same direction
+    N - repeat search in opposite direction
+    :%s/old/new/g - replace all old with new throughout file
+    :%s/old/new/gc - replace all old with new throughout file with confirmations
+
+
 ### Identation settings
 Create the file
 ```

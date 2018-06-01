@@ -158,12 +158,27 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   your hidden code
 &lt;/details&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</guid><category>markdown</category></item><item><title>Vim cheat sheet</title><link>https://serge-m.github.io/vim.html</link><description>&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Identation settings&lt;/h3&gt;
+&lt;p&gt;Create the file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim ~/.vimrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add the configuration stated above&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can replace all the tabs with spaces in the entire file with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%retab
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Working with multiple files&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename - Edit a file in a new buffer
-:bnext (or :bn) - go to next buffer
-:bprev (of :bp) - go to previous buffer
-:bd - delete a buffer (close a file)
-:sp filename - Open a file in a new buffer and …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 31 May 2017 07:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-31:/vim.html</guid><category>vim</category><category>cheatsheet</category><category>keyboard shortcuts</category></item><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 31 May 2017 07:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-31:/vim.html</guid><category>vim</category><category>cheatsheet</category><category>keyboard shortcuts</category></item><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;

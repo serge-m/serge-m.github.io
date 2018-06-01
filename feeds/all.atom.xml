@@ -1008,12 +1008,46 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   your hidden code
 &lt;/details&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Vim cheat sheet</title><link href="https://serge-m.github.io/vim.html" rel="alternate"></link><published>2017-05-31T07:10:00+02:00</published><updated>2017-05-31T07:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-31:/vim.html</id><summary type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Identation settings&lt;/h3&gt;
+&lt;p&gt;Create the file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim ~/.vimrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add the configuration stated above&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can replace all the tabs with spaces in the entire file with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%retab
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Working with multiple files&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename - Edit a file in a new buffer
-:bnext (or :bn) - go to next buffer
-:bprev (of :bp) - go to previous buffer
-:bd - delete a buffer (close a file)
-:sp filename - Open a file in a new buffer and …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Identation settings&lt;/h3&gt;
+&lt;p&gt;Create the file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim ~/.vimrc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add the configuration stated above&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can replace all the tabs with spaces in the entire file with&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%retab
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Working with multiple files&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename - Edit a file in a new buffer
 :bnext (or :bn) - go to next buffer

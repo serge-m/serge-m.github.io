@@ -1,6 +1,6 @@
 Title: Vim cheat sheet
 Author: SergeM
-Date: 2017-05-31 07:10:00
+Date: 2018-05-31 07:10:00
 Slug: vim
 Tags: vim,cheatsheet,keyboard shortcuts
 

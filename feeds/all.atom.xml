@@ -2465,7 +2465,23 @@ WantedBy=multi-user.target
 
 &lt;p&gt;Here we first stop and delete the docker container. If it doesn't exist we continue (there is a "-" in before the command).&lt;/p&gt;
 &lt;p&gt;Run&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl enable your-service
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;systemctl enable your-service 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Commands&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# prints the status
+systemctl status your-service.service  
+
+# prepares the service, required before &amp;quot;start&amp;quot;, 
+# also reloads the config if you changed the definition file  
+systemctl enable levels_tracker.service 
+
+# start service
+systemctl start levels_tracker.service 
+
+# stop service
+systemctl stop levels_tracker.service 
 &lt;/pre&gt;&lt;/div&gt;
 
 

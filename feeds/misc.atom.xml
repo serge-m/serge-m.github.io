@@ -2469,7 +2469,20 @@ WantedBy=multi-user.target
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;See also: &lt;/p&gt;
+&lt;h2&gt;Recipies&lt;/h2&gt;
+&lt;h3&gt;Specify working directory&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;WorkingDirectory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/home/pi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Running python script from virtual environment&lt;/h3&gt;
+&lt;p&gt;Just specify python interpreter from the environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ExecStart=&amp;lt;absolute path to your environment&amp;gt;/bin/python file_to_run.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;See also:&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts"&gt;[1]&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.frd.mn/how-to-set-up-proper-startstop-services-ubuntu-debian-mac-windows/"&gt;[3] How to set up proper start/stop services&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;

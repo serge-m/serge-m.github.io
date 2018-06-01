@@ -67,6 +67,17 @@ Just specify python interpreter from the environment:
 ExecStart=<absolute path to your environment>/bin/python file_to_run.py
 ```
 
+### Environment variables
+You can set environment variables that are used for your process
+```
+[Service]
+Environment=VARIABLE=value
+```
+Now you can use it in the `ExecStart` command for example:
+```
+ExecStart=<absolute path to your environment>/bin/python file_to_run.py ${VARIABLE}
+```
+
 ## See also: 
 
 [[1]](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)

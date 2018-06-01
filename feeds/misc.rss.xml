@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 18 Mar 2018 15:28:00 +0100</lastBuildDate><item><title>Presentaitons in browser</title><link>https://serge-m.github.io/presentations-in-browser.html</link><description>&lt;p&gt;There are many ways for showing slides beyond powerpoint. &lt;/p&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Thu, 31 May 2018 07:10:00 +0200</lastBuildDate><item><title>Vim cheat sheet</title><link>https://serge-m.github.io/vim.html</link><description>&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;File explorer&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Visual commands&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
+&amp;lt; - shift left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Cut and Paste&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yy - yank (copy) a line
+2yy - yank 2 lines
+yw - yank word
+y$ - yank to end …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 31 May 2018 07:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-05-31:/vim.html</guid><category>vim</category><category>cheatsheet</category><category>keyboard shortcuts</category></item><item><title>Presentaitons in browser</title><link>https://serge-m.github.io/presentations-in-browser.html</link><description>&lt;p&gt;There are many ways for showing slides beyond powerpoint. &lt;/p&gt;
 &lt;p&gt;Powerpoint is not cross-platform solution. Google Presentations require internet connection.&lt;/p&gt;
 &lt;p&gt;There are solutions for making presentations with html and javascript:&lt;/p&gt;
 &lt;ul&gt;
@@ -157,26 +176,7 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
 &lt;/details&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</guid><category>markdown</category></item><item><title>Vim cheat sheet</title><link>https://serge-m.github.io/vim.html</link><description>&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
-&lt;h3&gt;File explorer&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Visual commands&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
-&amp;lt; - shift left
-y - yank (copy) marked text
-d - delete marked text
-~ - switch case
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;Cut and Paste&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yy - yank (copy) a line
-2yy - yank 2 lines
-yw - yank word
-y$ - yank to end …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 31 May 2017 07:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-31:/vim.html</guid><category>vim</category><category>cheatsheet</category><category>keyboard shortcuts</category></item><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
+&lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</guid><category>markdown</category></item><item><title>Streaming camera output from Raspberry Pi</title><link>https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html</link><description>&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Enable camera on your raspberry pi in raspi-conf. Reboot.&lt;/li&gt;

@@ -2498,6 +2498,18 @@ systemctl stop levels_tracker.service
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Environment variables&lt;/h3&gt;
+&lt;p&gt;You can set environment variables that are used for your process&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;VARIABLE=value&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can use it in the &lt;code&gt;ExecStart&lt;/code&gt; command for example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ExecStart=&lt;span class="nt"&gt;&amp;lt;absolute&lt;/span&gt; &lt;span class="err"&gt;path&lt;/span&gt; &lt;span class="err"&gt;to&lt;/span&gt; &lt;span class="err"&gt;your&lt;/span&gt; &lt;span class="err"&gt;environment&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;/bin/python file_to_run.py &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;VARIABLE&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;See also:&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts"&gt;[1]&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;

@@ -33,8 +33,26 @@ Here we first stop and delete the docker container. If it doesn't exist we conti
 
 Run
 ```
-systemctl enable your-service
+systemctl enable your-service 
 ```
+
+## Commands 
+```
+# prints the status
+systemctl status your-service.service  
+
+# prepares the service, required before "start", 
+# also reloads the config if you changed the definition file  
+systemctl enable levels_tracker.service 
+
+# start service
+systemctl start levels_tracker.service 
+
+# stop service
+systemctl stop levels_tracker.service 
+```
+
+
 
 ## Recipies
 ### Specify working directory

@@ -7,6 +7,24 @@ Tags: vim,cheatsheet,keyboard shortcuts
 
 ## Some frequently used commands in Vim
 
+### Identation settings
+Create the file
+```
+vim ~/.vimrc
+```
+Add the configuration stated above
+```
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+```
+
+You can replace all the tabs with spaces in the entire file with
+```
+:%retab
+```
+
 ### Working with multiple files
 
     :e filename - Edit a file in a new buffer

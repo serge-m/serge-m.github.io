@@ -75,3 +75,7 @@ class User(db.Model):
 Nice series of flask tutorials: [Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins).
 
 Including [Oauth authentication In Flask](https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask).
+
+
+## SQLAlchemy cheat sheet
+* [https://www.pythonsheets.com/notes/python-sqlalchemy.html](https://www.pythonsheets.com/notes/python-sqlalchemy.html)

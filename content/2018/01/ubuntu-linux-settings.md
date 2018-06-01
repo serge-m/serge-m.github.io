@@ -8,7 +8,7 @@ Tags: linux,useful
 Some settings I find useful for a workstation
 
 ## Autocomplete in shell
-See [1](/autocomplete-from-history-in-terminal.html)
+See [autocomplete from history in terminal](/autocomplete-from-history-in-terminal.html)
 
 ## Set `nemo` as default file manager 
 ```

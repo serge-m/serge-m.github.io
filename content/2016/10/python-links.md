@@ -36,6 +36,8 @@ Harry Percival
 
 * [pythonsheets](https://www.pythonsheets.com/) - a colleciton of useful snippets
 
+* [Command line arguments parsing with click](https://dbader.org/blog/mastering-click-advanced-python-command-line-apps)
+
 
 ## Asyncronous python
 

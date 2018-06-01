@@ -53,7 +53,7 @@ For example according to ISO 8601 …&lt;/p&gt;</description><dc:creator xmlns:d
 
 &lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__ …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 11 Jan 2018 22:02:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-01-11:/flask-and-sqlalchemy-explained.html</guid><category>flask</category><category>sqlalchemy</category><category>sql</category><category>python</category></item><item><title>Ubuntu linux settings</title><link>https://serge-m.github.io/ubuntu-linux-settings.html</link><description>&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
 &lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
-&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 &lt;/pre&gt;&lt;/div&gt;
@@ -63,11 +63,7 @@ For example according to ISO 8601 …&lt;/p&gt;</description><dc:creator xmlns:d
 &lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Auto completion for fabric&lt;/h2&gt;
 &lt;p&gt;Add &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab &lt;span class="err"&gt;&amp;amp;&amp;amp;&lt;/span&gt; {
-_fab_completion()
-{
-    COMPREPLY=() 
-    local cur …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 11 Jan 2018 08:00:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</guid><category>linux</category><category>useful</category></item><item><title>Mixin pattern in Python</title><link>https://serge-m.github.io/mixins-in-python.html</link><description>&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 11 Jan 2018 08:00:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</guid><category>linux</category><category>useful</category></item><item><title>Mixin pattern in Python</title><link>https://serge-m.github.io/mixins-in-python.html</link><description>&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
  There are two main situations where mixins are used &lt;a href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful"&gt;1&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You want to provide a lot of optional features for a class.&lt;/li&gt;

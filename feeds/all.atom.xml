@@ -379,7 +379,7 @@ SQLALCHEMY_BINDS = {
 &lt;li&gt;&lt;a href="https://www.pythonsheets.com/notes/python-sqlalchemy.html"&gt;Python SQLAlchemy Cheatsheet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><category term="flask"></category><category term="sqlalchemy"></category><category term="sql"></category><category term="python"></category></entry><entry><title>Ubuntu linux settings</title><link href="https://serge-m.github.io/ubuntu-linux-settings.html" rel="alternate"></link><published>2018-01-11T08:00:00+01:00</published><updated>2018-01-11T08:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</id><summary type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
 &lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
-&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 &lt;/pre&gt;&lt;/div&gt;
@@ -389,13 +389,9 @@ SQLALCHEMY_BINDS = {
 &lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Auto completion for fabric&lt;/h2&gt;
 &lt;p&gt;Add &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab &lt;span class="err"&gt;&amp;amp;&amp;amp;&lt;/span&gt; {
-_fab_completion()
-{
-    COMPREPLY=() 
-    local cur …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
 &lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
-&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 &lt;/pre&gt;&lt;/div&gt;
@@ -2475,7 +2471,8 @@ WantedBy=multi-user.target
 
 &lt;p&gt;See also: &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts"&gt;[1]&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.frd.mn/how-to-set-up-proper-startstop-services-ubuntu-debian-mac-windows/"&gt;[3] How to set up proper start/stop services&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>OpenVPN server in cloud using docker</title><link href="https://serge-m.github.io/openvpn-on-vps-using-docker.html" rel="alternate"></link><published>2017-01-07T07:10:00+01:00</published><updated>2017-01-07T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</id><summary type="html">&lt;p&gt;links:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-run-openvpn-in-a-docker-container-on-ubuntu-14-04"&gt;How To Run OpenVPN in a Docker Container on Ubuntu 14.04 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/kylemanna/docker-openvpn"&gt;OpenVPN for Docker&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Connection via OPenVPN is slow for https&lt;/h2&gt;

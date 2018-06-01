@@ -81,3 +81,12 @@ You can replace all the tabs with spaces in the entire file with
 ## Other versions:
 * [vimCheatSheet](https://www.fprintf.net/vimCheatSheet.html)
 * [another vim cheat scheet](https://vim.rtorr.com/)
+
+
+## My .vimrc
+```
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+```

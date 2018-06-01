@@ -1008,27 +1008,62 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   your hidden code
 &lt;/details&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Vim cheat sheet</title><link href="https://serge-m.github.io/vim.html" rel="alternate"></link><published>2017-05-31T07:10:00+02:00</published><updated>2017-05-31T07:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-31:/vim.html</id><summary type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
-&lt;h3&gt;Identation settings&lt;/h3&gt;
-&lt;p&gt;Create the file&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim ~/.vimrc
+&lt;h3&gt;File explorer&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Add the configuration stated above&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
+&lt;h3&gt;Visual commands&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
+&amp;lt; - shift left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;You can replace all the tabs with spaces in the entire file with&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:%retab
+&lt;h3&gt;Cut and Paste&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yy - yank (copy) a line
+2yy - yank 2 lines
+yw - yank word
+y$ - yank to end …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;File explorer&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Working with multiple files&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:e filename …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h3&gt;Visual commands&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
+&amp;lt; - shift left
+y - yank (copy) marked text
+d - delete marked text
+~ - switch case
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Cut and Paste&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yy - yank (copy) a line
+2yy - yank 2 lines
+yw - yank word
+y$ - yank to end of line
+p - put (paste) the clipboard after cursor
+P - put (paste) before cursor
+dd - delete (cut) a line
+dw - delete (cut) the current word
+x - delete (cut) current character
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Search/Replace&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/pattern - search for pattern
+?pattern - search backward for pattern
+n - repeat search in same direction
+N - repeat search in opposite direction
+:%s/old/new/g - replace all old with new throughout file
+:%s/old/new/gc - replace all old with new throughout file with confirmations
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Identation settings&lt;/h3&gt;
 &lt;p&gt;Create the file&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vim ~/.vimrc

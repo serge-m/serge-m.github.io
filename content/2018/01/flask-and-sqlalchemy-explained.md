@@ -78,4 +78,4 @@ Including [Oauth authentication In Flask](https://blog.miguelgrinberg.com/post/o
 
 
 ## SQLAlchemy cheat sheet
-* [https://www.pythonsheets.com/notes/python-sqlalchemy.html](https://www.pythonsheets.com/notes/python-sqlalchemy.html)
+* [Python SQLAlchemy Cheatsheet](https://www.pythonsheets.com/notes/python-sqlalchemy.html)

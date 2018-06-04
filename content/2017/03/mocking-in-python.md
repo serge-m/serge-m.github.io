@@ -298,6 +298,12 @@ with mock.patch('somemodule.Someclass') as MockClass:
 
 // Will it really work?
 
+## Mocking os.environ
+```
+@mock.patch.dict(os.environ, {'YOUR_VARIABLE': 'MOCKED_VALUE'})
+def test_funciton():
+  function_using_os_environment()
+```
 ## See also about testing in python
 * [Run docker as pytest fixture](/run-docker-as-pytest-fixture.html)
 * [Testing json responses in Flask REST apps with pytest](/testing-json-responses-in-Flask-REST-apps-with-pytest.html)

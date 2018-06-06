@@ -8,6 +8,7 @@ Tags: python,click,comparison
 ## Problem 
 There is [click](click.pocoo.org/) module that allows you to create comman dline interfaces for your python scripts.
 The advantages of click are
+
 * nice syntax 
 ```python
 import click
@@ -25,9 +26,11 @@ if __name__ == '__main__':
     hello()
 
 ```
+
 * straightforward argument parsing strategy (in comparison to the standard [argparse](https://docs.python.org/3/library/argparse.html) )
 
 Click doesn't support config files by default. There is a number of additional modules that implement this feature.
+
 * [click-config](https://github.com/EverythingMe/click-config)
 * [click-configfile](https://github.com/click-contrib/click-configfile)
 * [click_config_file](https://github.com/phha/click_config_file)

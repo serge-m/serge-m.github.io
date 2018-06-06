@@ -243,6 +243,26 @@ ctrl+wk - switch wo the top window
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Upper/lower case transformation&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~&lt;/code&gt; - Toggle case of the character under the cursor, or all visually-selected characters. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;3~&lt;/code&gt; Toggle case of the next three characters. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g~3w&lt;/code&gt; Toggle case of the next three words. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g~iw&lt;/code&gt; Toggle case of the current word (inner word – cursor anywhere in word). &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g~$&lt;/code&gt; Toggle case of all characters to end of line. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;g~~&lt;/code&gt; Toggle case of the current line (same as V~). &lt;/p&gt;
+&lt;p&gt;The above uses &lt;code&gt;~&lt;/code&gt; to toggle case. In each example, you can replace &lt;code&gt;~&lt;/code&gt; with &lt;code&gt;u&lt;/code&gt; to convert to lowercase, or with &lt;code&gt;U&lt;/code&gt; to convert to uppercase. For example:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;U&lt;/code&gt; Uppercase the visually-selected text. 
+    First press &lt;code&gt;v&lt;/code&gt; or &lt;code&gt;V&lt;/code&gt; then move to select text. 
+    If you don't select text, pressing &lt;code&gt;U&lt;/code&gt; will undo all changes to the current line. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gUU&lt;/code&gt;
+    Change the current line to uppercase (same as VU). &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;gUiw&lt;/code&gt;
+    Change current word to uppercase. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;u&lt;/code&gt;
+    Lowercase the visually-selected text. 
+    If you don't select text, pressing u will undo the last change. &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;guu&lt;/code&gt;
+    Change the current line to lowercase (same as Vu). &lt;/p&gt;
 &lt;h2&gt;Other versions:&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.fprintf.net/vimCheatSheet.html"&gt;vimCheatSheet&lt;/a&gt;&lt;/li&gt;

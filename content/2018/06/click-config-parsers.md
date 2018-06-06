@@ -1,6 +1,6 @@
 Title: Comparison of click-based config parsers for python
 Author: SergeM
-Date: 2018-05-31 07:10:00
+Date: 2018-06-06 08:17:22
 Slug: click-config-parsers
 Tags: python,click,comparison
 
@@ -34,4 +34,46 @@ Click doesn't support config files by default. There is a number of additional m
 
 
 ## Comparison
+
+
+| feature        | click-config       | click-configfile  | click_config_file
+| ---------------------------- |:-------------| :-----------:| :------------:|
+| Last commit in the repository| May 5, 2015  | Sep 24, 2017 | Jan 23, 2018  |
+| Supports ini                 | +            |            + |              +|
+| Supports json                | -            |            + |              +|
+| Supports yaml                | +            |            + |              +|
+
+
+### Syntax examples
+#### click-config
+```python
+from __future__ import print_function
+import click
+import click_config
+
+
+class config(object):
+    class logger(object):
+        level = 'INFO'
+
+    class mysql(object):
+        host = 'localhost'
+
+
+@click.command()
+@click_config.wrap(module=config, sections=('logger', 'mysql'))
+def main():
+    print('log level: {}, mysql host: {}'.format(
+        config.logger.level,
+        config.mysql.host
+    ))
+
+
+if __name__ == '__main__':
+    main()
+```
+| a | b
+
+
+
 

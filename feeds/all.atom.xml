@@ -47,7 +47,7 @@ The advantages of click are&lt;/p&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;feature&lt;/th&gt;
-&lt;th align="left"&gt;click-config&lt;/th&gt;
+&lt;th align="center"&gt;click-config&lt;/th&gt;
 &lt;th align="center"&gt;click-configfile&lt;/th&gt;
 &lt;th align="center"&gt;click_config_file&lt;/th&gt;
 &lt;/tr&gt;
@@ -55,25 +55,25 @@ The advantages of click are&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Last commit in the repository&lt;/td&gt;
-&lt;td align="left"&gt;May 5, 2015&lt;/td&gt;
+&lt;td align="center"&gt;May 5, 2015&lt;/td&gt;
 &lt;td align="center"&gt;Sep 24, 2017&lt;/td&gt;
 &lt;td align="center"&gt;Jan 23, 2018&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Supports ini&lt;/td&gt;
-&lt;td align="left"&gt;+&lt;/td&gt;
+&lt;td align="center"&gt;+&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Supports json&lt;/td&gt;
-&lt;td align="left"&gt;-&lt;/td&gt;
+&lt;td align="center"&gt;-&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Supports yaml&lt;/td&gt;
-&lt;td align="left"&gt;+&lt;/td&gt;
+&lt;td align="center"&gt;+&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;td align="center"&gt;+&lt;/td&gt;
 &lt;/tr&gt;
@@ -108,7 +108,32 @@ The advantages of click are&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;| a | b&lt;/p&gt;</content><category term="python"></category><category term="click"></category><category term="comparison"></category></entry><entry><title>Vim cheat sheet</title><link href="https://serge-m.github.io/vim.html" rel="alternate"></link><published>2018-05-31T07:10:00+02:00</published><updated>2018-05-31T07:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-05-31:/vim.html</id><summary type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+&lt;h4&gt;click-configure&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# BASIC SOLUTION FOR: Command that uses one or more configuration files.&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;click&lt;/span&gt;
+
+&lt;span class="n"&gt;CONTEXT_SETTINGS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default_map&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ConfigFileProcessor&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_config&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="nd"&gt;@click.command&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;context_settings&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CONTEXT_SETTINGS&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click.option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;--number&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;numbers&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;multiple&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click.pass_context&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;command_with_config&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;numbers&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Example for a command that uses an configuration file&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;command_with_config&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;click_config_file&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@click.command&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="nd"&gt;@click.option&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;--name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;World&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;help&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Who to greet.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@click_config_file.configuration_option&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;click&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello {}!&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="click"></category><category term="comparison"></category></entry><entry><title>Vim cheat sheet</title><link href="https://serge-m.github.io/vim.html" rel="alternate"></link><published>2018-05-31T07:10:00+02:00</published><updated>2018-05-31T07:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-05-31:/vim.html</id><summary type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
 &lt;h3&gt;File explorer&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
 &lt;/pre&gt;&lt;/div&gt;

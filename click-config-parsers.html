@@ -150,7 +150,7 @@ The advantages of click are</p>
 <thead>
 <tr>
 <th>feature</th>
-<th align="left">click-config</th>
+<th align="center">click-config</th>
 <th align="center">click-configfile</th>
 <th align="center">click_config_file</th>
 </tr>
@@ -158,25 +158,25 @@ The advantages of click are</p>
 <tbody>
 <tr>
 <td>Last commit in the repository</td>
-<td align="left">May 5, 2015</td>
+<td align="center">May 5, 2015</td>
 <td align="center">Sep 24, 2017</td>
 <td align="center">Jan 23, 2018</td>
 </tr>
 <tr>
 <td>Supports ini</td>
-<td align="left">+</td>
+<td align="center">+</td>
 <td align="center">+</td>
 <td align="center">+</td>
 </tr>
 <tr>
 <td>Supports json</td>
-<td align="left">-</td>
+<td align="center">-</td>
 <td align="center">+</td>
 <td align="center">+</td>
 </tr>
 <tr>
 <td>Supports yaml</td>
-<td align="left">+</td>
+<td align="center">+</td>
 <td align="center">+</td>
 <td align="center">+</td>
 </tr>
@@ -211,7 +211,32 @@ The advantages of click are</p>
 </pre></div>
 
 
-<p>| a | b</p>
+<h4>click-configure</h4>
+<div class="highlight"><pre><span></span><span class="c1"># BASIC SOLUTION FOR: Command that uses one or more configuration files.</span>
+<span class="kn">import</span> <span class="nn">click</span>
+
+<span class="n">CONTEXT_SETTINGS</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">default_map</span><span class="o">=</span><span class="n">ConfigFileProcessor</span><span class="o">.</span><span class="n">read_config</span><span class="p">())</span>
+
+<span class="nd">@click.command</span><span class="p">(</span><span class="n">context_settings</span><span class="o">=</span><span class="n">CONTEXT_SETTINGS</span><span class="p">)</span>
+<span class="nd">@click.option</span><span class="p">(</span><span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="s2">&quot;--number&quot;</span><span class="p">,</span> <span class="s2">&quot;numbers&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nd">@click.pass_context</span>
+<span class="k">def</span> <span class="nf">command_with_config</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">numbers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Example for a command that uses an configuration file&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+    <span class="o">...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">command_with_config</span><span class="p">()</span>
+</pre></div>
+
+
+<h4>click_config_file</h4>
+<div class="highlight"><pre><span></span><span class="nd">@click.command</span><span class="p">()</span>
+<span class="nd">@click.option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Who to greet.&#39;</span><span class="p">)</span>
+<span class="nd">@click_config_file.configuration_option</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;Hello {}!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -295,12 +320,6 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
@@ -314,10 +333,19 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/click.html">click</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -326,22 +354,13 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/date.html">date</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
@@ -366,6 +385,9 @@ The advantages of click are</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -400,11 +422,11 @@ The advantages of click are</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -419,13 +441,7 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logger.html">logger</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logs.html">logs</a>
@@ -434,13 +450,19 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/make.html">make</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
@@ -449,19 +471,13 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
@@ -472,9 +488,6 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -484,20 +497,14 @@ The advantages of click are</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
@@ -523,8 +530,17 @@ The advantages of click are</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/slides.html">slides</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -536,10 +552,13 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -551,13 +570,16 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tests.html">tests</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
@@ -585,6 +607,9 @@ The advantages of click are</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

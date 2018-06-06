@@ -45,6 +45,7 @@ Click doesn't support config files by default. There is a number of additional m
 | Supports ini                 | yes           |              yes |              yes|
 | Supports json                | no            |               no | yes with strange extension technique |
 | Supports yaml                | yes           |               no | yes with strange extension technique | 
+| implementation notes         | click-config provides a decorator that takes a python object and overwrites its attributes with values passed into the program via command line arguments. | through context_settings | usable by simply adding the appropriate decorator |
 
 
 ### Syntax examples

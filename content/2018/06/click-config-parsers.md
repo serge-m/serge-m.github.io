@@ -39,12 +39,12 @@ Click doesn't support config files by default. There is a number of additional m
 ## Comparison
 
 
-| feature        | click-config       | click-configfile  | click_config_file
-| ---------------------------- |:-------------| :-----------:| :------------:|
-| Last commit in the repository| May 5, 2015  | Sep 24, 2017 | Jan 23, 2018  |
-| Supports ini                 | +            |            + |              +|
-| Supports json                | -            |            + |              +|
-| Supports yaml                | +            |            + |              +|
+| feature                      | click-config  | click-configfile  | click_config_file
+| ---------------------------- |:-------------:| :---------------:| :------------:|
+| Last commit in the repository| May 5, 2015   | Sep 24, 2017     | Jan 23, 2018  |
+| Supports ini                 | +             |                + |              +|
+| Supports json                | -             |                + |              +|
+| Supports yaml                | +             |                + |              +| 
 
 
 ### Syntax examples
@@ -75,7 +75,40 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-| a | b
+
+
+
+#### click-configure
+```python
+# BASIC SOLUTION FOR: Command that uses one or more configuration files.
+import click
+
+CONTEXT_SETTINGS = dict(default_map=ConfigFileProcessor.read_config())
+
+@click.command(context_settings=CONTEXT_SETTINGS)
+@click.option("-n", "--number", "numbers", type=int, multiple=True)
+@click.pass_context
+def command_with_config(ctx, numbers):
+    """Example for a command that uses an configuration file"""
+    pass
+    ...
+
+if __name__ == "__main__":
+    command_with_config()
+```
+
+#### click_config_file
+
+```python
+@click.command()
+@click.option('--name', default='World', help='Who to greet.')
+@click_config_file.configuration_option()
+def hello(name):
+    click.echo('Hello {}!'.format(name))
+```
+
+
+
 
 
 

@@ -42,9 +42,9 @@ Click doesn't support config files by default. There is a number of additional m
 | feature                      | click-config  | click-configfile  | click_config_file
 | ---------------------------- |:-------------:| :---------------:| :------------:|
 | Last commit in the repository| May 5, 2015   | Sep 24, 2017     | Jan 23, 2018  |
-| Supports ini                 | +             |                + |              +|
-| Supports json                | -             |                + |              +|
-| Supports yaml                | +             |                + |              +| 
+| Supports ini                 | yes           |              yes |              yes|
+| Supports json                | no            |               no | yes with strange extension technique |
+| Supports yaml                | yes           |               no | yes with strange extension technique | 
 
 
 ### Syntax examples

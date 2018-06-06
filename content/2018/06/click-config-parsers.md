@@ -34,6 +34,7 @@ Click doesn't support config files by default. There is a number of additional m
 * [click-config](https://github.com/EverythingMe/click-config)
 * [click-configfile](https://github.com/click-contrib/click-configfile)
 * [click_config_file](https://github.com/phha/click_config_file)
+* Nice implementation from stackoverflow: [https://stackoverflow.com/a/46391887]. No module, supports yaml. 
 
 
 ## Comparison

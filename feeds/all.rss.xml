@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Wed, 06 Jun 2018 08:17:22 +0200</lastBuildDate><item><title>Comparison of click-based config parsers for python</title><link>https://serge-m.github.io/click-config-parsers.html</link><description>&lt;h2&gt;Problem&lt;/h2&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Wed, 20 Jun 2018 07:45:21 +0200</lastBuildDate><item><title>Bokeh in jupyter notebooks for interactive plots</title><link>https://serge-m.github.io/bokeh-example.html</link><description>&lt;p&gt;&lt;a href="https://bokeh.pydata.org/en/latest/"&gt;Bokeh&lt;/a&gt; is a library for interactive visualization. One can use it in Jupyter notebooks.&lt;/p&gt;
+&lt;p&gt;Here is the example. &lt;/p&gt;
+&lt;p&gt;Lets say we have a pandas dataframe with timestamps and some values:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;io&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;StringIO&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;timestamp,value&lt;/span&gt;
+&lt;span class="s2"&gt;2018-01-01T10:00:00,20&lt;/span&gt;
+&lt;span class="s2"&gt;2018-01-01T12:00 …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 20 Jun 2018 07:45:21 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-06-20:/bokeh-example.html</guid><category>python</category><category>bokeh</category><category>jupyter</category><category>plot</category></item><item><title>Comparison of click-based config parsers for python</title><link>https://serge-m.github.io/click-config-parsers.html</link><description>&lt;h2&gt;Problem&lt;/h2&gt;
 &lt;p&gt;There is &lt;a href="click.pocoo.org/"&gt;click&lt;/a&gt; module that allows you to create comman dline interfaces for your python scripts.
 The advantages of click are&lt;/p&gt;
 &lt;ul&gt;

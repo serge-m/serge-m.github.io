@@ -48,7 +48,16 @@
 &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;timestamp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;value&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;source&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;ColumnDataSource&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;df&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
 &lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="bokeh"></category><category term="jupyter"></category><category term="plot"></category></entry><entry><title>Comparison of click-based config parsers for python</title><link href="https://serge-m.github.io/click-config-parsers.html" rel="alternate"></link><published>2018-06-06T08:17:22+02:00</published><updated>2018-06-06T08:17:22+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-06-06:/click-config-parsers.html</id><summary type="html">&lt;h2&gt;Problem&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can use also &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bokeh.io&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;output_file&lt;/span&gt;
+&lt;span class="n"&gt;output_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;./some-html.html&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to generate interactive html page with your graph&lt;/p&gt;</content><category term="python"></category><category term="bokeh"></category><category term="jupyter"></category><category term="plot"></category></entry><entry><title>Comparison of click-based config parsers for python</title><link href="https://serge-m.github.io/click-config-parsers.html" rel="alternate"></link><published>2018-06-06T08:17:22+02:00</published><updated>2018-06-06T08:17:22+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-06-06:/click-config-parsers.html</id><summary type="html">&lt;h2&gt;Problem&lt;/h2&gt;
 &lt;p&gt;There is &lt;a href="click.pocoo.org/"&gt;click&lt;/a&gt; module that allows you to create comman dline interfaces for your python scripts.
 The advantages of click are&lt;/p&gt;
 &lt;ul&gt;

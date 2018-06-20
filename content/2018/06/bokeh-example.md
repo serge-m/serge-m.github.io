@@ -51,3 +51,10 @@ p.line ('timestamp', 'value', source=ColumnDataSource(data=df))
 
 show(p)
 ```
+
+You can use also 
+```
+from bokeh.io import output_file
+output_file("./some-html.html")
+```
+to generate interactive html page with your graph

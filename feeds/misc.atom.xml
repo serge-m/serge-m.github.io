@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-06-20T07:45:21+02:00</updated><entry><title>Bokeh in jupyter notebooks for interactive plots</title><link href="https://serge-m.github.io/bokeh-example.html" rel="alternate"></link><published>2018-06-20T07:45:21+02:00</published><updated>2018-06-20T07:45:21+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-06-20:/bokeh-example.html</id><summary type="html">&lt;p&gt;&lt;a href="https://bokeh.pydata.org/en/latest/"&gt;Bokeh&lt;/a&gt; is a library for interactive visualization. One can use it in Jupyter notebooks.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-07-04T22:10:00+02:00</updated><entry><title>OKRs</title><link href="https://serge-m.github.io/okrs.html" rel="alternate"></link><published>2018-07-04T22:10:00+02:00</published><updated>2018-07-04T22:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-04:/okrs.html</id><summary type="html">&lt;p&gt;We had a production system written by mathematicians, 
+50 different stakeholders with conflicting targets, five leadership changes during last year,
+a dozen of microservices, AWS costs of 10 thousands per week,&lt;br&gt;
+hole galaxy of legacy databases, cron jobs, Celery, greenlets, …
+Also, unstable API as a dependency, 10 Gb of text …&lt;/p&gt;</summary><content type="html">&lt;p&gt;We had a production system written by mathematicians, 
+50 different stakeholders with conflicting targets, five leadership changes during last year,
+a dozen of microservices, AWS costs of 10 thousands per week,&lt;br&gt;
+hole galaxy of legacy databases, cron jobs, Celery, greenlets, …
+Also, unstable API as a dependency, 10 Gb of text dumps as output,  user input without validation, 
+false alarms in monitoring, and two dozen unprotected public endpoints. 
+Not that we needed all that for the work, but once you get locked into a serious agile development,
+the tendency is to push it as far as you can. The only thing that really worried me was the OKRs. 
+There is nothing in the world more helpless and irresponsible and depraved than a man
+in the depths of an OKRs alignment, and I knew we'd get into that rotten stuff pretty soon. &lt;/p&gt;</content><category term="okrs"></category><category term="fun"></category><category term="management"></category></entry><entry><title>Bokeh in jupyter notebooks for interactive plots</title><link href="https://serge-m.github.io/bokeh-example.html" rel="alternate"></link><published>2018-06-20T07:45:21+02:00</published><updated>2018-06-20T07:45:21+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-06-20:/bokeh-example.html</id><summary type="html">&lt;p&gt;&lt;a href="https://bokeh.pydata.org/en/latest/"&gt;Bokeh&lt;/a&gt; is a library for interactive visualization. One can use it in Jupyter notebooks.&lt;/p&gt;
 &lt;p&gt;Here is the example. &lt;/p&gt;
 &lt;p&gt;Lets say we have a pandas dataframe with timestamps and some values:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;

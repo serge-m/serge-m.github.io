@@ -70,6 +70,7 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "sitemap", "i18n_subsites"]
 
 STATIC_PATHS = [ "static"]
-
+ARTICLE_EXCLUDES = [ "static"]
+PAGE_EXCLUDES = [ "static" ]
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}

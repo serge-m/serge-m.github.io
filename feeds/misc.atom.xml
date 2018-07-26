@@ -476,7 +476,7 @@ class: center, middle
 
 
 &lt;p&gt;This is how the slide look like in browser:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2018/03/slide-35-15.png" style="border: 1px solid black;"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2018/03/slide-35-15.png" style="border: 1px solid black;"&gt;&lt;/p&gt;
 &lt;p&gt;Well this example requires internet connection to download js and fonts, but you can put them in the same folder.&lt;/p&gt;
 &lt;p&gt;Example presentations: &lt;a href="https://remarkjs.com/#1"&gt;sample&lt;/a&gt;, &lt;a href="https://saurabh-kumar.com/mocking/#1"&gt;mocking in python&lt;/a&gt;&lt;/p&gt;</content><category term="presentations"></category><category term="html"></category><category term="javascript"></category><category term="slides"></category></entry><entry><title>Select lines matching regular expression in python</title><link href="https://serge-m.github.io/print-lines-matching-regex.html" rel="alternate"></link><published>2018-02-26T23:14:00+01:00</published><updated>2018-02-26T23:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-02-26:/print-lines-matching-regex.html</id><summary type="html">&lt;p&gt;Given a text file we want to create another file containing only those lines that match a certain regular expression using python3&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
@@ -1683,7 +1683,7 @@ two DC motors or one stepper motor&lt;br&gt;
 1.2 A continuous (2 A peak) per motor&lt;/p&gt;
 &lt;p&gt;Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor&lt;br&gt;
 Reverse-voltage protection circuit  &lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/drivers/Pololu DRV8833.png" width="250"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/drivers/Pololu DRV8833.png" width="250"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.pololu.com/file/0J534/drv8833.pdf"&gt;datasheet&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pololu DRV8835 Dual Motor Driver Carrier&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.exp-tech.de/drv8835-dual-motor-driver-carrier"&gt;exp-tech 4,20 €&lt;/a&gt;&lt;br&gt;
@@ -1718,14 +1718,14 @@ Two possible interface modes: PHASE/ENABLE (default – one pin for direction, a
 &lt;/ul&gt;
 &lt;p&gt;The DRV8833 has a higher peak current rating (2 A per channel vs 1.5 A), optional built-in current-limiting, and no need for externally supplied logic voltage.&lt;/p&gt;
 &lt;p&gt;Mode 1:&lt;br&gt;
-&lt;img src="https://serge-m.github.io/2017/04/drivers/drv8835.png" width="250"&gt;&lt;/p&gt;
+&lt;img src="{filename}/2017/04/drivers/drv8835.png" width="250"&gt;&lt;/p&gt;
 &lt;p&gt;Mode 2:&lt;br&gt;
-&lt;img src="https://serge-m.github.io/2017/04/drivers/drv8835-mode2.png" width="250"&gt;&lt;/p&gt;
+&lt;img src="{filename}/2017/04/drivers/drv8835-mode2.png" width="250"&gt;&lt;/p&gt;
 &lt;h3&gt;Pololu DRV8801 Single Brushed DC Motor Driver Carrier&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.exp-tech.de/pololu-drv8801-single-brushed-dc-motor-driver-carrier"&gt;exp-tech 5,20€&lt;/a&gt;&lt;br&gt;
 &lt;a href="https://www.pololu.com/product/2136"&gt;polou.com 4,95$&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/drivers/Pololu DRV8801 1.jpg" width="250"&gt;
-&lt;img src="https://serge-m.github.io/2017/04/drivers/Pololu DRV8801 2.jpg" width="250"&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/drivers/Pololu DRV8801 1.jpg" width="250"&gt;
+&lt;img src="{filename}/2017/04/drivers/Pololu DRV8801 2.jpg" width="250"&gt;  &lt;/p&gt;
 &lt;p&gt;Drives a single brushed DC motor&lt;br&gt;
 Motor supply voltage: 8–36 V&lt;br&gt;
 Logic supply voltage: 3.3–6.5 V&lt;br&gt;
@@ -1738,7 +1738,7 @@ Under-voltage lockout and protection against over-current and over-temperature  
 &lt;p&gt;&lt;a href="http://www.exp-tech.de/a4990-dual-motor-driver-carrier"&gt;exp-tech 5,95 €&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.pololu.com/product/2137"&gt;pololu 5.95$&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/pololu/a4990-motor-shield"&gt;Arduino library&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/drivers/A4990 Dual Motor Driver Carrier.png" width="250"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/drivers/A4990 Dual Motor Driver Carrier.png" width="250"&gt;&lt;/p&gt;
 &lt;p&gt;Dual-H-bridge motor driver: 
 can drive two DC motors or one bipolar stepper motor&lt;br&gt;
 Operating voltage: 6‌‌–32 V&lt;br&gt;
@@ -1787,7 +1787,7 @@ Microstep resolutions:  full, 1/2, 1/4, 1/8, and 1/16&lt;br&gt;
 Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;h3&gt;Pololu DRV8824 Stepper Motor Driver Carrier, Low Current&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.exp-tech.de/pololu-drv8824-stepper-motor-driver-carrier-low-current"&gt;6,99 €&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250"&gt;&lt;/p&gt;
 &lt;p&gt;Minimum operating voltage:  8.2 V&lt;br&gt;
 Maximum operating voltage:  45 V&lt;br&gt;
 Continuous current per phase:   0.75 A&lt;br&gt;
@@ -1812,27 +1812,27 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;h2&gt;Voltage regulators&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.pololu.com/category/133/step-up-step-down-voltage-regulators"&gt;Step-Up/Step-Down Voltage Regulators&lt;/a&gt;&lt;/p&gt;</content><category term="raspberry"></category><category term="pi"></category></entry><entry><title>SN74HC595 shift register. Controlling from Raspberry</title><link href="https://serge-m.github.io/sn74hc595-shift-register.html" rel="alternate"></link><published>2017-04-23T12:11:00+02:00</published><updated>2017-04-23T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-23:/sn74hc595-shift-register.html</id><summary type="html">&lt;p&gt;For other links about raspberry pi go &lt;a href="/raspberry-pi-links.html"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pinouts&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
 &lt;h3&gt;How to control&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;p&gt;It seems that procedure described in Texas Instruments' datasheet is wrong:
-&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;img src="{filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;h2&gt;Using in motor shield DK Electronics V1&lt;/h2&gt;
 &lt;p&gt;Scheme:
-&lt;img alt="shield scheme" src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
+&lt;img alt="shield scheme" src="{filename}/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/l293.pdf"&gt;L293x Quadruple Half-H Driver&lt;/a&gt; (pdf)&lt;/p&gt;
 &lt;h3&gt;Connection&lt;/h3&gt;
 &lt;p&gt;Raspberry PIN 6 -&amp;gt; Shield GROUND&lt;/p&gt;
 &lt;p&gt;Raspberry PIN 11 -&amp;gt; Shield PIN 8 (Register PIN …&lt;/p&gt;</summary><content type="html">&lt;p&gt;For other links about raspberry pi go &lt;a href="/raspberry-pi-links.html"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pinouts&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
 &lt;h3&gt;How to control&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;p&gt;It seems that procedure described in Texas Instruments' datasheet is wrong:
-&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;img src="{filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;h2&gt;Using in motor shield DK Electronics V1&lt;/h2&gt;
 &lt;p&gt;Scheme:
-&lt;img alt="shield scheme" src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
+&lt;img alt="shield scheme" src="{filename}/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/l293.pdf"&gt;L293x Quadruple Half-H Driver&lt;/a&gt; (pdf)&lt;/p&gt;
 &lt;h3&gt;Connection&lt;/h3&gt;
 &lt;p&gt;Raspberry PIN 6 -&amp;gt; Shield GROUND&lt;/p&gt;
@@ -3260,8 +3260,8 @@ See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp
 &lt;h2&gt;Reading input (button) from GPIO&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs"&gt;without interrupts, raspi.tv&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;RaspberryPi Zero pins Layout&lt;/h2&gt;
-&lt;p&gt;&lt;img alt="GPIO raspberry pins scheme" src="https://serge-m.github.io/2016/12/gpio.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="pins layout photo" src="https://serge-m.github.io/2016/12/gpio-raspberry-zero.png"&gt; &lt;a href="http://pi4j.com/pins/model-zero-rev1.html"&gt;image source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GPIO raspberry pins scheme" src="{filename}/2016/12/gpio.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pins layout photo" src="{filename}/2016/12/gpio-raspberry-zero.png"&gt; &lt;a href="http://pi4j.com/pins/model-zero-rev1.html"&gt;image source&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Other&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html"&gt;Example of using 545043 power supply&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"&gt;description of sn74hc595&lt;/a&gt;&lt;/p&gt;
@@ -5039,10 +5039,10 @@ simple example:&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This completes the declaration! &lt;/p&gt;</content><category term="c++"></category><category term="useful"></category></entry><entry><title>Map of C++ by Alena C++</title><link href="https://serge-m.github.io/map-of-c-by-alena-c.html" rel="alternate"></link><published>2015-02-23T22:03:00+01:00</published><updated>2015-02-23T22:03:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-02-23:/map-of-c-by-alena-c.html</id><summary type="html">&lt;p&gt;&lt;a href="http://goldns.ru/cppmap-2012.png"&gt;
-&lt;img src="https://serge-m.github.io/2015/02/images/cppmap-2012.jpg"&gt;
+&lt;img src="{filename}/2015/02/images/cppmap-2012.jpg"&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;map is updated in 2017. New version is &lt;a href="http://alenacpp.blogspot.de/2017/02/17.html"&gt;here&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://goldns.ru/cppmap-2012.png"&gt;
-&lt;img src="https://serge-m.github.io/2015/02/images/cppmap-2012.jpg"&gt;
+&lt;img src="{filename}/2015/02/images/cppmap-2012.jpg"&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;map is updated in 2017. New version is &lt;a href="http://alenacpp.blogspot.de/2017/02/17.html"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="mildly interesting"></category><category term="cpp"></category><category term="c"></category></entry><entry><title>Suspend and hibernate in Linux</title><link href="https://serge-m.github.io/suspend-and-hibernate-in-linux.html" rel="alternate"></link><published>2015-02-04T14:04:00+01:00</published><updated>2015-02-04T14:04:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2015-02-04:/suspend-and-hibernate-in-linux.html</id><summary type="html">&lt;p&gt;After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. 
 http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/&lt;/p&gt;
@@ -5536,9 +5536,9 @@ Thus I see actual data without distortions. Grayscale is easier to understand.&l
 
 
 &lt;p&gt;Compare default colors and interpolation:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2014/11/images/img_default.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2014/11/images/img_default.png"&gt;&lt;/p&gt;
 &lt;p&gt;and after applying the settings:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2014/11/images/img_gray.png"&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category><category term="matplotlib"></category><category term="plt"></category><category term="images"></category></entry><entry><title>Loading numpy array from string</title><link href="https://serge-m.github.io/loading-numpy-array-from-string.html" rel="alternate"></link><published>2014-11-17T23:01:00+01:00</published><updated>2014-11-17T23:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</id><summary type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
+&lt;p&gt;&lt;img src="{filename}/2014/11/images/img_gray.png"&gt;&lt;/p&gt;</content><category term="useful"></category><category term="python"></category><category term="matplotlib"></category><category term="plt"></category><category term="images"></category></entry><entry><title>Loading numpy array from string</title><link href="https://serge-m.github.io/loading-numpy-array-from-string.html" rel="alternate"></link><published>2014-11-17T23:01:00+01:00</published><updated>2014-11-17T23:01:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</id><summary type="html">&lt;p&gt;Okay children, today we learn how to convert text to numpy matrix.
 Source is &lt;a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class="brush: python"&gt;# loading modules
 import numpy

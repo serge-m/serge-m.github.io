@@ -232,14 +232,14 @@ two DC motors or one stepper motor&lt;br&gt;
 2.7‌‌–10.8 V&lt;br&gt;
 1.2 A continuous …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 23 Apr 2017 12:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-23:/motor-dirvers-controllers.html</guid><category>raspberry</category><category>pi</category></item><item><title>SN74HC595 shift register. Controlling from Raspberry</title><link>https://serge-m.github.io/sn74hc595-shift-register.html</link><description>&lt;p&gt;For other links about raspberry pi go &lt;a href="/raspberry-pi-links.html"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Pinouts&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300"&gt;&lt;/p&gt;
 &lt;h3&gt;How to control&lt;/h3&gt;
-&lt;p&gt;&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="{filename}/2017/04/sn74hc595-shift-register-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;p&gt;It seems that procedure described in Texas Instruments' datasheet is wrong:
-&lt;img src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
+&lt;img src="{filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%"&gt;&lt;/p&gt;
 &lt;h2&gt;Using in motor shield DK Electronics V1&lt;/h2&gt;
 &lt;p&gt;Scheme:
-&lt;img alt="shield scheme" src="https://serge-m.github.io/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
+&lt;img alt="shield scheme" src="{filename}/2017/04/sn74hc595-shift-register-mshieldv1-schem.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/l293.pdf"&gt;L293x Quadruple Half-H Driver&lt;/a&gt; (pdf)&lt;/p&gt;
 &lt;h3&gt;Connection&lt;/h3&gt;
 &lt;p&gt;Raspberry PIN 6 -&amp;gt; Shield GROUND&lt;/p&gt;
@@ -820,7 +820,7 @@ simple example:&lt;/p&gt;
 &lt;li&gt;long * * foo [7];&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Start …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 09 Mar 2015 14:26:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-03-09:/reading-c-type-declarations.html</guid><category>c++</category><category>useful</category></item><item><title>Map of C++ by Alena C++</title><link>https://serge-m.github.io/map-of-c-by-alena-c.html</link><description>&lt;p&gt;&lt;a href="http://goldns.ru/cppmap-2012.png"&gt;
-&lt;img src="https://serge-m.github.io/2015/02/images/cppmap-2012.jpg"&gt;
+&lt;img src="{filename}/2015/02/images/cppmap-2012.jpg"&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;map is updated in 2017. New version is &lt;a href="http://alenacpp.blogspot.de/2017/02/17.html"&gt;here&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 23 Feb 2015 22:03:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-02-23:/map-of-c-by-alena-c.html</guid><category>mildly interesting</category><category>cpp</category><category>c</category></item><item><title>Suspend and hibernate in Linux</title><link>https://serge-m.github.io/suspend-and-hibernate-in-linux.html</link><description>&lt;p&gt;After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. 
 http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/&lt;/p&gt;
@@ -1410,4 +1410,4 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 &lt;a href="http://gitorious.org/blenderprojects/"&gt;Source code&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 11:51:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/overview-of-open-source-node-based.html</guid><category>video editing</category><category>node based</category><category>software</category></item><item><title>Image resize in Nuke</title><link>https://serge-m.github.io/image-resize-in-nuke.html</link><description>&lt;p&gt;So here we have two filters:
 1) Crop
 2) Reformat&lt;/p&gt;
-&lt;p&gt;To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 07 May 2013 15:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-07:/image-resize-in-nuke.html</guid><category>en</category><category>nuke</category></item></channel></rss>
+&lt;p&gt;To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 07 May 2013 15:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-07:/image-resize-in-nuke.html</guid><category>en</category><category>nuke</category></item><item><title>My super title</title><link>https://serge-m.github.io/my-super-title.html</link><description>Presentation on running spark with aws </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 09 Jul 2012 22:28:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2012-07-09:/my-super-title.html</guid><category>thats</category><category>awesome</category></item></channel></rss>

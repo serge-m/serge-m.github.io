@@ -31,6 +31,7 @@ CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 # Blogroll
 LINKS = (('Databases', '/pages/collection-of-interesting-databases.html'),
+         ('Posts by year', '/pages/posts-by-year.html'),
          ('Books', '/books.html'),
          ('Useful', '/tag/useful.html'),
          ('Bjontegaard metric in Matlab', '/bjontegaard-metric-matlab-script.html'),
@@ -56,7 +57,7 @@ DISPLAY_CATEGORIES_ON_SIDEBAR=True
 RECENT_POST_COUNT=12
 DISPLAY_RECENT_POSTS_ON_SIDEBAR=True
 DISPLAY_TAGS_ON_SIDEBAR=True
-DISPLAY_PAGES_ON_MENU=True
+DISPLAY_PAGES_ON_MENU=False
 DISPLAY_TAGS_INLINE=True
 
 # Following items are often useful when publishing
@@ -68,7 +69,7 @@ DISPLAY_ARTICLE_INFO_ON_INDEX=True
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "sitemap", "i18n_subsites"]
 
-STATIC_PATHS = [ "./", "./static/"]
+STATIC_PATHS = [ "static"]
 
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}

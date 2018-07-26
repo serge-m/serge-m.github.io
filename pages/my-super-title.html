@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>torch - sergem personal public notebook</title>
+    <title>My super title - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,16 @@
 
 
 
+<link rel="canonical" href="https://serge-m.github.io/pages/my-super-title.html">
 
-    <meta name="author" content="sergem" />
-    <meta name="keywords" content="torch" />
+        <meta name="author" content="SergeM" />
+        <meta name="description" content="Presentation on running spark with aws" />
 
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content="https://serge-m.github.io"/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+    <meta property="og:site_name" content="sergem personal public notebook" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="My super title"/>
+    <meta property="og:url" content="https://serge-m.github.io/pages/my-super-title.html"/>
+    <meta property="og:description" content="Presentation on running spark with aws" />
 
 
     <!-- Bootstrap -->
@@ -56,7 +56,7 @@ sergem personal public notebook            </a>
                          <li><a href="https://serge-m.github.io/pages/collection-of-interesting-databases.html">
                              Collection of interesting databases
                           </a></li>
-                         <li><a href="https://serge-m.github.io/pages/my-super-title.html">
+                         <li class="active"><a href="https://serge-m.github.io/pages/my-super-title.html">
                              My super title
                           </a></li>
                          <li><a href="https://serge-m.github.io/pages/posts-by-year.html">
@@ -77,48 +77,15 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/how-torch-stores-images.html">how torch stores images</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-06-26T23:01:00+02:00"> 2016-06-26T23:01:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/torch.html">torch</a>
+    <section id="content" class="body">
+        <h1 class="entry-title">My super title</h1>
+        
+        <div class="entry-content">
+            
+        This is the content of my super blog post.
     
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><div class="highlight"><pre><span></span>require(&#39;image&#39;)
-imgPath = &quot;image.jpg&quot;
-img = torch.Tensor(1, 3, imgDim, imgDim)
-img[1] = image.load(imgPath, 3, byte)
-</pre></div>
-
-
-<p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
-<div class="highlight"><pre><span></span>display
-require &#39;gnuplot&#39;
-gnuplot.figure(1)
-gnuplot.imagesc(img[1])
-</pre></div>
-
-
-<p>Torch&lt;-&gt;numpy dictionary
-<a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https …</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/how-torch-stores-images.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
-
+        </div>
+    </section>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -130,7 +97,18 @@ gnuplot.imagesc(img[1])
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/how-torch-stores-images.html">how torch stores images</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/okrs.html">OKRs</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/bokeh-example.html">Bokeh in jupyter notebooks for interactive plots</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/click-config-parsers.html">Comparison of click-based config parsers for python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/vim.html">Vim cheat sheet</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/presentations-in-browser.html">Presentaitons in browser</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/print-lines-matching-regex.html">Select lines matching regular expression in python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/airflow.html">Workflow management with Apache Airflow</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/datetime-in-python.html">Datetime in Python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/ubuntu-linux-settings.html">Ubuntu linux settings</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/mixins-in-python.html">Mixin pattern in Python</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/pytest-cheatsheet.html">Pytest cheatsheet</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -489,7 +467,7 @@ gnuplot.imagesc(img[1])
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 sergem
+         <div class="col-xs-10">&copy; 2018 sergem
             &middot; 
             <small><a href="http://platformxy.com">platformxy.com</a>, <a href="http://lock.platformxy.com">lock</a></small>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

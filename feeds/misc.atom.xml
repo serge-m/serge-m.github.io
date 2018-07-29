@@ -148,7 +148,15 @@ in the previous cluster example one have to specify credentials provider. Add th
 &lt;li&gt;InstanceProfileCredentialsProvider - one that works on AWS instances.&lt;/li&gt;
 &lt;li&gt;BasicAWSCredentialsProvider - I don't know what it is.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;What we need is ProfileCredentialsProvider. It reads the credentials from &lt;code&gt;~/.aws&lt;/code&gt; directory.&lt;/p&gt;</content><category term="spark"></category><category term="python"></category><category term="aws"></category></entry><entry><title>OKRs</title><link href="https://serge-m.github.io/okrs.html" rel="alternate"></link><published>2018-07-04T22:10:00+02:00</published><updated>2018-07-04T22:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-04:/okrs.html</id><summary type="html">&lt;p&gt;We had a production system written by mathematicians, 
+&lt;p&gt;What we need is ProfileCredentialsProvider. It reads the credentials from &lt;code&gt;~/.aws&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2&gt;More about spark and aws&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/dimajix/docker-hadoop/blob/master/Dockerfile#L23"&gt;aws hadoop libraries (copying)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://medium.com/@subhojit20_27731/apache-spark-and-amazon-s3-gotchas-and-best-practices-a767242f3d98"&gt;Apache Spark and Amazon S3 — Gotchas and best practices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://aws.amazon.com/blogs/developer/secure-local-development-with-the-profilecredentialsprovider/"&gt;about profile credentials provider 1&lt;/a&gt;
+&lt;a href="https://stackoverflow.com/questions/42669246/spark-is-inventing-his-own-aws-secretkey"&gt;about profile credentials provider 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://hadoop.apache.org/docs/stable/hadoop-aws/tools/hadoop-aws/index.html#Features"&gt;about hadoop aws s3 access&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spark.apache.org/docs/latest/cluster-overview.html"&gt;about drivers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.slideshare.net/rjurney/predictive-analytics-with-airflow-and-pyspark"&gt;analytics with airflow and spark&lt;/a&gt;&lt;/p&gt;</content><category term="spark"></category><category term="python"></category><category term="aws"></category></entry><entry><title>OKRs</title><link href="https://serge-m.github.io/okrs.html" rel="alternate"></link><published>2018-07-04T22:10:00+02:00</published><updated>2018-07-04T22:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-04:/okrs.html</id><summary type="html">&lt;p&gt;We had a production system written by mathematicians, 
 50 different stakeholders with conflicting targets, five leadership changes during last year,
 a dozen of microservices, AWS costs of 10 thousands per week,&lt;br&gt;
 hole galaxy of legacy databases, cron jobs, Celery, greenlets, …

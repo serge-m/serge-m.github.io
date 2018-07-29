@@ -164,6 +164,24 @@ That basically means that spark has three credentials proveders: BasicAWSCredent
 What we need is ProfileCredentialsProvider. It reads the credentials from `~/.aws` directory.
 
 
+## More about spark and aws
+[aws hadoop libraries (copying)](https://github.com/dimajix/docker-hadoop/blob/master/Dockerfile#L23)
+
+
+[Apache Spark and Amazon S3 — Gotchas and best practices](https://medium.com/@subhojit20_27731/apache-spark-and-amazon-s3-gotchas-and-best-practices-a767242f3d98)
+
+[about profile credentials provider 1](https://aws.amazon.com/blogs/developer/secure-local-development-with-the-profilecredentialsprovider/)
+[about profile credentials provider 2](https://stackoverflow.com/questions/42669246/spark-is-inventing-his-own-aws-secretkey)
+
+[about hadoop aws s3 access](https://hadoop.apache.org/docs/stable/hadoop-aws/tools/hadoop-aws/index.html#Features)
+
+[about drivers](
+https://spark.apache.org/docs/latest/cluster-overview.html)
+
+[analytics with airflow and spark](
+https://www.slideshare.net/rjurney/predictive-analytics-with-airflow-and-pyspark)
+
+
 
 
 

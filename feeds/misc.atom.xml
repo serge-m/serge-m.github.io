@@ -1,5 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-07-04T22:10:00+02:00</updated><entry><title>OKRs</title><link href="https://serge-m.github.io/okrs.html" rel="alternate"></link><published>2018-07-04T22:10:00+02:00</published><updated>2018-07-04T22:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-04:/okrs.html</id><summary type="html">&lt;p&gt;We had a production system written by mathematicians, 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-07-29T22:07:00+02:00</updated><entry><title>Spark in Docker with AWS credentials</title><link href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html" rel="alternate"></link><published>2018-07-29T22:07:00+02:00</published><updated>2018-07-29T22:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-29:/spark-in-docker-with-aws-credentials.html</id><summary type="html">&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
+&lt;p&gt;Setting up spark is tricky. Therefore it is useful to try out things locally before deploying to the cluster.&lt;/p&gt;
+&lt;p&gt;Docker is of a good help here.
+There is a great docker image to play with spark locally.
+&lt;a href="https://github.com/gettyimages/docker-spark/"&gt;gettyimages/docker-spark&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Running &lt;code&gt;SparkPi&lt;/code&gt; sample program (one …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
+&lt;p&gt;Setting up spark is tricky. Therefore it is useful to try out things locally before deploying to the cluster.&lt;/p&gt;
+&lt;p&gt;Docker is of a good help here.
+There is a great docker image to play with spark locally.
+&lt;a href="https://github.com/gettyimages/docker-spark/"&gt;gettyimages/docker-spark&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Running &lt;code&gt;SparkPi&lt;/code&gt; sample program (one of the examples from the docs of Spark):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run --rm -it -p 4040:4040 gettyimages/spark bin/run-example SparkPi 10
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Running a small example with Pyspark:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;import pyspark&lt;/span&gt;&lt;span class="se"&gt;\n\n&lt;/span&gt;&lt;span class="s2"&gt;print(pyspark.SparkContext().parallelize(range(0, 10)).count())&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;rm&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="mi"&gt;4040&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;4040&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;pwd&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;gettyimages&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;spark&lt;/span&gt; &lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;spark&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;submit&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we create a file with a python program outside of the docker. During &lt;code&gt;docker run&lt;/code&gt; we map this file to the file inside the docker container with path &lt;code&gt;/count.py&lt;/code&gt; and the we execute &lt;code&gt;bin/spark-submit&lt;/code&gt; command that executes our code.&lt;/p&gt;
+&lt;p&gt;You can also run PySpark in interactive mode:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ docker run --rm -it -p &lt;span class="m"&gt;4040&lt;/span&gt;:4040  gettyimages/spark bin/pyspark
+
+Python &lt;span class="m"&gt;3&lt;/span&gt;.5.3 &lt;span class="o"&gt;(&lt;/span&gt;default, Jan &lt;span class="m"&gt;19&lt;/span&gt; &lt;span class="m"&gt;2017&lt;/span&gt;, &lt;span class="m"&gt;14&lt;/span&gt;:11:04&lt;span class="o"&gt;)&lt;/span&gt; 
+&lt;span class="o"&gt;[&lt;/span&gt;GCC &lt;span class="m"&gt;6&lt;/span&gt;.3.0 &lt;span class="m"&gt;20170118&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; on linux
+Type &lt;span class="s2"&gt;&amp;quot;help&amp;quot;&lt;/span&gt;, &lt;span class="s2"&gt;&amp;quot;copyright&amp;quot;&lt;/span&gt;, &lt;span class="s2"&gt;&amp;quot;credits&amp;quot;&lt;/span&gt; or &lt;span class="s2"&gt;&amp;quot;license&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; more information.
+&lt;span class="m"&gt;2018&lt;/span&gt;-07-29 &lt;span class="m"&gt;20&lt;/span&gt;:03:59 WARN  NativeCodeLoader:60 - Unable to load native-hadoop library &lt;span class="k"&gt;for&lt;/span&gt; your platform... using builtin-java classes where applicable
+Setting default log level to &lt;span class="s2"&gt;&amp;quot;WARN&amp;quot;&lt;/span&gt;.
+To adjust logging level use sc.setLogLevel&lt;span class="o"&gt;(&lt;/span&gt;newLevel&lt;span class="o"&gt;)&lt;/span&gt;. For SparkR, use setLogLevel&lt;span class="o"&gt;(&lt;/span&gt;newLevel&lt;span class="o"&gt;)&lt;/span&gt;.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _&lt;span class="se"&gt;\ \/&lt;/span&gt; _ &lt;span class="se"&gt;\/&lt;/span&gt; _ &lt;span class="sb"&gt;`&lt;/span&gt;/ __/  &lt;span class="s1"&gt;&amp;#39;_/&lt;/span&gt;
+&lt;span class="s1"&gt;   /__ / .__/\_,_/_/ /_/\_\   version 2.3.1&lt;/span&gt;
+&lt;span class="s1"&gt;      /_/&lt;/span&gt;
+
+&lt;span class="s1"&gt;Using Python version 3.5.3 (default, Jan 19 2017 14:11:04)&lt;/span&gt;
+&lt;span class="s1"&gt;SparkSession available as &amp;#39;&lt;/span&gt;spark&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;.
+&amp;gt;&amp;gt;&amp;gt; sc
+&amp;lt;SparkContext &lt;span class="nv"&gt;master&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;local&lt;span class="o"&gt;[&lt;/span&gt;*&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="nv"&gt;appName&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;PySparkShell&amp;gt;
+&amp;gt;&amp;gt;&amp;gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you can enter commands and evaluate your code in interactive mode. &lt;/p&gt;
+&lt;h3&gt;Running a cluster with &lt;code&gt;docker-compose&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;One can use docker-compose.yaml file from &lt;a href="https://github.com/gettyimages/docker-spark.git"&gt;https://github.com/gettyimages/docker-spark.git&lt;/a&gt; to run a cluster locally.&lt;/p&gt;
+&lt;p&gt;docker-compose.yaml file looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;gettyimages/spark&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;bin/spark-class org.apache.spark.deploy.master.Master -h master&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;hostname&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;environment&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;MASTER&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;spark://master:7077&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_CONF_DIR&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/conf&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_PUBLIC_DNS&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;localhost&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;expose&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7001&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7002&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7003&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7004&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7005&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7006&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7077&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;6066&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;ports&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;4040:4040&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;6066:6066&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7077:7077&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;8080:8080&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;volumes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./conf/master:/conf&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./data:/tmp/data&lt;/span&gt;
+
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;worker&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;image&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;gettyimages/spark&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;command&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;hostname&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;worker&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;environment&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_CONF_DIR&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;/conf&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_WORKER_CORES&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;2&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_WORKER_MEMORY&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;1g&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_WORKER_PORT&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;8881&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_WORKER_WEBUI_PORT&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;8081&lt;/span&gt;
+    &lt;span class="l l-Scalar l-Scalar-Plain"&gt;SPARK_PUBLIC_DNS&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;localhost&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;links&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;master&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;expose&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7012&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7013&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7014&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7015&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;7016&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;8881&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;ports&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;8081:8081&lt;/span&gt;
+  &lt;span class="l l-Scalar l-Scalar-Plain"&gt;volumes&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./conf/worker:/conf&lt;/span&gt;
+    &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;./data:/tmp/data&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Run it with command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker-compose up
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It uses configs for master and worker nodes from &lt;code&gt;conf&lt;/code&gt; directory.&lt;/p&gt;
+&lt;h2&gt;Accessing S3 from local Spark&lt;/h2&gt;
+&lt;p&gt;I want to do experiments locally on spark but my data is stored in the cloud - AWS S3. If I deploy spark on EMR credentials are automatically passed to spark from AWS. But locally it is not the case. In the simple case one can use environment variables to pass AWS credentials:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;docker run --rm -it -e &amp;quot;AWS_ACCESS_KEY_ID=YOURKEY&amp;quot; -e &amp;quot;AWS_SECRET_ACCESS_KEY=YOURSECRET&amp;quot; -p 4040:4040 gettyimages/spark bin/spark-shell
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Loading credentials from &lt;code&gt;~/.aws/credentials&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;If you want to use AWS S3 credentials from &lt;code&gt;~/.aws/credentials&lt;/code&gt; you have to do some configuration.
+in the previous cluster example one have to specify credentials provider. Add the following line to &lt;code&gt;spark-defaults.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;spark.hadoop.fs.s3a.aws.credentials.provider com.amazonaws.auth.profile.ProfileCredentialsProvider
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let's say we want to run some code like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pyspark.sql&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SparkSession&lt;/span&gt;
+
+&lt;span class="n"&gt;spark&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SparkSession&lt;/span&gt; \
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;builder&lt;/span&gt; \
+    &lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getOrCreate&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;spark&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;parquet&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;s3a://your_bucket/serge-m-test/data.parquet&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now if you configure the rest properly and run the cluster you can access your s3 data from local spark/docker container.&lt;/p&gt;
+&lt;p&gt;Without the configuration we would get the following error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Caused by: com.amazonaws.AmazonClientException: No AWS Credentials provided by BasicAWSCredentialsProvider EnvironmentVariableCredentialsProvider InstanceProfileCredentialsProvider : com.amazonaws.SdkClientException: Unable to load credentials from service endpoint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That basically means that spark has three credentials proveders: BasicAWSCredentialsProvider EnvironmentVariableCredentialsProvider InstanceProfileCredentialsProvider. But none of them worked.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EnvironmentVariableCredentialsProvider - one that loads the credentials from environment variables&lt;/li&gt;
+&lt;li&gt;InstanceProfileCredentialsProvider - one that works on AWS instances.&lt;/li&gt;
+&lt;li&gt;BasicAWSCredentialsProvider - I don't know what it is.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What we need is ProfileCredentialsProvider. It reads the credentials from &lt;code&gt;~/.aws&lt;/code&gt; directory.&lt;/p&gt;</content><category term="spark"></category><category term="python"></category><category term="aws"></category></entry><entry><title>OKRs</title><link href="https://serge-m.github.io/okrs.html" rel="alternate"></link><published>2018-07-04T22:10:00+02:00</published><updated>2018-07-04T22:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-04:/okrs.html</id><summary type="html">&lt;p&gt;We had a production system written by mathematicians, 
 50 different stakeholders with conflicting targets, five leadership changes during last year,
 a dozen of microservices, AWS costs of 10 thousands per week,&lt;br&gt;
 hole galaxy of legacy databases, cron jobs, Celery, greenlets, …

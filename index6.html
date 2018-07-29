@@ -69,6 +69,50 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/installing-theano-on-windows.html">Installing theano on windows</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-12-28T01:56:00+01:00"> 2014-12-28T01:56:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/windows.html">windows</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/theano.html">theano</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><ol>
+<li>install Anaconda</li>
+<li>download Theano sources from git (install it using setup.py)</li>
+<li>Setup NVIDIA GPU Toolkit. I have installed version 6.5</li>
+<li>Setup Visual Studio Community Edition 2013</li>
+<li>Create config file .theanorc  in c:\Users\X\:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">floatX</span> <span class="o">=</span> <span class="s">float32</span>
+<span class="na">device</span> <span class="o">=</span> <span class="s">gpu</span>
+
+<span class="k">[nvcc]</span>
+<span class="na">fastmath</span> <span class="o">=</span> <span class="s">True</span>
+<span class="na">compiler_bindir</span><span class="o">=</span><span class="s">C:\Program Files (x86)\Microsoft …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-theano-on-windows.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/writing-simple-optical-flow-in-python_21.html">Writing simple optical flow in python. Part 3</a></h1>
 
 <footer class="post-info">
@@ -725,32 +769,6 @@ batch_size: 100</p>
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/windows-life.html">windows life</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-06-05T23:00:00+02:00"> 2014-06-05T23:00:00, Thu</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/windows.html">windows</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p><strong>doskey /history &gt; commands.log</strong>&nbsp; - dump command line promt history to file</p>
-<div class="highlight"><pre><span></span>**<span class="nt">&lt;code&gt;</span>some_command &gt; output_file.txt 2&gt;<span class="ni">&amp;amp;</span>1<span class="nt">&lt;/code&gt;</span>**<span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Arial,Helvetica,sans-serif;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;color: black;&quot;</span><span class="nt">&gt;</span> -  <span class="nt">&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: inherit;&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-size: small;&quot;</span><span class="nt">&gt;</span>Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a …</pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/windows-life.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index5.html">&laquo;</a>
@@ -789,6 +807,7 @@ batch_size: 100</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html">Spark in Docker with AWS credentials</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/okrs.html">OKRs</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/bokeh-example.html">Bokeh in jupyter notebooks for interactive plots</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/click-config-parsers.html">Comparison of click-based config parsers for python</a></li>
@@ -800,7 +819,6 @@ batch_size: 100</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/ubuntu-linux-settings.html">Ubuntu linux settings</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/mixins-in-python.html">Mixin pattern in Python</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/pytest-cheatsheet.html">Pytest cheatsheet</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -820,17 +838,17 @@ batch_size: 100</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+      <a href="https://serge-m.github.io/tag/api.html">API</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -845,6 +863,9 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
     </li>
     <li class="list-group-item tag-4">
@@ -854,10 +875,16 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
@@ -866,10 +893,7 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
@@ -880,12 +904,6 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
@@ -895,11 +913,23 @@ batch_size: 100</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/freeware.html">freeware</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -920,13 +950,16 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+      <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -941,34 +974,19 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/make.html">make</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/matting.html">matting</a>
@@ -980,13 +998,16 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1003,14 +1024,14 @@ batch_size: 100</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/plt.html">plt</a>
@@ -1019,7 +1040,7 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -1033,14 +1054,20 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/raspberry.html">raspberry</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
@@ -1048,14 +1075,14 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/spark.html">spark</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
@@ -1067,10 +1094,10 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
+      <a href="https://serge-m.github.io/tag/tests.html">tests</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1079,22 +1106,19 @@ batch_size: 100</p>
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -1105,14 +1129,8 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>

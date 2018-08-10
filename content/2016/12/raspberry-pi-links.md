@@ -1,7 +1,7 @@
 Title: Raspberry Pi Links
 Author: SergeM
 Date: 2016-12-31 21:30:00
-Tags: links, raspberry, pi, servo, stepper, motor shield, pwm, raspberry pi
+Tags: links, raspberry, pi, servo, stepper, motor shield, pwm, raspberry pi, ssh
 
 
 [Description of I2C interface](https://learn.sparkfun.com/tutorials/i2c)

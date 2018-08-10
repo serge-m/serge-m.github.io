@@ -71,6 +71,34 @@ Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor
 ssh -Y user@raspberrypi-url
 ```
 
+## Access rasbberry Pi without monitor and ethernet 
+
+Assuming we have an operating system (raspbian) installed.
+
+1. Plug the SD-card into a computer. 
+
+2. Automatic connection to wifi. Edit `/etc/wpa_supplicant/wpa_supplicant.conf` and add the following lines:
+
+    network={
+        ssid="my-network-name"
+        psk="my-network-pass"
+        key_mgmt=WPA-PSK
+    }
+    
+3. Enable SSH access. Create an empty file `ssh` in `/boot/`.
+
+4. Plug the card back into your raspberry, turn on. 
+
+Now you can connect to raspberry via ssh:
+
+    ssh pi@raspberrypi
+    
+or 
+
+    ssh pi@<IP-OF-YOUR-RASPBERRY>
+
+
+
 
 ## Reading input (button) from GPIO
 [without interrupts, raspi.tv](http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs)

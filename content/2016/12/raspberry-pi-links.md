@@ -79,12 +79,14 @@ Assuming we have an operating system (raspbian) installed.
 
 2. Automatic connection to wifi. Edit `/etc/wpa_supplicant/wpa_supplicant.conf` and add the following lines:
 
-    network={
-        ssid="my-network-name"
-        psk="my-network-pass"
-        key_mgmt=WPA-PSK
-    }
-    
+```
+network={
+    ssid="my-network-name"
+    psk="my-network-pass"
+    key_mgmt=WPA-PSK
+}
+```
+
 3. Enable SSH access. Create an empty file `ssh` in `/boot/`.
 
 4. Plug the card back into your raspberry, turn on. 

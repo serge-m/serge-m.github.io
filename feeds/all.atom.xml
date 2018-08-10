@@ -3427,11 +3427,23 @@ See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;network={
     ssid=&amp;quot;my-network-name&amp;quot;
     psk=&amp;quot;my-network-pass&amp;quot;
-    key_mgmt=WPA-PSK
 }
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;In the end the file should look like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;country=GB
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid=&amp;quot;my-network-name&amp;quot;
+    psk=&amp;quot;my-network-pass&amp;quot;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;country&lt;/code&gt; field is essential. Wifi wont work without it.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Enable SSH access. Create an empty file &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot/&lt;/code&gt;.&lt;/p&gt;

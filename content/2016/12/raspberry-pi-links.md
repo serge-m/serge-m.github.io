@@ -98,7 +98,7 @@ network={
 }
 ```
 
-`country` field is essential. Wifi wont work without it.
+`country` field is essential. Wifi wont work without it. In the log you will see `raspberrypi systemd[1]: Started Disable WiFi if country not set.`
 
 
 3. Enable SSH access. Create an empty file `ssh` in `/boot/`.

@@ -3414,6 +3414,37 @@ See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;Access rasbberry Pi without monitor and ethernet&lt;/h2&gt;
+&lt;p&gt;Assuming we have an operating system (raspbian) installed.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Plug the SD-card into a computer. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Automatic connection to wifi. Edit &lt;code&gt;/etc/wpa_supplicant/wpa_supplicant.conf&lt;/code&gt; and add the following lines:&lt;/p&gt;
+&lt;p&gt;network={
+    ssid="my-network-name"
+    psk="my-network-pass"
+    key_mgmt=WPA-PSK
+}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enable SSH access. Create an empty file &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot/&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plug the card back into your raspberry, turn on. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Now you can connect to raspberry via ssh:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@raspberrypi
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@&amp;lt;IP-OF-YOUR-RASPBERRY&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Reading input (button) from GPIO&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs"&gt;without interrupts, raspi.tv&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;RaspberryPi Zero pins Layout&lt;/h2&gt;

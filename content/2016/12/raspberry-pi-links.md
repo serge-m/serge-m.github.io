@@ -83,9 +83,23 @@ Assuming we have an operating system (raspbian) installed.
 network={
     ssid="my-network-name"
     psk="my-network-pass"
-    key_mgmt=WPA-PSK
 }
 ```
+
+In the end the file should look like this:
+```
+country=GB
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="my-network-name"
+    psk="my-network-pass"
+}
+```
+
+`country` field is essential. Wifi wont work without it.
+
 
 3. Enable SSH access. Create an empty file `ssh` in `/boot/`.
 

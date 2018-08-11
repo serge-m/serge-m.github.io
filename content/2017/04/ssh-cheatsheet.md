@@ -20,6 +20,10 @@ The options are as follows:
 
 
 ## Configuring SSH server
+Enable only ssh v2:
+```
+Protocol 2
+```
 
 Disable password authentification. Replace corresponding values in `/etc/ssh/sshd_config`:
 

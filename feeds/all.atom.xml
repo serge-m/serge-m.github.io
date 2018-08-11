@@ -2144,6 +2144,11 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://superuser.com/a/1010861"&gt;Source&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Configuring SSH server&lt;/h2&gt;
+&lt;p&gt;Enable only ssh v2:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Protocol 2
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Disable password authentification. Replace corresponding values in &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ChallengeResponseAuthentication no
 PasswordAuthentication no

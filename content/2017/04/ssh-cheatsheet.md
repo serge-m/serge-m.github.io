@@ -18,6 +18,33 @@ The options are as follows:
 
 [Source](https://superuser.com/a/1010861)
 
+## Set correct permissions for .ssh directory
+You may get and error while connecting to ssh if you have wrond permissions for .ssh directory on server for a given user.
+
+Error message on client while `ssh user-on-server@server`:
+```
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/user-on-client/.ssh/YOUR_KEY
+debug1: Authentications that can continue: publickey
+debug1: No more authentication methods to try.
+Permission denied (publickey).
+```
+
+Error message on server:
+```
+Aug 11 10:55:21 comp sshd[3446]: Connection closed by 10.1.0.12 port 47794 [preauth]
+```
+And nothing more in logs.
+The reason was that `.ssh` directory on the server had too strict permissions:
+```
+dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/
+```
+Read only is not enough.
+```
+chmod 600 .ssh
+```
+
 
 ## Configuring SSH server
 Enable only ssh v2:

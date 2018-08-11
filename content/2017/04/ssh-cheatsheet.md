@@ -49,6 +49,25 @@ restart sshd service
 service sshd restart
 ```
 
+### Add user for ssh tunnel only
+```
+useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash
+passwd sshtunnel
+```
+
+in `.profile` in the home directory of the user (in our example it is /home/sshtunnel/):
+```
+PATH=""
+```
+
+Forbid changes:
+
+```
+chmod 555 /home/sshtunnel/
+cd /home/sshtunnel/
+chmod 444 .bash_logout .bashrc .profile
+```
+
 ### How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?

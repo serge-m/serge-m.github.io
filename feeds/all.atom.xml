@@ -2173,6 +2173,24 @@ sudo systemctl restart sshd.service
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;Add user for ssh tunnel only&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash
+passwd sshtunnel
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;in &lt;code&gt;.profile&lt;/code&gt; in the home directory of the user (in our example it is /home/sshtunnel/):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PATH=&amp;quot;&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Forbid changes:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod 555 /home/sshtunnel/
+cd /home/sshtunnel/
+chmod 444 .bash_logout .bashrc .profile
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h3&gt;
 &lt;p&gt;See &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server"&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/a&gt;. Should I put public or private key to the server?&lt;/p&gt;
 &lt;h3&gt;Use ssh authentication by key instead of password&lt;/h3&gt;

@@ -2143,6 +2143,34 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;-i ~/path/to/some_id_rsa&lt;/code&gt; - the key that you explicitly want to use for the connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://superuser.com/a/1010861"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Set correct permissions for .ssh directory&lt;/h2&gt;
+&lt;p&gt;You may get and error while connecting to ssh if you have wrond permissions for .ssh directory on server for a given user.&lt;/p&gt;
+&lt;p&gt;Error message on client while &lt;code&gt;ssh user-on-server@server&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;debug1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Authentications&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publickey&lt;/span&gt;
+&lt;span class="n"&gt;debug1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Next&lt;/span&gt; &lt;span class="n"&gt;authentication&lt;/span&gt; &lt;span class="n"&gt;method&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publickey&lt;/span&gt;
+&lt;span class="n"&gt;debug1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Offering&lt;/span&gt; &lt;span class="n"&gt;RSA&lt;/span&gt; &lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/home/user-on-client/.ssh/&lt;/span&gt;&lt;span class="n"&gt;YOUR_KEY&lt;/span&gt;
+&lt;span class="n"&gt;debug1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Authentications&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt; &lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;publickey&lt;/span&gt;
+&lt;span class="n"&gt;debug1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;more&lt;/span&gt; &lt;span class="n"&gt;authentication&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Permission&lt;/span&gt; &lt;span class="n"&gt;denied&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;publickey&lt;/span&gt;&lt;span class="o"&gt;).&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Error message on server:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Aug 11 10:55:21 comp sshd[3446]: Connection closed by 10.1.0.12 port 47794 [preauth]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And nothing more in logs.
+The reason was that &lt;code&gt;.ssh&lt;/code&gt; directory on the server had too strict permissions:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Read only is not enough.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod 600 .ssh
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Configuring SSH server&lt;/h2&gt;
 &lt;p&gt;Enable only ssh v2:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Protocol 2

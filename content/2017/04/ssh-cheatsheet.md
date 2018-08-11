@@ -70,6 +70,18 @@ chmod 444 .bash_logout .bashrc .profile
 
 [source](http://www.ab-weblog.com/en/creating-a-restricted-ssh-user-for-ssh-tunneling-only/)
 
+
+Restrictions in sshd config:
+```
+Match User that-restricted-guy
+  AllowTcpForwarding yes
+  X11Forwarding no
+  AllowAgentForwarding no
+  ForceCommand /bin/false
+
+```
+[source](https://unix.stackexchange.com/a/337445)
+
 ### How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?

@@ -2166,8 +2166,8 @@ The reason was that &lt;code&gt;.ssh&lt;/code&gt; directory on the server had to
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Read only is not enough.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod 600 .ssh
+&lt;p&gt;Read only is not enough. It must be &lt;code&gt;rwx&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod 700 .ssh
 &lt;/pre&gt;&lt;/div&gt;
 
 

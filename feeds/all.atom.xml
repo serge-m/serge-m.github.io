@@ -2192,6 +2192,16 @@ chmod 444 .bash_logout .bashrc .profile
 
 
 &lt;p&gt;&lt;a href="http://www.ab-weblog.com/en/creating-a-restricted-ssh-user-for-ssh-tunneling-only/"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Restrictions in sshd config:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Match User that-restricted-guy
+  AllowTcpForwarding yes
+  X11Forwarding no
+  AllowAgentForwarding no
+  ForceCommand /bin/false
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://unix.stackexchange.com/a/337445"&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h3&gt;
 &lt;p&gt;See &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server"&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/a&gt;. Should I put public or private key to the server?&lt;/p&gt;
 &lt;h3&gt;Use ssh authentication by key instead of password&lt;/h3&gt;

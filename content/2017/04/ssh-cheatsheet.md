@@ -40,9 +40,9 @@ The reason was that `.ssh` directory on the server had too strict permissions:
 ```
 dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/
 ```
-Read only is not enough.
+Read only is not enough. It must be `rwx`:
 ```
-chmod 600 .ssh
+chmod 700 .ssh
 ```
 
 

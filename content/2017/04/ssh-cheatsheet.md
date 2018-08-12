@@ -120,6 +120,24 @@ Match User that-restricted-guy
 ```
 [source](https://unix.stackexchange.com/a/337445)
 
+### Restricting root user
+
+For security reason you should always block access to root user and group on a Linux or Unix-like systems. 
+
+First, make sure at least one user is allowed to use ‘su -‘ or ‘sudo’ command on the server. 
+
+Then add to `/etc/ssh/sshd_config`
+```
+DenyUsers root
+DenyGroups root
+```
+
+set PermitRootLogin  to `no`:
+```
+PermitRootLogin no
+```
+Save the file and restart the ssh service.
+
 ### How To Configure SSH Key-Based Authentication on a Linux Server 
 
 See [How To Configure SSH Key-Based Authentication on a Linux Server](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Should I put public or private key to the server?

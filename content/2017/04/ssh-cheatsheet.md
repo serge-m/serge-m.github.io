@@ -46,6 +46,7 @@ chmod 700 .ssh
 ```
 
 
+
 ## Configuring SSH server
 Enable only ssh v2:
 ```
@@ -71,9 +72,19 @@ sudo systemctl restart sshd.service
 ```
 [source](https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations)
 
-restart sshd service
+
+### Restarting ssh service
+after each change in sshd_config you have to restart ssh service to enable the changes
 ```
-service sshd restart
+## Ubuntu/debian user ##
+sudo service ssh restart
+# only for systemd based Ubuntu/Debian 8.x+ users #
+sudo systemctl restart ssh
+ 
+#### RHEL/CentOS/Fedora Linux user type ####
+sudo service sshd restart
+# only for systemd based RHEL/CentOS v7+ users #
+sudo systemctl restart sshd
 ```
 
 ### Add user for ssh tunnel only

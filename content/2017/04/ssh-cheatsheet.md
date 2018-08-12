@@ -75,7 +75,7 @@ sudo systemctl restart sshd.service
 
 ### Restarting ssh service
 after each change in sshd_config you have to restart ssh service to enable the changes
-```
+```bash
 ## Ubuntu/debian user ##
 sudo service ssh restart
 # only for systemd based Ubuntu/Debian 8.x+ users #

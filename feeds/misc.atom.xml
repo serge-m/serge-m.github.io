@@ -2198,14 +2198,14 @@ sudo systemctl restart sshd.service
 &lt;p&gt;&lt;a href="https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations"&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Restarting ssh service&lt;/h3&gt;
 &lt;p&gt;after each change in sshd_config you have to restart ssh service to enable the changes&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## Ubuntu/debian user ##
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;## Ubuntu/debian user ##&lt;/span&gt;
 sudo service ssh restart
-# only for systemd based Ubuntu/Debian 8.x+ users #
+&lt;span class="c1"&gt;# only for systemd based Ubuntu/Debian 8.x+ users #&lt;/span&gt;
 sudo systemctl restart ssh
 
-#### RHEL/CentOS/Fedora Linux user type ####
+&lt;span class="c1"&gt;#### RHEL/CentOS/Fedora Linux user type ####&lt;/span&gt;
 sudo service sshd restart
-# only for systemd based RHEL/CentOS v7+ users #
+&lt;span class="c1"&gt;# only for systemd based RHEL/CentOS v7+ users #&lt;/span&gt;
 sudo systemctl restart sshd
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -2239,6 +2239,21 @@ chmod 444 .bash_logout .bashrc .profile
 
 
 &lt;p&gt;&lt;a href="https://unix.stackexchange.com/a/337445"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Restricting root user&lt;/h3&gt;
+&lt;p&gt;For security reason you should always block access to root user and group on a Linux or Unix-like systems. &lt;/p&gt;
+&lt;p&gt;First, make sure at least one user is allowed to use ‘su -‘ or ‘sudo’ command on the server. &lt;/p&gt;
+&lt;p&gt;Then add to &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DenyUsers root
+DenyGroups root
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;set PermitRootLogin  to &lt;code&gt;no&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;PermitRootLogin no
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save the file and restart the ssh service.&lt;/p&gt;
 &lt;h3&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/h3&gt;
 &lt;p&gt;See &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server"&gt;How To Configure SSH Key-Based Authentication on a Linux Server&lt;/a&gt;. Should I put public or private key to the server?&lt;/p&gt;
 &lt;h3&gt;Use ssh authentication by key instead of password&lt;/h3&gt;

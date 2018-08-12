@@ -46,6 +46,43 @@ chmod 700 .ssh
 ```
 
 
+## Port forwarding
+
+### Remote port forwarding 
+
+```
+     -R [bind_address:]port:host:hostport
+     -R [bind_address:]port:local_socket
+     -R remote_socket:host:hostport
+     -R remote_socket:local_socket
+```
+Specifies that connections to the given TCP port or Unix socket on the remote (server) host are to be forwarded to the given host and port, or Unix socket, on the local side.  This works by allocating a socket to listen to either a TCP port or to a Unix socket on the remote side.  Whenever a connection is made to this port or Unix socket, the connection is forwarded over the
+secure channel, and a connection is made to either host port hostport, or local_socket, from the local machine.
+
+By default, TCP listening sockets on the server will be bound to the loopback interface only.  This may be overridden by specifying a bind_address.  An empty bind_address, or the address ‘*’, indicates that the remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the server's `GatewayPorts` option is enabled (see sshd_config(5)).
+
+If the port argument is ‘0’, the listen port will be dynamically allocated on the server and reported to the client at run time.  When used together with `-O` forward the allocated port will be printed to the standard output.
+
+
+When bind_address is omitted (as in your example), the port is bound on the loopback interface only. In order to make it bind to all interfaces, use
+
+```
+ssh -R \*:8080:localhost:80 -N root@example.com
+```
+or
+```
+ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com
+```
+or
+```
+ssh -R "[::]:8080:localhost:80" -N root@example.com
+```
+The first version binds to all interfaces individually. The second version creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4. The third version is probably technically equivalent to the first, but again it creates only a single bind to `::`, which means that the port is accessible via IPv6 natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD).  (You need the quotes because `[::]` could be interpreted as a glob otherwise.)
+
+Note that if you use OpenSSH sshd server, the server's `GatewayPorts` option needs to be enabled (set to `yes` or `clientspecified`) for this to work (check file `/etc/ssh/sshd_config` on the **server**). Otherwise (default value for this option is `no`), the server will always force the port to be bound on the loopback interface only.
+
+[1](https://superuser.com/a/591963), [2](https://man.openbsd.org/ssh)
+
 
 ## Configuring SSH server
 Enable only ssh v2:

@@ -84,6 +84,50 @@ Note that if you use OpenSSH sshd server, the server's `GatewayPorts` option nee
 [1](https://superuser.com/a/591963), [2](https://man.openbsd.org/ssh)
 
 
+### Prot forwarding on startup and retry
+
+We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.
+
+#### First [[broken]] version
+To do that we have to create a file `/etc/systemd/system/tunnelssh.service`:
+
+```
+[Unit]
+Description=tunnel ssh to server
+
+[Service]
+User=YOUR_LOCAL_USER
+ExecStart=/usr/bin/ssh -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER
+
+StartLimitIntervalSec=10
+StartLimitBurst=1
+RestartSec=3
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+now you can
+```
+systemctl start tunnelssh.service
+systemctl status tunnelssh.service
+```
+
+Or enable it, so it get's started at boot time:
+```
+systemctl enable tunnelssh.service
+```
+Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
+The problem is that 
+1. our service may start before network connection is up. 
+2. our server can be down for some time
+3. retry mechanism of systemd is somehow broken. 
+
+(in the spirit of this [solution](https://gist.github.com/drmalex07/c0f9304deea566842490))
+
+
 ## Configuring SSH server
 Enable only ssh v2:
 ```

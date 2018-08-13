@@ -123,7 +123,7 @@ Unfortunately it doesn't work on startup. It says that the unit entered failed s
 The problem is that 
 1. our service may start before network connection is up. 
 2. our server can be down for some time
-3. retry mechanism of systemd is somehow broken. 
+3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from [here](https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html). And it [seems](https://github.com/google/cloud-print-connector/issues/140) I am not the only one.
 
 (in the spirit of this [solution](https://gist.github.com/drmalex07/c0f9304deea566842490))
 

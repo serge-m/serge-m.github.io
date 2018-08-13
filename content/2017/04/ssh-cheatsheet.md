@@ -18,6 +18,10 @@ The options are as follows:
 
 [Source](https://superuser.com/a/1010861)
 
+## No strict server checking 
+To disable confirmation about unknown server fingerprints add this to command line:
+`-o StrictHostKeyChecking=no`
+
 ## Set correct permissions for .ssh directory
 You may get and error while connecting to ssh if you have wrond permissions for .ssh directory on server for a given user.
 

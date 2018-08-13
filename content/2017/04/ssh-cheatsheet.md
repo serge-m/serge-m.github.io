@@ -5,7 +5,7 @@ Slug: ssh-cheatsheet
 Tags: ssh, keys, useful
 
 
-## SSH don't scan all keys in .ssh directory
+## How to prevent SSH from scanning all the keys in .ssh directory
 ```
 $ ssh -o IdentitiesOnly=yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 ```

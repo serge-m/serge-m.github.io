@@ -2236,9 +2236,9 @@ systemctl status tunnelssh.service
 
 &lt;p&gt;Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
 The problem is that 
-1. our service may start before network connection is up. 
+1. our service may start before network connection is up. You may add &lt;code&gt;After=network.target&lt;/code&gt; or &lt;code&gt;After=network-online.target&lt;/code&gt; as suggested &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490#gistcomment-2087688"&gt;here&lt;/a&gt; but it doesn't save you from the next issue.
 2. our server can be down for some time
-3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only one.&lt;/p&gt;
+3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;, &lt;a href="https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval"&gt;here&lt;/a&gt; and &lt;a href="https://unix.stackexchange.com/a/289756"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only one.&lt;/p&gt;
 &lt;p&gt;(in the spirit of this &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490"&gt;solution&lt;/a&gt;)&lt;/p&gt;
 &lt;h2&gt;Configuring SSH server&lt;/h2&gt;
 &lt;p&gt;Enable only ssh v2:&lt;/p&gt;

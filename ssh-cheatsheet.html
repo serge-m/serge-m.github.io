@@ -148,6 +148,75 @@ The reason was that <code>.ssh</code> directory on the server had too strict per
 </pre></div>
 
 
+<h2>Port forwarding</h2>
+<h3>Remote port forwarding</h3>
+<div class="highlight"><pre><span></span>     -R [bind_address:]port:host:hostport
+     -R [bind_address:]port:local_socket
+     -R remote_socket:host:hostport
+     -R remote_socket:local_socket
+</pre></div>
+
+
+<p>Specifies that connections to the given TCP port or Unix socket on the remote (server) host are to be forwarded to the given host and port, or Unix socket, on the local side.  This works by allocating a socket to listen to either a TCP port or to a Unix socket on the remote side.  Whenever a connection is made to this port or Unix socket, the connection is forwarded over the
+secure channel, and a connection is made to either host port hostport, or local_socket, from the local machine.</p>
+<p>By default, TCP listening sockets on the server will be bound to the loopback interface only.  This may be overridden by specifying a bind_address.  An empty bind_address, or the address ‘*’, indicates that the remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the server's <code>GatewayPorts</code> option is enabled (see sshd_config(5)).</p>
+<p>If the port argument is ‘0’, the listen port will be dynamically allocated on the server and reported to the client at run time.  When used together with <code>-O</code> forward the allocated port will be printed to the standard output.</p>
+<p>When bind_address is omitted (as in your example), the port is bound on the loopback interface only. In order to make it bind to all interfaces, use</p>
+<div class="highlight"><pre><span></span>ssh -R \*:8080:localhost:80 -N root@example.com
+</pre></div>
+
+
+<p>or</p>
+<div class="highlight"><pre><span></span>ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com
+</pre></div>
+
+
+<p>or</p>
+<div class="highlight"><pre><span></span>ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com
+</pre></div>
+
+
+<p>The first version binds to all interfaces individually. The second version creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4. The third version is probably technically equivalent to the first, but again it creates only a single bind to <code>::</code>, which means that the port is accessible via IPv6 natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD).  (You need the quotes because <code>[::]</code> could be interpreted as a glob otherwise.)</p>
+<p>Note that if you use OpenSSH sshd server, the server's <code>GatewayPorts</code> option needs to be enabled (set to <code>yes</code> or <code>clientspecified</code>) for this to work (check file <code>/etc/ssh/sshd_config</code> on the <strong>server</strong>). Otherwise (default value for this option is <code>no</code>), the server will always force the port to be bound on the loopback interface only.</p>
+<p><a href="https://superuser.com/a/591963">1</a>, <a href="https://man.openbsd.org/ssh">2</a></p>
+<h3>Prot forwarding on startup and retry</h3>
+<p>We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.</p>
+<h4>First [[broken]] version</h4>
+<p>To do that we have to create a file <code>/etc/systemd/system/tunnelssh.service</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">tunnel ssh to server</span>
+
+<span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">YOUR_LOCAL_USER</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/ssh -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER</span>
+
+<span class="na">StartLimitIntervalSec</span><span class="o">=</span><span class="s">10</span>
+<span class="na">StartLimitBurst</span><span class="o">=</span><span class="s">1</span>
+<span class="na">RestartSec</span><span class="o">=</span><span class="s">3</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">Always</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</pre></div>
+
+
+<p>now you can</p>
+<div class="highlight"><pre><span></span>systemctl start tunnelssh.service
+systemctl status tunnelssh.service
+</pre></div>
+
+
+<p>Or enable it, so it get's started at boot time:</p>
+<div class="highlight"><pre><span></span>systemctl enable tunnelssh.service
+</pre></div>
+
+
+<p>Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
+The problem is that 
+1. our service may start before network connection is up. 
+2. our server can be down for some time
+3. retry mechanism of systemd is somehow broken. </p>
+<p>(in the spirit of this <a href="https://gist.github.com/drmalex07/c0f9304deea566842490">solution</a>)</p>
 <h2>Configuring SSH server</h2>
 <p>Enable only ssh v2:</p>
 <div class="highlight"><pre><span></span>Protocol 2
@@ -327,14 +396,26 @@ Agent pid <span class="m">59566</span>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/api.html">API</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -352,10 +433,13 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
@@ -367,16 +451,16 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/date.html">date</a>
+      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -385,10 +469,7 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -411,6 +492,12 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/images.html">images</a>
     </li>
@@ -423,14 +510,11 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -450,20 +534,14 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/make.html">make</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
@@ -478,16 +556,10 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -498,6 +570,9 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -507,17 +582,11 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -544,10 +613,10 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
@@ -558,9 +627,6 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/spark.html">spark</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
@@ -568,7 +634,10 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -580,19 +649,19 @@ Agent pid <span class="m">59566</span>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tests.html">tests</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
@@ -606,9 +675,6 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
     </li>
@@ -618,11 +684,14 @@ Agent pid <span class="m">59566</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

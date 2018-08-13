@@ -81,6 +81,7 @@ ExecStart=<absolute path to your environment>/bin/python file_to_run.py ${VARIAB
 
 Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:
 ```
+StandardOutput=syslog
 ```
 
 You may see nothing in the logs. You should set environment variable for python `PYTHONUNBUFFERED` to see the results immediately:

@@ -2143,6 +2143,9 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;li&gt;&lt;code&gt;-i ~/path/to/some_id_rsa&lt;/code&gt; - the key that you explicitly want to use for the connection&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://superuser.com/a/1010861"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;No strict server checking&lt;/h2&gt;
+&lt;p&gt;To disable confirmation about unknown server fingerprints add this to command line:
+&lt;code&gt;-o StrictHostKeyChecking=no&lt;/code&gt;&lt;/p&gt;
 &lt;h2&gt;Set correct permissions for .ssh directory&lt;/h2&gt;
 &lt;p&gt;You may get and error while connecting to ssh if you have wrond permissions for .ssh directory on server for a given user.&lt;/p&gt;
 &lt;p&gt;Error message on client while &lt;code&gt;ssh user-on-server@server&lt;/code&gt;:&lt;/p&gt;

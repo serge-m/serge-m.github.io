@@ -2238,7 +2238,7 @@ systemctl status tunnelssh.service
 The problem is that 
 1. our service may start before network connection is up. 
 2. our server can be down for some time
-3. retry mechanism of systemd is somehow broken. &lt;/p&gt;
+3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only one.&lt;/p&gt;
 &lt;p&gt;(in the spirit of this &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490"&gt;solution&lt;/a&gt;)&lt;/p&gt;
 &lt;h2&gt;Configuring SSH server&lt;/h2&gt;
 &lt;p&gt;Enable only ssh v2:&lt;/p&gt;

@@ -77,6 +77,23 @@ Now you can use it in the `ExecStart` command for example:
 ```
 ExecStart=<absolute path to your environment>/bin/python file_to_run.py ${VARIABLE}
 ```
+### How to stdout of python-based service in syslog
+
+Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:
+```
+```
+
+You may see nothing in the logs. You should set environment variable for python `PYTHONUNBUFFERED` to see the results immediately:
+```
+#in your service file add to [Service] section:
+Environment="PYTHONUNBUFFERED=1"
+```
+
+source: [[here]](https://unix.stackexchange.com/questions/164987/output-of-a-python-script-running-as-unit-is-out-of-order-while-shells-seems-unn)
+
+Probably better approach when you are allowed to install modules: https://medium.com/@trstringer/logging-to-systemd-in-python-45150662440a
+
+
 
 ## See also: 
 

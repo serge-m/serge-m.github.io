@@ -3158,6 +3158,20 @@ systemctl stop levels_tracker.service
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;How to stdout of python-based service in syslog&lt;/h3&gt;
+&lt;p&gt;Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;StandardOutput=syslog
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You may see nothing in the logs. You should set environment variable for python &lt;code&gt;PYTHONUNBUFFERED&lt;/code&gt; to see the results immediately:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#in your service file add to [Service] section:
+Environment=&amp;quot;PYTHONUNBUFFERED=1&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;source: &lt;a href="https://unix.stackexchange.com/questions/164987/output-of-a-python-script-running-as-unit-is-out-of-order-while-shells-seems-unn"&gt;[here]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Probably better approach when you are allowed to install modules: https://medium.com/@trstringer/logging-to-systemd-in-python-45150662440a&lt;/p&gt;
 &lt;h2&gt;See also:&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts"&gt;[1]&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units"&gt;[2] How To Use Systemctl to Manage Systemd Services and Units&lt;/a&gt;&lt;/p&gt;

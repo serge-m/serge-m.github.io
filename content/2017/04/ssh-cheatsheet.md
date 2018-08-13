@@ -123,9 +123,33 @@ Unfortunately it doesn't work on startup. It says that the unit entered failed s
 The problem is that 
 1. our service may start before network connection is up. You may add `After=network.target` or `After=network-online.target` as suggested [here](https://gist.github.com/drmalex07/c0f9304deea566842490#gistcomment-2087688) but it doesn't save you from the next issue.
 2. our server can be down for some time
-3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from [here](https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html), [here](https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval) and [here](https://unix.stackexchange.com/a/289756). And it [seems](https://github.com/google/cloud-print-connector/issues/140) I am not the only one.
+3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from [here](https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html), [here](https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval) and [here](https://unix.stackexchange.com/a/289756). And it [seems](https://github.com/google/cloud-print-connector/issues/140) I am not the only [one](https://unix.stackexchange.com/a/216254).
 
 (in the spirit of this [solution](https://gist.github.com/drmalex07/c0f9304deea566842490))
+
+
+### Second version
+So we have to implement retry on our own without systemd. Fortunately there is a tool `autossh`. See for example [[1]](https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/) or [[2]](https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/)
+
+```
+
+[Unit]
+Description=tunnel ssh to server
+# After=network.target network-online.target multi-user.target
+# Requires=network-online.target
+
+[Service]
+User=YOUR_LOCAL_USER
+Environment=AUTOSSH_GATETIME=0
+ExecStart=/usr/bin/autossh -M 0 -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER
+
+RestartSec=5
+Restart=Always
+
+[Install]
+WantedBy=multi-user.target
+
+```
 
 
 ## Configuring SSH server

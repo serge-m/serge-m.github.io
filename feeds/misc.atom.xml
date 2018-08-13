@@ -2238,8 +2238,28 @@ systemctl status tunnelssh.service
 The problem is that 
 1. our service may start before network connection is up. You may add &lt;code&gt;After=network.target&lt;/code&gt; or &lt;code&gt;After=network-online.target&lt;/code&gt; as suggested &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490#gistcomment-2087688"&gt;here&lt;/a&gt; but it doesn't save you from the next issue.
 2. our server can be down for some time
-3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;, &lt;a href="https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval"&gt;here&lt;/a&gt; and &lt;a href="https://unix.stackexchange.com/a/289756"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only one.&lt;/p&gt;
+3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;, &lt;a href="https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval"&gt;here&lt;/a&gt; and &lt;a href="https://unix.stackexchange.com/a/289756"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only &lt;a href="https://unix.stackexchange.com/a/216254"&gt;one&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;(in the spirit of this &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490"&gt;solution&lt;/a&gt;)&lt;/p&gt;
+&lt;h3&gt;Second version&lt;/h3&gt;
+&lt;p&gt;So we have to implement retry on our own without systemd. Fortunately there is a tool &lt;code&gt;autossh&lt;/code&gt;. See for example &lt;a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/"&gt;[1]&lt;/a&gt; or &lt;a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;tunnel ssh to server&lt;/span&gt;
+&lt;span class="c1"&gt;# After=network.target network-online.target multi-user.target&lt;/span&gt;
+&lt;span class="c1"&gt;# Requires=network-online.target&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;YOUR_LOCAL_USER&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;AUTOSSH_GATETIME=0&lt;/span&gt;
+&lt;span class="na"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/usr/bin/autossh -M 0 -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER&lt;/span&gt;
+
+&lt;span class="na"&gt;RestartSec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;5&lt;/span&gt;
+&lt;span class="na"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Always&lt;/span&gt;
+
+&lt;span class="k"&gt;[Install]&lt;/span&gt;
+&lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;multi-user.target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Configuring SSH server&lt;/h2&gt;
 &lt;p&gt;Enable only ssh v2:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Protocol 2

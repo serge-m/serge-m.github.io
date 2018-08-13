@@ -2240,7 +2240,7 @@ The problem is that
 2. our server can be down for some time
 3. retry mechanism of systemd is somehow broken. I couldn't make it work with configuration of burst intervals from &lt;a href="https://selivan.github.io/2017/12/30/systemd-serice-always-restart.html"&gt;here&lt;/a&gt;, &lt;a href="https://serverfault.com/questions/736624/systemd-service-automatic-restart-after-startlimitinterval"&gt;here&lt;/a&gt; and &lt;a href="https://unix.stackexchange.com/a/289756"&gt;here&lt;/a&gt;. And it &lt;a href="https://github.com/google/cloud-print-connector/issues/140"&gt;seems&lt;/a&gt; I am not the only &lt;a href="https://unix.stackexchange.com/a/216254"&gt;one&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;(in the spirit of this &lt;a href="https://gist.github.com/drmalex07/c0f9304deea566842490"&gt;solution&lt;/a&gt;)&lt;/p&gt;
-&lt;h3&gt;Second version&lt;/h3&gt;
+&lt;h4&gt;Second version&lt;/h4&gt;
 &lt;p&gt;So we have to implement retry on our own without systemd. Fortunately there is a tool &lt;code&gt;autossh&lt;/code&gt;. See for example &lt;a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/"&gt;[1]&lt;/a&gt; or &lt;a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/"&gt;[2]&lt;/a&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
 &lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;tunnel ssh to server&lt;/span&gt;

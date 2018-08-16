@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-07-29T22:07:00+02:00</updated><entry><title>Spark in Docker with AWS credentials</title><link href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html" rel="alternate"></link><published>2018-07-29T22:07:00+02:00</published><updated>2018-07-29T22:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-29:/spark-in-docker-with-aws-credentials.html</id><summary type="html">&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2018-08-16T00:10:00+02:00</updated><entry><title>Reducing disk usage in Ubuntu</title><link href="https://serge-m.github.io/disk-usage-ubuntu.html" rel="alternate"></link><published>2018-08-16T00:10:00+02:00</published><updated>2018-08-16T00:10:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-08-16:/disk-usage-ubuntu.html</id><summary type="html">&lt;p&gt;Here are some recipies to make ubuntu installed on USB drive to work faster.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://stevehanov.ca/blog/index.php?id=48"&gt;[1]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;reducing swapping&lt;/h2&gt;
+&lt;p&gt;Add these lines to /etc/sysctl.conf, and reboot.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vm.swappiness = 0
+vm.dirty_background_ratio = 20
+vm.dirty_expire_centisecs = 0
+vm.dirty_ratio = 80
+vm.dirty_writeback_centisecs = 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;More caching while writting on disk&lt;/h2&gt;
+&lt;p&gt;Add &lt;code&gt;noatime …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here are some recipies to make ubuntu installed on USB drive to work faster.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://stevehanov.ca/blog/index.php?id=48"&gt;[1]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;reducing swapping&lt;/h2&gt;
+&lt;p&gt;Add these lines to /etc/sysctl.conf, and reboot.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vm.swappiness = 0
+vm.dirty_background_ratio = 20
+vm.dirty_expire_centisecs = 0
+vm.dirty_ratio = 80
+vm.dirty_writeback_centisecs = 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;More caching while writting on disk&lt;/h2&gt;
+&lt;p&gt;Add &lt;code&gt;noatime,commit=120&lt;/code&gt;,... to &lt;code&gt;/etc/fstab&lt;/code&gt; entries for &lt;code&gt;/&lt;/code&gt; and &lt;code&gt;/home&lt;/code&gt; &lt;/p&gt;</content><category term="links"></category><category term="disk usage"></category><category term="linux"></category><category term="ubuntu"></category></entry><entry><title>Spark in Docker with AWS credentials</title><link href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html" rel="alternate"></link><published>2018-07-29T22:07:00+02:00</published><updated>2018-07-29T22:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-07-29:/spark-in-docker-with-aws-credentials.html</id><summary type="html">&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
 &lt;p&gt;Setting up spark is tricky. Therefore it is useful to try out things locally before deploying to the cluster.&lt;/p&gt;
 &lt;p&gt;Docker is of a good help here.
 There is a great docker image to play with spark locally.

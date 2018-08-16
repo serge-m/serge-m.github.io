@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 29 Jul 2018 22:07:00 +0200</lastBuildDate><item><title>Spark in Docker with AWS credentials</title><link>https://serge-m.github.io/spark-in-docker-with-aws-credentials.html</link><description>&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Thu, 16 Aug 2018 00:10:00 +0200</lastBuildDate><item><title>Reducing disk usage in Ubuntu</title><link>https://serge-m.github.io/disk-usage-ubuntu.html</link><description>&lt;p&gt;Here are some recipies to make ubuntu installed on USB drive to work faster.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://stevehanov.ca/blog/index.php?id=48"&gt;[1]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;reducing swapping&lt;/h2&gt;
+&lt;p&gt;Add these lines to /etc/sysctl.conf, and reboot.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;vm.swappiness = 0
+vm.dirty_background_ratio = 20
+vm.dirty_expire_centisecs = 0
+vm.dirty_ratio = 80
+vm.dirty_writeback_centisecs = 0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;More caching while writting on disk&lt;/h2&gt;
+&lt;p&gt;Add &lt;code&gt;noatime …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 16 Aug 2018 00:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-08-16:/disk-usage-ubuntu.html</guid><category>links</category><category>disk usage</category><category>linux</category><category>ubuntu</category></item><item><title>Spark in Docker with AWS credentials</title><link>https://serge-m.github.io/spark-in-docker-with-aws-credentials.html</link><description>&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
 &lt;p&gt;Setting up spark is tricky. Therefore it is useful to try out things locally before deploying to the cluster.&lt;/p&gt;
 &lt;p&gt;Docker is of a good help here.
 There is a great docker image to play with spark locally.

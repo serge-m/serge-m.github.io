@@ -1,7 +1,7 @@
 Title: Motor drivers / controllers 
 Author: SergeM
 Date: 2017-04-23 12:11:00
-Slug: motor-dirvers-controllers
+Slug: motor-drivers-controllers
 Tags: raspberry, pi, raspberry pi, hardware
 
 

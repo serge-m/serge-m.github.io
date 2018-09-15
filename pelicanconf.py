@@ -69,7 +69,7 @@ DISPLAY_ARTICLE_INFO_ON_INDEX=True
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "sitemap", "i18n_subsites"]
 
-STATIC_PATHS = [ "static", "content"]
+STATIC_PATHS = [ "static", ""]
 ARTICLE_EXCLUDES = [ "static"]
 PAGE_EXCLUDES = [ "static" ]
 

@@ -1398,7 +1398,69 @@ We iterate through all entities and display only attribute &lt;code&gt;info&lt;/
 
 
 &lt;p&gt;Ember server needs to know where API is located. This is done with option &lt;code&gt;--proxy http://localhost:5000&lt;/code&gt;.
-Otherwise Ember tries to get data from &lt;code&gt;http://localhost:4200/api/users&lt;/code&gt;&lt;/p&gt;</content><category term="python"></category><category term="flask"></category><category term="ember"></category></entry><entry><title>Speed up make/cmake build with multiprocessing</title><link href="https://serge-m.github.io/parallel-builds.html" rel="alternate"></link><published>2017-07-29T16:07:00+02:00</published><updated>2017-07-29T16:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-07-29:/parallel-builds.html</id><summary type="html">&lt;p&gt;Build time can be reduced by using multiple cores of your processor.&lt;/p&gt;
+Otherwise Ember tries to get data from &lt;code&gt;http://localhost:4200/api/users&lt;/code&gt;&lt;/p&gt;</content><category term="python"></category><category term="flask"></category><category term="ember"></category></entry><entry><title>GPIO controls for Rasbperry Pi</title><link href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html" rel="alternate"></link><published>2017-09-23T07:11:34+02:00</published><updated>2017-09-23T07:11:34+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-09-23:/gpio-controls-for-rasbperry-pi.html</id><summary type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
+&lt;h3&gt;Node JS&lt;/h3&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;h3&gt;General&lt;/h3&gt;
+&lt;h4&gt;pigpio&lt;/h4&gt;
+&lt;p&gt;The library also provides a service.
+It can be useful if you don't want to give root access to the client applications and want to control PWM for example.&lt;/p&gt;
+&lt;p&gt;Here is how to create a system service for &lt;code&gt;pigpiod&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Create file 
+/etc …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
+&lt;h3&gt;Node JS&lt;/h3&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;h3&gt;General&lt;/h3&gt;
+&lt;h4&gt;pigpio&lt;/h4&gt;
+&lt;p&gt;The library also provides a service.
+It can be useful if you don't want to give root access to the client applications and want to control PWM for example.&lt;/p&gt;
+&lt;p&gt;Here is how to create a system service for &lt;code&gt;pigpiod&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Create file 
+/etc/systemd/system/pigpiod.service: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;pigpiod service&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/usr/bin/pigpiod -g -n localhost&lt;/span&gt;
+
+&lt;span class="na"&gt;RestartSec&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;5&lt;/span&gt;
+&lt;span class="na"&gt;Restart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;always&lt;/span&gt;
+
+&lt;span class="k"&gt;[Install]&lt;/span&gt;
+&lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;multi-user.target&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;run and check status&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl start pigpiod.service
+sudo systemctl status pigpiod.service
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;should be something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;●&lt;/span&gt; &lt;span class="nt"&gt;pigpiod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt; &lt;span class="nt"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;pigpiod&lt;/span&gt; &lt;span class="nt"&gt;service&lt;/span&gt;
+   &lt;span class="nt"&gt;Loaded&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;loaded&lt;/span&gt; &lt;span class="o"&gt;(/&lt;/span&gt;&lt;span class="nt"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;pigpiod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;vendor&lt;/span&gt; &lt;span class="nt"&gt;preset&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;enabled&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+   &lt;span class="nt"&gt;Active&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;active&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;running&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nt"&gt;since&lt;/span&gt; &lt;span class="nt"&gt;Wed&lt;/span&gt; &lt;span class="nt"&gt;2018-09-19&lt;/span&gt; &lt;span class="nt"&gt;12&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;22&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;30&lt;/span&gt; &lt;span class="nt"&gt;UTC&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;1s&lt;/span&gt; &lt;span class="nt"&gt;ago&lt;/span&gt;
+ &lt;span class="nt"&gt;Main&lt;/span&gt; &lt;span class="nt"&gt;PID&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;10074&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;pigpiod&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+   &lt;span class="nt"&gt;CGroup&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;system&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;slice&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;pigpiod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;service&lt;/span&gt;
+           &lt;span class="err"&gt;└─&lt;/span&gt;&lt;span class="nt"&gt;10074&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;pigpiod&lt;/span&gt; &lt;span class="nt"&gt;-l&lt;/span&gt; &lt;span class="nt"&gt;-g&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now enable the service:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo systemctl enable pigpiod.service
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now &lt;code&gt;pigpriod&lt;/code&gt; has to run on startup of your raspberry pi and provide interface to gpio:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pigs w 4 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If something went wrong and the pigpiod service doesn't start you will see&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pigs w &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; 
+socket connect failed
+&lt;/pre&gt;&lt;/div&gt;</content><category term="raspberry"></category><category term="pi"></category><category term="raspberry pi"></category><category term="gpio"></category><category term="services"></category></entry><entry><title>Speed up make/cmake build with multiprocessing</title><link href="https://serge-m.github.io/parallel-builds.html" rel="alternate"></link><published>2017-07-29T16:07:00+02:00</published><updated>2017-07-29T16:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-07-29:/parallel-builds.html</id><summary type="html">&lt;p&gt;Build time can be reduced by using multiple cores of your processor.&lt;/p&gt;
 &lt;p&gt;Parallelization for make:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j8
 &lt;/pre&gt;&lt;/div&gt;

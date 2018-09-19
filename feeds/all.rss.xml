@@ -133,7 +133,16 @@ For example according to ISO 8601 …&lt;/p&gt;</description><dc:creator xmlns:d
 &lt;p&gt;You work in a mid size company. Business goes well. Engineering department is split into many small teams. One of them works on data intense project. Like rooting of parcels from a warehouse or demand prediction for millions of …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 29 Oct 2017 23:50:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-10-29:/why-does-your-data-science-project-fail-again.md.html</guid><category>data science</category><category>project management</category><category>work in progress</category></item><item><title>Sample project with Ember and Flask</title><link>https://serge-m.github.io/sample-ember-and-flask.html</link><description>&lt;p&gt;I want to use EmberJS with Flask application. Flask will provide an API.
 Ember frontend will consume and display data from the Flask backend.&lt;/p&gt;
 &lt;p&gt;Let's say we want our fronted to display a list of users of the system.
-We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 25 Oct 2017 23:24:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-10-25:/sample-ember-and-flask.html</guid><category>python</category><category>flask</category><category>ember</category></item><item><title>Speed up make/cmake build with multiprocessing</title><link>https://serge-m.github.io/parallel-builds.html</link><description>&lt;p&gt;Build time can be reduced by using multiple cores of your processor.&lt;/p&gt;
+We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 25 Oct 2017 23:24:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-10-25:/sample-ember-and-flask.html</guid><category>python</category><category>flask</category><category>ember</category></item><item><title>GPIO controls for Rasbperry Pi</title><link>https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html</link><description>&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
+&lt;h3&gt;Node JS&lt;/h3&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;h3&gt;General&lt;/h3&gt;
+&lt;h4&gt;pigpio&lt;/h4&gt;
+&lt;p&gt;The library also provides a service.
+It can be useful if you don't want to give root access to the client applications and want to control PWM for example.&lt;/p&gt;
+&lt;p&gt;Here is how to create a system service for &lt;code&gt;pigpiod&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Create file 
+/etc …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 23 Sep 2017 07:11:34 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-09-23:/gpio-controls-for-rasbperry-pi.html</guid><category>raspberry</category><category>pi</category><category>raspberry pi</category><category>gpio</category><category>services</category></item><item><title>Speed up make/cmake build with multiprocessing</title><link>https://serge-m.github.io/parallel-builds.html</link><description>&lt;p&gt;Build time can be reduced by using multiple cores of your processor.&lt;/p&gt;
 &lt;p&gt;Parallelization for make:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j8
 &lt;/pre&gt;&lt;/div&gt;

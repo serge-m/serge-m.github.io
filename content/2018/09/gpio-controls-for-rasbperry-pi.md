@@ -1,6 +1,6 @@
 Title: GPIO controls for Rasbperry Pi
 Author: SergeM
-Date: 2017-09-23 07:11:34
+Date: 2018-09-23 07:11:34
 Slug: gpio-controls-for-rasbperry-pi
 Tags: raspberry, pi, raspberry pi, gpio, services
 

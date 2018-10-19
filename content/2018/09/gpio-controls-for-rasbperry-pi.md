@@ -12,6 +12,10 @@ Tags: raspberry, pi, raspberry pi, gpio, services
 
 ### Python
 
+#### Using RPi.GPIO
+* [How to Exit GPIO programs cleanly, avoid warnings and protect your Pi](https://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi)
+* [Setting up RPi.GPIO, numbering systems and inputs](http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs)
+* On using hardware PWM without sudo due to permissions for /dev/gpiomem:  [discussion](https://forum.ubiquityrobotics.com/t/unable-to-use-hardware-pwm-without-sudo-due-to-permissions-for-dev-gpiomem/84)
 
 ### General
 

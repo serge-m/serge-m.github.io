@@ -4,6 +4,8 @@ Date: 2016-12-31 21:30:00
 Tags: links, raspberry, pi, servo, stepper, motor shield, pwm, raspberry pi, ssh
 
 
+## I2C interface
+
 [Description of I2C interface](https://learn.sparkfun.com/tutorials/i2c)
 
 [Raspberry Pi SPI and I2C Tutorial ](https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial)
@@ -119,19 +121,27 @@ or
 ## Reading input (button) from GPIO
 [without interrupts, raspi.tv](http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs)
 
+
+
 ## RaspberryPi Zero pins Layout
 ![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)
 
 ![pins layout photo]({filename}/2016/12/gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)
 
+Interactive website for pinout of Raspberry Pi for different interfaces [Pinout](https://pinout.xyz/#)
+
+
+
+
 ## Other
-[Example of using 545043 power supply](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html)
+* [Example of using 545043 power supply](https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html)
 
-[description of sn74hc595](http://www.ti.com/lit/ds/symlink/sn74hc595.pdf)
+* [description of sn74hc595](http://www.ti.com/lit/ds/symlink/sn74hc595.pdf)
 
-[blog about building security robot](https://seregus.wordpress.com/)
+* [blog about building security robot](https://seregus.wordpress.com/)
 
-[h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS); [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor);
-[another version of h bridge](http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php)
+* [h bridge using 2n2222 transistors for dc motor control. + reverse](http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS); [another version](http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor);
+* [another version of h bridge](http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php)
+* [Build a Raspberry Pi Telepresence Rover ](http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html) using [Pololu DRV8835](/motor-drivers-controllers.html)
 
-[Build a Raspberry Pi Telepresence Rover ](http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html) using [Pololu DRV8835](/motor-drivers-controllers.html)
+* My DIY [remote controlled robot on raspberry pi](https://github.com/serge-m/robot-remote-control) with camera. 

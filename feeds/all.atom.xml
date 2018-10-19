@@ -466,8 +466,8 @@ The advantages of click are&lt;/p&gt;
 
 
 &lt;h3&gt;Visual commands&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
-&amp;lt; - shift left
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;amp;gt; - shift right
+&amp;amp;lt; - shift left
 y - yank (copy) marked text
 d - delete marked text
 ~ - switch case
@@ -478,15 +478,15 @@ d - delete marked text
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yy - yank (copy) a line
 2yy - yank 2 lines
 yw - yank word
-y$ - yank to end …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
+y$ - yank …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Some frequently used commands in Vim&lt;/h2&gt;
 &lt;h3&gt;File explorer&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;:Explore - opens the file explorer window.
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;Visual commands&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; - shift right
-&amp;lt; - shift left
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;amp;gt; - shift right
+&amp;amp;lt; - shift left
 y - yank (copy) marked text
 d - delete marked text
 ~ - switch case
@@ -1401,15 +1401,23 @@ We iterate through all entities and display only attribute &lt;code&gt;info&lt;/
 Otherwise Ember tries to get data from &lt;code&gt;http://localhost:4200/api/users&lt;/code&gt;&lt;/p&gt;</content><category term="python"></category><category term="flask"></category><category term="ember"></category></entry><entry><title>GPIO controls for Rasbperry Pi</title><link href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html" rel="alternate"></link><published>2017-09-23T07:11:34+02:00</published><updated>2017-09-23T07:11:34+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-09-23:/gpio-controls-for-rasbperry-pi.html</id><summary type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
 &lt;h3&gt;Node JS&lt;/h3&gt;
 &lt;h3&gt;Python&lt;/h3&gt;
+&lt;h4&gt;Using RPi.GPIO&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi"&gt;How to Exit GPIO programs cleanly, avoid warnings and protect your Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs"&gt;Setting up RPi.GPIO, numbering systems and inputs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;On using hardware PWM without sudo due to permissions for /dev/gpiomem:  &lt;a href="https://forum.ubiquityrobotics.com/t/unable-to-use-hardware-pwm-without-sudo-due-to-permissions-for-dev-gpiomem/84"&gt;discussion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;General&lt;/h3&gt;
 &lt;h4&gt;pigpio&lt;/h4&gt;
-&lt;p&gt;The library also provides a service.
-It can be useful if you don't want to give root access to the client applications and want to control PWM for example.&lt;/p&gt;
-&lt;p&gt;Here is how to create a system service for &lt;code&gt;pigpiod&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;Create file 
-/etc …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
+&lt;p&gt;The library also provides a service …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
 &lt;h3&gt;Node JS&lt;/h3&gt;
 &lt;h3&gt;Python&lt;/h3&gt;
+&lt;h4&gt;Using RPi.GPIO&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi"&gt;How to Exit GPIO programs cleanly, avoid warnings and protect your Pi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs"&gt;Setting up RPi.GPIO, numbering systems and inputs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;On using hardware PWM without sudo due to permissions for /dev/gpiomem:  &lt;a href="https://forum.ubiquityrobotics.com/t/unable-to-use-hardware-pwm-without-sudo-due-to-permissions-for-dev-gpiomem/84"&gt;discussion&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;General&lt;/h3&gt;
 &lt;h4&gt;pigpio&lt;/h4&gt;
 &lt;p&gt;The library also provides a service.
@@ -1647,10 +1655,11 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
 
 
 &lt;p&gt;Results:&lt;/p&gt;
-&lt;p&gt;&lt;details&gt;
+&lt;details&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
-&lt;/details&gt;&lt;/p&gt;
+&lt;/details&gt;
+
 &lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -1661,10 +1670,11 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
 
 
 &lt;p&gt;Results:&lt;/p&gt;
-&lt;p&gt;&lt;details&gt;
+&lt;details&gt;
   &lt;summary&gt;Click to expand&lt;/summary&gt;
   your hidden code
-&lt;/details&gt;&lt;/p&gt;
+&lt;/details&gt;
+
 &lt;p&gt;&lt;a href="https://github.com/dear-github/dear-github/issues/166"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="markdown"></category></entry><entry><title>Streaming camera output from Raspberry Pi</title><link href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html" rel="alternate"></link><published>2017-05-23T22:50:00+02:00</published><updated>2017-05-23T22:50:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-05-23:/streaming-camera-output-from-raspberry-pi.html</id><summary type="html">&lt;p&gt;Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.&lt;/p&gt;
 &lt;ul&gt;
@@ -1819,11 +1829,12 @@ For example &lt;code&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model&l
 
 
 &lt;p&gt;save and exit. We will need to do that for each wrapper we want to run.&lt;/p&gt;
-&lt;p&gt;&lt;details&gt;
+&lt;details&gt;
 &lt;summary&gt;The same action for all files is acheivable using command line editor (click &lt;u&gt;here&lt;/u&gt; to see)&lt;/summary&gt;
   &lt;pre&gt;find . -maxdepth 1 -type f | xargs sed -i.original "s|PYTHON_BINARY = '/usr/bin/python'|PYTHON_BINARY = 'python'|g"
   &lt;/pre&gt;
-&lt;/details&gt;&lt;/p&gt;
+&lt;/details&gt;
+
 &lt;p&gt;Now we can run a commands from Tensorflow Serving tutorial:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
 &lt;/pre&gt;&lt;/div&gt;
@@ -3646,7 +3657,8 @@ ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://developer.scaleway.com/"&gt;Scaleway API documentation&lt;/a&gt; &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content></entry><entry><title>Raspberry Pi Links</title><link href="https://serge-m.github.io/raspberry-pi-links.html" rel="alternate"></link><published>2016-12-31T21:30:00+01:00</published><updated>2016-12-31T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-31:/raspberry-pi-links.html</id><summary type="html">&lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/i2c"&gt;Description of I2C interface&lt;/a&gt;&lt;/p&gt;
+&lt;/ol&gt;</content></entry><entry><title>Raspberry Pi Links</title><link href="https://serge-m.github.io/raspberry-pi-links.html" rel="alternate"></link><published>2016-12-31T21:30:00+01:00</published><updated>2016-12-31T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-31:/raspberry-pi-links.html</id><summary type="html">&lt;h2&gt;I2C interface&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/i2c"&gt;Description of I2C interface&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial"&gt;Raspberry Pi SPI and I2C Tutorial &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Continuous deployment (Russian)
 &lt;a href="https://m.habrahabr.ru/post/318840/"&gt;Непрерывная кросс компиляция на Raspberry PI&lt;/a&gt;&lt;/p&gt;
@@ -3656,8 +3668,8 @@ ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://raspberrypi.stackexchange.com/a/36317"&gt;With  PCA9685 PWM Board&lt;/a&gt; (stackexchange thread)&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=46732"&gt;One more thread&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;multiple servos&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://razzpisampler.oreilly.com/ch05.html"&gt;Controlling one servo&lt;/a&gt;. No additional controllers needed&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf"&gt;Adafruit …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/i2c"&gt;Description of I2C interface&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://razzpisampler.oreilly.com/ch05.html"&gt;Controlling one servo&lt;/a&gt;. No additional controllers …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;I2C interface&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/i2c"&gt;Description of I2C interface&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial"&gt;Raspberry Pi SPI and I2C Tutorial &lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Continuous deployment (Russian)
 &lt;a href="https://m.habrahabr.ru/post/318840/"&gt;Непрерывная кросс компиляция на Raspberry PI&lt;/a&gt;&lt;/p&gt;
@@ -3740,7 +3752,7 @@ network={
 
 
 &lt;p&gt;or &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@&amp;lt;IP-OF-YOUR-RASPBERRY&amp;gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh pi@&amp;amp;lt;IP-OF-YOUR-RASPBERRY&amp;amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3749,13 +3761,29 @@ network={
 &lt;h2&gt;RaspberryPi Zero pins Layout&lt;/h2&gt;
 &lt;p&gt;&lt;img alt="GPIO raspberry pins scheme" src="https://serge-m.github.io/2016/12/gpio.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pins layout photo" src="https://serge-m.github.io/2016/12/gpio-raspberry-zero.png"&gt; &lt;a href="http://pi4j.com/pins/model-zero-rev1.html"&gt;image source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Interactive website for pinout of Raspberry Pi for different interfaces &lt;a href="https://pinout.xyz/#"&gt;Pinout&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Other&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href="https://www.sunfounder.com/learn/Super_Kit_V2_for_RaspberryPi/lesson-7-how-to-drive-a-dc-motor-super-kit-for-raspberrypi.html"&gt;Example of using 545043 power supply&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href="http://www.ti.com/lit/ds/symlink/sn74hc595.pdf"&gt;description of sn74hc595&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href="https://seregus.wordpress.com/"&gt;blog about building security robot&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS"&gt;h bridge using 2n2222 transistors for dc motor control. + reverse&lt;/a&gt;; &lt;a href="http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor"&gt;another version&lt;/a&gt;;
-&lt;a href="http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php"&gt;another version of h bridge&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html"&gt;Build a Raspberry Pi Telepresence Rover &lt;/a&gt; using &lt;a href="/motor-drivers-controllers.html"&gt;Pololu DRV8835&lt;/a&gt;&lt;/p&gt;</content><category term="links"></category><category term="raspberry"></category><category term="pi"></category><category term="servo"></category><category term="stepper"></category><category term="motor shield"></category><category term="pwm"></category><category term="raspberry pi"></category><category term="ssh"></category></entry><entry><title>Run docker as pytest fixture</title><link href="https://serge-m.github.io/run-docker-as-pytest-fixture.html" rel="alternate"></link><published>2016-12-19T21:30:00+01:00</published><updated>2016-12-19T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-19:/run-docker-as-pytest-fixture.html</id><summary type="html">&lt;p&gt;I need to test external API or perform integration test for my application. 
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.instructables.com/id/H-Bridge-on-a-Breadboard/?ALLSTEPS"&gt;h bridge using 2n2222 transistors for dc motor control. + reverse&lt;/a&gt;; &lt;a href="http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor"&gt;another version&lt;/a&gt;;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.electronicsteacher.com/robotics/robotics-tutorial/advanced-robotics/controlling-dc-motors.php"&gt;another version of h bridge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.bot-thoughts.com/2013/04/raspberry-pi-telepresence-rover.html"&gt;Build a Raspberry Pi Telepresence Rover &lt;/a&gt; using &lt;a href="/motor-drivers-controllers.html"&gt;Pololu DRV8835&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My DIY &lt;a href="https://github.com/serge-m/robot-remote-control"&gt;remote controlled robot on raspberry pi&lt;/a&gt; with camera. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="links"></category><category term="raspberry"></category><category term="pi"></category><category term="servo"></category><category term="stepper"></category><category term="motor shield"></category><category term="pwm"></category><category term="raspberry pi"></category><category term="ssh"></category></entry><entry><title>Run docker as pytest fixture</title><link href="https://serge-m.github.io/run-docker-as-pytest-fixture.html" rel="alternate"></link><published>2016-12-19T21:30:00+01:00</published><updated>2016-12-19T21:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-12-19:/run-docker-as-pytest-fixture.html</id><summary type="html">&lt;p&gt;I need to test external API or perform integration test for my application. 
 The extenal application can be accessible through docker image. I want to write a test that has 
 &lt;em&gt; &lt;code&gt;docker run&lt;/code&gt; as set-up step
 &lt;/em&gt; &lt;code&gt;docker stop/docker rm&lt;/code&gt; as tear down step&lt;/p&gt;
@@ -4394,7 +4422,7 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;delete file (or rename to have a backup):&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/.mozilla/firefox/&amp;lt;SOMETHING&amp;gt;.default/search.json.mozlz4
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;~/.mozilla/firefox/&amp;amp;lt;SOMETHING&amp;amp;gt;.default/search.json.mozlz4
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4415,15 +4443,15 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 &lt;li&gt;
 &lt;p&gt;in &lt;code&gt;.mozilla/firefox/sf8ha7dx.default/searchplugins&lt;/code&gt; create a file &lt;code&gt;google1.xml&lt;/code&gt;
  with contents: &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;SearchPlugin&lt;/span&gt; &lt;span class="na"&gt;xmlns=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.mozilla.org/2006/browser/search/&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;ShortName&amp;gt;&lt;/span&gt;Google1&lt;span class="nt"&gt;&amp;lt;/ShortName&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;Description&amp;gt;&lt;/span&gt;Google1&lt;span class="nt"&gt;&amp;lt;/Description&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;InputEncoding&amp;gt;&lt;/span&gt;UTF-8&lt;span class="nt"&gt;&amp;lt;/InputEncoding&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;SearchForm&amp;gt;&lt;/span&gt;http://www.google.com&lt;span class="nt"&gt;&amp;lt;/SearchForm&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;application/x-suggestions+json&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;method=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.google.com/complete/search?client=firefox&amp;amp;amp;q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;Url&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;method=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;template=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.google.com/search?q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;resultDomain=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;google.com&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/Url&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/SearchPlugin&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;SearchPlugin&lt;/span&gt; &lt;span class="nt"&gt;xmlns&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.mozilla.org/2006/browser/search/&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;ShortName&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Google1&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;ShortName&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Google1&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;InputEncoding&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;UTF-8&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;InputEncoding&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;SearchForm&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;www&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;google&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;com&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;SearchForm&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Url&lt;/span&gt; &lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;application/x-suggestions+json&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;template&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.google.com/complete/search?client=firefox&amp;amp;amp;amp;q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;/&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Url&lt;/span&gt; &lt;span class="nt"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;text/html&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;GET&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;template&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http://www.google.com/search?q={searchTerms}&amp;quot;&lt;/span&gt; &lt;span class="nt"&gt;resultDomain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;google.com&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;Url&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;SearchPlugin&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -6671,18 +6699,23 @@ except NameError :
 &amp;nbsp;&amp;nbsp;&amp;nbsp; pass&lt;/blockquote&gt;</content><category term="ipython"></category></entry><entry><title>Use Matlab function from python</title><link href="https://serge-m.github.io/use-matlab-function-from-python.html" rel="alternate"></link><published>2014-08-31T11:56:00+02:00</published><updated>2014-08-31T11:56:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-08-31:/use-matlab-function-from-python.html</id><summary type="html">&lt;p&gt;There are several solutions:
 Source: &lt;a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python"&gt;http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python&lt;/a&gt;
 &lt;h2&gt;pymat&lt;/h2&gt;A low level interface to Matlab using the matlab engine (&lt;code&gt;libeng&lt;/code&gt;) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://pymat.sourceforge.net&lt;/a&gt;
+  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow)
 Last updated: 2003
-  &lt;h2&gt;pymat2 …&lt;/h2&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are several solutions:
+  &amp;lt;h2&amp;gt;pymat2&amp;lt;/h2&amp;gt;A somewhat short lived continuation of the pymat development. Seems  to work on windows (including 64bit), linux and mac (with some changes).
+  [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&amp;quot; rel=&amp;quot;nofollow)
+Last updated: 2012
+  &amp;lt;h2&amp;gt;mlabwrap&amp;lt;/h2&amp;gt;A high level interface that also comes as a module which needs compilation and linking against  &amp;lt;code&amp;gt;libeng&amp;lt;/code&amp;gt;. It exposes Matlab functions to python so you can do fun stuff like
+  &amp;lt;code&amp;gt;mlab.plot(x, y," title="o"&gt;http://pymat.sourceforge.net&lt;/a&gt;&lt;/code&gt;
+  &lt;a href="http://mlabwrap.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://mlabwrap.sourceforge.net …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are several solutions:
 Source: &lt;a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python"&gt;http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python&lt;/a&gt;
 &lt;h2&gt;pymat&lt;/h2&gt;A low level interface to Matlab using the matlab engine (&lt;code&gt;libeng&lt;/code&gt;) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://pymat.sourceforge.net&lt;/a&gt;
+  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow)
 Last updated: 2003
-  &lt;h2&gt;pymat2&lt;/h2&gt;A somewhat short lived continuation of the pymat development. Seems  to work on windows (including 64bit), linux and mac (with some changes).
-  &lt;a href="https://code.google.com/p/pymat2/&amp;quot; rel=&amp;quot;nofollow"&gt;https://code.google.com/p/pymat2/&lt;/a&gt;
+  &amp;lt;h2&amp;gt;pymat2&amp;lt;/h2&amp;gt;A somewhat short lived continuation of the pymat development. Seems  to work on windows (including 64bit), linux and mac (with some changes).
+  [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&amp;quot; rel=&amp;quot;nofollow)
 Last updated: 2012
-  &lt;h2&gt;mlabwrap&lt;/h2&gt;A high level interface that also comes as a module which needs compilation and linking against  &lt;code&gt;libeng&lt;/code&gt;. It exposes Matlab functions to python so you can do fun stuff like
-  &lt;code&gt;mlab.plot(x, y, 'o')&lt;/code&gt;
+  &amp;lt;h2&amp;gt;mlabwrap&amp;lt;/h2&amp;gt;A high level interface that also comes as a module which needs compilation and linking against  &amp;lt;code&amp;gt;libeng&amp;lt;/code&amp;gt;. It exposes Matlab functions to python so you can do fun stuff like
+  &amp;lt;code&amp;gt;mlab.plot(x, y," title="o"&gt;http://pymat.sourceforge.net&lt;/a&gt;&lt;/code&gt;
   &lt;a href="http://mlabwrap.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://mlabwrap.sourceforge.net&lt;/a&gt;
 Last updated: 2009
   &lt;h2&gt;mlab&lt;/h2&gt;A repackaging effort of mlabwrap. Basically it replaces the c++ code that links against 'libeng' in &lt;em&gt;mlabwrap&lt;/em&gt; with a python module (&lt;a href="https://code.google.com/p/danapeerlab/source/browse/trunk/freecell/depends/common/python/matlabpipe.py&amp;quot; rel=&amp;quot;nofollow"&gt;matlabpipe&lt;/a&gt;) that communicates with matlab through a pipe. The main advantage of this is that it doesn't need compilation of any kind.
@@ -6806,7 +6839,7 @@ plt.imshow(dpt, cmap=plt.cm.gray, interpolation='nearest')&lt;/span&gt;&lt;/p&gt
 &lt;/div&gt;
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nv"&gt;THEANO_FLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;FAST_RUN,device&lt;span class="o"&gt;=&lt;/span&gt;cpu,floatX&lt;span class="o"&gt;=&lt;/span&gt;float32 python check1.py
-&lt;span class="o"&gt;[&lt;/span&gt;Elemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&amp;lt;TensorType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;Elemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;lt&lt;span class="p"&gt;;&lt;/span&gt;TensorType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;gt&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;)]&lt;/span&gt;
 Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took &lt;span class="m"&gt;3&lt;/span&gt;.06635117531 seconds
 Result is &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.23178029  &lt;span class="m"&gt;1&lt;/span&gt;.61879337  &lt;span class="m"&gt;1&lt;/span&gt;.52278066 ...,  &lt;span class="m"&gt;2&lt;/span&gt;.20771813  &lt;span class="m"&gt;2&lt;/span&gt;.29967761
   &lt;span class="m"&gt;1&lt;/span&gt;.62323284&lt;span class="o"&gt;]&lt;/span&gt;
@@ -6814,7 +6847,7 @@ Used the cpu
 
 $ &lt;span class="nv"&gt;THEANO_FLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;FAST_RUN,device&lt;span class="o"&gt;=&lt;/span&gt;gpu,floatX&lt;span class="o"&gt;=&lt;/span&gt;float32 python check1.py
 Using gpu device &lt;span class="m"&gt;0&lt;/span&gt;: GeForce GTX &lt;span class="m"&gt;580&lt;/span&gt;
-&lt;span class="o"&gt;[&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&amp;lt;CudaNdarrayType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&amp;gt;&lt;span class="o"&gt;)&lt;/span&gt;, HostFromGpu&lt;span class="o"&gt;(&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}&lt;/span&gt;.0&lt;span class="o"&gt;)]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}(&lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;lt&lt;span class="p"&gt;;&lt;/span&gt;CudaNdarrayType&lt;span class="o"&gt;(&lt;/span&gt;float32, vector&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;gt&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;, HostFromGpu&lt;span class="o"&gt;(&lt;/span&gt;GpuElemwise&lt;span class="o"&gt;{&lt;/span&gt;exp,no_inplace&lt;span class="o"&gt;}&lt;/span&gt;.0&lt;span class="o"&gt;)]&lt;/span&gt;
 Looping &lt;span class="m"&gt;1000&lt;/span&gt; &lt;span class="nb"&gt;times&lt;/span&gt; took &lt;span class="m"&gt;0&lt;/span&gt;.638810873032 seconds
 Result is &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.23178029  &lt;span class="m"&gt;1&lt;/span&gt;.61879349  &lt;span class="m"&gt;1&lt;/span&gt;.52278066 ...,  &lt;span class="m"&gt;2&lt;/span&gt;.20771813  &lt;span class="m"&gt;2&lt;/span&gt;.29967761
   &lt;span class="m"&gt;1&lt;/span&gt;.62323296&lt;span class="o"&gt;]&lt;/span&gt;
@@ -6827,8 +6860,8 @@ Used the gpu
 &lt;/div&gt;&lt;div style="text-align: left;"&gt;
 &lt;/div&gt;&lt;div style="text-align: left;"&gt;
 &lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;/div&gt;&lt;/p&gt;</content><category term="useful"></category></entry><entry><title>windows life</title><link href="https://serge-m.github.io/windows-life.html" rel="alternate"></link><published>2014-06-05T23:00:00+02:00</published><updated>2014-06-05T23:00:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-06-05:/windows-life.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;doskey /history &amp;gt; commands.log&lt;/strong&gt;&amp;nbsp; - dump command line promt history to file&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;**&lt;span class="nt"&gt;&amp;lt;code&amp;gt;&lt;/span&gt;some_command &amp;gt; output_file.txt 2&amp;gt;&lt;span class="ni"&gt;&amp;amp;amp;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;**&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Arial,Helvetica,sans-serif;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color: black;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; -  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: inherit;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-size: small;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;doskey /history &amp;gt; commands.log&lt;/strong&gt;&amp;nbsp; - dump command line promt history to file&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;**&lt;span class="nt"&gt;&amp;lt;code&amp;gt;&lt;/span&gt;some_command &amp;gt; output_file.txt 2&amp;gt;&lt;span class="ni"&gt;&amp;amp;amp;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/code&amp;gt;&lt;/span&gt;**&lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Arial,Helvetica,sans-serif;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color: black;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt; -  &lt;span class="nt"&gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: inherit;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-size: small;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Redirect stdout and stderr to the same file [[src](http://stackoverflow.com/a/1420981)]&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;**&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;some_command&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;output_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;txt&lt;/span&gt; &lt;span class="nt"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;amp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;amp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;**&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Arial,Helvetica,sans-serif;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;color: black;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;-&lt;/span&gt;  &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: inherit;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-size …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;doskey /history &amp;gt; commands.log&lt;/strong&gt;&amp;nbsp; - dump command line promt history to file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;**&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;some_command&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;output_file&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;txt&lt;/span&gt; &lt;span class="nt"&gt;2&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;amp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;amp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;1&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;**&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Arial,Helvetica,sans-serif;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;color: black;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt; &lt;span class="nt"&gt;-&lt;/span&gt;  &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: inherit;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-size: small;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;Redirect&lt;/span&gt; &lt;span class="nt"&gt;stdout&lt;/span&gt; &lt;span class="nt"&gt;and&lt;/span&gt; &lt;span class="nt"&gt;stderr&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="nt"&gt;the&lt;/span&gt; &lt;span class="nt"&gt;same&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="err"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;src&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="o"&gt;://&lt;/span&gt;&lt;span class="nt"&gt;stackoverflow&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nt"&gt;1420981&lt;/span&gt;&lt;span class="o"&gt;)]&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</content><category term="windows"></category></entry><entry><title>linux life</title><link href="https://serge-m.github.io/linux-life.html" rel="alternate"></link><published>2014-06-02T23:18:00+02:00</published><updated>2014-06-02T23:18:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-06-02:/linux-life.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;df&lt;/strong&gt; - check free disk space&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;baobab&lt;/strong&gt; - free disk space &lt;/p&gt;
@@ -6991,9 +7024,9 @@ Under Windows latex2rtf diisplayed following error:&lt;/p&gt;
 http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text&lt;/p&gt;</summary><content type="html">&lt;p&gt;Convenient json formatting
 http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text&lt;/p&gt;</content><category term="sublime"></category><category term="tools"></category></entry><entry><title>clang: error: linker command failed with exit code 1</title><link href="https://serge-m.github.io/clang-error-linker-command-failed-with.html" rel="alternate"></link><published>2014-03-20T16:14:00+01:00</published><updated>2014-03-20T16:14:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-03-20:/clang-error-linker-command-failed-with.html</id><summary type="html">&lt;p&gt;Finally I solved the problem with broken clang compilation
 I always got message&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;ld: malformed archive TOC entry for &lt;span class="nt"&gt;&amp;lt;long&lt;/span&gt; &lt;span class="err"&gt;strange&lt;/span&gt; &lt;span class="err"&gt;identifier&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, offset 362137760 is beyond end of file 303710208&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Finally I solved the problem with broken clang compilation
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;ld&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;malformed&lt;/span&gt; &lt;span class="nt"&gt;archive&lt;/span&gt; &lt;span class="nt"&gt;TOC&lt;/span&gt; &lt;span class="nt"&gt;entry&lt;/span&gt; &lt;span class="nt"&gt;for&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;long&lt;/span&gt; &lt;span class="nt"&gt;strange&lt;/span&gt; &lt;span class="nt"&gt;identifier&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;,&lt;/span&gt; &lt;span class="nt"&gt;offset&lt;/span&gt; &lt;span class="nt"&gt;362137760&lt;/span&gt; &lt;span class="nt"&gt;is&lt;/span&gt; &lt;span class="nt"&gt;beyond&lt;/span&gt; &lt;span class="nt"&gt;end&lt;/span&gt; &lt;span class="nt"&gt;of&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="nt"&gt;303710208&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Finally I solved the problem with broken clang compilation
 I always got message&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;ld: malformed archive TOC entry for &lt;span class="nt"&gt;&amp;lt;long&lt;/span&gt; &lt;span class="err"&gt;strange&lt;/span&gt; &lt;span class="err"&gt;identifier&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;, offset 362137760 is beyond end of file 303710208&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;nbsp;&lt;/span&gt;for architecture x86_64&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;ld&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;malformed&lt;/span&gt; &lt;span class="nt"&gt;archive&lt;/span&gt; &lt;span class="nt"&gt;TOC&lt;/span&gt; &lt;span class="nt"&gt;entry&lt;/span&gt; &lt;span class="nt"&gt;for&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;long&lt;/span&gt; &lt;span class="nt"&gt;strange&lt;/span&gt; &lt;span class="nt"&gt;identifier&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;,&lt;/span&gt; &lt;span class="nt"&gt;offset&lt;/span&gt; &lt;span class="nt"&gt;362137760&lt;/span&gt; &lt;span class="nt"&gt;is&lt;/span&gt; &lt;span class="nt"&gt;beyond&lt;/span&gt; &lt;span class="nt"&gt;end&lt;/span&gt; &lt;span class="nt"&gt;of&lt;/span&gt; &lt;span class="nt"&gt;file&lt;/span&gt; &lt;span class="nt"&gt;303710208&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;amp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;nbsp&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;for&lt;/span&gt; &lt;span class="nt"&gt;architecture&lt;/span&gt; &lt;span class="nt"&gt;x86_64&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;clang&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nt"&gt;linker&lt;/span&gt; &lt;span class="nt"&gt;command&lt;/span&gt; &lt;span class="nt"&gt;failed&lt;/span&gt; &lt;span class="nt"&gt;with&lt;/span&gt; &lt;span class="nt"&gt;exit&lt;/span&gt; &lt;span class="nt"&gt;code&lt;/span&gt; &lt;span class="nt"&gt;1&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nt"&gt;use&lt;/span&gt; &lt;span class="nt"&gt;-v&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt; &lt;span class="nt"&gt;see&lt;/span&gt; &lt;span class="nt"&gt;invocation&lt;/span&gt;&lt;span class="o"&gt;)&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;lt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="nt"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;p1&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="nt"&gt;gt&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -7994,7 +8027,7 @@ I also found out that viewer plugin SGView for TotalCommander can be &amp;nbsp;c
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Design Patterns: Elements of Reusable Object-Oriented Software
-    &lt;a href="https://www.google.ru/search?newwindow=1&amp;amp;amp;espv=210&amp;amp;amp;es_sm=93&amp;amp;amp;biw=1920&amp;amp;amp;bih=956&amp;amp;amp;q=erich+gamma&amp;amp;amp;stick=H4sIAAAAAAAAAGOovnz8BQMDgykHnxCHfq6-QZKRYYESJ4hlXJyUlqslk51spZ-Un5-tX16UWVKSmhdfnl-UbZVYWpKRX8QTXmnKMvXcmuO9U6_Y7ihrvr2n4RYAiPdgLVIAAAA&amp;amp;amp;sa=X&amp;amp;amp;ei=4jSYUvvyBqbK4ATSq4G4Cw&amp;amp;amp;ved=0CKoBEJsTKAIwDw"&gt;Erich Gamma&lt;/a&gt; et al.&lt;/p&gt;
+    &lt;a href="https://www.google.ru/search?newwindow=1&amp;amp;espv=210&amp;amp;es_sm=93&amp;amp;biw=1920&amp;amp;bih=956&amp;amp;q=erich+gamma&amp;amp;stick=H4sIAAAAAAAAAGOovnz8BQMDgykHnxCHfq6-QZKRYYESJ4hlXJyUlqslk51spZ-Un5-tX16UWVKSmhdfnl-UbZVYWpKRX8QTXmnKMvXcmuO9U6_Y7ihrvr2n4RYAiPdgLVIAAAA&amp;amp;sa=X&amp;amp;ei=4jSYUvvyBqbK4ATSq4G4Cw&amp;amp;ved=0CKoBEJsTKAIwDw"&gt;Erich Gamma&lt;/a&gt; et al.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;C++ Coding Standards: 101 Rules, Guidelines, and Best Practices,
@@ -8007,7 +8040,7 @@ I also found out that viewer plugin SGView for TotalCommander can be &amp;nbsp;c
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Testing Dot Com, or allowance for the abuse of bugs in Internet startups
-    &lt;a href="http://www.amazon.co.uk/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;amp;amp;field-author=Savin%20R.&amp;amp;amp;search-alias=books-uk&amp;amp;amp;sort=relevancerank"&gt;Roman Savin&lt;/a&gt;
+    &lt;a href="http://www.amazon.co.uk/s/ref=ntt_athr_dp_sr_1?_encoding=UTF8&amp;amp;field-author=Savin%20R.&amp;amp;search-alias=books-uk&amp;amp;sort=relevancerank"&gt;Roman Savin&lt;/a&gt;
     Роман Савин - Тестирование DOT COM (in Russian)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -8258,7 +8291,7 @@ comp.openInViewer();&lt;/p&gt;
 &lt;span style="font-family: Courier New, Courier, monospace;"&gt;&amp;nbsp; &amp;nbsp; }&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;}&lt;/span&gt;
 &lt;div&gt;
-&lt;/div&gt;inspired by&amp;nbsp;&lt;a href="http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;amp;t=116057#p348646"&gt;http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646&lt;/a&gt;&lt;/p&gt;</content><category term="after effects (aae)"></category><category term="scripting"></category></entry><entry><title>Convert all *.avi files in current directory to png sequences</title><link href="https://serge-m.github.io/convert-all-avi-files-in-current.html" rel="alternate"></link><published>2013-10-22T23:49:00+02:00</published><updated>2013-10-22T23:49:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/convert-all-avi-files-in-current.html</id><summary type="html">&lt;p&gt;Using python and ffmpeg:&lt;/p&gt;
+&lt;/div&gt;inspired by&amp;nbsp;&lt;a href="http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646"&gt;http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646&lt;/a&gt;&lt;/p&gt;</content><category term="after effects (aae)"></category><category term="scripting"></category></entry><entry><title>Convert all *.avi files in current directory to png sequences</title><link href="https://serge-m.github.io/convert-all-avi-files-in-current.html" rel="alternate"></link><published>2013-10-22T23:49:00+02:00</published><updated>2013-10-22T23:49:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2013-10-22:/convert-all-avi-files-in-current.html</id><summary type="html">&lt;p&gt;Using python and ffmpeg:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/python&lt;/span&gt;
 &lt;span class="c1"&gt;# -*- coding: cp1251 -*-&lt;/span&gt;
 
@@ -8501,7 +8534,7 @@ Frame number: &lt;span class="m"&gt;0&lt;/span&gt;
 &lt;p&gt;I started debug and found out the error appears in &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MFXVideoSession::mfxStatus Init(mfxIMPL impl, mfxVersion *ver)
 {
-    return MFXInit(impl, ver, &amp;amp;m_session);
+    return MFXInit(impl, ver, &amp;amp;amp;m_session);
 }
 &lt;/pre&gt;&lt;/div&gt;
 

@@ -112,6 +112,7 @@ python sample.py
 See alow:
 * [datasheet](https://cdn-shop.adafruit.com/datasheets/PCA9685.pdf)
 * [Adafruit 16 Channel Servo Driver with Raspberry Pi](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf) Created by Kevin Townsend. pdf. (pca-9685)
+* [troubleshooting](https://github.com/adafruit/Adafruit_Python_PCA9685/issues/1)
 * [Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
 
 

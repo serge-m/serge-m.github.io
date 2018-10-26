@@ -24,11 +24,17 @@ Continuous deployment (Russian)
 
 [One more thread](https://www.raspberrypi.org/forums/viewtopic.php?t=46732)
 
-### multiple servos 
-[Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
+### Controlling multiple servos 
+To control multiple servos you can use PCA9685 controller. Connection is shown below.
+![1]({filename}/2016/12/servo_control_pca9685_1.jpg) 
+![2]({filename}/2016/12/servo_control_pca9685_2.jpg) 
+![3]({filename}/2016/12/servo_control_pca9685_3.jpg) 
+![4]({filename}/2016/12/servo_control_pca9685_4.jpg) 
 
-[Adafruit 16 Channel Servo Driver with Raspberry Pi
-Created by Kevin Townsend. pdf. (pca-9685)](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf)
+[Adafruit 16 Channel Servo Driver with Raspberry Pi](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf) Created by Kevin Townsend. pdf. (pca-9685)
+
+See also: [Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
+
 
 ### Stepper motors / DC (brushed) motors
 [with l293d](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-10-stepper-motors?view=all)

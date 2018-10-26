@@ -3680,10 +3680,31 @@ ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=46732"&gt;One more thread&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Controlling multiple servos&lt;/h3&gt;
 &lt;p&gt;To control multiple servos you can use PCA9685 controller. Connection is shown below.
-&lt;img alt="1" src="https://serge-m.github.io/2016/12/servo_control_pca9685_1.jpg"&gt; 
 &lt;img alt="2" src="https://serge-m.github.io/2016/12/servo_control_pca9685_2.jpg"&gt; 
+&lt;img alt="1" src="https://serge-m.github.io/2016/12/servo_control_pca9685_1.jpg"&gt; 
 &lt;img alt="3" src="https://serge-m.github.io/2016/12/servo_control_pca9685_3.jpg"&gt; 
-&lt;img alt="4" src="https://serge-m.github.io/2016/12/servo_control_pca9685_4.jpg"&gt; &lt;/p&gt;
+&lt;img src="https://serge-m.github.io/2016/12/servo_control_pca9685_4.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;You have to enable I2C interface first with &lt;code&gt;sudo raspi-config&lt;/code&gt;. Choose "Interfacing Options" -&amp;gt; "I2C" -&amp;gt; "Enable".&lt;/p&gt;
+&lt;p&gt;Now installing the diagnostic tool and running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -y i2c-tools
+sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: 70 -- -- -- -- -- -- --                         
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now we can install smbus library:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install smbus2
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;&lt;a href="https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf"&gt;Adafruit 16 Channel Servo Driver with Raspberry Pi&lt;/a&gt; Created by Kevin Townsend. pdf. (pca-9685)&lt;/p&gt;
 &lt;p&gt;See also: &lt;a href="http://razzpisampler.oreilly.com/ch05.html"&gt;Controlling one servo&lt;/a&gt;. No additional controllers needed&lt;/p&gt;
 &lt;h3&gt;Stepper motors / DC (brushed) motors&lt;/h3&gt;

@@ -26,10 +26,10 @@ Continuous deployment (Russian)
 
 ### Controlling multiple servos 
 To control multiple servos you can use PCA9685 controller. Connection is shown below.
-![2]({filename}/2016/12/servo_control_pca9685_2.jpg) 
-![1]({filename}/2016/12/servo_control_pca9685_1.jpg) 
-![3]({filename}/2016/12/servo_control_pca9685_3.jpg) 
-<img src="{filename}/2016/12/servo_control_pca9685_4.jpg">
+<img src="{filename}/2016/12/servo_control_pca9685_2.jpg" style="width: 50%; height: 50%">
+<img src="{filename}/2016/12/servo_control_pca9685_1.jpg" style="width: 50%; height: 50%">
+<img src="{filename}/2016/12/servo_control_pca9685_3.jpg" style="width: 50%; height: 50%">
+<img src="{filename}/2016/12/servo_control_pca9685_4.jpg" style="width: 50%; height: 50%">
 
 You have to enable I2C interface first with `sudo raspi-config`. Choose "Interfacing Options" -> "I2C" -> "Enable".
 
@@ -109,10 +109,10 @@ python sample.py
 
 
 
-
-[Adafruit 16 Channel Servo Driver with Raspberry Pi](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf) Created by Kevin Townsend. pdf. (pca-9685)
-
-See also: [Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
+See alow:
+* [datasheet](https://cdn-shop.adafruit.com/datasheets/PCA9685.pdf)
+* [Adafruit 16 Channel Servo Driver with Raspberry Pi](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf) Created by Kevin Townsend. pdf. (pca-9685)
+* [Controlling one servo](http://razzpisampler.oreilly.com/ch05.html). No additional controllers needed
 
 
 ### Stepper motors / DC (brushed) motors

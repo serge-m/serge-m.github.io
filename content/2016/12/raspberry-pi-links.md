@@ -26,10 +26,33 @@ Continuous deployment (Russian)
 
 ### Controlling multiple servos 
 To control multiple servos you can use PCA9685 controller. Connection is shown below.
-![1]({filename}/2016/12/servo_control_pca9685_1.jpg) 
 ![2]({filename}/2016/12/servo_control_pca9685_2.jpg) 
+![1]({filename}/2016/12/servo_control_pca9685_1.jpg) 
 ![3]({filename}/2016/12/servo_control_pca9685_3.jpg) 
-![4]({filename}/2016/12/servo_control_pca9685_4.jpg) 
+<img src="{filename}/2016/12/servo_control_pca9685_4.jpg">
+
+You have to enable I2C interface first with `sudo raspi-config`. Choose "Interfacing Options" -> "I2C" -> "Enable".
+
+Now installing the diagnostic tool and running:
+```
+sudo apt-get install -y i2c-tools
+sudo i2cdetect -y 1
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+70: 70 -- -- -- -- -- -- --                         
+```
+
+Now we can install smbus library:
+```
+pip install smbus2
+```
+
 
 [Adafruit 16 Channel Servo Driver with Raspberry Pi](https://cdn-learn.adafruit.com/downloads/pdf/adafruit-16-channel-servo-driver-with-raspberry-pi.pdf) Created by Kevin Townsend. pdf. (pca-9685)
 

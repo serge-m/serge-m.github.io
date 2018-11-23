@@ -77,5 +77,9 @@ Nice series of flask tutorials: [Flask Mega-Tutorial](https://blog.miguelgrinber
 Including [Oauth authentication In Flask](https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask).
 
 
-## SQLAlchemy cheat sheet
-* [Python SQLAlchemy Cheatsheet](https://www.pythonsheets.com/notes/python-sqlalchemy.html)
+## See also 
+* SQLAlchemy cheat sheet
+
+[Python SQLAlchemy Cheatsheet](https://www.pythonsheets.com/notes/python-sqlalchemy.html)
+
+* [about abstractions in SQLalchemy](https://habr.com/company/qrator/blog/430818/) - in Russian

@@ -25,12 +25,13 @@ Continuous deployment (Russian)
 [One more thread](https://www.raspberrypi.org/forums/viewtopic.php?t=46732)
 
 ### Controlling multiple servos 
-To control multiple servos you can use PCA9685 controller. Connection is shown below.
+To control multiple servos you can use PCA9685 controller. Connection is shown below. It's better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.
+<div>
 <img src="{filename}/2016/12/servo_control_pca9685_2.jpg" style="width: 50%; height: 50%">
 <img src="{filename}/2016/12/servo_control_pca9685_1.jpg" style="width: 50%; height: 50%">
 <img src="{filename}/2016/12/servo_control_pca9685_3.jpg" style="width: 50%; height: 50%">
 <img src="{filename}/2016/12/servo_control_pca9685_4.jpg" style="width: 50%; height: 50%">
-
+</div>
 You have to enable I2C interface first with `sudo raspi-config`. Choose "Interfacing Options" -> "I2C" -> "Enable".
 
 Now installing the diagnostic tool and running:

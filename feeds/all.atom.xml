@@ -87,7 +87,15 @@ Exception: Java gateway process exited before sending its port number
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;that means that you haven't set SPARK_DIST_CLASSPATH (spark cannot find slf4j which is needed for logging)&lt;/p&gt;</content><category term="spark"></category><category term="configuration"></category></entry><entry><title>GPIO controls for Rasbperry Pi</title><link href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html" rel="alternate"></link><published>2018-09-23T07:11:34+02:00</published><updated>2018-09-23T07:11:34+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-09-23:/gpio-controls-for-rasbperry-pi.html</id><summary type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
+&lt;p&gt;that means that you haven't set &lt;code&gt;SPARK_DIST_CLASSPATH&lt;/code&gt; (spark cannot find slf4j which is needed for logging)&lt;/p&gt;
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f"&gt;Get Started with PySpark and Jupyter Notebook in 3 Minutes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.freecodecamp.org/how-to-set-up-pyspark-for-your-jupyter-notebook-7399dd3cb389"&gt;How to set up PySpark for your Jupyter notebook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/explore-artificial-intelligence/downloading-spark-and-getting-started-with-python-notebooks-jupyter-locally-on-a-single-computer-98a76236f8c1"&gt;Downloading spark and getting started with python notebooks (jupyter) locally on a single computer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/jupyter/notebook/issues/743"&gt;Exception: Java gateway process exited before sending the driver its port number&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/questions/30385981/how-to-access-s3a-files-from-apache-spark"&gt;How to access s3a:// files from Apache Spark?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="spark"></category><category term="configuration"></category></entry><entry><title>GPIO controls for Rasbperry Pi</title><link href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html" rel="alternate"></link><published>2018-09-23T07:11:34+02:00</published><updated>2018-09-23T07:11:34+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-09-23:/gpio-controls-for-rasbperry-pi.html</id><summary type="html">&lt;h2&gt;Libraries for GPIO&lt;/h2&gt;
 &lt;h3&gt;Node JS&lt;/h3&gt;
 &lt;h3&gt;Python&lt;/h3&gt;
 &lt;h4&gt;Using RPi.GPIO&lt;/h4&gt;

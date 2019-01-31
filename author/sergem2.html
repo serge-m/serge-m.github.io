@@ -69,6 +69,53 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/parallel-builds.html">Speed up make/cmake build with multiprocessing</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-07-29T16:07:00+02:00"> 2017-07-29T16:07:00, Sat</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/make.html">make</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>Build time can be reduced by using multiple cores of your processor.</p>
+<p>Parallelization for make:</p>
+<div class="highlight"><pre><span></span>make -j8
+</pre></div>
+
+
+<p>Parallelization for cmake:</p>
+<div class="highlight"><pre><span></span>cmake --build &lt;bindir&gt; -- -j 8
+</pre></div>
+
+
+<p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
+<div class="highlight"><pre><span></span>python setup.py install
+</pre></div>
+
+
+<p>Setup script doesn't accept …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/parallel-builds.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/add-months-to-datetime-in-python.html">Add months to datetime in python</a></h1>
 
 <footer class="post-info">
@@ -776,60 +823,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/elastic-search-cookbook.html">Elasticsearch commands with curl</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-02-10T23:11:00+01:00"> 2017-02-10T23:11:00, Fri</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/command-line.html">command line</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/elastic.html">elastic</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/search.html">search</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/curl.html">curl</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><h2>Commands</h2>
-<h3>List indexes</h3>
-<div class="highlight"><pre><span></span>curl -X GET localhost:9200/_cat/indices
-</pre></div>
-
-
-<h3>Delete index</h3>
-<div class="highlight"><pre><span></span>curl -X DELETE localhost:9200/YOUR_INDEX
-</pre></div>
-
-
-<h3>Delete all indices</h3>
-<div class="highlight"><pre><span></span>curl -X GET localhost:9200/_all
-</pre></div>
-
-
-<h3>List of all doc_types in a given index</h3>
-<div class="highlight"><pre><span></span>curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;
-</pre></div>
-
-
-<h2>Running elastic seach …</h2>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/elastic-search-cookbook.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem.html">&laquo;</a>
@@ -868,6 +861,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/spark-on-a-local-machine.html">Spark on a local machine</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html">GPIO controls for Rasbperry Pi</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/disk-usage-ubuntu.html">Reducing disk usage in Ubuntu</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html">Spark in Docker with AWS credentials</a></li>
@@ -879,7 +873,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/print-lines-matching-regex.html">Select lines matching regular expression in python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/airflow.html">Workflow management with Apache Airflow</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/datetime-in-python.html">Datetime in Python</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -903,19 +896,22 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
+      <a href="https://serge-m.github.io/tag/api.html">API</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/bokeh.html">bokeh</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/books.html">books</a>
@@ -924,19 +920,10 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+      <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
@@ -945,19 +932,13 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -966,7 +947,10 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/en.html">en</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -974,23 +958,20 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1007,11 +988,14 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -1040,29 +1024,41 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -1072,9 +1068,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
@@ -1090,6 +1083,9 @@ Clustering is based on histograms. 1 contributor. No …</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
@@ -1116,15 +1112,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
@@ -1142,7 +1129,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/spark.html">spark</a>
     </li>
     <li class="list-group-item tag-3">
@@ -1152,10 +1139,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1163,14 +1147,26 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1192,9 +1188,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>
@@ -1241,7 +1234,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 sergem
+         <div class="col-xs-10">&copy; 2019 sergem
             &middot; 
             <small><a href="http://platformxy.com">platformxy.com</a>, <a href="http://lock.platformxy.com">lock</a></small>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

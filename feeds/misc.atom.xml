@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook - misc</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/misc.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-01-30T08:30:00+01:00</updated><entry><title>Spark on a local machine</title><link href="https://serge-m.github.io/spark-on-a-local-machine.html" rel="alternate"></link><published>2019-01-30T08:30:00+01:00</published><updated>2019-01-30T08:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-01-30:/spark-on-a-local-machine.html</id><summary type="html">&lt;h2&gt;How to install spark locally&lt;/h2&gt;
-&lt;p&gt;Considering spark without hadoop built-in.
-&lt;em&gt; Download &lt;a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz"&gt;hadoop&lt;/a&gt;
-unpack to /opt/hadoop/
-&lt;/em&gt; Download &lt;a href="https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz"&gt;spark without hadoop&lt;/a&gt;, unpack to /opt/spark
-&lt;em&gt; Install java. Set JAVA_HOVE environment variable. For example: &lt;code&gt;export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64&lt;/code&gt;
-&lt;/em&gt; create environment variables required for spark to run. One can put those …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;How to install spark locally&lt;/h2&gt;
-&lt;p&gt;Considering spark without hadoop built-in.
-&lt;em&gt; Download &lt;a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz"&gt;hadoop&lt;/a&gt;
-unpack to /opt/hadoop/
-&lt;/em&gt; Download &lt;a href="https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz"&gt;spark without hadoop&lt;/a&gt;, unpack to /opt/spark
-&lt;em&gt; Install java. Set JAVA_HOVE environment variable. For example: &lt;code&gt;export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64&lt;/code&gt;
-&lt;/em&gt; create environment variables required for spark to run. One can put those in &lt;code&gt;.bashrc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Considering spark without hadoop built-in.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz"&gt;hadoop&lt;/a&gt;
+unpack to &lt;code&gt;/opt/hadoop/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz"&gt;spark without hadoop&lt;/a&gt;, unpack to &lt;code&gt;/opt/spark&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install java. Set JAVA_HOVE environment variable. For example: &lt;code&gt;export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;create environment variables required for spark to run. One can put those …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;How to install spark locally&lt;/h2&gt;
+&lt;p&gt;Considering spark without hadoop built-in.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz"&gt;hadoop&lt;/a&gt;
+unpack to &lt;code&gt;/opt/hadoop/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz"&gt;spark without hadoop&lt;/a&gt;, unpack to &lt;code&gt;/opt/spark&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install java. Set JAVA_HOVE environment variable. For example: &lt;code&gt;export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;create environment variables required for spark to run. One can put those in &lt;code&gt;.bashrc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export HADOOP_HOME=/opt/hadoop
 export SPARK_DIST_CLASSPATH=$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/*
 &lt;/pre&gt;&lt;/div&gt;

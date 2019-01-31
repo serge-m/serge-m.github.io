@@ -6,10 +6,12 @@ Tags: spark, configuration
 
 
 ## How to install spark locally
+
 Considering spark without hadoop built-in.
+
 * Download [hadoop](https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz)
-unpack to /opt/hadoop/
-* Download [spark without hadoop](https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz), unpack to /opt/spark
+unpack to `/opt/hadoop/`
+* Download [spark without hadoop](https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz), unpack to `/opt/spark`
 * Install java. Set JAVA_HOVE environment variable. For example: `export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64`
 * create environment variables required for spark to run. One can put those in `.bashrc`
 ```

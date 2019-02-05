@@ -64,3 +64,6 @@ To fix it add the following to your emr  cluster  `Configurations`:
 
 [source](https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap)
 
+
+## See also
+* [PySpark SQL Cheat Sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PySpark_SQL_Cheat_Sheet_Python.pdf) (pdf)

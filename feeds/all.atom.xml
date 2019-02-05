@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-01-30T08:30:00+01:00</updated><entry><title>Spark on a local machine</title><link href="https://serge-m.github.io/spark-on-a-local-machine.html" rel="alternate"></link><published>2019-01-30T08:30:00+01:00</published><updated>2019-01-30T08:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-01-30:/spark-on-a-local-machine.html</id><summary type="html">&lt;h2&gt;How to install spark locally&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-02-04T18:37:00+01:00</updated><entry><title>Jupyter notebooks on EMR</title><link href="https://serge-m.github.io/jupyter-notebooks-on-emr.html" rel="alternate"></link><published>2019-02-04T18:37:00+01:00</published><updated>2019-02-04T18:37:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-02-04:/jupyter-notebooks-on-emr.html</id><summary type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain also jupyter hub. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;Applications&amp;quot;: [
+            {
+                &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;,
+                &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot;
+            },
+            {
+                &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;,
+                &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot;
+            },
+            {
+                &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;,
+                &amp;quot;Version&amp;quot;: &amp;quot;0.8.0&amp;quot;
+            },
+            {
+                &amp;quot;Name&amp;quot;: &amp;quot;JupyterHub&amp;quot;,
+                &amp;quot;Version&amp;quot;: &amp;quot;0.9.4&amp;quot;
+            }
+        ],
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Set &lt;code&gt;KeepJobFlowAliveWhenNoSteps: true&lt;/code&gt; and set up all the required python libraries using bootstrap scripts.&lt;/p&gt;
+&lt;p&gt;After cluster is created and bootstrapped you can get an address of the master in the aws console. Create a ssh tunnel to the port 9443 on the master. it is a port of jupyterhub:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export HOST=&amp;lt;public address of your master&amp;gt; 
+ssh -i ~/.ssh/your_private_key.pem -L 9443:$HOST:9443 hadoop@$HOST
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now when you connect to your local 9443 port it is redirected to the master's 9443 port.&lt;/p&gt;
+&lt;p&gt;Open the browser an connect to &lt;a href="https://localhost:9443/hub/login"&gt;https://localhost:9443/hub/login&lt;/a&gt;. HTTPS and the endpoint is important!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-jupyterhub-user-access.html"&gt;Default&lt;/a&gt; user name is &lt;code&gt;jovyan&lt;/code&gt; and the password is &lt;code&gt;jupyter&lt;/code&gt;. Use with care.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;h2&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;Long running pyspark kernel is terminated after approximately 1 hour with the error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;An error was encountered:
+Invalid status code &amp;#39;404&amp;#39; from http://ip-123-123-123-123.eu-west-1.compute.internal:8998/sessions/1 with error payload: &amp;quot;Session &amp;#39;1&amp;#39; not found.&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To fix it add the following to your emr  cluster  &lt;code&gt;Configurations&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[{&amp;#39;classification&amp;#39;: &amp;#39;livy-conf&amp;#39;,&amp;#39;Properties&amp;#39;: {&amp;#39;livy.server.session.timeout&amp;#39;:&amp;#39;5h&amp;#39;}}]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="spark"></category><category term="configuration"></category><category term="python"></category><category term="pyspark"></category><category term="emr"></category><category term="jupyter"></category><category term="ipython"></category></entry><entry><title>Spark on a local machine</title><link href="https://serge-m.github.io/spark-on-a-local-machine.html" rel="alternate"></link><published>2019-01-30T08:30:00+01:00</published><updated>2019-01-30T08:30:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-01-30:/spark-on-a-local-machine.html</id><summary type="html">&lt;h2&gt;How to install spark locally&lt;/h2&gt;
 &lt;p&gt;Considering spark without hadoop built-in.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Download &lt;a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz"&gt;hadoop&lt;/a&gt;

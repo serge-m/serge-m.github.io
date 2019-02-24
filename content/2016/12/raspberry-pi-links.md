@@ -109,6 +109,8 @@ python sample.py
 ```
 
 
+To control more than 16 servose one can chain multiple drivers. See [Chaining Drivers section](https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all#chaining-drivers) for details. Some soldering is required to assign a unique address for each driver.
+
 
 See alow:
 * [datasheet](https://cdn-shop.adafruit.com/datasheets/PCA9685.pdf)

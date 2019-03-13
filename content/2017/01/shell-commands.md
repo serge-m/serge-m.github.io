@@ -39,6 +39,15 @@ list all groups:
 $ getent group
 ```
 
+list all groups of the current user:
+```
+$ groups
+```
+list all groups of a user:
+```
+$ groups <user>
+```
+
 
 
 Change shell for user `user` to bash

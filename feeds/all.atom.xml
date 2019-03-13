@@ -3280,6 +3280,16 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;list all groups of the current user:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ groups
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;list all groups of a user:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ groups &amp;lt;user&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Change shell for user &lt;code&gt;user&lt;/code&gt; to bash&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chsh -s /bin/bash user
 &lt;/pre&gt;&lt;/div&gt;

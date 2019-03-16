@@ -292,3 +292,25 @@ sudo sshfs -o allow_other,IdentitiesOnly=yes,IdentityFile=~/.ssh/id_rsa user@192
 
 [Source](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
 
+
+## Specific settings for a website
+I have a private key with a custom name in `~/.ssh/` add the .pub is uploaded to github. When I try to clone my repo, git returns 
+```
+Cloning into 'repo'...
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+Probably git reads only keys with standard names (e.g. id_rsa). 
+To make it pick up your custome key you can create a config file 
+`~/.ssh/config`:
+ 
+ ```
+ Host github.com
+  IdentityFile ~/.ssh/your_custom_private_key
+  IdentitiesOnly yes
+```
+

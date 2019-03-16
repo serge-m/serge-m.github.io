@@ -308,8 +308,8 @@ Probably git reads only keys with standard names (e.g. id_rsa).
 To make it pick up your custome key you can create a config file 
 `~/.ssh/config`:
  
- ```
- Host github.com
+```
+Host github.com
   IdentityFile ~/.ssh/your_custom_private_key
   IdentitiesOnly yes
 ```

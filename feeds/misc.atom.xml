@@ -2631,7 +2631,25 @@ sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh"&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Specific settings for a website&lt;/h2&gt;
+&lt;p&gt;I have a private key with a custom name in &lt;code&gt;~/.ssh/&lt;/code&gt; add the .pub is uploaded to github. When I try to clone my repo, git returns &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Cloning into &amp;#39;repo&amp;#39;...
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Probably git reads only keys with standard names (e.g. id_rsa). 
+To make it pick up your custome key you can create a config file 
+&lt;code&gt;~/.ssh/config&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Host github.com
+  IdentityFile ~/.ssh/your_custom_private_key
+  IdentitiesOnly yes&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;More &lt;a href="https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797"&gt;here&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;

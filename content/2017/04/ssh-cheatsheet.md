@@ -314,3 +314,4 @@ To make it pick up your custome key you can create a config file
   IdentitiesOnly yes
 ```
 
+More [here](https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797)

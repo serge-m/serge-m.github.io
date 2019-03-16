@@ -276,3 +276,19 @@ Now you can for example do `git clone` from github using ssh key.
 
 see also [1](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent)
 
+
+## mount remote file system using ssh
+
+```
+sudo apt-get install sshfs
+sudo mkdir /mnt/droplet
+sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet
+```
+
+With identity files only:
+```
+sudo sshfs -o allow_other,IdentitiesOnly=yes,IdentityFile=~/.ssh/id_rsa user@192.168.0.1:/remote/path /mnt/local/path/
+```
+
+[Source](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
+

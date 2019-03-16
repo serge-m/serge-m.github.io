@@ -9,6 +9,7 @@ Tags: vim,cheatsheet,keyboard shortcuts
 
 ### File explorer 
     :Explore - opens the file explorer window. 
+    :E - the same
 
 ### Visual commands
 

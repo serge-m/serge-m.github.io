@@ -2618,7 +2618,20 @@ Agent pid &lt;span class="m"&gt;59566&lt;/span&gt;
 
 
 &lt;p&gt;Now you can for example do &lt;code&gt;git clone&lt;/code&gt; from github using ssh key.&lt;/p&gt;
-&lt;p&gt;see also &lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent"&gt;1&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;p&gt;see also &lt;a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent"&gt;1&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;mount remote file system using ssh&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install sshfs
+sudo mkdir /mnt/droplet
+sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;With identity files only:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;sshfs&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="n"&gt;allow_other&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;yes&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;IdentityFile&lt;/span&gt;&lt;span class="o"&gt;=~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;id_rsa&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="mf"&gt;@192.168.0.1&lt;/span&gt;&lt;span class="o"&gt;:/&lt;/span&gt;&lt;span class="n"&gt;remote&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mnt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;a href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="keys"></category><category term="useful"></category></entry><entry><title>Convert ovpn config file to .ca, .crt, .key</title><link href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html" rel="alternate"></link><published>2017-04-02T12:11:00+02:00</published><updated>2017-04-02T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-02:/convert-ovpn-to-ca-cert-key.html</id><summary type="html">&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;

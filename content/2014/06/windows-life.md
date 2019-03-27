@@ -5,6 +5,7 @@ Slug: windows-life
 Tags: windows, command line, wifi, wi-fi, sharing
 
 `doskey /history > commands.log`- dump command line promt history to file
+
 `some_command > output_file.txt 2>&1` -  Redirect stdout and stderr to the same file [src](http://stackoverflow.com/a/1420981)
 
 

@@ -11,6 +11,7 @@ Here I will collect links to well-written articles about math and algorithms.
 
 [MNIST For ML Beginners](https://www.tensorflow.org/get_started/mnist/beginners) - Nice introduction into machine learning with TensorFlow
 
+[Brilliantly wrong](http://arogozhnikov.github.io/) - blog by Alex Rogozhnikov, with fantastic visualizations of many algorithms and concepts
 
 
 See also:

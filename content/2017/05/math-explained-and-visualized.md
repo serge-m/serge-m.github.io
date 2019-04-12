@@ -2,7 +2,7 @@ Title: Math explained and visualized
 Author: SergeM
 Date: 2017-05-20 22:00
 Slug: math-exmplined-and-visualized
-Tags: math,books,links
+Tags: math,books,links,eli5
 
 
 Here I will collect links to well-written articles about math and algorithms. 

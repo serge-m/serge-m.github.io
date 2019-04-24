@@ -95,4 +95,8 @@ PGHOST=10.1.1.1 \
   psql my_db  -c "select * from my_table"
 ```
 
+## See also
+* [PostgreSQL Cheat Sheet](http://www.postgresqltutorial.com/postgresql-cheat-sheet/)
+* [How to non interactively provide password for the PostgreSQL interactive terminal](https://blog.sleeplessbeastie.eu/2014/03/23/how-to-non-interactively-provide-password-for-the-postgresql-interactive-terminal/)
+
 

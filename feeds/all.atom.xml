@@ -1,5 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-02-04T18:37:00+01:00</updated><entry><title>Jupyter notebooks on EMR</title><link href="https://serge-m.github.io/jupyter-notebooks-on-emr.html" rel="alternate"></link><published>2019-02-04T18:37:00+01:00</published><updated>2019-02-04T18:37:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-02-04:/jupyter-notebooks-on-emr.html</id><summary type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain also jupyter hub. For example:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-04-24T08:30:00+02:00</updated><entry><title>Postgres cheatsheet</title><link href="https://serge-m.github.io/postgres-cheatsheet.html" rel="alternate"></link><published>2019-04-24T08:30:00+02:00</published><updated>2019-04-24T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-24:/postgres-cheatsheet.html</id><summary type="html">&lt;h2&gt;Basics&lt;/h2&gt;
+&lt;p&gt;Connect as user &lt;code&gt;postgres&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;psql -U postgres
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Connect to a specific database:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\c database_name;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Quit the psql:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\q
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;List all databases:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Lists all tables in the current database:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\dt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;List all users: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\du
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a new role &lt;code&gt;username&lt;/code&gt; with a password:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;ROLE&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="n"&gt;NOINHERIT&lt;/span&gt; &lt;span class="n"&gt;LOGIN&lt;/span&gt; &lt;span class="n"&gt;PASSWORD&lt;/span&gt; &lt;span class="n"&gt;password …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Basics&lt;/h2&gt;
+&lt;p&gt;Connect as user &lt;code&gt;postgres&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;psql -U postgres
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Connect to a specific database:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\c database_name;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Quit the psql:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\q
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;List all databases:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\l
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Lists all tables in the current database:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\dt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;List all users: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;\du
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a new role &lt;code&gt;username&lt;/code&gt; with a password:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;ROLE&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="n"&gt;NOINHERIT&lt;/span&gt; &lt;span class="n"&gt;LOGIN&lt;/span&gt; &lt;span class="n"&gt;PASSWORD&lt;/span&gt; &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Managing tables&lt;/h3&gt;
+&lt;p&gt;Create a new table or a temporary table&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;TEMP&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;IF&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;EXISTS&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+   &lt;span class="n"&gt;pk&lt;/span&gt; &lt;span class="nb"&gt;SERIAL&lt;/span&gt; &lt;span class="k"&gt;PRIMARY&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;c1&lt;/span&gt; &lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;c2&lt;/span&gt; &lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;size&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add a new column to a table:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="n"&gt;new_column_name&lt;/span&gt; &lt;span class="k"&gt;TYPE&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Drop a column in a table:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Rename a column:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;RENAME&lt;/span&gt; &lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="n"&gt;new_column_name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Set or remove a default value for a column:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;DEFAULT&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Add a primary key to a table.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;ADD&lt;/span&gt; &lt;span class="k"&gt;PRIMARY&lt;/span&gt; &lt;span class="k"&gt;KEY&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;column&lt;/span&gt;&lt;span class="p"&gt;,...);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remove the primary key from a table.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; 
+&lt;span class="k"&gt;DROP&lt;/span&gt; &lt;span class="k"&gt;CONSTRAINT&lt;/span&gt; &lt;span class="n"&gt;primary_key_constraint_name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Rename a table.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;ALTER&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt; &lt;span class="k"&gt;table_name&lt;/span&gt; &lt;span class="k"&gt;RENAME&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="n"&gt;new_table_name&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Credentials via environment variables&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;PGHOST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.1.1.1 &lt;span class="se"&gt;\&lt;/span&gt;
+  &lt;span class="nv"&gt;PGUSER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;user &lt;span class="nv"&gt;PGPASSWORD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;password &lt;span class="se"&gt;\&lt;/span&gt;
+  psql my_db  -c &lt;span class="s2"&gt;&amp;quot;select * from my_table&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.postgresqltutorial.com/postgresql-cheat-sheet/"&gt;PostgreSQL Cheat Sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.sleeplessbeastie.eu/2014/03/23/how-to-non-interactively-provide-password-for-the-postgresql-interactive-terminal/"&gt;How to non interactively provide password for the PostgreSQL interactive terminal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="postgres"></category><category term="postgresql"></category><category term="useful"></category></entry><entry><title>Jupyter notebooks on EMR</title><link href="https://serge-m.github.io/jupyter-notebooks-on-emr.html" rel="alternate"></link><published>2019-02-04T18:37:00+01:00</published><updated>2019-02-04T18:37:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-02-04:/jupyter-notebooks-on-emr.html</id><summary type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain also jupyter hub. For example:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;Applications&amp;quot;: [
             {
                 &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;,

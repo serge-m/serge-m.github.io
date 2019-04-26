@@ -37,4 +37,6 @@ List of algorithms:
 
 ## Reverse image search
 ### dsys/match
+Scalable reverse image search built on Kubernetes and Elasticsearch.
+
 [github](https://github.com/dsys/match)

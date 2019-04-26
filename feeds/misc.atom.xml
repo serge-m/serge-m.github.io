@@ -7847,40 +7847,10 @@ It seems Hg cannot load SVN repo from local file, but it can work with local ser
 I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.&lt;/p&gt;
 &lt;h2&gt;Migrating to Hg&lt;/h2&gt;
 &lt;p&gt;in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html&lt;/p&gt;
-&lt;p&gt;Finally I found solution for windows.
-Install TortoiseHg.
-Install &amp;nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
-&lt;strong&gt;hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn&lt;/strong&gt;
-In &lt;strong&gt;D:/hgsvn&lt;/strong&gt; there is a folder &lt;strong&gt;hgsubversion&lt;/strong&gt;. That is our target.&lt;/p&gt;
-&lt;p&gt;Then register plugin for TortoiseHg. Find &lt;strong&gt;mercurial.ini&lt;/strong&gt;&amp;nbsp;in home user directory and edit it. In section &lt;strong&gt;extensions&lt;/strong&gt;
-add line&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hgsubversion = D:\hgsvn\hgsubversion
-``
-
-It must look like this:
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;[extensions]
-hgsubversion =&amp;nbsp;&lt;strong&gt;D:\hgsvn*&lt;/strong&gt;&lt;em&gt;hgsubversion&lt;/em&gt;*&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Now if you open &amp;amp;nbsp;TortoiseHg-&amp;gt;Global Settings-&amp;gt;Extentions, you see the plugin was installed
-![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
-
-
-Now you can just clone local SVN repository as Hg repo:
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;hg clone --verbose -- http://127.0.0.1/svn/&lt;repo&gt; D:\&lt;repo&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;### Errors
-I had following error while cloning using TortoiseHg:
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;EditingError: trying to open a deleted file
-```
-It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.&lt;/p&gt;</content><category term="useful"></category><category term="mercurial"></category><category term="git"></category><category term="svn"></category></entry><entry><title>Things about C++</title><link href="https://serge-m.github.io/things-about-c.html" rel="alternate"></link><published>2014-01-06T13:28:00+01:00</published><updated>2014-01-06T13:28:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-06:/things-about-c.html</id><summary type="html">&lt;ol style="text-align: left;"&gt;&lt;li&gt;rules for resolving calls to overloaded functions:&amp;nbsp;&lt;/li&gt;- &lt;li&gt;identify the function that's the best match for the call (name, parameters etc)&lt;/li&gt;&lt;li&gt;checks accessibility for the best-match function.&lt;/li&gt;
+&lt;h2&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/github/gitignore"&gt;gitignore files for different projects&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="useful"></category><category term="mercurial"></category><category term="git"></category><category term="svn"></category></entry><entry><title>Things about C++</title><link href="https://serge-m.github.io/things-about-c.html" rel="alternate"></link><published>2014-01-06T13:28:00+01:00</published><updated>2014-01-06T13:28:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2014-01-06:/things-about-c.html</id><summary type="html">&lt;ol style="text-align: left;"&gt;&lt;li&gt;rules for resolving calls to overloaded functions:&amp;nbsp;&lt;/li&gt;- &lt;li&gt;identify the function that's the best match for the call (name, parameters etc)&lt;/li&gt;&lt;li&gt;checks accessibility for the best-match function.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;div&gt;

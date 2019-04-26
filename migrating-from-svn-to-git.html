@@ -191,40 +191,10 @@ It seems Hg cannot load SVN repo from local file, but it can work with local ser
 I added a new user, copied ready newrepo to a directory where VisualSVN Server stores repositories, assigned permissions to the repo and it worked.</p>
 <h2>Migrating to Hg</h2>
 <p>in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html</p>
-<p>Finally I found solution for windows.
-Install TortoiseHg.
-Install &nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
-<strong>hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn</strong>
-In <strong>D:/hgsvn</strong> there is a folder <strong>hgsubversion</strong>. That is our target.</p>
-<p>Then register plugin for TortoiseHg. Find <strong>mercurial.ini</strong>&nbsp;in home user directory and edit it. In section <strong>extensions</strong>
-add line</p>
-<div class="highlight"><pre><span></span>hgsubversion = D:\hgsvn\hgsubversion
-``
-
-It must look like this:
-</pre></div>
-
-
-<p>[extensions]
-hgsubversion =&nbsp;<strong>D:\hgsvn*</strong><em>hgsubversion</em>*</p>
-<div class="highlight"><pre><span></span>Now if you open &amp;nbsp;TortoiseHg-&gt;Global Settings-&gt;Extentions, you see the plugin was installed
-![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
-
-
-Now you can just clone local SVN repository as Hg repo:
-</pre></div>
-
-
-<p>hg clone --verbose -- http://127.0.0.1/svn/<repo> D:\<repo></p>
-<div class="highlight"><pre><span></span>### Errors
-I had following error while cloning using TortoiseHg:
-</pre></div>
-
-
-<p>EditingError: trying to open a deleted file
-```
-It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="https://github.com/github/gitignore">gitignore files for different projects</a></li>
+</ul>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -306,16 +276,19 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/bokeh.html">bokeh</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/books.html">books</a>
@@ -324,19 +297,10 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/click.html">click</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
@@ -347,9 +311,6 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
@@ -359,14 +320,11 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cv.html">cv</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -375,10 +333,7 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/en.html">en</a>
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -395,8 +350,17 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/image.html">image</a>
@@ -426,6 +390,9 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
     </li>
     <li class="list-group-item tag-2">
@@ -449,20 +416,20 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -483,6 +450,9 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
     </li>
     <li class="list-group-item tag-3">
@@ -492,19 +462,10 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -525,7 +486,7 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/search.html">search</a>
@@ -534,13 +495,10 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/slides.html">slides</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -551,14 +509,17 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -567,7 +528,7 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -579,7 +540,7 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -596,8 +557,17 @@ I spent a lot of time trying to understand the cause. It seems there is a bug of
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/web.html">web</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

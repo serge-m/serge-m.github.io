@@ -27,6 +27,9 @@ List of algorithms:
 * BBF: Brightness Binary Feature
 
 
+### DLib
+
+> [Dlib](http://dlib.net/) is a modern C++ toolkit containing machine learning algorithms and tools for creating complex software in C++ to solve real world problems. It is used in both industry and academia in a wide range of domains including robotics, embedded devices, mobile phones, and large high performance computing environments. Dlib's open source licensing allows you to use it in any application, free of charge. 
 
 
 ## Face recognition

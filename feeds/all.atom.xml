@@ -8,7 +8,10 @@
 &lt;p&gt;CCV 0.7 comes with a sub-10% image classifier, a decent face detector.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It runs on Mac OSX, Linux, FreeBSD, Windows*, iPhone, iPad, Android, Raspberry Pi. In fact, anything that has a proper C compiler probably can run ccv. The majority (with notable exception of convolutional networks, which requires a BLAS library) of ccv will just work with no compilation flags or dependencies.&lt;/p&gt;
-&lt;/blockquote&gt;</content><category term="computer vision"></category><category term="cv"></category><category term="vision"></category></entry><entry><title>Postgres cheatsheet</title><link href="https://serge-m.github.io/postgres-cheatsheet.html" rel="alternate"></link><published>2019-04-24T08:30:00+02:00</published><updated>2019-04-24T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-24:/postgres-cheatsheet.html</id><summary type="html">&lt;h2&gt;Basics&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Face recognition&lt;/h2&gt;
+&lt;h3&gt;Uniform-LBP&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/berak/uniform-lbp"&gt;github&lt;/a&gt;&lt;/p&gt;</content><category term="computer vision"></category><category term="cv"></category><category term="vision"></category></entry><entry><title>Postgres cheatsheet</title><link href="https://serge-m.github.io/postgres-cheatsheet.html" rel="alternate"></link><published>2019-04-24T08:30:00+02:00</published><updated>2019-04-24T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-24:/postgres-cheatsheet.html</id><summary type="html">&lt;h2&gt;Basics&lt;/h2&gt;
 &lt;p&gt;Connect as user &lt;code&gt;postgres&lt;/code&gt;:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;psql -U postgres
 &lt;/pre&gt;&lt;/div&gt;

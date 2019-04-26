@@ -13,6 +13,7 @@ Here I will collect links to well-written articles about math and algorithms.
 
 [Brilliantly wrong](http://arogozhnikov.github.io/) - blog by Alex Rogozhnikov, with fantastic visualizations of many algorithms and concepts
 
+[Collection of data science notebooks](https://github.com/donnemartin/data-science-ipython-notebooks). 
 
 See also:
 

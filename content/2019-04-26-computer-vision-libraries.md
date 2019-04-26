@@ -17,4 +17,4 @@ CCV 0.7 comes with a sub-10% image classifier, a decent face detector.
 ## Face recognition
 
 ### Uniform-LBP
-[https://github.com/berak/uniform-lbp]
+[github](https://github.com/berak/uniform-lbp)

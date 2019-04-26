@@ -69,6 +69,43 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/ipython-save-notebook-as-script.html">ipython. save notebook as script</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-31T12:10:00+02:00"> 2014-08-31T12:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
+<blockquote class="tr_bq"># [1]
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command);
+
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h1>
 
 <footer class="post-info">
@@ -670,38 +707,6 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/vapoursynth-pythonic-alternative-to.html">VapourSynth: pythonic alternative to avisynth</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-25T21:47:00+01:00"> 2014-01-25T21:47:00, Sat</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p>What do I know about VapourSynth</p>
-<p><a href="http://www.vapoursynth.com/">http://www.vapoursynth.com/</a>&nbsp;- website
-<h2 style="text-align: left;">How to save data from VapourSynth</h2><div>You need to use vspipe.exe from Vapour distributive</div><div>It seems it returns raw data to stdout</div><div></p>
-<p></div><h3 style="text-align: left;">Render using ffmpeg</h3><div>Don't know how jet</div><div>
-</div><div><h3>Render using ImageMagick/convert</h3><div>Don't know how jet</div><div>
-<div><h2>Image …</h2></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/vapoursynth-pythonic-alternative-to.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem6.html">&laquo;</a>
@@ -740,6 +745,7 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/computer-vision-libraries.html">Computer vision libraries</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/postgres-cheatsheet.html">Postgres cheatsheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/jupyter-notebooks-on-emr.html">Jupyter notebooks on EMR</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/spark-on-a-local-machine.html">Spark on a local machine</a></li>
@@ -751,7 +757,6 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item"><a href="https://serge-m.github.io/click-config-parsers.html">Comparison of click-based config parsers for python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/vim.html">Vim cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/presentations-in-browser.html">Presentaitons in browser</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/print-lines-matching-regex.html">Select lines matching regular expression in python</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -771,14 +776,14 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -786,8 +791,14 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/bokeh.html">bokeh</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/books.html">books</a>
@@ -796,21 +807,15 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ci.html">ci</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
-    </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
     </li>
     <li class="list-group-item tag-3">
@@ -820,19 +825,10 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/date.html">date</a>
@@ -843,12 +839,6 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
     </li>
@@ -856,7 +846,10 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/en.html">en</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -873,11 +866,14 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -897,20 +893,23 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-2">
-      <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
+      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -924,9 +923,6 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -939,23 +935,23 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -973,10 +969,19 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -996,20 +1001,26 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/slides.html">slides</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/spark.html">spark</a>
@@ -1021,7 +1032,7 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1032,17 +1043,11 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
@@ -1062,11 +1067,11 @@ sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

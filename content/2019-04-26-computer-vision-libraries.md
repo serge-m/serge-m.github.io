@@ -4,6 +4,8 @@ Date: 2019-04-26 08:30:00
 Slug: computer-vision-libraries
 Tags: computer vision, cv, vision
 
+So, what else is there except for opencv...
+
 ### CCV 
 [CCV website](libccv.org), [github](libccv.org)
 

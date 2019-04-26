@@ -33,3 +33,8 @@ List of algorithms:
 
 ### Uniform-LBP
 [github](https://github.com/berak/uniform-lbp)
+
+
+## Reverse image search
+### dsys/match
+[github](https://github.com/dsys/match)

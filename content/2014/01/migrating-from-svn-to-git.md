@@ -105,37 +105,5 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
 ## Migrating to Hg
 in russian: http://pdrobushevich.blogspot.ru/2010/10/hgsubversion.html
 
-Finally I found solution for windows.
-Install TortoiseHg.
-Install &nbsp;hgsubversion as a plugin to Tortoise. To do this, clone repository of hgsubversion somewhere. I cloned into D:/hgsvn:
-**hg.exe clone http://bitbucket.org/durin42/hgsubversion/ D:/hgsvn**
-In **D:/hgsvn** there is a folder **hgsubversion**. That is our target.
-
-Then register plugin for TortoiseHg. Find **mercurial.ini**&nbsp;in home user directory and edit it. In section **extensions**
-add line
-```
-hgsubversion = D:\hgsvn\hgsubversion
-``
-
-It must look like this:
-```
-[extensions]
-hgsubversion =&nbsp;**D:\hgsvn\****hgsubversion**
-```
-Now if you open &nbsp;TortoiseHg->Global Settings->Extentions, you see the plugin was installed
-![](http://3.bp.blogspot.com/_a4Q2DEgLPvg/TMwD5BGK9uI/AAAAAAAAAUc/XxBxaQztH8k/s1600/extentions.JPG)
-
-
-Now you can just clone local SVN repository as Hg repo:
-```
-hg clone --verbose -- http://127.0.0.1/svn/<repo> D:\<repo>
-```
-
-### Errors
-I had following error while cloning using TortoiseHg:
-
-```
-EditingError: trying to open a deleted file
-```
-It seems the problem is gone when I close TortoiseHg and use command line
-I spent a lot of time trying to understand the cause. It seems there is a bug of simultaneous work of gui and console.
+## See also
+* [gitignore files for different projects](https://github.com/github/gitignore)

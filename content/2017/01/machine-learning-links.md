@@ -22,7 +22,7 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 > There. Now you can probably be hired most places. If you need resume filler, so some Kaggle competitions. If you have debugging questions, use StackOverflow. If you have math questions, read more. If you have life questions, I have no idea.
 
 
-### Links
+## Links
 * [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/printings/ESLII_print10.pdf)
 
 * [Andrew Ng's Coursera Course](https://www.coursera.org/learn/machine-learning/home/info)
@@ -38,6 +38,7 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 * [Deep Feature Flow for Video Recognition](https://github.com/msracver/Deep-Feature-Flow) - position itself as a framework for video recognition. paper and source code are available. Pictures are nice.
 
 * [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow) - collection of links about Tensor flow
+
 
 
 ## Articles
@@ -58,6 +59,8 @@ Divided in 4 subtopics:
 
 [Towards Data Science](https://towardsdatascience.com) -- medium based website with interesting articles about data science.
 
+
+[Demystifying deep reinforcement learning](https://neuro.cs.ut.ee/demystifying-deep-reinforcement-learning/)
 
 [Feature Engineering, о чём молчат online-курсы](https://m.habrahabr.ru/company/mailru/blog/346942/) (Rus.)
 

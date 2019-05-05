@@ -5226,31 +5226,38 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
 &lt;p&gt;&lt;a href="https://github.com/machrisaa/tensorflow-vgg"&gt;VGG16 and VGG19 in Tensorflow&lt;/a&gt;. One more &lt;a href="https://github.com/huyng/tensorflow-vgg"&gt;here&lt;/a&gt;. And one &lt;a href="https://github.com/ry/tensorflow-vgg16"&gt;more&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://oduerr.github.io/blog/2016/04/06/Deep-Learning_for_lazybones"&gt;Deep learning for lazybones&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Inception-like CNN model based on 1d convolutions &lt;a href="http://arxiv.org/pdf/1512.00567v3.pdf"&gt;http://arxiv.org/pdf/1512.00567v3.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Chat (in russian) &lt;a href="http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e"&gt;http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e&lt;/a&gt;&lt;/p&gt;</content><category term="deep learning"></category><category term="neural networks"></category><category term="useful"></category></entry><entry><title>autocomplete from history in terminal (in linux mint)</title><link href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html" rel="alternate"></link><published>2016-06-02T23:24:00+02:00</published><updated>2016-06-02T23:24:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-02:/autocomplete-from-history-in-terminal.html</id><summary type="html">&lt;p&gt;create a file &lt;code&gt;.inputrc&lt;/code&gt;
+&lt;p&gt;Chat (in russian) &lt;a href="http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e"&gt;http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e&lt;/a&gt;&lt;/p&gt;</content><category term="deep learning"></category><category term="neural networks"></category><category term="useful"></category></entry><entry><title>Autocomplete from the history in terminal</title><link href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html" rel="alternate"></link><published>2016-06-02T23:24:00+02:00</published><updated>2016-06-02T23:24:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-02:/autocomplete-from-history-in-terminal.html</id><summary type="html">&lt;p&gt;create a file &lt;code&gt;.inputrc&lt;/code&gt;
 in your home directory and put there&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;\e[A&amp;quot;: history-search-backward
 &amp;quot;\e[B&amp;quot;: history-search-forward
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+# display possible completions using different colors to indicate their file types
+set colored-stats On
+
 TAB: menu-complete
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Restart your terminal.
-Now you can autocomplete from history using Up and Down keys.
-&lt;a href="http://osxdaily.com/2013/04/24/improve-command-line-history-search/"&gt;Source&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;create a file &lt;code&gt;.inputrc&lt;/code&gt;
+Now you can autocomplete from history using Up …&lt;/p&gt;</summary><content type="html">&lt;p&gt;create a file &lt;code&gt;.inputrc&lt;/code&gt;
 in your home directory and put there&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;quot;\e[A&amp;quot;: history-search-backward
 &amp;quot;\e[B&amp;quot;: history-search-forward
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+# display possible completions using different colors to indicate their file types
+set colored-stats On
+
 TAB: menu-complete
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Restart your terminal.
-Now you can autocomplete from history using Up and Down keys.
-&lt;a href="http://osxdaily.com/2013/04/24/improve-command-line-history-search/"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="linux"></category><category term="Linux for dummies"></category></entry><entry><title>Working with date and time in Java (russian)</title><link href="https://serge-m.github.io/working-with-date-and-time-in-java.html" rel="alternate"></link><published>2016-06-01T20:47:00+02:00</published><updated>2016-06-01T20:47:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-01:/working-with-date-and-time-in-java.html</id><summary type="html">&lt;p&gt;Часть 1: &lt;a href="https://habrahabr.ru/post/274811/"&gt;https://habrahabr.ru/post/274811/&lt;/a&gt;
+Now you can autocomplete from history using Up and Down keys.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://osxdaily.com/2013/04/24/improve-command-line-history-search/"&gt;Source&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="linux"></category><category term="Linux for dummies"></category><category term="terminal"></category></entry><entry><title>Working with date and time in Java (russian)</title><link href="https://serge-m.github.io/working-with-date-and-time-in-java.html" rel="alternate"></link><published>2016-06-01T20:47:00+02:00</published><updated>2016-06-01T20:47:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-06-01:/working-with-date-and-time-in-java.html</id><summary type="html">&lt;p&gt;Часть 1: &lt;a href="https://habrahabr.ru/post/274811/"&gt;https://habrahabr.ru/post/274811/&lt;/a&gt;
 Часть 2: &lt;a href="https://habrahabr.ru/post/274905/"&gt;https://habrahabr.ru/post/274905/&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;Часть 1: &lt;a href="https://habrahabr.ru/post/274811/"&gt;https://habrahabr.ru/post/274811/&lt;/a&gt;
 Часть 2: &lt;a href="https://habrahabr.ru/post/274905/"&gt;https://habrahabr.ru/post/274905/&lt;/a&gt;&lt;/p&gt;</content><category term="Java"></category><category term="useful"></category><category term="russian"></category></entry><entry><title>pypy with numpy</title><link href="https://serge-m.github.io/pypy-with-numpy.html" rel="alternate"></link><published>2016-05-16T00:11:00+02:00</published><updated>2016-05-16T00:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2016-05-16:/pypy-with-numpy.html</id><summary type="html">&lt;p&gt;Looks like pypy now can build numpy. Well, a slightly modified numpy.&lt;/p&gt;
 &lt;ol&gt;

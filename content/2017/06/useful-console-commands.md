@@ -36,6 +36,11 @@ If your text contain slashes, you should use another delimiter:
 find . -type f | xargs sed -i.original "s|text/to/find/|text/to/put|g"
 ```
 
+## Disk space
+
+`df` - check free disk space
+
+`baobab` - free disk space
 
 ## See also
 

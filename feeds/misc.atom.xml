@@ -1961,6 +1961,9 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;Disk space&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;df&lt;/code&gt; - check free disk space&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;baobab&lt;/code&gt; - free disk space&lt;/p&gt;
 &lt;h2&gt;See also&lt;/h2&gt;
 &lt;p&gt;&lt;a href="/2013/10/ten-best-console-commands-rus.html"&gt;1, in russian&lt;/a&gt;&lt;/p&gt;</content><category term="useful"></category><category term="console"></category><category term="linux"></category><category term="network"></category></entry><entry><title>Markdown tricks</title><link href="https://serge-m.github.io/markdown-tricks.html" rel="alternate"></link><published>2017-06-09T12:00:00+02:00</published><updated>2017-06-09T12:00:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-06-09:/markdown-tricks.html</id><summary type="html">&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
@@ -7340,7 +7343,12 @@ netsh wlan start hostednetwork
 
 &lt;p&gt;then &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ccsm
-&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;See also&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;more &lt;a href="/useful-console-commands.html"&gt;here …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;df&lt;/strong&gt; - check free disk space&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;baobab&lt;/strong&gt; - free disk space &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;screen&lt;/strong&gt; - multiple virtual consoles in one real [&lt;a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html"&gt;ref&lt;/a&gt;], need installation in ubuntu&lt;/p&gt;
@@ -7352,7 +7360,13 @@ netsh wlan start hostednetwork
 
 &lt;p&gt;then &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ccsm
-&lt;/pre&gt;&lt;/div&gt;</content><category term="linux"></category></entry><entry><title>lambda functions in matlab</title><link href="https://serge-m.github.io/lambda-functions-in-matlab.html" rel="alternate"></link><published>2014-05-24T18:56:00+02:00</published><updated>2014-05-24T18:56:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-05-24:/lambda-functions-in-matlab.html</id><summary type="html">&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;See also&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;more &lt;a href="/useful-console-commands.html"&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="linux"></category></entry><entry><title>lambda functions in matlab</title><link href="https://serge-m.github.io/lambda-functions-in-matlab.html" rel="alternate"></link><published>2014-05-24T18:56:00+02:00</published><updated>2014-05-24T18:56:00+02:00</updated><author><name>SM!</name></author><id>tag:serge-m.github.io,2014-05-24:/lambda-functions-in-matlab.html</id><summary type="html">&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;To specify the actual function we are minimizing, we use a "short-hand"
 for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
 creates a function, with argument t, which calls your costFunction. This

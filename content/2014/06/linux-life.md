@@ -4,6 +4,8 @@ Date: 2014-06-02 23:18:00
 Slug: linux-life
 Tags: linux
 
+
+
 **top** - see running processes
 
 **df** - check free disk space
@@ -24,6 +26,7 @@ then
 ccsm
 ```
 
-
+### See also
+* more [here](/useful-console-commands.html)
 
 

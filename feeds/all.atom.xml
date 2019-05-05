@@ -1261,13 +1261,21 @@ Here is how to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some setting
 &lt;p&gt;Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. 
 Only several tweaks are missing.
 Constantly available CPU/Mem/HDD/Network monitor is one of them.
-Here is how to install a small widget for a top panel in the default GNOME desktop environment.
-1. &lt;code&gt;sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0&lt;/code&gt;
-2. Go to &lt;strong&gt;Ubuntu Software&lt;/strong&gt; and then search for &lt;code&gt;system monitor extension&lt;/code&gt;. Install one named &lt;code&gt;system-monitor&lt;/code&gt;: &lt;/p&gt;
+Here is how to install a small widget for a top panel in the default GNOME desktop environment.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Go to &lt;strong&gt;Ubuntu Software&lt;/strong&gt; and then search for &lt;code&gt;system monitor extension&lt;/code&gt;. Install one named &lt;code&gt;system-monitor&lt;/code&gt;: &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Display system information in GNOME Shell status bar
-3. After the installation you should see a new applet in the main pannel. One can find settings in the context menu.&lt;/p&gt;
+&lt;p&gt;Display system information in GNOME Shell status bar&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the installation you should see a new applet in the main pannel. One can find settings in the context menu.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
 &lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;

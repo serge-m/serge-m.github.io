@@ -12,9 +12,13 @@ Default Ubuntu desktop seems to become finally convenient enough for me starting
 Only several tweaks are missing.
 Constantly available CPU/Mem/HDD/Network monitor is one of them.
 Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+
 1. ```sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0```
+
 2. Go to **Ubuntu Software** and then search for `system monitor extension`. Install one named `system-monitor`: 
-  >  Display system information in GNOME Shell status bar
+
+    >  Display system information in GNOME Shell status bar
+
 3. After the installation you should see a new applet in the main pannel. One can find settings in the context menu.
 
 

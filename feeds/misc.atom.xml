@@ -1251,19 +1251,23 @@ SQLALCHEMY_BINDS = {
 &lt;p&gt;&lt;a href="https://www.pythonsheets.com/notes/python-sqlalchemy.html"&gt;Python SQLAlchemy Cheatsheet&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://habr.com/company/qrator/blog/430818/"&gt;about abstractions in SQLalchemy&lt;/a&gt; - in Russian&lt;/li&gt;
-&lt;/ul&gt;</content><category term="flask"></category><category term="sqlalchemy"></category><category term="sql"></category><category term="python"></category></entry><entry><title>Ubuntu linux settings</title><link href="https://serge-m.github.io/ubuntu-linux-settings.html" rel="alternate"></link><published>2018-01-11T08:00:00+01:00</published><updated>2018-01-11T08:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</id><summary type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
-&lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
-&lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;now if you run &lt;code&gt;xdg-open ./&lt;/code&gt; or press &lt;code&gt;Super+E&lt;/code&gt; nemo starts.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html"&gt;source&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;Auto completion for fabric&lt;/h2&gt;
-&lt;p&gt;Add &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;have fab …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;/ul&gt;</content><category term="flask"></category><category term="sqlalchemy"></category><category term="sql"></category><category term="python"></category></entry><entry><title>Ubuntu/linux settings</title><link href="https://serge-m.github.io/ubuntu-linux-settings.html" rel="alternate"></link><published>2018-01-11T08:00:00+01:00</published><updated>2018-01-11T08:00:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-11:/ubuntu-linux-settings.html</id><summary type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;h2&gt;CPU monitoring on the main panel&lt;/h2&gt;
+&lt;p&gt;Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. 
+Only several tweaks are missing.
+Constantly available CPU/Mem/HDD/Network monitor is one of them.
+Here is how to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Some settings I find useful for a workstation&lt;/p&gt;
+&lt;h2&gt;CPU monitoring on the main panel&lt;/h2&gt;
+&lt;p&gt;Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. 
+Only several tweaks are missing.
+Constantly available CPU/Mem/HDD/Network monitor is one of them.
+Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+1. &lt;code&gt;sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0  gir1.2-clutter-1.0&lt;/code&gt;
+2. Go to &lt;strong&gt;Ubuntu Software&lt;/strong&gt; and then search for &lt;code&gt;system monitor extension&lt;/code&gt;. Install one named &lt;code&gt;system-monitor&lt;/code&gt;: &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Display system information in GNOME Shell status bar
+3. After the installation you should see a new applet in the main pannel. One can find settings in the context menu.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2&gt;Autocomplete in shell&lt;/h2&gt;
 &lt;p&gt;See &lt;a href="/autocomplete-from-history-in-terminal.html"&gt;autocomplete from history in terminal&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Set &lt;code&gt;nemo&lt;/code&gt; as default file manager&lt;/h2&gt;
@@ -1327,7 +1331,7 @@ complete -F _fab_completion fab
 &lt;li&gt;&lt;a href="#default-permissions-for-directories"&gt;Default permissions for directories&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="add-service-in-linux.html"&gt;Add service in linux&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/ssh-cheatsheet.html"&gt;confiduring ssh&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="linux"></category><category term="useful"></category></entry><entry><title>Mixin pattern in Python</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
+&lt;/ul&gt;</content><category term="linux"></category><category term="useful"></category><category term="settings"></category><category term="ubuntu"></category></entry><entry><title>Mixin pattern in Python</title><link href="https://serge-m.github.io/mixins-in-python.html" rel="alternate"></link><published>2018-01-10T07:50:00+01:00</published><updated>2018-01-10T07:50:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2018-01-10:/mixins-in-python.html</id><summary type="html">&lt;p&gt;Design pattern &lt;a href="https://en.wikipedia.org/wiki/Mixin"&gt;Mixin&lt;/a&gt; is often used in python. 
  There are two main situations where mixins are used &lt;a href="https://stackoverflow.com/questions/533631/what-is-a-mixin-and-why-are-they-useful"&gt;1&lt;/a&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;You want to provide a lot of optional features for a class.&lt;/li&gt;

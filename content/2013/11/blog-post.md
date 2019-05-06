@@ -4,7 +4,11 @@ Date: 2013-11-12 11:17:00
 Slug: blog-post-3
 Tags: opencv,russian,optical flow
 
-<div dir="ltr" style="text-align: left;" trbidi="on">Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/).
+Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/)
+
+see also [Deep Learning в вычислении оптического потока](https://habr.com/ru/company/ods/blog/446726/)
+
+
 <div>Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.
 <div>
 </div><div>

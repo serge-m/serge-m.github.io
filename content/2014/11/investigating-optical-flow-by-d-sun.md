@@ -5,12 +5,12 @@ Slug: investigating-optical-flow-by-d-sun
 Tags: 
 
 Personal page of the author:
-[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html" target="_blank)
+[http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html)
 
-Original paper: [http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf](http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf" target="_blank)
+Original paper: [http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf](http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf)
 
 Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
-[ [pdf](http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf" target="_blank)] [[Source code](http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip" target="_blank)]
+[ [pdf](http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf)] [[Source code](http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip)]
 
 Look inside the sources:
 

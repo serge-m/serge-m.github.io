@@ -1828,7 +1828,11 @@ Otherwise Ember tries to get data from &lt;code&gt;http://localhost:4200/api/use
 &lt;p&gt;Setup script doesn't accept parameters.
 Then you could pass them through environment variables:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;export MAKEFLAGS=&amp;quot;-j 8&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;</content><category term="make"></category><category term="cmake"></category><category term="python"></category><category term="parallel"></category></entry><entry><title>Add months to datetime in python</title><link href="https://serge-m.github.io/add-months-to-datetime-in-python.html" rel="alternate"></link><published>2017-07-20T07:07:00+02:00</published><updated>2017-07-20T07:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-07-20:/add-months-to-datetime-in-python.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;see also
+* &lt;a href="https://programming.d3.ru/doklad-pro-cmake-s-konferentsii-c-russia2018-1783629/"&gt;intro to CMake&lt;/a&gt; video, russian.&lt;/p&gt;</content><category term="make"></category><category term="cmake"></category><category term="python"></category><category term="parallel"></category></entry><entry><title>Add months to datetime in python</title><link href="https://serge-m.github.io/add-months-to-datetime-in-python.html" rel="alternate"></link><published>2017-07-20T07:07:00+02:00</published><updated>2017-07-20T07:07:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-07-20:/add-months-to-datetime-in-python.html</id><summary type="html">&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dateutil.relativedelta&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;relativedelta&lt;/span&gt;
 
 &lt;span class="n"&gt;your_datetime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;

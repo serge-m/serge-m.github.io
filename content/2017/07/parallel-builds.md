@@ -27,3 +27,7 @@ Then you could pass them through environment variables:
 ```
 export MAKEFLAGS="-j 8"
 ```
+
+
+see also
+* [intro to CMake](https://programming.d3.ru/doklad-pro-cmake-s-konferentsii-c-russia2018-1783629/) video, russian.

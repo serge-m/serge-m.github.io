@@ -190,14 +190,14 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <ol>
 <li>
 <p>remove standard firefox:</p>
-<div class="highlight"><pre><span></span>sudo apt-get remove firefox
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">remove</span> <span class="n">firefox</span>
 </pre></div>
 
 
 </li>
 <li>
 <p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
-    I am not sure if this step actually helped. TODO …</p></li></ol>
+    I am not sure if this step actually helped …</p></li></ol>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fix-google-search-suggestions-in-firefox-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -287,19 +287,19 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span>:new&lt;CR&gt;  new session
-s  list sessions
-$  name session
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">new</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>  <span class="k">new</span> <span class="k">session</span>
+<span class="n">s</span>  <span class="n">list</span> <span class="n">sessions</span>
+<span class="err">$</span>  <span class="n">name</span> <span class="k">session</span>
 </pre></div>
 
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span>c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window …</pre></div>
+<div class="highlight"><pre><span></span><span class="nv">c</span>  <span class="nv">create</span> <span class="nv">window</span>
+<span class="nv">w</span>  <span class="nv">list</span> <span class="nv">windows</span>
+<span class="nv">n</span>  <span class="k">next</span> <span class="nv">window</span>
+<span class="nv">p</span>  <span class="nv">previous</span> <span class="nv">window</span>
+<span class="nv">f</span>  <span class="nv">find</span> <span class="nv">window</span>
+,  <span class="nv">name</span> <span class="nv">window …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -333,19 +333,19 @@ f  find window
 Assume we have following partitions:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span> boot /sdb1 (don&#39;t really know how it works)
- root /sdb2
- home /sdb3 
+<div class="highlight"><pre><span></span> <span class="n">boot</span> <span class="o">/</span><span class="n">sdb1</span> <span class="p">(</span><span class="n">don</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">really</span> <span class="n">know</span> <span class="n">how</span> <span class="n">it</span> <span class="n">works</span><span class="p">)</span>
+ <span class="n">root</span> <span class="o">/</span><span class="n">sdb2</span>
+ <span class="n">home</span> <span class="o">/</span><span class="n">sdb3</span> 
 </pre></div>
 
 
 <ul>
 <li>Do</li>
 </ul>
-<div class="highlight"><pre><span></span>sudo mount /dev/sda2 /mnt
+<div class="highlight"><pre><span></span><span class="nv">sudo</span> <span class="nv">mount</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sda2</span> <span class="o">/</span><span class="nv">mnt</span>
 
-## if you have boot partition:
-# sudo …</pre></div>
+## <span class="k">if</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">boot</span> <span class="nv">partition</span>:
+# <span class="nv">sudo …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html">more ...</a>
                 </div>
 
@@ -372,12 +372,12 @@ Assume we have following partitions:</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>    apt-get install davfs2
-    mkdir /mnt/yandex.disk
-    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
+                <div class="summary"><div class="highlight"><pre><span></span>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
+    <span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span>
+    <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">davfs</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">webdav</span><span class="p">.</span><span class="n">yandex</span><span class="p">.</span><span class="n">ru</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span>
 
-    # check: 
-    df -h /mnt/yandex.disk/ 
+    <span class="o">#</span> <span class="k">check</span><span class="p">:</span> 
+    <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span> 
 </pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
@@ -403,18 +403,18 @@ Assume we have following partitions:</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>require(&#39;image&#39;)
-imgPath = &quot;image.jpg&quot;
-img = torch.Tensor(1, 3, imgDim, imgDim)
-img[1] = image.load(imgPath, 3, byte)
+                <div class="summary"><div class="highlight"><pre><span></span><span class="n">require</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">)</span>
+<span class="n">imgPath</span> <span class="o">=</span> <span class="ss">&quot;image.jpg&quot;</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">imgDim</span><span class="p">,</span> <span class="n">imgDim</span><span class="p">)</span>
+<span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="p">.</span><span class="k">load</span><span class="p">(</span><span class="n">imgPath</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">byte</span><span class="p">)</span>
 </pre></div>
 
 
 <p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
-<div class="highlight"><pre><span></span>display
-require &#39;gnuplot&#39;
-gnuplot.figure(1)
-gnuplot.imagesc(img[1])
+<div class="highlight"><pre><span></span><span class="n">display</span>
+<span class="n">require</span> <span class="s1">&#39;gnuplot&#39;</span>
+<span class="n">gnuplot</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gnuplot</span><span class="p">.</span><span class="n">imagesc</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
 
@@ -446,10 +446,10 @@ gnuplot.imagesc(img[1])
                 </div>
                 <div class="summary"><p>I got the error while installing torch for miniconda. Something like
 Linking CXX executable mshrable</p>
-<div class="highlight"><pre><span></span>~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;
-~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;
-~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39;
-~/miniconda/envs …</pre></div>
+<div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py27</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libreadline</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">reference</span> <span class="k">to</span> <span class="o">`</span><span class="n">BC</span><span class="s1">&#39;</span>
+<span class="s1">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;</span>
+<span class="o">~/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py27</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">libreadline</span><span class="p">.</span><span class="n">so</span><span class="p">.</span><span class="mi">6</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">reference</span> <span class="k">to</span> <span class="o">`</span><span class="n">PC</span><span class="s1">&#39;</span>
+<span class="s1">~/miniconda/envs …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-torch-for-miniconda.html">more ...</a>
                 </div>
 
@@ -517,13 +517,13 @@ cmake --build . --config Release
                 </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span>mkdir /mnt/share
-mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share
+<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="k">share</span>
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">cifs</span> <span class="o">//</span><span class="n">windowsmachineip</span><span class="o">/</span><span class="n">sharename</span> <span class="o">-</span><span class="n">o</span> <span class="n">username</span><span class="o">=</span><span class="k">user</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="n">urPassword</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="k">share</span>
 </pre></div>
 
 
 <h2>Unmount</h2>
-<div class="highlight"><pre><span></span>umount /mnt/shares
+<div class="highlight"><pre><span></span><span class="n">umount</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">shares</span>
 </pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
                 </div>
@@ -591,20 +591,15 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
                 </div>
                 <div class="summary"><p>create a file <code>.inputrc</code>
 in your home directory and put there</p>
-<div class="highlight"><pre><span></span>&quot;\e[A&quot;: history-search-backward
-&quot;\e[B&quot;: history-search-forward
-set show-all-if-ambiguous on
-set completion-ignore-case on
+<div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s">\e[A</span><span class="s2">&quot;</span>: <span class="nv">history</span><span class="o">-</span><span class="nv">search</span><span class="o">-</span><span class="nv">backward</span>
+<span class="s2">&quot;</span><span class="s">\e[B</span><span class="s2">&quot;</span>: <span class="nv">history</span><span class="o">-</span><span class="nv">search</span><span class="o">-</span><span class="nv">forward</span>
+<span class="nv">set</span> <span class="k">show</span><span class="o">-</span><span class="nv">all</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="nv">ambiguous</span> <span class="nv">on</span>
+<span class="nv">set</span> <span class="nv">completion</span><span class="o">-</span><span class="nv">ignore</span><span class="o">-</span><span class="nv">case</span> <span class="nv">on</span>
 
-# display possible completions using different colors to indicate their file types
-set colored-stats On
+# <span class="nv">display</span> <span class="nv">possible</span> <span class="nv">completions</span> <span class="nv">using</span> <span class="nv">different</span> <span class="nv">colors</span> <span class="nv">to</span> <span class="nv">indicate</span> <span class="nv">their</span> <span class="nv">file</span> <span class="nv">types</span>
+<span class="nv">set</span> <span class="nv">colored</span><span class="o">-</span><span class="nv">stats</span> <span class="nv">On</span>
 
-TAB: menu-complete
-</pre></div>
-
-
-<p>Restart your terminal.
-Now you can autocomplete from history using Up …</p>
+<span class="nv">TAB</span>: <span class="nv">menu</span><span class="o">-</span><span class="nv">complete …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">more ...</a>
                 </div>
 
@@ -671,7 +666,7 @@ Now you can autocomplete from history using Up …</p>
 </li>
 <li>
 <p>compile using</p>
-<div class="highlight"><pre><span></span>./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">rpython</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">rpython</span> <span class="o">-</span><span class="n">O2</span> <span class="p">.</span><span class="o">/</span><span class="n">pypy</span><span class="o">/</span><span class="n">goal</span><span class="o">/</span><span class="n">targetpypystandalone</span><span class="p">.</span><span class="n">py</span> <span class="c1">--withoutmod-micronumpy</span>
 </pre></div>
 
 
@@ -748,8 +743,8 @@ Now you can autocomplete from history using Up …</p>
                 </div>
                 <div class="summary"><p>Hmm. It doesn't work.
 I see the icon when i do</p>
-<div class="highlight"><pre><span></span>dropbox stop
-dropbox start
+<div class="highlight"><pre><span></span><span class="n">dropbox</span> <span class="n">stop</span>
+<span class="n">dropbox</span> <span class="k">start</span>
 </pre></div>
 
 
@@ -838,9 +833,9 @@ Looks good. No disgust after 10 minutes of work.</p>
 
 
 <p>Running in console:</p>
-<div class="highlight"><pre><span></span>&gt; gdb python
-GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
-Copyright (C) 2014 …</pre></div>
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nv">gdb</span> <span class="nv">python</span>
+<span class="nv">GNU</span> <span class="nv">gdb</span> <span class="ss">(</span><span class="nv">Ubuntu</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="nv">ubuntu5</span><span class="o">~</span><span class="mi">14</span>.<span class="mi">04</span>.<span class="mi">2</span><span class="ss">)</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span>
+<span class="nv">Copyright …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html">more ...</a>
                 </div>
 
@@ -922,10 +917,10 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -938,6 +933,12 @@ Copyright (C) 2014 …</pre></div>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -967,19 +968,13 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -988,10 +983,16 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -1005,17 +1006,17 @@ Copyright (C) 2014 …</pre></div>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1056,9 +1057,6 @@ Copyright (C) 2014 …</pre></div>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -1072,10 +1070,13 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1084,7 +1085,7 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -1108,16 +1109,13 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -1134,17 +1132,20 @@ Copyright (C) 2014 …</pre></div>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -1159,19 +1160,16 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1179,14 +1177,11 @@ Copyright (C) 2014 …</pre></div>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1204,7 +1199,7 @@ Copyright (C) 2014 …</pre></div>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

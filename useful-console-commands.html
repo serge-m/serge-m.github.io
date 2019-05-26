@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,console,linux,network" />
-        <meta name="description" content="Scan IP range Generally, nmap is useful to quickly scan networks. To install nmap, enter sudo apt-get install nmap Once it is installed, enter nmap -sn 192.168.1.0/24 This will show you which hosts responded to ping requests on the network between 192.168.1.0 and …" />
+        <meta name="description" content="Scan IP range Generally, nmap is useful to quickly scan networks. To install nmap, enter sudo apt-get install nmap Once it is installed, enter nmap -sn 192.168.1.0/24 This will show you which hosts responded to ping requests on the network between 192.168.1.0 …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Useful console comands"/>
         <meta property="og:url" content="https://serge-m.github.io/useful-console-commands.html"/>
-        <meta property="og:description" content="Scan IP range Generally, nmap is useful to quickly scan networks. To install nmap, enter sudo apt-get install nmap Once it is installed, enter nmap -sn 192.168.1.0/24 This will show you which hosts responded to ping requests on the network between 192.168.1.0 and …"/>
+        <meta property="og:description" content="Scan IP range Generally, nmap is useful to quickly scan networks. To install nmap, enter sudo apt-get install nmap Once it is installed, enter nmap -sn 192.168.1.0/24 This will show you which hosts responded to ping requests on the network between 192.168.1.0 …"/>
         <meta property="article:published_time" content="2017-06-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -114,29 +114,29 @@ sergem personal public notebook            </a>
                 <h2>Scan IP range</h2>
 <p>Generally, nmap is useful to quickly scan networks.</p>
 <p>To install nmap, enter</p>
-<div class="highlight"><pre><span></span>sudo apt-get install nmap
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">nmap</span>
 </pre></div>
 
 
 <p>Once it is installed, enter</p>
-<div class="highlight"><pre><span></span>nmap -sn 192.168.1.0/24
+<div class="highlight"><pre><span></span><span class="n">nmap</span> <span class="o">-</span><span class="n">sn</span> <span class="mi">192</span><span class="p">.</span><span class="mi">168</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">24</span>
 </pre></div>
 
 
 <p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255.</p>
 <p><a href="https://askubuntu.com/a/224567">Source</a></p>
 <h2>Replace text in files</h2>
-<div class="highlight"><pre><span></span>find . -type f | xargs sed -i &quot;s/text_to_find/text_to_put/g&quot;
+<div class="highlight"><pre><span></span><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="k">type</span> <span class="n">f</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="ss">&quot;s/text_to_find/text_to_put/g&quot;</span>
 </pre></div>
 
 
 <p>To keep original files with <code>.original</code> extension:</p>
-<div class="highlight"><pre><span></span>find . -type f | xargs sed -i.original &quot;s/text_to_find/text_to_put/g&quot;
+<div class="highlight"><pre><span></span><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="k">type</span> <span class="n">f</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span><span class="p">.</span><span class="n">original</span> <span class="ss">&quot;s/text_to_find/text_to_put/g&quot;</span>
 </pre></div>
 
 
 <p>If your text contain slashes, you should use another delimiter:</p>
-<div class="highlight"><pre><span></span>find . -type f | xargs sed -i.original &quot;s|text/to/find/|text/to/put|g&quot;
+<div class="highlight"><pre><span></span><span class="n">find</span> <span class="p">.</span> <span class="o">-</span><span class="k">type</span> <span class="n">f</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span><span class="p">.</span><span class="n">original</span> <span class="ss">&quot;s|text/to/find/|text/to/put|g&quot;</span>
 </pre></div>
 
 
@@ -229,10 +229,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -245,6 +245,12 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -274,19 +280,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -295,10 +295,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -312,17 +318,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -363,9 +369,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -379,10 +382,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -391,7 +397,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -415,16 +421,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -441,17 +444,20 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -466,19 +472,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -486,14 +489,11 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -511,7 +511,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

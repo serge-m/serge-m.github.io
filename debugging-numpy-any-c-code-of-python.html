@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="useful,python" />
-        <meta name="description" content="I created a tiny python script that executes some python code, that executes some C code: # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console: &gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 …" />
+        <meta name="description" content="I created a tiny python script that executes some python code, that executes some C code: # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console: &gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Debugging numpy (any C code of Python) using gdb"/>
         <meta property="og:url" content="https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html"/>
-        <meta property="og:description" content="I created a tiny python script that executes some python code, that executes some C code: # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console: &gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 …"/>
+        <meta property="og:description" content="I created a tiny python script that executes some python code, that executes some C code: # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console: &gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright …"/>
         <meta property="article:published_time" content="2016-04-04" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
@@ -113,28 +113,28 @@ sergem personal public notebook            </a>
 
 
 <p>Running in console:</p>
-<div class="highlight"><pre><span></span>&gt; gdb python
-GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
-Copyright (C) 2014 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
-This is free software: you are free to change and redistribute it.
-.................. bla bla bla ..................................................
+<div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nv">gdb</span> <span class="nv">python</span>
+<span class="nv">GNU</span> <span class="nv">gdb</span> <span class="ss">(</span><span class="nv">Ubuntu</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="nv">ubuntu5</span><span class="o">~</span><span class="mi">14</span>.<span class="mi">04</span>.<span class="mi">2</span><span class="ss">)</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span>
+<span class="nv">Copyright</span> <span class="ss">(</span><span class="nv">C</span><span class="ss">)</span> <span class="mi">2014</span> <span class="nv">Free</span> <span class="nv">Software</span> <span class="nv">Foundation</span>, <span class="nv">Inc</span>.
+<span class="nv">License</span> <span class="nv">GPLv3</span><span class="o">+</span>: <span class="nv">GNU</span> <span class="nv">GPL</span> <span class="nv">version</span> <span class="mi">3</span> <span class="nv">or</span> <span class="nv">later</span> <span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">licenses</span><span class="o">/</span><span class="nv">gpl</span>.<span class="nv">html</span><span class="o">&gt;</span>
+<span class="nv">This</span> <span class="nv">is</span> <span class="nv">free</span> <span class="nv">software</span>: <span class="nv">you</span> <span class="nv">are</span> <span class="nv">free</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">and</span> <span class="nv">redistribute</span> <span class="nv">it</span>.
+.................. <span class="nv">bla</span> <span class="nv">bla</span> <span class="nv">bla</span> ..................................................
 
-# Adding breakpoint to function &quot;arraymultiter_new&quot; (example):
-(gdb) break arraymultiter_new
+# <span class="nv">Adding</span> <span class="nv">breakpoint</span> <span class="nv">to</span> <span class="nv">function</span> <span class="s2">&quot;</span><span class="s">arraymultiter_new</span><span class="s2">&quot;</span> <span class="ss">(</span><span class="nv">example</span><span class="ss">)</span>:
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span> <span class="k">break</span> <span class="nv">arraymultiter_new</span>
 
-# There is name completition by Tab.
-# Run script
-(gdb) run dbg_broadcast.py
+# <span class="nv">There</span> <span class="nv">is</span> <span class="nv">name</span> <span class="nv">completition</span> <span class="nv">by</span> <span class="nv">Tab</span>.
+# <span class="nv">Run</span> <span class="nv">script</span>
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span> <span class="nv">run</span> <span class="nv">dbg_broadcast</span>.<span class="nv">py</span>
 
-Starting program: /home/asdasd/work/bin/python dbg_broadcast.py
-[Thread debugging using libthread_db enabled]
-Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
-Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;PyArrayMultiIter_Type&gt;,
-    args=0x7ffff32dd050, kwds=0x0) at numpy/core/src/multiarray/iterators.c:1578
-1578 {
+<span class="nv">Starting</span> <span class="nv">program</span>: <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">asdasd</span><span class="o">/</span><span class="nv">work</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">python</span> <span class="nv">dbg_broadcast</span>.<span class="nv">py</span>
+[<span class="nv">Thread</span> <span class="nv">debugging</span> <span class="nv">using</span> <span class="nv">libthread_db</span> <span class="nv">enabled</span>]
+<span class="nv">Using</span> <span class="nv">host</span> <span class="nv">libthread_db</span> <span class="nv">library</span> <span class="s2">&quot;</span><span class="s">/lib/x86_64-linux-gnu/libthread_db.so.1</span><span class="s2">&quot;</span>.
+<span class="nv">Breakpoint</span> <span class="mi">1</span>, <span class="nv">arraymultiter_new</span> <span class="ss">(</span><span class="nv">__NPY_UNUSED_TAGGEDsubtype</span><span class="o">=</span><span class="mi">0</span><span class="nv">x7ffff6abbf80</span> <span class="o">&lt;</span><span class="nv">PyArrayMultiIter_Type</span><span class="o">&gt;</span>,
+    <span class="nv">args</span><span class="o">=</span><span class="mi">0</span><span class="nv">x7ffff32dd050</span>, <span class="nv">kwds</span><span class="o">=</span><span class="mi">0</span><span class="nv">x0</span><span class="ss">)</span> <span class="nv">at</span> <span class="nv">numpy</span><span class="o">/</span><span class="nv">core</span><span class="o">/</span><span class="nv">src</span><span class="o">/</span><span class="nv">multiarray</span><span class="o">/</span><span class="nv">iterators</span>.<span class="nv">c</span>:<span class="mi">1578</span>
+<span class="mi">1578</span> {
 
-(gdb)
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span>
 </pre></div>
 
 
@@ -223,10 +223,10 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -239,6 +239,12 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -268,19 +274,13 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -289,10 +289,16 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -306,17 +312,17 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -357,9 +363,6 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -373,10 +376,13 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -385,7 +391,7 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -409,16 +415,13 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -435,17 +438,20 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -460,19 +466,16 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -480,14 +483,11 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -505,7 +505,7 @@ Breakpoint 1, arraymultiter_new (__NPY_UNUSED_TAGGEDsubtype=0x7ffff6abbf80 &lt;P
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

@@ -201,9 +201,9 @@ batch_size: 100</p>
                 </div>
                 <div class="summary"><p><a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz">Drawing on an image with TikZ</a></p>
 <p>Drawing label on figure (using tikz)</p>
-<div class="highlight"><pre><span></span>\begin{tikzpicture}
-            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}};
-            %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0 …</pre></div>
+<div class="highlight"><pre><span></span>\<span class="nv">begin</span>{<span class="nv">tikzpicture</span>}
+            \<span class="nv">node</span>[<span class="nv">anchor</span><span class="o">=</span><span class="nv">south</span> <span class="nv">west</span>,<span class="nv">inner</span> <span class="nv">sep</span><span class="o">=</span><span class="mi">0</span>] <span class="nv">at</span> <span class="ss">(</span><span class="mi">0</span>,<span class="mi">0</span><span class="ss">)</span> {\<span class="nv">includegraphics</span>[<span class="nv">trim</span><span class="o">=</span>{<span class="mi">600</span><span class="nv">px</span> <span class="mi">200</span><span class="nv">px</span> <span class="mi">50</span><span class="nv">px</span> <span class="mi">200</span><span class="nv">px</span>},<span class="nv">clip</span>, <span class="nv">width</span><span class="o">=</span><span class="mi">1</span>\<span class="nv">linewidth</span>]{<span class="nv">images</span><span class="o">/</span><span class="nv">DP_10150_simpleCombinedBasedOnDPlen</span>.<span class="nv">exe_scale1_blank</span><span class="o">/</span><span class="nv">frm00001</span>}}<span class="c1">;</span>
+            <span class="o">%</span>\<span class="nv">draw</span>[<span class="nv">white</span>,<span class="nv">fill</span><span class="o">=</span><span class="nv">white</span>] <span class="ss">(</span><span class="mi">0</span>.<span class="mi">0</span>,<span class="mi">0</span>.<span class="mi">0 …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tikz-cookbook.html">more ...</a>
                 </div>
 
@@ -313,8 +313,8 @@ batch_size: 100</p>
                 <div class="summary"><p><code>doskey /history &gt; commands.log</code>- dump command line promt history to file</p>
 <p><code>some_command &gt; output_file.txt 2&gt;&amp;1</code> -  Redirect stdout and stderr to the same file <a href="http://stackoverflow.com/a/1420981">src</a></p>
 <h2>Share wifi from command line (probably obsolete in Win 8, 10)</h2>
-<div class="highlight"><pre><span></span>netsh wlan set hostednetwork mode=allow ssid=&quot;NETWORK_NAME&quot; key=&quot;NETWORK_PASSWORD&quot; keyUsage=persistent
-netsh wlan …</pre></div>
+<div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">wlan</span> <span class="k">set</span> <span class="n">hostednetwork</span> <span class="k">mode</span><span class="o">=</span><span class="n">allow</span> <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;NETWORK_NAME&quot;</span> <span class="k">key</span><span class="o">=</span><span class="ss">&quot;NETWORK_PASSWORD&quot;</span> <span class="n">keyUsage</span><span class="o">=</span><span class="n">persistent</span>
+<span class="n">netsh</span> <span class="n">wlan …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/windows-life.html">more ...</a>
                 </div>
 
@@ -345,18 +345,16 @@ netsh wlan …</pre></div>
 <p><strong>screen</strong> - multiple virtual consoles in one real [<a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html">ref</a>], need installation in ubuntu</p>
 <p><strong>mc</strong> - file manager</p>
 <p><strong>ccsm</strong> - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)</p>
-<div class="highlight"><pre><span></span>sudo apt-get install compizconfig-settings-manager
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">compizconfig</span><span class="o">-</span><span class="n">settings</span><span class="o">-</span><span class="n">manager</span>
 </pre></div>
 
 
 <p>then </p>
-<div class="highlight"><pre><span></span>ccsm
+<div class="highlight"><pre><span></span><span class="n">ccsm</span>
 </pre></div>
 
 
-<h3>See also</h3>
-<ul>
-<li>more <a href="/useful-console-commands.html">here …</a></li></ul>
+<h3>See …</h3>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/linux-life.html">more ...</a>
                 </div>
 
@@ -424,7 +422,7 @@ allows us to wrap the costFunction for …</blockquote>
 
 
 <p>Use the trim option, which takes four space separated values.</p>
-<div class="highlight"><pre><span></span>trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}
+<div class="highlight"><pre><span></span><span class="k">trim</span><span class="o">=</span><span class="err">{</span><span class="o">&lt;</span><span class="k">left</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">lower</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">right</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">upper</span><span class="o">&gt;</span><span class="err">}</span>
 </pre></div>
 
 
@@ -456,11 +454,11 @@ allows us to wrap the costFunction for …</blockquote>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>use "screen" utility</p>
-<div class="highlight"><pre><span></span>ctrl-a-p - switch
-ctrl-a-c - new
-ctrl-a-Q - remove freeze
-ctrl-a-s - freeze
-ctrl-a-S - split, but doesn;t work
+<div class="highlight"><pre><span></span><span class="n">ctrl</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">p</span> <span class="o">-</span> <span class="n">switch</span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="k">c</span> <span class="o">-</span> <span class="k">new</span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">Q</span> <span class="o">-</span> <span class="n">remove</span> <span class="k">freeze</span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">s</span> <span class="o">-</span> <span class="k">freeze</span>
+<span class="n">ctrl</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">S</span> <span class="o">-</span> <span class="n">split</span><span class="p">,</span> <span class="n">but</span> <span class="n">doesn</span><span class="p">;</span><span class="n">t</span> <span class="k">work</span>
 </pre></div>
 
 
@@ -668,7 +666,7 @@ http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublim
                 </div>
                 <div class="summary"><p>Finally I solved the problem with broken clang compilation
 I always got message</p>
-<div class="highlight"><pre><span></span>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New, Courier, monospace;&quot;</span><span class="nt">&gt;</span>ld: malformed archive TOC entry for <span class="nt">&lt;long</span> <span class="err">strange</span> <span class="err">identifier</span><span class="nt">&gt;</span>, offset 362137760 is beyond end of file 303710208<span class="nt">&lt;/span&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New …</span></pre></div>
+<div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">p1</span><span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="nv">span</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">font-family: Courier New, Courier, monospace;</span><span class="s2">&quot;</span><span class="o">&gt;</span><span class="nv">ld</span>: <span class="nv">malformed</span> <span class="nv">archive</span> <span class="nv">TOC</span> <span class="nv">entry</span> <span class="k">for</span> <span class="o">&lt;</span><span class="nv">long</span> <span class="nv">strange</span> <span class="nv">identifier</span><span class="o">&gt;</span>, <span class="nv">offset</span> <span class="mi">362137760</span> <span class="nv">is</span> <span class="nv">beyond</span> <span class="k">end</span> <span class="nv">of</span> <span class="nv">file</span> <span class="mi">303710208</span><span class="o">&lt;/</span><span class="nv">span</span><span class="o">&gt;&lt;/</span><span class="nv">div</span><span class="o">&gt;&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">p1</span><span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="nv">span</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">font-family: Courier New …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">more ...</a>
                 </div>
 
@@ -814,10 +812,10 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -830,6 +828,12 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -859,19 +863,13 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -880,10 +878,16 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -897,17 +901,17 @@ nvidia (1)</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -948,9 +952,6 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -964,10 +965,13 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -976,7 +980,7 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -1000,16 +1004,13 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -1026,17 +1027,20 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -1051,19 +1055,16 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1071,14 +1072,11 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1096,7 +1094,7 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

@@ -127,51 +127,51 @@ sergem personal public notebook            </a>
 
 
 <p>Becomes:</p>
-<div class="highlight"><pre><span></span><span class="kr">class</span> <span class="nx">OystersGood</span>:
-    <span class="kt">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">month</span><span class="p">)</span><span class="o">:</span>
-        <span class="nx">month</span> <span class="o">=</span> <span class="nx">month</span>
-        <span class="nx">month_lowered</span> <span class="o">=</span> <span class="nx">month</span><span class="p">.</span><span class="nx">lower</span><span class="p">()</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_r</span> <span class="o">=</span> <span class="nx">month_lowered</span><span class="p">.</span><span class="nx">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_ary</span> <span class="o">=</span> <span class="nx">month_lowered</span><span class="p">.</span><span class="nx">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_r</span> <span class="nx">or</span> <span class="nx">self</span><span class="p">.</span><span class="nx">ends_in_ary</span>
+<div class="highlight"><pre><span></span><span class="nv">class</span> <span class="nv">OystersGood</span>:
+    <span class="nv">def</span> <span class="nv">__init__</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">month</span><span class="ss">)</span>:
+        <span class="nv">month</span> <span class="o">=</span> <span class="nv">month</span>
+        <span class="nv">month_lowered</span> <span class="o">=</span> <span class="nv">month</span>.<span class="nv">lower</span><span class="ss">()</span>
+        <span class="nv">self</span>.<span class="nv">ends_in_r</span> <span class="o">=</span> <span class="nv">month_lowered</span>.<span class="nv">endswith</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">r</span><span class="s1">&#39;</span><span class="ss">)</span>
+        <span class="nv">self</span>.<span class="nv">ends_in_ary</span> <span class="o">=</span> <span class="nv">month_lowered</span>.<span class="nv">endswith</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">ary</span><span class="s1">&#39;</span><span class="ss">)</span>
+        <span class="nv">self</span>.<span class="nv">_result</span> <span class="o">=</span> <span class="nv">self</span>.<span class="nv">ends_in_r</span> <span class="nv">or</span> <span class="nv">self</span>.<span class="nv">ends_in_ary</span>
 
-    <span class="nx">def</span> <span class="nx">__bool__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>  <span class="err">#</span> <span class="nx">Equivalent</span> <span class="nx">to</span> <span class="nx">__nonzero__</span> <span class="k">in</span> <span class="nx">Python</span> <span class="mi">2</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span>
+    <span class="nv">def</span> <span class="nv">__bool__</span><span class="ss">(</span><span class="nv">self</span><span class="ss">)</span>:  # <span class="nv">Equivalent</span> <span class="nv">to</span> <span class="nv">__nonzero__</span> <span class="nv">in</span> <span class="nv">Python</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="nv">self</span>.<span class="nv">_result</span>
 
 
-<span class="kr">class</span> <span class="nx">TomatoesGood</span>:
-    <span class="kt">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="nx">month</span><span class="p">)</span><span class="o">:</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">index</span> <span class="o">=</span> <span class="nx">MONTHS</span><span class="p">.</span><span class="nx">index</span><span class="p">(</span><span class="nx">month</span><span class="p">)</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="nx">self</span><span class="p">.</span><span class="nx">index</span> <span class="o">&gt;</span> <span class="mi">4</span>
+<span class="nv">class</span> <span class="nv">TomatoesGood</span>:
+    <span class="nv">def</span> <span class="nv">__init__</span><span class="ss">(</span><span class="nv">self</span>, <span class="nv">month</span><span class="ss">)</span>:
+        <span class="nv">self</span>.<span class="nv">index</span> <span class="o">=</span> <span class="nv">MONTHS</span>.<span class="nv">index</span><span class="ss">(</span><span class="nv">month</span><span class="ss">)</span>
+        <span class="nv">self</span>.<span class="nv">_result</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="nv">self</span>.<span class="nv">index</span> <span class="o">&gt;</span> <span class="mi">4</span>
 
-    <span class="nx">def</span> <span class="nx">__bool__</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>  <span class="err">#</span> <span class="nx">Equivalent</span> <span class="nx">to</span> <span class="nx">__nonzero__</span> <span class="k">in</span> <span class="nx">Python</span> <span class="mi">2</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">_result</span>
+    <span class="nv">def</span> <span class="nv">__bool__</span><span class="ss">(</span><span class="nv">self</span><span class="ss">)</span>:  # <span class="nv">Equivalent</span> <span class="nv">to</span> <span class="nv">__nonzero__</span> <span class="nv">in</span> <span class="nv">Python</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="nv">self</span>.<span class="nv">_result</span>
 </pre></div>
 
 
-<div class="highlight"><pre><span></span>time_for_oysters = OystersGood(month)
-time_for_tomatoes = TomatoesGood(month)
+<div class="highlight"><pre><span></span><span class="nv">time_for_oysters</span> <span class="o">=</span> <span class="nv">OystersGood</span><span class="ss">(</span><span class="nv">month</span><span class="ss">)</span>
+<span class="nv">time_for_tomatoes</span> <span class="o">=</span> <span class="nv">TomatoesGood</span><span class="ss">(</span><span class="nv">month</span><span class="ss">)</span>
 
-if time_for_oysters:
-    print(&#39;%s is a good time to eat oysters&#39; % month)
-elif time_for_tomatoes:
-    print(&#39;%s is a good time to eat tomatoes&#39; % month)
-else:
-    print(&#39;%s is a good time to eat asparagus&#39; % month)
+<span class="k">if</span> <span class="nv">time_for_oysters</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat oysters</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
+<span class="nv">elif</span> <span class="nv">time_for_tomatoes</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat tomatoes</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
+<span class="k">else</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat asparagus</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
 </pre></div>
 
 
 <p>November is a good time to eat oysters</p>
 <p>Now the helper function is easy to test and introspect.</p>
-<div class="highlight"><pre><span></span>test = OystersGood(&#39;November&#39;)
-assert test
-assert test.ends_in_r
-assert not test.ends_in_ary
+<div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="s1">&#39;November&#39;</span><span class="p">)</span>
+<span class="n">assert</span> <span class="n">test</span>
+<span class="n">assert</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_r</span>
+<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_ary</span>
 
-test = OystersGood(&#39;July&#39;)
-assert not test
-assert not test.ends_in_r
-assert not test.ends_in_ary
+<span class="n">test</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="s1">&#39;July&#39;</span><span class="p">)</span>
+<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span>
+<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_r</span>
+<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_ary</span>
 </pre></div>
 
 
@@ -260,10 +260,10 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -276,6 +276,12 @@ assert not test.ends_in_ary
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -305,19 +311,13 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -326,10 +326,16 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -343,17 +349,17 @@ assert not test.ends_in_ary
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -394,9 +400,6 @@ assert not test.ends_in_ary
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -410,10 +413,13 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -422,7 +428,7 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -446,16 +452,13 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -472,17 +475,20 @@ assert not test.ends_in_ary
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -497,19 +503,16 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -517,14 +520,11 @@ assert not test.ends_in_ary
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -542,7 +542,7 @@ assert not test.ends_in_ary
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

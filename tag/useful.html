@@ -98,27 +98,27 @@ sergem personal public notebook            </a>
 
 
 <p>Connect to a specific database:</p>
-<div class="highlight"><pre><span></span>\c database_name;
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="k">c</span> <span class="n">database_name</span><span class="p">;</span>
 </pre></div>
 
 
 <p>Quit the psql:</p>
-<div class="highlight"><pre><span></span>\q
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">q</span>
 </pre></div>
 
 
 <p>List all databases:</p>
-<div class="highlight"><pre><span></span>\l
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">l</span>
 </pre></div>
 
 
 <p>Lists all tables in the current database:</p>
-<div class="highlight"><pre><span></span>\dt
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">dt</span>
 </pre></div>
 
 
 <p>List all users: </p>
-<div class="highlight"><pre><span></span>\du
+<div class="highlight"><pre><span></span><span class="err">\</span><span class="n">du</span>
 </pre></div>
 
 
@@ -230,7 +230,7 @@ Here is how to …</p>
                 <div class="summary"><p>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.</p>
 <h2>Running tests in pytest with/without a specified mark</h2>
 <p>Execute  </p>
-<div class="highlight"><pre><span></span>pytest -m &quot;integration&quot;
+<div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">-</span><span class="n">m</span> <span class="ss">&quot;integration&quot;</span>
 </pre></div>
 
 
@@ -269,16 +269,16 @@ Here is how to …</p>
                 <div class="summary"><h2>Scan IP range</h2>
 <p>Generally, nmap is useful to quickly scan networks.</p>
 <p>To install nmap, enter</p>
-<div class="highlight"><pre><span></span>sudo apt-get install nmap
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">nmap</span>
 </pre></div>
 
 
 <p>Once it is installed, enter</p>
-<div class="highlight"><pre><span></span>nmap -sn 192.168.1.0/24
+<div class="highlight"><pre><span></span><span class="n">nmap</span> <span class="o">-</span><span class="n">sn</span> <span class="mi">192</span><span class="p">.</span><span class="mi">168</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">24</span>
 </pre></div>
 
 
-<p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and …</p>
+<p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
 
@@ -310,7 +310,7 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Using <code>convert</code> utility we can join multiple image files (png, jpeg, pdf) into one pdf.</p>
-<div class="highlight"><pre><span></span>convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf
+<div class="highlight"><pre><span></span><span class="k">convert</span> <span class="o">-</span><span class="n">density</span> <span class="mi">250</span> <span class="n">file1</span><span class="p">.</span><span class="n">pdf</span> <span class="n">file2</span><span class="p">.</span><span class="n">JPG</span> <span class="n">file3</span><span class="p">.</span><span class="n">pdf</span> <span class="o">-</span><span class="n">compress</span> <span class="n">JPEG</span> <span class="o">-</span><span class="n">quality</span> <span class="mi">70</span> <span class="n">combined</span><span class="p">.</span><span class="n">pdf</span>
 </pre></div>
 
 
@@ -420,7 +420,7 @@ Here is how to …</p>
                 <div class="summary"><ul>
 <li>Install <code>hplip-gui</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span>sudo apt-get install hplip-gui
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">hplip</span><span class="o">-</span><span class="n">gui</span>
 </pre></div>
 
 
@@ -429,7 +429,7 @@ Here is how to …</p>
 </ul>
 <p><a href="https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580">Thanks</a></p>
 <h4>Another solution</h4>
-<div class="highlight"><pre><span></span>sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">hp</span><span class="o">-</span><span class="n">ppd</span> <span class="n">hpijs</span> <span class="n">hpijs</span><span class="o">-</span><span class="n">ppds</span> <span class="n">hplip</span> <span class="n">hplip</span><span class="o">-</span><span class="n">cups</span> <span class="n">hplip</span><span class="o">-</span><span class="k">data</span> <span class="n">hplip</span><span class="o">-</span><span class="n">dbg</span> <span class="n">hplip</span><span class="o">-</span><span class="n">doc</span> <span class="n">hplip</span><span class="o">-</span><span class="n">gui</span> <span class="n">djtools</span>
 </pre></div>
 
 
@@ -466,22 +466,22 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
 <p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span>fuser -k 8080/tcp
+<div class="highlight"><pre><span></span><span class="n">fuser</span> <span class="o">-</span><span class="n">k</span> <span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span>
 </pre></div>
 
 
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span>sudo usermod -aG group user
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="k">group</span> <span class="k">user</span>
 </pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span>sudo adduser &lt;user&gt; &lt;group&gt;
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="o">&lt;</span><span class="k">user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">group</span><span class="o">&gt;</span>
 </pre></div>
 
 
 <p>Remove user from a group</p>
-<div class="highlight"><pre><span></span>sudo gpasswd -d user group
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">gpasswd</span> <span class="o">-</span><span class="n">d</span> <span class="k">user</span> <span class="k">group</span>
 </pre></div>
 
 
@@ -514,21 +514,21 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span>touch /etc/systemd/system/your-service.service 
+<div class="highlight"><pre><span></span><span class="n">touch</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="k">system</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">service</span><span class="p">.</span><span class="n">service</span> 
 </pre></div>
 
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
-<div class="highlight"><pre><span></span>[Unit]                                                                                                                                                                                                                                        
-Description=YourService                                                                                                                                                                                                                           
-After=docker.service                                                                                                                                                                                                                          
-Requires=docker.service                                                                                                                                                                                                                       
+<div class="highlight"><pre><span></span><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
+<span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
+<span class="k">After</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                          </span>
+<span class="n">Requires</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                       </span>
 
-[Service]                                                                                                                                                                                                                                     
-TimeoutStartSec=0                                                                                                                                                                                                                             
-Restart=always                                                                                                                                                                                                                                
-ExecStartPre=-/usr/bin/docker stop %n                                                                                                                                                                                                         
-ExecStartPre=-/usr/bin …</pre></div>
+<span class="o">[</span><span class="n">Service</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                     </span>
+<span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">0</span><span class="w">                                                                                                                                                                                                                             </span>
+<span class="n">Restart</span><span class="o">=</span><span class="n">always</span><span class="w">                                                                                                                                                                                                                                </span>
+<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                         </span>
+<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
                 </div>
 
@@ -694,19 +694,19 @@ Harry Percival</p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span>:new&lt;CR&gt;  new session
-s  list sessions
-$  name session
+<div class="highlight"><pre><span></span><span class="p">:</span><span class="k">new</span><span class="o">&lt;</span><span class="n">CR</span><span class="o">&gt;</span>  <span class="k">new</span> <span class="k">session</span>
+<span class="n">s</span>  <span class="n">list</span> <span class="n">sessions</span>
+<span class="err">$</span>  <span class="n">name</span> <span class="k">session</span>
 </pre></div>
 
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span>c  create window
-w  list windows
-n  next window
-p  previous window
-f  find window
-,  name window …</pre></div>
+<div class="highlight"><pre><span></span><span class="nv">c</span>  <span class="nv">create</span> <span class="nv">window</span>
+<span class="nv">w</span>  <span class="nv">list</span> <span class="nv">windows</span>
+<span class="nv">n</span>  <span class="k">next</span> <span class="nv">window</span>
+<span class="nv">p</span>  <span class="nv">previous</span> <span class="nv">window</span>
+<span class="nv">f</span>  <span class="nv">find</span> <span class="nv">window</span>
+,  <span class="nv">name</span> <span class="nv">window …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -733,12 +733,12 @@ f  find window
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>    apt-get install davfs2
-    mkdir /mnt/yandex.disk
-    mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/
+                <div class="summary"><div class="highlight"><pre><span></span>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
+    <span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span>
+    <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">davfs</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">webdav</span><span class="p">.</span><span class="n">yandex</span><span class="p">.</span><span class="n">ru</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span>
 
-    # check: 
-    df -h /mnt/yandex.disk/ 
+    <span class="o">#</span> <span class="k">check</span><span class="p">:</span> 
+    <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span> 
 </pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
@@ -768,13 +768,13 @@ f  find window
                 </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span>mkdir /mnt/share
-mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share
+<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="k">share</span>
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">cifs</span> <span class="o">//</span><span class="n">windowsmachineip</span><span class="o">/</span><span class="n">sharename</span> <span class="o">-</span><span class="n">o</span> <span class="n">username</span><span class="o">=</span><span class="k">user</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="n">urPassword</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="k">share</span>
 </pre></div>
 
 
 <h2>Unmount</h2>
-<div class="highlight"><pre><span></span>umount /mnt/shares
+<div class="highlight"><pre><span></span><span class="n">umount</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">shares</span>
 </pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
                 </div>
@@ -842,20 +842,15 @@ mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword 
                 </div>
                 <div class="summary"><p>create a file <code>.inputrc</code>
 in your home directory and put there</p>
-<div class="highlight"><pre><span></span>&quot;\e[A&quot;: history-search-backward
-&quot;\e[B&quot;: history-search-forward
-set show-all-if-ambiguous on
-set completion-ignore-case on
+<div class="highlight"><pre><span></span><span class="s2">&quot;</span><span class="s">\e[A</span><span class="s2">&quot;</span>: <span class="nv">history</span><span class="o">-</span><span class="nv">search</span><span class="o">-</span><span class="nv">backward</span>
+<span class="s2">&quot;</span><span class="s">\e[B</span><span class="s2">&quot;</span>: <span class="nv">history</span><span class="o">-</span><span class="nv">search</span><span class="o">-</span><span class="nv">forward</span>
+<span class="nv">set</span> <span class="k">show</span><span class="o">-</span><span class="nv">all</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="nv">ambiguous</span> <span class="nv">on</span>
+<span class="nv">set</span> <span class="nv">completion</span><span class="o">-</span><span class="nv">ignore</span><span class="o">-</span><span class="nv">case</span> <span class="nv">on</span>
 
-# display possible completions using different colors to indicate their file types
-set colored-stats On
+# <span class="nv">display</span> <span class="nv">possible</span> <span class="nv">completions</span> <span class="nv">using</span> <span class="nv">different</span> <span class="nv">colors</span> <span class="nv">to</span> <span class="nv">indicate</span> <span class="nv">their</span> <span class="nv">file</span> <span class="nv">types</span>
+<span class="nv">set</span> <span class="nv">colored</span><span class="o">-</span><span class="nv">stats</span> <span class="nv">On</span>
 
-TAB: menu-complete
-</pre></div>
-
-
-<p>Restart your terminal.
-Now you can autocomplete from history using Up …</p>
+<span class="nv">TAB</span>: <span class="nv">menu</span><span class="o">-</span><span class="nv">complete …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">more ...</a>
                 </div>
 
@@ -952,10 +947,10 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -968,6 +963,12 @@ Now you can autocomplete from history using Up …</p>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -997,19 +998,13 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -1018,10 +1013,16 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -1035,17 +1036,17 @@ Now you can autocomplete from history using Up …</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1086,9 +1087,6 @@ Now you can autocomplete from history using Up …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -1102,10 +1100,13 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1114,7 +1115,7 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -1138,16 +1139,13 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -1164,17 +1162,20 @@ Now you can autocomplete from history using Up …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -1189,19 +1190,16 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1209,14 +1207,11 @@ Now you can autocomplete from history using Up …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -1234,7 +1229,7 @@ Now you can autocomplete from history using Up …</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

@@ -114,78 +114,78 @@ unpack to <code>/opt/hadoop/</code></li>
 <li>Install java. Set JAVA_HOVE environment variable. For example: <code>export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</code></li>
 <li>create environment variables required for spark to run. One can put those in <code>.bashrc</code></li>
 </ul>
-<div class="highlight"><pre><span></span>export HADOOP_HOME=/opt/hadoop
-export SPARK_DIST_CLASSPATH=$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/*
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">HADOOP_HOME</span><span class="o">=/</span><span class="n">opt</span><span class="o">/</span><span class="n">hadoop</span>
+<span class="n">export</span> <span class="n">SPARK_DIST_CLASSPATH</span><span class="o">=</span><span class="err">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hadoop</span><span class="cm">/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/*</span>
 </pre></div>
 
 
 <p>Now you can run pyspark for example:</p>
-<div class="highlight"><pre><span></span>$ /opt/spark/bin/pyspark 
-Python <span class="m">2</span>.7.12 <span class="o">(</span>default, Nov <span class="m">12</span> <span class="m">2018</span>, <span class="m">14</span>:36:49<span class="o">)</span> 
-<span class="o">[</span>GCC <span class="m">5</span>.4.0 <span class="m">20160609</span><span class="o">]</span> on linux2
-Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
-SLF4J: Class path contains multiple SLF4J bindings.
-SLF4J: Found binding in <span class="o">[</span>jar:file:/opt/spark/jars/slf4j-log4j12-1.7.16.jar!/org/slf4j/impl/StaticLoggerBinder.class<span class="o">]</span>
-SLF4J: Found binding in <span class="o">[</span>jar:file:/opt/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class<span class="o">]</span>
-SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings <span class="k">for</span> an explanation.
-SLF4J: Actual binding is of <span class="nb">type</span> <span class="o">[</span>org.slf4j.impl.Log4jLoggerFactory<span class="o">]</span>
-<span class="m">2019</span>-01-31 <span class="m">08</span>:36:02 WARN  Utils:66 - ....
-<span class="m">2019</span>-01-31 <span class="m">08</span>:36:02 WARN  Utils:66 - Set SPARK_LOCAL_IP <span class="k">if</span> you need to <span class="nb">bind</span> to another address
-<span class="m">2019</span>-01-31 <span class="m">08</span>:36:03 WARN  NativeCodeLoader:60 - Unable to load native-hadoop library <span class="k">for</span> your platform... using builtin-java classes where applicable
-Setting default log level to <span class="s2">&quot;WARN&quot;</span>.
-To adjust logging level use sc.setLogLevel<span class="o">(</span>newLevel<span class="o">)</span>. For SparkR, use setLogLevel<span class="o">(</span>newLevel<span class="o">)</span>.
-<span class="m">2019</span>-01-31 <span class="m">08</span>:36:04 WARN  Utils:66 - Service <span class="s1">&#39;SparkUI&#39;</span> could not <span class="nb">bind</span> on port <span class="m">4040</span>. Attempting port <span class="m">4041</span>.
-Welcome to
-      ____              __
-     / __/__  ___ _____/ /__
-    _<span class="se">\ \/</span> _ <span class="se">\/</span> _ <span class="sb">`</span>/ __/  <span class="s1">&#39;_/</span>
-<span class="s1">   /__ / .__/\_,_/_/ /_/\_\   version 2.3.2</span>
-<span class="s1">      /_/</span>
+<div class="highlight"><pre><span></span>$ <span class="o">/</span><span class="nv">opt</span><span class="o">/</span><span class="nv">spark</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">pyspark</span> 
+<span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span>.<span class="mi">12</span> <span class="ss">(</span><span class="nv">default</span>, <span class="nv">Nov</span> <span class="mi">12</span> <span class="mi">2018</span>, <span class="mi">14</span>:<span class="mi">36</span>:<span class="mi">49</span><span class="ss">)</span> 
+[<span class="nv">GCC</span> <span class="mi">5</span>.<span class="mi">4</span>.<span class="mi">0</span> <span class="mi">20160609</span>] <span class="nv">on</span> <span class="nv">linux2</span>
+<span class="nv">Type</span> <span class="s2">&quot;</span><span class="s">help</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">copyright</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">credits</span><span class="s2">&quot;</span> <span class="nv">or</span> <span class="s2">&quot;</span><span class="s">license</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="nv">more</span> <span class="nv">information</span>.
+<span class="nv">SLF4J</span>: <span class="nv">Class</span> <span class="nv">path</span> <span class="nv">contains</span> <span class="nv">multiple</span> <span class="nv">SLF4J</span> <span class="nv">bindings</span>.
+<span class="nv">SLF4J</span>: <span class="nv">Found</span> <span class="nv">binding</span> <span class="nv">in</span> [<span class="nv">jar</span>:<span class="nv">file</span>:<span class="o">/</span><span class="nv">opt</span><span class="o">/</span><span class="nv">spark</span><span class="o">/</span><span class="nv">jars</span><span class="o">/</span><span class="nv">slf4j</span><span class="o">-</span><span class="nv">log4j12</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">7</span>.<span class="mi">16</span>.<span class="nv">jar</span><span class="o">!/</span><span class="nv">org</span><span class="o">/</span><span class="nv">slf4j</span><span class="o">/</span><span class="nv">impl</span><span class="o">/</span><span class="nv">StaticLoggerBinder</span>.<span class="nv">class</span>]
+<span class="nv">SLF4J</span>: <span class="nv">Found</span> <span class="nv">binding</span> <span class="nv">in</span> [<span class="nv">jar</span>:<span class="nv">file</span>:<span class="o">/</span><span class="nv">opt</span><span class="o">/</span><span class="nv">hadoop</span><span class="o">/</span><span class="nv">share</span><span class="o">/</span><span class="nv">hadoop</span><span class="o">/</span><span class="nv">common</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">slf4j</span><span class="o">-</span><span class="nv">log4j12</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">7</span>.<span class="mi">25</span>.<span class="nv">jar</span><span class="o">!/</span><span class="nv">org</span><span class="o">/</span><span class="nv">slf4j</span><span class="o">/</span><span class="nv">impl</span><span class="o">/</span><span class="nv">StaticLoggerBinder</span>.<span class="nv">class</span>]
+<span class="nv">SLF4J</span>: <span class="nv">See</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">www</span>.<span class="nv">slf4j</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">codes</span>.<span class="nv">html</span>#<span class="nv">multiple_bindings</span> <span class="k">for</span> <span class="nv">an</span> <span class="nv">explanation</span>.
+<span class="nv">SLF4J</span>: <span class="nv">Actual</span> <span class="nv">binding</span> <span class="nv">is</span> <span class="nv">of</span> <span class="nv">type</span> [<span class="nv">org</span>.<span class="nv">slf4j</span>.<span class="nv">impl</span>.<span class="nv">Log4jLoggerFactory</span>]
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span> <span class="mi">08</span>:<span class="mi">36</span>:<span class="mi">02</span> <span class="nv">WARN</span>  <span class="nv">Utils</span>:<span class="mi">66</span> <span class="o">-</span> ....
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span> <span class="mi">08</span>:<span class="mi">36</span>:<span class="mi">02</span> <span class="nv">WARN</span>  <span class="nv">Utils</span>:<span class="mi">66</span> <span class="o">-</span> <span class="nv">Set</span> <span class="nv">SPARK_LOCAL_IP</span> <span class="k">if</span> <span class="nv">you</span> <span class="nv">need</span> <span class="nv">to</span> <span class="nv">bind</span> <span class="nv">to</span> <span class="nv">another</span> <span class="nv">address</span>
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span> <span class="mi">08</span>:<span class="mi">36</span>:<span class="mi">03</span> <span class="nv">WARN</span>  <span class="nv">NativeCodeLoader</span>:<span class="mi">60</span> <span class="o">-</span> <span class="nv">Unable</span> <span class="nv">to</span> <span class="nv">load</span> <span class="nv">native</span><span class="o">-</span><span class="nv">hadoop</span> <span class="nv">library</span> <span class="k">for</span> <span class="nv">your</span> <span class="nv">platform</span>... <span class="nv">using</span> <span class="nv">builtin</span><span class="o">-</span><span class="nv">java</span> <span class="nv">classes</span> <span class="nv">where</span> <span class="nv">applicable</span>
+<span class="nv">Setting</span> <span class="nv">default</span> <span class="nv">log</span> <span class="nv">level</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">WARN</span><span class="s2">&quot;</span>.
+<span class="nv">To</span> <span class="nv">adjust</span> <span class="nv">logging</span> <span class="nv">level</span> <span class="nv">use</span> <span class="nv">sc</span>.<span class="nv">setLogLevel</span><span class="ss">(</span><span class="nv">newLevel</span><span class="ss">)</span>. <span class="k">For</span> <span class="nv">SparkR</span>, <span class="nv">use</span> <span class="nv">setLogLevel</span><span class="ss">(</span><span class="nv">newLevel</span><span class="ss">)</span>.
+<span class="mi">2019</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">31</span> <span class="mi">08</span>:<span class="mi">36</span>:<span class="mi">04</span> <span class="nv">WARN</span>  <span class="nv">Utils</span>:<span class="mi">66</span> <span class="o">-</span> <span class="nv">Service</span> <span class="s1">&#39;</span><span class="s">SparkUI</span><span class="s1">&#39;</span> <span class="nv">could</span> <span class="nv">not</span> <span class="nv">bind</span> <span class="nv">on</span> <span class="nv">port</span> <span class="mi">4040</span>. <span class="nv">Attempting</span> <span class="nv">port</span> <span class="mi">4041</span>.
+<span class="nv">Welcome</span> <span class="nv">to</span>
+      <span class="nv">____</span>              <span class="nv">__</span>
+     <span class="o">/</span> <span class="nv">__</span><span class="o">/</span><span class="nv">__</span>  <span class="nv">___</span> <span class="nv">_____</span><span class="o">/</span> <span class="o">/</span><span class="nv">__</span>
+    <span class="nv">_</span>\ \<span class="o">/</span> <span class="nv">_</span> \<span class="o">/</span> <span class="nv">_</span> `<span class="o">/</span> <span class="nv">__</span><span class="o">/</span>  <span class="s1">&#39;</span><span class="s">_/</span>
+   <span class="o">/</span><span class="nv">__</span> <span class="o">/</span> .<span class="nv">__</span><span class="o">/</span>\<span class="nv">_</span>,<span class="nv">_</span><span class="o">/</span><span class="nv">_</span><span class="o">/</span> <span class="o">/</span><span class="nv">_</span><span class="o">/</span>\<span class="nv">_</span>\   <span class="nv">version</span> <span class="mi">2</span>.<span class="mi">3</span>.<span class="mi">2</span>
+      <span class="o">/</span><span class="nv">_</span><span class="o">/</span>
 
-<span class="s1">Using Python version 2.7.12 (default, Nov 12 2018 14:36:49)</span>
-<span class="s1">SparkSession available as &#39;</span>spark<span class="err">&#39;</span>.
-&gt;&gt;&gt; exit<span class="o">()</span>
+<span class="nv">Using</span> <span class="nv">Python</span> <span class="nv">version</span> <span class="mi">2</span>.<span class="mi">7</span>.<span class="mi">12</span> <span class="ss">(</span><span class="nv">default</span>, <span class="nv">Nov</span> <span class="mi">12</span> <span class="mi">2018</span> <span class="mi">14</span>:<span class="mi">36</span>:<span class="mi">49</span><span class="ss">)</span>
+<span class="nv">SparkSession</span> <span class="nv">available</span> <span class="nv">as</span> <span class="s1">&#39;</span><span class="s">spark</span><span class="s1">&#39;</span>.
+<span class="o">&gt;&gt;&gt;</span> <span class="k">exit</span><span class="ss">()</span>
 </pre></div>
 
 
 <h2>Running pyspark in jupyter notebooks locally</h2>
 <p>To open interactive pyspark session in jupyter notebooks do this:</p>
-<div class="highlight"><pre><span></span>export PYSPARK_DRIVER_PYTHON=jupyter
-export PYSPARK_DRIVER_PYTHON_OPTS=&#39;notebook&#39;
-/opt/spark/bin/pyspark 
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PYSPARK_DRIVER_PYTHON</span><span class="o">=</span><span class="n">jupyter</span>
+<span class="n">export</span> <span class="n">PYSPARK_DRIVER_PYTHON_OPTS</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span>
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">pyspark</span> 
 </pre></div>
 
 
 <p>Here jupyter server running locally connects to the spark running locally.  </p>
 <h2>Troubleshooting</h2>
 <p>if you get </p>
-<div class="highlight"><pre><span></span>/opt/spark/bin$ ./pyspark
-Python 2.7.12 (default, Nov 12 2018, 14:36:49) 
-[GCC 5.4.0 20160609] on linux2
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-Error: A JNI error has occurred, please check your installation and try again
-Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: org/slf4j/Logger
-    at java.lang.Class.getDeclaredMethods0(Native Method)
-    at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
-    at java.lang.Class.privateGetMethodRecursive(Class.java:3048)
-    at java.lang.Class.getMethod0(Class.java:3018)
-    at java.lang.Class.getMethod(Class.java:1784)
-    at sun.launcher.LauncherHelper.validateMainClass(LauncherHelper.java:544)
-    at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:526)
-Caused by: java.lang.ClassNotFoundException: org.slf4j.Logger
-    at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
-    at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-    at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-    at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-    ... 7 more
-Traceback (most recent call last):
-  File &quot;/opt/spark/python/pyspark/shell.py&quot;, line 38, in &lt;module&gt;
-    SparkContext._ensure_initialized()
-  File &quot;/opt/spark/python/pyspark/context.py&quot;, line 300, in _ensure_initialized
-    SparkContext._gateway = gateway or launch_gateway(conf)
-  File &quot;/opt/spark/python/pyspark/java_gateway.py&quot;, line 93, in launch_gateway
-    raise Exception(&quot;Java gateway process exited before sending its port number&quot;)
-Exception: Java gateway process exited before sending its port number
+<div class="highlight"><pre><span></span><span class="o">/</span><span class="nv">opt</span><span class="o">/</span><span class="nv">spark</span><span class="o">/</span><span class="nv">bin</span>$ .<span class="o">/</span><span class="nv">pyspark</span>
+<span class="nv">Python</span> <span class="mi">2</span>.<span class="mi">7</span>.<span class="mi">12</span> <span class="ss">(</span><span class="nv">default</span>, <span class="nv">Nov</span> <span class="mi">12</span> <span class="mi">2018</span>, <span class="mi">14</span>:<span class="mi">36</span>:<span class="mi">49</span><span class="ss">)</span> 
+[<span class="nv">GCC</span> <span class="mi">5</span>.<span class="mi">4</span>.<span class="mi">0</span> <span class="mi">20160609</span>] <span class="nv">on</span> <span class="nv">linux2</span>
+<span class="nv">Type</span> <span class="s2">&quot;</span><span class="s">help</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">copyright</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">credits</span><span class="s2">&quot;</span> <span class="nv">or</span> <span class="s2">&quot;</span><span class="s">license</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="nv">more</span> <span class="nv">information</span>.
+<span class="nv">Error</span>: <span class="nv">A</span> <span class="nv">JNI</span> <span class="nv">error</span> <span class="nv">has</span> <span class="nv">occurred</span>, <span class="nv">please</span> <span class="nv">check</span> <span class="nv">your</span> <span class="nv">installation</span> <span class="nv">and</span> <span class="nv">try</span> <span class="nv">again</span>
+<span class="nv">Exception</span> <span class="nv">in</span> <span class="nv">thread</span> <span class="s2">&quot;</span><span class="s">main</span><span class="s2">&quot;</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">NoClassDefFoundError</span>: <span class="nv">org</span><span class="o">/</span><span class="nv">slf4j</span><span class="o">/</span><span class="nv">Logger</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Class</span>.<span class="nv">getDeclaredMethods0</span><span class="ss">(</span><span class="nv">Native</span> <span class="nv">Method</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Class</span>.<span class="nv">privateGetDeclaredMethods</span><span class="ss">(</span><span class="nv">Class</span>.<span class="nv">java</span>:<span class="mi">2701</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Class</span>.<span class="nv">privateGetMethodRecursive</span><span class="ss">(</span><span class="nv">Class</span>.<span class="nv">java</span>:<span class="mi">3048</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Class</span>.<span class="nv">getMethod0</span><span class="ss">(</span><span class="nv">Class</span>.<span class="nv">java</span>:<span class="mi">3018</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">Class</span>.<span class="nv">getMethod</span><span class="ss">(</span><span class="nv">Class</span>.<span class="nv">java</span>:<span class="mi">1784</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">sun</span>.<span class="nv">launcher</span>.<span class="nv">LauncherHelper</span>.<span class="nv">validateMainClass</span><span class="ss">(</span><span class="nv">LauncherHelper</span>.<span class="nv">java</span>:<span class="mi">544</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">sun</span>.<span class="nv">launcher</span>.<span class="nv">LauncherHelper</span>.<span class="nv">checkAndLoadMain</span><span class="ss">(</span><span class="nv">LauncherHelper</span>.<span class="nv">java</span>:<span class="mi">526</span><span class="ss">)</span>
+<span class="nv">Caused</span> <span class="nv">by</span>: <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">ClassNotFoundException</span>: <span class="nv">org</span>.<span class="nv">slf4j</span>.<span class="nv">Logger</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">net</span>.<span class="nv">URLClassLoader</span>.<span class="nv">findClass</span><span class="ss">(</span><span class="nv">URLClassLoader</span>.<span class="nv">java</span>:<span class="mi">382</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">ClassLoader</span>.<span class="nv">loadClass</span><span class="ss">(</span><span class="nv">ClassLoader</span>.<span class="nv">java</span>:<span class="mi">424</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">sun</span>.<span class="nv">misc</span>.<span class="nv">Launcher</span><span class="mh">$A</span><span class="nv">ppClassLoader</span>.<span class="nv">loadClass</span><span class="ss">(</span><span class="nv">Launcher</span>.<span class="nv">java</span>:<span class="mi">349</span><span class="ss">)</span>
+    <span class="nv">at</span> <span class="nv">java</span>.<span class="nv">lang</span>.<span class="nv">ClassLoader</span>.<span class="nv">loadClass</span><span class="ss">(</span><span class="nv">ClassLoader</span>.<span class="nv">java</span>:<span class="mi">357</span><span class="ss">)</span>
+    ... <span class="mi">7</span> <span class="nv">more</span>
+<span class="nv">Traceback</span> <span class="ss">(</span><span class="nv">most</span> <span class="nv">recent</span> <span class="k">call</span> <span class="nl">last</span><span class="ss">)</span>:
+  <span class="nv">File</span> <span class="s2">&quot;</span><span class="s">/opt/spark/python/pyspark/shell.py</span><span class="s2">&quot;</span>, <span class="nv">line</span> <span class="mi">38</span>, <span class="nv">in</span> <span class="o">&lt;</span><span class="nv">module</span><span class="o">&gt;</span>
+    <span class="nv">SparkContext</span>.<span class="nv">_ensure_initialized</span><span class="ss">()</span>
+  <span class="nv">File</span> <span class="s2">&quot;</span><span class="s">/opt/spark/python/pyspark/context.py</span><span class="s2">&quot;</span>, <span class="nv">line</span> <span class="mi">300</span>, <span class="nv">in</span> <span class="nv">_ensure_initialized</span>
+    <span class="nv">SparkContext</span>.<span class="nv">_gateway</span> <span class="o">=</span> <span class="nv">gateway</span> <span class="nv">or</span> <span class="nv">launch_gateway</span><span class="ss">(</span><span class="nv">conf</span><span class="ss">)</span>
+  <span class="nv">File</span> <span class="s2">&quot;</span><span class="s">/opt/spark/python/pyspark/java_gateway.py</span><span class="s2">&quot;</span>, <span class="nv">line</span> <span class="mi">93</span>, <span class="nv">in</span> <span class="nv">launch_gateway</span>
+    <span class="nv">raise</span> <span class="nv">Exception</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">Java gateway process exited before sending its port number</span><span class="s2">&quot;</span><span class="ss">)</span>
+<span class="nv">Exception</span>: <span class="nv">Java</span> <span class="nv">gateway</span> <span class="nv">process</span> <span class="nv">exited</span> <span class="nv">before</span> <span class="nv">sending</span> <span class="nv">its</span> <span class="nv">port</span> <span class="nv">number</span>
 </pre></div>
 
 
@@ -282,10 +282,10 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -298,6 +298,12 @@ Exception: Java gateway process exited before sending its port number
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -327,19 +333,13 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -348,10 +348,16 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -365,17 +371,17 @@ Exception: Java gateway process exited before sending its port number
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -416,9 +422,6 @@ Exception: Java gateway process exited before sending its port number
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -432,10 +435,13 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -444,7 +450,7 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -468,16 +474,13 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -494,17 +497,20 @@ Exception: Java gateway process exited before sending its port number
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -519,19 +525,16 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -539,14 +542,11 @@ Exception: Java gateway process exited before sending its port number
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -564,7 +564,7 @@ Exception: Java gateway process exited before sending its port number
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

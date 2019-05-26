@@ -137,26 +137,26 @@ sergem personal public notebook            </a>
 
 <p>That means Pelican doesn't know about markdown format.</p>
 <p>Now you need to configure Makefile and <code>github</code> target. I modified default Pelicans <code>github</code> target as follows. Remove lines startign from "#" - they are just comments.</p>
-<div class="highlight"><pre><span></span><span class="nf">github</span><span class="o">:</span>
-<span class="c">    # Loading commit message from source repository to SITE_COMMIT_MESSAGE variable</span>
-    <span class="nv">SITE_COMMIT_MESSAGE</span><span class="o">=</span><span class="sb">`</span>git log -1 --format<span class="o">=</span>%B<span class="sb">`</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-    <span class="nv">$$</span><span class="o">(</span>rm -rf <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">||</span> <span class="nb">true</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # remove output directory</span>
-    git clone git@github.com:&lt;your github user&gt;/&lt;your html repository&gt;.git <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # fresh clone of your html repo to output directory</span>
-    <span class="nv">$$</span><span class="o">(</span>ls -d <span class="k">$(</span>OUTPUTDIR<span class="k">)</span>/* <span class="p">|</span> xargs rm -r<span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # deleting everything (except hidden files, like .git)</span>
-    <span class="k">$(</span>PELICAN<span class="k">)</span> <span class="k">$(</span>INPUTDIR<span class="k">)</span> -o <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> -s <span class="k">$(</span>PUBLISHCONF<span class="k">)</span> <span class="k">$(</span>PELICANOPTS<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # running pelican</span>
-    <span class="nb">cd</span> <span class="k">$(</span>OUTPUTDIR<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # go to output directory</span>
-    git add -v --all . <span class="o">&amp;&amp;</span> <span class="se">\ </span>
-<span class="c">    # configure user/email of git commit, commit, push</span>
-    git config user.email <span class="s2">&quot;&lt;your mail&gt;&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    git config user.name <span class="s2">&quot;&lt;your name&gt;&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    git commit -v -m <span class="s2">&quot;</span><span class="nv">$$</span><span class="s2">SITE_COMMIT_MESSAGE&quot;</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    git push <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    <span class="nb">echo</span> <span class="s2">&quot;done&quot;</span>
+<div class="highlight"><pre><span></span><span class="nl">github</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">Loading</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">repository</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">SITE_COMMIT_MESSAGE</span><span class="w"> </span><span class="k">variable</span><span class="w"></span>
+<span class="w">    </span><span class="n">SITE_COMMIT_MESSAGE</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="c1">--format=%B` &amp;&amp; \ </span>
+<span class="w">    </span><span class="err">$$</span><span class="p">(</span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">rf</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="err">\</span><span class="w"> </span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="w"></span>
+<span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span><span class="w"> </span><span class="n">github</span><span class="w"> </span><span class="k">user</span><span class="o">&gt;/&lt;</span><span class="n">your</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">repository</span><span class="o">&gt;</span><span class="p">.</span><span class="n">git</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="err">\</span><span class="w"> </span>
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">fresh</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="w"></span>
+<span class="w">    </span><span class="err">$$</span><span class="p">(</span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="cm">/* | xargs rm -r) &amp;&amp; \ </span>
+<span class="cm">    # deleting everything (except hidden files, like .git)</span>
+<span class="cm">    $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) &amp;&amp; \ </span>
+<span class="cm">    # running pelican</span>
+<span class="cm">    cd $(OUTPUTDIR) &amp;&amp; \ </span>
+<span class="cm">    # go to output directory</span>
+<span class="cm">    git add -v --all . &amp;&amp; \ </span>
+<span class="cm">    # configure user/email of git commit, commit, push</span>
+<span class="cm">    git config user.email &quot;&lt;your mail&gt;&quot; &amp;&amp; \</span>
+<span class="cm">    git config user.name &quot;&lt;your name&gt;&quot; &amp;&amp; \</span>
+<span class="cm">    git commit -v -m &quot;$$SITE_COMMIT_MESSAGE&quot; &amp;&amp; \</span>
+<span class="cm">    git push &amp;&amp; \</span>
+<span class="cm">    echo &quot;done&quot;</span>
 </pre></div>
 
 
@@ -164,15 +164,15 @@ sergem personal public notebook            </a>
 <p>I followed the  guide from <a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md">here</a> sections 1 -- 2.5. Instead of section 2.6:
 1. I put my encoded private key <code>blog_deploy_key.enc</code> to <code>.travis/blog_deploy_key.enc</code>
 2. I modified my section <code>script</code> of <code>.travis.yaml</code> as folows:</p>
-<div class="highlight"><pre><span></span>script:
-- |
-  declare -r SSH_FILE=&quot;$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)&quot;
-  openssl aes-256-cbc -K $encrypted_&lt;VALUE_FROM_TRAVIS&gt;_key -iv $encrypted_&lt;VALUE_FROM_TRAVIS&gt;_iv -in &quot;.travis/blog_deploy_key.enc&quot; -out &quot;$SSH_FILE&quot; -d
-  chmod 600 &quot;$SSH_FILE&quot; &amp;&amp; printf &quot;%s\n&quot; \
-              &quot;Host github.com&quot; \
-              &quot;  IdentityFile $SSH_FILE&quot; \
-              &quot;  LogLevel ERROR&quot; &gt;&gt; ~/.ssh/config
-- make github
+<div class="highlight"><pre><span></span><span class="n">script</span><span class="p">:</span>
+<span class="o">-</span> <span class="o">|</span>
+  <span class="k">declare</span> <span class="o">-</span><span class="n">r</span> <span class="n">SSH_FILE</span><span class="o">=</span><span class="ss">&quot;$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)&quot;</span>
+  <span class="n">openssl</span> <span class="n">aes</span><span class="o">-</span><span class="mi">256</span><span class="o">-</span><span class="n">cbc</span> <span class="o">-</span><span class="n">K</span> <span class="err">$</span><span class="n">encrypted_</span><span class="o">&lt;</span><span class="n">VALUE_FROM_TRAVIS</span><span class="o">&gt;</span><span class="n">_key</span> <span class="o">-</span><span class="n">iv</span> <span class="err">$</span><span class="n">encrypted_</span><span class="o">&lt;</span><span class="n">VALUE_FROM_TRAVIS</span><span class="o">&gt;</span><span class="n">_iv</span> <span class="o">-</span><span class="k">in</span> <span class="ss">&quot;.travis/blog_deploy_key.enc&quot;</span> <span class="o">-</span><span class="k">out</span> <span class="ss">&quot;$SSH_FILE&quot;</span> <span class="o">-</span><span class="n">d</span>
+  <span class="n">chmod</span> <span class="mi">600</span> <span class="ss">&quot;$SSH_FILE&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">printf</span> <span class="ss">&quot;%s\n&quot;</span> <span class="err">\</span>
+              <span class="ss">&quot;Host github.com&quot;</span> <span class="err">\</span>
+              <span class="ss">&quot;  IdentityFile $SSH_FILE&quot;</span> <span class="err">\</span>
+              <span class="ss">&quot;  LogLevel ERROR&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">config</span>
+<span class="o">-</span> <span class="n">make</span> <span class="n">github</span>
 </pre></div>
 
 
@@ -261,10 +261,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -277,6 +277,12 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -306,19 +312,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -327,10 +327,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -344,17 +350,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -395,9 +401,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -411,10 +414,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -423,7 +429,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -447,16 +453,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -473,17 +476,20 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -498,19 +504,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -518,14 +521,11 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -543,7 +543,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

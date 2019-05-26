@@ -149,22 +149,22 @@ sergem personal public notebook            </a>
 </div>
 You have to enable I2C interface first with <code>sudo raspi-config</code>. Choose "Interfacing Options" -&gt; "I2C" -&gt; "Enable".</p>
 <p>Now installing the diagnostic tool and running:</p>
-<div class="highlight"><pre><span></span>sudo apt-get install -y i2c-tools
-sudo i2cdetect -y 1
-     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-70: 70 -- -- -- -- -- -- --                         
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">i2c</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">sudo</span> <span class="n">i2cdetect</span> <span class="o">-</span><span class="n">y</span> <span class="mi">1</span>
+     <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span>  <span class="n">a</span>  <span class="n">b</span>  <span class="k">c</span>  <span class="n">d</span>  <span class="n">e</span>  <span class="n">f</span>
+<span class="mi">00</span><span class="p">:</span>          <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">10</span><span class="p">:</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">20</span><span class="p">:</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">30</span><span class="p">:</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">40</span><span class="p">:</span> <span class="mi">40</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">50</span><span class="p">:</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">60</span><span class="p">:</span> <span class="c1">-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
+<span class="mi">70</span><span class="p">:</span> <span class="mi">70</span> <span class="c1">-- -- -- -- -- -- --                         </span>
 </pre></div>
 
 
 <p>Now we can install library:</p>
-<div class="highlight"><pre><span></span>pip install Adafruit_PCA9685
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Adafruit_PCA9685</span>
 </pre></div>
 
 
@@ -220,7 +220,7 @@ sudo i2cdetect -y 1
 
 
 <p>running:</p>
-<div class="highlight"><pre><span></span>python sample.py
+<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">sample</span><span class="p">.</span><span class="n">py</span>
 </pre></div>
 
 
@@ -252,7 +252,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p><a href="https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/">[Arduino] using l293d</a></p>
 <p>Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor], very weak</p>
 <h2>Connecting via ssh:</h2>
-<div class="highlight"><pre><span></span>ssh -Y user@raspberrypi-url
+<div class="highlight"><pre><span></span><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">Y</span><span class="w"> </span><span class="k">user</span><span class="nv">@raspberrypi</span><span class="o">-</span><span class="n">url</span><span class="w"></span>
 </pre></div>
 
 
@@ -266,22 +266,22 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Automatic connection to wifi. Edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code> and add the following lines:</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span>network={
-    ssid=&quot;my-network-name&quot;
-    psk=&quot;my-network-pass&quot;
-}
+<div class="highlight"><pre><span></span><span class="n">network</span><span class="o">=</span><span class="err">{</span>
+    <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
+    <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
+<span class="err">}</span>
 </pre></div>
 
 
 <p>In the end the file should look like this:</p>
-<div class="highlight"><pre><span></span>country=GB
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
+<div class="highlight"><pre><span></span><span class="n">country</span><span class="o">=</span><span class="n">GB</span>
+<span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="k">GROUP</span><span class="o">=</span><span class="n">netdev</span>
+<span class="n">update_config</span><span class="o">=</span><span class="mi">1</span>
 
-network={
-    ssid=&quot;my-network-name&quot;
-    psk=&quot;my-network-pass&quot;
-}
+<span class="n">network</span><span class="o">=</span><span class="err">{</span>
+    <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
+    <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
+<span class="err">}</span>
 </pre></div>
 
 
@@ -295,12 +295,12 @@ network={
 </li>
 </ol>
 <p>Now you can connect to raspberry via ssh:</p>
-<div class="highlight"><pre><span></span>ssh pi@raspberrypi
+<div class="highlight"><pre><span></span><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@raspberrypi</span><span class="w"></span>
 </pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span>ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;
+<div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">pi</span><span class="o">@&lt;</span><span class="n">IP</span><span class="o">-</span><span class="k">OF</span><span class="o">-</span><span class="n">YOUR</span><span class="o">-</span><span class="n">RASPBERRY</span><span class="o">&gt;</span>
 </pre></div>
 
 
@@ -416,10 +416,10 @@ network={
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
+      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
@@ -432,6 +432,12 @@ network={
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
@@ -461,19 +467,13 @@ network={
       <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/date.html">date</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+      <a href="https://serge-m.github.io/tag/datetime.html">datetime</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -482,10 +482,16 @@ network={
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -499,17 +505,17 @@ network={
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -550,9 +556,6 @@ network={
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -566,10 +569,13 @@ network={
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -578,7 +584,7 @@ network={
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
+      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -602,16 +608,13 @@ network={
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -628,17 +631,20 @@ network={
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -653,19 +659,16 @@ network={
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -673,14 +676,11 @@ network={
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
@@ -698,7 +698,7 @@ network={
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>

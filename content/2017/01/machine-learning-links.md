@@ -42,6 +42,8 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 
 
 ## Articles
+[Exploring Stochastic Gradient Descent with Restarts (SGDR)](https://medium.com/38th-street-studios/exploring-stochastic-gradient-descent-with-restarts-sgdr-fa206c38a74e)
+
 [Using Machine Learning on Compute Engine to Make Product Recommendations](https://cloud.google.com/solutions/recommendations-using-machine-learning-on-compute-engine)
 
 [CRISP-DM: проверенная методология для Data Scientist-ов](https://habrahabr.ru/company/lanit/blog/328858/) (Russian) 

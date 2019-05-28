@@ -25,6 +25,7 @@ Harry Percival
 
 
 ## Tutorials
+* [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html) - an awesome collection of best practices with examples.
 
 * [Set up vim for python](https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/)
 

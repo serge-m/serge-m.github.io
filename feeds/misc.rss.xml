@@ -1071,22 +1071,18 @@ batch_size: 100&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/
 &lt;p&gt;&lt;code&gt;some_command &amp;gt; output_file.txt 2&amp;gt;&amp;amp;1&lt;/code&gt; -  Redirect stdout and stderr to the same file &lt;a href="http://stackoverflow.com/a/1420981"&gt;src&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Share wifi from command line (probably obsolete in Win 8, 10)&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;netsh&lt;/span&gt; &lt;span class="n"&gt;wlan&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;hostednetwork&lt;/span&gt; &lt;span class="k"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;allow&lt;/span&gt; &lt;span class="n"&gt;ssid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;NETWORK_NAME&amp;quot;&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;NETWORK_PASSWORD&amp;quot;&lt;/span&gt; &lt;span class="n"&gt;keyUsage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;persistent&lt;/span&gt;
-&lt;span class="n"&gt;netsh&lt;/span&gt; &lt;span class="n"&gt;wlan …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 05 Jun 2014 23:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-05:/windows-life.html</guid><category>windows</category><category>command line</category><category>wifi</category><category>wi-fi</category><category>sharing</category></item><item><title>linux life</title><link>https://serge-m.github.io/linux-life.html</link><description>&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
+&lt;span class="n"&gt;netsh&lt;/span&gt; &lt;span class="n"&gt;wlan …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 05 Jun 2014 23:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-05:/windows-life.html</guid><category>windows</category><category>command line</category><category>wifi</category><category>wi-fi</category><category>sharing</category></item><item><title>linux life</title><link>https://serge-m.github.io/linux-life.html</link><description>&lt;h3&gt;Good start&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install -y mc curl jq wget htop hwinfo nmap vim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Some commands&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;df&lt;/strong&gt; - check free disk space&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;baobab&lt;/strong&gt; - free disk space &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;screen&lt;/strong&gt; - multiple virtual consoles in one real [&lt;a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html"&gt;ref&lt;/a&gt;], need installation in ubuntu&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;mc&lt;/strong&gt; - file manager&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ccsm&lt;/strong&gt; - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;compizconfig&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;manager&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;then &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ccsm&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;See …&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Mon, 02 Jun 2014 23:18:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-02:/linux-life.html</guid><category>linux</category></item><item><title>lambda functions in matlab</title><link>https://serge-m.github.io/lambda-functions-in-matlab.html</link><description>&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ccsm&lt;/strong&gt; - disabling smooth fades and animations …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Mon, 02 Jun 2014 23:18:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-02:/linux-life.html</guid><category>linux</category></item><item><title>lambda functions in matlab</title><link>https://serge-m.github.io/lambda-functions-in-matlab.html</link><description>&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;To specify the actual function we are minimizing, we use a "short-hand"
 for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
 creates a function, with argument t, which calls your costFunction. This

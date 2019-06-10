@@ -5,6 +5,13 @@ Slug: linux-life
 Tags: linux
 
 
+### Good start
+```bash
+sudo apt install -y mc curl jq wget htop hwinfo nmap vim
+```
+
+
+### Some commands
 
 **top** - see running processes
 

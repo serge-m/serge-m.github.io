@@ -4203,6 +4203,21 @@ See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp
 
 
 &lt;p&gt;&lt;code&gt;country&lt;/code&gt; field is essential. Wifi wont work without it. In the log you will see &lt;code&gt;raspberrypi systemd[1]: Started Disable WiFi if country not set.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;If you need to support multiple wifi connections use &lt;code&gt;id_str&lt;/code&gt; field:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;network&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;ssid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;my-network-name&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;psk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;my-network-pass&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;id_str&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;net1&amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;network&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;ssid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;another-network&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;psk&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;another pass&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;id_str&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;net2&amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Enable SSH access. Create an empty file &lt;code&gt;ssh&lt;/code&gt; in &lt;code&gt;/boot/&lt;/code&gt;.&lt;/p&gt;
@@ -4227,6 +4242,12 @@ See &lt;a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;amp
 &lt;p&gt;&lt;img alt="GPIO raspberry pins scheme" src="https://serge-m.github.io/2016/12/gpio.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="pins layout photo" src="https://serge-m.github.io/2016/12/gpio-raspberry-zero.png"&gt; &lt;a href="http://pi4j.com/pins/model-zero-rev1.html"&gt;image source&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Interactive website for pinout of Raspberry Pi for different interfaces &lt;a href="https://pinout.xyz/#"&gt;Pinout&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Donkey car&lt;/h2&gt;
+&lt;p&gt;Requirements for running donkey car:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libatlas&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libopenjp2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libtiff5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;libhdf5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Other&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;

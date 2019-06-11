@@ -191,6 +191,21 @@ network={
 
 `country` field is essential. Wifi wont work without it. In the log you will see `raspberrypi systemd[1]: Started Disable WiFi if country not set.`
 
+If you need to support multiple wifi connections use `id_str` field:
+```
+network={
+    ssid="my-network-name"
+    psk="my-network-pass"
+    id_str="net1"
+}
+
+network={
+    ssid="another-network"
+    psk="another pass"
+    id_str="net2"
+}
+
+```
 
 3. Enable SSH access. Create an empty file `ssh` in `/boot/`.
 
@@ -220,6 +235,11 @@ or
 Interactive website for pinout of Raspberry Pi for different interfaces [Pinout](https://pinout.xyz/#)
 
 
+## Donkey car
+Requirements for running donkey car:
+```
+sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev
+```
 
 
 ## Other

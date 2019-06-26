@@ -22,9 +22,9 @@ deconvolution operation in neural networks with awesome interactive visualizatio
 
 [Up-sampling with Transposed Convolution](https://towardsdatascience.com/up-sampling-with-transposed-convolution-9ae4f2df52d0) one more article about deconvolutions with good examples
 
-More about deconvolutions in Tensorflow: https://stackoverflow.com/questions/39373230/what-does-tensorflows-conv2d-transpose-operation-do
+More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflow.com/questions/39373230/what-does-tensorflows-conv2d-transpose-operation-do)
 
-A guide to convolution arithmetic for deeplearning, Vincent Dumoulin, Francesco Visin, 2018 https://arxiv.org/pdf/1603.07285.pdf
+[A guide to convolution arithmetic for deeplearning](https://arxiv.org/pdf/1603.07285.pdf), Vincent Dumoulin, Francesco Visin, 2018 
 
 
 See also:

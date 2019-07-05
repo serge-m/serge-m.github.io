@@ -26,6 +26,13 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [A guide to convolution arithmetic for deeplearning](https://arxiv.org/pdf/1603.07285.pdf), Vincent Dumoulin, Francesco Visin, 2018 
 
+[https://ncase.me/](https://ncase.me/) - Interactive math experiments
+
+### About quaternions
+[https://eater.net/quaternions/](https://eater.net/quaternions/)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zjMuIxRvygQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 See also:
 

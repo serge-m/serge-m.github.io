@@ -41,6 +41,9 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 
 * “The Best Public Datasets for Machine Learning and Data Science” by Stacy Stanford https://link.medium.com/qDHawlpg4X
 
+* collated list of image and video databases that people have found useful for computer vision research and algorithm evaluation.
+  http://homepages.inf.ed.ac.uk/rbf/CVonline/Imagedbase.htm
+
 
 
 ## Articles

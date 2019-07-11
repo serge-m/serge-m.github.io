@@ -39,6 +39,8 @@ Tags: machine learning, links, useful, books, deep learning, tensorflow
 
 * [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow) - collection of links about Tensor flow
 
+* “The Best Public Datasets for Machine Learning and Data Science” by Stacy Stanford https://link.medium.com/qDHawlpg4X
+
 
 
 ## Articles

@@ -3,6 +3,7 @@
 &lt;p&gt;&lt;a href="https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf"&gt;Arduino Nano v2.3 manual&lt;/a&gt; (pdf)&lt;/p&gt;
 &lt;h2&gt;Arduino and shift register 74HC595&lt;/h2&gt;
 &lt;p&gt;74HC595 &lt;a href="https://www.diodes.com/assets/Datasheets/74HC595.pdf"&gt;Datasheet&lt;/a&gt; (pdf)&lt;/p&gt;
+&lt;p&gt;74HC595 &lt;a href="https://www.theengineeringprojects.com/2017/06/introduction-to-74hc595.html"&gt;Explanation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Youtube tutorial with buttons:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ameNT2MKDyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -16,11 +17,11 @@
 &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;dataPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 
-&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-  &lt;span class="c1"&gt;//set …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Arduino board&lt;/h2&gt;
+&lt;span class="kt"&gt;void …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Arduino board&lt;/h2&gt;
 &lt;p&gt;&lt;a href="https://www.arduino.cc/en/uploads/Main/ArduinoNanoManual23.pdf"&gt;Arduino Nano v2.3 manual&lt;/a&gt; (pdf)&lt;/p&gt;
 &lt;h2&gt;Arduino and shift register 74HC595&lt;/h2&gt;
 &lt;p&gt;74HC595 &lt;a href="https://www.diodes.com/assets/Datasheets/74HC595.pdf"&gt;Datasheet&lt;/a&gt; (pdf)&lt;/p&gt;
+&lt;p&gt;74HC595 &lt;a href="https://www.theengineeringprojects.com/2017/06/introduction-to-74hc595.html"&gt;Explanation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Youtube tutorial with buttons:&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ameNT2MKDyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
@@ -113,7 +114,7 @@ crw-rw---- &lt;span class="m"&gt;1&lt;/span&gt; root dialout &lt;span class="m"&
 
 
 &lt;p&gt;That was almost fine. &lt;/p&gt;
-&lt;p&gt;To fix that I had to chose  &lt;strong&gt;Tools -&amp;gt; Processor -&amp;gt; ATmega 328P (old bootloader)&lt;/strong&gt; instead of just "ATmega 328P"&lt;/p&gt;</content><category term="arduino"></category><category term="diy"></category><category term="hardware"></category><category term="ubuntu"></category></entry><entry><title>Computer vision libraries</title><link href="https://serge-m.github.io/computer-vision-libraries.html" rel="alternate"></link><published>2019-04-26T08:30:00+02:00</published><updated>2019-04-26T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-26:/computer-vision-libraries.html</id><summary type="html">&lt;p&gt;So, what else is there except for opencv...&lt;/p&gt;
+&lt;p&gt;To fix that I had to chose  &lt;strong&gt;Tools -&amp;gt; Processor -&amp;gt; ATmega 328P (old bootloader)&lt;/strong&gt; instead of just "ATmega 328P"&lt;/p&gt;</content><category term="arduino"></category><category term="diy"></category><category term="hardware"></category><category term="ubuntu"></category><category term="74HC595"></category><category term="shift register"></category><category term="datasheet"></category></entry><entry><title>Computer vision libraries</title><link href="https://serge-m.github.io/computer-vision-libraries.html" rel="alternate"></link><published>2019-04-26T08:30:00+02:00</published><updated>2019-04-26T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-26:/computer-vision-libraries.html</id><summary type="html">&lt;p&gt;So, what else is there except for opencv...&lt;/p&gt;
 &lt;h3&gt;CCV&lt;/h3&gt;
 &lt;p&gt;&lt;a href="libccv.org"&gt;CCV website&lt;/a&gt;, &lt;a href="libccv.org"&gt;github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;CCV 0.7 comes with a sub-10% image classifier, a decent face detector.&lt;/p&gt;

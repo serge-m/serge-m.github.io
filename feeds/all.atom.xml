@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-07-14T14:22:00+02:00</updated><entry><title>Arduino Experiments</title><link href="https://serge-m.github.io/arduino-experiments.html" rel="alternate"></link><published>2019-07-14T14:22:00+02:00</published><updated>2019-07-14T14:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-07-14:/arduino-experiments.html</id><summary type="html">&lt;h2&gt;Arduino and shift register 74&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-07-14T14:22:00+02:00</updated><entry><title>Arduino Experiments</title><link href="https://serge-m.github.io/arduino-experiments.html" rel="alternate"></link><published>2019-07-14T14:22:00+02:00</published><updated>2019-07-14T14:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-07-14:/arduino-experiments.html</id><summary type="html">&lt;h2&gt;Arduino and shift register 74HC595&lt;/h2&gt;
+&lt;p&gt;74HC595 &lt;a href="https://www.diodes.com/assets/Datasheets/74HC595.pdf"&gt;Datasheet&lt;/a&gt; (pdf)&lt;/p&gt;
+&lt;p&gt;Youtube tutorial:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ameNT2MKDyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;My version on a breadboard:&lt;/p&gt;
 &lt;p&gt;&lt;img src="media/2019-07-14-arduino/arduino-shift-register.jpg" alt="arduino and shift register" width="500px"/&gt;&lt;/p&gt;
-&lt;h2&gt;Issues with upload to Arduino Nano v3&lt;/h2&gt;
-&lt;p&gt;Trying to connect to my Arduino clone (JOY-IT Arduino-compatible Nano V3 Board with ATmega328P-AU) from Ubuntu 18 I got a strange error messages.&lt;/p&gt;
-&lt;p&gt;There are three ways you can install Arduin IDE in ubuntu 18:
-* &lt;code&gt;sudo apt install …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Arduino and shift register 74&lt;/h2&gt;
+&lt;p&gt;Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//the pins we are using&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;latchPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;clockPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;dataPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;//set all the pins used to talk to the chip&lt;/span&gt;
+  &lt;span class="c1"&gt;//as output pins so we can write to …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Arduino and shift register 74HC595&lt;/h2&gt;
+&lt;p&gt;74HC595 &lt;a href="https://www.diodes.com/assets/Datasheets/74HC595.pdf"&gt;Datasheet&lt;/a&gt; (pdf)&lt;/p&gt;
+&lt;p&gt;Youtube tutorial:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ameNT2MKDyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;My version on a breadboard:&lt;/p&gt;
 &lt;p&gt;&lt;img src="media/2019-07-14-arduino/arduino-shift-register.jpg" alt="arduino and shift register" width="500px"/&gt;&lt;/p&gt;
+&lt;p&gt;Code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;//the pins we are using&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;latchPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;clockPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;dataPin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="c1"&gt;//set all the pins used to talk to the chip&lt;/span&gt;
+  &lt;span class="c1"&gt;//as output pins so we can write to them&lt;/span&gt;
+  &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;latchPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;clockPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="n"&gt;pinMode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dataPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;OUTPUT&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+    &lt;span class="c1"&gt;//take the latchPin low so the LEDs don&amp;#39;t change while we are writing data&lt;/span&gt;
+    &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;latchPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;LOW&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="c1"&gt;//shift out the bits&lt;/span&gt;
+    &lt;span class="n"&gt;shiftOut&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dataPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;clockPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MSBFIRST&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;  
+
+    &lt;span class="c1"&gt;//take the latch pin high so the pins reflect&lt;/span&gt;
+    &lt;span class="c1"&gt;//the data we have sent&lt;/span&gt;
+    &lt;span class="n"&gt;digitalWrite&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;latchPin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HIGH&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="c1"&gt;// pause before next value:&lt;/span&gt;
+    &lt;span class="n"&gt;delay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Issues with upload to Arduino Nano v3&lt;/h2&gt;
 &lt;p&gt;Trying to connect to my Arduino clone (JOY-IT Arduino-compatible Nano V3 Board with ATmega328P-AU) from Ubuntu 18 I got a strange error messages.&lt;/p&gt;
 &lt;p&gt;There are three ways you can install Arduin IDE in ubuntu 18:

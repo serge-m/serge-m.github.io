@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-04-26T08:30:00+02:00</updated><entry><title>Computer vision libraries</title><link href="https://serge-m.github.io/computer-vision-libraries.html" rel="alternate"></link><published>2019-04-26T08:30:00+02:00</published><updated>2019-04-26T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-26:/computer-vision-libraries.html</id><summary type="html">&lt;p&gt;So, what else is there except for opencv...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-07-14T14:22:00+02:00</updated><entry><title>Arduino Experiments</title><link href="https://serge-m.github.io/arduino-experiments.html" rel="alternate"></link><published>2019-07-14T14:22:00+02:00</published><updated>2019-07-14T14:22:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-07-14:/arduino-experiments.html</id><summary type="html">&lt;p&gt;Trying to connect to my Arduino clone (JOY-IT Arduino-compatible Nano V3 Board with ATmega328P-AU) from Ubuntu 18 I got a strange error messages.&lt;/p&gt;
+&lt;p&gt;There are three ways you can install Arduin IDE in ubuntu 18:
+* &lt;code&gt;sudo apt install arduino&lt;/code&gt; - install version 1.0.5 as on 2019-07-04 
+* &lt;code&gt;arduino-mhall119&lt;/code&gt; 1.8 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Trying to connect to my Arduino clone (JOY-IT Arduino-compatible Nano V3 Board with ATmega328P-AU) from Ubuntu 18 I got a strange error messages.&lt;/p&gt;
+&lt;p&gt;There are three ways you can install Arduin IDE in ubuntu 18:
+* &lt;code&gt;sudo apt install arduino&lt;/code&gt; - install version 1.0.5 as on 2019-07-04 
+* &lt;code&gt;arduino-mhall119&lt;/code&gt; 1.8.5 via snap and &lt;code&gt;Ubuntu Software&lt;/code&gt; app
+* arduino IDE 1.8.9 from &lt;a href="https://www.arduino.cc/en/guide/linux"&gt;https://www.arduino.cc/en/guide/linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First of all I had to add a current user to &lt;code&gt;dialout&lt;/code&gt; group and logout-login -- that's fine:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo usermod -a -G dialout &amp;lt;username&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then all the tutorials require for checking &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ls -l /dev/ttyACM*
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And I don't have that. 
+I have USB0 instead:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo ls -l /dev/ttyUSB*
+crw-rw---- &lt;span class="m"&gt;1&lt;/span&gt; root dialout &lt;span class="m"&gt;188&lt;/span&gt;, &lt;span class="m"&gt;0&lt;/span&gt; Jul &lt;span class="m"&gt;14&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:11 /dev/ttyUSB0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;When I tried to upload some simple programms to the board I got:
+* &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;avrdude&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ser_open&lt;/span&gt;&lt;span class="o"&gt;():&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/dev/ttyUSB0&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Permission&lt;/span&gt; &lt;span class="n"&gt;denied&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;For version from sudo apt install:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;arduino&lt;/span&gt; &lt;span class="n"&gt;nano&lt;/span&gt; &lt;span class="n"&gt;avrdude&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;ser_open&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt; &lt;span class="n"&gt;can&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="k"&gt;open&lt;/span&gt; &lt;span class="n"&gt;device&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;COM1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;No&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="k"&gt;or&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That version was way too old.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For the version from website I got&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;Build&lt;/span&gt; &lt;span class="nv"&gt;options&lt;/span&gt; &lt;span class="nv"&gt;changed&lt;/span&gt;, &lt;span class="nv"&gt;rebuilding&lt;/span&gt; &lt;span class="nv"&gt;all&lt;/span&gt;
+&lt;span class="nv"&gt;Sketch&lt;/span&gt; &lt;span class="nv"&gt;uses&lt;/span&gt; &lt;span class="mi"&gt;994&lt;/span&gt; &lt;span class="nv"&gt;bytes&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;program&lt;/span&gt; &lt;span class="nv"&gt;storage&lt;/span&gt; &lt;span class="nv"&gt;space&lt;/span&gt;. &lt;span class="nv"&gt;Maximum&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="mi"&gt;30720&lt;/span&gt; &lt;span class="nv"&gt;bytes&lt;/span&gt;.
+&lt;span class="nv"&gt;Global&lt;/span&gt; &lt;span class="nv"&gt;variables&lt;/span&gt; &lt;span class="nv"&gt;use&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt; &lt;span class="nv"&gt;bytes&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;dynamic&lt;/span&gt; &lt;span class="nv"&gt;memory&lt;/span&gt;, &lt;span class="nv"&gt;leaving&lt;/span&gt; &lt;span class="mi"&gt;2039&lt;/span&gt; &lt;span class="nv"&gt;bytes&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;variables&lt;/span&gt;. &lt;span class="nv"&gt;Maximum&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="mi"&gt;2048&lt;/span&gt; &lt;span class="nv"&gt;bytes&lt;/span&gt;.
+&lt;span class="nv"&gt;avrdude&lt;/span&gt;: &lt;span class="nv"&gt;stk500_recv&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;: &lt;span class="nv"&gt;programmer&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;responding&lt;/span&gt;
+&lt;span class="nv"&gt;avrdude&lt;/span&gt;: &lt;span class="nv"&gt;stk500_getsync&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt; &lt;span class="nv"&gt;attempt&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;: &lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;sync&lt;/span&gt;: &lt;span class="nv"&gt;resp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;x00&lt;/span&gt;
+&lt;span class="nv"&gt;avrdude&lt;/span&gt;: &lt;span class="nv"&gt;stk500_recv&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;: &lt;span class="nv"&gt;programmer&lt;/span&gt; &lt;span class="nv"&gt;is&lt;/span&gt; &lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;responding&lt;/span&gt;
+&lt;span class="nv"&gt;avrdude&lt;/span&gt;: &lt;span class="nv"&gt;stk500_getsync&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt; &lt;span class="nv"&gt;attempt&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;: &lt;span class="nv"&gt;not&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;sync&lt;/span&gt;: &lt;span class="nv"&gt;resp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="nv"&gt;x00&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That was almost fine. &lt;/p&gt;
+&lt;p&gt;To fix that I had to chose  &lt;strong&gt;Tools -&amp;gt; Processor -&amp;gt; ATmega 328P (old bootloader)&lt;/strong&gt; instead of just "ATmega 328P"&lt;/p&gt;</content><category term="arduino"></category><category term="diy"></category><category term="hardware"></category><category term="ubuntu"></category></entry><entry><title>Computer vision libraries</title><link href="https://serge-m.github.io/computer-vision-libraries.html" rel="alternate"></link><published>2019-04-26T08:30:00+02:00</published><updated>2019-04-26T08:30:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-04-26:/computer-vision-libraries.html</id><summary type="html">&lt;p&gt;So, what else is there except for opencv...&lt;/p&gt;
 &lt;h3&gt;CCV&lt;/h3&gt;
 &lt;p&gt;&lt;a href="libccv.org"&gt;CCV website&lt;/a&gt;, &lt;a href="libccv.org"&gt;github&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;CCV 0.7 comes with a sub-10% image classifier, a decent face detector.&lt;/p&gt;

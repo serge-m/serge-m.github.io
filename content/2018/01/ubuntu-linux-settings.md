@@ -2,7 +2,7 @@ Title: Ubuntu/linux settings
 Author: SergeM
 Date: 2018-01-11 08:00
 Slug: ubuntu-linux-settings
-Tags: linux,useful,settings,ubuntu
+Tags: linux,useful,settings,ubuntu,shell, ubuntu 18
 
 
 Some settings I find useful for a workstation
@@ -22,8 +22,25 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 3. After the installation you should see a new applet in the main pannel. One can find settings in the context menu.
 
 
+## Desktop, workspaces and gnome extensions settings in Ubuntu 18.04
+### only show applications of current workspace in launcher:
+
+```
+sudo apt install dconf-editor
+```
+
+Navigate to org > gnome > shell > extensions > dash-to-dock and check isolate-workspaces
+
+### Nice extensions
+
+
+
+
+
 ## Autocomplete in shell
 See [autocomplete from history in terminal](/autocomplete-from-history-in-terminal.html)
+
+
 
 ## Set `nemo` as default file manager 
 ```

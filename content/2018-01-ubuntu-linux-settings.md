@@ -31,8 +31,15 @@ sudo apt install dconf-editor
 
 Navigate to org > gnome > shell > extensions > dash-to-dock and check isolate-workspaces
 
-### Nice extensions
+### Show workspace indicator in the main pannel
 
+Enable "Workspace Indicator" extension.
+
+<img src="media/2018-01-ubuntu-linux-settings/extensions_settings.png" alt="extensions settings in ubuntu 18"/>
+
+### Static number of workspaces
+
+<img src="media/2018-01-ubuntu-linux-settings/workspaces_settings.png" alt="workspaces settings in ubuntu 18"/>
 
 
 

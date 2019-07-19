@@ -90,4 +90,4 @@ in file `/etc/login.defs`. Here is the quote from this file:
 # Useful for server setup
 * [Default permissions for directories](#default-permissions-for-directories)
 * [Add service in linux](add-service-in-linux.html)
-* [confiduring ssh](/ssh-cheatsheet.html)
+* [configuring ssh](/ssh-cheatsheet.html)

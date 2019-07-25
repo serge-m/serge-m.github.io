@@ -33,6 +33,10 @@ then
 ccsm
 ```
 
+### Set up SFTP server
+* [How to set up an SFTP server on Linux](https://www.techrepublic.com/article/how-to-set-up-an-sftp-server-on-linux/) - some commands are broken (wrong paths and users) but in general works
+
+
 ### See also
 * more [here](/useful-console-commands.html)
 

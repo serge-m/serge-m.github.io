@@ -3638,13 +3638,13 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Remove user from a group&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;gpasswd&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt; &lt;span class="k"&gt;group&lt;/span&gt;
+&lt;p&gt;Delete user&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;list all users:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent passwd …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
 &lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;fuser&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tcp&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -3657,6 +3657,16 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;or &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;adduser&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;group&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Delete user&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3731,7 +3741,7 @@ $ &lt;span class="nb"&gt;exit&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Nohup"&gt;wiki&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category><category term="vim"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Nohup"&gt;wiki&lt;/a&gt;&lt;/p&gt;</content><category term="linux"></category><category term="useful"></category><category term="ubuntu"></category><category term="vim"></category><category term="console"></category></entry><entry><title>Add service in ubuntu</title><link href="https://serge-m.github.io/add-service-in-linux.html" rel="alternate"></link><published>2017-01-08T07:10:00+01:00</published><updated>2017-01-08T07:10:00+01:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-01-08:/add-service-in-linux.html</id><summary type="html">&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 

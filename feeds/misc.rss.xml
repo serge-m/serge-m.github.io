@@ -486,13 +486,13 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Remove user from a group&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;gpasswd&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt; &lt;span class="k"&gt;group&lt;/span&gt;
+&lt;p&gt;Delete user&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;list all users:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ getent passwd …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category><category>vim</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category><category>vim</category><category>console</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 

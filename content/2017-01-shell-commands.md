@@ -24,8 +24,10 @@ sudo adduser <user> <group>
 ```
 
 
-Dekete user
-```userdel user```
+Delete user
+```
+userdel user
+```
 
 Delete the user’s home directory and mail spool:
 ```

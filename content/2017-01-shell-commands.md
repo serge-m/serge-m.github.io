@@ -2,7 +2,7 @@ Title: Shell commands
 Author: SergeM
 Date: 2017-01-08 11:10:00
 Slug: shell-commands
-Tags: linux,useful,ubuntu,vim
+Tags: linux,useful,ubuntu,vim, console
 
 
 Some linux commands that I'll probably need in the future
@@ -23,6 +23,14 @@ or
 sudo adduser <user> <group>
 ```
 
+
+Dekete user
+```userdel user```
+
+Delete the user’s home directory and mail spool:
+```
+userdel -r user
+```
 
 Remove user from a group
 ```

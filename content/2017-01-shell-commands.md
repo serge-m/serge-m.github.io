@@ -5,4 +5,4 @@ Slug: shell-commands
 Tags: linux,useful,ubuntu,vim, console
 
 
-Page moved [here](useful-console-commands.html)
+Page moved [here](/useful-console-commands.html)

@@ -261,19 +261,29 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
 
 &lt;p&gt;Another tip:
 add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 24 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</guid><category>python</category><category>argparse</category></item><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;h2&gt;Scan IP range&lt;/h2&gt;
-&lt;p&gt;Generally, nmap is useful to quickly scan networks.&lt;/p&gt;
-&lt;p&gt;To install nmap, enter&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;nmap&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 24 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</guid><category>python</category><category>argparse</category></item><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;fuser&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tcp&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Once it is installed, enter&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;nmap&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;sn&lt;/span&gt; &lt;span class="mi"&gt;192&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;168&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;
+&lt;p&gt;Add user to a group&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;usermod&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;aG&lt;/span&gt; &lt;span class="k"&gt;group&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;This will show you which hosts responded to ping requests on the network between 192.168.1.0 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>useful</category><category>console</category><category>linux</category><category>network</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
+&lt;p&gt;or &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;adduser&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;group&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Delete user&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>useful</category><category>console</category><category>linux</category><category>network</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -470,29 +480,7 @@ Clustering is based on histograms. 1 contributor. No …&lt;/p&gt;</description>
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/settings.html#date-format-and-locale"&gt;Format of dates&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/stable/settings.html#url-settings"&gt;Generate archives per year and month&lt;/a&gt; 
 see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;To check out: &lt;a href="http://jbm.io/2013/03/adding-period-archives-to-pelican/"&gt;Adding period archives to Pelican&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 14:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/pelican-hints.html</guid><category>pelican</category></item><item><title>Shell commands</title><link>https://serge-m.github.io/shell-commands.html</link><description>&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
-&lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;fuser&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tcp&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Add user to a group&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;usermod&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;aG&lt;/span&gt; &lt;span class="k"&gt;group&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;or &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;adduser&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;group&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Delete user&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;userdel&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category><category>vim</category><category>console</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To check out: &lt;a href="http://jbm.io/2013/03/adding-period-archives-to-pelican/"&gt;Adding period archives to Pelican&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 14:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/pelican-hints.html</guid><category>pelican</category></item><item><title>Shell commands (page moved)</title><link>https://serge-m.github.io/shell-commands.html</link><description>&lt;p&gt;Page moved &lt;a href="useful-console-commands.html"&gt;here&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>linux</category><category>useful</category><category>ubuntu</category><category>vim</category><category>console</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;touch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;systemd&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;system&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 

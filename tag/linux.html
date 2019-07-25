@@ -178,19 +178,29 @@ Here is how to …</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><h2>Scan IP range</h2>
-<p>Generally, nmap is useful to quickly scan networks.</p>
-<p>To install nmap, enter</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">nmap</span>
+                <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
+<p>Kill processes occupying a certain port:</p>
+<div class="highlight"><pre><span></span><span class="n">fuser</span> <span class="o">-</span><span class="n">k</span> <span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span>
 </pre></div>
 
 
-<p>Once it is installed, enter</p>
-<div class="highlight"><pre><span></span><span class="n">nmap</span> <span class="o">-</span><span class="n">sn</span> <span class="mi">192</span><span class="p">.</span><span class="mi">168</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">24</span>
+<p>Add user to a group</p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="k">group</span> <span class="k">user</span>
 </pre></div>
 
 
-<p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 …</p>
+<p>or </p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="o">&lt;</span><span class="k">user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">group</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>Delete user</p>
+<div class="highlight"><pre><span></span><span class="n">userdel</span> <span class="k">user</span>
+</pre></div>
+
+
+<p>Delete the user’s home directory and mail spool:</p>
+<div class="highlight"><pre><span></span><span class="n">userdel</span> <span class="o">-</span><span class="n">r …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
 
@@ -356,7 +366,7 @@ Solution:</p>
             <hr/>
             <article>
                 <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/shell-commands.html">Shell commands</a></h1>
+                <h1 class="main-list"><a href="https://serge-m.github.io/shell-commands.html">Shell commands (page moved)</a></h1>
 
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -381,29 +391,7 @@ Solution:</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
-<p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><span class="n">fuser</span> <span class="o">-</span><span class="n">k</span> <span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span>
-</pre></div>
-
-
-<p>Add user to a group</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">aG</span> <span class="k">group</span> <span class="k">user</span>
-</pre></div>
-
-
-<p>or </p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="o">&lt;</span><span class="k">user</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="k">group</span><span class="o">&gt;</span>
-</pre></div>
-
-
-<p>Delete user</p>
-<div class="highlight"><pre><span></span><span class="n">userdel</span> <span class="k">user</span>
-</pre></div>
-
-
-<p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><span class="n">userdel</span> <span class="o">-</span><span class="n">r …</span></pre></div>
+                <div class="summary"><p>Page moved <a href="useful-console-commands.html">here</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/shell-commands.html">more ...</a>
                 </div>
 
@@ -888,7 +876,7 @@ Don't forget to do</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html">How to hide Firefox title bar in Cinnamon (mint)</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">Set up HP 1020 printer in Linux Mint 18</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/shell-commands.html">Shell commands</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/shell-commands.html">Shell commands (page moved)</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/add-service-in-linux.html">Add service in ubuntu</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">OpenVPN server in cloud using docker</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">Installing java 8 on linux mint 17.3</a></li>
@@ -913,9 +901,6 @@ Don't forget to do</p>
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
     </li>
     <li class="list-group-item tag-3">
@@ -924,11 +909,11 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/bokeh.html">bokeh</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/books.html">books</a>
@@ -937,10 +922,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
@@ -951,17 +933,26 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -970,7 +961,10 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/en.html">en</a>
+      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -990,14 +984,11 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/images.html">images</a>
@@ -1011,20 +1002,17 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -1038,17 +1026,8 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/make.html">make</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
@@ -1058,12 +1037,6 @@ Don't forget to do</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
@@ -1087,7 +1060,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
+      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
@@ -1099,7 +1072,16 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/plot.html">plot</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -1132,7 +1114,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
+      <a href="https://serge-m.github.io/tag/services.html">services</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
@@ -1141,7 +1123,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/slides.html">slides</a>
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -1152,9 +1134,6 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
@@ -1162,7 +1141,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/svn.html">svn</a>
@@ -1173,20 +1152,26 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+    </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1197,9 +1182,6 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/vim.html">vim</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vision.html">vision</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
@@ -1208,6 +1190,12 @@ Don't forget to do</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

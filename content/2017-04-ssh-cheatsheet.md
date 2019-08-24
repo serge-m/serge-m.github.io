@@ -5,6 +5,15 @@ Slug: ssh-cheatsheet
 Tags: ssh, keys, useful
 
 
+## Create more secure ssh keys
+Create a key using elliptic curve cryptography: 
+```
+ssh-keygen -a 100 -t ed25519
+```
+
+see also: [Upgrade Your SSH Key to Ed25519](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54)
+
+
 ## How to prevent SSH from scanning all the keys in .ssh directory
 ```
 $ ssh -o IdentitiesOnly=yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com

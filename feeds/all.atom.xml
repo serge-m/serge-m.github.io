@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-07-16T00:01:00+02:00</updated><entry><title>Lenovo E490 memory upgrade</title><link href="https://serge-m.github.io/lenovo-e490.html" rel="alternate"></link><published>2019-07-16T00:01:00+02:00</published><updated>2019-07-16T00:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-07-16:/lenovo-e490.html</id><summary type="html">&lt;p&gt;Lenovo e490 is a cheaper and less performant alternative to the famous T series.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>sergem personal public notebook</title><link href="https://serge-m.github.io/" rel="alternate"></link><link href="https://serge-m.github.io/feeds/all.atom.xml" rel="self"></link><id>https://serge-m.github.io/</id><updated>2019-08-24T20:32:00+02:00</updated><entry><title>ROS experience</title><link href="https://serge-m.github.io/ros-experience.html" rel="alternate"></link><published>2019-08-24T20:32:00+02:00</published><updated>2019-08-24T20:32:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-08-24:/ros-experience.html</id><summary type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
+&lt;h2&gt;ROS on raspberry pi&lt;/h2&gt;
+&lt;p&gt;There is a compiled image by ubiquity that contain ROS kinetic.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://downloads.ubiquityrobotics.com/pi.html"&gt;https://downloads.ubiquityrobotics.com/pi.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
+&lt;h2&gt;ROS on raspberry pi&lt;/h2&gt;
+&lt;p&gt;There is a compiled image by ubiquity that contain ROS kinetic.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://downloads.ubiquityrobotics.com/pi.html"&gt;https://downloads.ubiquityrobotics.com/pi.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... &lt;/p&gt;
+&lt;h2&gt;Installing tensorflow for ROS on raspberry pi&lt;/h2&gt;
+&lt;p&gt;Alternatively one can try to install it from wheels:
+https://www.tensorflow.org/install/pip?lang=python3#package-location&lt;/p&gt;
+&lt;p&gt;The dependencies are better to install using pip and piwheels.org:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="c1"&gt;--extra-index-url=https://www.piwheels.org/simple -U tensorflow keras&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I encountered an error about h5py: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ImportError&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;libhdf5_serial&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;so&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;cannot&lt;/span&gt; &lt;span class="n"&gt;open&lt;/span&gt; &lt;span class="n"&gt;shared&lt;/span&gt; &lt;span class="n"&gt;object&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;or&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;installing &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;libhdf5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;libhdf5&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;serial&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;didnt help.&lt;/p&gt;
+&lt;p&gt;Some version mismatch&lt;/p&gt;
+&lt;p&gt;I could resolve it by compiling h5py with my version:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;HDF5_VERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt; &lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="c1"&gt;--no-binary=h5py h5py&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="ros"></category><category term="linux"></category><category term="robotics"></category><category term="raspberry"></category><category term="pi"></category></entry><entry><title>Lenovo E490 memory upgrade</title><link href="https://serge-m.github.io/lenovo-e490.html" rel="alternate"></link><published>2019-07-16T00:01:00+02:00</published><updated>2019-07-16T00:01:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-07-16:/lenovo-e490.html</id><summary type="html">&lt;p&gt;Lenovo e490 is a cheaper and less performant alternative to the famous T series.&lt;/p&gt;
 &lt;p&gt;The laptop came to me with a deformed box but I decided to give it a try and so far so good.&lt;/p&gt;
 &lt;p&gt;&lt;img src="media/2019-07-16-lenovo-e490/deformed_box.jpg" alt="lenovo e490"/&gt;&lt;/p&gt;
 &lt;p&gt;I have bought a basic version and upgraded RAM for it. Here are some …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Lenovo e490 is a cheaper and less performant alternative to the famous T series.&lt;/p&gt;

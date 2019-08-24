@@ -69,6 +69,43 @@ sergem personal public notebook            </a>
         <div class="col-sm-9">
             <article>
                 <div class="well well-sm">
+                <h1 class="main-list"><a href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">Save Ipython notebook as script with the same filename</a></h1>
+
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-21T14:59:00+02:00"> 2014-09-21T14:59:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->
+                </div>
+                <div class="summary"><div class="highlight"><pre><span></span><span class="c1"># creating a variable theNotebook with the name of notebook</span>
+<span class="c1"># source: http://stackoverflow.com/a/23619544</span>
+<span class="c1"># In[1]:</span>
+
+<span class="o">%%</span><span class="n">javascript</span>
+<span class="n">var</span> <span class="n">kernel</span> <span class="o">=</span> <span class="n">IPython</span><span class="o">.</span><span class="n">notebook</span><span class="o">.</span><span class="n">kernel</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">thename</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">&quot;notebook_name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span><span class="p">;</span>
+<span class="n">var</span> <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;theNotebook = &quot;</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="o">+</span><span class="n">thename</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">;</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+
+<span class="c1"># saving to a directory &#39;backup&#39;. create the directory if it doesn&#39;t exist …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/save-ipython-notebook-as-script-with.html">more ...</a>
+                </div>
+
+            </article>
+            <hr/>
+            <article>
+                <div class="well well-sm">
                 <h1 class="main-list"><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h1>
 
 <footer class="post-info">
@@ -692,43 +729,6 @@ nvidia (1)</p>
 
             </article>
             <hr/>
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/learning-sqlite.html">learning sqlite</a></h1>
-
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-02-09T14:53:00+01:00"> 2014-02-09T14:53:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/sql.html">sql</a>
-    
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><h2>create table named t3 (id, value). id is integer. value is text</h2>
-<div class="highlight"><pre><span></span><span class="nv">sqlite</span><span class="o">&gt;</span> <span class="nv">create</span> <span class="nv">table</span> <span class="k">if</span> <span class="nv">not</span> <span class="nv">exists</span> <span class="nv">t3</span><span class="ss">(</span> <span class="nv">id</span> <span class="nv">int</span> , <span class="nv">value</span> <span class="nv">varchar</span>, <span class="nv">primary</span> <span class="nv">key</span><span class="ss">(</span><span class="nv">id</span><span class="ss">))</span><span class="c1">;</span>
-</pre></div>
-
-
-<h2>adding two "rows"</h2>
-<div class="highlight"><pre><span></span><span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t3</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">);</span>
-<span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t3</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
-</pre></div>
-
-
-<h2>display results</h2>
-<div class="highlight"><pre><span></span><span class="n">sqlite …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/learning-sqlite.html">more ...</a>
-                </div>
-
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem6.html">&laquo;</a>
@@ -767,6 +767,7 @@ nvidia (1)</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/ros-experience.html">ROS experience</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/lenovo-e490.html">Lenovo E490 memory upgrade</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/arduino-experiments.html">Arduino Experiments</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/computer-vision-libraries.html">Computer vision libraries</a></li>
@@ -778,7 +779,6 @@ nvidia (1)</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html">Spark in Docker with AWS credentials</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/okrs.html">OKRs</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/bokeh-example.html">Bokeh in jupyter notebooks for interactive plots</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/click-config-parsers.html">Comparison of click-based config parsers for python</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -799,22 +799,19 @@ nvidia (1)</p>
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/api.html">API</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -825,6 +822,9 @@ nvidia (1)</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
@@ -834,32 +834,29 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
+      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
+      <a href="https://serge-m.github.io/tag/depth-map.html">depth map</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/e490.html">e490</a>
@@ -876,14 +873,14 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
@@ -891,14 +888,11 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/imagemagick.html">imagemagick</a>
+      <a href="https://serge-m.github.io/tag/image-search.html">image search</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/images.html">images</a>
@@ -918,14 +912,8 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/laplacian.html">Laplacian</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -938,6 +926,12 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -955,13 +949,13 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
+      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -979,7 +973,7 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+      <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
@@ -988,13 +982,13 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
+      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+      <a href="https://serge-m.github.io/tag/project-management.html">project management</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -1017,11 +1011,20 @@ nvidia (1)</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/server.html">server</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/search.html">search</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/slides.html">slides</a>
@@ -1035,9 +1038,6 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
@@ -1049,6 +1049,12 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1063,13 +1069,10 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -1077,17 +1080,14 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/vim.html">vim</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vision.html">vision</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

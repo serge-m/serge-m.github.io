@@ -27,7 +27,7 @@ sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflo
 
 I encountered an error about h5py: 
 ```
-ImportError: libhdf5_serial.so.100: cannot open shared object file: No such file or directory raspberry
+ImportError: libhdf5_serial.so.100: cannot open shared object file: No such file or directory
 ```
 installing 
 ```

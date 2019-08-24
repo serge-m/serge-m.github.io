@@ -2834,14 +2834,22 @@ Reverse voltage protection?:    N  &lt;/p&gt;
 &lt;p&gt;You have to do this every time when you edit a rule or add a new one in ~/.devilspie, otherwise the changes or any new rules will not be read.&lt;/p&gt;
 &lt;p&gt;It is also very important that you add it to startup applications using your desktop environment's menus.&lt;/p&gt;
 &lt;p&gt;For more information on other possibilities with devilspie, see man devilspie or the Ubuntu manpages online.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;My comments:&lt;/strong&gt; unfortunately one looses "close" and "minimize" buttons. But you don't need a buggy extension then.&lt;/p&gt;</content><category term="firefox"></category><category term="linux"></category><category term="cinnamon"></category><category term="mint"></category></entry><entry><title>SSH cheat sheet</title><link href="https://serge-m.github.io/ssh-cheatsheet.html" rel="alternate"></link><published>2017-04-12T12:11:00+02:00</published><updated>2017-04-12T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</id><summary type="html">&lt;h2&gt;How to prevent SSH from scanning all the keys in .ssh directory&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh -o &lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
+&lt;p&gt;&lt;strong&gt;My comments:&lt;/strong&gt; unfortunately one looses "close" and "minimize" buttons. But you don't need a buggy extension then.&lt;/p&gt;</content><category term="firefox"></category><category term="linux"></category><category term="cinnamon"></category><category term="mint"></category></entry><entry><title>SSH cheat sheet</title><link href="https://serge-m.github.io/ssh-cheatsheet.html" rel="alternate"></link><published>2017-04-12T12:11:00+02:00</published><updated>2017-04-12T12:11:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</id><summary type="html">&lt;h2&gt;Create more secure ssh keys&lt;/h2&gt;
+&lt;p&gt;Create a key using elliptic curve cryptography: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keygen&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;ed25519&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;The options are as follows:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-o IdentitiesOnly=yes&lt;/code&gt; - tells SSH to only use keys that are provided via the CLI and none from …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h2&gt;How to prevent SSH from scanning all the keys in .ssh directory&lt;/h2&gt;
+&lt;p&gt;see also: &lt;a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54"&gt;Upgrade Your SSH Key to Ed25519&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;How to prevent SSH from scanning all the keys in .ssh directory&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh -o &lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes -F /dev/null -i ~/path/to/some_id_rsa root …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;h2&gt;Create more secure ssh keys&lt;/h2&gt;
+&lt;p&gt;Create a key using elliptic curve cryptography: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keygen&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;ed25519&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;see also: &lt;a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54"&gt;Upgrade Your SSH Key to Ed25519&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;How to prevent SSH from scanning all the keys in .ssh directory&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ssh -o &lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 &lt;/pre&gt;&lt;/div&gt;
 

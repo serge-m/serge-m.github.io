@@ -58,6 +58,10 @@ Read only is not enough. It must be `rwx`:
 chmod 700 .ssh
 ```
 
+For authorized_keys file use the following premissions:
+```
+chmod 644 ~/.ssh/authorized_keys 
+```
 
 ## Port forwarding
 
@@ -166,6 +170,7 @@ WantedBy=multi-user.target
 
 
 ## Configuring SSH server
+
 Enable only ssh v2:
 ```
 Protocol 2

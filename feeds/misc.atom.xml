@@ -2892,6 +2892,11 @@ The reason was that &lt;code&gt;.ssh&lt;/code&gt; directory on the server had to
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;For authorized_keys file use the following premissions:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;chmod&lt;/span&gt; &lt;span class="mi"&gt;644&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;authorized_keys&lt;/span&gt; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Port forwarding&lt;/h2&gt;
 &lt;h3&gt;Remote port forwarding&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;bind_address&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="k"&gt;host&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;hostport&lt;/span&gt;

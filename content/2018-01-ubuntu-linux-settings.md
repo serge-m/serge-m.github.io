@@ -41,7 +41,9 @@ Enable "Workspace Indicator" extension.
 
 <img src="media/2018-01-ubuntu-linux-settings/workspaces_settings.png" alt="workspaces settings in ubuntu 18"/>
 
+### Showing windows instead of notification "window is ready"
 
+Install extension [noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
 
 ## Autocomplete in shell

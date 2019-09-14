@@ -42,3 +42,24 @@ I could resolve it by compiling h5py with my version:
 ```
 HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py
 ```
+
+
+# Name clash in dynamic_reconfigure
+Probably it is written somewhere but I haven't read the docs...
+
+I am developign a node for robot steering translation. I got an error:
+```
+$ rosrun steering_translator steering_translator.py 
+Traceback (most recent call last):
+  File "/home/user/omicron_robocar/catkin_ws/src/steering_translator/src/steering_translator.py", line 5, in <module>
+    import steering_translator.cfg
+  File "/home/user/omicron_robocar/catkin_ws/src/steering_translator/src/steering_translator.py", line 5, in <module>
+    import steering_translator.cfg
+ImportError: No module named cfg
+```
+
+I did everything according to the tutorials [How to Write Your First .cfg File](http://wiki.ros.org/dynamic_reconfigure/Tutorials/HowToWriteYourFirstCfgFile)
+and [Setting up Dynamic Reconfigure for a Node (python)](http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode%28python%29), just changed couple of names.
+The problem was in the naming of the package (steering_translator) and the executable file (steering_translator.py). They are getting mixed up on the execution. The solution was to rename python file to steering_translator_node.py.
+
+

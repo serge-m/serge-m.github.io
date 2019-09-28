@@ -45,7 +45,7 @@ Tags: vim,cheatsheet,keyboard shortcuts
 ### Identation settings
 Create the file
 ```
-vim ~/.vimrc
+vim ~/.vim/vimrc
 ```
 Add the configuration:
 ```
@@ -130,7 +130,7 @@ The above uses `~` to toggle case. In each example, you can replace `~` with `u`
 * [another vim cheat scheet](https://vim.rtorr.com/)
 
 
-## My .vimrc
+## My .vimrc (or ~/.vim/vimrc)
 ```
 filetype plugin indent on
 set tabstop=4

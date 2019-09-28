@@ -127,6 +127,8 @@ https://www.tensorflow.org/install/pip?lang=python3#package-location</p>
 </pre></div>
 
 
+<h3>Issues</h3>
+<h4>h5py</h4>
 <p>I encountered an error about h5py: </p>
 <div class="highlight"><pre><span></span><span class="n">ImportError</span><span class="o">:</span> <span class="n">libhdf5_serial</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">100</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
 </pre></div>
@@ -142,6 +144,31 @@ https://www.tensorflow.org/install/pip?lang=python3#package-location</p>
 <p>Some version mismatch</p>
 <p>I could resolve it by compiling h5py with my version:</p>
 <div class="highlight"><pre><span></span><span class="n">HDF5_VERSION</span><span class="o">=</span><span class="mi">1</span><span class="p">.</span><span class="mi">8</span><span class="p">.</span><span class="mi">16</span> <span class="n">sudo</span> <span class="n">pip3</span> <span class="n">install</span> <span class="c1">--no-binary=h5py h5py</span>
+</pre></div>
+
+
+<h4>load_img</h4>
+<p><code>keras_preprocessing.image.utils.load_img</code> results in the error:</p>
+<div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/keras_preprocessing/image/utils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">108</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_img</span>
+    <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Could not import PIL.Image. &#39;</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">PIL.Image.</span> <span class="nn">The</span> <span class="nn">use</span> <span class="nn">of</span> <span class="sb">`load_img`</span> <span class="n">requires</span> <span class="n">PIL</span><span class="o">.</span>
+</pre></div>
+
+
+<p>pillow is installed. </p>
+<p>The error may be caused by missing jpeg libraries. Try to load PIL in a separate python and check if it works.
+I got the following error.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil_image</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">95</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_imaging</span> <span class="k">as</span> <span class="n">core</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">libjpeg</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">62</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="nb">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span>
+</pre></div>
+
+
+<p>Easily solvable by </p>
+<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">libjpeg62</span>
 </pre></div>
 
 
@@ -238,17 +265,17 @@ The problem was in the naming of the package (steering_translator) and the execu
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -260,10 +287,10 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
@@ -280,23 +307,23 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/en.html">en</a>
@@ -316,14 +343,14 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -340,14 +367,14 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
@@ -364,9 +391,6 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -374,7 +398,7 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
@@ -383,19 +407,16 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
+      <a href="https://serge-m.github.io/tag/mildly-interesting.html">mildly interesting</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -404,7 +425,7 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
+      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -422,19 +443,13 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -451,23 +466,26 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+      <a href="https://serge-m.github.io/tag/services.html">services</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/software-design.html">software design</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/spark.html">spark</a>
@@ -475,20 +493,26 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/streaming.html">streaming</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -509,6 +533,9 @@ The problem was in the naming of the package (steering_translator) and the execu
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
@@ -520,20 +547,20 @@ The problem was in the naming of the package (steering_translator) and the execu
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/vim.html">vim</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vision.html">vision</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
+      <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

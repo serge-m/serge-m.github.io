@@ -25,6 +25,8 @@ The dependencies are better to install using pip and piwheels.org:
 sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflow keras
 ```
 
+### Issues
+#### h5py
 I encountered an error about h5py: 
 ```
 ImportError: libhdf5_serial.so.100: cannot open shared object file: No such file or directory
@@ -41,6 +43,33 @@ Some version mismatch
 I could resolve it by compiling h5py with my version:
 ```
 HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py
+```
+
+#### load_img
+
+`keras_preprocessing.image.utils.load_img` results in the error:
+```
+  File "/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/keras_preprocessing/image/utils.py", line 108, in load_img
+    raise ImportError('Could not import PIL.Image. '
+ImportError: Could not import PIL.Image. The use of `load_img` requires PIL.
+```
+
+pillow is installed. 
+
+The error may be caused by missing jpeg libraries. Try to load PIL in a separate python and check if it works.
+I got the following error.
+```python
+>>> from PIL import Image as pil_image
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/PIL/Image.py", line 95, in <module>
+    from . import _imaging as core
+ImportError: libjpeg.so.62: cannot open shared object file: No such file or directory
+```
+
+Easily solvable by 
+```
+sudo apt install libjpeg62
 ```
 
 

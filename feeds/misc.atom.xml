@@ -13,8 +13,10 @@
 &lt;p&gt;Project omicron had a goal to reimplement donkeycar functionality in ROS. 
 I had patched it significantly to make it work for my hardware.&lt;/p&gt;
 &lt;h2&gt;Hardware&lt;/h2&gt;
-&lt;p&gt;Donkeycar standard hardware looks like this:&lt;/p&gt;
+&lt;p&gt;Donkeycar standard architecture looks like this:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="media/2019-09-robocar/architecture_donkeycar_small.png"&gt;&lt;/p&gt;
 &lt;p&gt;I decided to introduce an intermediate layer of arduino that will (hopefully) protect my raspberry from undesired influence of high-current electornics of the car.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="media/2019-09-robocar/architecture_robocar_small.png"&gt;&lt;/p&gt;
 &lt;p&gt;To be updated...&lt;/p&gt;
 &lt;p&gt;https://github.com/serge-m/omicron_robocar/&lt;/p&gt;</content><category term="robocar"></category><category term="donkeycar"></category><category term="ros"></category><category term="linux"></category><category term="robotics"></category><category term="raspberry"></category><category term="pi"></category><category term="robot"></category></entry><entry><title>ROS experience</title><link href="https://serge-m.github.io/ros-experience.html" rel="alternate"></link><published>2019-08-24T20:32:00+02:00</published><updated>2019-08-24T20:32:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-08-24:/ros-experience.html</id><summary type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
 &lt;h2&gt;ROS on raspberry pi&lt;/h2&gt;

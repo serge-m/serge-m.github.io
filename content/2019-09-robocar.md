@@ -23,7 +23,7 @@ The default choice of the software for the robot was a project called [donkeycar
 
 My first car was built with that stack and I was not quite happy about it. The code quality and version compatibility was far from ideal. Knowing that stack is unlikely to be useful outside of the contest.
 
-Therefore I decided to build the second version on top of ROS to learn that framework on the way. I found [project omicron](https://github.com/project-omicron) that became a basis for my car.
+Therefore I decided to build [the second version on top of ROS](https://github.com/serge-m/sergem_robocar) to learn that framework on the way. I found [project omicron](https://github.com/project-omicron) that became a basis for my car.
 
 Project omicron had a goal to reimplement donkeycar functionality in ROS. 
 I had patched it significantly to make it work for my hardware.
@@ -63,4 +63,4 @@ The system consists of the following nodes.
 To be updated...
 
 
-https://github.com/serge-m/omicron_robocar/
+Main repository: [https://github.com/serge-m/sergem_robocar](https://github.com/serge-m/sergem_robocar)

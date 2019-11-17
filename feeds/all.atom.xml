@@ -87,7 +87,7 @@
 &lt;p&gt;&lt;img alt="" src="media/2019-09-robocar/absima_abs1_unpacked.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The default choice of the software for the robot was a project called &lt;a href="https://github.com/autorope/donkeycar"&gt;donkeycar&lt;/a&gt;. Donkeycar implements a driving stack in python. The AI is based on end-to-end machine learning model.&lt;/p&gt;
 &lt;p&gt;My first car was built with that stack and I was not quite happy about it. The code quality and version compatibility was far from ideal. Knowing that stack is unlikely to be useful outside of the contest.&lt;/p&gt;
-&lt;p&gt;Therefore I decided to build the second version on top of ROS to learn that framework on the way. I found &lt;a href="https://github.com/project-omicron"&gt;project omicron&lt;/a&gt; that became a basis for my car.&lt;/p&gt;
+&lt;p&gt;Therefore I decided to build &lt;a href="https://github.com/serge-m/sergem_robocar"&gt;the second version on top of ROS&lt;/a&gt; to learn that framework on the way. I found &lt;a href="https://github.com/project-omicron"&gt;project omicron&lt;/a&gt; that became a basis for my car.&lt;/p&gt;
 &lt;p&gt;Project omicron had a goal to reimplement donkeycar functionality in ROS. 
 I had patched it significantly to make it work for my hardware.&lt;/p&gt;
 &lt;h2&gt;Hardware&lt;/h2&gt;
@@ -112,7 +112,7 @@ In the future I'll probably add some more user-friendly interface for that.&lt;/
   * listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)
   * shuts down throttle if there is no RC signal (safety measure)&lt;/p&gt;
 &lt;p&gt;To be updated...&lt;/p&gt;
-&lt;p&gt;https://github.com/serge-m/omicron_robocar/&lt;/p&gt;</content><category term="robocar"></category><category term="donkeycar"></category><category term="ros"></category><category term="linux"></category><category term="robotics"></category><category term="raspberry"></category><category term="pi"></category><category term="robot"></category></entry><entry><title>ROS experience</title><link href="https://serge-m.github.io/ros-experience.html" rel="alternate"></link><published>2019-08-24T20:32:00+02:00</published><updated>2019-08-24T20:32:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-08-24:/ros-experience.html</id><summary type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
+&lt;p&gt;Main repository: &lt;a href="https://github.com/serge-m/sergem_robocar"&gt;https://github.com/serge-m/sergem_robocar&lt;/a&gt;&lt;/p&gt;</content><category term="robocar"></category><category term="donkeycar"></category><category term="ros"></category><category term="linux"></category><category term="robotics"></category><category term="raspberry"></category><category term="pi"></category><category term="robot"></category></entry><entry><title>ROS experience</title><link href="https://serge-m.github.io/ros-experience.html" rel="alternate"></link><published>2019-08-24T20:32:00+02:00</published><updated>2019-08-24T20:32:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-08-24:/ros-experience.html</id><summary type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
 &lt;h2&gt;ROS on raspberry pi&lt;/h2&gt;
 &lt;p&gt;There is a compiled image by ubiquity that contain ROS kinetic.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://downloads.ubiquityrobotics.com/pi.html"&gt;https://downloads.ubiquityrobotics.com/pi.html&lt;/a&gt;.&lt;/p&gt;

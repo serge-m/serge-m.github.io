@@ -5,7 +5,7 @@ Slug: image-segmentation-with-unlabeled-areas-with-fast-ai
 Tags: machine learning, fast.ai, segmentation, computer vision
 
 
-[fast.ai][http://fast.ai] library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.
+[fast.ai](http://fast.ai) library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.
 
 Sometimes it's important to provide non-complete labeling. That means for some areas the label is undefined. The performance of the network should exclude that areas in the loss and accuracy computation. That allows the network predict any other class in those areas.
 

@@ -58,10 +58,15 @@ The system consists of the following nodes.
 * arduino bridge - listens to the converted steering topic and publishes the data to the arduino via serial port (USB). In addition it serves as a bridge for the PWM signals captured by arduino from RC-receiver.
 
 * Arduino sketch takes care of several things:
+
   * measuring PWM signal from RC-receiver, 
+
   * publishing this received PWM to ROS
+  
   * listening for PWM commands produced by ai_driver and translated by steering_translator
+  
   * listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)
+  
   * shuts down throttle if there is no RC signal (safety measure)
 
 

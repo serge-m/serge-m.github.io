@@ -100,17 +100,29 @@ I had patched it significantly to make it work for my hardware.&lt;/p&gt;
 I use Ubuntu image with &lt;a href="https://downloads.ubiquityrobotics.com/pi.html"&gt;preinstalled ROS from ubiquity&lt;/a&gt;.
 To run the the code is cloned on the image and I run some launch scripts manually via ssh terminal.
 In the future I'll probably add some more user-friendly interface for that.&lt;/p&gt;
-&lt;p&gt;The system consists of the following nodes.
-* &lt;code&gt;raspicam_node&lt;/code&gt; - captures the images from Raspberry Pi camera and publishes to a ROS topic
-* ai_driver - takes the image and produces steering and throttle values. The values are normalized. The range is (-1, 1).
-* steering_translator - an auxiliary node that converts normalized steering to PWM signal for the servos.
-* arduino bridge - listens to the converted steering topic and publishes the data to the arduino via serial port (USB). In addition it serves as a bridge for the PWM signals captured by arduino from RC-receiver.
-* Arduino sketch takes care of several things:
-  * measuring PWM signal from RC-receiver, 
-  * publishing this received PWM to ROS
-  * listening for PWM commands produced by ai_driver and translated by steering_translator
-  * listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)
-  * shuts down throttle if there is no RC signal (safety measure)&lt;/p&gt;
+&lt;p&gt;The system consists of the following nodes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;raspicam_node&lt;/code&gt; - captures the images from Raspberry Pi camera and publishes to a ROS topic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ai_driver - takes the image and produces steering and throttle values. The values are normalized. The range is (-1, 1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;steering_translator - an auxiliary node that converts normalized steering to PWM signal for the servos.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;arduino bridge - listens to the converted steering topic and publishes the data to the arduino via serial port (USB). In addition it serves as a bridge for the PWM signals captured by arduino from RC-receiver.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arduino sketch takes care of several things:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;measuring PWM signal from RC-receiver, &lt;/li&gt;
+&lt;li&gt;publishing this received PWM to ROS&lt;/li&gt;
+&lt;li&gt;listening for PWM commands produced by ai_driver and translated by steering_translator&lt;/li&gt;
+&lt;li&gt;listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)&lt;/li&gt;
+&lt;li&gt;shuts down throttle if there is no RC signal (safety measure)&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;To be updated...&lt;/p&gt;
 &lt;p&gt;Main repository: &lt;a href="https://github.com/serge-m/sergem_robocar"&gt;https://github.com/serge-m/sergem_robocar&lt;/a&gt;&lt;/p&gt;</content><category term="robocar"></category><category term="donkeycar"></category><category term="ros"></category><category term="linux"></category><category term="robotics"></category><category term="raspberry"></category><category term="pi"></category><category term="robot"></category></entry><entry><title>ROS experience</title><link href="https://serge-m.github.io/ros-experience.html" rel="alternate"></link><published>2019-08-24T20:32:00+02:00</published><updated>2019-08-24T20:32:00+02:00</updated><author><name>SergeM</name></author><id>tag:serge-m.github.io,2019-08-24:/ros-experience.html</id><summary type="html">&lt;p&gt;Here will be some notes on ROS.&lt;/p&gt;
 &lt;h2&gt;ROS on raspberry pi&lt;/h2&gt;

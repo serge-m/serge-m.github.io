@@ -59,15 +59,15 @@ The system consists of the following nodes.
 
 * Arduino sketch takes care of several things:
 
-  * measuring PWM signal from RC-receiver, 
+    * measuring PWM signal from RC-receiver, 
 
-  * publishing this received PWM to ROS
+    * publishing this received PWM to ROS
   
-  * listening for PWM commands produced by ai_driver and translated by steering_translator
+    * listening for PWM commands produced by ai_driver and translated by steering_translator
   
-  * listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)
+    * listening for a special topic that controls which PWM to use (one from radio or one from ai_driver)
   
-  * shuts down throttle if there is no RC signal (safety measure)
+    * shuts down throttle if there is no RC signal (safety measure)
 
 
 To be updated...

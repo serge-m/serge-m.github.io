@@ -48,10 +48,15 @@ In the future I'll probably add some more user-friendly interface for that.
 
 
 The system consists of the following nodes.
+
 * `raspicam_node` - captures the images from Raspberry Pi camera and publishes to a ROS topic
+
 * ai_driver - takes the image and produces steering and throttle values. The values are normalized. The range is (-1, 1).
+
 * steering_translator - an auxiliary node that converts normalized steering to PWM signal for the servos.
+
 * arduino bridge - listens to the converted steering topic and publishes the data to the arduino via serial port (USB). In addition it serves as a bridge for the PWM signals captured by arduino from RC-receiver.
+
 * Arduino sketch takes care of several things:
   * measuring PWM signal from RC-receiver, 
   * publishing this received PWM to ROS

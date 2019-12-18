@@ -16,7 +16,9 @@ Here is my first version:
 
 The second version is built upon a stock RC car Absima Abs1
 
-![](media/2019-09-robocar/absima_abs1_unpacked.jpg)
+![Robocar RC car base](media/2019-09-robocar/absima_abs1_unpacked.jpg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xK2RTwvaCCo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 The default choice of the software for the robot was a project called [donkeycar](https://github.com/autorope/donkeycar). Donkeycar implements a driving stack in python. The AI is based on end-to-end machine learning model.

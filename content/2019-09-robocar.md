@@ -72,7 +72,8 @@ The system consists of the following nodes.
     * shuts down throttle if there is no RC signal (safety measure)
 
 
-To be updated...
-
-
 Main repository: [https://github.com/serge-m/sergem_robocar](https://github.com/serge-m/sergem_robocar)
+
+[Wiki](https://github.com/serge-m/sergem_robocar/wiki/)
+
+[Some collected data to train your AI driver](https://github.com/serge-m/sergem_robocar/wiki/Training-AI-driver)

@@ -4,6 +4,9 @@ Capture PWM signal using Arduino
 :date: 2019-01-01 10:02
 
 This is a draft.
+
+link to the gist: https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729
+
 See below intra-site link examples in reStructuredText format.
 
 Title: 2019-12-capture-pwm-signal-using-arduino.rst

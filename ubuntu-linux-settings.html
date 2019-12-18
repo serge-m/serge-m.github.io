@@ -139,7 +139,7 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 </ol>
 <h2>Desktop, workspaces and gnome extensions settings in Ubuntu 18.04</h2>
 <h3>only show applications of current workspace in launcher:</h3>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">dconf</span><span class="o">-</span><span class="n">editor</span>
+<div class="highlight"><pre><span></span><span class="err">sudo apt install dconf-editor</span>
 </pre></div>
 
 
@@ -154,7 +154,7 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 <h2>Autocomplete in shell</h2>
 <p>See <a href="/autocomplete-from-history-in-terminal.html">autocomplete from history in terminal</a></p>
 <h2>Set <code>nemo</code> as default file manager</h2>
-<div class="highlight"><pre><span></span><span class="n">xdg</span><span class="o">-</span><span class="n">mime</span> <span class="k">default</span> <span class="n">nemo</span><span class="p">.</span><span class="n">desktop</span> <span class="n">inode</span><span class="o">/</span><span class="n">directory</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">gnome</span><span class="o">-</span><span class="n">saved</span><span class="o">-</span><span class="k">search</span>
+<div class="highlight"><pre><span></span><span class="err">xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search</span>
 </pre></div>
 
 
@@ -180,32 +180,32 @@ complete -F _fab_completion fab
 <p><a href="http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/">Source</a></p>
 <h2>Default permissions for directories</h2>
 <p>By default when you call <code>mkdir abc</code> the following permissions are created </p>
-<div class="highlight"><pre><span></span><span class="n">u</span><span class="o">=</span><span class="n">rwx</span><span class="p">,</span><span class="k">g</span><span class="o">=</span><span class="n">rx</span><span class="p">,</span><span class="n">o</span><span class="o">=</span><span class="n">rx</span>
+<div class="highlight"><pre><span></span><span class="err">u=rwx,g=rx,o=rx</span>
 </pre></div>
 
 
 <p>That means that other users, also other groups, will be able to read and execute your files. That is a legacy setting. you can change it by replacing</p>
-<div class="highlight"><pre><span></span><span class="n">UMASK</span>       <span class="mi">002</span> 
+<div class="highlight"><pre><span></span><span class="err">UMASK       002 </span>
 </pre></div>
 
 
 <p>with </p>
-<div class="highlight"><pre><span></span><span class="n">UMASK</span>       <span class="mi">077</span>
+<div class="highlight"><pre><span></span><span class="err">UMASK       077</span>
 </pre></div>
 
 
 <p>in file <code>/etc/login.defs</code>. Here is the quote from this file:</p>
-<div class="highlight"><pre><span></span># <span class="nv">UMASK</span> <span class="nv">is</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">umask</span> <span class="nv">value</span> <span class="k">for</span> <span class="nv">pam_umask</span> <span class="nv">and</span> <span class="nv">is</span> <span class="nv">used</span> <span class="nv">by</span>
-# <span class="nv">useradd</span> <span class="nv">and</span> <span class="nv">newusers</span> <span class="nv">to</span> <span class="nv">set</span> <span class="nv">the</span> <span class="nv">mode</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">new</span> <span class="nv">home</span> <span class="nv">directories</span>.
-# <span class="mi">022</span> <span class="nv">is</span> <span class="nv">the</span> <span class="s2">&quot;</span><span class="s">historical</span><span class="s2">&quot;</span> <span class="nv">value</span> <span class="nv">in</span> <span class="nv">Debian</span> <span class="k">for</span> <span class="nv">UMASK</span>
-# <span class="mi">027</span>, <span class="nv">or</span> <span class="nv">even</span> <span class="mi">077</span>, <span class="nv">could</span> <span class="nv">be</span> <span class="nv">considered</span> <span class="nv">better</span> <span class="k">for</span> <span class="nv">privacy</span>
-# <span class="nv">There</span> <span class="nv">is</span> <span class="nv">no</span> <span class="nv">One</span> <span class="nv">True</span> <span class="nv">Answer</span> <span class="nv">here</span> : <span class="nv">each</span> <span class="nv">sysadmin</span> <span class="nv">must</span> <span class="nv">make</span> <span class="nv">up</span> <span class="nv">his</span><span class="o">/</span><span class="nv">her</span>
-# <span class="nv">mind</span>.
-#
-# <span class="k">If</span> <span class="nv">USERGROUPS_ENAB</span> <span class="nv">is</span> <span class="nv">set</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">yes</span><span class="s2">&quot;</span>, <span class="nv">that</span> <span class="nv">will</span> <span class="nv">modify</span> <span class="nv">this</span> <span class="nv">UMASK</span> <span class="nv">default</span> <span class="nv">value</span>
-# <span class="k">for</span> <span class="nv">private</span> <span class="nv">user</span> <span class="nv">groups</span>, <span class="nv">i</span>. <span class="nv">e</span>. <span class="nv">the</span> <span class="nv">uid</span> <span class="nv">is</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">gid</span>, <span class="nv">and</span> <span class="nv">username</span> <span class="nv">is</span>
-# <span class="nv">the</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">the</span> <span class="nv">primary</span> <span class="nv">group</span> <span class="nv">name</span>: <span class="k">for</span> <span class="nv">these</span>, <span class="nv">the</span> <span class="nv">user</span> <span class="nv">permissions</span> <span class="nv">will</span> <span class="nv">be</span>
-# <span class="nv">used</span> <span class="nv">as</span> <span class="nv">group</span> <span class="nv">permissions</span>, <span class="nv">e</span>. <span class="nv">g</span>. <span class="mi">022</span> <span class="nv">will</span> <span class="nv">become</span> <span class="mi">002</span>.
+<div class="highlight"><pre><span></span><span class="err"># UMASK is the default umask value for pam_umask and is used by</span>
+<span class="err"># useradd and newusers to set the mode of the new home directories.</span>
+<span class="err"># 022 is the &quot;historical&quot; value in Debian for UMASK</span>
+<span class="err"># 027, or even 077, could be considered better for privacy</span>
+<span class="err"># There is no One True Answer here : each sysadmin must make up his/her</span>
+<span class="err"># mind.</span>
+<span class="err">#</span>
+<span class="err"># If USERGROUPS_ENAB is set to &quot;yes&quot;, that will modify this UMASK default value</span>
+<span class="err"># for private user groups, i. e. the uid is the same as gid, and username is</span>
+<span class="err"># the same as the primary group name: for these, the user permissions will be</span>
+<span class="err"># used as group permissions, e. g. 022 will become 002.</span>
 </pre></div>
 
 
@@ -292,17 +292,11 @@ complete -F _fab_completion fab
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
@@ -323,10 +317,16 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -338,10 +338,25 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -350,10 +365,13 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -364,17 +382,20 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -397,9 +418,6 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -419,6 +437,15 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
@@ -427,29 +454,17 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -472,9 +487,6 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
     </li>
@@ -493,32 +505,29 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/slides.html">slides</a>
@@ -532,11 +541,11 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -545,10 +554,7 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -560,16 +566,13 @@ complete -F _fab_completion fab
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -580,14 +583,11 @@ complete -F _fab_completion fab
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

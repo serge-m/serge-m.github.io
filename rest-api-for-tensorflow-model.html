@@ -128,32 +128,32 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
 <p><code>bazel-bin</code> directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). </p>
 <h3>Compiled examples for tensorflow serving</h3>
 <p>Download compiled examples <a href="https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing">here</a> and extract files:</p>
-<div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">xf</span> <span class="p">.</span><span class="o">/</span><span class="n">bazel</span><span class="o">-</span><span class="n">bin</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<div class="highlight"><pre><span></span><span class="err">tar xf ./bazel-bin.tar.gz</span>
 </pre></div>
 
 
 <p>The package contains compiled tensorflow serving app and example apps. </p>
 <p>I prefer to run it in python virtual environment. Let's create one and install needed packages:</p>
-<div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python2</span><span class="p">.</span><span class="mi">7</span> <span class="n">py2</span>
-<span class="k">source</span> <span class="p">.</span><span class="o">/</span><span class="n">py2</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">mock</span> <span class="n">grpcio</span>
+<div class="highlight"><pre><span></span><span class="err">virtualenv -p python2.7 py2</span>
+<span class="err">source ./py2/bin/activate</span>
+<span class="err">pip install numpy mock grpcio</span>
 </pre></div>
 
 
 <p>To make compiled scripts use python from virtual environment we should patch wrapper files. 
 For example <code>bazel-bin/tensorflow_serving/example/mnist_saved_model</code> is a wrapper script for <code>mnist_saved_model.py</code>. </p>
 <p>We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use <code>nano</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">nano</span> <span class="n">bazel</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">tensorflow_serving</span><span class="o">/</span><span class="n">example</span><span class="o">/</span><span class="n">mnist_saved_model</span> 
+<div class="highlight"><pre><span></span><span class="err">nano bazel-bin/tensorflow_serving/example/mnist_saved_model </span>
 </pre></div>
 
 
 <p>Replace</p>
-<div class="highlight"><pre><span></span><span class="n">PYTHON_BINARY</span> <span class="o">=</span> <span class="s1">&#39;/usr/bin/python&#39;</span>
+<div class="highlight"><pre><span></span><span class="err">PYTHON_BINARY = &#39;/usr/bin/python&#39;</span>
 </pre></div>
 
 
 <p>with </p>
-<div class="highlight"><pre><span></span><span class="n">PYTHON_BINARY</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
+<div class="highlight"><pre><span></span><span class="err">PYTHON_BINARY = &#39;python&#39;</span>
 </pre></div>
 
 
@@ -165,14 +165,14 @@ For example <code>bazel-bin/tensorflow_serving/example/mnist_saved_model</code> 
 </details>
 
 <p>Now we can run a commands from Tensorflow Serving tutorial:</p>
-<div class="highlight"><pre><span></span><span class="n">bazel</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">tensorflow_serving</span><span class="o">/</span><span class="n">example</span><span class="o">/</span><span class="n">mnist_saved_model</span> <span class="c1">--training_iteration=100 --model_version=1 /tmp/mnist_model</span>
+<div class="highlight"><pre><span></span><span class="err">bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model</span>
 </pre></div>
 
 
 <h3>Possible issues</h3>
 <h4>ImportError: No module named grpc.beta</h4>
 <p>Solution:</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">grpcio</span>
+<div class="highlight"><pre><span></span><span class="err">sudo pip install grpcio</span>
 </pre></div>
 
 
@@ -207,7 +207,7 @@ Error message example:</p>
 
 
 <p>in</p>
-<div class="highlight"><pre><span></span><span class="n">bazel</span><span class="o">-</span><span class="n">bin</span><span class="o">/</span><span class="n">tensorflow_serving</span><span class="o">/</span><span class="n">example</span><span class="o">/</span><span class="n">mnist_saved_model</span><span class="p">.</span><span class="n">runfiles</span><span class="o">/</span><span class="n">org_tensorflow</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">contrib</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">__init__</span><span class="p">.</span><span class="n">py</span>
+<div class="highlight"><pre><span></span><span class="err">bazel-bin/tensorflow_serving/example/mnist_saved_model.runfiles/org_tensorflow/tensorflow/contrib/image/__init__.py</span>
 </pre></div>
 
 
@@ -293,17 +293,11 @@ Error message example:</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
@@ -324,10 +318,16 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -339,10 +339,25 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -351,10 +366,13 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -365,17 +383,20 @@ Error message example:</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -398,9 +419,6 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -420,6 +438,15 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
@@ -428,29 +455,17 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -473,9 +488,6 @@ Error message example:</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
     </li>
@@ -494,32 +506,29 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/slides.html">slides</a>
@@ -533,11 +542,11 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -546,10 +555,7 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -561,16 +567,13 @@ Error message example:</p>
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -581,14 +584,11 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

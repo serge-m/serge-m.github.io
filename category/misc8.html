@@ -146,7 +146,7 @@ http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublim
                 </div>
                 <div class="summary"><p>Finally I solved the problem with broken clang compilation
 I always got message</p>
-<div class="highlight"><pre><span></span>    <span class="o">&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">p1</span><span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="nv">span</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">font-family: Courier New, Courier, monospace;</span><span class="s2">&quot;</span><span class="o">&gt;</span><span class="nv">ld</span>: <span class="nv">malformed</span> <span class="nv">archive</span> <span class="nv">TOC</span> <span class="nv">entry</span> <span class="k">for</span> <span class="o">&lt;</span><span class="nv">long</span> <span class="nv">strange</span> <span class="nv">identifier</span><span class="o">&gt;</span>, <span class="nv">offset</span> <span class="mi">362137760</span> <span class="nv">is</span> <span class="nv">beyond</span> <span class="k">end</span> <span class="nv">of</span> <span class="nv">file</span> <span class="mi">303710208</span><span class="o">&lt;/</span><span class="nv">span</span><span class="o">&gt;&lt;/</span><span class="nv">div</span><span class="o">&gt;&lt;</span><span class="nv">div</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">p1</span><span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="nv">span</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">font-family: Courier New …</span></pre></div>
+<div class="highlight"><pre><span></span>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New, Courier, monospace;&quot;</span><span class="nt">&gt;</span>ld: malformed archive TOC entry for <span class="nt">&lt;long</span> <span class="err">strange</span> <span class="err">identifier</span><span class="nt">&gt;</span>, offset 362137760 is beyond end of file 303710208<span class="nt">&lt;/span&gt;&lt;/div&gt;&lt;div</span> <span class="na">class=</span><span class="s">&quot;p1&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">style=</span><span class="s">&quot;font-family: Courier New …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/clang-error-linker-command-failed-with.html">more ...</a>
                 </div>
 
@@ -331,18 +331,18 @@ nvidia (1)</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><h2>create table named t3 (id, value). id is integer. value is text</h2>
-<div class="highlight"><pre><span></span><span class="nv">sqlite</span><span class="o">&gt;</span> <span class="nv">create</span> <span class="nv">table</span> <span class="k">if</span> <span class="nv">not</span> <span class="nv">exists</span> <span class="nv">t3</span><span class="ss">(</span> <span class="nv">id</span> <span class="nv">int</span> , <span class="nv">value</span> <span class="nv">varchar</span>, <span class="nv">primary</span> <span class="nv">key</span><span class="ss">(</span><span class="nv">id</span><span class="ss">))</span><span class="c1">;</span>
+<div class="highlight"><pre><span></span><span class="err">sqlite&gt; create table if not exists t3( id int , value varchar, primary key(id));</span>
 </pre></div>
 
 
 <h2>adding two "rows"</h2>
-<div class="highlight"><pre><span></span><span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t3</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">);</span>
-<span class="n">sqlite</span><span class="o">&gt;</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">t3</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><span class="err">sqlite&gt; insert into t3 (id, value) values (1, &#39;a&#39;);</span>
+<span class="err">sqlite&gt; insert into t3 (id, value) values (2, &#39;b&#39;);</span>
 </pre></div>
 
 
 <h2>display results</h2>
-<div class="highlight"><pre><span></span><span class="n">sqlite …</span></pre></div>
+<div class="highlight"><pre><span></span><span class="err">sqlite …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/learning-sqlite.html">more ...</a>
                 </div>
 
@@ -454,16 +454,16 @@ nvidia (1)</p>
                 </div>
                 <div class="summary"><p>I used _tabularx _package.
 Additional definitions:  </p>
-<div class="highlight"><pre><span></span>    <span class="err">\</span><span class="n">usepackage</span><span class="err">{</span><span class="nb">array</span><span class="err">}</span>
-    <span class="err">\</span><span class="n">newcolumntype</span><span class="err">{</span><span class="n">L</span><span class="err">}{</span><span class="o">&gt;</span><span class="err">{\</span><span class="n">raggedright</span><span class="err">\</span><span class="n">arraybackslash</span><span class="err">}</span><span class="n">X</span><span class="err">}</span> <span class="o">%</span> <span class="k">left</span> <span class="n">multiline</span> <span class="n">alignment</span>
-    <span class="err">\</span><span class="n">newcolumntype</span><span class="err">{</span><span class="n">R</span><span class="err">}{</span><span class="o">&gt;</span><span class="err">{\</span><span class="n">raggedleft</span><span class="err">\</span><span class="n">arraybackslash</span><span class="err">}</span><span class="n">X</span><span class="err">}</span>  <span class="o">%</span> <span class="k">right</span> <span class="n">multiline</span> <span class="n">alignment</span>
+<div class="highlight"><pre><span></span><span class="err">    \usepackage{array}</span>
+<span class="err">    \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment</span>
+<span class="err">    \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment</span>
 </pre></div>
 
 
 <p>Table:</p>
-<div class="highlight"><pre><span></span>    \<span class="nv">begin</span>{<span class="nv">tabularx</span>}{\<span class="nv">textwidth</span>}{@{}<span class="nv">p</span>{<span class="mi">0</span>.<span class="mi">8</span>\<span class="nv">linewidth</span>} <span class="nv">R</span>}
-     <span class="nv">Text</span>, <span class="nv">aligned</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">left</span>, <span class="nv">without</span> <span class="nv">margin</span> \<span class="nv">newline</span>
-     <span class="nv">Tex</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">cell</span> <span class="nv">on</span> <span class="nv">the</span> <span class="k">next</span> <span class="nv">line …</span></pre></div>
+<div class="highlight"><pre><span></span><span class="err">    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}</span>
+<span class="err">     Text, aligned to the left, without margin \newline</span>
+<span class="err">     Tex in the same cell on the next line …</span></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tables-in-latex-multiline-right.html">more ...</a>
                 </div>
 
@@ -708,20 +708,20 @@ A guy made a script according to proposed instructions: https://github.com/onepr
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Example from Meyers "Effective C++"</p>
-<div class="highlight"><pre><span></span>    <span class="nv">class</span> <span class="nv">Timer</span> {
-    <span class="nv">public</span>:
-    <span class="nv">explicit</span> <span class="nv">Timer</span><span class="ss">(</span><span class="nv">int</span> <span class="nv">tickFrequency</span><span class="ss">)</span><span class="c1">;</span>
-    <span class="nv">virtual</span> <span class="nv">void</span> <span class="nv">onTick</span><span class="ss">()</span> <span class="nv">const</span><span class="c1">; // Called automatically for each tic, </span>
-    <span class="o">//</span> <span class="nv">onTick</span><span class="ss">()</span> <span class="nv">must</span> <span class="nv">be</span> <span class="nv">redefined</span> <span class="nv">to</span> <span class="k">do</span> <span class="nv">things</span>
+<div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="n">Timer</span> {
+    <span class="n">public:</span>
+    <span class="n">explicit</span> <span class="n">Timer</span>(<span class="nb">int</span> <span class="n">tickFrequency</span>);
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="nb">each</span> <span class="n">tic</span>,<span class="sr"> </span>
+<span class="sr">    //</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="k">do</span> <span class="n">things</span>
     ...
-    }<span class="c1">;</span>
+    };
 
 
-    <span class="nv">class</span> <span class="nv">Widget</span>: <span class="nv">private</span> <span class="nv">Timer</span> { <span class="o">//</span> <span class="nv">private</span> <span class="nv">inheritance</span>
-    <span class="nv">private</span>:
-    <span class="nv">virtual</span> <span class="nv">void</span> <span class="nv">onTick</span><span class="ss">()</span> <span class="nv">const</span><span class="c1">; // redefined to make job done</span>
+    <span class="k">class</span> <span class="n">Widget:</span> <span class="n">private</span> <span class="n">Timer</span> { // <span class="n">private</span> <span class="n">inheritance</span>
+    <span class="n">private:</span>
+    <span class="n">virtual</span> <span class="nb">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="n">done</span>
     ... 
-    }<span class="c1">;</span>
+    };
 </pre></div>
 
 
@@ -802,17 +802,11 @@ A guy made a script according to proposed instructions: https://github.com/onepr
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
@@ -833,10 +827,16 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -848,10 +848,25 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -860,10 +875,13 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -874,17 +892,20 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -907,9 +928,6 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -929,6 +947,15 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
@@ -937,29 +964,17 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -982,9 +997,6 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
     </li>
@@ -1003,32 +1015,29 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/slides.html">slides</a>
@@ -1042,11 +1051,11 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1055,10 +1064,7 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -1070,16 +1076,13 @@ A guy made a script according to proposed instructions: https://github.com/onepr
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -1090,14 +1093,11 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

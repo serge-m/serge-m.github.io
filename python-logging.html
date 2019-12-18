@@ -147,7 +147,7 @@ How can I disable log messages from the Requests library?</p>
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>
-                    <span class="n">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2">|</span><span class="si">%(name)-20.20s</span><span class="s2">|</span><span class="si">%(levelname)-5.5s</span><span class="s2">|</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2">|</span><span class="si">%(name)-20.20s</span><span class="s2">|</span><span class="si">%(levelname)-5.5s</span><span class="s2">|</span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;urllib3&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
 
 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Info message&quot;</span><span class="p">)</span>
@@ -161,43 +161,43 @@ How can I disable log messages from the Requests library?</p>
 <h2>Setup logging in Flask</h2>
 <p>In this <b>example</b> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.</p>
 <p>logging_config.py:</p>
-<div class="highlight"><pre><span></span><span class="nv">logging_config</span> <span class="o">=</span> {
-    <span class="s2">&quot;</span><span class="s">version</span><span class="s2">&quot;</span>: <span class="mi">1</span>,
-    <span class="s2">&quot;</span><span class="s">disable_existing_loggers</span><span class="s2">&quot;</span>: <span class="nv">False</span>,
-    <span class="s2">&quot;</span><span class="s">formatters</span><span class="s2">&quot;</span>: {
-        <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>: {
-            <span class="s2">&quot;</span><span class="s">format</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span><span class="s2">&quot;</span>
-        }
-    },
-    <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: {
-        <span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>: {
-            <span class="s2">&quot;</span><span class="s">class</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">logging.StreamHandler</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">formatter</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">stream</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">ext://sys.stdout</span><span class="s2">&quot;</span>
-        },
-        <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>: {
-            <span class="s2">&quot;</span><span class="s">class</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">logging.handlers.RotatingFileHandler</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">formatter</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">filename</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">log.txt</span><span class="s2">&quot;</span>,
-            <span class="s2">&quot;</span><span class="s">maxBytes</span><span class="s2">&quot;</span>: <span class="mi">10485760</span>,
-            <span class="s2">&quot;</span><span class="s">backupCount</span><span class="s2">&quot;</span>: <span class="mi">20</span>,
-            <span class="s2">&quot;</span><span class="s">encoding</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">utf8</span><span class="s2">&quot;</span>
-        }
-    },
-    <span class="s2">&quot;</span><span class="s">loggers</span><span class="s2">&quot;</span>: { # <span class="nv">here</span> <span class="nv">you</span> <span class="nv">can</span> <span class="nv">add</span> <span class="nv">specific</span> <span class="nv">configuration</span> <span class="k">for</span> <span class="nv">other</span> <span class="nv">libraries</span>
-        <span class="s2">&quot;</span><span class="s">werkzeug</span><span class="s2">&quot;</span>: {
-            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>, # <span class="nv">change</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">ERROR</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">see</span> <span class="nv">less</span> <span class="nv">logs</span> <span class="nv">from</span> <span class="nv">flask</span>
-            <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: [<span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>],
-            <span class="s2">&quot;</span><span class="s">propagate</span><span class="s2">&quot;</span>: <span class="nv">False</span> # <span class="nv">required</span> <span class="nv">to</span> <span class="nv">avoid</span> <span class="nv">double</span> <span class="nv">logging</span>
-        }
-    },
-    <span class="s2">&quot;</span><span class="s">root</span><span class="s2">&quot;</span>: {
-        <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
-        <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: [<span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>]
-    }
-}
+<div class="highlight"><pre><span></span><span class="err">logging_config = {</span>
+<span class="err">    &quot;version&quot;: 1,</span>
+<span class="err">    &quot;disable_existing_loggers&quot;: False,</span>
+<span class="err">    &quot;formatters&quot;: {</span>
+<span class="err">        &quot;simple&quot;: {</span>
+<span class="err">            &quot;format&quot;: &quot;%(asctime)s - %(name)s - %(levelname)s - %(message)s&quot;</span>
+<span class="err">        }</span>
+<span class="err">    },</span>
+<span class="err">    &quot;handlers&quot;: {</span>
+<span class="err">        &quot;console&quot;: {</span>
+<span class="err">            &quot;class&quot;: &quot;logging.StreamHandler&quot;,</span>
+<span class="err">            &quot;level&quot;: &quot;INFO&quot;,</span>
+<span class="err">            &quot;formatter&quot;: &quot;simple&quot;,</span>
+<span class="err">            &quot;stream&quot;: &quot;ext://sys.stdout&quot;</span>
+<span class="err">        },</span>
+<span class="err">        &quot;info_file_handler&quot;: {</span>
+<span class="err">            &quot;class&quot;: &quot;logging.handlers.RotatingFileHandler&quot;,</span>
+<span class="err">            &quot;level&quot;: &quot;INFO&quot;,</span>
+<span class="err">            &quot;formatter&quot;: &quot;simple&quot;,</span>
+<span class="err">            &quot;filename&quot;: &quot;log.txt&quot;,</span>
+<span class="err">            &quot;maxBytes&quot;: 10485760,</span>
+<span class="err">            &quot;backupCount&quot;: 20,</span>
+<span class="err">            &quot;encoding&quot;: &quot;utf8&quot;</span>
+<span class="err">        }</span>
+<span class="err">    },</span>
+<span class="err">    &quot;loggers&quot;: { # here you can add specific configuration for other libraries</span>
+<span class="err">        &quot;werkzeug&quot;: {</span>
+<span class="err">            &quot;level&quot;: &quot;INFO&quot;, # change to &quot;ERROR&quot; if you want to see less logs from flask</span>
+<span class="err">            &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;],</span>
+<span class="err">            &quot;propagate&quot;: False # required to avoid double logging</span>
+<span class="err">        }</span>
+<span class="err">    },</span>
+<span class="err">    &quot;root&quot;: {</span>
+<span class="err">        &quot;level&quot;: &quot;INFO&quot;,</span>
+<span class="err">        &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;]</span>
+<span class="err">    }</span>
+<span class="err">}</span>
 </pre></div>
 
 
@@ -209,7 +209,7 @@ How can I disable log messages from the Requests library?</p>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;Hello, World!&quot;</span>
 
@@ -225,7 +225,7 @@ How can I disable log messages from the Requests library?</p>
 <span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
 
-<span class="k">def</span> <span class="nf">prepare_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">filename_template</span><span class="o">=</span><span class="s2">&quot;logs/notebook_log_{}.txt&quot;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">prepare_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="n">filename_template</span><span class="o">=</span><span class="s2">&quot;logs/notebook_log_</span><span class="si">{}</span><span class="s2">.txt&quot;</span><span class="p">):</span>
   <span class="k">def</span> <span class="nf">prepare_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">):</span>
     <span class="n">handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
     <span class="n">handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
@@ -325,17 +325,11 @@ How can I disable log messages from the Requests library?</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
@@ -356,10 +350,16 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+      <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -371,10 +371,25 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/dataset.html">dataset</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -383,10 +398,13 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/draft.html">draft</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -397,17 +415,20 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -430,9 +451,6 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
@@ -452,6 +470,15 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
@@ -460,29 +487,17 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/metric.html">metric</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -505,9 +520,6 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
     </li>
@@ -526,32 +538,29 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
+      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/slides.html">slides</a>
@@ -565,11 +574,11 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -578,10 +587,7 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -593,16 +599,13 @@ How can I disable log messages from the Requests library?</p>
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
+      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -613,14 +616,11 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

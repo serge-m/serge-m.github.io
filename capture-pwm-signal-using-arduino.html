@@ -12,13 +12,13 @@
 <link rel="canonical" href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="This is a draft. link to the gist: https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729 window.PlotlyConfig = {MathJaxConfig: &#39;local&#39;}; /** * plotly.js v1.51.1 * Copyright 2012-2019, Plotly, Inc. * All rights reserved. * Licensed under the MIT license */ !function(t){if(&#34;object&#34;==typeof exports&amp;&amp;&#34;undefined&#34;!=typeof module)module.exports=t();else if(&#34;function …" />
+        <meta name="description" content="Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Capture PWM signal using Arduino"/>
         <meta property="og:url" content="https://serge-m.github.io/capture-pwm-signal-using-arduino.html"/>
-        <meta property="og:description" content="This is a draft. link to the gist: https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729 window.PlotlyConfig = {MathJaxConfig: &#39;local&#39;}; /** * plotly.js v1.51.1 * Copyright 2012-2019, Plotly, Inc. * All rights reserved. * Licensed under the MIT license */ !function(t){if(&#34;object&#34;==typeof exports&amp;&amp;&#34;undefined&#34;!=typeof module)module.exports=t();else if(&#34;function …"/>
+        <meta property="og:description" content="Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends …"/>
         <meta property="article:published_time" content="2019-01-01" />
             <meta property="article:section" content="misc" />
             <meta property="article:author" content="SergeM" />
@@ -98,8 +98,148 @@ sergem personal public notebook            </a>
 
     
 </footer><!-- /.post-info -->                </div>
-                <p>This is a draft.</p>
-<p>link to the gist: <a class="reference external" href="https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729">https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729</a></p>
+                <div class="section" id="parsing-pwm-signals">
+<h2>Parsing PWM signals</h2>
+<p>For my <a class="reference external" href="robocar.html">robocar project</a> I needed to understand the mechanism of pulse width modulation of the remote control.</p>
+<p>My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning.
+Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</p>
+<p>For analysis of the PWM signal I have found a library <tt class="docutils literal">PinChangeInterrupt</tt>:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;PinChangeInterrupt.h&gt;</span><span class="cp"></span>
+</pre></div>
+<p>the wires from the receiver are connected to the pins 10 and 11 of my arduino nano:</p>
+<div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">pin_pwm_in_steering</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">pin_pwm_in_throttle</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+<p>Let's create <tt class="docutils literal">PwmListener</tt> class that listens to the interrupts on the given pin and returns the width of the last impulse.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PwmListener</span>
+<span class="p">{</span>
+  <span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">pwm_value_</span><span class="p">;</span>   <span class="c1">// last pwm value</span>
+  <span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">prev_time_</span><span class="p">;</span> <span class="c1">// last time of the impulse</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">pin</span><span class="p">;</span> <span class="c1">// pin to listen</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">pin_as_pc_int</span><span class="p">;</span> <span class="c1">// pin index according to PC int</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">PwmListener</span><span class="p">(</span><span class="kt">int</span> <span class="n">pin_</span><span class="p">,</span> <span class="kt">int</span> <span class="n">default_value</span><span class="p">);</span>
+
+  <span class="c1">// this function will be called on the interrupts</span>
+  <span class="kt">void</span> <span class="nf">process</span><span class="p">();</span>
+
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf">micros_since_last_signal</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+  <span class="c1">// return the latest pwm value</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">value</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf">prev_time_micros</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>Full code:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PwmListener</span>
+<span class="p">{</span>
+  <span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">pwm_value_</span><span class="p">;</span>
+  <span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">prev_time_</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">pin</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">pin_as_pc_int</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">PwmListener</span><span class="p">(</span><span class="kt">int</span> <span class="n">pin_</span><span class="p">,</span> <span class="kt">int</span> <span class="n">default_value</span><span class="p">)</span><span class="o">:</span>
+    <span class="n">pin</span><span class="p">(</span><span class="n">pin_</span><span class="p">),</span> <span class="n">pwm_value_</span><span class="p">(</span><span class="n">default_value</span><span class="p">),</span> <span class="n">prev_time_</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">pin_as_pc_int</span><span class="p">(</span><span class="n">digitalPinToPCINT</span><span class="p">(</span><span class="n">pin_</span><span class="p">))</span>
+  <span class="p">{}</span>
+
+  <span class="kt">void</span> <span class="n">process</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="n">trigger</span> <span class="o">=</span> <span class="n">getPinChangeInterruptTrigger</span><span class="p">(</span><span class="n">pin_as_pc_int</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">trigger</span> <span class="o">==</span> <span class="n">RISING</span><span class="p">)</span>
+      <span class="n">prev_time_</span> <span class="o">=</span> <span class="n">micros</span><span class="p">();</span>
+    <span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">trigger</span> <span class="o">==</span> <span class="n">FALLING</span><span class="p">)</span>
+      <span class="n">pwm_value_</span> <span class="o">=</span> <span class="n">micros_since_last_signal</span><span class="p">();</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// Wrong usage</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">micros_since_last_signal</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">micros</span><span class="p">()</span> <span class="o">-</span> <span class="n">prev_time_</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pwm_value_</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">prev_time_micros</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">prev_time_</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+<p>now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer.</p>
+<div class="highlight"><pre><span></span><span class="n">PwmListener</span> <span class="nf">pwm_listener_steering</span> <span class="p">(</span><span class="n">pin_pwm_in_steering</span><span class="p">,</span> <span class="n">DEFAULT_PULSE_WIDTH</span><span class="p">);</span>
+<span class="n">PwmListener</span> <span class="nf">pwm_listener_throttle</span> <span class="p">(</span><span class="n">pin_pwm_in_throttle</span><span class="p">,</span> <span class="n">DEFAULT_PULSE_WIDTH</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">interrupt_steering</span><span class="p">()</span> <span class="p">{</span> <span class="n">pwm_listener_steering</span><span class="p">.</span><span class="n">process</span><span class="p">();</span> <span class="p">}</span>
+<span class="kt">void</span> <span class="nf">interrupt_throttle</span><span class="p">()</span> <span class="p">{</span> <span class="n">pwm_listener_throttle</span><span class="p">.</span><span class="n">process</span><span class="p">();</span> <span class="p">}</span>
+</pre></div>
+<p>later in the <tt class="docutils literal">setup()</tt> function we have to set up the pins:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// starting input pwm monitoring...</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">pwm_listener_steering</span><span class="p">.</span><span class="n">pin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+  <span class="n">attachPinChangeInterrupt</span><span class="p">(</span><span class="n">pwm_listener_steering</span><span class="p">.</span><span class="n">pin_as_pc_int</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">interrupt_steering</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">pwm_listener_throttle</span><span class="p">.</span><span class="n">pin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+  <span class="n">attachPinChangeInterrupt</span><span class="p">(</span><span class="n">pwm_listener_throttle</span><span class="p">.</span><span class="n">pin_as_pc_int</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">interrupt_throttle</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+
+ <span class="c1">// setting up serial interface</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;info: waiting for output pwm controller...&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>on every loop we send the values to the host computer:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">steering</span> <span class="o">=</span>   <span class="n">pwm_listener_steering</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">throttle</span> <span class="o">=</span>   <span class="n">pwm_listener_throttle</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
+  <span class="c1">// avoiding unnecessary duplication by filtering out small perturbations</span>
+  <span class="k">if</span> <span class="p">(</span>
+    <span class="n">abs</span><span class="p">(</span><span class="n">steering</span> <span class="o">-</span> <span class="n">old_steering</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="o">||</span>
+    <span class="n">abs</span><span class="p">(</span><span class="n">throttle</span> <span class="o">-</span> <span class="n">old_throttle</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span>
+    <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&quot;in: %d %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">steering</span><span class="p">,</span> <span class="n">throttle</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+    <span class="n">old_steering</span> <span class="o">=</span> <span class="n">steering</span><span class="p">;</span>
+    <span class="n">old_throttle</span> <span class="o">=</span> <span class="n">throttle</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<p>We have also enabled the serial interface to report the values to the host machine (connected via USB).</p>
+<p>On the host machine we run python listener:</p>
+<div class="highlight"><pre><span></span>ports = [&#39;/dev/ttyUSB0&#39;, &#39;/dev/ttyUSB1&#39;]
+
+
+def main():
+    for port in ports:
+        print(&quot;connecting to port {}&quot;.format(port))
+        try:
+            with serial.Serial(port, 115200, timeout=0.01) as ser:
+                print(&#39;connected&#39;)
+                process(ser)
+                return
+        except serial.serialutil.SerialException as e:
+            if e.errno == 2:
+                continue
+            raise
+    raise FileNotFoundError(&quot;Unable to open ports {}&quot;.format(ports))
+
+
+def process(ser):
+    while(True):
+        line = ser.readline()  # read a &#39;\n&#39; terminated line
+        if line != b&#39;&#39;:
+            print(line)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</pre></div>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis</h2>
+<p>I have got the following graph (interactive):</p>
 <html>
 <head><meta charset="utf-8" /></head>
 <body>
@@ -130,8 +270,25 @@ sergem personal public notebook            </a>
             </script>
         </div>
 </body>
-</html><p>See below intra-site link examples in reStructuredText format.</p>
-<p>Tags: machine learning, fast.ai, segmentation, computer vision</p>
+</html><p>Let's consider steering series. It has three parts.</p>
+<ol class="arabic simple">
+<li>actual signal. The values are around 1380. The change couple of times. That corresponds to what I actually did.</li>
+<li>Some strange signal values around 10000. I don't know what is it.</li>
+<li>Some rare noise in between. I also don't know why it's there.</li>
+</ol>
+<p>We still can use that values with some filtering of the outliers.</p>
+<p>Another interesting thing is that steering and throttle channels have different default values. For steering it is 1380 and for throttle it is 1540. I could adjust that values a bit, but anyway it is around 1400 for one and 1500 for another.</p>
+<p>At the same time when I send PWM signal generated by Arduino I have to use 1400 as default for both to make it work properly. I don't know what causes that shift in my measurements.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See also</h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729">gist with the data</a></li>
+<li><a class="reference external" href="robocar.html">robocar project</a></li>
+<li><a class="reference external" href="https://github.com/serge-m/sergem_robocar">robocar main repository</a></li>
+<li><a class="reference external" href="https://github.com/serge-m/sergem_robocar/wiki">wiki</a> for robocar</li>
+</ol>
+</div>
 
             </div>
             <!-- /.entry-content -->
@@ -210,17 +367,23 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/airflow.html">airflow</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/api.html">API</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
+      <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -232,10 +395,25 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar-week.html">calendar week</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cinnamon.html">cinnamon</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -243,26 +421,32 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cv.html">cv</a>
+      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/eli5.html">eli5</a>
@@ -276,9 +460,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
@@ -290,9 +471,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -316,13 +494,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keys.html">keys</a>
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -337,7 +512,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/little-discovery.html">little discovery</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -351,6 +526,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
@@ -358,16 +536,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/motor-shield.html">motor shield</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -385,10 +560,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -414,26 +595,8 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sarcasm.html">sarcasm</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scripting.html">scripting</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -448,13 +611,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/svn.html">svn</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/terminal.html">terminal</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
@@ -463,19 +626,16 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/tests.html">tests</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/theano.html">theano</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/torch.html">torch</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
@@ -485,9 +645,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/video-editing.html">video editing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
@@ -499,13 +656,13 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
+      <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/workaround.html">workaround</a>
+      <a href="https://serge-m.github.io/tag/xcode.html">xcode</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

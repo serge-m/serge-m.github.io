@@ -86,13 +86,13 @@ and the signal should transition from high to low at tick :code:`end` (between 0
 There are special settings for full on and full off.
 Full on:
 
-.. code-block::
+.. code-block:: cpp
 
   pwm.setPWM(pin, 4096, 0);
 
 Full off:
 
-.. code-block::
+.. code-block:: cpp
 
   pwm.setPWM(pin, 0, 4096);
 

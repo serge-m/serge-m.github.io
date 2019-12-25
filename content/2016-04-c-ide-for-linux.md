@@ -5,7 +5,10 @@ Slug: c-plus-plus-ide-for-linux
 Tags: c++,useful
 
 
+UPD: It seems that the current solution (2019) is VSCode. It's free and powerful. There is a plenty of plugins. 
+
 CLion is awesome but expensive.
+
 
 Found [Codelite](http://www.codelite.org) on [http://stackoverflow.com/a/1775460](http://stackoverflow.com/a/1775460).
 Looks good. No disgust after 10 minutes of work.

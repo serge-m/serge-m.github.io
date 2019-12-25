@@ -6,6 +6,8 @@
 
 :slug: capture-pwm-signal-using-arduino
 
+:tags: arduino, pwm, robocar, pwm, c++
+
 
 Parsing PWM signals
 =======================

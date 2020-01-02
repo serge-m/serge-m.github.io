@@ -117,3 +117,7 @@ in file `/etc/login.defs`. Here is the quote from this file:
 * [Default permissions for directories](#default-permissions-for-directories)
 * [Add service in linux](add-service-in-linux.html)
 * [configuring ssh](/ssh-cheatsheet.html)
+
+
+# Appearance customization
+* [Change background of the lock screen in Ubuntu 18](https://askubuntu.com/questions/1042942/how-to-change-ubuntu-budgie-login-screen-background) (stackoverflow)

@@ -2,7 +2,7 @@ Title: linux life
 Author: SM!
 Date: 2014-06-02 23:18:00
 Slug: linux-life
-Tags: linux
+Tags: linux, ubuntu, console, cheatsheet
 
 
 ### Good start

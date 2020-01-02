@@ -2,7 +2,7 @@ Title: Ubuntu/linux settings
 Author: SergeM
 Date: 2018-01-11 08:00
 Slug: ubuntu-linux-settings
-Tags: linux,useful,settings,ubuntu,shell, ubuntu 18
+Tags: linux,useful,settings,ubuntu,shell, ubuntu 18, extensions, gui
 
 
 Some settings I find useful for a workstation

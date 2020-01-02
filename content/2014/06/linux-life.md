@@ -39,5 +39,5 @@ ccsm
 
 ### See also
 * more [here](/useful-console-commands.html)
-
+* Ubuntu customization: [ubuntu-linux-settings](ubuntu-linux-settings.html)
 

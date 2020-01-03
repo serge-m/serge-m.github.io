@@ -34,11 +34,11 @@ I had patched it significantly to make it work for my hardware.
 ## Hardware
 Donkeycar standard architecture looks like this:
 
-![Donkeycar standard architecture](media/2019-09-robocar/architecture_donkeycar_small.png)
+![Donkeycar standard architecture](media/2019-09-robocar/architecture_donkeycar_bb.png)
 
 I decided to introduce an intermediate layer of arduino that will (hopefully) protect my raspberry from undesired influence of high-current electornics of the car.
 
-![sergem robocar architecture with arduino](media/2019-09-robocar/architecture_robocar_small.png)
+![sergem robocar architecture with arduino](media/2019-09-robocar/architecture_robocar_bb.png)
 
 
 ## Software 

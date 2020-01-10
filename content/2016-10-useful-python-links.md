@@ -25,6 +25,8 @@ Harry Percival
 
 
 ## Tutorials
+* [Разработка идеального pypi пакета с поддержкой разных версий python](https://habr.com/en/post/483512/) (Rus), 2020.
+
 * [The Little Book of Python Anti-Patterns](https://docs.quantifiedcode.com/python-anti-patterns/index.html) - an awesome collection of best practices with examples.
 
 * [Set up vim for python](https://realpython.com/blog/python/vim-and-python-a-match-made-in-heaven/)

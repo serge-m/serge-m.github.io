@@ -79,3 +79,6 @@ up 2019 01
 https://www.reddit.com/r/videos/comments/alp7ng/i_took_a_photo_every_day_from_12_years_old_until/
 
 
+Update 2020 01
+
+https://youtu.be/yfqpqiTMUEg

@@ -130,18 +130,20 @@ If update doesn't work the reason could be time syncronization between ubuntu se
 
 * install NetworkManager: 
 
-    sudo apt install network-manager
-    
+      sudo apt install network-manager
+
+
 * enable network manager
-    
-    sudo systemctl enable NetworkManager
-    sudo systemctl start NetworkManager
+
+      sudo systemctl enable NetworkManager
+      sudo systemctl start NetworkManager
+
 
 * add your network
 
-    nmcli device wifi rescan
-    nmcli device wifi list
-    nmcli device wifi connect SSID-Name password PASSWORD
+      nmcli device wifi rescan
+      nmcli device wifi list
+      nmcli device wifi connect SSID-Name password PASSWORD
 
     
 ### Install other necessary tools

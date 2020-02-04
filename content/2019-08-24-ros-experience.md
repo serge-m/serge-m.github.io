@@ -97,9 +97,19 @@ The problem was in the naming of the package (steering_translator) and the execu
 
 Let's say we want to install ROS-melodic on RPi 3.
 Here is the plan
+
 ### Prepare ubuntu 18 LTS for Raspberry Pi
+
+* go to [Ubuntu PaspberryPi](https://wiki.ubuntu.com/ARM/RaspberryPi), download 18.04 LTS: ubuntu-18.04.3-preinstalled-server-arm64+raspi3.img.xz image
+
+* write the image to SD card
+
+There is some cloud-init function in that image but I didn't manage to make it work. It seems some people are more successful with that: https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git 
+
 ### Connecting 
+
 It turned out that Raspberry pi cannot connect to my laptop directly (something is wring with my DHCP settings). Therefore I used a router.
+
 * insert the flash card into the Raspberry
 * Switch on the Raspberry
 * Connect RPi to a router with a cable 
@@ -107,3 +117,29 @@ It turned out that Raspberry pi cannot connect to my laptop directly (something 
 * find the ip address of the Raspberry with a command `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
 * `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
 
+If you were able to make RPi work directly you can use `arp -a` to find the IP addresses of the connected devices.
+
+### Enabling wifi connection
+
+* install NetworkManager: 
+    
+    sudo apt install network-manager
+    
+* enable network manager
+    
+    sudo systemctl enable NetworkManager
+    sudo systemctl start NetworkManager
+
+* add your network
+
+    nmcli device wifi rescan
+    nmcli device wifi list
+    nmcli device wifi connect SSID-Name password PASSWORD
+    
+    
+### Install other necessary tools
+...
+
+### Install ROS
+
+...

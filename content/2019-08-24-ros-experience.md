@@ -119,10 +119,17 @@ It turned out that Raspberry pi cannot connect to my laptop directly (something 
 
 If you were able to make RPi work directly you can use `arp -a` to find the IP addresses of the connected devices.
 
+### Update the system
+
+    sudo apt update
+    sudo apt upgrade
+
+If update doesn't work the reason could be time syncronization between ubuntu servers and raspberry py. Try to install ntp: `sudo apt install ntp`
+
 ### Enabling wifi connection
 
 * install NetworkManager: 
-    
+
     sudo apt install network-manager
     
 * enable network manager
@@ -135,7 +142,7 @@ If you were able to make RPi work directly you can use `arp -a` to find the IP a
     nmcli device wifi rescan
     nmcli device wifi list
     nmcli device wifi connect SSID-Name password PASSWORD
-    
+
     
 ### Install other necessary tools
 ...
@@ -143,3 +150,9 @@ If you were able to make RPi work directly you can use `arp -a` to find the IP a
 ### Install ROS
 
 ...
+
+Some guides:
+* https://roboticsbackend.com/install-ros-on-raspberry-pi-3/
+* https://www.youtube.com/watch?v=VFuHG-Ho4Fk
+* https://roboticsweekends.blogspot.com/2017/12/how-to-install-ros-on-raspberry-pi-2-or.html
+

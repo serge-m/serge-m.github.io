@@ -73,7 +73,7 @@ sudo apt install libjpeg62
 ```
 
 
-# Name clash in dynamic_reconfigure
+## Name clash in dynamic_reconfigure
 Probably it is written somewhere but I haven't read the docs...
 
 I am developign a node for robot steering translation. I got an error:
@@ -91,4 +91,19 @@ I did everything according to the tutorials [How to Write Your First .cfg File](
 and [Setting up Dynamic Reconfigure for a Node (python)](http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode%28python%29), just changed couple of names.
 The problem was in the naming of the package (steering_translator) and the executable file (steering_translator.py). They are getting mixed up on the execution. The solution was to rename python file to steering_translator_node.py.
 
+
+
+## ROS melodic on Raspberry Pi 3 B+
+
+Let's say we want to install ROS-melodic on RPi 3.
+Here is the plan
+### Prepare ubuntu 18 LTS for Raspberry Pi
+### Connecting 
+It turned out that Raspberry pi cannot connect to my laptop directly (something is wring with my DHCP settings). Therefore I used a router.
+* insert the flash card into the Raspberry
+* Switch on the Raspberry
+* Connect RPi to a router with a cable 
+* connect your laptop to the same router
+* find the ip address of the Raspberry with a command `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
+* `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
 

@@ -108,16 +108,24 @@ There is some cloud-init function in that image but I didn't manage to make it w
 
 ### Connecting 
 
-It turned out that Raspberry pi cannot connect to my laptop directly (something is wring with my DHCP settings). Therefore I used a router.
-
 * insert the flash card into the Raspberry
 * Switch on the Raspberry
-* Connect RPi to a router with a cable 
-* connect your laptop to the same router
-* find the ip address of the Raspberry with a command `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
-* `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
 
-If you were able to make RPi work directly you can use `arp -a` to find the IP addresses of the connected devices.
+
+* It turned out that Raspberry pi cannot connect to my laptop directly with the default ethernet settings
+  (something is wrong with my DHCP settings). 
+
+  * One option is to use router:
+
+      * Connect RPi to a router with a cable 
+      * connect your laptop to the same router
+      * find the ip address of the Raspberry with a command `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
+      * `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
+  
+  * Another option is to change the settings of the connection on the laptop so that the connection in shared. This way IP gets automatically assigned to both laptop and Raspberry.
+  
+
+Use `arp -a` to find the IP addresses of the connected devices.
 
 ### Update the system
 

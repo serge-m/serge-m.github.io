@@ -2,7 +2,7 @@ Title: Useful python links
 Author: SergeM
 Date: 2016-10-08 01:10:00
 Slug: useful-python-links
-Tags: python, useful, youtube, video
+Tags: python, useful, youtube, video, packaging, 
 
 ## Books
 
@@ -63,3 +63,10 @@ Harry Percival
 [cloud storage module](https://pypi.python.org/pypi/cloudstorage) - supports AWS S3, Google cloud storage and local file system. Hopefully it has unified interface for all three of the backends.
 
 [Apache libcloud](https://github.com/apache/libcloud/) -- anouther cloud file system API. more alive
+
+
+## Testing, packaging, releasing
+
+* [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. An article proposes a way to structure the code for your python module, describes how to write setup.py file, set up `tox` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
+
+

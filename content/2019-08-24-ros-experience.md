@@ -187,6 +187,8 @@ dd bs=1M count=<size_in_MBs> if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/im
 ```
 
 `size_in_MB` can be used copy the disk partially in case you have only a little data in the beginning of the large SD card.
+![Creating an image of the SD card for recovery](media/2019-08-24-ros-experience/free-space-sd-card.png)
+
 
 Recovery:
 

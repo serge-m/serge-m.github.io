@@ -119,14 +119,16 @@ There is some cloud-init function in that image but I didn't manage to make it w
 
       * Connect RPi to a router with a cable 
       * connect your laptop to the same router
-      * find the ip address of the Raspberry with a command `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
-      * `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
-  
+      
   * Another option is to change the settings of the connection on the laptop so that the connection in shared. This way IP gets automatically assigned to both laptop and Raspberry.
+    ![connection-editor-shared-lan-connection](media/2019-08-24-ros-experience/connection-editor-shared-lan-connection.png)
+
+
+  * find the ip address of the Raspberry with one of the commands:
+     * `nmap -sn YOUR_ROUTER_IP/24` (the command may differ depending on the DHCP settings of your router)
+     * `arp -a` to find the IP addresses of the connected devices.
+  * `ssh ubuntu@RASPBERRY_IP`, use password `ubuntu`
   
-
-Use `arp -a` to find the IP addresses of the connected devices.
-
 ### Update the system
 
     sudo apt update
@@ -147,12 +149,24 @@ If update doesn't work the reason could be time syncronization between ubuntu se
       sudo systemctl start NetworkManager
 
 
-* add your network
+* add a connection to your Wifi router 
 
       nmcli device wifi rescan
       nmcli device wifi list
       nmcli device wifi connect SSID-Name password PASSWORD
 
+#### Enable hotspot on RaspberryPi (ubuntu 18.04)
+Enabling hotspot on raspberry allows connection via Wifi without having a router
+* install and enable network manager as described above
+* `sudo nmcli dev wifi hotspot ifname wlan0 ssid ub_rpi_net password "robotrobot"`
+* to change the default IP address range modify `ipv4` section in `/etc/NetworkManager/system-connections/Hotspot`:
+
+```
+[ipv4]
+dns-search=
+method=shared
+address1=192.168.111.1/24,192.168.111.1
+```
     
 ### Install other necessary tools
 ...

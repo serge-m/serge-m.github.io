@@ -2,7 +2,7 @@ Title: ROS experience
 Author: SergeM
 Date: 2019-08-24 20:32:00
 Slug: ros-experience
-Tags: ros, linux, robotics, raspberry, pi
+Tags: ros, linux, robotics, raspberry, pi, ubuntu, melodic
 
 
 Here will be some notes on ROS.
@@ -106,6 +106,7 @@ Here is the plan
 
 There is some cloud-init function in that image but I didn't manage to make it work. It seems some people are more successful with that: https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git 
 
+
 ### Connecting 
 
 * insert the flash card into the Raspberry
@@ -175,7 +176,27 @@ address1=192.168.111.1/24,192.168.111.1
 
 ...
 
-Some guides:
+
+### Creating an image of the SD card for recovery
+
+Assuming `/dev/mmcblk0` is your SD card.
+
+Creating compressed image:
+```
+dd bs=1M count=<size_in_MBs> if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz
+```
+
+`size_in_MB` can be used copy the disk partially in case you have only a little data in the beginning of the large SD card.
+
+Recovery:
+
+```
+dd if=/path/to/image.gz | gunzip -c | dd bs=1M of=/dev/mmcblk0
+```
+
+to copy the data back onto different disk
+
+### Some guides:
 
 * https://roboticsbackend.com/install-ros-on-raspberry-pi-3/
 

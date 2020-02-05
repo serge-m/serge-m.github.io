@@ -67,6 +67,6 @@ Harry Percival
 
 ## Testing, packaging, releasing
 
-* [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. An article proposes a way to structure the code for your python module, describes how to write setup.py file, set up `tox` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
+* [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up `tox` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
 
 

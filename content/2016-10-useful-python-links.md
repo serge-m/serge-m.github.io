@@ -2,7 +2,7 @@ Title: Useful python links
 Author: SergeM
 Date: 2016-10-08 01:10:00
 Slug: useful-python-links
-Tags: python, useful, youtube, video, packaging, 
+Tags: python, useful, youtube, video, packaging, setup.py, tox, pytest
 
 ## Books
 
@@ -67,6 +67,6 @@ Harry Percival
 
 ## Testing, packaging, releasing
 
-* [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up `tox` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
+* [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up `tox`, `pytest` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
 
 

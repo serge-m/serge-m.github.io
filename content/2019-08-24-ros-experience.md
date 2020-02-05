@@ -176,8 +176,12 @@ address1=192.168.111.1/24,192.168.111.1
 ...
 
 Some guides:
+
 * https://roboticsbackend.com/install-ros-on-raspberry-pi-3/
+
 * https://www.youtube.com/watch?v=VFuHG-Ho4Fk
+
 * https://roboticsweekends.blogspot.com/2017/12/how-to-install-ros-on-raspberry-pi-2-or.html
+
 * https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
 

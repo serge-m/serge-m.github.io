@@ -2,10 +2,7 @@ Title: ROS experience
 Author: SergeM
 Date: 2019-08-24 20:32:00
 Slug: ros-experience
-Tags: ros, linux, robotics, raspberry, pi, ubuntu, melodic
-
-
-Here will be some notes on ROS.
+Tags: ros, linux, robotics, raspberry, pi, ubuntu, melodic, kinetic, camera, tensorflow
 
 
 ## ROS on raspberry pi
@@ -97,16 +94,20 @@ The problem was in the naming of the package (steering_translator) and the execu
 
 ## ROS melodic on Raspberry Pi 3 B+
 
-Although there is pre-built ros-kinetic image from Ubuquity, 
+Although there is a pre-built ros-kinetic image from Ubuquity, 
 I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera support.
 
 You can find the image I build here __ TODO __. 
 To use it you need to download it and write on SD card as with any other image for RPi.
 
 Credentials:
+
 * User: ubuntu
+
 * password: robotrobot
+
 * wifi hotspot SSID: ub_rpi_net
+
 * wifi password: robotwifi
 
 Change the passwords as soon as you logged in. 
@@ -264,22 +265,21 @@ Result should look like this:
 
 Let's say you want Raspberry pi to automatically connect to your home wifi network.
 
-* install NetworkManager: 
+Install NetworkManager: 
 
-      sudo apt install -y network-manager
+    sudo apt install -y network-manager
+
+enable network manager
+
+    sudo systemctl enable NetworkManager
+    sudo systemctl start NetworkManager
 
 
-* enable network manager
+add a connection to your Wifi router 
 
-      sudo systemctl enable NetworkManager
-      sudo systemctl start NetworkManager
-
-
-* add a connection to your Wifi router 
-
-      nmcli device wifi rescan
-      nmcli device wifi list
-      nmcli device wifi connect SSID-Name password PASSWORD
+    nmcli device wifi rescan
+    nmcli device wifi list
+    nmcli device wifi connect SSID-Name password PASSWORD
 
 #### Enable hot spot Wifi on RaspberryPi (ubuntu 18.04)
 

@@ -97,7 +97,12 @@ The problem was in the naming of the package (steering_translator) and the execu
 Although there is a pre-built ros-kinetic image from Ubuquity, 
 I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera support.
 
-You can find the image I build here __ TODO __. 
+You can find the image I built [here](https://yadi.sk/d/A76jFgiVx_vycA).
+ 
+md5 checksum:
+
+    a65a6968eb7cdf39655eaee9ee82b38c  20200207_ubuntu_armhf_ros_melodic.img.gz
+
 To use it you need to download it and write on SD card as with any other image for RPi.
 
 Credentials:

@@ -9,14 +9,16 @@ Here will be some notes on ROS.
 
 
 ## ROS on raspberry pi
-There is a compiled image by ubiquity that contain ROS kinetic.
-
+There is a compiled image for RPi by ubiquity that has ROS kinetic: 
 [https://downloads.ubiquityrobotics.com/pi.html](https://downloads.ubiquityrobotics.com/pi.html).
 
-It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... 
 
+It seems for me too old. It's 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... 
+
+It is possible to have **ROS melodic on Raspberry Pi 3 B+**. See in the next sections.
 
 ## Installing tensorflow for ROS on raspberry pi
+
 Alternatively one can try to install it from wheels:
 https://www.tensorflow.org/install/pip?lang=python3#package-location
 

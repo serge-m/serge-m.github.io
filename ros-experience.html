@@ -12,14 +12,14 @@
 <link rel="canonical" href="https://serge-m.github.io/ros-experience.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="ros,linux,robotics,raspberry,pi,ubuntu,melodic" />
-        <meta name="description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support …" />
+        <meta name="keywords" content="ros,linux,robotics,raspberry,pi,ubuntu,melodic,kinetic,camera,tensorflow" />
+        <meta name="description" content="ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="ROS experience"/>
         <meta property="og:url" content="https://serge-m.github.io/ros-experience.html"/>
-        <meta property="og:description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support …"/>
+        <meta property="og:description" content="ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh …"/>
         <meta property="article:published_time" content="2019-08-24" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="ros" />
@@ -29,6 +29,9 @@
             <meta property="article:tag" content="pi" />
             <meta property="article:tag" content="ubuntu" />
             <meta property="article:tag" content="melodic" />
+            <meta property="article:tag" content="kinetic" />
+            <meta property="article:tag" content="camera" />
+            <meta property="article:tag" content="tensorflow" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -118,10 +121,15 @@ sergem personal public notebook            </a>
 	<a class="tag-list" href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
         /
 	<a class="tag-list" href="https://serge-m.github.io/tag/melodic.html">melodic</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/kinetic.html">kinetic</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/camera.html">camera</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     
 </footer><!-- /.post-info -->                </div>
-                <p>Here will be some notes on ROS.</p>
-<h2>ROS on raspberry pi</h2>
+                <h2>ROS on raspberry pi</h2>
 <p>There is a compiled image for RPi by ubiquity that has ROS kinetic: 
 <a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
 <p>It seems for me too old. It's 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... </p>
@@ -196,15 +204,25 @@ I got the following error.</p>
 and <a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode%28python%29">Setting up Dynamic Reconfigure for a Node (python)</a>, just changed couple of names.
 The problem was in the naming of the package (steering_translator) and the executable file (steering_translator.py). They are getting mixed up on the execution. The solution was to rename python file to steering_translator_node.py.</p>
 <h2>ROS melodic on Raspberry Pi 3 B+</h2>
-<p>Although there is pre-built ros-kinetic image from Ubuquity, 
+<p>Although there is a pre-built ros-kinetic image from Ubuquity, 
 I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera support.</p>
 <p>You can find the image I build here <strong> TODO </strong>. 
 To use it you need to download it and write on SD card as with any other image for RPi.</p>
-<p>Credentials:
-* User: ubuntu
-* password: robotrobot
-* wifi hotspot SSID: ub_rpi_net
-* wifi password: robotwifi</p>
+<p>Credentials:</p>
+<ul>
+<li>
+<p>User: ubuntu</p>
+</li>
+<li>
+<p>password: robotrobot</p>
+</li>
+<li>
+<p>wifi hotspot SSID: ub_rpi_net</p>
+</li>
+<li>
+<p>wifi password: robotwifi</p>
+</li>
+</ul>
 <p>Change the passwords as soon as you logged in. </p>
 <p>If you want to build the image yourself, you can follow the instructions bellow.</p>
 <h3>Prepare ubuntu 18 LTS for Raspberry Pi</h3>
@@ -363,23 +381,24 @@ about config.txt file.</p>
 <p><img alt="rqt_image_view for raspicam_node, ros melodic on Raspberry pi 3 over ssh" src="media/2019-08-24-ros-experience/rqt_image_view.jpg"></p>
 <h3>Enabling wifi connection</h3>
 <p>Let's say you want Raspberry pi to automatically connect to your home wifi network.</p>
-<ul>
-<li>
-<p>install NetworkManager: </p>
-<p>sudo apt install -y network-manager</p>
-</li>
-<li>
+<p>Install NetworkManager: </p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y network-manager</span>
+</code></pre></div>
+
+
 <p>enable network manager</p>
-<p>sudo systemctl enable NetworkManager
-  sudo systemctl start NetworkManager</p>
-</li>
-<li>
+<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl enable NetworkManager</span>
+<span class="err">sudo systemctl start NetworkManager</span>
+</code></pre></div>
+
+
 <p>add a connection to your Wifi router </p>
-<p>nmcli device wifi rescan
-  nmcli device wifi list
-  nmcli device wifi connect SSID-Name password PASSWORD</p>
-</li>
-</ul>
+<div class="highlight"><pre><span></span><code><span class="err">nmcli device wifi rescan</span>
+<span class="err">nmcli device wifi list</span>
+<span class="err">nmcli device wifi connect SSID-Name password PASSWORD</span>
+</code></pre></div>
+
+
 <h4>Enable hot spot Wifi on RaspberryPi (ubuntu 18.04)</h4>
 <p>Enabling hotspot on raspberry allows connection via Wifi without having a router or ethernet cable.</p>
 <p>install and enable network manager as described above</p>
@@ -572,9 +591,6 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
     </li>
@@ -584,17 +600,14 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/camera.html">camera</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
@@ -608,14 +621,20 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/data.html">data</a>
+      <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/crawling.html">crawling</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data-science.html">data science</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
@@ -626,23 +645,29 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -652,6 +677,9 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/image.html">image</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -668,17 +696,20 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/led.html">LED</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -692,35 +723,23 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -747,13 +766,16 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
+      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pylearn2.html">pylearn2</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
@@ -782,9 +804,6 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
@@ -792,13 +811,13 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+      <a href="https://serge-m.github.io/tag/servo.html">servo</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
+      <a href="https://serge-m.github.io/tag/slides.html">slides</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -811,9 +830,6 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
@@ -837,10 +853,13 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
+      <a href="https://serge-m.github.io/tag/unittests.html">unittests</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -854,11 +873,11 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/youtube.html">youtube</a>

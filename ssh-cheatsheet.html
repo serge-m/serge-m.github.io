@@ -110,14 +110,14 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <h2>Create more secure ssh keys</h2>
 <p>Create a key using elliptic curve cryptography: </p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen -a 100 -t ed25519</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
+</code></pre></div>
 
 
 <p>see also: <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">Upgrade Your SSH Key to Ed25519</a></p>
 <h2>How to prevent SSH from scanning all the keys in .ssh directory</h2>
-<div class="highlight"><pre><span></span>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
+</code></pre></div>
 
 
 <p>The options are as follows:</p>
@@ -133,43 +133,43 @@ sergem personal public notebook            </a>
 <h2>Set correct permissions for .ssh directory</h2>
 <p>You may get and error while connecting to ssh if you have wrond permissions for .ssh directory on server for a given user.</p>
 <p>Error message on client while <code>ssh user-on-server@server</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">debug1</span><span class="o">:</span> <span class="n">Authentications</span> <span class="n">that</span> <span class="n">can</span> <span class="k">continue</span><span class="o">:</span> <span class="n">publickey</span>
+<div class="highlight"><pre><span></span><code><span class="n">debug1</span><span class="o">:</span> <span class="n">Authentications</span> <span class="n">that</span> <span class="n">can</span> <span class="k">continue</span><span class="o">:</span> <span class="n">publickey</span>
 <span class="n">debug1</span><span class="o">:</span> <span class="n">Next</span> <span class="n">authentication</span> <span class="n">method</span><span class="o">:</span> <span class="n">publickey</span>
 <span class="n">debug1</span><span class="o">:</span> <span class="n">Offering</span> <span class="n">RSA</span> <span class="kd">public</span> <span class="n">key</span><span class="o">:</span> <span class="sr">/home/user-on-client/.ssh/</span><span class="n">YOUR_KEY</span>
 <span class="n">debug1</span><span class="o">:</span> <span class="n">Authentications</span> <span class="n">that</span> <span class="n">can</span> <span class="k">continue</span><span class="o">:</span> <span class="n">publickey</span>
 <span class="n">debug1</span><span class="o">:</span> <span class="n">No</span> <span class="n">more</span> <span class="n">authentication</span> <span class="n">methods</span> <span class="n">to</span> <span class="k">try</span><span class="o">.</span>
 <span class="n">Permission</span> <span class="n">denied</span> <span class="o">(</span><span class="n">publickey</span><span class="o">).</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Error message on server:</p>
-<div class="highlight"><pre><span></span><span class="n">Aug</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">10</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">21</span><span class="w"> </span><span class="n">comp</span><span class="w"> </span><span class="n">sshd</span><span class="o">[</span><span class="n">3446</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="k">Connection</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mf">10.1.0.12</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="mi">47794</span><span class="w"> </span><span class="o">[</span><span class="n">preauth</span><span class="o">]</span><span class="w"></span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">Aug</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">10</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">21</span><span class="w"> </span><span class="n">comp</span><span class="w"> </span><span class="n">sshd</span><span class="o">[</span><span class="n">3446</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="k">Connection</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mf">10.1.0.12</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="mi">47794</span><span class="w"> </span><span class="o">[</span><span class="n">preauth</span><span class="o">]</span><span class="w"></span>
+</code></pre></div>
 
 
 <p>And nothing more in logs.
 The reason was that <code>.ssh</code> directory on the server had too strict permissions:</p>
-<div class="highlight"><pre><span></span><span class="err">dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/</span>
+</code></pre></div>
 
 
 <p>Read only is not enough. It must be <code>rwx</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">chmod 700 .ssh</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">chmod 700 .ssh</span>
+</code></pre></div>
 
 
 <p>For authorized_keys file use the following premissions:</p>
-<div class="highlight"><pre><span></span><span class="err">chmod 644 ~/.ssh/authorized_keys </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">chmod 644 ~/.ssh/authorized_keys </span>
+</code></pre></div>
 
 
 <h2>Port forwarding</h2>
 <h3>Remote port forwarding</h3>
-<div class="highlight"><pre><span></span><span class="err">     -R [bind_address:]port:host:hostport</span>
+<div class="highlight"><pre><span></span><code><span class="err">     -R [bind_address:]port:host:hostport</span>
 <span class="err">     -R [bind_address:]port:local_socket</span>
 <span class="err">     -R remote_socket:host:hostport</span>
 <span class="err">     -R remote_socket:local_socket</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Specifies that connections to the given TCP port or Unix socket on the remote (server) host are to be forwarded to the given host and port, or Unix socket, on the local side.  This works by allocating a socket to listen to either a TCP port or to a Unix socket on the remote side.  Whenever a connection is made to this port or Unix socket, the connection is forwarded over the
@@ -177,18 +177,18 @@ secure channel, and a connection is made to either host port hostport, or local_
 <p>By default, TCP listening sockets on the server will be bound to the loopback interface only.  This may be overridden by specifying a bind_address.  An empty bind_address, or the address ‘*’, indicates that the remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the server's <code>GatewayPorts</code> option is enabled (see sshd_config(5)).</p>
 <p>If the port argument is ‘0’, the listen port will be dynamically allocated on the server and reported to the client at run time.  When used together with <code>-O</code> forward the allocated port will be printed to the standard output.</p>
 <p>When bind_address is omitted (as in your example), the port is bound on the loopback interface only. In order to make it bind to all interfaces, use</p>
-<div class="highlight"><pre><span></span><span class="err">ssh -R \*:8080:localhost:80 -N root@example.com</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R \*:8080:localhost:80 -N root@example.com</span>
+</code></pre></div>
 
 
 <p>or</p>
-<div class="highlight"><pre><span></span><span class="err">ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com</span>
+</code></pre></div>
 
 
 <p>or</p>
-<div class="highlight"><pre><span></span><span class="err">ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com</span>
+</code></pre></div>
 
 
 <p>The first version binds to all interfaces individually. The second version creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4. The third version is probably technically equivalent to the first, but again it creates only a single bind to <code>::</code>, which means that the port is accessible via IPv6 natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD).  (You need the quotes because <code>[::]</code> could be interpreted as a glob otherwise.)</p>
@@ -198,7 +198,7 @@ secure channel, and a connection is made to either host port hostport, or local_
 <p>We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.</p>
 <h4>First [[broken]] version</h4>
 <p>To do that we have to create a file <code>/etc/systemd/system/tunnelssh.service</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">[Unit]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">tunnel ssh to server</span>
 
 <span class="k">[Service]</span>
@@ -212,18 +212,18 @@ secure channel, and a connection is made to either host port hostport, or local_
 
 <span class="k">[Install]</span>
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>now you can</p>
-<div class="highlight"><pre><span></span><span class="err">systemctl start tunnelssh.service</span>
+<div class="highlight"><pre><span></span><code><span class="err">systemctl start tunnelssh.service</span>
 <span class="err">systemctl status tunnelssh.service</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Or enable it, so it get's started at boot time:</p>
-<div class="highlight"><pre><span></span><span class="err">systemctl enable tunnelssh.service</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">systemctl enable tunnelssh.service</span>
+</code></pre></div>
 
 
 <p>Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
@@ -234,7 +234,7 @@ The problem is that
 <p>(in the spirit of this <a href="https://gist.github.com/drmalex07/c0f9304deea566842490">solution</a>)</p>
 <h4>Second version</h4>
 <p>So we have to implement retry on our own without systemd. Fortunately there is a tool <code>autossh</code>. See for example <a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/">[1]</a> or <a href="https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/">[2]</a></p>
-<div class="highlight"><pre><span></span><span class="k">[Unit]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">tunnel ssh to server</span>
 <span class="c1"># After=network.target network-online.target multi-user.target</span>
 <span class="c1"># Requires=network-online.target</span>
@@ -249,37 +249,37 @@ The problem is that
 
 <span class="k">[Install]</span>
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Configuring SSH server</h2>
 <p>Enable only ssh v2:</p>
-<div class="highlight"><pre><span></span><span class="err">Protocol 2</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Protocol 2</span>
+</code></pre></div>
 
 
 <p>Disable password authentification. Replace corresponding values in <code>/etc/ssh/sshd_config</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">ChallengeResponseAuthentication no</span>
+<div class="highlight"><pre><span></span><code><span class="err">ChallengeResponseAuthentication no</span>
 <span class="err">PasswordAuthentication no</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="https://support.hostgator.com/articles/how-to-disable-password-authentication-for-ssh">source</a></p>
 <p>Restrict SSH access to only user accounts that should have it. For example, you may create a group called "sshlogin" and add the group name as the value associated with the <code>AllowGroups</code> variable located in the file <code>/etc/ssh/sshd_config</code>.</p>
-<div class="highlight"><pre><span></span><span class="err">AllowGroups sshlogin</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">AllowGroups sshlogin</span>
+</code></pre></div>
 
 
 <p>Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.</p>
-<div class="highlight"><pre><span></span><span class="err">sudo adduser username sshlogin</span>
+<div class="highlight"><pre><span></span><code><span class="err">sudo adduser username sshlogin</span>
 <span class="err">sudo systemctl restart sshd.service</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations">source</a></p>
 <h3>Restarting ssh service</h3>
 <p>after each change in sshd_config you have to restart ssh service to enable the changes</p>
-<div class="highlight"><pre><span></span><span class="c1">## Ubuntu/debian user ##</span>
+<div class="highlight"><pre><span></span><code><span class="c1">## Ubuntu/debian user ##</span>
 sudo service ssh restart
 <span class="c1"># only for systemd based Ubuntu/Debian 8.x+ users #</span>
 sudo systemctl restart ssh
@@ -288,35 +288,35 @@ sudo systemctl restart ssh
 sudo service sshd restart
 <span class="c1"># only for systemd based RHEL/CentOS v7+ users #</span>
 sudo systemctl restart sshd
-</pre></div>
+</code></pre></div>
 
 
 <h3>Add user for ssh tunnel only</h3>
-<div class="highlight"><pre><span></span><span class="err">useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash</span>
+<div class="highlight"><pre><span></span><code><span class="err">useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash</span>
 <span class="err">passwd sshtunnel</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>in <code>.profile</code> in the home directory of the user (in our example it is /home/sshtunnel/):</p>
-<div class="highlight"><pre><span></span><span class="err">PATH=&quot;&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">PATH=&quot;&quot;</span>
+</code></pre></div>
 
 
 <p>Forbid changes:</p>
-<div class="highlight"><pre><span></span><span class="err">chmod 555 /home/sshtunnel/</span>
+<div class="highlight"><pre><span></span><code><span class="err">chmod 555 /home/sshtunnel/</span>
 <span class="err">cd /home/sshtunnel/</span>
 <span class="err">chmod 444 .bash_logout .bashrc .profile</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="http://www.ab-weblog.com/en/creating-a-restricted-ssh-user-for-ssh-tunneling-only/">source</a></p>
 <p>Restrictions in sshd config:</p>
-<div class="highlight"><pre><span></span><span class="err">Match User that-restricted-guy</span>
+<div class="highlight"><pre><span></span><code><span class="err">Match User that-restricted-guy</span>
 <span class="err">  AllowTcpForwarding yes</span>
 <span class="err">  X11Forwarding no</span>
 <span class="err">  AllowAgentForwarding no</span>
 <span class="err">  ForceCommand /bin/false</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="https://unix.stackexchange.com/a/337445">source</a></p>
@@ -324,14 +324,14 @@ sudo systemctl restart sshd
 <p>For security reason you should always block access to root user and group on a Linux or Unix-like systems. </p>
 <p>First, make sure at least one user is allowed to use ‘su -‘ or ‘sudo’ command on the server. </p>
 <p>Then add to <code>/etc/ssh/sshd_config</code></p>
-<div class="highlight"><pre><span></span><span class="err">DenyUsers root</span>
+<div class="highlight"><pre><span></span><code><span class="err">DenyUsers root</span>
 <span class="err">DenyGroups root</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>set PermitRootLogin  to <code>no</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">PermitRootLogin no</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">PermitRootLogin no</span>
+</code></pre></div>
 
 
 <p>Save the file and restart the ssh service.</p>
@@ -342,49 +342,49 @@ sudo systemctl restart sshd
 <h2>How to load ssh key without placing it to ~/.ssh</h2>
 <p>You must load a key to the ssh agent running in the background.</p>
 <p>To start the ssh-agent in the background:</p>
-<div class="highlight"><pre><span></span><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>ssh-agent -s<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>ssh-agent -s<span class="k">)</span><span class="s2">&quot;</span>
 Agent pid <span class="m">59566</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You can add your SSH private key to the ssh-agent using <code>ssh-add</code> and full path to the key:</p>
-<div class="highlight"><pre><span></span>    ssh-add ~/path_to_your_private_key/id_rsa
-</pre></div>
+<div class="highlight"><pre><span></span><code>    ssh-add ~/path_to_your_private_key/id_rsa
+</code></pre></div>
 
 
 <p>Now you can for example do <code>git clone</code> from github using ssh key.</p>
 <p>see also <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent">1</a></p>
 <h2>mount remote file system using ssh</h2>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install sshfs</span>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install sshfs</span>
 <span class="err">sudo mkdir /mnt/droplet</span>
 <span class="err">sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>With identity files only:</p>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sshfs</span> <span class="o">-</span><span class="n">o</span> <span class="n">allow_other</span><span class="p">,</span><span class="n">IdentitiesOnly</span><span class="o">=</span><span class="n">yes</span><span class="p">,</span><span class="n">IdentityFile</span><span class="o">=~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span> <span class="n">user</span><span class="mf">@192.168.0.1</span><span class="o">:/</span><span class="n">remote</span><span class="o">/</span><span class="n">path</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">path</span><span class="o">/</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">sshfs</span> <span class="o">-</span><span class="n">o</span> <span class="n">allow_other</span><span class="p">,</span><span class="n">IdentitiesOnly</span><span class="o">=</span><span class="n">yes</span><span class="p">,</span><span class="n">IdentityFile</span><span class="o">=~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span> <span class="n">user</span><span class="mf">@192.168.0.1</span><span class="o">:/</span><span class="n">remote</span><span class="o">/</span><span class="n">path</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">path</span><span class="o">/</span>
+</code></pre></div>
 
 
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh">Source</a></p>
 <h2>Specific settings for a website</h2>
 <p>I have a private key with a custom name in <code>~/.ssh/</code> add the .pub is uploaded to github. When I try to clone my repo, git returns </p>
-<div class="highlight"><pre><span></span><span class="n">Cloning</span> <span class="k">into</span> <span class="s1">&#39;repo&#39;</span><span class="p">...</span>
+<div class="highlight"><pre><span></span><code><span class="n">Cloning</span> <span class="k">into</span> <span class="s1">&#39;repo&#39;</span><span class="p">...</span>
 <span class="n">Permission</span> <span class="n">denied</span> <span class="p">(</span><span class="n">publickey</span><span class="p">).</span>
 <span class="n">fatal</span><span class="p">:</span> <span class="n">Could</span> <span class="k">not</span> <span class="k">read</span> <span class="k">from</span> <span class="n">remote</span> <span class="n">repository</span><span class="p">.</span>
 
 <span class="n">Please</span> <span class="n">make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">the</span> <span class="n">correct</span> <span class="k">access</span> <span class="n">rights</span>
 <span class="k">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="k">exists</span><span class="p">.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Probably git reads only keys with standard names (e.g. id_rsa). 
 To make it pick up your custome key you can create a config file 
 <code>~/.ssh/config</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">Host github.com</span>
+<div class="highlight"><pre><span></span><code><span class="err">Host github.com</span>
 <span class="err">  IdentityFile ~/.ssh/your_custom_private_key</span>
 <span class="err">  IdentitiesOnly yes</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>More <a href="https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797">here</a></p>
@@ -467,9 +467,6 @@ To make it pick up your custome key you can create a config file
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -491,14 +488,23 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -506,17 +512,17 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -524,35 +530,32 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -594,10 +597,10 @@ To make it pick up your custome key you can create a config file
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -605,23 +608,23 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -648,10 +651,7 @@ To make it pick up your custome key you can create a config file
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -680,23 +680,26 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -710,14 +713,14 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -731,17 +734,17 @@ To make it pick up your custome key you can create a config file
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -756,10 +759,7 @@ To make it pick up your custome key you can create a config file
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

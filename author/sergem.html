@@ -247,9 +247,9 @@ Human driver (me) sends …</p></div>
                 </div>
                 <div class="summary"><p>Here will be some notes on ROS.</p>
 <h2>ROS on raspberry pi</h2>
-<p>There is a compiled image by ubiquity that contain ROS kinetic.</p>
-<p><a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
-<p>It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2 …</p>
+<p>There is a compiled image for RPi by ubiquity that has ROS kinetic: 
+<a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
+<p>It seems for me too old. It's 2020, there are ubuntu 18, ros melodic and ros2, next year the support …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ros-experience.html">more ...</a>
                 </div>
 
@@ -332,13 +332,13 @@ Human driver (me) sends …</p></div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5Rzq3Mn9984" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>Code:</p>
-<div class="highlight"><pre><span></span><span class="c1">//the pins we are using</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//the pins we are using</span>
 <span class="kt">int</span> <span class="n">latchPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">clockPin</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">dataPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
 
-<span class="kt">void …</span></pre></div>
+<span class="kt">void …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/arduino-experiments.html">more ...</a>
                 </div>
 
@@ -403,37 +403,37 @@ Human driver (me) sends …</p></div>
                 </div>
                 <div class="summary"><h2>Basics</h2>
 <p>Connect as user <code>postgres</code>:</p>
-<div class="highlight"><pre><span></span>psql -U postgres
-</pre></div>
+<div class="highlight"><pre><span></span><code>psql -U postgres
+</code></pre></div>
 
 
 <p>Connect to a specific database:</p>
-<div class="highlight"><pre><span></span><span class="err">\c database_name;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\c database_name;</span>
+</code></pre></div>
 
 
 <p>Quit the psql:</p>
-<div class="highlight"><pre><span></span><span class="err">\q</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\q</span>
+</code></pre></div>
 
 
 <p>List all databases:</p>
-<div class="highlight"><pre><span></span><span class="err">\l</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\l</span>
+</code></pre></div>
 
 
 <p>Lists all tables in the current database:</p>
-<div class="highlight"><pre><span></span><span class="err">\dt</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\dt</span>
+</code></pre></div>
 
 
 <p>List all users: </p>
-<div class="highlight"><pre><span></span><span class="err">\du</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\du</span>
+</code></pre></div>
 
 
 <p>Create a new role <code>username</code> with a password:</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/postgres-cheatsheet.html">more ...</a>
                 </div>
 
@@ -584,12 +584,12 @@ unpack to <code>/opt/hadoop/</code></li>
 <p><a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/">[2]</a></p>
 <h2>reducing swapping</h2>
 <p>Add these lines to /etc/sysctl.conf, and reboot.</p>
-<div class="highlight"><pre><span></span><span class="err">vm.swappiness = 0</span>
+<div class="highlight"><pre><span></span><code><span class="err">vm.swappiness = 0</span>
 <span class="err">vm.dirty_background_ratio = 20</span>
 <span class="err">vm.dirty_expire_centisecs = 0</span>
 <span class="err">vm.dirty_ratio = 80</span>
 <span class="err">vm.dirty_writeback_centisecs = 0</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>More caching while writting on disk</h2>
@@ -695,11 +695,11 @@ Also, unstable API as a dependency, 10 Gb of text …</p>
                 <div class="summary"><p><a href="https://bokeh.pydata.org/en/latest/">Bokeh</a> is a library for interactive visualization. One can use it in Jupyter notebooks.</p>
 <p>Here is the example. </p>
 <p>Lets say we have a pandas dataframe with timestamps and some values:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;timestamp,value</span>
 <span class="s2">2018-01-01T10:00:00,20</span>
-<span class="s2">2018-01-01T12:00 …</span></pre></div>
+<span class="s2">2018-01-01T12:00 …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/bokeh-example.html">more ...</a>
                 </div>
 
@@ -734,13 +734,13 @@ The advantages of click are</p>
 <ul>
 <li>nice syntax </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">click</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">click</span>
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--count&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Number of greetings.&#39;</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;Your name&#39;</span><span class="p">,</span>
               <span class="n">help</span><span class="o">=</span><span class="s1">&#39;The person to greet.&#39;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">hello …</span></pre></div>
+<span class="k">def</span> <span class="nf">hello …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/click-config-parsers.html">more ...</a>
                 </div>
 
@@ -771,25 +771,25 @@ The advantages of click are</p>
                 </div>
                 <div class="summary"><h2>Some frequently used commands in Vim</h2>
 <h3>File explorer</h3>
-<div class="highlight"><pre><span></span><span class="err">:Explore - opens the file explorer window. </span>
+<div class="highlight"><pre><span></span><code><span class="err">:Explore - opens the file explorer window. </span>
 <span class="err">:E - the same</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Visual commands</h3>
-<div class="highlight"><pre><span></span><span class="err">&gt; - shift right</span>
+<div class="highlight"><pre><span></span><code><span class="err">&gt; - shift right</span>
 <span class="err">&lt; - shift left</span>
 <span class="err">y - yank (copy) marked text</span>
 <span class="err">d - delete marked text</span>
 <span class="err">~ - switch case</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Cut and Paste</h3>
-<div class="highlight"><pre><span></span><span class="err">yy - yank (copy) a line</span>
+<div class="highlight"><pre><span></span><code><span class="err">yy - yank (copy) a line</span>
 <span class="err">2yy - yank 2 lines</span>
 <span class="err">yw - yank word</span>
-<span class="err">y …</span></pre></div>
+<span class="err">y …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/vim.html">more ...</a>
                 </div>
 
@@ -856,12 +856,12 @@ The advantages of click are</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./in.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;(.*)import(.*)&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output_file …</span></pre></div>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output_file …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/print-lines-matching-regex.html">more ...</a>
                 </div>
 
@@ -935,9 +935,6 @@ The advantages of click are</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -959,14 +956,23 @@ The advantages of click are</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -974,17 +980,17 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -992,35 +998,32 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1062,10 +1065,10 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1073,23 +1076,23 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1116,10 +1119,7 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1148,23 +1148,26 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1178,14 +1181,14 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1199,17 +1202,17 @@ The advantages of click are</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1224,10 +1227,7 @@ The advantages of click are</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

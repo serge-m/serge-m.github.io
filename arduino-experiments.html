@@ -134,7 +134,7 @@ sergem personal public notebook            </a>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5Rzq3Mn9984" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <p>Code:</p>
-<div class="highlight"><pre><span></span><span class="c1">//the pins we are using</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//the pins we are using</span>
 <span class="kt">int</span> <span class="n">latchPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">clockPin</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">dataPin</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
@@ -165,7 +165,7 @@ sergem personal public notebook            </a>
     <span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Alternatives</h3>
@@ -183,47 +183,47 @@ sergem personal public notebook            </a>
 * <code>arduino-mhall119</code> 1.8.5 via snap and <code>Ubuntu Software</code> app
 * arduino IDE 1.8.9 from <a href="https://www.arduino.cc/en/guide/linux">https://www.arduino.cc/en/guide/linux</a></p>
 <p>First of all I had to add a current user to <code>dialout</code> group and logout-login -- that's fine:</p>
-<div class="highlight"><pre><span></span>sudo usermod -a -G dialout &lt;username&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>sudo usermod -a -G dialout &lt;username&gt;
+</code></pre></div>
 
 
 <p>Then all the tutorials require for checking </p>
-<div class="highlight"><pre><span></span>ls -l /dev/ttyACM*
-</pre></div>
+<div class="highlight"><pre><span></span><code>ls -l /dev/ttyACM*
+</code></pre></div>
 
 
 <p>And I don't have that. 
 I have USB0 instead:</p>
-<div class="highlight"><pre><span></span>sudo ls -l /dev/ttyUSB*
+<div class="highlight"><pre><span></span><code>sudo ls -l /dev/ttyUSB*
 crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <span class="m">0</span> Jul <span class="m">14</span> <span class="m">14</span>:11 /dev/ttyUSB0
-</pre></div>
+</code></pre></div>
 
 
 <p>When I tried to upload some simple programms to the board I got:
 * </p>
-<div class="highlight"><pre><span></span><span class="n">avrdude</span><span class="o">:</span> <span class="n">ser_open</span><span class="o">():</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">open</span> <span class="n">device</span> <span class="s2">&quot;/dev/ttyUSB0&quot;</span><span class="o">:</span> <span class="n">Permission</span> <span class="n">denied</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">avrdude</span><span class="o">:</span> <span class="n">ser_open</span><span class="o">():</span> <span class="n">can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">open</span> <span class="n">device</span> <span class="s2">&quot;/dev/ttyUSB0&quot;</span><span class="o">:</span> <span class="n">Permission</span> <span class="n">denied</span>
+</code></pre></div>
 
 
 <ul>
 <li>For version from sudo apt install:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">arduino nano avrdude: ser_open(): can&#39;t open device &quot;COM1&quot;: No such file or directory</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">arduino nano avrdude: ser_open(): can&#39;t open device &quot;COM1&quot;: No such file or directory</span>
+</code></pre></div>
 
 
 <p>That version was way too old.</p>
 <ul>
 <li>For the version from website I got</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">Build options changed, rebuilding all</span>
+<div class="highlight"><pre><span></span><code><span class="err">Build options changed, rebuilding all</span>
 <span class="err">Sketch uses 994 bytes (3%) of program storage space. Maximum is 30720 bytes.</span>
 <span class="err">Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.</span>
 <span class="c">avrdude: stk500_recv(): programmer is not responding</span>
 <span class="c">avrdude: stk500_getsync() attempt 1 of 10: not in sync: resp=0x00</span>
 <span class="c">avrdude: stk500_recv(): programmer is not responding</span>
 <span class="c">avrdude: stk500_getsync() attempt 2 of 10: not in sync: resp=0x00</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>That was almost fine. </p>
@@ -305,9 +305,6 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -329,14 +326,23 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -344,17 +350,17 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -362,35 +368,32 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -432,10 +435,10 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -443,23 +446,23 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -486,10 +489,7 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -518,23 +518,26 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -548,14 +551,14 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -569,17 +572,17 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -594,10 +597,7 @@ crw-rw---- <span class="m">1</span> root dialout <span class="m">188</span>, <sp
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

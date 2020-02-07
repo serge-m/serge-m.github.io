@@ -121,7 +121,7 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                </div>
                 <p>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure <code>"Applications"</code> field for the emr cluster to contain also jupyter hub. For example:</p>
-<div class="highlight"><pre><span></span><span class="err">&quot;Applications&quot;: [</span>
+<div class="highlight"><pre><span></span><code><span class="err">&quot;Applications&quot;: [</span>
 <span class="err">            {</span>
 <span class="err">                &quot;Name&quot;: &quot;Ganglia&quot;,</span>
 <span class="err">                &quot;Version&quot;: &quot;3.7.2&quot;</span>
@@ -139,14 +139,14 @@ sergem personal public notebook            </a>
 <span class="err">                &quot;Version&quot;: &quot;0.9.4&quot;</span>
 <span class="err">            }</span>
 <span class="err">        ],</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Set <code>KeepJobFlowAliveWhenNoSteps: true</code> and set up all the required python libraries using bootstrap scripts.</p>
 <p>After cluster is created and bootstrapped you can get an address of the master in the aws console. Create a ssh tunnel to the port 9443 on the master. it is a port of jupyterhub:</p>
-<div class="highlight"><pre><span></span><span class="err">export HOST=&lt;public address of your master&gt; </span>
+<div class="highlight"><pre><span></span><code><span class="err">export HOST=&lt;public address of your master&gt; </span>
 <span class="err">ssh -i ~/.ssh/your_private_key.pem -L 9443:$HOST:9443 hadoop@$HOST</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now when you connect to your local 9443 port it is redirected to the master's 9443 port.</p>
@@ -155,14 +155,14 @@ sergem personal public notebook            </a>
 <p>Enjoy!</p>
 <h2>Troubleshooting</h2>
 <p>Long running pyspark kernel is terminated after approximately 1 hour with the error:</p>
-<div class="highlight"><pre><span></span><span class="err">An error was encountered:</span>
+<div class="highlight"><pre><span></span><code><span class="err">An error was encountered:</span>
 <span class="err">Invalid status code &#39;404&#39; from http://ip-123-123-123-123.eu-west-1.compute.internal:8998/sessions/1 with error payload: &quot;Session &#39;1&#39; not found.&quot;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>To fix it add the following to your emr  cluster  <code>Configurations</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">[{&#39;classification&#39;: &#39;livy-conf&#39;,&#39;Properties&#39;: {&#39;livy.server.session.timeout&#39;:&#39;5h&#39;}}]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">[{&#39;classification&#39;: &#39;livy-conf&#39;,&#39;Properties&#39;: {&#39;livy.server.session.timeout&#39;:&#39;5h&#39;}}]</span>
+</code></pre></div>
 
 
 <p><a href="https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap">source</a></p>
@@ -247,9 +247,6 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -271,14 +268,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -286,17 +292,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -304,35 +310,32 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -374,10 +377,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -385,23 +388,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -428,10 +431,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -460,23 +460,26 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -490,14 +493,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -511,17 +514,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -536,10 +539,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

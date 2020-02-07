@@ -149,7 +149,7 @@ sergem personal public notebook            </a>
 </div>
 You have to enable I2C interface first with <code>sudo raspi-config</code>. Choose "Interfacing Options" -&gt; "I2C" -&gt; "Enable".</p>
 <p>Now installing the diagnostic tool and running:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install -y i2c-tools</span>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install -y i2c-tools</span>
 <span class="err">sudo i2cdetect -y 1</span>
 <span class="err">     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f</span>
 <span class="c">00:          -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
@@ -160,16 +160,16 @@ You have to enable I2C interface first with <code>sudo raspi-config</code>. Choo
 <span class="c">50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
 <span class="c">60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
 <span class="c">70: 70 -- -- -- -- -- -- --                         </span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now we can install library:</p>
-<div class="highlight"><pre><span></span><span class="err">pip install Adafruit_PCA9685</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">pip install Adafruit_PCA9685</span>
+</code></pre></div>
 
 
 <p>and run a simple program:</p>
-<div class="highlight"><pre><span></span><span class="c1"># sample.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># sample.py</span>
 <span class="c1"># Simple demo of of the PCA9685 PWM servo/LED controller library.</span>
 <span class="c1"># This will move channel 0 from min to max position repeatedly.</span>
 <span class="c1"># Author: Tony DiCola</span>
@@ -216,12 +216,12 @@ You have to enable I2C interface first with <code>sudo raspi-config</code>. Choo
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">pwm</span><span class="o">.</span><span class="n">set_pwm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">servo_max</span><span class="p">)</span>
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>running:</p>
-<div class="highlight"><pre><span></span><span class="err">python sample.py</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">python sample.py</span>
+</code></pre></div>
 
 
 <p>To control more than 16 servose one can chain multiple drivers. See <a href="https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all#chaining-drivers">Chaining Drivers section</a> for details. Some soldering is required to assign a unique address for each driver.</p>
@@ -252,8 +252,8 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p><a href="https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/">[Arduino] using l293d</a></p>
 <p>Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor], very weak</p>
 <h2>Connecting via ssh:</h2>
-<div class="highlight"><pre><span></span><span class="err">ssh -Y user@raspberrypi-url</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -Y user@raspberrypi-url</span>
+</code></pre></div>
 
 
 <h2>Access rasbberry Pi without monitor and ethernet</h2>
@@ -266,15 +266,15 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Automatic connection to wifi. Edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code> and add the following lines:</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><span class="err">network={</span>
+<div class="highlight"><pre><span></span><code><span class="err">network={</span>
 <span class="err">    ssid=&quot;my-network-name&quot;</span>
 <span class="err">    psk=&quot;my-network-pass&quot;</span>
 <span class="err">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>In the end the file should look like this:</p>
-<div class="highlight"><pre><span></span><span class="n">country</span><span class="o">=</span><span class="n">GB</span>
+<div class="highlight"><pre><span></span><code><span class="n">country</span><span class="o">=</span><span class="n">GB</span>
 <span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="k">GROUP</span><span class="o">=</span><span class="n">netdev</span>
 <span class="n">update_config</span><span class="o">=</span><span class="mi">1</span>
 
@@ -282,12 +282,12 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
     <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
 <span class="err">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>country</code> field is essential. Wifi wont work without it. In the log you will see <code>raspberrypi systemd[1]: Started Disable WiFi if country not set.</code></p>
 <p>If you need to support multiple wifi connections use <code>id_str</code> field:</p>
-<div class="highlight"><pre><span></span><span class="n">network</span><span class="o">=</span><span class="err">{</span>
+<div class="highlight"><pre><span></span><code><span class="n">network</span><span class="o">=</span><span class="err">{</span>
     <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
     <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
     <span class="n">id_str</span><span class="o">=</span><span class="ss">&quot;net1&quot;</span>
@@ -298,7 +298,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;another pass&quot;</span>
     <span class="n">id_str</span><span class="o">=</span><span class="ss">&quot;net2&quot;</span>
 <span class="err">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <ol>
@@ -310,13 +310,13 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 </li>
 </ol>
 <p>Now you can connect to raspberry via ssh:</p>
-<div class="highlight"><pre><span></span><span class="err">ssh pi@raspberrypi</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh pi@raspberrypi</span>
+</code></pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span><span class="err">ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;</span>
+</code></pre></div>
 
 
 <h2>Reading input (button) from GPIO</h2>
@@ -327,8 +327,8 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Interactive website for pinout of Raspberry Pi for different interfaces <a href="https://pinout.xyz/#">Pinout</a></p>
 <h2>Donkey car</h2>
 <p>Requirements for running donkey car:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev</span>
+</code></pre></div>
 
 
 <h2>Other</h2>
@@ -430,9 +430,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -454,14 +451,23 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -469,17 +475,17 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -487,35 +493,32 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -557,10 +560,10 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -568,23 +571,23 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -611,10 +614,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -643,23 +643,26 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -673,14 +676,14 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -694,17 +697,17 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -719,10 +722,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

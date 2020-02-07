@@ -93,37 +93,37 @@ sergem personal public notebook            </a>
                 </div>
                 <div class="summary"><h2>Basics</h2>
 <p>Connect as user <code>postgres</code>:</p>
-<div class="highlight"><pre><span></span>psql -U postgres
-</pre></div>
+<div class="highlight"><pre><span></span><code>psql -U postgres
+</code></pre></div>
 
 
 <p>Connect to a specific database:</p>
-<div class="highlight"><pre><span></span><span class="err">\c database_name;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\c database_name;</span>
+</code></pre></div>
 
 
 <p>Quit the psql:</p>
-<div class="highlight"><pre><span></span><span class="err">\q</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\q</span>
+</code></pre></div>
 
 
 <p>List all databases:</p>
-<div class="highlight"><pre><span></span><span class="err">\l</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\l</span>
+</code></pre></div>
 
 
 <p>Lists all tables in the current database:</p>
-<div class="highlight"><pre><span></span><span class="err">\dt</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\dt</span>
+</code></pre></div>
 
 
 <p>List all users: </p>
-<div class="highlight"><pre><span></span><span class="err">\du</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\du</span>
+</code></pre></div>
 
 
 <p>Create a new role <code>username</code> with a password:</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/postgres-cheatsheet.html">more ...</a>
                 </div>
 
@@ -151,12 +151,12 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./in.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">input_file</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;out.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">input_file</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;(.*)import(.*)&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output_file …</span></pre></div>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">output_file …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/print-lines-matching-regex.html">more ...</a>
                 </div>
 
@@ -238,8 +238,8 @@ Here is how to …</p>
                 <div class="summary"><p>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.</p>
 <h2>Running tests in pytest with/without a specified mark</h2>
 <p>Execute  </p>
-<div class="highlight"><pre><span></span><span class="err">pytest -m &quot;integration&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">pytest -m &quot;integration&quot;</span>
+</code></pre></div>
 
 
 <p>if you want to run only tests that have "@pytest.mark.integration" annotation.</p>
@@ -276,27 +276,27 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
 <p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><span class="err">fuser -k 8080/tcp</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
+</code></pre></div>
 
 
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span><span class="err">sudo usermod -aG group user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
+</code></pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
+</code></pre></div>
 
 
 <p>Delete user</p>
-<div class="highlight"><pre><span></span><span class="err">userdel user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
+</code></pre></div>
 
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><span class="err">userdel -r …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel -r …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
 
@@ -328,8 +328,8 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Using <code>convert</code> utility we can join multiple image files (png, jpeg, pdf) into one pdf.</p>
-<div class="highlight"><pre><span></span><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
+</code></pre></div>
 
 
 <p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
@@ -364,13 +364,13 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><h2>Create more secure ssh keys</h2>
 <p>Create a key using elliptic curve cryptography: </p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen -a 100 -t ed25519</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
+</code></pre></div>
 
 
 <p>see also: <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">Upgrade Your SSH Key to Ed25519</a></p>
 <h2>How to prevent SSH from scanning all the keys in .ssh directory</h2>
-<div class="highlight"><pre><span></span>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server …</pre></div>
+<div class="highlight"><pre><span></span><code>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssh-cheatsheet.html">more ...</a>
                 </div>
 
@@ -439,8 +439,8 @@ Here is how to …</p>
                 <div class="summary"><ul>
 <li>Install <code>hplip-gui</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hplip-gui</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hplip-gui</span>
+</code></pre></div>
 
 
 <ul>
@@ -448,8 +448,8 @@ Here is how to …</p>
 </ul>
 <p><a href="https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580">Thanks</a></p>
 <h4>Another solution</h4>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
+</code></pre></div>
 
 
 <p><a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335">source</a></p>
@@ -513,12 +513,12 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><span class="err">touch /etc/systemd/system/your-service.service </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+</code></pre></div>
 
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
-<div class="highlight"><pre><span></span><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
 <span class="k">After</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                          </span>
 <span class="n">Requires</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                       </span>
@@ -527,7 +527,7 @@ Here is how to …</p>
 <span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">0</span><span class="w">                                                                                                                                                                                                                             </span>
 <span class="n">Restart</span><span class="o">=</span><span class="n">always</span><span class="w">                                                                                                                                                                                                                                </span>
 <span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></pre></div>
+<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
                 </div>
 
@@ -591,14 +591,14 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><p><a href="https://www.youtube.com/watch?v=D_6ybDcU5gc">Pycon2016 talk by Brett Slatkin</a>
 <a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb">Example 1: Extract variable</a></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">month</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">MONTHS</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="ow">or</span>
         <span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)):</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">MONTHS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes …</span></pre></div>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/refactoring-python-extract-variable.html">more ...</a>
                 </div>
 
@@ -701,19 +701,19 @@ Harry Percival</p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span><span class="err">:new&lt;CR&gt;  new session</span>
+<div class="highlight"><pre><span></span><code><span class="err">:new&lt;CR&gt;  new session</span>
 <span class="err">s  list sessions</span>
 <span class="err">$  name session</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span><span class="err">c  create window</span>
+<div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
 <span class="err">w  list windows</span>
 <span class="err">n  next window</span>
 <span class="err">p  previous window</span>
 <span class="err">f  find window</span>
-<span class="err">,  name window …</span></pre></div>
+<span class="err">,  name window …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -740,13 +740,13 @@ Harry Percival</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
+                <div class="summary"><div class="highlight"><pre><span></span><code>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
     <span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span>
     <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">davfs</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">webdav</span><span class="p">.</span><span class="n">yandex</span><span class="p">.</span><span class="n">ru</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span>
 
     <span class="o">#</span> <span class="k">check</span><span class="p">:</span> 
     <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span> 
-</pre></div>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
 
@@ -775,14 +775,14 @@ Harry Percival</p>
                 </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span><span class="err">mkdir /mnt/share</span>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
 <span class="err">mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Unmount</h2>
-<div class="highlight"><pre><span></span><span class="err">umount /mnt/shares</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">umount /mnt/shares</span>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
                 </div>
 
@@ -849,7 +849,7 @@ Harry Percival</p>
                 </div>
                 <div class="summary"><p>create a file <code>.inputrc</code>
 in your home directory and put there</p>
-<div class="highlight"><pre><span></span><span class="ss">&quot;\e[A&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">backward</span>
+<div class="highlight"><pre><span></span><code><span class="ss">&quot;\e[A&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">backward</span>
 <span class="ss">&quot;\e[B&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">forward</span>
 <span class="k">set</span> <span class="k">show</span><span class="o">-</span><span class="k">all</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">ambiguous</span> <span class="k">on</span>
 <span class="k">set</span> <span class="k">completion</span><span class="o">-</span><span class="k">ignore</span><span class="o">-</span><span class="k">case</span> <span class="k">on</span>
@@ -857,7 +857,7 @@ in your home directory and put there</p>
 <span class="o">#</span> <span class="n">display</span> <span class="n">possible</span> <span class="n">completions</span> <span class="k">using</span> <span class="n">different</span> <span class="n">colors</span> <span class="k">to</span> <span class="n">indicate</span> <span class="n">their</span> <span class="n">file</span> <span class="n">types</span>
 <span class="k">set</span> <span class="n">colored</span><span class="o">-</span><span class="n">stats</span> <span class="k">On</span>
 
-<span class="n">TAB</span><span class="p">:</span> <span class="n">menu</span><span class="o">-</span><span class="n">complete …</span></pre></div>
+<span class="n">TAB</span><span class="p">:</span> <span class="n">menu</span><span class="o">-</span><span class="n">complete …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">more ...</a>
                 </div>
 
@@ -947,9 +947,6 @@ in your home directory and put there</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -971,14 +968,23 @@ in your home directory and put there</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -986,17 +992,17 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -1004,35 +1010,32 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1074,10 +1077,10 @@ in your home directory and put there</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1085,23 +1088,23 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1128,10 +1131,7 @@ in your home directory and put there</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1160,23 +1160,26 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1190,14 +1193,14 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1211,17 +1214,17 @@ in your home directory and put there</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1236,10 +1239,7 @@ in your home directory and put there</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

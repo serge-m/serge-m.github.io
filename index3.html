@@ -93,8 +93,8 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Using <code>convert</code> utility we can join multiple image files (png, jpeg, pdf) into one pdf.</p>
-<div class="highlight"><pre><span></span><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
+</code></pre></div>
 
 
 <p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
@@ -211,8 +211,8 @@ two DC motors or one stepper motor<br>
                 </div>
                 <div class="summary"><p>Source <a href="https://askubuntu.com/questions/37111/how-to-make-firefox-main-windows-have-no-decorations-using-devilspie">here</a></p>
 <p>Install devilspie:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install devilspie</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install devilspie</span>
+</code></pre></div>
 
 
 <p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
@@ -248,13 +248,13 @@ two DC motors or one stepper motor<br>
                 </div>
                 <div class="summary"><h2>Create more secure ssh keys</h2>
 <p>Create a key using elliptic curve cryptography: </p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen -a 100 -t ed25519</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
+</code></pre></div>
 
 
 <p>see also: <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">Upgrade Your SSH Key to Ed25519</a></p>
 <h2>How to prevent SSH from scanning all the keys in .ssh directory</h2>
-<div class="highlight"><pre><span></span>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server …</pre></div>
+<div class="highlight"><pre><span></span><code>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssh-cheatsheet.html">more ...</a>
                 </div>
 
@@ -309,16 +309,16 @@ two DC motors or one stepper motor<br>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Running some GUI application as another user:</p>
-<div class="highlight"><pre><span></span><span class="err">user1@laptop:~$ su - user2</span>
+<div class="highlight"><pre><span></span><code><span class="err">user1@laptop:~$ su - user2</span>
 <span class="err">user2@laptop:~$ leafpad ~/somefile.txt</span>
 <span class="err">No protocol specified</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The problem is <code>user2</code> doesn't have access to your screen.
 Solution:</p>
-<div class="highlight"><pre><span></span><span class="err">xhost +</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
+</code></pre></div>
 
 
 <p>Probably not the safest one.</p>
@@ -353,7 +353,7 @@ Solution:</p>
                 </div>
                 <div class="summary"><p>Let's consider  how python standard unittest module suppose to use mocks.</p>
 <p>Assume we want to test a method that creates and uses objects of other classes:</p>
-<div class="highlight"><pre><span></span><span class="c1"># content of module.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># content of module.py</span>
 
 <span class="c1"># classes that we want to mock</span>
 <span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> 
@@ -363,7 +363,7 @@ Solution:</p>
   <span class="k">pass</span>
 
 <span class="c1"># class that we want to test</span>
-<span class="k">class</span> <span class="nc">ProductionClass …</span></pre></div>
+<span class="k">class</span> <span class="nc">ProductionClass …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mocking-in-python.html">more ...</a>
                 </div>
 
@@ -462,23 +462,23 @@ Clustering is based on histograms. 1 contributor. No …</p>
                 </div>
                 <div class="summary"><h2>Commands</h2>
 <h3>List indexes</h3>
-<div class="highlight"><pre><span></span><span class="err">curl -X GET localhost:9200/_cat/indices</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
+</code></pre></div>
 
 
 <h3>Delete index</h3>
-<div class="highlight"><pre><span></span><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
+</code></pre></div>
 
 
 <h3>Delete all indices</h3>
-<div class="highlight"><pre><span></span><span class="err">curl -X GET localhost:9200/_all</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
+</code></pre></div>
 
 
 <h3>List of all doc_types in a given index</h3>
-<div class="highlight"><pre><span></span><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
+</code></pre></div>
 
 
 <h2>Running elastic seach …</h2>
@@ -507,12 +507,12 @@ Clustering is based on histograms. 1 contributor. No …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Show git history with branches </p>
-<div class="highlight"><pre><span></span><span class="err">git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span>
+</code></pre></div>
 
 
 <p>Less nice and shorter</p>
-<div class="highlight"><pre><span></span><span class="err">git log --graph --abbrev-commit …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">more ...</a>
                 </div>
 
@@ -673,8 +673,8 @@ Clustering is based on histograms. 1 contributor. No …</p>
                 <div class="summary"><ul>
 <li>Install <code>hplip-gui</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hplip-gui</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hplip-gui</span>
+</code></pre></div>
 
 
 <ul>
@@ -682,8 +682,8 @@ Clustering is based on histograms. 1 contributor. No …</p>
 </ul>
 <p><a href="https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580">Thanks</a></p>
 <h4>Another solution</h4>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
+</code></pre></div>
 
 
 <p><a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335">source</a></p>
@@ -776,12 +776,12 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><span class="err">touch /etc/systemd/system/your-service.service </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+</code></pre></div>
 
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
-<div class="highlight"><pre><span></span><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
 <span class="k">After</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                          </span>
 <span class="n">Requires</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                       </span>
@@ -790,7 +790,7 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
 <span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">0</span><span class="w">                                                                                                                                                                                                                             </span>
 <span class="n">Restart</span><span class="o">=</span><span class="n">always</span><span class="w">                                                                                                                                                                                                                                </span>
 <span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></pre></div>
+<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
                 </div>
 
@@ -827,9 +827,9 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
 <h2>Connection via OPenVPN is slow for https</h2>
 <p>Try the following <a href="https://forums.openvpn.net/viewtopic.php?t=21857">advice</a>
 The udp connection is perfect with these parameters (in client config):</p>
-<div class="highlight"><pre><span></span><span class="err">mssfix 1200</span>
+<div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
 <span class="err">tun-mtu 1200</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>DNS doesn't work through VPN</h2>
@@ -910,9 +910,6 @@ The udp connection is perfect with these parameters (in client config):</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -934,14 +931,23 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -949,17 +955,17 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -967,35 +973,32 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1037,10 +1040,10 @@ The udp connection is perfect with these parameters (in client config):</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1048,23 +1051,23 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1091,10 +1094,7 @@ The udp connection is perfect with these parameters (in client config):</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1123,23 +1123,26 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1153,14 +1156,14 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1174,17 +1177,17 @@ The udp connection is perfect with these parameters (in client config):</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1199,10 +1202,7 @@ The udp connection is perfect with these parameters (in client config):</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

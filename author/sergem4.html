@@ -87,7 +87,7 @@ sergem personal public notebook            </a>
                 <div class="summary"><p>In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like <code>docker ps</code></p>
 <p>The error I got was </p>
-<div class="highlight"><pre><span></span><span class="err">Job for docker.service failed because the control process exited with error code. See &quot;systemctl status …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Job for docker.service failed because the control process exited with error code. See &quot;systemctl status …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">more ...</a>
                 </div>
 
@@ -111,8 +111,8 @@ It hangs/fails on installation or on any significant docker command like <code>d
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Run</p>
-<div class="highlight"><pre><span></span><span class="err">curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints</span>
+</code></pre></div>
 
 
 <p>compare output with results of 
@@ -245,8 +245,8 @@ The extenal application can be accessible through docker image. I want to write 
                 <div class="summary"><p>Download JDK for Java 8 from Oracle's web-site.
 Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <p>Update java alternatives:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1</span>
-<span class="err">sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1</span>
+<span class="err">sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">more ...</a>
                 </div>
 
@@ -353,14 +353,14 @@ We want to test endpoints behaviour including status codes and parameters encodi
                 </div>
                 <div class="summary"><p><a href="https://www.youtube.com/watch?v=D_6ybDcU5gc">Pycon2016 talk by Brett Slatkin</a>
 <a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb">Example 1: Extract variable</a></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 <span class="n">month</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">MONTHS</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="ow">or</span>
         <span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)):</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">MONTHS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes …</span></pre></div>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/refactoring-python-extract-variable.html">more ...</a>
                 </div>
 
@@ -457,8 +457,8 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <ol>
 <li>
 <p>remove standard firefox:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get remove firefox</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get remove firefox</span>
+</code></pre></div>
 
 
 </li>
@@ -514,8 +514,8 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>$ git --git-dir<span class="o">=</span>../&lt;some_other_repo&gt;/.git format-patch -k -1 --stdout &lt;commit SHA&gt; <span class="p">|</span> git am -3 -k
-</pre></div>
+                <div class="summary"><div class="highlight"><pre><span></span><code>$ git --git-dir<span class="o">=</span>../&lt;some_other_repo&gt;/.git format-patch -k -1 --stdout &lt;commit SHA&gt; <span class="p">|</span> git am -3 -k
+</code></pre></div>
 
 
 <p>Source:
@@ -554,19 +554,19 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span><span class="err">:new&lt;CR&gt;  new session</span>
+<div class="highlight"><pre><span></span><code><span class="err">:new&lt;CR&gt;  new session</span>
 <span class="err">s  list sessions</span>
 <span class="err">$  name session</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span><span class="err">c  create window</span>
+<div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
 <span class="err">w  list windows</span>
 <span class="err">n  next window</span>
 <span class="err">p  previous window</span>
 <span class="err">f  find window</span>
-<span class="err">,  name window …</span></pre></div>
+<span class="err">,  name window …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -600,19 +600,19 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 Assume we have following partitions:</p>
 </li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err"> boot /sdb1 (don&#39;t really know how it works)</span>
+<div class="highlight"><pre><span></span><code><span class="err"> boot /sdb1 (don&#39;t really know how it works)</span>
 <span class="err"> root /sdb2</span>
 <span class="err"> home /sdb3 </span>
-</pre></div>
+</code></pre></div>
 
 
 <ul>
 <li>Do</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span> <span class="o">/</span><span class="n">mnt</span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span> <span class="o">/</span><span class="n">mnt</span>
 
 <span class="o">##</span> <span class="k">if</span> <span class="n">you</span> <span class="n">have</span> <span class="n">boot</span> <span class="n">partition</span><span class="p">:</span>
-<span class="o">#</span> <span class="n">sudo …</span></pre></div>
+<span class="o">#</span> <span class="n">sudo …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fix-boot-record-after-moving-linux-mint.html">more ...</a>
                 </div>
 
@@ -639,13 +639,13 @@ Assume we have following partitions:</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
+                <div class="summary"><div class="highlight"><pre><span></span><code>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
     <span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span>
     <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">davfs</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">webdav</span><span class="p">.</span><span class="n">yandex</span><span class="p">.</span><span class="n">ru</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span>
 
     <span class="o">#</span> <span class="k">check</span><span class="p">:</span> 
     <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span> 
-</pre></div>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
 
@@ -670,19 +670,19 @@ Assume we have following partitions:</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span><span class="err">require(&#39;image&#39;)</span>
+                <div class="summary"><div class="highlight"><pre><span></span><code><span class="err">require(&#39;image&#39;)</span>
 <span class="err">imgPath = &quot;image.jpg&quot;</span>
 <span class="err">img = torch.Tensor(1, 3, imgDim, imgDim)</span>
 <span class="err">img[1] = image.load(imgPath, 3, byte)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
-<div class="highlight"><pre><span></span><span class="err">display</span>
+<div class="highlight"><pre><span></span><code><span class="err">display</span>
 <span class="err">require &#39;gnuplot&#39;</span>
 <span class="err">gnuplot.figure(1)</span>
 <span class="err">gnuplot.imagesc(img[1])</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Torch&lt;-&gt;numpy dictionary
@@ -713,10 +713,10 @@ Assume we have following partitions:</p>
                 </div>
                 <div class="summary"><p>I got the error while installing torch for miniconda. Something like
 Linking CXX executable mshrable</p>
-<div class="highlight"><pre><span></span><span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;</span>
 <span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;</span>
 <span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39;</span>
-<span class="err">~/miniconda/envs …</span></pre></div>
+<span class="err">~/miniconda/envs …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-torch-for-miniconda.html">more ...</a>
                 </div>
 
@@ -740,22 +740,22 @@ Linking CXX executable mshrable</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Activate miniconda environment (my environment is called py3):</p>
-<div class="highlight"><pre><span></span><span class="nb">source</span> activate py3
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span> activate py3
+</code></pre></div>
 
 
 <p>Produce initial steps from the readme:</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> examples
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples
 mkdir build
 <span class="nb">cd</span> build
 cmake ..
 cmake --build . --config Release
-</pre></div>
+</code></pre></div>
 
 
 <p>inside function  <code>build_dlib()</code> of file <code>setup.py</code> add the highlighted code:</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">platform_arch</span> <span class="o">==</span> <span class="s1">&#39;64bit&#39;</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
-    <span class="c1"># 64bit build on Windows …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">platform_arch</span> <span class="o">==</span> <span class="s1">&#39;64bit&#39;</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+    <span class="c1"># 64bit build on Windows …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/compile-dlib-for-miniconda.html">more ...</a>
                 </div>
 
@@ -784,14 +784,14 @@ cmake --build . --config Release
                 </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span><span class="err">mkdir /mnt/share</span>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
 <span class="err">mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Unmount</h2>
-<div class="highlight"><pre><span></span><span class="err">umount /mnt/shares</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">umount /mnt/shares</span>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
                 </div>
 
@@ -900,9 +900,6 @@ cmake --build . --config Release
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -924,14 +921,23 @@ cmake --build . --config Release
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -939,17 +945,17 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -957,35 +963,32 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1027,10 +1030,10 @@ cmake --build . --config Release
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1038,23 +1041,23 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1081,10 +1084,7 @@ cmake --build . --config Release
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1113,23 +1113,26 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1143,14 +1146,14 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1164,17 +1167,17 @@ cmake --build . --config Release
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1189,10 +1192,7 @@ cmake --build . --config Release
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

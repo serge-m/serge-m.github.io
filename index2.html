@@ -170,10 +170,10 @@ For example according to ISO 8601 …</p>
 <h2>Flask-SQLAlchemy module</h2>
 <p><a href="http://flask-sqlalchemy.pocoo.org">Flask-SQLAlchemy</a> is an extension for Flask that adds support for SQLAlchemy to your application.</p>
 <p>How to add SQLAlchemy to Flask application:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__ …</span></pre></div>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__ …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">more ...</a>
                 </div>
 
@@ -291,8 +291,8 @@ Here is how to …</p>
                 <div class="summary"><p>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.</p>
 <h2>Running tests in pytest with/without a specified mark</h2>
 <p>Execute  </p>
-<div class="highlight"><pre><span></span><span class="err">pytest -m &quot;integration&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">pytest -m &quot;integration&quot;</span>
+</code></pre></div>
 
 
 <p>if you want to run only tests that have "@pytest.mark.integration" annotation.</p>
@@ -449,18 +449,18 @@ We will have a main page and <code>users</code> page in our …</p>
                 </div>
                 <div class="summary"><p>Build time can be reduced by using multiple cores of your processor.</p>
 <p>Parallelization for make:</p>
-<div class="highlight"><pre><span></span><span class="err">make -j8</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">make -j8</span>
+</code></pre></div>
 
 
 <p>Parallelization for cmake:</p>
-<div class="highlight"><pre><span></span><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
+</code></pre></div>
 
 
 <p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
-<div class="highlight"><pre><span></span><span class="err">python setup.py install</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">python setup.py install</span>
+</code></pre></div>
 
 
 <p>Setup script doesn't accept …</p>
@@ -488,20 +488,20 @@ We will have a main page and <code>users</code> page in our …</p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+                <div class="summary"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
 
 <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">your_datetime</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># adds one month</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Intuitive solution doesn't work</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
 <span class="n">File</span> <span class="err">““</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="err">?</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="err">‘</span><span class="n">months</span><span class="err">’</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="k">for</span> <span class="n">this</span> <span class="n">function …</span></pre></div>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="err">‘</span><span class="n">months</span><span class="err">’</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="k">for</span> <span class="n">this</span> <span class="n">function …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-months-to-datetime-in-python.html">more ...</a>
                 </div>
 
@@ -527,18 +527,18 @@ We will have a main page and <code>users</code> page in our …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><h2>Import module by path/name</h2>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">importlib</span>
 <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Find class implementing certain interface in a module</h2>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_class_from_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_class_from_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
     <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
     <span class="n">list_classes</span> <span class="o">=</span> <span class="n">get_all_classes_implementing_interface</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">target_class</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">list_classes</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Unable to find implemented interface </span><span class="si">{}</span><span class="s2"> in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_class</span><span class="p">,</span> <span class="n">module_path</span><span class="p">))</span>
-    <span class="k">if</span> <span class="nb">len …</span></pre></div>
+    <span class="k">if</span> <span class="nb">len …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/module-import-in-python.html">more ...</a>
                 </div>
 
@@ -566,22 +566,22 @@ We will have a main page and <code>users</code> page in our …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><h2>How to include default values in '--help'</h2>
-<div class="highlight"><pre><span></span><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
     <span class="c1"># ... other options ...</span>
     <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Output looks like this:</p>
-<div class="highlight"><pre><span></span>  <span class="o">--</span><span class="n">scan</span><span class="o">-</span><span class="n">time</span> <span class="p">[</span><span class="n">SCAN_TIME</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code>  <span class="o">--</span><span class="n">scan</span><span class="o">-</span><span class="n">time</span> <span class="p">[</span><span class="n">SCAN_TIME</span><span class="p">]</span>
                         <span class="n">Wait</span> <span class="n">SCAN</span><span class="o">-</span><span class="n">TIME</span> <span class="n">seconds</span> <span class="n">between</span> <span class="n">status</span> <span class="n">checks</span><span class="o">.</span>
                         <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Another tip:
 add '%(default)' to the help parameter to control what is displayed.</p>
-<div class="highlight"><pre><span></span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--type&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;toto&quot;</span><span class="p">,</span> <span class="n">choices …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--type&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;toto&quot;</span><span class="p">,</span> <span class="n">choices …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-argparse-recipies.html">more ...</a>
                 </div>
 
@@ -614,27 +614,27 @@ add '%(default)' to the help parameter to control what is displayed.</p>
                 </div>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
 <p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><span class="err">fuser -k 8080/tcp</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
+</code></pre></div>
 
 
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span><span class="err">sudo usermod -aG group user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
+</code></pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
+</code></pre></div>
 
 
 <p>Delete user</p>
-<div class="highlight"><pre><span></span><span class="err">userdel user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
+</code></pre></div>
 
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><span class="err">userdel -r …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel -r …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
 
@@ -661,11 +661,11 @@ add '%(default)' to the help parameter to control what is displayed.</p>
                 </div>
                 <div class="summary"><h2>Expandable / collapsible code blocks in github</h2>
 <p>The text is shown on click.</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">details</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">summary</span><span class="p">&gt;</span>Click to expand<span class="p">&lt;/</span><span class="nt">summary</span><span class="p">&gt;</span>
   your hidden code
 <span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Results:</p>
@@ -893,9 +893,6 @@ An open source and collaborative framework for extracting the data you need from
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -917,14 +914,23 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -932,17 +938,17 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -950,35 +956,32 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1020,10 +1023,10 @@ An open source and collaborative framework for extracting the data you need from
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1031,23 +1034,23 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1074,10 +1077,7 @@ An open source and collaborative framework for extracting the data you need from
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1106,23 +1106,26 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1136,14 +1139,14 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1157,17 +1160,17 @@ An open source and collaborative framework for extracting the data you need from
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1182,10 +1185,7 @@ An open source and collaborative framework for extracting the data you need from
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

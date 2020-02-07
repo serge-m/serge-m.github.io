@@ -117,9 +117,9 @@ sergem personal public notebook            </a>
 <h2>Connection via OPenVPN is slow for https</h2>
 <p>Try the following <a href="https://forums.openvpn.net/viewtopic.php?t=21857">advice</a>
 The udp connection is perfect with these parameters (in client config):</p>
-<div class="highlight"><pre><span></span><span class="err">mssfix 1200</span>
+<div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
 <span class="err">tun-mtu 1200</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>DNS doesn't work through VPN</h2>
@@ -127,18 +127,18 @@ The udp connection is perfect with these parameters (in client config):</p>
 <p><a href="https://bugs.launchpad.net/ubuntu/+source/openvpn/+bug/1211110">Solution</a>:</p>
 <p>This is a bug that's fixed in upstream NetworkManager. That said, the various GUI tools which write the NetworkManager config files haven't been updated to ensure that DNS leaks are prevented when using vpn connections.</p>
 <p>To prevent system dns from appearing and being used in <code>/etc/resolv.conf</code> when using a VPN, edit your vpn configuration (i.e. the file in /etc/NetworkManager/system-connections/<vpn name>) so it's something like this:</p>
-<div class="highlight"><pre><span></span><span class="k">[ipv4]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[ipv4]</span>
 <span class="na">dns</span><span class="o">=</span><span class="s">&lt;vpn dns server ip address&gt;;</span>
 <span class="na">ignore-auto-dns</span><span class="o">=</span><span class="s">true</span>
 <span class="na">method</span><span class="o">=</span><span class="s">auto</span>
 <span class="na">dns-priority</span><span class="o">=</span><span class="s">-1</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>the negative dns-priority means only this dns server will be used.
 Then reload the config file:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo nmcli c reload &lt;vpn name&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli c reload &lt;vpn name&gt;</span>
+</code></pre></div>
 
 
 <p>and toggle the vpn.</p>
@@ -160,15 +160,15 @@ Then reload the config file:</p>
 <p>You can specify a directory to store generated keys using <code>EASYRSA_PKI</code> environment variable. <code>$PWD/pki</code> is used by default. </p>
 <h3>Set up CA (certification authority)</h3>
 <p>It is better to use a separate computer to host CA.</p>
-<div class="highlight"><pre><span></span>root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
+<div class="highlight"><pre><span></span><code>root@a1aaf3e31e3a:/easyrsa# ./easyrsa init-pki
 
 init-pki complete<span class="p">;</span> you may now create a CA or requests.
 Your newly created PKI dir is: /easyrsa/pki
-</pre></div>
+</code></pre></div>
 
 
 <p>build-ca:</p>
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@a1aaf3e31e3a</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="c1"># ./easyrsa build-ca</span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nd">@a1aaf3e31e3a</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="c1"># ./easyrsa build-ca</span>
 <span class="n">Generating</span> <span class="n">a</span> <span class="mi">2048</span> <span class="n">bit</span> <span class="n">RSA</span> <span class="n">private</span> <span class="n">key</span>
 <span class="o">........................................................................................................................................................+++</span>
 <span class="o">.....................+++</span>
@@ -188,11 +188,11 @@ Your newly created PKI dir is: /easyrsa/pki
 <span class="n">CA</span> <span class="n">creation</span> <span class="n">complete</span> <span class="ow">and</span> <span class="n">you</span> <span class="n">may</span> <span class="n">now</span> <span class="kn">import</span> <span class="nn">and</span> <span class="nn">sign</span> <span class="nn">cert</span> <span class="nn">requests.</span>
 <span class="n">Your</span> <span class="n">new</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="nb">file</span> <span class="k">for</span> <span class="n">publishing</span> <span class="ow">is</span> <span class="n">at</span><span class="p">:</span>
 <span class="o">/</span><span class="n">easyrsa</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">ca</span><span class="o">.</span><span class="n">crt</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Copy <code>ca.crt</code>.</p>
-<div class="highlight"><pre><span></span>root@8bb29470d5c0:/easyrsa# ./easyrsa gen-crl
+<div class="highlight"><pre><span></span><code>root@8bb29470d5c0:/easyrsa# ./easyrsa gen-crl
 Using configuration from ./openssl-easyrsa.cnf
 Enter pass phrase <span class="k">for</span> /ca/pki/private/ca.key:
 Can<span class="s1">&#39;t open /ca/pki/index.txt.attr for reading, No such file or directory</span>
@@ -201,20 +201,20 @@ Can<span class="s1">&#39;t open /ca/pki/index.txt.attr for reading, No such file
 
 An updated CRL has been created.
 CRL file: /ca/pki/crl.pem
-</pre></div>
+</code></pre></div>
 
 
 <p>Copy <code>crl.pem</code></p>
 <h4>On server</h4>
 <p>We have to initialize PKI (private key infrastructure) here as well, then we create a request to CA.</p>
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">init</span><span class="o">-</span><span class="n">pki</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">init</span><span class="o">-</span><span class="n">pki</span><span class="w"></span>
 
 <span class="n">init</span><span class="o">-</span><span class="n">pki</span><span class="w"> </span><span class="n">complete</span><span class="p">;</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">CA</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">requests</span><span class="p">.</span><span class="w"></span>
 <span class="n">Your</span><span class="w"> </span><span class="n">newly</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="n">PKI</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="k">is</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">req</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">nopass</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">req</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">nopass</span><span class="w"></span>
 <span class="n">Generating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="nc">bit</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="k">key</span><span class="w"></span>
 <span class="p">.</span><span class="o">+++</span><span class="w"></span>
 <span class="p">......................................</span><span class="o">+++</span><span class="w"></span>
@@ -232,21 +232,21 @@ CRL file: /ca/pki/crl.pem
 <span class="n">Keypair</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">completed</span><span class="p">.</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="k">are</span><span class="err">:</span><span class="w"></span>
 <span class="nl">req</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">reqs</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">req</span><span class="w"></span>
 <span class="k">key</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="k">key</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Copy <code>server.req</code> to CA.</p>
 <h4>On CA</h4>
 <p>Import:</p>
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">import</span><span class="o">-</span><span class="n">req</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">req</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">import</span><span class="o">-</span><span class="n">req</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">import</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="n">req</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
 
 <span class="n">The</span> <span class="n">request</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">imported</span> <span class="n">with</span> <span class="n">a</span> <span class="kt">short</span> <span class="n">name</span> <span class="nl">of</span><span class="p">:</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
 <span class="n">You</span> <span class="n">may</span> <span class="n">now</span> <span class="n">use</span> <span class="n">this</span> <span class="n">name</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">signing</span> <span class="n">operations</span> <span class="n">on</span> <span class="n">this</span> <span class="n">request</span><span class="p">.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Sign <code>vpn-server</code> with type <code>server</code>:</p>
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">sign</span><span class="o">-</span><span class="n">req</span> <span class="n">server</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">sign</span><span class="o">-</span><span class="n">req</span> <span class="n">server</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
 
 
 <span class="n">You</span> <span class="n">are</span> <span class="n">about</span> <span class="n">to</span> <span class="n">sign</span> <span class="n">the</span> <span class="n">following</span> <span class="n">certificate</span><span class="p">.</span>
@@ -277,12 +277,12 @@ CRL file: /ca/pki/crl.pem
 <span class="n">Data</span> <span class="n">Base</span> <span class="n">Updated</span>
 
 <span class="n">Certificate</span> <span class="n">created</span> <span class="nl">at</span><span class="p">:</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">issued</span><span class="o">/</span><span class="n">vpn</span><span class="o">-</span><span class="n">server</span><span class="p">.</span><span class="n">crt</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Launcing OpenVPN server</h3>
 <h4>Configuration</h4>
-<div class="highlight"><pre><span></span><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">dh</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">dh</span><span class="w"></span>
 <span class="n">Generating</span><span class="w"> </span><span class="n">DH</span><span class="w"> </span><span class="k">parameters</span><span class="p">,</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="nc">bit</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="n">safe</span><span class="w"> </span><span class="n">prime</span><span class="p">,</span><span class="w"> </span><span class="n">generator</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
 <span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">going</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">take</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="nc">time</span><span class="w"></span>
 <span class="p">.</span><span class="o">+</span><span class="p">...............................................................................................................................</span><span class="w"></span>
@@ -290,22 +290,22 @@ CRL file: /ca/pki/crl.pem
 <span class="p">......................................................................................................</span><span class="o">++*++*</span><span class="w"></span>
 
 <span class="n">DH</span><span class="w"> </span><span class="k">parameters</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">dh</span><span class="p">.</span><span class="n">pem</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
-<div class="highlight"><pre><span></span><span class="err">root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key</span>
+</code></pre></div>
 
 
 <p>Create missing directories:</p>
-<div class="highlight"><pre><span></span><span class="err">mkdir /etc/openvpn/ccd</span>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir /etc/openvpn/ccd</span>
 <span class="err">mkdir -p /var/log/openvpn/</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Create non-priviledged user <code>openvpn</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn</span>
+</code></pre></div>
 
 
 <p>Copy to <code>/etc/openvpn</code> the following files:
@@ -368,41 +368,41 @@ mute 20
 <ol>
 <li>Reload:</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="err">sudo systemctl daemon-reload</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl daemon-reload</span>
+</code></pre></div>
 
 
 <h4>Launching service</h4>
-<div class="highlight"><pre><span></span><span class="err">sudo service openvpn restart</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo service openvpn restart</span>
+</code></pre></div>
 
 
 <p>After that you have to see logs in <code>/var/log/openvpn/</code></p>
 <p>If it doesn't start debug configuration with manual run:</p>
-<div class="highlight"><pre><span></span><span class="err">openvpn /etc/openvpn/server.conf</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">openvpn /etc/openvpn/server.conf</span>
+</code></pre></div>
 
 
 <h3>Launching client</h3>
 <p>On the client we want to have a password for a key:</p>
-<div class="highlight"><pre><span></span><span class="err">root@df73a69e45da:/easyrsa# ./easyrsa init-pki</span>
+<div class="highlight"><pre><span></span><code><span class="err">root@df73a69e45da:/easyrsa# ./easyrsa init-pki</span>
 <span class="err">root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 </span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Then copy request to CA, import.</p>
-<div class="highlight"><pre><span></span>$ ./easy-rsa sign-req &lt;path-to-client1.req&gt; client1
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ ./easy-rsa sign-req &lt;path-to-client1.req&gt; client1
+</code></pre></div>
 
 
 <p>Signing request for a client:</p>
-<div class="highlight"><pre><span></span>$ ./easy-rsa sign-req client client1
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ ./easy-rsa sign-req client client1
+</code></pre></div>
 
 
 <p>Copy signed certificates and other necessary files to the client.</p>
 <h4>OpenVPN config for client</h4>
-<div class="highlight"><pre><span></span><span class="n">dev</span> <span class="n">tun</span>
+<div class="highlight"><pre><span></span><code><span class="n">dev</span> <span class="n">tun</span>
 <span class="n">proto</span> <span class="n">udp</span>
 <span class="n">remote</span> <span class="n">YOUR_SERVER_ADDRESS</span> <span class="mi">1194</span>
 <span class="n">client</span>
@@ -423,14 +423,14 @@ mute 20
 <span class="o">#</span><span class="n">status</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">openvpn</span><span class="o">-</span><span class="n">status</span><span class="p">.</span><span class="n">log</span> <span class="mi">1</span>
 <span class="n">status</span><span class="o">-</span><span class="k">version</span> <span class="mi">3</span>
 <span class="o">#</span><span class="n">log</span><span class="o">-</span><span class="n">append</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">openvpn</span><span class="o">-</span><span class="n">client</span><span class="p">.</span><span class="n">log</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>How to revoke a certificate (deactivate a user)</h2>
 <p>On CA:</p>
-<div class="highlight"><pre><span></span>$ ./easyrsa revoke &lt;client-name&gt;
+<div class="highlight"><pre><span></span><code>$ ./easyrsa revoke &lt;client-name&gt;
 $ ./easyrsa gen-crl
-</pre></div>
+</code></pre></div>
 
 
 <p>Then you have to upload new crl.pem to your server and restart the server.</p>
@@ -511,9 +511,6 @@ $ ./easyrsa gen-crl
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -535,14 +532,23 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -550,17 +556,17 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -568,35 +574,32 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -638,10 +641,10 @@ $ ./easyrsa gen-crl
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -649,23 +652,23 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -692,10 +695,7 @@ $ ./easyrsa gen-crl
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -724,23 +724,26 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -754,14 +757,14 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -775,17 +778,17 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -800,10 +803,7 @@ $ ./easyrsa gen-crl
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

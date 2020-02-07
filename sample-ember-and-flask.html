@@ -115,7 +115,7 @@ We will have a main page and <code>users</code> page in our frontend. On the <co
 the client will see a list of users that we get from backend.</p>
 <p>Source code is here:
 <a href="https://github.com/serge-m/ember_flask_example">ember_flask_example</a></p>
-<div class="highlight"><pre><span></span><span class="c1"># file backend/api.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># file backend/api.py</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">jsonify</span>
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">send_from_directory</span>
@@ -163,27 +163,27 @@ the client will see a list of users that we get from backend.</p>
           <span class="s2">&quot;FLASK_APP=dummy.py python -m flask run</span><span class="se">\n</span><span class="s2">&quot;</span>
           <span class="s2">&quot;instead&quot;</span><span class="p">)</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now you can already launch your backend, but frontend will not work of course.</p>
-<div class="highlight"><pre><span></span><span class="err">FLASK_DEBUG=1 FLASK_APP=api.py python -m flask run --port=5000</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">FLASK_DEBUG=1 FLASK_APP=api.py python -m flask run --port=5000</span>
+</code></pre></div>
 
 
 <p>How to check:</p>
-<div class="highlight"><pre><span></span><span class="err">curl localhost:5000/api/users</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">curl localhost:5000/api/users</span>
+</code></pre></div>
 
 
 <h2>writting frontend</h2>
 <p>First we need to install <a href="">node js</a> and ember:</p>
-<div class="highlight"><pre><span></span>$ npm install -g ember-cli
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ npm install -g ember-cli
+</code></pre></div>
 
 
 <p>Initialize new ember project</p>
-<div class="highlight"><pre><span></span>$ ember new frontend
+<div class="highlight"><pre><span></span><code>$ ember new frontend
 installing app
   create .editorconfig
   create .ember-cli
@@ -223,43 +223,43 @@ installing app
   create vendor/.gitkeep
 NPM: Installed dependencies
 Successfully initialized git.
-</pre></div>
+</code></pre></div>
 
 
 <p>Now we need to generate couple of new files:</p>
-<div class="highlight"><pre><span></span>$ ember create model user
+<div class="highlight"><pre><span></span><code>$ ember create model user
 $ ember generate  model user
 $ ember generate route users
 $ ember generate route index
 $ ember generate adapter user
-</pre></div>
+</code></pre></div>
 
 
 <p>We need an adapter to specify the location of the endpoint where 
 Ember can get data for users. Here we want Ember to look for data on the same server
 and port but with suffix <code>/api</code>. For example if you server the frontend on 
 <code>http://localhost:5000/</code> then ember will query <code>http://localhost:5000/api/users</code> for data.</p>
-<div class="highlight"><pre><span></span><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">adapters</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
+<div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">adapters</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
 <span class="kn">import</span> <span class="nn">DS</span> <span class="nn">from</span> <span class="s1">&#39;ember-data&#39;</span><span class="p">;</span>
 
 <span class="n">export</span> <span class="n">default</span> <span class="n">DS</span><span class="o">.</span><span class="n">JSONAPIAdapter</span><span class="o">.</span><span class="n">extend</span><span class="p">({</span>
   <span class="n">namespace</span><span class="p">:</span> <span class="s1">&#39;api&#39;</span><span class="p">,</span>
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>We define <code>user</code> model that contains only <code>info</code> attribute.</p>
-<div class="highlight"><pre><span></span><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
+<div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
 <span class="kn">import</span> <span class="nn">DS</span> <span class="nn">from</span> <span class="s1">&#39;ember-data&#39;</span><span class="p">;</span>
 
 <span class="n">export</span> <span class="n">default</span> <span class="n">DS</span><span class="o">.</span><span class="n">Model</span><span class="o">.</span><span class="n">extend</span><span class="p">({</span>
   <span class="n">info</span><span class="p">:</span> <span class="n">DS</span><span class="o">.</span><span class="n">attr</span><span class="p">()</span>  
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>We add route <code>/users</code> to display all available users</p>
-<div class="highlight"><pre><span></span><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">router</span><span class="o">.</span><span class="n">js</span>
+<div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">router</span><span class="o">.</span><span class="n">js</span>
 <span class="kn">import</span> <span class="nn">Ember</span> <span class="nn">from</span> <span class="s1">&#39;ember&#39;</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">config</span> <span class="nn">from</span> <span class="s1">&#39;./config/environment&#39;</span><span class="p">;</span>
 
@@ -273,12 +273,12 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
 <span class="p">});</span>
 
 <span class="n">export</span> <span class="n">default</span> <span class="n">Router</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Data will be loaded according to the adapter's settings. 
 <code>user</code> is converted to <code>users</code> automatically.</p>
-<div class="highlight"><pre><span></span><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">routes</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
+<div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">routes</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
 <span class="kn">import</span> <span class="nn">Ember</span> <span class="nn">from</span> <span class="s1">&#39;ember&#39;</span><span class="p">;</span>
 
 
@@ -288,12 +288,12 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
     <span class="o">//</span> <span class="k">return</span> <span class="p">[{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;4545&quot;</span><span class="p">,</span> <span class="s2">&quot;info&quot;</span><span class="p">:</span><span class="s2">&quot;123&quot;</span><span class="p">}];</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Here we define a template for html code for the whole application. 
 There will be a header and a link to <code>users</code> page.</p>
-<div class="highlight"><pre><span></span>// file frontend/app/templates/application.hbs
+<div class="highlight"><pre><span></span><code>// file frontend/app/templates/application.hbs
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
     <span class="cp">{{</span><span class="err">#</span><span class="nv">link-to</span> <span class="s1">&#39;index&#39;</span><span class="cp">}}</span>
@@ -312,34 +312,34 @@ There will be a header and a link to <code>users</code> page.</p>
     <span class="cp">{{</span><span class="nv">outlet</span><span class="cp">}}</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Here we define how output for users will look like. 
 We iterate through all entities and display only attribute <code>info</code> for them.</p>
-<div class="highlight"><pre><span></span>// file frontend/app/templates/users.hbs
+<div class="highlight"><pre><span></span><code>// file frontend/app/templates/users.hbs
 <span class="nt">&lt;h2&gt;</span>USERS<span class="nt">&lt;/h2&gt;</span>
 
 <span class="cp">{{</span><span class="err">#</span><span class="nv">each</span> <span class="nv">model</span> <span class="k">as</span> <span class="o">|</span><span class="nf">post</span><span class="err">|</span><span class="cp">}}</span>
     <span class="nt">&lt;p&gt;</span><span class="cp">{{</span><span class="nv">post.info</span><span class="cp">}}</span><span class="nt">&lt;/p&gt;</span>
 <span class="cp">{{</span><span class="o">/</span><span class="nv">each</span><span class="cp">}}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>How to run in debug mode</h2>
 <p>First we run Flask-based api from <code>backend/</code></p>
-<div class="highlight"><pre><span></span>$ <span class="nv">FLASK_DEBUG</span><span class="o">=</span><span class="m">1</span> <span class="nv">FLASK_APP</span><span class="o">=</span>api.py python -m flask run
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">FLASK_DEBUG</span><span class="o">=</span><span class="m">1</span> <span class="nv">FLASK_APP</span><span class="o">=</span>api.py python -m flask run
+</code></pre></div>
 
 
 <p>Maybe here you need to install depencencies from <code>frontend/</code>:</p>
-<div class="highlight"><pre><span></span><span class="err">npm install</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">npm install</span>
+</code></pre></div>
 
 
 <p>Now let's run Ember server in debug mode fom <code>frontend/</code>.</p>
-<div class="highlight"><pre><span></span><span class="err">ember serve --proxy http://localhost:5000</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ember serve --proxy http://localhost:5000</span>
+</code></pre></div>
 
 
 <p>Ember server needs to know where API is located. This is done with option <code>--proxy http://localhost:5000</code>.
@@ -421,9 +421,6 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -445,14 +442,23 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -460,17 +466,17 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -478,35 +484,32 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -548,10 +551,10 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -559,23 +562,23 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -602,10 +605,7 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -634,23 +634,26 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -664,14 +667,14 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -685,17 +688,17 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -710,10 +713,7 @@ Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</co
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

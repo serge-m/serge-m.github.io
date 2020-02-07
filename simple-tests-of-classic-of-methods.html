@@ -104,7 +104,7 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <h2>BA method, simple synthetic images</h2>
 <p>For simple synthetic images:</p>
-<div class="highlight"><pre><span></span><span class="n">I0</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="n">I0</span> <span class="o">=</span>
 
          <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>
          <span class="mi">0</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>         <span class="mi">0</span>
@@ -121,12 +121,12 @@ sergem personal public notebook            </a>
          <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">1000</span>         <span class="mi">0</span>
          <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">0500</span>         <span class="mi">0</span>
          <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">0500</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">1000</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.  </p>
-<div class="highlight"><pre><span></span><span class="err">uv = estimate_flow_interface(I0, I1, &#39;classic-c-brightness&#39;, [], {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1});</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">uv = estimate_flow_interface(I0, I1, &#39;classic-c-brightness&#39;, [], {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1});</span>
+</code></pre></div>
 
 
 <p>After first iteration ( <code>loop for ignc = 1:this.gnc_iters&amp;nbsp; in dsun_ijcv_flow_code\@ba_optical_flow\compute_flow.m</code>):
@@ -136,7 +136,7 @@ sergem personal public notebook            </a>
 <p>After 3rd iteration:
 <img alt="" src="http://3.bp.blogspot.com/-nNWtlW7GjNI/VFo0XRzxjDI/AAAAAAAACDM/0XNuLNB76yc/s1600/gnc_iter_3.png"></p>
 <p>I think, it is right answer.</p>
-<div class="highlight"><pre><span></span><span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
    <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9995</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9995</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9996</span>
    <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9994</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9994</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">9995</span>
@@ -174,11 +174,11 @@ sergem personal public notebook            </a>
     <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>         <span class="mi">0</span>
     <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>         <span class="mi">0</span>         <span class="mi">0</span>
     <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>         <span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>1st iteration </p>
-<div class="highlight"><pre><span></span><span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
         <span class="o">-</span><span class="mi">1</span>    <span class="o">-</span><span class="mi">1</span>    <span class="o">-</span><span class="mi">1</span>
         <span class="o">-</span><span class="mi">1</span>    <span class="o">-</span><span class="mi">1</span>    <span class="o">-</span><span class="mi">1</span>
@@ -192,11 +192,11 @@ sergem personal public notebook            </a>
         <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>
         <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>
         <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>2nd iteration </p>
-<div class="highlight"><pre><span></span>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
        <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
        <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
@@ -210,11 +210,11 @@ sergem personal public notebook            </a>
        <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>
        <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>
        <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>3rd iteration </p>
-<div class="highlight"><pre><span></span>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
        <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
        <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>   <span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
@@ -228,7 +228,7 @@ sergem personal public notebook            </a>
         <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>
         <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>
         <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Visually the same:
@@ -237,16 +237,16 @@ sergem personal public notebook            </a>
 <p>BA - is not the simpliest method. I found there is implmentation of Horn-Schunk.</p>
 <p>I found that the results are really poor, when my "image elements" ar just on the border. So I extended image by zeros.</p>
 <p>I use the following command: </p>
-<div class="highlight"><pre><span></span><span class="err">uv = estimate_flow_interface(I0, I1, ...</span>
+<div class="highlight"><pre><span></span><code><span class="err">uv = estimate_flow_interface(I0, I1, ...</span>
 <span class="err">    &#39;hs-brightness&#39;, [], ...</span>
 <span class="err">    {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1, ...</span>
 <span class="err">     &#39;pyramid_spacing&#39;, sqrt(2)});</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>I also use slightly modified code. I disabled automatic pyramid height calculation, so I set it manually. 
 Input  </p>
-<div class="highlight"><pre><span></span>    <span class="n">I0</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">I0</span> <span class="o">=</span>
 
              <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>
              <span class="mi">0</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>         <span class="mi">0</span>
@@ -262,13 +262,13 @@ Input  </p>
              <span class="mi">0</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>         <span class="mi">0</span>
              <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>
              <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Gives:
 <img alt="" src="http://3.bp.blogspot.com/-ZfNLO6E_ccc/VFt-E3fW64I/AAAAAAAACEA/4NseP5r2T7I/s1600/HS_no_borders.png"></p>
 <p>While  </p>
-<div class="highlight"><pre><span></span>    <span class="n">I0</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">I0</span> <span class="o">=</span>
 
              <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>
              <span class="mi">0</span>         <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>         <span class="mi">0</span>
@@ -290,7 +290,7 @@ Input  </p>
              <span class="mi">0</span>         <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>         <span class="mi">0</span>
              <span class="mi">0</span>         <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>         <span class="mi">0</span>
              <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>gives 
@@ -306,7 +306,7 @@ Input  </p>
            0 0 0 0 0 0 0 0 0 0 0 0
            5 5 0 0 0 0 0 0 0 0 0 0
            5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;</p>
-<div class="highlight"><pre><span></span><span class="err">I1 = [ 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<div class="highlight"><pre><span></span><code><span class="err">I1 = [ 0 0 0 0 0 0 0 0 0 0 0 0</span>
 <span class="err">       3 0 0 0 0 0 0 0 0 0 0 0 </span>
 <span class="err">       3 0 0 0 0 0 0 0 0 0 0 0</span>
 <span class="err">       0 0 0 1 0 0 0 0 0 5 5 0</span>
@@ -315,7 +315,7 @@ Input  </p>
 <span class="err">       0 0 0 0 0 0 0 0 0 0 0 0</span>
 <span class="err">       5 5 0 0 0 0 0 0 0 0 0 0</span>
 <span class="err">       5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>```    </p>
@@ -404,9 +404,6 @@ Input  </p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -428,14 +425,23 @@ Input  </p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -443,17 +449,17 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -461,35 +467,32 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -531,10 +534,10 @@ Input  </p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -542,23 +545,23 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -585,10 +588,7 @@ Input  </p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -617,23 +617,26 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -647,14 +650,14 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -668,17 +671,17 @@ Input  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -693,10 +696,7 @@ Input  </p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

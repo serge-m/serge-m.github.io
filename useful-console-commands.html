@@ -113,81 +113,81 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <p>Some linux commands that I'll probably need in the future</p>
 <p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><span class="err">fuser -k 8080/tcp</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
+</code></pre></div>
 
 
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span><span class="err">sudo usermod -aG group user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
+</code></pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
+</code></pre></div>
 
 
 <p>Delete user</p>
-<div class="highlight"><pre><span></span><span class="err">userdel user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
+</code></pre></div>
 
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><span class="err">userdel -r user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
+</code></pre></div>
 
 
 <p>Remove user from a group</p>
-<div class="highlight"><pre><span></span><span class="err">sudo gpasswd -d user group</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd -d user group</span>
+</code></pre></div>
 
 
 <p>list all users:</p>
-<div class="highlight"><pre><span></span>$ getent passwd
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ getent passwd
+</code></pre></div>
 
 
 <p>list all groups:</p>
-<div class="highlight"><pre><span></span>$ getent group
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ getent group
+</code></pre></div>
 
 
 <p>list all groups of the current user:</p>
-<div class="highlight"><pre><span></span>$ groups
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ groups
+</code></pre></div>
 
 
 <p>list all groups of a user:</p>
-<div class="highlight"><pre><span></span>$ groups &lt;user&gt;
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ groups &lt;user&gt;
+</code></pre></div>
 
 
 <p>Change shell for user <code>user</code> to bash</p>
-<div class="highlight"><pre><span></span><span class="err">chsh -s /bin/bash user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">chsh -s /bin/bash user</span>
+</code></pre></div>
 
 
 <p>Encode/decode binary file to ascii using command line </p>
 <p><a href="/encodedecode-binary-file-to-ascii.html">link</a></p>
 <p>Restart now:</p>
-<div class="highlight"><pre><span></span><span class="err">shutdown -r 0</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">shutdown -r 0</span>
+</code></pre></div>
 
 
 <h2>SSH</h2>
 <p>generate key:</p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen</span>
+</code></pre></div>
 
 
 <p>generate RSA key of length 4096 to file <code>my_key</code></p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
+</code></pre></div>
 
 
 <p>Generate md5 fingerprint of the key (works in newer ubuntu, 16):</p>
-<div class="highlight"><pre><span></span><span class="err">ssh-keygen -lf ./my_key -E md5</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -lf ./my_key -E md5</span>
+</code></pre></div>
 
 
 <h2>Detach process</h2>
@@ -203,39 +203,39 @@ sergem personal public notebook            </a>
 <p>Certain flavours of Unix (e.g. AIX and Solaris) have an option on the nohup command itself which can be applied to a running process:</p>
 <p><code>nohup -p pid</code></p>
 <p>The first of the commands below starts the program <code>abcd</code> in the background in such a way that the subsequent logout does not stop it.</p>
-<div class="highlight"><pre><span></span>$ nohup abcd <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>$ nohup abcd <span class="p">&amp;</span>
 $ <span class="nb">exit</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><a href="https://en.wikipedia.org/wiki/Nohup">wiki</a></p>
 <h2>Scan IP range</h2>
 <p>Generally, nmap is useful to quickly scan networks.</p>
 <p>To install nmap, enter</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install nmap</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install nmap</span>
+</code></pre></div>
 
 
 <p>Once it is installed, enter</p>
-<div class="highlight"><pre><span></span><span class="err">nmap -sn 192.168.1.0/24</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">nmap -sn 192.168.1.0/24</span>
+</code></pre></div>
 
 
 <p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255.</p>
 <p><a href="https://askubuntu.com/a/224567">Source</a></p>
 <h2>Replace text in files</h2>
-<div class="highlight"><pre><span></span><span class="err">find . -type f | xargs sed -i &quot;s/text_to_find/text_to_put/g&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i &quot;s/text_to_find/text_to_put/g&quot;</span>
+</code></pre></div>
 
 
 <p>To keep original files with <code>.original</code> extension:</p>
-<div class="highlight"><pre><span></span><span class="err">find . -type f | xargs sed -i.original &quot;s/text_to_find/text_to_put/g&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i.original &quot;s/text_to_find/text_to_put/g&quot;</span>
+</code></pre></div>
 
 
 <p>If your text contain slashes, you should use another delimiter:</p>
-<div class="highlight"><pre><span></span><span class="err">find . -type f | xargs sed -i.original &quot;s|text/to/find/|text/to/put|g&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i.original &quot;s|text/to/find/|text/to/put|g&quot;</span>
+</code></pre></div>
 
 
 <h2>Disk space</h2>
@@ -322,9 +322,6 @@ $ <span class="nb">exit</span>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -346,14 +343,23 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -361,17 +367,17 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -379,35 +385,32 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -449,10 +452,10 @@ $ <span class="nb">exit</span>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -460,23 +463,23 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -503,10 +506,7 @@ $ <span class="nb">exit</span>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -535,23 +535,26 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -565,14 +568,14 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -586,17 +589,17 @@ $ <span class="nb">exit</span>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -611,10 +614,7 @@ $ <span class="nb">exit</span>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

@@ -133,21 +133,21 @@ We want to test endpoints behaviour including status codes and parameters encodi
 <p>The code consists of two files: <code>sample_app.py</code> (productions) and <code>sample_app_test.py</code> (testing). Testing is run using py.test.</p>
 <h2>Code of sample_app.py</h2>
 <p>Creating Flask application:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">json</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Helper class for JSON-based response:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">JsonResponse</span><span class="p">(</span><span class="n">Response</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_dict</span><span class="p">),</span> <span class="n">status</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">mimetype</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Defining GET and POST endpoints. The puprose of the <code>/add</code> endpoint is to return doubled value.</p>
-<div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
     <span class="k">return</span> <span class="s1">&#39;Hello, World!&#39;</span>
 
@@ -156,21 +156,21 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <span class="n">json</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span>
     <span class="n">resp</span> <span class="o">=</span> <span class="n">JsonResponse</span><span class="p">(</span><span class="n">json_dict</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="n">json</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">resp</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Main section that prints help message. (Alternative launching procedure can be applied)</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">script_name</span> <span class="o">=</span> <span class="vm">__file__</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;run:</span><span class="se">\n</span><span class="s2">&quot;</span>
           <span class="s2">&quot;FLASK_APP=</span><span class="si">{}</span><span class="s2"> python -m flask run --port 8000 --host 0.0.0.0&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">script_name</span><span class="p">))</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Code of sample_app_test.py</h2>
 <p>Fixture for test client:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">from</span> <span class="nn">sample_app</span> <span class="kn">import</span> <span class="n">app</span>
 
@@ -183,38 +183,38 @@ We want to test endpoints behaviour including status codes and parameters encodi
 
     <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">teardown</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">test_client</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Helper functions for encoding and decoding jsons:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">post_json</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">post_json</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">json_dict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Send dictionary json_dict as a json to the specified url &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_dict</span><span class="p">),</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">json_of_response</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Decode json from response&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The simplest test for GET endpoint:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_dummy</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_dummy</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="sa">b</span><span class="s1">&#39;Hello, World!&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">data</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Test for POST endpoint. Checking resulting json:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_json</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_json</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">post_json</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/add&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">})</span>
     <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
     <span class="k">assert</span> <span class="n">json_of_response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;answer&quot;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span> <span class="o">*</span> <span class="mi">2</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Testing multipart file upload</h2>
 <p>Imaging you have an endpoint that accepts POST requests with multipart files:</p>
-<div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">upload_file</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
         <span class="n">file_received</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">]</span>
@@ -225,11 +225,11 @@ We want to test endpoints behaviour including status codes and parameters encodi
 
         <span class="k">return</span> <span class="s2">&quot;file saved to </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">&quot;Wrong request&quot;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>To test it we need a helper-function:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">map_name_to_file</span><span class="p">:</span> <span class="n">Dict</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">map_name_to_file</span><span class="p">:</span> <span class="n">Dict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Posts Multipart-encoded files to url</span>
 <span class="sd">    :param client: flask test client fixture</span>
 <span class="sd">    :param url: string URL</span>
@@ -239,14 +239,14 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <span class="n">map_name_to_file_and_name</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;mocked_name_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="k">for</span>
                                  <span class="n">name</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">map_name_to_file</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
     <span class="k">return</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">map_name_to_file_and_name</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s1">&#39;multipart/form-data&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Test itself:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_multipart_files</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_multipart_files</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">post_files</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/send&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="n">BytesIO</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;content&quot;</span><span class="p">)})</span>
     <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Inspired by <a href="https://gist.github.com/DazWorrall/1779861">this gist</a></p>
@@ -255,7 +255,7 @@ We want to test endpoints behaviour including status codes and parameters encodi
 Test for connextion app must include security checks.</p>
 <h4>swagger.yaml</h4>
 <p>In this file we define API of our microservice. Also it contains security settings.</p>
-<div class="highlight"><pre><span></span><span class="nt">swagger</span><span class="p">:</span> <span class="s">&#39;2.0&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">swagger</span><span class="p">:</span> <span class="s">&#39;2.0&#39;</span>
 <span class="nt">info</span><span class="p">:</span>
   <span class="nt">title</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">your app</span>
   <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;0.1&quot;</span>
@@ -284,18 +284,18 @@ Test for connextion app must include security checks.</p>
     <span class="nt">x-tokenInfoUrl</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://oauth.example/token_info</span>
     <span class="nt">scopes</span><span class="p">:</span>
       <span class="nt">myscope</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Unique identifier of the user accessing the service.</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4>endpoints.py</h4>
 <p>Endpoints implementation.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">root</span><span class="p">():</span>
     <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;result&quot;</span><span class="p">:</span> <span class="s2">&quot;lol&quot;</span><span class="p">},</span> <span class="mi">200</span>
-</pre></div>
+</code></pre></div>
 
 
 <h4>test_endpoints.py</h4>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">pytest</span>
@@ -371,7 +371,7 @@ Test for connextion app must include security checks.</p>
         <span class="k">if</span> <span class="n">token</span> <span class="ow">in</span> <span class="p">[</span><span class="n">INCORRECT_TOKEN</span><span class="p">,</span> <span class="s2">&quot;is_not_invalid&quot;</span><span class="p">]:</span>
             <span class="k">return</span> <span class="n">FakeResponse</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">url</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>inspired by connexiton tests: <a href="https://github.com/zalando/connexion/blob/master/tests/conftest.py">[1]</a> and <a href="https://github.com/zalando/connexion/blob/master/tests/api/test_secure_api.py">[2]</a></p>
@@ -463,9 +463,6 @@ Test for connextion app must include security checks.</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -487,14 +484,23 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -502,17 +508,17 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -520,35 +526,32 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -590,10 +593,10 @@ Test for connextion app must include security checks.</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -601,23 +604,23 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -644,10 +647,7 @@ Test for connextion app must include security checks.</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -676,23 +676,26 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -706,14 +709,14 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -727,17 +730,17 @@ Test for connextion app must include security checks.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -752,10 +755,7 @@ Test for connextion app must include security checks.</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

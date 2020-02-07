@@ -110,7 +110,7 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <p>Let's consider  how python standard unittest module suppose to use mocks.</p>
 <p>Assume we want to test a method that creates and uses objects of other classes:</p>
-<div class="highlight"><pre><span></span><span class="c1"># content of module.py</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># content of module.py</span>
 
 <span class="c1"># classes that we want to mock</span>
 <span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> 
@@ -129,11 +129,11 @@ sergem personal public notebook            </a>
     <span class="n">final_result</span> <span class="o">=</span> <span class="n">object2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">intermediate_result</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">final_result</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Here is how we can test object creation (Snippet is taken from <a href="https://docs.python.org/3/library/unittest.mock.html">official documentation</a>):</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">,</span> <span class="n">MockClass2</span><span class="p">):</span>
@@ -145,20 +145,20 @@ sergem personal public notebook            </a>
     <span class="k">assert</span> <span class="n">MockClass2</span><span class="o">.</span><span class="n">called</span>
 
 <span class="n">test</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>I would say that in our case we need also to check that each object (<code>object1</code> and <code>object2</code>) were instanciated and called with correct parameters. Then we can use <code>assert_called_once_with</code> like this (example from <a href="https://docs.python.org/3/library/unittest.mock.html#quick-guide">official documentation</a>):</p>
-<div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">ProductionClass</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_method</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">ProductionClass</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_method</span><span class="p">:</span>
     <span class="n">thing</span> <span class="o">=</span> <span class="n">ProductionClass</span><span class="p">()</span>
     <span class="n">thing</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="n">mock_method</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Combining things together:</p>
-<div class="highlight"><pre><span></span><span class="n">mocked_intermediate_result</span> <span class="o">=</span> <span class="s2">&quot;some-intermediate-result&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">mocked_intermediate_result</span> <span class="o">=</span> <span class="s2">&quot;some-intermediate-result&quot;</span>
 <span class="n">mocked_final_result</span> <span class="o">=</span> <span class="s2">&quot;some-final-result&quot;</span>
 
 <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
@@ -176,17 +176,17 @@ sergem personal public notebook            </a>
     <span class="n">MockClass1</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;parameter1&quot;</span><span class="p">)</span>
     <span class="n">MockClass2</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;some_initial_parameter2&quot;</span><span class="p">)</span>
     <span class="n">MockClass2</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">mocked_intermediate_result</span><span class="p">,</span> <span class="s2">&quot;parameter2&quot;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Seems good but a little bit too verbose. Assertions on calls could be eliminated. I would like to do it like in Java with <a href="http://static.javadoc.io/org.mockito/mockito-core/2.7.13/org/mockito/Mockito.html#stubbing">Mockito</a>:</p>
-<div class="highlight"><pre><span></span><span class="n">when</span><span class="p">(</span><span class="n">mockedObject</span><span class="p">.</span><span class="na">foo</span><span class="p">(</span><span class="s">&quot;parameter&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;mocked-result&quot;</span><span class="p">);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">when</span><span class="p">(</span><span class="n">mockedObject</span><span class="p">.</span><span class="na">foo</span><span class="p">(</span><span class="s">&quot;parameter&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;mocked-result&quot;</span><span class="p">);</span>
+</code></pre></div>
 
 
 <p>That means you don't need to verify intermediate calls. If they fail, the consequent calls fail as well.</p>
 <p>The test would look like this:</p>
-<div class="highlight"><pre><span></span><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_foo</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">,</span> <span class="n">MockClass2</span><span class="p">):</span>
     <span class="n">when</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s2">&quot;some_initial_parameter1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">then_when</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;parameter1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">then_return</span><span class="p">(</span><span class="n">mocked_intermediate_result</span><span class="p">)</span>
@@ -195,14 +195,14 @@ sergem personal public notebook            </a>
     <span class="n">actual_result</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">ProductionClass</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">(</span><span class="s2">&quot;parameter1&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter2&quot;</span><span class="p">)</span>
 
     <span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">mocked_final_result</span>    
-</pre></div>
+</code></pre></div>
 
 
 <p>You don't need calls assertions in the end. If for example <code>object1.run(parameter1)</code> returns something else, then condition of the second mock object is not met and the test fails.</p>
 <p><em>Question: is there a way to achieve that?</em></p>
 <p>There is a port of Mockito to Python: <a href="https://github.com/kaste/mockito-python">mockito-python</a> 
 There you can do virtually the same as in Java:</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mockito</span> <span class="kn">import</span> <span class="n">when</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">unstub</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">mockito</span> <span class="kn">import</span> <span class="n">when</span><span class="p">,</span> <span class="n">mock</span><span class="p">,</span> <span class="n">unstub</span>
 
 <span class="n">when</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/foo&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">thenReturn</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
 
@@ -217,7 +217,7 @@ There you can do virtually the same as in Java:</p>
 
 <span class="c1"># clean up</span>
 <span class="n">unstub</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>But:</p>
@@ -240,7 +240,7 @@ There you can do virtually the same as in Java:</p>
 <h3>Usage example</h3>
 <p>Lets imagine you have a function <code>get_data</code> that queries an external API.
 We want to check that the function throws an exception if page is not found (http code 404).</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">requests_mock</span>
 
 
@@ -249,14 +249,14 @@ We want to check that the function throws an exception if page is not found (htt
         <span class="n">m</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">error_text</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">404</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
             <span class="n">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>m.post</code> mocks requests for the predefined url and returns status_code=404 and some text message. One can also specify returned JSON data.</p>
 <h2>How to avoid mocking</h2>
 <p>Python is <s>very</s> too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class <code>A</code> changes you don't notice that tests for a dependent class <code>B</code> are failing if you mock <code>A</code> in <code>test_B</code>.</p>
 <p>Possible way to avoid it is to pass a factory to the dependent class.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> <span class="k">pass</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> <span class="k">pass</span>
 
 <span class="k">class</span> <span class="nc">ClassName2</span><span class="p">:</span> <span class="k">pass</span>
 
@@ -281,11 +281,11 @@ We want to check that the function throws an exception if page is not found (htt
     <span class="n">final_result</span> <span class="o">=</span> <span class="n">object2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">intermediate_result</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">final_result</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Let's test:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_foo</span><span class="p">():</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_foo</span><span class="p">():</span>
     <span class="n">mocked_obj1</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
     <span class="n">mocked_obj1</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;result1&quot;</span>
     <span class="n">mocked_obj2</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
@@ -303,52 +303,52 @@ We want to check that the function throws an exception if page is not found (htt
     <span class="n">mocked_factory</span><span class="o">.</span><span class="n">create_instance_class2</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;some_initial_parameter2&quot;</span><span class="p">)</span>
     <span class="n">mocked_obj1</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;parameter1&quot;</span><span class="p">)</span>
     <span class="n">mocked_obj2</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;result1&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter2&quot;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Also you need to test the factory now. And it will require class monkey-patching. But in this case you put all monkey patching in one place.</p>
 <h2>Matching attributes for mocks</h2>
 <p>Keep in mind that standard mocks don't care about non-existent atttributes. I use</p>
-<div class="highlight"><pre><span></span><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>instead of </p>
-<div class="highlight"><pre><span></span><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>That adds automatic checking of non-existent attributes and catches more errors. 
 Let's see where <code>autospec=True</code> can save your life.</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;foo&quot;</span>
 
 <span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;bar&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>here comes a test:</p>
-<div class="highlight"><pre><span></span><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;module.A&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;module.A&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_bar</span><span class="p">(</span><span class="n">MockedA</span><span class="p">):</span>
   <span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;mocked-foo&quot;</span>
   <span class="k">assert</span> <span class="n">B</span><span class="p">()</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span> <span class="o">+</span> <span class="s2">&quot;mocked-foo&quot;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>At some point you decide to change class <code>A</code>. New version:</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">oops</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;oops&quot;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You change tests for <code>A</code> but you can forget to fix <code>B</code> and tests for <code>B</code>.  <code>test_bar</code> will still work because mocked <code>A</code> still have <code>foo</code>. Probably you can catch that error on integration tests level, but it is better to "fail fast".</p>
 <p>If you use <code>@mock.patch('module.A', autospec=True)</code>, then you get an error (about non-existent attribute) after you change <code>A</code> on </p>
-<div class="highlight"><pre><span></span><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;mocked-foo&quot;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;mocked-foo&quot;</span>
+</code></pre></div>
 
 
 <p>I think <code>autospec=True</code> has to be default behaviour of <code>patch</code>.</p>
@@ -356,7 +356,7 @@ Let's see where <code>autospec=True</code> can save your life.</p>
 <h2>Alternative mocking libraries</h2>
 <p><a href="https://flexmock.readthedocs.io/en/latest/compare/">Flexmock</a> -- extended/rebuilt clone of mocking library from Ruby. Abandoned project (last update in github in 2016). </p>
 <p>Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:</p>
-<div class="highlight"><pre><span></span><span class="c1"># flexmock</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># flexmock</span>
 <span class="n">flexmock</span><span class="p">(</span><span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">)</span><span class="o">.</span><span class="n">new_instances</span><span class="p">(</span><span class="n">some_other_object</span><span class="p">)</span>
 <span class="n">assertEqual</span><span class="p">(</span><span class="n">some_other_object</span><span class="p">,</span> <span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">())</span>
 
@@ -366,15 +366,15 @@ Let's see where <code>autospec=True</code> can save your life.</p>
 <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;somemodule.Someclass&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">MockClass</span><span class="p">:</span>
   <span class="n">MockClass</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">some_other_object</span>
   <span class="k">assert</span> <span class="n">some_other_object</span> <span class="o">==</span> <span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>// Will it really work?</p>
 <h2>Mocking os.environ</h2>
-<div class="highlight"><pre><span></span><span class="err">@mock.patch.dict(os.environ, {&#39;YOUR_VARIABLE&#39;: &#39;MOCKED_VALUE&#39;})</span>
+<div class="highlight"><pre><span></span><code><span class="err">@mock.patch.dict(os.environ, {&#39;YOUR_VARIABLE&#39;: &#39;MOCKED_VALUE&#39;})</span>
 <span class="err">def test_funciton():</span>
 <span class="err">  function_using_os_environment()</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>See also about testing in python</h2>
@@ -467,9 +467,6 @@ Let's see where <code>autospec=True</code> can save your life.</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -491,14 +488,23 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -506,17 +512,17 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -524,35 +530,32 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -594,10 +597,10 @@ Let's see where <code>autospec=True</code> can save your life.</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -605,23 +608,23 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -648,10 +651,7 @@ Let's see where <code>autospec=True</code> can save your life.</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -680,23 +680,26 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -710,14 +713,14 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -731,17 +734,17 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -756,10 +759,7 @@ Let's see where <code>autospec=True</code> can save your life.</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

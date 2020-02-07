@@ -106,12 +106,12 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                </div>
                 <p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><span class="err">touch /etc/systemd/system/your-service.service </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+</code></pre></div>
 
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
-<div class="highlight"><pre><span></span><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
 <span class="k">After</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                          </span>
 <span class="n">Requires</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                       </span>
@@ -125,17 +125,17 @@ sergem personal public notebook            </a>
 
 <span class="o">[</span><span class="n">Install</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                     </span>
 <span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="k">user</span><span class="p">.</span><span class="n">target</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Here we first stop and delete the docker container. If it doesn't exist we continue (there is a "-" in before the command).</p>
 <p>Run</p>
-<div class="highlight"><pre><span></span><span class="err">systemctl enable your-service </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">systemctl enable your-service </span>
+</code></pre></div>
 
 
 <h2>Commands</h2>
-<div class="highlight"><pre><span></span><span class="o">#</span> <span class="n">prints</span> <span class="n">the</span> <span class="n">status</span>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">prints</span> <span class="n">the</span> <span class="n">status</span>
 <span class="n">systemctl</span> <span class="n">status</span> <span class="n">your</span><span class="o">-</span><span class="n">service</span><span class="p">.</span><span class="n">service</span>  
 
 <span class="o">#</span> <span class="n">prepares</span> <span class="n">the</span> <span class="n">service</span><span class="p">,</span> <span class="n">required</span> <span class="k">before</span> <span class="ss">&quot;start&quot;</span><span class="p">,</span> 
@@ -147,44 +147,44 @@ sergem personal public notebook            </a>
 
 <span class="o">#</span> <span class="n">stop</span> <span class="n">service</span>
 <span class="n">systemctl</span> <span class="n">stop</span> <span class="n">levels_tracker</span><span class="p">.</span><span class="n">service</span> 
-</pre></div>
+</code></pre></div>
 
 
 <h2>Recipies</h2>
 <h3>Specify working directory</h3>
-<div class="highlight"><pre><span></span><span class="k">[Service]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Service]</span>
 <span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/home/pi</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Running python script from virtual environment</h3>
 <p>Just specify python interpreter from the environment:</p>
-<div class="highlight"><pre><span></span><span class="err">ExecStart=&lt;absolute path to your environment&gt;/bin/python file_to_run.py</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">ExecStart=&lt;absolute path to your environment&gt;/bin/python file_to_run.py</span>
+</code></pre></div>
 
 
 <h3>Environment variables</h3>
 <p>You can set environment variables that are used for your process</p>
-<div class="highlight"><pre><span></span><span class="k">[Service]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Service]</span>
 <span class="na">Environment</span><span class="o">=</span><span class="s">VARIABLE=value</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now you can use it in the <code>ExecStart</code> command for example:</p>
-<div class="highlight"><pre><span></span>ExecStart=<span class="nt">&lt;absolute</span> <span class="err">path</span> <span class="err">to</span> <span class="err">your</span> <span class="err">environment</span><span class="nt">&gt;</span>/bin/python file_to_run.py <span class="cp">${</span><span class="n">VARIABLE</span><span class="cp">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>ExecStart=<span class="nt">&lt;absolute</span> <span class="err">path</span> <span class="err">to</span> <span class="err">your</span> <span class="err">environment</span><span class="nt">&gt;</span>/bin/python file_to_run.py <span class="cp">${</span><span class="n">VARIABLE</span><span class="cp">}</span>
+</code></pre></div>
 
 
 <h3>How to stdout of python-based service in syslog</h3>
 <p>Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:</p>
-<div class="highlight"><pre><span></span><span class="err">StandardOutput=syslog</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">StandardOutput=syslog</span>
+</code></pre></div>
 
 
 <p>You may see nothing in the logs. You should set environment variable for python <code>PYTHONUNBUFFERED</code> to see the results immediately:</p>
-<div class="highlight"><pre><span></span><span class="n">#in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">[</span><span class="n">Service</span><span class="o">]</span><span class="w"> </span><span class="k">section</span><span class="err">:</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="n">#in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">[</span><span class="n">Service</span><span class="o">]</span><span class="w"> </span><span class="k">section</span><span class="err">:</span><span class="w"></span>
 <span class="n">Environment</span><span class="o">=</span><span class="ss">&quot;PYTHONUNBUFFERED=1&quot;</span><span class="w"></span>
-</pre></div>
+</code></pre></div>
 
 
 <p>source: <a href="https://unix.stackexchange.com/questions/164987/output-of-a-python-script-running-as-unit-is-out-of-order-while-shells-seems-unn">[here]</a></p>
@@ -270,9 +270,6 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -294,14 +291,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -309,17 +315,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -327,35 +333,32 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -397,10 +400,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -408,23 +411,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -451,10 +454,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -483,23 +483,26 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -513,14 +516,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -534,17 +537,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -559,10 +562,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

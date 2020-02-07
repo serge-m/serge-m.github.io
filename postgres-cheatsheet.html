@@ -110,92 +110,92 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <h2>Basics</h2>
 <p>Connect as user <code>postgres</code>:</p>
-<div class="highlight"><pre><span></span>psql -U postgres
-</pre></div>
+<div class="highlight"><pre><span></span><code>psql -U postgres
+</code></pre></div>
 
 
 <p>Connect to a specific database:</p>
-<div class="highlight"><pre><span></span><span class="err">\c database_name;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\c database_name;</span>
+</code></pre></div>
 
 
 <p>Quit the psql:</p>
-<div class="highlight"><pre><span></span><span class="err">\q</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\q</span>
+</code></pre></div>
 
 
 <p>List all databases:</p>
-<div class="highlight"><pre><span></span><span class="err">\l</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\l</span>
+</code></pre></div>
 
 
 <p>Lists all tables in the current database:</p>
-<div class="highlight"><pre><span></span><span class="err">\dt</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\dt</span>
+</code></pre></div>
 
 
 <p>List all users: </p>
-<div class="highlight"><pre><span></span><span class="err">\du</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">\du</span>
+</code></pre></div>
 
 
 <p>Create a new role <code>username</code> with a password:</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password</span><span class="p">;</span>
+</code></pre></div>
 
 
 <h3>Managing tables</h3>
 <p>Create a new table or a temporary table</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="p">[</span><span class="n">TEMP</span><span class="p">]</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span><span class="p">]</span> <span class="k">table_name</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="p">[</span><span class="n">TEMP</span><span class="p">]</span> <span class="k">TABLE</span> <span class="p">[</span><span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span><span class="p">]</span> <span class="k">table_name</span><span class="p">(</span>
    <span class="n">pk</span> <span class="nb">SERIAL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
    <span class="n">c1</span> <span class="k">type</span><span class="p">(</span><span class="k">size</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
    <span class="n">c2</span> <span class="k">type</span><span class="p">(</span><span class="k">size</span><span class="p">)</span> <span class="k">NULL</span><span class="p">,</span>
    <span class="p">...</span>
 <span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Add a new column to a table:</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">new_column_name</span> <span class="k">TYPE</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">new_column_name</span> <span class="k">TYPE</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Drop a column in a table:</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">DROP</span> <span class="k">COLUMN</span> <span class="k">column_name</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">DROP</span> <span class="k">COLUMN</span> <span class="k">column_name</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Rename a column:</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">column_name</span> <span class="k">TO</span> <span class="n">new_column_name</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">column_name</span> <span class="k">TO</span> <span class="n">new_column_name</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Set or remove a default value for a column:</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ALTER</span> <span class="k">COLUMN</span> <span class="p">[</span><span class="k">SET</span> <span class="k">DEFAULT</span> <span class="n">value</span> <span class="o">|</span> <span class="k">DROP</span> <span class="k">DEFAULT</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ALTER</span> <span class="k">COLUMN</span> <span class="p">[</span><span class="k">SET</span> <span class="k">DEFAULT</span> <span class="n">value</span> <span class="o">|</span> <span class="k">DROP</span> <span class="k">DEFAULT</span><span class="p">]</span>
+</code></pre></div>
 
 
 <p>Add a primary key to a table.</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">column</span><span class="p">,...);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">column</span><span class="p">,...);</span>
+</code></pre></div>
 
 
 <p>Remove the primary key from a table.</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> 
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> 
 <span class="k">DROP</span> <span class="k">CONSTRAINT</span> <span class="n">primary_key_constraint_name</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Rename a table.</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">new_table_name</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">new_table_name</span><span class="p">;</span>
+</code></pre></div>
 
 
 <h2>Credentials via environment variables</h2>
-<div class="highlight"><pre><span></span><span class="nv">PGHOST</span><span class="o">=</span><span class="m">10</span>.1.1.1 <span class="se">\</span>
+<div class="highlight"><pre><span></span><code><span class="nv">PGHOST</span><span class="o">=</span><span class="m">10</span>.1.1.1 <span class="se">\</span>
   <span class="nv">PGUSER</span><span class="o">=</span>user <span class="nv">PGPASSWORD</span><span class="o">=</span>password <span class="se">\</span>
   psql my_db  -c <span class="s2">&quot;select * from my_table&quot;</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>See also</h2>
@@ -280,9 +280,6 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -304,14 +301,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -319,17 +325,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -337,35 +343,32 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -407,10 +410,10 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -418,23 +421,23 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -461,10 +464,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -493,23 +493,26 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -523,14 +526,14 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -544,17 +547,17 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -569,10 +572,7 @@ sergem personal public notebook            </a>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

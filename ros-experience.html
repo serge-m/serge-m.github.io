@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="ros,linux,robotics,raspberry,pi,ubuntu,melodic" />
-        <meta name="description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image by ubiquity that contain ROS kinetic. https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2 …" />
+        <meta name="description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="ROS experience"/>
         <meta property="og:url" content="https://serge-m.github.io/ros-experience.html"/>
-        <meta property="og:description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image by ubiquity that contain ROS kinetic. https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2 …"/>
+        <meta property="og:description" content="Here will be some notes on ROS. ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html. It seems for me too old. It&#39;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support …"/>
         <meta property="article:published_time" content="2019-08-24" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="ros" />
@@ -122,99 +122,119 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                </div>
                 <p>Here will be some notes on ROS.</p>
 <h2>ROS on raspberry pi</h2>
-<p>There is a compiled image by ubiquity that contain ROS kinetic.</p>
-<p><a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
-<p>It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... </p>
+<p>There is a compiled image for RPi by ubiquity that has ROS kinetic: 
+<a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
+<p>It seems for me too old. It's 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh... </p>
+<p>It is possible to have <strong>ROS melodic on Raspberry Pi 3 B+</strong>. See in the next sections.</p>
 <h2>Installing tensorflow for ROS on raspberry pi</h2>
 <p>Alternatively one can try to install it from wheels:
 https://www.tensorflow.org/install/pip?lang=python3#package-location</p>
 <p>The dependencies are better to install using pip and piwheels.org:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflow keras</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflow keras</span>
+</code></pre></div>
 
 
 <h3>Issues</h3>
 <h4>h5py</h4>
 <p>I encountered an error about h5py: </p>
-<div class="highlight"><pre><span></span><span class="n">ImportError</span><span class="o">:</span> <span class="n">libhdf5_serial</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">100</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">ImportError</span><span class="o">:</span> <span class="n">libhdf5_serial</span><span class="o">.</span><span class="na">so</span><span class="o">.</span><span class="mi">100</span><span class="o">:</span> <span class="n">cannot</span> <span class="n">open</span> <span class="n">shared</span> <span class="n">object</span> <span class="n">file</span><span class="o">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="n">or</span> <span class="n">directory</span>
+</code></pre></div>
 
 
 <p>installing </p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install libhdf5-dev</span>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install libhdf5-dev</span>
 <span class="err">sudo apt-get install libhdf5-serial-dev</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>didnt help.</p>
 <p>Some version mismatch</p>
 <p>I could resolve it by compiling h5py with my version:</p>
-<div class="highlight"><pre><span></span><span class="err">HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py</span>
+</code></pre></div>
 
 
 <h4>load_img</h4>
 <p><code>keras_preprocessing.image.utils.load_img</code> results in the error:</p>
-<div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/keras_preprocessing/image/utils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">108</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_img</span>
+<div class="highlight"><pre><span></span><code>  <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/keras_preprocessing/image/utils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">108</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_img</span>
     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Could not import PIL.Image. &#39;</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">PIL.Image.</span> <span class="nn">The</span> <span class="nn">use</span> <span class="nn">of</span> <span class="sb">`load_img`</span> <span class="n">requires</span> <span class="n">PIL</span><span class="o">.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>pillow is installed. </p>
 <p>The error may be caused by missing jpeg libraries. Try to load PIL in a separate python and check if it works.
 I got the following error.</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil_image</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil_image</span>
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
   <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/PIL/Image.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">95</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
     <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">_imaging</span> <span class="k">as</span> <span class="n">core</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">libjpeg</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">62</span><span class="p">:</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">shared</span> <span class="nb">object</span> <span class="n">file</span><span class="p">:</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Easily solvable by </p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt install libjpeg62</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install libjpeg62</span>
+</code></pre></div>
 
 
 <h2>Name clash in dynamic_reconfigure</h2>
 <p>Probably it is written somewhere but I haven't read the docs...</p>
 <p>I am developign a node for robot steering translation. I got an error:</p>
-<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">rosrun</span> <span class="n">steering_translator</span> <span class="n">steering_translator</span><span class="o">.</span><span class="n">py</span> 
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">rosrun</span> <span class="n">steering_translator</span> <span class="n">steering_translator</span><span class="o">.</span><span class="n">py</span> 
 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;/home/user/omicron_robocar/catkin_ws/src/steering_translator/src/steering_translator.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
     <span class="kn">import</span> <span class="nn">steering_translator.cfg</span>
   <span class="n">File</span> <span class="s2">&quot;/home/user/omicron_robocar/catkin_ws/src/steering_translator/src/steering_translator.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
     <span class="kn">import</span> <span class="nn">steering_translator.cfg</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">cfg</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>I did everything according to the tutorials <a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials/HowToWriteYourFirstCfgFile">How to Write Your First .cfg File</a>
 and <a href="http://wiki.ros.org/dynamic_reconfigure/Tutorials/SettingUpDynamicReconfigureForANode%28python%29">Setting up Dynamic Reconfigure for a Node (python)</a>, just changed couple of names.
 The problem was in the naming of the package (steering_translator) and the executable file (steering_translator.py). They are getting mixed up on the execution. The solution was to rename python file to steering_translator_node.py.</p>
 <h2>ROS melodic on Raspberry Pi 3 B+</h2>
-<p>Let's say we want to install ROS-melodic on RPi 3.
-Here is the plan</p>
+<p>Although there is pre-built ros-kinetic image from Ubuquity, 
+I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera support.</p>
+<p>You can find the image I build here <strong> TODO </strong>. 
+To use it you need to download it and write on SD card as with any other image for RPi.</p>
+<p>Credentials:
+* User: ubuntu
+* password: robotrobot
+* wifi hotspot SSID: ub_rpi_net
+* wifi password: robotwifi</p>
+<p>Change the passwords as soon as you logged in. </p>
+<p>If you want to build the image yourself, you can follow the instructions bellow.</p>
 <h3>Prepare ubuntu 18 LTS for Raspberry Pi</h3>
 <ul>
-<li>
-<p>go to <a href="https://wiki.ubuntu.com/ARM/RaspberryPi">Ubuntu PaspberryPi</a>, download 18.04 LTS: ubuntu-18.04.3-preinstalled-server-arm64+raspi3.img.xz image</p>
-</li>
+<li>go to <a href="https://wiki.ubuntu.com/ARM/RaspberryPi">Ubuntu PaspberryPi</a>,
+  download 18.04 LTS for armhf architecture: 
+  <a href="http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.3-preinstalled-server-armhf+raspi3.img.xz">ubuntu-18.04.3-preinstalled-server-armhf+raspi3.img.xz</a> </li>
+</ul>
+<p>I tried to run arm64 version but encountered issues with building ROS node for raspberry pi. With armhf it works.  </p>
+<ul>
 <li>
 <p>write the image to SD card</p>
 </li>
+<li>
+<p>to enable camera open <code>/boot/config.txt</code> on SD card and make sure the following lines are there:</p>
+<p>start_x=1           <br>
+  gpu_mem=128    # at least, or more if you wish</p>
+</li>
+<li>
+<p>insert the flash card into the Raspberry</p>
+</li>
 </ul>
-<p>There is some cloud-init function in that image but I didn't manage to make it work. It seems some people are more successful with that: https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
-<h3>Connecting</h3>
+<h3>Connecting Raspberry</h3>
 <ul>
-<li>insert the flash card into the Raspberry</li>
 <li>
 <p>Switch on the Raspberry</p>
 </li>
 <li>
-<p>It turned out that Raspberry pi cannot connect to my laptop directly with the default ethernet settings
+<p>It turned out that Raspberry pi cannot connect to my laptop directly 
+  with the default ethernet settings
   (something is wrong with my DHCP settings). </p>
 </li>
 <li>
@@ -225,30 +245,128 @@ Here is the plan</p>
 </ul>
 </li>
 <li>
-<p>Another option is to change the settings of the connection on the laptop so that the connection in shared. This way IP gets automatically assigned to both laptop and Raspberry.
+<p>Another option is to change the settings of the connection on the laptop so that the connection in shared.
+   This way IP gets automatically assigned to both laptop and Raspberry.
     <img alt="connection-editor-shared-lan-connection" src="media/2019-08-24-ros-experience/connection-editor-shared-lan-connection.png"></p>
 </li>
 <li>
-<p>find the ip address of the Raspberry with one of the commands:</p>
+<p>find the ip address of the connected Raspberry with one of the commands:</p>
 <ul>
-<li><code>nmap -sn YOUR_ROUTER_IP/24</code> (the command may differ depending on the DHCP settings of your router)</li>
-<li><code>arp -a</code> to find the IP addresses of the connected devices.</li>
+<li><code>nmap -sn YOUR_ROUTER_IP/24</code> or <code>nmap -sn YOUR_LAPTOP_IP/24</code>. the command may differ depending on the DHCP settings of your network. 
+   In my case it is <code>nmap -sn 192.168.125.1/24</code></li>
+<li>For direct connection: <code>arp -a</code></li>
 </ul>
 </li>
-<li><code>ssh ubuntu@RASPBERRY_IP</code>, use password <code>ubuntu</code></li>
+<li><code>ssh -X ubuntu@RASPBERRY_IP</code>, use password <code>ubuntu</code>. <ul>
+<li><code>-X</code> option allows to run gui apps via ssh.</li>
+</ul>
+</li>
 </ul>
 <h3>Update the system</h3>
-<div class="highlight"><pre><span></span><span class="err">sudo apt update</span>
-<span class="err">sudo apt upgrade</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo add-apt-repository ppa:ubuntu-raspi2/ppa  # for standard RPi tools </span>
+<span class="err">sudo apt update &amp;&amp; sudo apt upgrade  # this will take some time</span>
+</code></pre></div>
 
 
-<p>If update doesn't work the reason could be time syncronization between ubuntu servers and raspberry py. Try to install ntp: <code>sudo apt install ntp</code></p>
+<p>If the update doesn't work the reason could be time synchronization between ubuntu servers and raspberry py. 
+Try to install ntp: <code>sudo apt install ntp</code></p>
+<h3>Remove unnecessary tools</h3>
+<p>Removing cloud-init:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get purge cloud-init</span>
+<span class="err"># archive file for a backup</span>
+<span class="err">sudo tar --remove-files -cvzf ~/backup-cloud-init.tar.gz /etc/cloud/ /var/lib/cloud/</span>
+<span class="err">sudo reboot  # restart</span>
+</code></pre></div>
+
+
+<h3>Install ROS Melodic</h3>
+<p>Follow the standard instructions from <a href="http://wiki.ros.org/melodic/Installation/Ubuntu">Ubuntu install of ROS Melodic</a>.
+I was installing <code>sudo apt install -y ros-melodic-ros-base</code> to save some time and disk space.</p>
+<h3>Setting up a node for Raspberry Camera</h3>
+<p>I would like to use the standard RPi camera with ROS. 
+There is a node <a href="https://github.com/UbiquityRobotics/raspicam_node">raspicam_node</a> by Ubiquity, but there is no compiled version 
+for ROS melodic that I could install using <code>apt</code>. Let's compile it. I have checked out <code>kinetic</code> branch, revision <code>3209cd801b1006c8959540f4efc3774ee19aaa78</code>.  </p>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir -p ~/catkin_ws/src</span>
+<span class="err">cd ~/catkin_ws/src</span>
+<span class="err">git clone https://github.com/UbiquityRobotics/raspicam_node</span>
+<span class="err">cd ~/catkin_ws/</span>
+<span class="err">source /opt/ros/melodic/setup.bash</span>
+</code></pre></div>
+
+
+<p>Open file <code>/etc/ros/rosdep/sources.list.d/30-ubiquity.list</code> and add there the line:</p>
+<div class="highlight"><pre><span></span><code><span class="err">yaml https://raw.githubusercontent.com/UbiquityRobotics/rosdep/master/raspberry-pi.yaml</span>
+</code></pre></div>
+
+
+<p>Now update dependencies:</p>
+<div class="highlight"><pre><span></span><code><span class="err">rosdep update</span>
+<span class="err">cd ~/catkin_ws</span>
+<span class="err">rosdep install --from-paths src --ignore-src --rosdistro=melodic -y</span>
+</code></pre></div>
+
+
+<p>Build:</p>
+<div class="highlight"><pre><span></span><code><span class="err">catkin_make install</span>
+</code></pre></div>
+
+
+<p>Install rqt_image_view to see the results:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y ros-melodic-rqt-image-view</span>
+</code></pre></div>
+
+
+<p>Install tools to work with raspberry camera:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y libraspberrypi-bin libraspberrypi-bin-nonfree</span>
+</code></pre></div>
+
+
+<p>For example, now you can make a photo using raspi camera:</p>
+<div class="highlight"><pre><span></span><code><span class="err">raspistill -o img.jpg</span>
+</code></pre></div>
+
+
+<p>Test run of the raspicam_node:</p>
+<div class="highlight"><pre><span></span><code><span class="err">source ~/catkin_ws/devel/setup.bash</span>
+<span class="err">roslaunch raspicam_node camerav2_1280x960.launch</span>
+</code></pre></div>
+
+
+<p>You have to see the following line in the end:</p>
+<div class="highlight"><pre><span></span><code><span class="err">[ INFO] [1581100897.421303654]: Video capture started</span>
+</code></pre></div>
+
+
+<p>Press Ctrl+C to stop the node.</p>
+<p>If you get an error like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">setting</span><span class="w"> </span><span class="o">/</span><span class="n">run_id</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">fb66ef3e</span><span class="o">-</span><span class="mi">49</span><span class="n">d5</span><span class="o">-</span><span class="mi">11</span><span class="n">ea</span><span class="o">-</span><span class="mi">9</span><span class="n">db0</span><span class="o">-</span><span class="n">b827eb318c11</span><span class="w"></span>
+<span class="n">process</span><span class="o">[</span><span class="n">rosout-1</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">[</span><span class="n">23520</span><span class="o">]</span><span class="w"></span>
+<span class="n">started</span><span class="w"> </span><span class="n">core</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">[</span><span class="n">/rosout</span><span class="o">]</span><span class="w"></span>
+<span class="n">process</span><span class="o">[</span><span class="n">raspicam_node-2</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">started</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">[</span><span class="n">23523</span><span class="o">]</span><span class="w"></span>
+<span class="nl">mmal</span><span class="p">:</span><span class="w"> </span><span class="nl">mmal_vc_component_create</span><span class="p">:</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="s1">&#39;vc.ril.camera&#39;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="err">:</span><span class="n">ENOMEM</span><span class="p">)</span><span class="w"></span>
+<span class="nl">mmal</span><span class="p">:</span><span class="w"> </span><span class="nl">mmal_component_create_core</span><span class="p">:</span><span class="w"> </span><span class="n">could</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">component</span><span class="w"> </span><span class="s1">&#39;vc.ril.camera&#39;</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="nl">mmal</span><span class="p">:</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="n">component</span><span class="w"></span>
+<span class="o">[</span><span class="n">ERROR</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">1581099401.593581701</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="n">component</span><span class="w"></span>
+<span class="o">[</span><span class="n">ERROR</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">1581099401.596934388</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="nl">init_cam</span><span class="p">:</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">camera</span><span class="w"> </span><span class="n">component</span><span class="w"></span>
+</code></pre></div>
+
+
+<p>that mean you haven't enable camera. Look at the instructions above 
+about config.txt file.</p>
+<p>Now you can try to run camera node in the background and run rqt_image_view to check if the camera works:</p>
+<div class="highlight"><pre><span></span><code><span class="err">roslaunch raspicam_node camerav2_1280x960.launch &amp;</span>
+<span class="err">rosrun rqt_image_view rqt_image_view</span>
+</code></pre></div>
+
+
+<p>Result should look like this:</p>
+<p><img alt="rqt_image_view for raspicam_node, ros melodic on Raspberry pi 3 over ssh" src="media/2019-08-24-ros-experience/rqt_image_view.jpg"></p>
 <h3>Enabling wifi connection</h3>
+<p>Let's say you want Raspberry pi to automatically connect to your home wifi network.</p>
 <ul>
 <li>
 <p>install NetworkManager: </p>
-<p>sudo apt install network-manager</p>
+<p>sudo apt install -y network-manager</p>
 </li>
 <li>
 <p>enable network manager</p>
@@ -262,38 +380,98 @@ Here is the plan</p>
   nmcli device wifi connect SSID-Name password PASSWORD</p>
 </li>
 </ul>
-<h4>Enable hotspot on RaspberryPi (ubuntu 18.04)</h4>
-<p>Enabling hotspot on raspberry allows connection via Wifi without having a router
-* install and enable network manager as described above
-* <code>sudo nmcli dev wifi hotspot ifname wlan0 ssid ub_rpi_net password "robotrobot"</code>
-* to change the default IP address range modify <code>ipv4</code> section in <code>/etc/NetworkManager/system-connections/Hotspot</code>:</p>
-<div class="highlight"><pre><span></span><span class="k">[ipv4]</span>
-<span class="na">dns-search</span><span class="o">=</span>
-<span class="na">method</span><span class="o">=</span><span class="s">shared</span>
-<span class="na">address1</span><span class="o">=</span><span class="s">192.168.111.1/24,192.168.111.1</span>
-</pre></div>
+<h4>Enable hot spot Wifi on RaspberryPi (ubuntu 18.04)</h4>
+<p>Enabling hotspot on raspberry allows connection via Wifi without having a router or ethernet cable.</p>
+<p>install and enable network manager as described above</p>
+<p>Create hotspot connection:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli dev wifi hotspot ifname wlan0 ssid ub_rpi_net password &quot;robotwifi&quot;</span>
+</code></pre></div>
 
 
-<h3>Install other necessary tools</h3>
-<p>...</p>
-<h3>Install ROS</h3>
-<p>...</p>
+<p>Enable autoconnection and enable the connection:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli connection modify Hotspot connection.autoconnect True</span>
+<span class="err">nmcli con up Hotspot</span>
+</code></pre></div>
+
+
+<p>You can change the default IP addresses for the Hotspot (optional):</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli connection modify Hotspot ipv4.addresses 192.168.111.1/24</span>
+<span class="err">sudo nmcli connection modify Hotspot ipv4.gateway 192.168.111.1</span>
+</code></pre></div>
+
+
+<p>restart network manager to enable the changes:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl restart NetworkManager</span>
+</code></pre></div>
+
+
+<p>Your <code>/etc/NetworkManager/system-connections/Hotspot</code> file will look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ubuntu</span><span class="nv">@ubuntu</span><span class="err">:</span><span class="o">~/</span><span class="n">catkin_ws</span><span class="err">$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">NetworkManager</span><span class="o">/</span><span class="k">system</span><span class="o">-</span><span class="n">connections</span><span class="o">/</span><span class="n">Hotspot</span><span class="w"> </span>
+<span class="o">[</span><span class="n">connection</span><span class="o">]</span><span class="w"></span>
+<span class="n">id</span><span class="o">=</span><span class="n">Hotspot</span><span class="w"></span>
+<span class="n">uuid</span><span class="o">=</span><span class="n">a1103c90</span><span class="o">-</span><span class="mi">07</span><span class="n">ab</span><span class="o">-</span><span class="mi">4</span><span class="n">a2b</span><span class="o">-</span><span class="n">ba54</span><span class="o">-</span><span class="n">e267a716df2d</span><span class="w"></span>
+<span class="n">type</span><span class="o">=</span><span class="n">wifi</span><span class="w"></span>
+<span class="nf">permissions</span><span class="o">=</span><span class="w"></span>
+<span class="nc">timestamp</span><span class="o">=</span><span class="mi">1581101574</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">wifi</span><span class="o">]</span><span class="w"></span>
+<span class="n">mac</span><span class="o">-</span><span class="n">address</span><span class="o">=</span><span class="nl">B8</span><span class="p">:</span><span class="mi">27</span><span class="err">:</span><span class="nl">EB</span><span class="p">:</span><span class="mi">64</span><span class="err">:</span><span class="nl">D9</span><span class="p">:</span><span class="mi">44</span><span class="w"></span>
+<span class="n">mac</span><span class="o">-</span><span class="n">address</span><span class="o">-</span><span class="n">blacklist</span><span class="o">=</span><span class="w"></span>
+<span class="n">mode</span><span class="o">=</span><span class="n">ap</span><span class="w"></span>
+<span class="n">seen</span><span class="o">-</span><span class="n">bssids</span><span class="o">=</span><span class="nl">B8</span><span class="p">:</span><span class="mi">27</span><span class="err">:</span><span class="nl">EB</span><span class="p">:</span><span class="mi">64</span><span class="err">:</span><span class="nl">D9</span><span class="p">:</span><span class="mi">44</span><span class="p">;</span><span class="w"></span>
+<span class="n">ssid</span><span class="o">=</span><span class="n">ub_rpi_net</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">wifi-security</span><span class="o">]</span><span class="w"></span>
+<span class="k">group</span><span class="o">=</span><span class="n">ccmp</span><span class="p">;</span><span class="w"></span>
+<span class="k">key</span><span class="o">-</span><span class="n">mgmt</span><span class="o">=</span><span class="n">wpa</span><span class="o">-</span><span class="n">psk</span><span class="w"></span>
+<span class="n">pairwise</span><span class="o">=</span><span class="n">ccmp</span><span class="p">;</span><span class="w"></span>
+<span class="n">proto</span><span class="o">=</span><span class="n">rsn</span><span class="p">;</span><span class="w"></span>
+<span class="n">psk</span><span class="o">=</span><span class="n">robotwifi</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">ipv4</span><span class="o">]</span><span class="w"></span>
+<span class="n">address1</span><span class="o">=</span><span class="mf">192.168.111.1</span><span class="o">/</span><span class="mi">24</span><span class="p">,</span><span class="mf">192.168.111.1</span><span class="w"></span>
+<span class="n">dns</span><span class="o">-</span><span class="k">search</span><span class="o">=</span><span class="w"></span>
+<span class="k">method</span><span class="o">=</span><span class="n">shared</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">ipv6</span><span class="o">]</span><span class="w"></span>
+<span class="n">addr</span><span class="o">-</span><span class="n">gen</span><span class="o">-</span><span class="n">mode</span><span class="o">=</span><span class="n">stable</span><span class="o">-</span><span class="n">privacy</span><span class="w"></span>
+<span class="n">dns</span><span class="o">-</span><span class="k">search</span><span class="o">=</span><span class="w"></span>
+<span class="k">method</span><span class="o">=</span><span class="k">ignore</span><span class="w"></span>
+</code></pre></div>
+
+
+<p>After that you should be able to connect your laptop to the hotspot and ssh to another address: <code>ssh -X ubuntu@192.168.111.1</code> </p>
 <h3>Creating an image of the SD card for recovery</h3>
-<p>Assuming <code>/dev/mmcblk0</code> is your SD card.</p>
-<p>Creating compressed image:</p>
-<div class="highlight"><pre><span></span><span class="err">dd bs=1M count=&lt;size_in_MBs&gt; if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz</span>
-</pre></div>
+<p>One can create the image using the standard Ubuntu Disks app on your laptop.
+Alternatively we can use <code>dd</code> with saves some clicks, but more dangerous is a way.</p>
+<p>Assuming <code>/dev/mmcblk0</code> is your SD card. Creating an image for the whole SD card:</p>
+<div class="highlight"><pre><span></span><code><span class="err">dd bs=1M if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz</span>
+</code></pre></div>
 
 
-<p><code>size_in_MB</code> can be used copy the disk partially in case you have only a little data in the beginning of the large SD card.
-<img alt="Creating an image of the SD card for recovery" src="media/2019-08-24-ros-experience/free-space-sd-card.png"></p>
-<p>Recovery:</p>
-<div class="highlight"><pre><span></span><span class="err">dd if=/path/to/image.gz | gunzip -c | dd bs=1M of=/dev/mmcblk0</span>
-</pre></div>
+<p>That is the safest option.</p>
+<p>In my case the SD card is 32 Gb and the disk space occupied is about 6Gb. To save some disk space and decrease the 
+image size I resize the partition "writable" to something about 5.5 Gb, and then create a shorter version that should 
+also work:</p>
+<div class="highlight"><pre><span></span><code><span class="err">dd bs=1M count=&lt;size_in_MBs&gt; if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz</span>
+</code></pre></div>
 
 
-<p>to copy the data back onto different disk</p>
-<h3>Some guides:</h3>
+<p><code>size_in_MBs</code> is 6000 for me to cover both partitions.</p>
+<p><img alt="Creating an image of the SD card for recovery" src="media/2019-08-24-ros-experience/free-space-sd-card.png"></p>
+<p>How to restore the image. </p>
+<div class="highlight"><pre><span></span><code><span class="err">dd if=/path/to/image.gz | gunzip -c | dd bs=1M of=/dev/mmcblk0</span>
+</code></pre></div>
+
+
+<p>Be careful. There is no safety net for this command. You can corrupt your data. 
+Better use "Disks" app to be on the safe side. </p>
+<p>That's it. We have created an image!</p>
+<h3>Extra notes:</h3>
+<p>There is some cloud-init function in that Ubuntu image but I didn't manage to make it work. 
+It seems some people are more successful with that: 
+https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
+<h4>Some guides:</h4>
 <ul>
 <li>
 <p>https://roboticsbackend.com/install-ros-on-raspberry-pi-3/</p>
@@ -385,9 +563,6 @@ Here is the plan</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -409,14 +584,23 @@ Here is the plan</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -424,17 +608,17 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -442,35 +626,32 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -512,10 +693,10 @@ Here is the plan</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -523,23 +704,23 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -566,10 +747,7 @@ Here is the plan</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -598,23 +776,26 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -628,14 +809,14 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -649,17 +830,17 @@ Here is the plan</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -674,10 +855,7 @@ Here is the plan</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

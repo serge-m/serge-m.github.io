@@ -141,9 +141,9 @@ sergem personal public notebook            </a>
                 </div>
                 <div class="summary"><p>Here will be some notes on ROS.</p>
 <h2>ROS on raspberry pi</h2>
-<p>There is a compiled image by ubiquity that contain ROS kinetic.</p>
-<p><a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
-<p>It seems for me too old. It's 2019, there are ubuntu 18, ros melodic and ros2, next year the support of python2 …</p>
+<p>There is a compiled image for RPi by ubiquity that has ROS kinetic: 
+<a href="https://downloads.ubiquityrobotics.com/pi.html">https://downloads.ubiquityrobotics.com/pi.html</a>.</p>
+<p>It seems for me too old. It's 2020, there are ubuntu 18, ros melodic and ros2, next year the support …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ros-experience.html">more ...</a>
                 </div>
 
@@ -179,12 +179,12 @@ sergem personal public notebook            </a>
 <p><a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/">[2]</a></p>
 <h2>reducing swapping</h2>
 <p>Add these lines to /etc/sysctl.conf, and reboot.</p>
-<div class="highlight"><pre><span></span><span class="err">vm.swappiness = 0</span>
+<div class="highlight"><pre><span></span><code><span class="err">vm.swappiness = 0</span>
 <span class="err">vm.dirty_background_ratio = 20</span>
 <span class="err">vm.dirty_expire_centisecs = 0</span>
 <span class="err">vm.dirty_ratio = 80</span>
 <span class="err">vm.dirty_writeback_centisecs = 0</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>More caching while writting on disk</h2>
@@ -265,27 +265,27 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
 <p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><span class="err">fuser -k 8080/tcp</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
+</code></pre></div>
 
 
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span><span class="err">sudo usermod -aG group user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
+</code></pre></div>
 
 
 <p>or </p>
-<div class="highlight"><pre><span></span><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
+</code></pre></div>
 
 
 <p>Delete user</p>
-<div class="highlight"><pre><span></span><span class="err">userdel user</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
+</code></pre></div>
 
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><span class="err">userdel -r …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel -r …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
 
@@ -317,8 +317,8 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Using <code>convert</code> utility we can join multiple image files (png, jpeg, pdf) into one pdf.</p>
-<div class="highlight"><pre><span></span><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
+</code></pre></div>
 
 
 <p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
@@ -355,8 +355,8 @@ Here is how to …</p>
                 </div>
                 <div class="summary"><p>Source <a href="https://askubuntu.com/questions/37111/how-to-make-firefox-main-windows-have-no-decorations-using-devilspie">here</a></p>
 <p>Install devilspie:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install devilspie</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install devilspie</span>
+</code></pre></div>
 
 
 <p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
@@ -387,16 +387,16 @@ Here is how to …</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Running some GUI application as another user:</p>
-<div class="highlight"><pre><span></span><span class="err">user1@laptop:~$ su - user2</span>
+<div class="highlight"><pre><span></span><code><span class="err">user1@laptop:~$ su - user2</span>
 <span class="err">user2@laptop:~$ leafpad ~/somefile.txt</span>
 <span class="err">No protocol specified</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>The problem is <code>user2</code> doesn't have access to your screen.
 Solution:</p>
-<div class="highlight"><pre><span></span><span class="err">xhost +</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
+</code></pre></div>
 
 
 <p>Probably not the safest one.</p>
@@ -430,8 +430,8 @@ Solution:</p>
                 <div class="summary"><ul>
 <li>Install <code>hplip-gui</code>:</li>
 </ul>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hplip-gui</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hplip-gui</span>
+</code></pre></div>
 
 
 <ul>
@@ -439,8 +439,8 @@ Solution:</p>
 </ul>
 <p><a href="https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580">Thanks</a></p>
 <h4>Another solution</h4>
-<div class="highlight"><pre><span></span><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools</span>
+</code></pre></div>
 
 
 <p><a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335">source</a></p>
@@ -504,12 +504,12 @@ Solution:</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><span class="err">touch /etc/systemd/system/your-service.service </span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+</code></pre></div>
 
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
-<div class="highlight"><pre><span></span><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
 <span class="k">After</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                          </span>
 <span class="n">Requires</span><span class="o">=</span><span class="n">docker</span><span class="p">.</span><span class="n">service</span><span class="w">                                                                                                                                                                                                                       </span>
@@ -518,7 +518,7 @@ Solution:</p>
 <span class="n">TimeoutStartSec</span><span class="o">=</span><span class="mi">0</span><span class="w">                                                                                                                                                                                                                             </span>
 <span class="n">Restart</span><span class="o">=</span><span class="n">always</span><span class="w">                                                                                                                                                                                                                                </span>
 <span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                         </span>
-<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></pre></div>
+<span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-service-in-linux.html">more ...</a>
                 </div>
 
@@ -555,9 +555,9 @@ Solution:</p>
 <h2>Connection via OPenVPN is slow for https</h2>
 <p>Try the following <a href="https://forums.openvpn.net/viewtopic.php?t=21857">advice</a>
 The udp connection is perfect with these parameters (in client config):</p>
-<div class="highlight"><pre><span></span><span class="err">mssfix 1200</span>
+<div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
 <span class="err">tun-mtu 1200</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>DNS doesn't work through VPN</h2>
@@ -593,8 +593,8 @@ The udp connection is perfect with these parameters (in client config):</p>
                 <div class="summary"><p>Download JDK for Java 8 from Oracle's web-site.
 Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <p>Update java alternatives:</p>
-<div class="highlight"><pre><span></span><span class="err">sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1</span>
-<span class="err">sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1</span>
+<span class="err">sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">more ...</a>
                 </div>
 
@@ -629,19 +629,19 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span><span class="err">:new&lt;CR&gt;  new session</span>
+<div class="highlight"><pre><span></span><code><span class="err">:new&lt;CR&gt;  new session</span>
 <span class="err">s  list sessions</span>
 <span class="err">$  name session</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span><span class="err">c  create window</span>
+<div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
 <span class="err">w  list windows</span>
 <span class="err">n  next window</span>
 <span class="err">p  previous window</span>
 <span class="err">f  find window</span>
-<span class="err">,  name window …</span></pre></div>
+<span class="err">,  name window …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/terminal-setup-in-linux-mint.html">more ...</a>
                 </div>
 
@@ -668,13 +668,13 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
     
 </footer><!-- /.post-info -->
                 </div>
-                <div class="summary"><div class="highlight"><pre><span></span>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
+                <div class="summary"><div class="highlight"><pre><span></span><code>    <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">davfs2</span>
     <span class="n">mkdir</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span>
     <span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">davfs</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">webdav</span><span class="p">.</span><span class="n">yandex</span><span class="p">.</span><span class="n">ru</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span>
 
     <span class="o">#</span> <span class="k">check</span><span class="p">:</span> 
     <span class="n">df</span> <span class="o">-</span><span class="n">h</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">yandex</span><span class="p">.</span><span class="n">disk</span><span class="o">/</span> 
-</pre></div>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-yandex-webdav-on-local-dir.html">more ...</a>
                 </div>
 
@@ -703,14 +703,14 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
                 </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span><span class="err">mkdir /mnt/share</span>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
 <span class="err">mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Unmount</h2>
-<div class="highlight"><pre><span></span><span class="err">umount /mnt/shares</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">umount /mnt/shares</span>
+</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
                 </div>
 
@@ -743,7 +743,7 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
                 </div>
                 <div class="summary"><p>create a file <code>.inputrc</code>
 in your home directory and put there</p>
-<div class="highlight"><pre><span></span><span class="ss">&quot;\e[A&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">backward</span>
+<div class="highlight"><pre><span></span><code><span class="ss">&quot;\e[A&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">backward</span>
 <span class="ss">&quot;\e[B&quot;</span><span class="p">:</span> <span class="n">history</span><span class="o">-</span><span class="k">search</span><span class="o">-</span><span class="k">forward</span>
 <span class="k">set</span> <span class="k">show</span><span class="o">-</span><span class="k">all</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">ambiguous</span> <span class="k">on</span>
 <span class="k">set</span> <span class="k">completion</span><span class="o">-</span><span class="k">ignore</span><span class="o">-</span><span class="k">case</span> <span class="k">on</span>
@@ -751,7 +751,7 @@ in your home directory and put there</p>
 <span class="o">#</span> <span class="n">display</span> <span class="n">possible</span> <span class="n">completions</span> <span class="k">using</span> <span class="n">different</span> <span class="n">colors</span> <span class="k">to</span> <span class="n">indicate</span> <span class="n">their</span> <span class="n">file</span> <span class="n">types</span>
 <span class="k">set</span> <span class="n">colored</span><span class="o">-</span><span class="n">stats</span> <span class="k">On</span>
 
-<span class="n">TAB</span><span class="p">:</span> <span class="n">menu</span><span class="o">-</span><span class="n">complete …</span></pre></div>
+<span class="n">TAB</span><span class="p">:</span> <span class="n">menu</span><span class="o">-</span><span class="n">complete …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/autocomplete-from-history-in-terminal.html">more ...</a>
                 </div>
 
@@ -780,16 +780,16 @@ in your home directory and put there</p>
                 </div>
                 <div class="summary"><p>Hmm. It doesn't work.
 I see the icon when i do</p>
-<div class="highlight"><pre><span></span><span class="err">dropbox stop</span>
+<div class="highlight"><pre><span></span><code><span class="err">dropbox stop</span>
 <span class="err">dropbox start</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>but I cannot click on it.</p>
 <p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
 Don't forget to do</p>
-<div class="highlight"><pre><span></span>$ killall nemo
-</pre></div>
+<div class="highlight"><pre><span></span><code>$ killall nemo
+</code></pre></div>
 
 
 <p>after installation to make it work.</p>
@@ -853,8 +853,8 @@ Don't forget to do</p>
 </footer><!-- /.post-info -->
                 </div>
                 <div class="summary"><p>Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">current</span><span class="o">=</span><span class="sb">`</span>setxkbmap …</pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nv">current</span><span class="o">=</span><span class="sb">`</span>setxkbmap …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/keyboard-layout-switching-toggle.html">more ...</a>
                 </div>
 
@@ -912,9 +912,6 @@ Don't forget to do</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -936,14 +933,23 @@ Don't forget to do</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
     </li>
-    <li class="list-group-item tag-3">
-      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ci.html">ci</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/comparison.html">comparison</a>
+      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
@@ -951,17 +957,17 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/cplusplus11.html">cplusplus11</a>
+      <a href="https://serge-m.github.io/tag/data.html">data</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -969,35 +975,32 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/firefox.html">firefox</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gui.html">gui</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/html.html">html</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ideas.html">ideas</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/image-processing.html">image processing</a>
@@ -1039,10 +1042,10 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logging.html">logging</a>
+      <a href="https://serge-m.github.io/tag/logs.html">logs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
@@ -1050,23 +1053,23 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/matting.html">matting</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/microservices.html">microservices</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mixins.html">mixins</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multithreading.html">multithreading</a>
+      <a href="https://serge-m.github.io/tag/node-based.html">node based</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1093,10 +1096,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plt.html">plt</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
@@ -1125,23 +1125,26 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/search.html">search</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -1155,14 +1158,14 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sublime.html">sublime</a>
+      <a href="https://serge-m.github.io/tag/ssim.html">ssim</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/stepper.html">stepper</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
@@ -1176,17 +1179,17 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ubuntu-18.html">ubuntu 18</a>
+      <a href="https://serge-m.github.io/tag/uml.html">uml</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -1201,10 +1204,7 @@ Don't forget to do</p>
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/vpn.html">vpn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
+      <a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>

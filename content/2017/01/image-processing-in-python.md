@@ -13,6 +13,11 @@ Tags: python,images,opencv,image processing
 * [Personalizing image search with feature vectors and Lucene](https://www.youtube.com/watch?v=T5eb4auvui8) (video)
 
 ## Operations on images in python
+
+### How to set thresholds for Canny edge detector in openCV
+
+[Zero-parameter, automatic Canny edge detection with Python and OpenCV](https://www.pyimagesearch.com/2015/04/06/zero-parameter-automatic-canny-edge-detection-with-python-and-opencv/)
+
 ### Libraries
 * OpenCV
 

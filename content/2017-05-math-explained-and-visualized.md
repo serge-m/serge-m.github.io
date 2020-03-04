@@ -28,6 +28,8 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [https://ncase.me/](https://ncase.me/) - Interactive math experiments
 
+[Jay Alammar. Visualizing machine learning one concept at a time](http://jalammar.github.io/) - nice visualization and explanamtion of some ML concepts and architectures. For example: [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+
 ### About quaternions
 [https://eater.net/quaternions/](https://eater.net/quaternions/)
 

@@ -28,7 +28,17 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [https://ncase.me/](https://ncase.me/) - Interactive math experiments
 
+### Transformer model
+
 [Jay Alammar. Visualizing machine learning one concept at a time](http://jalammar.github.io/) - nice visualization and explanamtion of some ML concepts and architectures. For example: [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+
+[The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html) - description with code (notebook)
+
+![transformer model](media/transformer-architecture.png)
+
+![transformer blocks](media/2017-05-math-explained-and-visualized/transformer-blocks.png)
+
+[original paper](https://arxiv.org/abs/1706.03762)
 
 ### About quaternions
 [https://eater.net/quaternions/](https://eater.net/quaternions/)

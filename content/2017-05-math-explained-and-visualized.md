@@ -34,7 +34,7 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html) - description with code (notebook)
 
-![transformer model](media/transformer-architecture.png)
+![transformer model](media/2017-05-math-explained-and-visualized/transformer-architecture.png)
 
 ![transformer blocks](media/2017-05-math-explained-and-visualized/transformer-blocks.png)
 

@@ -157,3 +157,8 @@ Results:
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/WLwGtT4PEsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+
+
+One issue I had with that Adafruit_PWMServoDriver library is that it is blocking. If your PCA9685 is off or gets disconnected the
+whole program freezes. As far as I understand Adafruit_PWMServoDriver uses `Wire` as a backend and `Wire` is blocking. That is
+a known issues and there are some `workarounds <https://github.com/arduino/ArduinoCore-avr/issues/42>`_.

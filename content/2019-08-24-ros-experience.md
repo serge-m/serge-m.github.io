@@ -401,3 +401,18 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git
 * https://roboticsweekends.blogspot.com/2017/12/how-to-install-ros-on-raspberry-pi-2-or.html
 
 * https://wiki.ros.org/ROSberryPi/Installing%20ROS%20Kinetic%20on%20the%20Raspberry%20Pi
+
+
+
+# Rosserial
+
+
+Getting a lot of errors 
+```
+[INFO] [1583529448.984198]: wrong checksum for topic id and msg
+[ERROR] [1583529515.481192]: Lost sync with device, restarting...
+[INFO] [1583529515.484453]: Requesting topics...
+```
+
+may be caused by some blocking operations in arduino. I was using a standard library for Adafruit PCA9685. The library 
+uses some synchronous calls from Wire.h. It seems that was causing issues.

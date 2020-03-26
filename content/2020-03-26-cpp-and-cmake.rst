@@ -32,6 +32,7 @@ For any decent project in Cpp it's good to set up testing system. For C++ the st
 Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.
 
 .. code-block::
+
     sudo apt-get install libgtest-dev
     sudo apt-get install cmake # install cmake
     cd /usr/src/gtest
@@ -40,6 +41,7 @@ Installing Gtest in your ubuntu is not very straightforward. You have to install
 
     # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
     sudo cp *.a /usr/lib
+
 
 Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place.
 That requires some custom scripting in your cmake files.

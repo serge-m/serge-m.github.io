@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>streaming - sergem personal public notebook</title>
+    <title>C++ and CMake - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +9,23 @@
 
 
 
+<link rel="canonical" href="https://serge-m.github.io/cpp-and-cmake.html">
 
-    <meta name="author" content="sergem" />
-    <meta name="keywords" content="streaming" />
+        <meta name="author" content="SergeM" />
+        <meta name="keywords" content="c++,cpp,cmake" />
+        <meta name="description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. I couldnt find a good extension for CMake integration that works out of box. I tried to make use of Cmake-tools and it kind …" />
 
-    <!-- Open Graph tags -->
         <meta property="og:site_name" content="sergem personal public notebook" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="sergem personal public notebook"/>
-        <meta property="og:url" content="https://serge-m.github.io"/>
-        <meta property="og:description" content="sergem personal public notebook"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="C++ and CMake"/>
+        <meta property="og:url" content="https://serge-m.github.io/cpp-and-cmake.html"/>
+        <meta property="og:description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. I couldnt find a good extension for CMake integration that works out of box. I tried to make use of Cmake-tools and it kind …"/>
+        <meta property="article:published_time" content="2020-03-26" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="c++" />
+            <meta property="article:tag" content="cpp" />
+            <meta property="article:tag" content="cmake" />
+            <meta property="article:author" content="SergeM" />
 
 
     <!-- Bootstrap -->
@@ -35,6 +42,8 @@
               title="sergem personal public notebook RSS Feed"/>
 
 
+        <link href="https://serge-m.github.io/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="sergem personal public notebook misc ATOM Feed"/>
 
 </head>
 <body>
@@ -53,7 +62,7 @@ sergem personal public notebook            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="https://serge-m.github.io/category/misc.html">Misc</a>
                         </li>
             </ul>
@@ -68,14 +77,23 @@ sergem personal public notebook            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html">Streaming camera output from Raspberry Pi</a></h1>
-
+    <section id="content">
+        <article>
+            <header>
+                <h1>
+                    <a href="https://serge-m.github.io/cpp-and-cmake.html"
+                       rel="bookmark"
+                       title="Permalink to C++ and CMake">
+                        C++ and CMake
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-05-23T22:50:00+02:00"> 2017-05-23T22:50:00, Tue</time>
+        <i class="fa fa-calendar"></i><time datetime="2020-03-26T07:00:23+01:00"> 2020-03-26T07:00:23, Thu</time>
     </span>
 
 
@@ -83,31 +101,73 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/server.html">server</a>
+	<a class="tag-list" href="https://serge-m.github.io/tag/c.html">c++</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/camera.html">camera</a>
+	<a class="tag-list" href="https://serge-m.github.io/tag/cpp.html">cpp</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/streaming.html">streaming</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/image.html">image</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-        /
-	<a class="tag-list" href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+	<a class="tag-list" href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     
-</footer><!-- /.post-info -->
-                </div>
-                <div class="summary"><p>Task was to transmit image from camera on raspberry pi through web interface to the PC. 
-PC is connected to raspberry through local network.</p>
-<ul>
-<li>Enable camera on your raspberry pi in raspi-conf. Reboot.</li>
-<li>Save the following source code to a file on your raspberry (let's say <code>streaming.py</code>) </li>
-<li>do <code>sudo …</code></li></ul>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html">more ...</a>
-                </div>
+</footer><!-- /.post-info -->                </div>
+                <div class="section" id="cmake-in-vscode">
+<h2>CMake in VSCode</h2>
+<p>VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions.
+I couldnt find a good extension for CMake integration that works out of box. I tried to make use of Cmake-tools and it kind of works, but
+the hotkeys and some settings are far from intuitive now (2020-03).</p>
+<p>Therefore I ended up removing <tt class="docutils literal">cmake tools</tt> plugin and moving forward with custom taks.json and launch.json scripts.</p>
+<p>Here is my VSCode+Cmake template for small projects:
+<a class="reference external" href="https://github.com/serge-m/vscode_cmake_template">https://github.com/serge-m/vscode_cmake_template</a>.</p>
+</div>
+<div class="section" id="getting-strted-with-gtest">
+<h2>Getting strted with Gtest</h2>
+<p>For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest.</p>
+<p>Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.</p>
+<div class="highlight"><pre><span></span># copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
+sudo cp *.a /usr/lib
+</pre></div>
+<p>Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place.
+That requires some custom scripting in your cmake files.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See also:</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/">Getting started with Google Test (GTest) on Ubuntu</a></li>
+</ul>
+</div>
 
-            </article>
-            <hr/>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'serge-m-github-io'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'cpp-and-cmake';
+                var disqus_url = 'https://serge-m.github.io/cpp-and-cmake.html';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -120,7 +180,18 @@ PC is connected to raspberry through local network.</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/streaming-camera-output-from-raspberry-pi.html">Streaming camera output from Raspberry Pi</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/robocar.html">Robocar project</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/ros-experience.html">ROS experience</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/lenovo-e490.html">Lenovo E490 memory upgrade</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/arduino-experiments.html">Arduino Experiments</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/computer-vision-libraries.html">Computer vision libraries</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/postgres-cheatsheet.html">Postgres cheatsheet</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/jupyter-notebooks-on-emr.html">Jupyter notebooks on EMR</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -482,7 +553,7 @@ PC is connected to raspberry through local network.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 sergem
+         <div class="col-xs-10">&copy; 2020 sergem
             &middot; 
             <small>
                <a href="http://platformxy.com">platformxy.com</a>

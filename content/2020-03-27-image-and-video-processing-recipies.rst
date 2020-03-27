@@ -20,7 +20,7 @@ Cut a range of frames
 
 Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:
 
-.. code-block::
+.. code-block:: sh
 
   ffmpeg -i ./input_video.mp4 -vf "select=between(n\,100\,130)" -vsync 0 -vcodec libx264 -crf 15 -an ./output.mp4
 
@@ -41,7 +41,7 @@ Explanation:
 Convert to jpeg
 ---------------------------
 
-.. code-block::
+.. code-block:: sh
 
     ffmpeg -i ./input_video.mp4 -qmax 1 -qmin 1 -start_number 0 output_image_%05d.jpg
 

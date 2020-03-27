@@ -12,15 +12,19 @@
 <link rel="canonical" href="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="description" content="Trim 5 frames starting from 160-th frame and write to png sequence ffmpeg -pix_fmt yuv420p -s 1920x1088  -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5  output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive UPD: ffmpeg is renamed to avconv. Using it for trimming …" />
+        <meta name="keywords" content="ffmpeg,video,avconv" />
+        <meta name="description" content="Trim 5 frames starting from 160-th frame and write to png sequence ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive. UPD: ffmpeg is renamed to avconv. Using it for trimming …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Trim frames from raw YUV video using FFMPEG"/>
         <meta property="og:url" content="https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html"/>
-        <meta property="og:description" content="Trim 5 frames starting from 160-th frame and write to png sequence ffmpeg -pix_fmt yuv420p -s 1920x1088  -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5  output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive UPD: ffmpeg is renamed to avconv. Using it for trimming …"/>
+        <meta property="og:description" content="Trim 5 frames starting from 160-th frame and write to png sequence ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive. UPD: ffmpeg is renamed to avconv. Using it for trimming …"/>
         <meta property="article:published_time" content="2013-07-02" />
             <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="ffmpeg" />
+            <meta property="article:tag" content="video" />
+            <meta property="article:tag" content="avconv" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -96,16 +100,28 @@ sergem personal public notebook            </a>
 
 
 
+<span class="label label-default">Tags</span>
+	<a class="tag-list" href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/video.html">video</a>
+        /
+	<a class="tag-list" href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     
 </footer><!-- /.post-info -->                </div>
                 <p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
-<blockquote class="tr_bq">ffmpeg -pix_fmt yuv420p -s 1920x1088 &nbsp;-r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 &nbsp;output_sequence_%d.png</blockquote>
+<div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
+</code></pre></div>
 
-<p>size of input video is 1920x1088, format YUV420 progressive</p>
+
+<p>size of input video is 1920x1088, format YUV420 progressive.</p>
 <p>UPD:
 ffmpeg is renamed to avconv.
 Using it for trimming AVI video:</p>
-<p>avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png </p>
+<div class="highlight"><pre><span></span><code><span class="err">avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png</span>
+</code></pre></div>
+
+
+<p>UPD2: it seems ffmpeg is back.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -183,9 +199,6 @@ Using it for trimming AVI video:</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/2010.html">2010</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -194,6 +207,12 @@ Using it for trimming AVI video:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -204,14 +223,17 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/camera.html">camera</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/clang.html">clang</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
@@ -225,23 +247,14 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/console.html">console</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/curl.html">curl</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/design-patterns.html">design patterns</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -255,17 +268,14 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/extensions.html">extensions</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
-    </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -294,17 +304,20 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/java.html">java</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/java8.html">java8</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/javascript.html">javascript</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -318,38 +331,32 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/markdown.html">markdown</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
+      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mint.html">mint</a>
+      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/okrs.html">okrs</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
@@ -370,19 +377,19 @@ Using it for trimming AVI video:</p>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pi-zero.html">pi zero</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/plot.html">plot</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
+      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pypy.html">pypy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pyspark.html">pyspark</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
@@ -408,20 +415,23 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ros.html">ros</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/roto.html">roto</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/shell.html">shell</a>
+      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>
@@ -431,6 +441,9 @@ Using it for trimming AVI video:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
@@ -444,11 +457,11 @@ Using it for trimming AVI video:</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/tests.html">tests</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tox.html">tox</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
@@ -461,6 +474,9 @@ Using it for trimming AVI video:</p>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>

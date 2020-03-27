@@ -8,7 +8,6 @@ Using python and ffmpeg:
 
 ```python
 #!/usr/bin/python
-# -*- coding: cp1251 -*-
 
 import glob
 import os

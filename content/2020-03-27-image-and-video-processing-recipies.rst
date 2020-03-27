@@ -37,6 +37,13 @@ Explanation:
 
 
 
+Cut according to time (between seconds 5.5 and 122):
+
+.. code-block:: sh
+
+    ffmpeg -y -i ./input_video.mp4 -vf "select=between(t\,5.5\,122)" -vsync 0 -vcodec libx264 -crf 15 -an ./output.mp4
+
+
 
 Convert to jpeg
 ---------------------------

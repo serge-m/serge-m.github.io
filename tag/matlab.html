@@ -21,6 +21,7 @@
         <meta property="og:description" content="sergem personal public notebook"/>
 
 
+
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://serge-m.github.io/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="https://serge-m.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -34,13 +35,11 @@
         <link href="https://serge-m.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="sergem personal public notebook RSS Feed"/>
 
-
-
 </head>
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -63,15 +62,17 @@ sergem personal public notebook            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/quiver-for-optical-flow.html">Quiver for optical flow</a></h1>
-
+                <h2><a href="https://serge-m.github.io/quiver-for-optical-flow.html">Quiver for optical flow</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -83,14 +84,13 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
+	<a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
 <p><pre class="brush: cpp"> 
 function [ output ] = quiver_flow( u, v )
@@ -100,13 +100,11 @@ function [ output ] = quiver_flow( u, v )
 axis ij …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h1>
-
+                <h2><a href="https://serge-m.github.io/python-equivalent-of-interp2.html">Python equivalent of interp2</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -118,25 +116,22 @@ axis ij …</p>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/useful.html">useful</a>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I wrote python version of&nbsp; interp2(z, xi, yi,'linear') from matlab</p>
 <p><a href="https://github.com/serge-m/pyinterp2">https://github.com/serge-m/pyinterp2</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-equivalent-of-interp2.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h1>
-
+                <h2><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -148,12 +143,11 @@ axis ij …</p>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/python.html">python</a>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>There are several solutions:
 Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a>
 <h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
@@ -167,13 +161,11 @@ Last updated: 2012
   <a href="http://mlabwrap.sourceforge.net/&quot; rel=&quot;nofollow">http://mlabwrap.sourceforge.net …</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/use-matlab-function-from-python.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/lambda-functions-in-matlab.html">lambda functions in matlab</a></h1>
-
+                <h2><a href="https://serge-m.github.io/lambda-functions-in-matlab.html">lambda functions in matlab</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -185,10 +177,9 @@ Last updated: 2012
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I discovered it during Machine learnin courses on Coursera</p>
 <blockquote class="tr_bq">To specify the actual function we are minimizing, we use a "short-hand"
 for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
@@ -196,13 +187,11 @@ creates a function, with argument t, which calls your costFunction. This
 allows us to wrap the costFunction for …</blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/lambda-functions-in-matlab.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/matlab.html">MATLAB</a></h1>
-
+                <h2><a href="https://serge-m.github.io/matlab.html">MATLAB</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -214,17 +203,15 @@ allows us to wrap the costFunction for …</blockquote>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/draft.html">draft</a>
+	<a href="https://serge-m.github.io/tag/draft.html">draft</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/matlab.html">matlab</a>
+	<a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.</p>
 <p>useParallel - automatic parallel</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/matlab.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
 
@@ -263,6 +250,9 @@ allows us to wrap the costFunction for …</blockquote>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -271,12 +261,6 @@ allows us to wrap the costFunction for …</blockquote>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -287,14 +271,8 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
@@ -317,8 +295,20 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cv.html">cv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -327,10 +317,19 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
@@ -338,11 +337,11 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
@@ -375,13 +374,16 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+      <a href="https://serge-m.github.io/tag/kinetic.html">kinetic</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
+      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -395,9 +397,6 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -408,13 +407,13 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -441,10 +440,10 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
@@ -473,6 +472,9 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -483,16 +485,13 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+      <a href="https://serge-m.github.io/tag/services.html">services</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -506,9 +505,6 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
@@ -519,10 +515,7 @@ allows us to wrap the costFunction for …</blockquote>
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tests.html">tests</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -530,17 +523,11 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -551,11 +538,11 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/vim.html">vim</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vision.html">vision</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
@@ -601,15 +588,16 @@ allows us to wrap the costFunction for …</blockquote>
         </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2014 sergem
-            &middot; 
-            <small>
-               <a href="http://platformxy.com">platformxy.com</a>
-            </small>         </div>
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
@@ -621,6 +609,7 @@ allows us to wrap the costFunction for …</blockquote>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://serge-m.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">

@@ -21,6 +21,7 @@
         <meta property="og:description" content="sergem personal public notebook"/>
 
 
+
     <!-- Bootstrap -->
         <link rel="stylesheet" href="https://serge-m.github.io/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="https://serge-m.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -34,13 +35,11 @@
         <link href="https://serge-m.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="sergem personal public notebook RSS Feed"/>
 
-
-
 </head>
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -63,15 +62,17 @@ sergem personal public notebook            </a>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">Using h264/multiview codec from Intel Media SDK</a></h1>
-
+                <h2><a href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">Using h264/multiview codec from Intel Media SDK</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -83,28 +84,25 @@ sergem personal public notebook            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/c.html">c++</a>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/errors.html">errors</a>
+	<a href="https://serge-m.github.io/tag/errors.html">errors</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/dll.html">dll</a>
+	<a href="https://serge-m.github.io/tag/dll.html">dll</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/video.html">video</a>
+	<a href="https://serge-m.github.io/tag/video.html">video</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:</p>
 <div class="highlight"><pre><span></span><code>$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w <span class="m">1920</span> -h <span class="m">1080</span>
 Return on error: error code -3, .<span class="se">\s …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/using-h264multiview-codec-from-intel.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
             <article>
-                <div class="well well-sm">
-                <h1 class="main-list"><a href="https://serge-m.github.io/error-spawning-cmdexe.html">Error spawning cmd.exe</a></h1>
-
+                <h2><a href="https://serge-m.github.io/error-spawning-cmdexe.html">Error spawning cmd.exe</a></h2>
+                    <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
@@ -116,21 +114,19 @@ Return on error: error code -3, .<span class="se">\s …</span></code></pre></di
 
 
 <span class="label label-default">Tags</span>
-	<a class="tag-list" href="https://serge-m.github.io/tag/c.html">c++</a>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/errors.html">errors</a>
+	<a href="https://serge-m.github.io/tag/errors.html">errors</a>
         /
-	<a class="tag-list" href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
+	<a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
     
-</footer><!-- /.post-info -->
-                </div>
+</footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
 The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
 %SystemRoot …</span></blockquote></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/error-spawning-cmdexe.html">more ...</a>
                 </div>
-
             </article>
             <hr/>
 
@@ -166,6 +162,9 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -174,12 +173,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/aws.html">aws</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
@@ -190,14 +183,8 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/c.html">c++</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/calendar.html">calendar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/camera.html">camera</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/celery.html">celery</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
@@ -220,8 +207,20 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cv.html">cv</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/datasheet.html">datasheet</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -230,10 +229,19 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ember.html">ember</a>
+      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
@@ -241,11 +249,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/fun.html">fun</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
@@ -278,13 +286,16 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/keyboard-shortcuts.html">keyboard shortcuts</a>
+      <a href="https://serge-m.github.io/tag/kinetic.html">kinetic</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/latex2rtf.html">latex2rtf</a>
+      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
@@ -298,9 +309,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/logger.html">logger</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -311,13 +319,13 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/matplotlib.html">matplotlib</a>
+      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/mercurial.html">mercurial</a>
+      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -344,10 +352,10 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+      <a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/presentations.html">presentations</a>
+      <a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>
@@ -376,6 +384,9 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -386,16 +397,13 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/scrapping.html">scrapping</a>
+      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/settings.html">settings</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/setuppy.html">setup.py</a>
+      <a href="https://serge-m.github.io/tag/services.html">services</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
@@ -409,9 +417,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/sql.html">sql</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/sqlalchemy.html">sqlalchemy</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
     </li>
@@ -422,10 +427,7 @@ The cause was in system PATH environment variable. Some buggy software I had ins
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tests.html">tests</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tikz.html">tikz</a>
+      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>
@@ -433,17 +435,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/travisci.html">travisci</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/tuturials.html">tuturials</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/useles.html">useles</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/video.html">video</a>
@@ -454,11 +450,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/vim.html">vim</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/vision.html">vision</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/visual-studio.html">visual studio</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/web.html">web</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/windows.html">windows</a>
@@ -504,15 +500,16 @@ The cause was in system PATH environment variable. Some buggy software I had ins
         </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2013 sergem
-            &middot; 
-            <small>
-               <a href="http://platformxy.com">platformxy.com</a>
-            </small>         </div>
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
@@ -524,6 +521,7 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="https://serge-m.github.io/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">

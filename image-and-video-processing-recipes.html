@@ -130,6 +130,9 @@ Therefore I usually google it. I'll try to collect here some recipes that I usua
 <li><tt class="docutils literal"><span class="pre">-crf</span> 15</tt> - good quality, large output file. set to a bigger value if you need more compression.</li>
 <li><tt class="docutils literal"><span class="pre">-an</span></tt> removes audio from the file. otherwise some black frames are added. I think there is a way to cut audio track as well, I just don't need it usually.</li>
 </ul>
+<p>Cut according to time (between seconds 5.5 and 122):</p>
+<div class="highlight"><pre><span></span>ffmpeg -y -i ./input_video.mp4 -vf <span class="s2">&quot;select=between(t\,5.5\,122)&quot;</span> -vsync <span class="m">0</span> -vcodec libx264 -crf <span class="m">15</span> -an ./output.mp4
+</pre></div>
 </div>
 <div class="section" id="convert-to-jpeg">
 <h3>Convert to jpeg</h3>

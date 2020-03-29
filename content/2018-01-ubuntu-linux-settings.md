@@ -45,6 +45,10 @@ Enable "Workspace Indicator" extension.
 
 Install extension [noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
+or use dconf:
+
+![show window insread of notification window is ready](media/2018-01-ubuntu-linux-settings/dconf-auto-raise.png)
+
 ### Align windows to the corners or sides of the screen
 
 Default settings allow only alignment to the sides and full screen.

@@ -45,6 +45,10 @@ Enable "Workspace Indicator" extension.
 
 Install extension [noannoyance](https://extensions.gnome.org/extension/1236/noannoyance/)
 
+### Align windows to the corners or sides of the screen
+
+Default settings allow only alignment to the sides and full screen.
+To align windows to the corners I use [Put windows](https://extensions.gnome.org/extension/39/put-windows/) gnome  extension.
 
 ## Autocomplete in shell
 See [autocomplete from history in terminal](/autocomplete-from-history-in-terminal.html)

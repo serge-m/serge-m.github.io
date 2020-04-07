@@ -7,8 +7,22 @@ Tags: c++,useful
 
 **UPD**: It seems that the current solution (2019) is VSCode. It's free and powerful. There is a plenty of plugins. 
 
+## VSCode
 
+### How to see content of std::string in the debugger
+
+You have to enable pretty printing by default for gdb, 
+Add the following to your launch.json:
+
+    "setupCommands": [ { "text": "-enable-pretty-printing" } ]
+
+
+
+## Clion
 CLion is awesome but expensive.
+
+
+## Codelite
 
 Found [Codelite](http://www.codelite.org) on [http://stackoverflow.com/a/1775460](http://stackoverflow.com/a/1775460).
 Looks good. No disgust after 10 minutes of work.

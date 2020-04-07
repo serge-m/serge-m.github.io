@@ -16,6 +16,9 @@ Add the following to your launch.json:
 
     "setupCommands": [ { "text": "-enable-pretty-printing" } ]
 
+### Using CMake in VSCode
+
+See [C++ and CMake](/cpp-and-cmake.html)
 
 
 ## Clion

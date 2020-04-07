@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 27 Mar 2020 07:18:23 +0100</lastBuildDate><item><title>Image and video processing recipes</title><link>https://serge-m.github.io/image-and-video-processing-recipes.html</link><description>&lt;p&gt;I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands.
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Tue, 07 Apr 2020 06:00:00 +0200</lastBuildDate><item><title>Git cheat sheet</title><link>https://serge-m.github.io/git-cheat-sheet.html</link><description>&lt;p&gt;Nice history log:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git log --all --decorate --oneline --graph
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;How to remember:&lt;/p&gt;
+&lt;p&gt;&amp;quot;A Dog&amp;quot; = git log --&lt;strong&gt;all&lt;/strong&gt; --&lt;strong&gt;decorate&lt;/strong&gt; --&lt;strong&gt;oneline&lt;/strong&gt; --&lt;strong&gt;graph&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sample result:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git log --all --decorate --oneline --graph
+* e4689e3 &lt;span class="o"&gt;(&lt;/span&gt;HEAD -&amp;gt; master, origin/master, origin/HEAD&lt;span class="o"&gt;)&lt;/span&gt; tree iteration
+* 4c3385d using stoi
+* 0588a47 gitignore &lt;span class="k"&gt;for&lt;/span&gt; cpp
+* 8f3f0e6 removed boost, add readme
+* f225b06 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 07 Apr 2020 06:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-04-07:/git-cheat-sheet.html</guid><category>misc</category><category>git</category></item><item><title>Image and video processing recipes</title><link>https://serge-m.github.io/image-and-video-processing-recipes.html</link><description>&lt;p&gt;I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands.
 Therefore I usually google it. I'll try to collect here some recipes that I usually use with a bit of explanations.&lt;/p&gt;
 &lt;div class="section" id="video-conversions"&gt;
 &lt;h2&gt;Video conversions&lt;/h2&gt;
@@ -790,10 +801,11 @@ Don't forget to do&lt;/p&gt;
 &lt;h1&gt;Final Solution&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;amp;t=184839&amp;amp;sid=1d53fe0089b25098495531994c543ee4&amp;amp;start=80"&gt;source&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;Use …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 10 Apr 2016 20:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-04-10:/dropbox-in-linux-mint.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>C++ IDE for linux</title><link>https://serge-m.github.io/c-plus-plus-ide-for-linux.html</link><description>&lt;p&gt;&lt;strong&gt;UPD&lt;/strong&gt;: It seems that the current solution (2019) is VSCode. It's free and powerful. There is a plenty of plugins. &lt;/p&gt;
-&lt;p&gt;CLion is awesome but expensive.&lt;/p&gt;
-&lt;p&gt;Found &lt;a href="http://www.codelite.org"&gt;Codelite&lt;/a&gt; on &lt;a href="http://stackoverflow.com/a/1775460"&gt;http://stackoverflow.com/a/1775460&lt;/a&gt;.
-Looks good. No disgust after 10 minutes of work.&lt;/p&gt;
-&lt;p&gt;I was able to debug C code of …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 05 Apr 2016 00:45:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-04-05:/c-plus-plus-ide-for-linux.html</guid><category>misc</category><category>c++</category><category>useful</category></item><item><title>Debugging numpy (any C code of Python) using gdb</title><link>https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html</link><description>&lt;p&gt;I created a tiny python script that executes some python code, that executes some C code:&lt;/p&gt;
+&lt;h2&gt;VSCode&lt;/h2&gt;
+&lt;h3&gt;How to see content of std::string in the debugger&lt;/h3&gt;
+&lt;p&gt;You have to enable pretty printing by default for gdb, 
+Add the following to your launch.json:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 05 Apr 2016 00:45:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-04-05:/c-plus-plus-ide-for-linux.html</guid><category>misc</category><category>c++</category><category>useful</category></item><item><title>Debugging numpy (any C code of Python) using gdb</title><link>https://serge-m.github.io/debugging-numpy-any-c-code-of-python.html</link><description>&lt;p&gt;I created a tiny python script that executes some python code, that executes some C code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# contents of dbg_broadcast.py&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
 &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;broadcast&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]],[[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]]))&lt;/span&gt;

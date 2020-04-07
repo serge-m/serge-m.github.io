@@ -70,6 +70,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/writing-simple-optical-flow-in-python.html">Writing simple optical flow in python</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-11-30T14:46:00+01:00"> 2014-11-30T14:46:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/optical-flow.html">optical flow</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>First of all we need a couple of test images:
+<pre class="brush: python">#
+import numpy
+from StringIO import StringIO</p>
+<p>I0 = numpy.loadtxt(StringIO("""
+         0         0         0         0         0
+         0         0    0.5000         0         0
+         0         0    1.0000         0         0
+         0         0    0.5000         0         0
+         0         0         0         0         0""") )</p>
+<p>I1 = numpy …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/writing-simple-optical-flow-in-python.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/setting-default-parameters-from-imshow.html">Setting default parameters for imshow in pyplot</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -685,46 +719,6 @@ allows us to wrap the costFunction for …</blockquote>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/crop-included-graphics-in-latex.html">crop included graphics in latex</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-05-21T21:56:00+02:00"> 2014-05-21T21:56:00, Wed</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/latex.html">latex</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><div class="highlight"><pre><span></span><code><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
-
-<span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
-
-<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-<span class="c">% crop left</span>
-<span class="k">\includegraphics</span><span class="na">[trim={5cm 0 0 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
-<span class="c">% crop right</span>
-<span class="k">\includegraphics</span><span class="na">[trim={0 0 5cm 0},clip]</span><span class="nb">{</span>path-to-image<span class="nb">}</span>
-<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</code></pre></div>
-
-
-<p>Use the trim option, which takes four space separated values.</p>
-<div class="highlight"><pre><span></span><code><span class="err">trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}</span>
-</code></pre></div>
-
-
-<p><a href="http://tex.stackexchange.com/a/57420">Source</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/crop-included-graphics-in-latex.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index6.html">&laquo;</a>
@@ -765,6 +759,7 @@ allows us to wrap the costFunction for …</blockquote>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
@@ -776,7 +771,6 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item"><a href="https://serge-m.github.io/lenovo-e490.html">Lenovo E490 memory upgrade</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/arduino-experiments.html">Arduino Experiments</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/computer-vision-libraries.html">Computer vision libraries</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/postgres-cheatsheet.html">Postgres cheatsheet</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -883,7 +877,7 @@ allows us to wrap the costFunction for …</blockquote>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
     <li class="list-group-item tag-4">

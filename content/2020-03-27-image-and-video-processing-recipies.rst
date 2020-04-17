@@ -54,3 +54,12 @@ Convert to jpeg
 
 
 
+See also
+==============================
+
+* FFmpeg libav tutorial - learn how media works from basic to transmuxing, transcoding and more
+
+  `ffmpeg-libav-tutorial  on github <https://github.com/leandromoreira/ffmpeg-libav-tutorial>`_
+
+  `How to Write a Video Player in Less Than 1000 Lines <http://dranger.com/ffmpeg/>`_
+

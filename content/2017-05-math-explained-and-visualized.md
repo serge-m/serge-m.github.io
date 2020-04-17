@@ -40,7 +40,17 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [original paper](https://arxiv.org/abs/1706.03762)
 
+### Object detection
+
+[Object detection: speed and accuracy comparison (Faster R-CNN, R-FCN, SSD, FPN, RetinaNet and YOLOv3)](https://medium.com/@jonathan_hui/object-detection-speed-and-accuracy-comparison-faster-r-cnn-r-fcn-ssd-and-yolo-5425656ae359)
+
+[mAP (mean Average Precision) for Object Detection](https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173)
+
+
+
+
 ### About quaternions
+
 [https://eater.net/quaternions/](https://eater.net/quaternions/)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zjMuIxRvygQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

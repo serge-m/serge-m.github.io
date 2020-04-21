@@ -9,9 +9,6 @@
 :tags: python, argparse, click, fire, useful
 
 
-Parameters parsing for python applications
-============================================
-
 command line arguments is a standard and one of the most common ways to pass parameters to a python script.
 There exist a list of python libraries that help with that task. Here I am going to list some of them.
 

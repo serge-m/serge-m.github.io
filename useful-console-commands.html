@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Useful console comands - sergem personal public notebook</title>
+    <title>Useful console commands - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,20 +12,21 @@
 <link rel="canonical" href="https://serge-m.github.io/useful-console-commands.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="useful,console,linux,network" />
-        <meta name="description" content="Some linux commands that I&#39;ll probably need in the future Kill processes occupying a certain port: fuser -k 8080/tcp Add user to a group sudo usermod -aG group user or sudo adduser &lt;user&gt; &lt;group&gt; Delete user userdel user Delete the user’s home directory and mail spool: userdel -r …" />
+        <meta name="keywords" content="useful,console,linux,network,users" />
+        <meta name="description" content="Some linux commands that I&#39;ll probably need in the future User management Add user to a group sudo usermod -aG group user or sudo adduser &lt;user&gt; &lt;group&gt; Delete user userdel user Delete the user’s home directory and mail spool: userdel -r user Remove user from a group sudo gpasswd …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Useful console comands"/>
+        <meta property="og:title" content="Useful console commands"/>
         <meta property="og:url" content="https://serge-m.github.io/useful-console-commands.html"/>
-        <meta property="og:description" content="Some linux commands that I&#39;ll probably need in the future Kill processes occupying a certain port: fuser -k 8080/tcp Add user to a group sudo usermod -aG group user or sudo adduser &lt;user&gt; &lt;group&gt; Delete user userdel user Delete the user’s home directory and mail spool: userdel -r …"/>
+        <meta property="og:description" content="Some linux commands that I&#39;ll probably need in the future User management Add user to a group sudo usermod -aG group user or sudo adduser &lt;user&gt; &lt;group&gt; Delete user userdel user Delete the user’s home directory and mail spool: userdel -r user Remove user from a group sudo gpasswd …"/>
         <meta property="article:published_time" content="2017-06-09" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
             <meta property="article:tag" content="console" />
             <meta property="article:tag" content="linux" />
             <meta property="article:tag" content="network" />
+            <meta property="article:tag" content="users" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -85,8 +86,8 @@ sergem personal public notebook            </a>
                 <h1>
                     <a href="https://serge-m.github.io/useful-console-commands.html"
                        rel="bookmark"
-                       title="Permalink to Useful console comands">
-                        Useful console comands
+                       title="Permalink to Useful console commands">
+                        Useful console commands
                     </a>
                 </h1>
             </header>
@@ -111,15 +112,13 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
         /
 	<a href="https://serge-m.github.io/tag/network.html">network</a>
+        /
+	<a href="https://serge-m.github.io/tag/users.html">users</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Some linux commands that I'll probably need in the future</p>
-<p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
-</code></pre></div>
-
-
+<h1>User management</h1>
 <p>Add user to a group</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
 </code></pre></div>
@@ -180,26 +179,9 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 
-<p>Encode/decode binary file to ascii using command line </p>
-<p><a href="/encodedecode-binary-file-to-ascii.html">link</a></p>
-<p>Restart now:</p>
-<div class="highlight"><pre><span></span><code><span class="err">shutdown -r 0</span>
-</code></pre></div>
-
-
-<h2>SSH</h2>
-<p>generate key:</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen</span>
-</code></pre></div>
-
-
-<p>generate RSA key of length 4096 to file <code>my_key</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
-</code></pre></div>
-
-
-<p>Generate md5 fingerprint of the key (works in newer ubuntu, 16):</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -lf ./my_key -E md5</span>
+<h1>Processes</h1>
+<p>Kill processes occupying a certain port:</p>
+<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
 </code></pre></div>
 
 
@@ -222,6 +204,7 @@ $ <span class="nb">exit</span>
 
 
 <p><a href="https://en.wikipedia.org/wiki/Nohup">wiki</a></p>
+<h1>Network</h1>
 <h2>Scan IP range</h2>
 <p>Generally, nmap is useful to quickly scan networks.</p>
 <p>To install nmap, enter</p>
@@ -236,6 +219,7 @@ $ <span class="nb">exit</span>
 
 <p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255.</p>
 <p><a href="https://askubuntu.com/a/224567">Source</a></p>
+<h1>Text</h1>
 <h2>Replace text in files</h2>
 <div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i &quot;s/text_to_find/text_to_put/g&quot;</span>
 </code></pre></div>
@@ -251,12 +235,21 @@ $ <span class="nb">exit</span>
 </code></pre></div>
 
 
+<h1>Misc</h1>
+<p>Encode/decode binary file to ascii using command line </p>
+<p><a href="/encodedecode-binary-file-to-ascii.html">link</a></p>
+<p>Restart now:</p>
+<div class="highlight"><pre><span></span><code><span class="err">shutdown -r 0</span>
+</code></pre></div>
+
+
 <h2>Disk space</h2>
 <p><code>df</code> - check free disk space</p>
 <p><code>baobab</code> - free disk space</p>
-<h2>See also</h2>
+<h1>See also</h1>
 <ul>
 <li><a href="/2013/10/ten-best-console-commands-rus.html">1</a> (in russian)</li>
+<li><a href="/2017-04-ssh-cheatsheet.html">ssh cheat sheet</a></li>
 </ul>
             </div>
             <!-- /.entry-content -->

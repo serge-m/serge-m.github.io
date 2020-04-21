@@ -71,7 +71,7 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></h2>
+                <h2><a href="https://serge-m.github.io/useful-console-commands.html">Useful console commands</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -91,14 +91,12 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
         /
 	<a href="https://serge-m.github.io/tag/network.html">network</a>
+        /
+	<a href="https://serge-m.github.io/tag/users.html">users</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
-<p>Kill processes occupying a certain port:</p>
-<div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
-</code></pre></div>
-
-
+<h1>User management</h1>
 <p>Add user to a group</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
 </code></pre></div>
@@ -115,7 +113,12 @@ sergem personal public notebook            </a>
 
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><code><span class="err">userdel -r …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
+</code></pre></div>
+
+
+<p>Remove user from a group</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
             </article>
@@ -132,7 +135,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console comands</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console commands</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->

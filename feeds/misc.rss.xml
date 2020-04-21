@@ -320,12 +320,8 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
 
 &lt;p&gt;Another tip:
 add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 24 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</guid><category>misc</category><category>python</category><category>argparse</category></item><item><title>Useful console comands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
-&lt;p&gt;Kill processes occupying a certain port:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;fuser -k 8080/tcp&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;parser&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_argument&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;--type&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;toto&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;choices …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 24 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-24:/python-argparse-recipies.html</guid><category>misc</category><category>python</category><category>argparse</category></item><item><title>Useful console commands</title><link>https://serge-m.github.io/useful-console-commands.html</link><description>&lt;p&gt;Some linux commands that I'll probably need in the future&lt;/p&gt;
+&lt;h1&gt;User management&lt;/h1&gt;
 &lt;p&gt;Add user to a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo usermod -aG group user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -342,7 +338,12 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
 
 
 &lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;userdel -r …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>misc</category><category>useful</category><category>console</category><category>linux</category><category>network</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;userdel -r user&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Remove user from a group&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo gpasswd …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>misc</category><category>useful</category><category>console</category><category>linux</category><category>network</category><category>users</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
 &lt;p&gt;The text is shown on click.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Click to expand&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -410,14 +411,17 @@ two DC motors or one stepper motor&lt;br&gt;
 &lt;p&gt;There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.&lt;/p&gt;
 &lt;p&gt;How the rule was created&lt;/p&gt;
 &lt;p&gt;All rules created …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 13 Apr 2017 20:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-13:/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html</guid><category>misc</category><category>firefox</category><category>linux</category><category>cinnamon</category><category>mint</category></item><item><title>SSH cheat sheet</title><link>https://serge-m.github.io/ssh-cheatsheet.html</link><description>&lt;h2&gt;Create more secure ssh keys&lt;/h2&gt;
-&lt;p&gt;Create a key using elliptic curve cryptography: &lt;/p&gt;
+&lt;p&gt;Create a key using elliptic curve cryptography (more secure): &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ssh-keygen -a 100 -t ed25519&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;see also: &lt;a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54"&gt;Upgrade Your SSH Key to Ed25519&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;How to prevent SSH from scanning all the keys in .ssh directory&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ssh -o &lt;span class="nv"&gt;IdentitiesOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes -F /dev/null -i ~/path/to/some_id_rsa root@server …&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 12 Apr 2017 12:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</guid><category>misc</category><category>ssh</category><category>keys</category><category>useful</category></item><item><title>Convert ovpn config file to .ca, .crt, .key</title><link>https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html</link><description>&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
+&lt;p&gt;generate RSA key of length 4096 to file &lt;code&gt;my_key&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Generate md5 fingerprint of the key (works in newer ubuntu, 16 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 12 Apr 2017 12:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</guid><category>misc</category><category>ssh</category><category>keys</category><category>useful</category></item><item><title>Convert ovpn config file to .ca, .crt, .key</title><link>https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html</link><description>&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags into &lt;code&gt;ca.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;ca&amp;gt;&lt;/code&gt; tags from original file.&lt;/li&gt;
 &lt;li&gt;Copy from between &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags into &lt;code&gt;client.crt&lt;/code&gt;, remove &lt;code&gt;&amp;lt;cert&amp;gt;&lt;/code&gt; tags.&lt;/li&gt;

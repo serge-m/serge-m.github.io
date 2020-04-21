@@ -404,14 +404,17 @@ two DC motors or one stepper motor<br>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><h2>Create more secure ssh keys</h2>
-<p>Create a key using elliptic curve cryptography: </p>
+<p>Create a key using elliptic curve cryptography (more secure): </p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
 </code></pre></div>
 
 
-<p>see also: <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">Upgrade Your SSH Key to Ed25519</a></p>
-<h2>How to prevent SSH from scanning all the keys in .ssh directory</h2>
-<div class="highlight"><pre><span></span><code>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server …</code></pre></div>
+<p>generate RSA key of length 4096 to file <code>my_key</code></p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
+</code></pre></div>
+
+
+<p>Generate md5 fingerprint of the key (works in newer ubuntu, 16 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssh-cheatsheet.html">more ...</a>
                 </div>
             </article>

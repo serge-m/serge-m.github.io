@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="python,argparse,click,fire,useful" />
-        <meta name="description" content="Parameters parsing for python applications command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse The default choice …" />
+        <meta name="description" content="command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse The default choice for the python developer. The …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Parameters parsing for python applications"/>
         <meta property="og:url" content="https://serge-m.github.io/parameters-parsing-for-python-applications.html"/>
-        <meta property="og:description" content="Parameters parsing for python applications command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse The default choice …"/>
+        <meta property="og:description" content="command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse The default choice for the python developer. The …"/>
         <meta property="article:published_time" content="2020-04-21" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="python" />
@@ -117,12 +117,10 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <div class="section" id="parameters-parsing-for-python-applications">
-<h2>Parameters parsing for python applications</h2>
-<p>command line arguments is a standard and one of the most common ways to pass parameters to a python script.
+                <p>command line arguments is a standard and one of the most common ways to pass parameters to a python script.
 There exist a list of python libraries that help with that task. Here I am going to list some of them.</p>
 <div class="section" id="argparse">
-<h3>argparse</h3>
+<h2>argparse</h2>
 <p>The default choice for the python developer.
 The module is included in python standard library and comes together with any python distribution.</p>
 <p>Example of usage:</p>
@@ -154,7 +152,7 @@ test.py: error: unrecognized arguments: --name
 </pre></div>
 </div>
 <div class="section" id="click">
-<h3>click</h3>
+<h2>click</h2>
 <p>custom module that I now use by default.
 Provides a pretty concise interface that turns function parameters in to command line parameters.
 Another advantage is that it solves the problem with ambiguous and non-obvious rules of argument parsing in <cite>argparse</cite>.</p>
@@ -220,13 +218,13 @@ Try <span class="s1">&#39;test.py --help&#39;</span> <span class="k">for</span> 
 Error: no such option: --name
 </pre></div>
 <div class="section" id="how-to-make-a-flag">
-<h4>How to make a flag:</h4>
+<h3>How to make a flag:</h3>
 <div class="highlight"><pre><span></span><span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--shout&#39;</span><span class="p">,</span> <span class="n">is_flag</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="google-s-fire">
-<h3>google's fire</h3>
+<h2>google's fire</h2>
 <p><a class="reference external" href="https://github.com/google/python-fire">https://github.com/google/python-fire</a></p>
 <p>Examples from the official <a class="reference external" href="https://github.com/google/python-fire/blob/master/docs/guide.md">documentation</a> :</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fire</span>
@@ -270,7 +268,6 @@ The types of the arguments are determined by their values, rather than by the fu
 You can pass any Python literal from the command line: numbers, strings, tuples, lists, dictionaries,
 (sets are only supported in some versions of Python).
 You can also nest the collections arbitrarily as long as they only contain literals.</blockquote>
-</div>
 </div>
 
             </div>

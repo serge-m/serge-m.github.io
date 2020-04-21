@@ -170,6 +170,16 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 
+<p>Disable user from login including ssh</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod --expiredate 1 user1</span>
+</code></pre></div>
+
+
+<p>Reenable the user:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo usermod --expiredate &quot;&quot; user1</span>
+</code></pre></div>
+
+
 <p>Encode/decode binary file to ascii using command line </p>
 <p><a href="/encodedecode-binary-file-to-ascii.html">link</a></p>
 <p>Restart now:</p>

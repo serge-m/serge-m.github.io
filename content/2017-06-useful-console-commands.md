@@ -1,18 +1,14 @@
-Title: Useful console comands 
+Title: Useful console commands 
 Author: SergeM
 Date: 2017-06-09 12:15:00
 Slug: useful-console-commands
-Tags: useful,console,linux,network
+Tags: useful,console,linux,network,users
 
 
 Some linux commands that I'll probably need in the future
 
 
-Kill processes occupying a certain port:
-```
-fuser -k 8080/tcp
-``` 
-
+# User management
 
 Add user to a group
 ```
@@ -75,31 +71,14 @@ Reenable the user:
     sudo usermod --expiredate "" user1
 
 
-Encode/decode binary file to ascii using command line 
 
-[link](/encodedecode-binary-file-to-ascii.html)
+# Processes
 
+Kill processes occupying a certain port:
+```
+fuser -k 8080/tcp
+``` 
 
-Restart now:
-```
-shutdown -r 0
-```
-
-## SSH
-generate key:
-```
-ssh-keygen
-```
-
-generate RSA key of length 4096 to file `my_key`
-```
-ssh-keygen -t rsa -b 4096 -C "your@e-mail.com" -f my_key
-```
-
-Generate md5 fingerprint of the key (works in newer ubuntu, 16):
-```
-ssh-keygen -lf ./my_key -E md5
-```
 
 ## Detach process
 Sometimes I need to detach from a process running on a remote machine so that it continues running after I logout.
@@ -130,6 +109,8 @@ $ exit
 [wiki](https://en.wikipedia.org/wiki/Nohup)
 
 
+# Network
+
 ## Scan IP range
 
 Generally, nmap is useful to quickly scan networks.
@@ -146,6 +127,9 @@ This will show you which hosts responded to ping requests on the network between
 
 [Source](https://askubuntu.com/a/224567)
 
+
+# Text 
+
 ## Replace text in files
 
 ```
@@ -161,13 +145,27 @@ If your text contain slashes, you should use another delimiter:
 find . -type f | xargs sed -i.original "s|text/to/find/|text/to/put|g"
 ```
 
+
+# Misc
+
+Encode/decode binary file to ascii using command line 
+
+[link](/encodedecode-binary-file-to-ascii.html)
+
+
+Restart now:
+```
+shutdown -r 0
+```
+
 ## Disk space
 
 `df` - check free disk space
 
 `baobab` - free disk space
 
-## See also
+
+# See also
 
 * [1](/2013/10/ten-best-console-commands-rus.html) (in russian)
-
+* [ssh cheat sheet](/2017-04-ssh-cheatsheet.html)

@@ -6,10 +6,21 @@ Tags: ssh, keys, useful
 
 
 ## Create more secure ssh keys
-Create a key using elliptic curve cryptography: 
+Create a key using elliptic curve cryptography (more secure): 
 ```
 ssh-keygen -a 100 -t ed25519
 ```
+
+generate RSA key of length 4096 to file `my_key`
+```
+ssh-keygen -t rsa -b 4096 -C "your@e-mail.com" -f my_key
+```
+
+Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+```
+ssh-keygen -lf ./my_key -E md5
+```
+
 
 see also: [Upgrade Your SSH Key to Ed25519](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54)
 

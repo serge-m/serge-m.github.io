@@ -66,6 +66,15 @@ chsh -s /bin/bash user
 ```
 
 
+Disable user from login including ssh
+
+    sudo usermod --expiredate 1 user1
+
+Reenable the user:
+
+    sudo usermod --expiredate "" user1
+
+
 Encode/decode binary file to ascii using command line 
 
 [link](/encodedecode-binary-file-to-ascii.html)

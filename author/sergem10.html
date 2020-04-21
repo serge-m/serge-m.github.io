@@ -70,6 +70,39 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">Fast way of copying byte array in C/C++ (With measurements)</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-15T15:22:00+02:00"> 2013-10-15T15:22:00, Tue</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/algorithm-performance.html">algorithm performance</a>
+        /
+	<a href="https://serge-m.github.io/tag/video-processing.html">video processing</a>
+        /
+	<a href="https://serge-m.github.io/tag/obsolete.html">obsolete</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.</p>
+<p>I have the following code for copying several buffers from one object to another:</p>
+<div class="highlight"><pre><span></span><code>    <span class="c1">// Copy several buffers (images)</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+       <span class="c1">// Copy pixels …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/how-to-cheat-on-video-encoder.html">How to cheat on video encoder comparisons</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -560,27 +593,6 @@ vcomp90d …</blockquote></p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/another-place-with-boost-binaries.html">Another place with boost binaries</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-05-12T14:57:00+02:00"> 2013-05-12T14:57:00, Sun</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><a href="http://boost.teeks99.com/">http://boost.teeks99.com/</a>&nbsp;- Another place with boost binaries. It includes build for version 1.49</p>
-<p>Before I new only&nbsp;<a href="http://www.boostpro.com/download/">http://www.boostpro.com/download/</a></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/another-place-with-boost-binaries.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem9.html">&laquo;</a>
@@ -621,6 +633,7 @@ vcomp90d …</blockquote></p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
@@ -632,7 +645,6 @@ vcomp90d …</blockquote></p>
     <li class="list-group-item"><a href="https://serge-m.github.io/ros-experience.html">ROS experience</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/lenovo-e490.html">Lenovo E490 memory upgrade</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/arduino-experiments.html">Arduino Experiments</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/computer-vision-libraries.html">Computer vision libraries</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -662,6 +674,9 @@ vcomp90d …</blockquote></p>
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
     <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
+    </li>
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-3">
@@ -678,6 +693,9 @@ vcomp90d …</blockquote></p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cheatsheet.html">cheatsheet</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/click.html">click</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
@@ -707,9 +725,6 @@ vcomp90d …</blockquote></p>
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
@@ -736,14 +751,14 @@ vcomp90d …</blockquote></p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/fire.html">fire</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/gpio.html">gpio</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
@@ -891,9 +906,6 @@ vcomp90d …</blockquote></p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/services.html">services</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>

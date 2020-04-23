@@ -46,7 +46,7 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [mAP (mean Average Precision) for Object Detection](https://medium.com/@jonathan_hui/map-mean-average-precision-for-object-detection-45c121a31173)
 
-
+[Object Detection. Распознавай и властвуй. Часть 2](https://habr.com/en/company/jetinfosystems/blog/498652/)
 
 
 ### About quaternions

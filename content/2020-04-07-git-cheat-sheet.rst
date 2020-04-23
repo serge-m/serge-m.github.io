@@ -9,7 +9,8 @@
 :tags: git
 
 
-Nice history log:
+Nice history log in console
+----------------------------------------
 
 .. code-block:: sh
 
@@ -51,7 +52,25 @@ Sample result:
 
 
 Set date/time for git commits
+------------------------------------------------------
+
 
 .. code-block:: sh
 
     export GIT_COMMITTER_DATE="2020-01-01 12:00:00"; git commit --date "$GIT_COMMITTER_DATE" -m "commit message"
+
+
+Caching credentials
+---------------------------------------------
+
+Remember credentials for 1 hour (3600 seconds):
+
+.. code-block:: sh
+
+    git config --global credential.helper 'cache --timeout=3600'
+
+Disabling cache:
+
+.. code-block:: sh
+
+    git config --global --unset credential.helper

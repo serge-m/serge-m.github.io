@@ -2,7 +2,7 @@ Title: linux life
 Author: SM!
 Date: 2014-06-02 23:18:00
 Slug: linux-life
-Tags: linux, ubuntu, console, cheatsheet
+Tags: linux, ubuntu, console, cheatsheet, command line
 
 
 ### Good start
@@ -40,4 +40,4 @@ ccsm
 ### See also
 * more [here](/useful-console-commands.html)
 * Ubuntu customization: [ubuntu-linux-settings](ubuntu-linux-settings.html)
-
+* [Mount windows shares in linux](mount-windows-shares-in-linux.html)

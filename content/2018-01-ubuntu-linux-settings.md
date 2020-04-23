@@ -129,3 +129,36 @@ in file `/etc/login.defs`. Here is the quote from this file:
 
 # Appearance customization
 * [Change background of the lock screen in Ubuntu 18](https://askubuntu.com/questions/1042942/how-to-change-ubuntu-budgie-login-screen-background) (stackoverflow)
+
+
+# Ubuntu freezes when RAM is full
+
+(DRAFT, from https://habr.com/en/company/selectel/blog/498526/ )
+
+Кстати, никто не подскажет как вылечить зависание ubuntu при заполнении RAM?
+
+    SergeyD
+    today at 07:27 PM
+
++1
+
+    Включить и настроить swap
+    Включить использование zswap: https://wiki.archlinux.org/index.php/Zswap
+    Установить и настроить earlyoom — осторожно, может прибить все процессы
+
+ValdikSS
+today at 08:16 PM
+
++2 1. Установить и настроить zram, проще всего через zram-tools.
+2. Создать /etc/sysctl.d/60-dirty.conf со следующим содержимым:
+
+vm.dirty_bytes = 67108864
+vm.dirty_background_bytes = 16777216
+
+vm.swappiness=100
+vm.watermark_scale_factor=200
+
+
+3. Убедиться, что используется достаточно свежее ядро (5.3+).
+
+Эти три пункта заметно улучшают ситуацию. Если еще полтора года назад, во времена 4.19, я бы однозначно советовал Windows 10 для маломощных компьютеров с малым количеством RAM, то с параметрами, описанными выше, я ошибся с копированием файла, скопировав многогигабайтный файл в RAM целиком, и система только немного замедлилась. Также могу запускать несколько виртуалок одновременно, RAM в настройках которых превышает количество физически установленной памяти, и все также, не побоюсь этого слова, быстро работает, при 5+ ГБ в swap (и zram, и zswap).

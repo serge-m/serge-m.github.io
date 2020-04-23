@@ -123,6 +123,48 @@ sergem personal public notebook            </a>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://serge-m.github.io/mount-windows-shares-in-linux.html">Mount windows shares in linux</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-06-19T12:37:00+02:00"> 2016-06-19T12:37:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/samba.html">samba</a>
+        /
+	<a href="https://serge-m.github.io/tag/mount.html">mount</a>
+        /
+	<a href="https://serge-m.github.io/tag/network.html">network</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Use sudo if needed</p>
+<h2>Mount</h2>
+<div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
+<span class="err">mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share</span>
+</code></pre></div>
+
+
+<p>To allow write access one has to specify owning user and group:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share</span>
+</code></pre></div>
+
+
+<h2>Unmount …</h2>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -136,6 +178,7 @@ sergem personal public notebook            </a>
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
     <li class="list-group-item"><a href="https://serge-m.github.io/useful-console-commands.html">Useful console commands</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/mount-windows-shares-in-linux.html">Mount windows shares in linux</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -191,7 +234,7 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
@@ -229,9 +272,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/e490.html">e490</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -322,6 +362,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>

@@ -12,18 +12,21 @@
 <link rel="canonical" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="useful,linux" />
-        <meta name="description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmount umount /mnt/shares" />
+        <meta name="keywords" content="useful,linux,samba,mount,network" />
+        <meta name="description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share To allow write access one has to specify owning user and group: sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share Unmount …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Mount windows shares in linux"/>
         <meta property="og:url" content="https://serge-m.github.io/mount-windows-shares-in-linux.html"/>
-        <meta property="og:description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share Unmount umount /mnt/shares"/>
+        <meta property="og:description" content="Use sudo if needed Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share To allow write access one has to specify owning user and group: sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share Unmount …"/>
         <meta property="article:published_time" content="2016-06-19" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="useful" />
             <meta property="article:tag" content="linux" />
+            <meta property="article:tag" content="samba" />
+            <meta property="article:tag" content="mount" />
+            <meta property="article:tag" content="network" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -105,13 +108,24 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
         /
 	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/samba.html">samba</a>
+        /
+	<a href="https://serge-m.github.io/tag/mount.html">mount</a>
+        /
+	<a href="https://serge-m.github.io/tag/network.html">network</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Use sudo if needed</p>
 <h2>Mount</h2>
 <div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
-<span class="err">mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share</span>
+<span class="err">mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share</span>
+</code></pre></div>
+
+
+<p>To allow write access one has to specify owning user and group:</p>
+<div class="highlight"><pre><span></span><code><span class="err">sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share</span>
 </code></pre></div>
 
 
@@ -231,7 +245,7 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/command-line.html">command line</a>
     </li>
     <li class="list-group-item tag-3">
@@ -269,9 +283,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/e490.html">e490</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/emr.html">emr</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -362,6 +373,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/network.html">network</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>

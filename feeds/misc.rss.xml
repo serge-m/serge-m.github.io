@@ -743,13 +743,16 @@ cmake --build . --config Release
     &lt;span class="c1"&gt;# 64bit build on Windows …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 25 Jun 2016 22:43:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-06-25:/compile-dlib-for-miniconda.html</guid><category>misc</category></item><item><title>Mount windows shares in linux</title><link>https://serge-m.github.io/mount-windows-shares-in-linux.html</link><description>&lt;p&gt;Use sudo if needed&lt;/p&gt;
 &lt;h2&gt;Mount&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;mkdir /mnt/share&lt;/span&gt;
-&lt;span class="err"&gt;mount -t cifs //windowsmachineip/sharename -o username=user,password=urPassword /mnt/share&lt;/span&gt;
+&lt;span class="err"&gt;mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;Unmount&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;umount /mnt/shares&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 19 Jun 2016 12:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-06-19:/mount-windows-shares-in-linux.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>deep learning</title><link>https://serge-m.github.io/deep-learning.html</link><description>&lt;p&gt;&lt;a href="https://github.com/sugyan/tensorflow-mnist"&gt;Rest API example for tensorflow&lt;/a&gt;. It works: &lt;a href="https://tensorflow-mnist.herokuapp.com/"&gt;demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To allow write access one has to specify owning user and group:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Unmount …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 19 Jun 2016 12:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-06-19:/mount-windows-shares-in-linux.html</guid><category>misc</category><category>useful</category><category>linux</category><category>samba</category><category>mount</category><category>network</category></item><item><title>deep learning</title><link>https://serge-m.github.io/deep-learning.html</link><description>&lt;p&gt;&lt;a href="https://github.com/sugyan/tensorflow-mnist"&gt;Rest API example for tensorflow&lt;/a&gt;. It works: &lt;a href="https://tensorflow-mnist.herokuapp.com/"&gt;demo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://deepdetect.com/models/tf/"&gt;Trained models for tensorflow&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/tensorflow/models/tree/master/slim"&gt;TF-slim&lt;/a&gt; -  high-level API of TensorFlow  for defining, training and evaluating complex models. Doesn't work for python 3 (see &lt;a href="https://github.com/tensorflow/models/issues/1436"&gt;here&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/machrisaa/tensorflow-vgg"&gt;VGG16 and VGG19 in Tensorflow&lt;/a&gt;. One more &lt;a href="https://github.com/huyng/tensorflow-vgg"&gt;here&lt;/a&gt;. And one &lt;a href="https://github.com/ry/tensorflow-vgg16"&gt;more&lt;/a&gt;&lt;/p&gt;
@@ -1149,7 +1152,7 @@ batch_size: 100&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/
 &lt;p&gt;&lt;strong&gt;baobab&lt;/strong&gt; - free disk space &lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;screen&lt;/strong&gt; - multiple virtual consoles in one real [&lt;a href="http://sergevideo.blogspot.com/2014/05/multiple-windows-in-one-linux-terminal.html"&gt;ref&lt;/a&gt;], need installation in ubuntu&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;mc&lt;/strong&gt; - file manager&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ccsm&lt;/strong&gt; - disabling smooth fades and animations …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Mon, 02 Jun 2014 23:18:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-02:/linux-life.html</guid><category>misc</category><category>linux</category><category>ubuntu</category><category>console</category><category>cheatsheet</category></item><item><title>lambda functions in matlab</title><link>https://serge-m.github.io/lambda-functions-in-matlab.html</link><description>&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ccsm&lt;/strong&gt; - disabling smooth fades and animations …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Mon, 02 Jun 2014 23:18:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-02:/linux-life.html</guid><category>misc</category><category>linux</category><category>ubuntu</category><category>console</category><category>cheatsheet</category><category>command line</category></item><item><title>lambda functions in matlab</title><link>https://serge-m.github.io/lambda-functions-in-matlab.html</link><description>&lt;p&gt;I discovered it during Machine learnin courses on Coursera&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;To specify the actual function we are minimizing, we use a "short-hand"
 for specifying functions with the @(t) ( costFunction(t, X, y) ) . This
 creates a function, with argument t, which calls your costFunction. This

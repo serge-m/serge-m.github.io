@@ -401,8 +401,23 @@ To make it pick up your custome key you can create a config file
 
 
 <p>More <a href="https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797">here</a></p>
-<p>See also
-* <a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices</a></p>
+<h3>See also</h3>
+<ul>
+<li><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices</a></li>
+</ul>
+<h1>SOCKS proxy</h1>
+<p>How to run socks proxy. It's a bit easier than using VPN because it doesn't require sudo to launch.
+Also it doesn't require to install anything on the server except openssh server. </p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -D 1337 -q -C -N user@your_server.ip</span>
+</code></pre></div>
+
+
+<p><code>-D</code> defines the port on the local machine,</p>
+<p><code>-q</code> is quiet mode,</p>
+<p><code>-C</code> compresses, </p>
+<p><code>-N</code> causes remote commands not to be executed, just straight port forwarding.</p>
+<p>Then one can set up a socks proxy in the settings of the browser.</p>
+<p><a href="https://medium.com/@therockspush/building-a-quick-and-easy-ssh-socks-proxy-3a440f5d35a7">src</a></p>
             </div>
             <!-- /.entry-content -->
     <hr/>

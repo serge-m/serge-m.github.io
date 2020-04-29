@@ -341,5 +341,27 @@ Host github.com
 
 More [here](https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797)
 
-See also
+### See also
 * [Top 20 OpenSSH Server Best Security Practices](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html)
+
+
+
+# SOCKS proxy
+
+How to run socks proxy. It's a bit easier than using VPN because it doesn't require sudo to launch.
+Also it doesn't require to install anything on the server except openssh server. 
+
+    ssh -D 1337 -q -C -N user@your_server.ip
+
+`-D` defines the port on the local machine,
+ 
+`-q` is quiet mode,
+
+`-C` compresses, 
+
+`-N` causes remote commands not to be executed, just straight port forwarding.
+
+Then one can set up a socks proxy in the settings of the browser.
+
+
+[src](https://medium.com/@therockspush/building-a-quick-and-easy-ssh-socks-proxy-3a440f5d35a7)

@@ -54,8 +54,11 @@ Then in the trainer definition we have to specify tensorboard logger:
     )
 
 
+This is how the visualization look like:
+![torch lightning gradient visualization](media/2020-04-29-torch-lightning/torch-tensorboard-gradient-visualization.png) 
 
 In the code of torch-lightning there is also a hook `on_before_zero_grad` for that: 
 [github search](https://github.com/search?q=on_before_zero_grad&type=Code) But I wasn't able to understand how to use it.
+
 
 

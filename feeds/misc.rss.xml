@@ -1554,4 +1554,21 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 &lt;a href="http://gitorious.org/blenderprojects/"&gt;Source code&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 11:51:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/overview-of-open-source-node-based.html</guid><category>misc</category><category>video editing</category><category>node based</category><category>software</category></item><item><title>Image resize in Nuke</title><link>https://serge-m.github.io/image-resize-in-nuke.html</link><description>&lt;p&gt;So here we have two filters:
 1) Crop
 2) Reformat&lt;/p&gt;
-&lt;p&gt;To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 07 May 2013 15:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-07:/image-resize-in-nuke.html</guid><category>misc</category><category>en</category><category>nuke</category></item></channel></rss>
+&lt;p&gt;To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 07 May 2013 15:50:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-07:/image-resize-in-nuke.html</guid><category>misc</category><category>en</category><category>nuke</category></item><item><title>Torch-Lightning library (draft)</title><link>https://serge-m.github.io/torch-lightning-library.html</link><description>&lt;h1&gt;How to visualize gradients with torch-lightning and tensorboard&lt;/h1&gt;
+&lt;p&gt;in your model class define a optimizer_step. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Model&lt;/span&gt;(&lt;span class="n"&gt;pl&lt;/span&gt;.&lt;span class="n"&gt;LightningModule&lt;/span&gt;):
+
+    &lt;span class="c1"&gt;# ...&lt;/span&gt;
+
+    &lt;span class="n"&gt;def&lt;/span&gt; &lt;span class="n"&gt;optimizer_step&lt;/span&gt;(
+            &lt;span class="nb"&gt;self&lt;/span&gt;,
+            &lt;span class="n"&gt;epoch:&lt;/span&gt; &lt;span class="n"&gt;int&lt;/span&gt;,
+            &lt;span class="n"&gt;batch_idx:&lt;/span&gt; &lt;span class="n"&gt;int&lt;/span&gt;,
+            &lt;span class="n"&gt;optimizer&lt;/span&gt;,
+            &lt;span class="n"&gt;optimizer_idx:&lt;/span&gt; &lt;span class="n"&gt;int&lt;/span&gt;,
+            &lt;span class="n"&gt;second_order_closure&lt;/span&gt; = &lt;span class="n"&gt;None&lt;/span&gt;,
+    ) -&amp;gt; &lt;span class="n"&gt;None:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;self&lt;/span&gt;.&lt;span class="n"&gt;trainer&lt;/span&gt;.&lt;span class="n"&gt;use_tpu&lt;/span&gt; &lt;span class="o"&gt;and&lt;/span&gt; &lt;span class="n"&gt;XLA_AVAILABLE:&lt;/span&gt;
+            &lt;span class="n"&gt;xm&lt;/span&gt;.&lt;span class="n"&gt;optimizer_step&lt;/span&gt;(&lt;span class="n"&gt;optimizer&lt;/span&gt;)
+        &lt;span class="n"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;isinstance&lt;/span&gt;(&lt;span class="n"&gt;optimizer&lt;/span&gt;, &lt;span class="n"&gt;torch&lt;/span&gt;.&lt;span class="n"&gt;optim&lt;/span&gt;.&lt;span class="n"&gt;LBFGS&lt;/span&gt;):
+            &lt;span class="n"&gt;optimizer&lt;/span&gt;.&lt;span class="n"&gt;step&lt;/span&gt;(&lt;span class="n"&gt;second_order_closure …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 29 Apr 2000 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2000-04-29:/torch-lightning-library.html</guid><category>misc</category><category>python</category><category>deep learning</category><category>pytorch</category><category>torch</category><category>torch-lightning</category><category>tensorboard</category></item></channel></rss>

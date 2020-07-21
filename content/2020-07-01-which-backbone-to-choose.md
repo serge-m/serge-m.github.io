@@ -88,6 +88,8 @@ They implemented several important improvements to reduce the complexity:
 
 ## RegNet 
 
+Designing Network Design Spaces [paper](https://arxiv.org/abs/2003.13678) by Facebook AI Research (FAIR). 
+
 Medium paper: [RegNet or How to methodologically design effective networks.](https://medium.com/analytics-vidhya/regnet-or-how-to-methodologically-design-effective-networks-c3560c1cf436)
 
 A class of models that is designed for fast training and inference. 
@@ -109,12 +111,24 @@ One more vitation from  [Facebook AI RegNet Models Outperform EfficientNet Model
 > While it is common to see modern mobile networks employ inverted bottlenecks, researchers noticed that using inverted bottlenecks degrades performance. The best models do not use either a bottleneck or an inverted bottleneck.
 
 
+## ResNeSt
+
+ResNeSt: Split-Attention Networks [paper](https://arxiv.org/abs/2004.08955)
+
+[resnest code](https://github.com/zhanghang1989/ResNeSt)
+
+A pretty recent paper. The authors propose to split the channels into groups, process them with a separate sets of convolutions, and then concat them. 
+
+They achieve a comparable (and better) performance with EfficientNet, while having less parameters and having better frame rate.
 
 
 
 ## Conclusion
 
-I would start with EfficientNet if I don't have strong requirements for the hardware. The architecture has proven to be practical. 
+
+I would start with ResNest given it's great performance. 
+
+If I want to have a smaller network with less parameters I would go for Efficient net. That would probably make sense if I run without a GPU. The architecture of EfficientNet is proven to work well in several domains.
 
 Regnet is not trained for the same amount of time and reports lower accuracy. The comparison provided in the paper uses re-trained Efficient Net Weights. It's unclear whether it will be comparable with on the full-blown training.
 

@@ -183,6 +183,7 @@ They claim to be 1.8 times faster  than Mobilenet V2 with the same performance.<
 </li>
 </ul>
 <h2>RegNet</h2>
+<p>Designing Network Design Spaces <a href="https://arxiv.org/abs/2003.13678">paper</a> by Facebook AI Research (FAIR). </p>
 <p>Medium paper: <a href="https://medium.com/analytics-vidhya/regnet-or-how-to-methodologically-design-effective-networks-c3560c1cf436">RegNet or How to methodologically design effective networks.</a></p>
 <p>A class of models that is designed for fast training and inference. 
 The implementation and the trained weights can be found at pycls repo: <a href="https://github.com/facebookresearch/pycls">https://github.com/facebookresearch/pycls</a></p>
@@ -199,8 +200,14 @@ That fact is in sync with the experiments from <code>EffResNetComparison.ipynb</
 <blockquote>
 <p>While it is common to see modern mobile networks employ inverted bottlenecks, researchers noticed that using inverted bottlenecks degrades performance. The best models do not use either a bottleneck or an inverted bottleneck.</p>
 </blockquote>
+<h2>ResNeSt</h2>
+<p>ResNeSt: Split-Attention Networks <a href="https://arxiv.org/abs/2004.08955">paper</a></p>
+<p><a href="https://github.com/zhanghang1989/ResNeSt">resnest code</a></p>
+<p>A pretty recent paper. The authors propose to split the channels into groups, process them with a separate sets of convolutions, and then concat them. </p>
+<p>They achieve a comparable (and better) performance with EfficientNet, while having less parameters and having better frame rate.</p>
 <h2>Conclusion</h2>
-<p>I would start with EfficientNet if I don't have strong requirements for the hardware. The architecture has proven to be practical. </p>
+<p>I would start with ResNest given it's great performance. </p>
+<p>If I want to have a smaller network with less parameters I would go for Efficient net. That would probably make sense if I run without a GPU. The architecture of EfficientNet is proven to work well in several domains.</p>
 <p>Regnet is not trained for the same amount of time and reports lower accuracy. The comparison provided in the paper uses re-trained Efficient Net Weights. It's unclear whether it will be comparable with on the full-blown training.</p>
 <p>The backup plan is MNas and Mobilenet. If I need to run on a smaller device I would be more careful and considered MNasNet or Mobilenet V2/V3. </p>
             </div>

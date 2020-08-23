@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Wed, 01 Jul 2020 19:00:00 +0200</lastBuildDate><item><title>Which pretrained backbone to choose</title><link>https://serge-m.github.io/which-backbone-to-choose.html</link><description>&lt;p&gt;In 2020 which architecture should I use for my image classification/tracking/segmentation/... task?&lt;/p&gt;
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 23 Aug 2020 19:00:00 +0200</lastBuildDate><item><title>Self-supervised depth and ego motion estimation</title><link>https://serge-m.github.io/self-supervised-depth-and-ego-motion.html</link><description>&lt;div class="section" id="d-packing-for-self-supervised-monocular-depth-estimation"&gt;
+&lt;h2&gt;3D Packing for Self-Supervised Monocular Depth Estimation&lt;/h2&gt;
+&lt;p&gt;by Vitor Guizilini, &lt;a class="reference external" href="https://arxiv.org/pdf/1905.02693.pdf"&gt;pdf at arxiv&lt;/a&gt;, 2020&lt;/p&gt;
+&lt;p&gt;Learning&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Depth estimator &lt;span class="formula"&gt;&lt;i&gt;f&lt;/i&gt;&lt;sub&gt;&lt;i&gt;D&lt;/i&gt;&lt;/sub&gt; : &lt;i&gt;I&lt;/i&gt; → &lt;i&gt;D&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Ego motion estimator: &lt;span class="formula"&gt;&lt;i&gt;f&lt;/i&gt;&lt;sub&gt;&lt;i&gt;x&lt;/i&gt;&lt;/sub&gt; : (&lt;i&gt;I&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt;&lt;/sub&gt;, &lt;i&gt;I&lt;/i&gt;&lt;sub&gt;&lt;i&gt;S&lt;/i&gt;&lt;/sub&gt;) → &lt;i&gt;x&lt;/i&gt;&lt;sub&gt;&lt;i&gt;t&lt;/i&gt; → &lt;i&gt;S&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="sfmlearner"&gt;
+&lt;h2&gt;SfMLearner&lt;/h2&gt;
+&lt;img alt="" src="media/2020-08-23/sfm-teaser.png" style="width: 600px;" /&gt;
+&lt;p&gt;One of the previous works, that became a foundation for 3d-pack.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/"&gt;Official website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Github: &lt;a class="reference external" href="https://github.com/tinghuiz/SfMLearner"&gt;https://github …&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 23 Aug 2020 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-08-23:/self-supervised-depth-and-ego-motion.html</guid><category>misc</category><category>machine learning</category><category>computer vision</category><category>DNN</category><category>CNN</category><category>deep learning</category><category>depth</category><category>ego motion.</category></item><item><title>Which pretrained backbone to choose</title><link>https://serge-m.github.io/which-backbone-to-choose.html</link><description>&lt;p&gt;In 2020 which architecture should I use for my image classification/tracking/segmentation/... task?&lt;/p&gt;
 &lt;p&gt;I was asked on an interview that and I didn't have a prepared answer.&lt;/p&gt;
 &lt;p&gt;I made a small research and want to write down some thoughts.&lt;/p&gt;
 &lt;p&gt;Most of the architectures build upon ideas from ResNet paper …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 01 Jul 2020 19:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-07-01:/which-backbone-to-choose.html</guid><category>misc</category><category>machine learning</category><category>computer vision</category><category>DNN</category><category>CNN</category><category>deep learning</category><category>backbone</category><category>pytorch</category></item><item><title>Parameters parsing for python applications</title><link>https://serge-m.github.io/parameters-parsing-for-python-applications.html</link><description>&lt;p&gt;command line arguments is a standard and one of the most common ways to pass parameters to a python script.

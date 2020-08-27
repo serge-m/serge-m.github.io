@@ -70,6 +70,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/windows-life.html">windows life</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-06-05T23:00:00+02:00"> 2014-06-05T23:00:00, Thu</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/windows.html">windows</a>
+        /
+	<a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+        /
+	<a href="https://serge-m.github.io/tag/wifi.html">wifi</a>
+        /
+	<a href="https://serge-m.github.io/tag/wi-fi.html">wi-fi</a>
+        /
+	<a href="https://serge-m.github.io/tag/sharing.html">sharing</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><code>doskey /history &gt; commands.log</code>- dump command line promt history to file</p>
+<p><code>some_command &gt; output_file.txt 2&gt;&amp;1</code> -  Redirect stdout and stderr to the same file <a href="http://stackoverflow.com/a/1420981">src</a></p>
+<h2>Share wifi from command line (probably obsolete in Win 8, 10)</h2>
+<div class="highlight"><pre><span></span><code><span class="err">netsh wlan set hostednetwork mode=allow ssid=&quot;NETWORK_NAME&quot; key=&quot;NETWORK_PASSWORD&quot; keyUsage=persistent</span>
+<span class="err">netsh wlan …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/windows-life.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/linux-life.html">linux life</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -617,35 +651,6 @@ nvidia (1)</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/vapoursynth-pythonic-alternative-to.html">VapourSynth: pythonic alternative to avisynth</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-01-25T21:47:00+01:00"> 2014-01-25T21:47:00, Sat</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/vapoursynth.html">vapoursynth</a>
-        /
-	<a href="https://serge-m.github.io/tag/avisynth.html">avisynth</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>What do I know about VapourSynth</p>
-<p><a href="http://www.vapoursynth.com/">http://www.vapoursynth.com/</a>&nbsp;- website
-<h2 style="text-align: left;">How to save data from VapourSynth</h2><div>You need to use vspipe.exe from Vapour distributive</div><div>It seems it returns raw data to stdout</div><div></p>
-<p></div><h3 style="text-align: left;">Render using ffmpeg</h3><div>Don't know how jet</div><div>
-</div><div><h3>Render using ImageMagick/convert</h3><div>Don't know how jet</div><div>
-<div><h2>Image …</h2></div></div></div></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/vapoursynth-pythonic-alternative-to.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index7.html">&laquo;</a>
@@ -686,6 +691,7 @@ nvidia (1)</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/which-backbone-to-choose.html">Which pretrained backbone to choose</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
@@ -697,7 +703,6 @@ nvidia (1)</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/robocar.html">Robocar project</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/ros-experience.html">ROS experience</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/lenovo-e490.html">Lenovo E490 memory upgrade</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -717,9 +722,6 @@ nvidia (1)</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/74hc595.html">74HC595</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -756,7 +758,7 @@ nvidia (1)</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cnn.html">CNN</a>
     </li>
     <li class="list-group-item tag-2">
@@ -778,12 +780,15 @@ nvidia (1)</p>
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
     </li>
     <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/depth.html">depth</a>
+    </li>
+    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dnn.html">DNN</a>
     </li>
     <li class="list-group-item tag-3">
@@ -797,6 +802,9 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/e490.html">e490</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ego-motion.html">ego motion.</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -959,9 +967,6 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/shift-register.html">shift register</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/software.html">software</a>

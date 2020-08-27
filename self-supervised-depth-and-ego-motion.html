@@ -195,12 +195,15 @@ by Ariel Gordon et al, 2019.</p>
 <div class="section" id="realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes">
 <h2>RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes</h2>
 <p>self-supervised from stereo and mono.</p>
-<p>by deepai: <a class="reference external" href="https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes">https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes</a></p>
-<p>claim to be better than monodepth2. and mode generalized than depth_from_video_in_the_wild &quot;Depth from Videos in the Wild&quot;. They were able to train on multiple scenes with different depth ranges. The method still requires a static scene for the training.</p>
-<p>no code is available so far.</p>
-<p>We present a generalised self-supervised learning approach
-for monocular estimation of the real depth across scenes with diverse
-depth ranges from 1–100s of meters.</p>
+<p>by deepai:
+<a class="reference external" href="https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes">https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes</a>.</p>
+<p>They claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild &quot;Depth from Videos in the Wild&quot;.
+However they require camera calibration and median depth to be estimated prior to processing with an external tool.
+(<a class="reference external" href="https://colmap.github.io/">COLMAP</a>). Not really &quot;in the wild&quot;.</p>
+<p>They were able to train on multiple scenes with different depth ranges.
+The method still requires a static scene for the training. For example they use data from Mannequin Challenge
+to train their models. Then the network can be used on dynamic scenes with people.</p>
+<p>The code is not available so far.</p>
 </div>
 
             </div>

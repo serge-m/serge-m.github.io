@@ -44,6 +44,9 @@ LINKS = (('Databases', '/pages/collection-of-interesting-databases.html'),
 #           ('Another social link', '#'),)
 
 
+import logging
+LOG_FILTER = [(logging.WARN, 'Empty alt attribute for image %s in %s')]
+
 # For theme pelican-bootstrap3
 DEFAULT_PAGINATION = 20
 

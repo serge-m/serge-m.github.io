@@ -130,18 +130,19 @@ RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes
 
 self-supervised from stereo and mono.
 
-
-by deepai: https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes
-
-claim to be better than monodepth2. and mode generalized than depth_from_video_in_the_wild "Depth from Videos in the Wild". They were able to train on multiple scenes with different depth ranges. The method still requires a static scene for the training.
+by deepai:
+`https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes <https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes>`__.
 
 
-no code is available so far.
+They claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild "Depth from Videos in the Wild".
+However they require camera calibration and median depth to be estimated prior to processing with an external tool.
+(`COLMAP <https://colmap.github.io/>`_). Not really "in the wild".
 
+They were able to train on multiple scenes with different depth ranges.
+The method still requires a static scene for the training. For example they use data from Mannequin Challenge
+to train their models. Then the network can be used on dynamic scenes with people.
 
-We present a generalised self-supervised learning approach
-for monocular estimation of the real depth across scenes with diverse
-depth ranges from 1–100s of meters.
+The code is not available so far.
 
 
 

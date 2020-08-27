@@ -53,7 +53,7 @@ SfMLearner
 paper: Unsupervised Learning of Depth and Ego-Motion from Video
 by Berkley and google
 
-`pdf <https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/cvpr17_sfm_final.pdf>`_
+`pdf <https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/cvpr17_sfm_final.pdf>`__
 
 
 
@@ -66,7 +66,7 @@ One of the previous works, that became a foundation for 3d-pack.
 
 `Official website <https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/>`_.
 
-Github: `https://github.com/tinghuiz/SfMLearner <https://github.com/tinghuiz/SfMLearner>`_.
+Github: `https://github.com/tinghuiz/SfMLearner <https://github.com/tinghuiz/SfMLearner>`__.
 
 Implementation in pytorch:
 `SfmLearner-Pytorch <https://github.com/ClementPinard/SfmLearner-Pytorch/blob/master/models/PoseExpNet.py>`_
@@ -85,9 +85,9 @@ by Ariel Gordon et al, 2019.
 
 https://research.google/pubs/pub48440/
 
-`pdf <https://research.google/pubs/pub48440.pdf>`_
+`pdf <https://research.google/pubs/pub48440.pdf>`__
 
-`github <https://github.com/google-research/google-research/tree/master/depth_from_video_in_the_wild>`_
+`github <https://github.com/google-research/google-research/tree/master/depth_from_video_in_the_wild>`__
 
 Here they learn not only depth and R/t but also intrinsics of the camera
 
@@ -98,9 +98,9 @@ Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearn
 
 Paper by google
 
-`site <https://sites.google.com/view/struct2depth>`_
+`site <https://sites.google.com/view/struct2depth>`__
 
-`code <https://github.com/tensorflow/models/tree/archive/research/struct2depth>`_
+`code <https://github.com/tensorflow/models/tree/archive/research/struct2depth>`__
 
 based on vid2depth
 
@@ -109,16 +109,17 @@ vid2depth
 -------------------------------------------------------
 another paper by google.
 
-`github <https://github.com/tensorflow/models/tree/master/research/vid2depth>`_
+`github <https://github.com/tensorflow/models/tree/master/research/vid2depth>`__
 
 based on sfm learner
 
 
 monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation
------------------------------------------------
-`arxiv <https://arxiv.org/pdf/1806.01260.pdf>`_
+---------------------------------------------------------------------------------
 
-`github <https://github.com/nianticlabs/monodepth2>`_
+`arxiv <https://arxiv.org/pdf/1806.01260.pdf>`__
+
+`github <https://github.com/nianticlabs/monodepth2>`__
 
 some method that 3D Packing use as a competitor.
 

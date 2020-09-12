@@ -178,6 +178,29 @@ The reason was that <code>.ssh</code> directory on the server had too strict per
 
 <h2>Port forwarding</h2>
 <h3>Remote port forwarding</h3>
+<p>Take all the connections to <code>0.0.0.0:8080</code> of the remote machine (<code>example.com</code>) 
+and forward it to <code>localhost:80</code> on the local machine:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com</span>
+</code></pre></div>
+
+
+<p>The command above creates a general IPv4-only bind, 
+which means that the port is accessible on <strong>all</strong> interfaces via IPv4.</p>
+<p>This version binds to all interfaces individually:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R \*:8080:localhost:80 -N root@example.com</span>
+</code></pre></div>
+
+
+<p>Another option: </p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com</span>
+</code></pre></div>
+
+
+<p>The third version is probably technically equivalent to the first, 
+but again it creates only a single bind to <code>::</code>, which means that the port is accessible via IPv6 
+natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD). 
+ (You need the quotes because <code>[::]</code> could be interpreted as a glob otherwise.)</p>
+<p>Full list of specifications for the remote forwarding.</p>
 <div class="highlight"><pre><span></span><code><span class="err">     -R [bind_address:]port:host:hostport</span>
 <span class="err">     -R [bind_address:]port:local_socket</span>
 <span class="err">     -R remote_socket:host:hostport</span>
@@ -185,32 +208,63 @@ The reason was that <code>.ssh</code> directory on the server had too strict per
 </code></pre></div>
 
 
-<p>Specifies that connections to the given TCP port or Unix socket on the remote (server) host are to be forwarded to the given host and port, or Unix socket, on the local side.  This works by allocating a socket to listen to either a TCP port or to a Unix socket on the remote side.  Whenever a connection is made to this port or Unix socket, the connection is forwarded over the
-secure channel, and a connection is made to either host port hostport, or local_socket, from the local machine.</p>
+<p>Specifies that connections to the given TCP port or Unix socket on the remote (server) 
+host are to be forwarded to the given host and port, or Unix socket, on the local side.  </p>
 <p>By default, TCP listening sockets on the server will be bound to the loopback interface only.  This may be overridden by specifying a bind_address.  An empty bind_address, or the address ‘*’, indicates that the remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the server's <code>GatewayPorts</code> option is enabled (see sshd_config(5)).</p>
-<p>If the port argument is ‘0’, the listen port will be dynamically allocated on the server and reported to the client at run time.  When used together with <code>-O</code> forward the allocated port will be printed to the standard output.</p>
-<p>When bind_address is omitted (as in your example), the port is bound on the loopback interface only. In order to make it bind to all interfaces, use</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh -R \*:8080:localhost:80 -N root@example.com</span>
+<p>If the port argument is ‘0’, the listen port will be dynamically allocated on the server 
+and reported to the client at run time.<br>
+When used together with <code>-O</code> forward the allocated port will be printed to the standard output.</p>
+<p>When bind_address is omitted (as in your example), the port is bound on the loopback interface only. </p>
+<p>Note that if you use OpenSSH sshd server, the server's <code>GatewayPorts</code> 
+option needs to be enabled (set to <code>yes</code> or <code>clientspecified</code>) for arbitrary interface to work 
+(check file <code>/etc/ssh/sshd_config</code> on the <strong>server</strong>). 
+Otherwise (default value for this option is <code>no</code>), 
+the server will always force the port to be bound on the loopback interface only.</p>
+<p>See also: <a href="https://superuser.com/a/591963">1</a>, <a href="https://man.openbsd.org/ssh">2</a></p>
+<h4>Local port forwarding</h4>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">1234</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">5678</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
 
 
-<p>or</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com</span>
+<p>With this command<br>
+* all the connections to the <code>localhost:1234</code> of the host machine
+* are forwarded to <code>localhost:5678</code> at the server (<code>1.1.1.1</code>).</p>
+<h4>Port forwarding between two machines that don't have external ip's using a server</h4>
+<p>On machine 1:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">10002</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">10001</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
 
 
-<p>or</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com</span>
+<p>On machine 2:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">10001</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">10000</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
 
 
-<p>The first version binds to all interfaces individually. The second version creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4. The third version is probably technically equivalent to the first, but again it creates only a single bind to <code>::</code>, which means that the port is accessible via IPv6 natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD).  (You need the quotes because <code>[::]</code> could be interpreted as a glob otherwise.)</p>
-<p>Note that if you use OpenSSH sshd server, the server's <code>GatewayPorts</code> option needs to be enabled (set to <code>yes</code> or <code>clientspecified</code>) for this to work (check file <code>/etc/ssh/sshd_config</code> on the <strong>server</strong>). Otherwise (default value for this option is <code>no</code>), the server will always force the port to be bound on the loopback interface only.</p>
-<p><a href="https://superuser.com/a/591963">1</a>, <a href="https://man.openbsd.org/ssh">2</a></p>
-<h3>Prot forwarding on startup and retry</h3>
+<p>Now when I access <code>localhost:10002</code> on machine 1 the request is redirected to <code>localhost:10000</code> of machine 2.
+The connection goes through port <code>10001</code> of host <code>1.1.1.1</code></p>
+<h4>config for multiple port forwarding</h4>
+<p>How to forward  multiple ports with one command. It is possible with a config file.</p>
+<p>Imagine we want to forward local ports 22, 9999, 9998 to the corresponding ports of machine <code>192.168.1.2</code> using ssh on machine <code>192.168.1.1</code>. 
+In order to do that add the following to <code>~/.ssh/config</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Host all-port-forwards</span>
+<span class="err">  Hostname 192.168.1.1</span>
+<span class="err">  User user</span>
+<span class="err">  LocalForward 22 192.168.1.2:22</span>
+<span class="err">  LocalForward 9999 192.168.1.2:9999</span>
+<span class="err">  LocalForward 9998 192.168.1.2:9998</span>
+</code></pre></div>
+
+
+<p>Now you can run a single command:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ssh all-port-forwards</span>
+</code></pre></div>
+
+
+<h3>Port forwarding on system startup with retry</h3>
 <p>We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.</p>
-<h4>First [[broken]] version</h4>
-<p>To do that we have to create a file <code>/etc/systemd/system/tunnelssh.service</code>:</p>
+<h4>Initial version - it doesn't work</h4>
+<p>In my experience the approach didn't really work. The built-in mechanisms of systemctl didn't allow me to achieve robust restarting.</p>
+<p>Create a file <code>/etc/systemd/system/tunnelssh.service</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">tunnel ssh to server</span>
 
@@ -228,14 +282,10 @@ secure channel, and a connection is made to either host port hostport, or local_
 </code></pre></div>
 
 
-<p>now you can</p>
-<div class="highlight"><pre><span></span><code><span class="err">systemctl start tunnelssh.service</span>
-<span class="err">systemctl status tunnelssh.service</span>
-</code></pre></div>
-
-
-<p>Or enable it, so it get's started at boot time:</p>
+<p>Then enable and start</p>
 <div class="highlight"><pre><span></span><code><span class="err">systemctl enable tunnelssh.service</span>
+<span class="err">systemctl start tunnelssh.service</span>
+<span class="err">systemctl status tunnelssh.service</span>
 </code></pre></div>
 
 
@@ -271,7 +321,7 @@ The problem is that
 </code></pre></div>
 
 
-<p>Disable password authentification. Replace corresponding values in <code>/etc/ssh/sshd_config</code>:</p>
+<p>Disable password authentication. Replace corresponding values in <code>/etc/ssh/sshd_config</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ChallengeResponseAuthentication no</span>
 <span class="err">PasswordAuthentication no</span>
 </code></pre></div>
@@ -405,7 +455,7 @@ To make it pick up your custome key you can create a config file
 <ul>
 <li><a href="https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices</a></li>
 </ul>
-<h1>SOCKS proxy</h1>
+<h2>SOCKS proxy</h2>
 <p>How to run socks proxy. It's a bit easier than using VPN because it doesn't require sudo to launch.
 Also it doesn't require to install anything on the server except openssh server. </p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh -D 1337 -q -C -N user@your_server.ip</span>

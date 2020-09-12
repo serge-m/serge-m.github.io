@@ -78,46 +78,104 @@ chmod 644 ~/.ssh/authorized_keys
 
 ### Remote port forwarding 
 
+Take all the connections to `0.0.0.0:8080` of the remote machine (`example.com`) 
+and forward it to `localhost:80` on the local machine:
+ 
+    ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com
+    
+The command above creates a general IPv4-only bind, 
+which means that the port is accessible on **all** interfaces via IPv4.
+
+This version binds to all interfaces individually:
+ 
+    ssh -R \*:8080:localhost:80 -N root@example.com
+    
+    
+Another option: 
+
+    ssh -R "[::]:8080:localhost:80" -N root@example.com
+
+The third version is probably technically equivalent to the first, 
+but again it creates only a single bind to `::`, which means that the port is accessible via IPv6 
+natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD). 
+ (You need the quotes because `[::]` could be interpreted as a glob otherwise.)
+
+
+Full list of specifications for the remote forwarding.
 ```
      -R [bind_address:]port:host:hostport
      -R [bind_address:]port:local_socket
      -R remote_socket:host:hostport
      -R remote_socket:local_socket
 ```
-Specifies that connections to the given TCP port or Unix socket on the remote (server) host are to be forwarded to the given host and port, or Unix socket, on the local side.  This works by allocating a socket to listen to either a TCP port or to a Unix socket on the remote side.  Whenever a connection is made to this port or Unix socket, the connection is forwarded over the
-secure channel, and a connection is made to either host port hostport, or local_socket, from the local machine.
+Specifies that connections to the given TCP port or Unix socket on the remote (server) 
+host are to be forwarded to the given host and port, or Unix socket, on the local side.  
 
 By default, TCP listening sockets on the server will be bound to the loopback interface only.  This may be overridden by specifying a bind_address.  An empty bind_address, or the address ‘*’, indicates that the remote socket should listen on all interfaces.  Specifying a remote bind_address will only succeed if the server's `GatewayPorts` option is enabled (see sshd_config(5)).
 
-If the port argument is ‘0’, the listen port will be dynamically allocated on the server and reported to the client at run time.  When used together with `-O` forward the allocated port will be printed to the standard output.
+If the port argument is ‘0’, the listen port will be dynamically allocated on the server 
+and reported to the client at run time.  
+When used together with `-O` forward the allocated port will be printed to the standard output.
 
 
-When bind_address is omitted (as in your example), the port is bound on the loopback interface only. In order to make it bind to all interfaces, use
+When bind_address is omitted (as in your example), the port is bound on the loopback interface only. 
 
-```
-ssh -R \*:8080:localhost:80 -N root@example.com
-```
-or
-```
-ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com
-```
-or
-```
-ssh -R "[::]:8080:localhost:80" -N root@example.com
-```
-The first version binds to all interfaces individually. The second version creates a general IPv4-only bind, which means that the port is accessible on all interfaces via IPv4. The third version is probably technically equivalent to the first, but again it creates only a single bind to `::`, which means that the port is accessible via IPv6 natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Windows, OpenBSD).  (You need the quotes because `[::]` could be interpreted as a glob otherwise.)
+Note that if you use OpenSSH sshd server, the server's `GatewayPorts` 
+option needs to be enabled (set to `yes` or `clientspecified`) for arbitrary interface to work 
+(check file `/etc/ssh/sshd_config` on the **server**). 
+Otherwise (default value for this option is `no`), 
+the server will always force the port to be bound on the loopback interface only.
 
-Note that if you use OpenSSH sshd server, the server's `GatewayPorts` option needs to be enabled (set to `yes` or `clientspecified`) for this to work (check file `/etc/ssh/sshd_config` on the **server**). Otherwise (default value for this option is `no`), the server will always force the port to be bound on the loopback interface only.
+See also: [1](https://superuser.com/a/591963), [2](https://man.openbsd.org/ssh)
 
-[1](https://superuser.com/a/591963), [2](https://man.openbsd.org/ssh)
+#### Local port forwarding
+
+    ssh -L localhost:1234:localhost:5678 user@1.1.1.1
+    
+With this command  
+* all the connections to the `localhost:1234` of the host machine
+* are forwarded to `localhost:5678` at the server (`1.1.1.1`).
 
 
-### Prot forwarding on startup and retry
+#### Port forwarding between two machines that don't have external ip's using a server
+
+On machine 1:
+  
+    ssh -L localhost:10002:localhost:10001 user@1.1.1.1
+    
+On machine 2:
+
+    ssh -R localhost:10001:localhost:10000 user@1.1.1.1
+
+Now when I access `localhost:10002` on machine 1 the request is redirected to `localhost:10000` of machine 2.
+The connection goes through port `10001` of host `1.1.1.1`
+
+#### config for multiple port forwarding
+How to forward  multiple ports with one command. It is possible with a config file.
+
+Imagine we want to forward local ports 22, 9999, 9998 to the corresponding ports of machine `192.168.1.2` using ssh on machine `192.168.1.1`. 
+In order to do that add the following to `~/.ssh/config`:
+
+    Host all-port-forwards
+      Hostname 192.168.1.1
+      User user
+      LocalForward 22 192.168.1.2:22
+      LocalForward 9999 192.168.1.2:9999
+      LocalForward 9998 192.168.1.2:9998
+      
+Now you can run a single command:
+
+    ssh all-port-forwards
+
+
+### Port forwarding on system startup with retry
 
 We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.
 
-#### First [[broken]] version
-To do that we have to create a file `/etc/systemd/system/tunnelssh.service`:
+#### Initial version - it doesn't work
+In my experience the approach didn't really work. The built-in mechanisms of systemctl didn't allow me to achieve robust restarting.
+
+Create a file `/etc/systemd/system/tunnelssh.service`:
 
 ```
 [Unit]
@@ -136,17 +194,13 @@ Restart=Always
 WantedBy=multi-user.target
 
 ```
-
-now you can
+Then enable and start
 ```
+systemctl enable tunnelssh.service
 systemctl start tunnelssh.service
 systemctl status tunnelssh.service
 ```
 
-Or enable it, so it get's started at boot time:
-```
-systemctl enable tunnelssh.service
-```
 Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
 The problem is that 
 1. our service may start before network connection is up. You may add `After=network.target` or `After=network-online.target` as suggested [here](https://gist.github.com/drmalex07/c0f9304deea566842490#gistcomment-2087688) but it doesn't save you from the next issue.
@@ -159,26 +213,21 @@ The problem is that
 #### Second version
 So we have to implement retry on our own without systemd. Fortunately there is a tool `autossh`. See for example [[1]](https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/) or [[2]](https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-autossh/)
 
-```
-
-[Unit]
-Description=tunnel ssh to server
-# After=network.target network-online.target multi-user.target
-# Requires=network-online.target
-
-[Service]
-User=YOUR_LOCAL_USER
-Environment=AUTOSSH_GATETIME=0
-ExecStart=/usr/bin/autossh -M 0 -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER
-
-RestartSec=5
-Restart=Always
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
+    [Unit]
+    Description=tunnel ssh to server
+    # After=network.target network-online.target multi-user.target
+    # Requires=network-online.target
+    
+    [Service]
+    User=YOUR_LOCAL_USER
+    Environment=AUTOSSH_GATETIME=0
+    ExecStart=/usr/bin/autossh -M 0 -NT -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -i PATH_TO_YOUR_PRIVATE_KEY -R REMOTE_SERVER_INTERFACE:PORT_ON_REMOTE_SERVER:localhost:LOCAL_PORT user_at_remote_server@REMOTE_SERVER
+    
+    RestartSec=5
+    Restart=Always
+    
+    [Install]
+    WantedBy=multi-user.target
 
 ## Configuring SSH server
 
@@ -187,7 +236,7 @@ Enable only ssh v2:
 Protocol 2
 ```
 
-Disable password authentification. Replace corresponding values in `/etc/ssh/sshd_config`:
+Disable password authentication. Replace corresponding values in `/etc/ssh/sshd_config`:
 
 ```
 ChallengeResponseAuthentication no
@@ -346,7 +395,7 @@ More [here](https://stackoverflow.com/questions/4565700/how-to-specify-the-priva
 
 
 
-# SOCKS proxy
+## SOCKS proxy
 
 How to run socks proxy. It's a bit easier than using VPN because it doesn't require sudo to launch.
 Also it doesn't require to install anything on the server except openssh server. 

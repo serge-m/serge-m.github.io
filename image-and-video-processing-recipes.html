@@ -139,6 +139,15 @@ Therefore I usually google it. I'll try to collect here some recipes that I usua
 <div class="highlight"><pre><span></span>ffmpeg -i ./input_video.mp4 -qmax <span class="m">1</span> -qmin <span class="m">1</span> -start_number <span class="m">0</span> output_image_%05d.jpg
 </pre></div>
 </div>
+<div class="section" id="stack-images-videos">
+<h3>Stack images/videos</h3>
+<div class="highlight"><pre><span></span><span class="c1"># stack horizontally</span>
+ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">hstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> output.mp4
+
+<span class="c1"># stack vertically</span>
+ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> output.mp4
+</pre></div>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See also</h2>

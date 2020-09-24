@@ -535,7 +535,7 @@ Clustering is based on histograms. 1 contributor. No …&lt;/p&gt;</description>
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="https://ubuntu-mate.community/t/hp-3015-print-drivers-are-so-slow-at-printing/5580"&gt;Thanks&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Another solution&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get install hp-ppd hpijs hpijs-ppds hplip hplip-cups hplip-data hplip-dbg hplip-doc hplip-gui djtools&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppd&lt;/span&gt; &lt;span class="n"&gt;hpijs&lt;/span&gt; &lt;span class="n"&gt;hpijs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppds&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cups&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dbg&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gui&lt;/span&gt; &lt;span class="n"&gt;djtools&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -717,10 +717,10 @@ Assume we have following partitions:&lt;/p&gt;
 
     &lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
     &lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;mnt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;yandex&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;disk&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 16 Jul 2016 13:45:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-07-16:/mount-yandex-webdav-on-local-dir.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>how torch stores images</title><link>https://serge-m.github.io/how-torch-stores-images.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;require(&amp;#39;image&amp;#39;)&lt;/span&gt;
-&lt;span class="err"&gt;imgPath = &amp;quot;image.jpg&amp;quot;&lt;/span&gt;
-&lt;span class="err"&gt;img = torch.Tensor(1, 3, imgDim, imgDim)&lt;/span&gt;
-&lt;span class="err"&gt;img[1] = image.load(imgPath, 3, byte)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 16 Jul 2016 13:45:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-07-16:/mount-yandex-webdav-on-local-dir.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>how torch stores images</title><link>https://serge-m.github.io/how-torch-stores-images.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;image&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;imgPath&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;image.jpg&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;img&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;torch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Tensor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;imgDim&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;imgDim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;imgPath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;byte&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1255,7 +1255,7 @@ nvidia (1)&lt;/p&gt;
 &lt;a href="http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X"&gt;http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;140 Google Interview Questions
 &lt;a href="http://www.impactinterview.com/2009/10/140-google-interview-questions/"&gt;http://www.impactinterview.com/2009/10/140-google-interview-questions/&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 17 Feb 2014 12:21:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-17:/programming-interviews-resources.html</guid><category>misc</category><category>interview</category><category>links</category></item><item><title>learning sqlite</title><link>https://serge-m.github.io/learning-sqlite.html</link><description>&lt;h2&gt;create table named t3 (id, value). id is integer. value is text&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id));&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sqlite&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;exists&lt;/span&gt; &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="nb nb-Type"&gt;int&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1335,20 +1335,20 @@ A guy made a script according to proposed instructions: https://github.com/onepr
 &lt;p&gt;&lt;img alt="" src="http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png"&gt;&lt;div&gt;
 &lt;/div&gt;&lt;div&gt;&lt;h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;"&gt;Resolving function overloads&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;src:&lt;a href="http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&amp;quot; target=&amp;quot;_blank"&gt;http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&lt;/a&gt;&lt;/div&gt;&lt;div&gt;
 &lt;/div&gt;&lt;div&gt;&lt;div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"&gt;The compiler works through the following …&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 06 Jan 2014 13:28:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-06:/things-about-c.html</guid><category>misc</category><category>c++</category></item><item><title>Private inheritance</title><link>https://serge-m.github.io/private-inheritance.html</link><description>&lt;p&gt;Example from Meyers "Effective C++"&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; {
-    &lt;span class="n"&gt;public:&lt;/span&gt;
-    &lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;(&lt;span class="n"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;);
-    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;,&lt;span class="sr"&gt; &lt;/span&gt;
-&lt;span class="sr"&gt;    //&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="nb"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
-    ...
-    };
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;public&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb nb-Type"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;Called&lt;/span&gt; &lt;span class="n"&gt;automatically&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;each&lt;/span&gt; &lt;span class="n"&gt;tic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+    &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="n"&gt;must&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;do&lt;/span&gt; &lt;span class="n"&gt;things&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+    &lt;span class="p"&gt;};&lt;/span&gt;
 
 
-    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget:&lt;/span&gt; &lt;span class="nb"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; { // &lt;span class="nb"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
-    &lt;span class="n"&gt;private:&lt;/span&gt;
-    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;() &lt;span class="n"&gt;const&lt;/span&gt;; // &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="nb"&gt;to&lt;/span&gt; &lt;span class="k"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="nb"&gt;done&lt;/span&gt;
-    ... 
-    };
+    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Widget&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;private&lt;/span&gt; &lt;span class="n"&gt;inheritance&lt;/span&gt;
+    &lt;span class="n"&gt;private&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;virtual&lt;/span&gt; &lt;span class="n"&gt;void&lt;/span&gt; &lt;span class="n"&gt;onTick&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="o"&gt;//&lt;/span&gt; &lt;span class="n"&gt;redefined&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt; &lt;span class="n"&gt;done&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt; 
+    &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 

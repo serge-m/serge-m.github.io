@@ -163,7 +163,7 @@ Branches are ok, but merged revisions are not marked as merged. In other words e
 
 
 <p>loading dump to local repo:</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnadmin load newrepo &lt; dump.dump</span>
+<div class="highlight"><pre><span></span><code><span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump</span><span class="o">.</span><span class="n">dump</span>
 </code></pre></div>
 
 
@@ -182,9 +182,9 @@ You can dump in several files if you specify revisions ranges:</p>
 
 
 <p>then loading:</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnadmin load newrepo &lt; dump0001-1000.dump</span>
-<span class="err">svnadmin load newrepo &lt; dump1001-2000-incremental.dump</span>
-<span class="err">svnadmin load newrepo &lt; dump2001-3000-incremental.dump</span>
+<div class="highlight"><pre><span></span><code><span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump0001</span><span class="o">-</span><span class="mf">1000.</span><span class="n">dump</span>
+<span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump1001</span><span class="o">-</span><span class="mi">2000</span><span class="o">-</span><span class="n">incremental</span><span class="o">.</span><span class="n">dump</span>
+<span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump2001</span><span class="o">-</span><span class="mi">3000</span><span class="o">-</span><span class="n">incremental</span><span class="o">.</span><span class="n">dump</span>
 </code></pre></div>
 
 

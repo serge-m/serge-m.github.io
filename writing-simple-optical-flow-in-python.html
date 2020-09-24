@@ -217,38 +217,38 @@ class TrainFunction(object):
         self.tIx = T.matrix("tIx")
         self.tIy = T.matrix("tIy")
         self.tIt = T.matrix("tIt")</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">self</span><span class="p">.</span><span class="n">gu</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">gv</span> <span class="o">=</span> <span class="k">None</span><span class="p">,</span> <span class="k">None</span>
-    <span class="k">self</span><span class="p">.</span><span class="n">E</span> <span class="o">=</span> <span class="k">None</span>
-    <span class="k">self</span><span class="p">.</span><span class="n">train_function</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">get_function</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code>    <span class="bp">self</span><span class="o">.</span><span class="n">gu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gv</span> <span class="o">=</span> <span class="n">None</span><span class="p">,</span> <span class="n">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">train_function</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_function</span><span class="p">()</span>
 
-<span class="o">#</span> <span class="n">this</span> <span class="k">function</span> <span class="n">must</span> <span class="n">be</span> <span class="n">overloaded</span> <span class="k">in</span> <span class="n">the</span> <span class="n">derived</span> <span class="n">classes</span>
-<span class="n">def</span> <span class="n">get_energy</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
-    <span class="n">raise</span> <span class="k">Exception</span><span class="p">(</span><span class="ss">&quot;Non implemented&quot;</span><span class="p">)</span>
+<span class="c1"># this function must be overloaded in the derived classes</span>
+<span class="n">def</span> <span class="n">get_energy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">raise</span> <span class="n">Exception</span><span class="p">(</span><span class="s2">&quot;Non implemented&quot;</span><span class="p">)</span>
 
-<span class="o">#</span> <span class="n">construct</span> <span class="n">Theano</span><span class="o">-</span><span class="k">function</span> <span class="k">for</span> <span class="n">gradient</span> <span class="n">descent</span> 
-<span class="n">def</span> <span class="n">get_function</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
-    <span class="k">if</span> <span class="k">self</span><span class="p">.</span><span class="n">E</span> <span class="k">is</span> <span class="k">None</span><span class="p">:</span>
-        <span class="k">self</span><span class="p">.</span><span class="n">E</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">get_energy</span><span class="p">()</span>
+<span class="c1"># construct Theano-function for gradient descent </span>
+<span class="n">def</span> <span class="n">get_function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="k">is</span> <span class="n">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_energy</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="k">self</span><span class="p">.</span><span class="n">gu</span> <span class="k">is</span> <span class="k">None</span> <span class="k">or</span> <span class="k">self</span><span class="p">.</span><span class="n">gv</span> <span class="k">is</span> <span class="k">None</span><span class="p">:</span>
-        <span class="k">self</span><span class="p">.</span><span class="n">gu</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">gv</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="n">grad</span><span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">E</span><span class="p">,</span> <span class="p">[</span><span class="k">self</span><span class="p">.</span><span class="n">tu</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">tv</span><span class="p">])</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gu</span> <span class="k">is</span> <span class="n">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">gv</span> <span class="k">is</span> <span class="n">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">gv</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">,</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tv</span><span class="p">])</span>
 
-    <span class="n">train_function</span> <span class="o">=</span> <span class="n">theano</span><span class="p">.</span><span class="k">function</span><span class="p">(</span>
-        <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="k">self</span><span class="p">.</span><span class="n">tIx</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">tIy</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">tIt</span><span class="p">],</span>
-        <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="k">self</span><span class="p">.</span><span class="n">E</span><span class="p">],</span>
-        <span class="n">updates</span><span class="o">=</span><span class="p">((</span><span class="k">self</span><span class="p">.</span><span class="n">tu</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">tu</span> <span class="o">-</span> <span class="k">self</span><span class="p">.</span><span class="n">rate</span> <span class="o">*</span> <span class="k">self</span><span class="p">.</span><span class="n">gu</span><span class="p">),</span> <span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">tv</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">tv</span> <span class="o">-</span> <span class="k">self</span><span class="p">.</span><span class="n">rate</span> <span class="o">*</span> <span class="k">self</span><span class="p">.</span><span class="n">gv</span><span class="p">)),</span>
-        <span class="n">allow_input_downcast</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+    <span class="n">train_function</span> <span class="o">=</span> <span class="n">theano</span><span class="o">.</span><span class="n">function</span><span class="p">(</span>
+        <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">tIx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tIy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tIt</span><span class="p">],</span>
+        <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="p">],</span>
+        <span class="n">updates</span><span class="o">=</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">tu</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tu</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">rate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">gu</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tv</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tv</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">rate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">gv</span><span class="p">)),</span>
+        <span class="n">allow_input_downcast</span><span class="o">=</span><span class="n">True</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">train_function</span>
 
-<span class="o">#</span> <span class="n">initialization</span> <span class="k">of</span> <span class="n">flow</span> <span class="k">values</span>
-<span class="n">def</span> <span class="n">init</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
-    <span class="k">self</span><span class="p">.</span><span class="n">tu</span><span class="p">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span>
-    <span class="k">self</span><span class="p">.</span><span class="n">tv</span><span class="p">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span>
+<span class="c1"># initialization of flow values</span>
+<span class="n">def</span> <span class="n">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u0</span><span class="p">,</span> <span class="n">v0</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tu</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">u0</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">tv</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="n">v0</span><span class="p">)</span>
 
-<span class="o">#</span> <span class="n">launching</span> <span class="n">step</span> <span class="k">of</span> <span class="n">gradiennt</span> <span class="n">descent</span>
-<span class="n">def</span> <span class="n">step</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="k">return</span> <span class="k">self</span><span class="p">.</span><span class="n">train_function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="c1"># launching step of gradiennt descent</span>
+<span class="n">def</span> <span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 </code></pre></div>
 
 
@@ -256,10 +256,10 @@ class TrainFunction(object):
 class TrainFunctionSimple(TrainFunction):
     def <code>__init__</code>(self, <em>args, </em>*kwargs):
         self.alpha = kwargs.get('alpha', 1.1)</p>
-<div class="highlight"><pre><span></span><code>    <span class="nf">super</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="ss">`__class__`</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="ss">`__init__`</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">super</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">`__class__`</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="n">`__init__`</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 <span class="c1"># constructs Theano-function, that calculate Energy</span>
-<span class="n">def</span> <span class="nf">get_energy</span><span class="p">(</span><span class="n">self</span><span class="p">,):</span>
+<span class="n">def</span> <span class="n">get_energy</span><span class="p">(</span><span class="n">self</span><span class="p">,)</span><span class="o">:</span>
     <span class="c1"># data term </span>
     <span class="n">Edata</span> <span class="o">=</span> <span class="n">T</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span> <span class="p">(</span> <span class="n">self</span><span class="p">.</span><span class="n">tIx</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">tu</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="n">tIy</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">tv</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="n">tIt</span> <span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="p">)</span>
 

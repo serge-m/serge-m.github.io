@@ -124,7 +124,7 @@ sergem personal public notebook            </a>
 <span class="n">Restart</span><span class="o">=</span><span class="n">always</span><span class="w">                                                                                                                                                                                                                                </span>
 <span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                         </span>
 <span class="n">ExecStartPre</span><span class="o">=-/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w">                                                                                                                                                                                                           </span>
-<span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">8080</span><span class="err">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="c1">--name %n your_docker_image</span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">8080</span><span class="err">:</span><span class="mi">8080</span><span class="o">/</span><span class="n">tcp</span><span class="w"> </span><span class="o">--</span><span class="n">name</span><span class="w"> </span><span class="o">%</span><span class="n">n</span><span class="w"> </span><span class="n">your_docker_image</span><span class="w"></span>
 
 <span class="o">[</span><span class="n">Install</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                     </span>
 <span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="k">user</span><span class="p">.</span><span class="n">target</span><span class="w"></span>
@@ -138,18 +138,18 @@ sergem personal public notebook            </a>
 
 
 <h2>Commands</h2>
-<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">prints</span> <span class="n">the</span> <span class="n">status</span>
-<span class="n">systemctl</span> <span class="n">status</span> <span class="n">your</span><span class="o">-</span><span class="n">service</span><span class="p">.</span><span class="n">service</span>  
+<div class="highlight"><pre><span></span><code><span class="c1"># prints the status</span>
+<span class="n">systemctl</span> <span class="n">status</span> <span class="n">your</span><span class="o">-</span><span class="n">service</span><span class="o">.</span><span class="n">service</span>  
 
-<span class="o">#</span> <span class="n">prepares</span> <span class="n">the</span> <span class="n">service</span><span class="p">,</span> <span class="n">required</span> <span class="k">before</span> <span class="ss">&quot;start&quot;</span><span class="p">,</span> 
-<span class="o">#</span> <span class="n">also</span> <span class="n">reloads</span> <span class="n">the</span> <span class="n">config</span> <span class="k">if</span> <span class="n">you</span> <span class="n">changed</span> <span class="n">the</span> <span class="n">definition</span> <span class="n">file</span>  
-<span class="n">systemctl</span> <span class="n">enable</span> <span class="n">levels_tracker</span><span class="p">.</span><span class="n">service</span> 
+<span class="c1"># prepares the service, required before &quot;start&quot;, </span>
+<span class="c1"># also reloads the config if you changed the definition file  </span>
+<span class="n">systemctl</span> <span class="n">enable</span> <span class="n">levels_tracker</span><span class="o">.</span><span class="n">service</span> 
 
-<span class="o">#</span> <span class="k">start</span> <span class="n">service</span>
-<span class="n">systemctl</span> <span class="k">start</span> <span class="n">levels_tracker</span><span class="p">.</span><span class="n">service</span> 
+<span class="c1"># start service</span>
+<span class="n">systemctl</span> <span class="n">start</span> <span class="n">levels_tracker</span><span class="o">.</span><span class="n">service</span> 
 
-<span class="o">#</span> <span class="n">stop</span> <span class="n">service</span>
-<span class="n">systemctl</span> <span class="n">stop</span> <span class="n">levels_tracker</span><span class="p">.</span><span class="n">service</span> 
+<span class="c1"># stop service</span>
+<span class="n">systemctl</span> <span class="n">stop</span> <span class="n">levels_tracker</span><span class="o">.</span><span class="n">service</span> 
 </code></pre></div>
 
 

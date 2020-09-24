@@ -152,17 +152,17 @@ sergem personal public notebook            </a>
 </div>
 You have to enable I2C interface first with <code>sudo raspi-config</code>. Choose "Interfacing Options" -&gt; "I2C" -&gt; "Enable".</p>
 <p>Now installing the diagnostic tool and running:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install -y i2c-tools</span>
-<span class="err">sudo i2cdetect -y 1</span>
-<span class="err">     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f</span>
-<span class="c">00:          -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">40: 40 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </span>
-<span class="c">70: 70 -- -- -- -- -- -- --                         </span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">i2c</span><span class="o">-</span><span class="n">tools</span>
+<span class="n">sudo</span> <span class="n">i2cdetect</span> <span class="o">-</span><span class="n">y</span> <span class="mi">1</span>
+     <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span>  <span class="n">a</span>  <span class="n">b</span>  <span class="n">c</span>  <span class="n">d</span>  <span class="n">e</span>  <span class="n">f</span>
+<span class="mi">00</span><span class="p">:</span>          <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">10</span><span class="p">:</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">20</span><span class="p">:</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">30</span><span class="p">:</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">40</span><span class="p">:</span> <span class="mi">40</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">50</span><span class="p">:</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">60</span><span class="p">:</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> 
+<span class="mi">70</span><span class="p">:</span> <span class="mi">70</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span>                         
 </code></pre></div>
 
 
@@ -278,13 +278,13 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 
 <p>In the end the file should look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="n">country</span><span class="o">=</span><span class="n">GB</span>
-<span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="k">GROUP</span><span class="o">=</span><span class="n">netdev</span>
+<span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="n">GROUP</span><span class="o">=</span><span class="n">netdev</span>
 <span class="n">update_config</span><span class="o">=</span><span class="mi">1</span>
 
-<span class="n">network</span><span class="o">=</span><span class="err">{</span>
-    <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
-    <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
-<span class="err">}</span>
+<span class="n">network</span><span class="o">=</span><span class="p">{</span>
+    <span class="n">ssid</span><span class="o">=</span><span class="s2">&quot;my-network-name&quot;</span>
+    <span class="n">psk</span><span class="o">=</span><span class="s2">&quot;my-network-pass&quot;</span>
+<span class="p">}</span>
 </code></pre></div>
 
 

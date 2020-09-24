@@ -140,26 +140,26 @@ sergem personal public notebook            </a>
 
 <p>That means Pelican doesn't know about markdown format.</p>
 <p>Now you need to configure Makefile and <code>github</code> target. I modified default Pelicans <code>github</code> target as follows. Remove lines startign from "#" - they are just comments.</p>
-<div class="highlight"><pre><span></span><code><span class="nl">github</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">Loading</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">repository</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">SITE_COMMIT_MESSAGE</span><span class="w"> </span><span class="k">variable</span><span class="w"></span>
-<span class="w">    </span><span class="n">SITE_COMMIT_MESSAGE</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="nf">log</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="c1">--format=%B` &amp;&amp; \ </span>
-<span class="w">    </span><span class="err">$$</span><span class="p">(</span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">rf</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">true</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="err">\</span><span class="w"> </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">remove</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="w"></span>
-<span class="w">    </span><span class="n">git</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span><span class="w"> </span><span class="n">github</span><span class="w"> </span><span class="k">user</span><span class="o">&gt;/&lt;</span><span class="n">your</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">repository</span><span class="o">&gt;</span><span class="p">.</span><span class="n">git</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="err">\</span><span class="w"> </span>
-<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">fresh</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">html</span><span class="w"> </span><span class="n">repo</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">output</span><span class="w"> </span><span class="n">directory</span><span class="w"></span>
-<span class="w">    </span><span class="err">$$</span><span class="p">(</span><span class="n">ls</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="err">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="cm">/* | xargs rm -r) &amp;&amp; \ </span>
-<span class="cm">    # deleting everything (except hidden files, like .git)</span>
-<span class="cm">    $(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) &amp;&amp; \ </span>
-<span class="cm">    # running pelican</span>
-<span class="cm">    cd $(OUTPUTDIR) &amp;&amp; \ </span>
-<span class="cm">    # go to output directory</span>
-<span class="cm">    git add -v --all . &amp;&amp; \ </span>
-<span class="cm">    # configure user/email of git commit, commit, push</span>
-<span class="cm">    git config user.email &quot;&lt;your mail&gt;&quot; &amp;&amp; \</span>
-<span class="cm">    git config user.name &quot;&lt;your name&gt;&quot; &amp;&amp; \</span>
-<span class="cm">    git commit -v -m &quot;$$SITE_COMMIT_MESSAGE&quot; &amp;&amp; \</span>
-<span class="cm">    git push &amp;&amp; \</span>
-<span class="cm">    echo &quot;done&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">github</span><span class="p">:</span>
+    <span class="c1"># Loading commit message from source repository to SITE_COMMIT_MESSAGE variable</span>
+    <span class="n">SITE_COMMIT_MESSAGE</span><span class="o">=</span><span class="err">`</span><span class="n">git</span> <span class="nb">log</span> <span class="o">-</span><span class="mi">1</span> <span class="o">--</span><span class="n">format</span><span class="o">=%</span><span class="n">B</span><span class="err">`</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="o">$$</span><span class="p">(</span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="o">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">||</span> <span class="bp">true</span><span class="p">)</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># remove output directory</span>
+    <span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span> <span class="n">github</span> <span class="n">user</span><span class="o">&gt;/&lt;</span><span class="n">your</span> <span class="n">html</span> <span class="n">repository</span><span class="o">&gt;.</span><span class="n">git</span> <span class="o">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># fresh clone of your html repo to output directory</span>
+    <span class="o">$$</span><span class="p">(</span><span class="n">ls</span> <span class="o">-</span><span class="n">d</span> <span class="o">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span><span class="o">/*</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span><span class="p">)</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># deleting everything (except hidden files, like .git)</span>
+    <span class="o">$</span><span class="p">(</span><span class="n">PELICAN</span><span class="p">)</span> <span class="o">$</span><span class="p">(</span><span class="n">INPUTDIR</span><span class="p">)</span> <span class="o">-</span><span class="n">o</span> <span class="o">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">-</span><span class="n">s</span> <span class="o">$</span><span class="p">(</span><span class="n">PUBLISHCONF</span><span class="p">)</span> <span class="o">$</span><span class="p">(</span><span class="n">PELICANOPTS</span><span class="p">)</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># running pelican</span>
+    <span class="n">cd</span> <span class="o">$</span><span class="p">(</span><span class="n">OUTPUTDIR</span><span class="p">)</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># go to output directory</span>
+    <span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">v</span> <span class="o">--</span><span class="n">all</span> <span class="o">.</span> <span class="o">&amp;&amp;</span> \ 
+    <span class="c1"># configure user/email of git commit, commit, push</span>
+    <span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="s2">&quot;&lt;your mail&gt;&quot;</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">git</span> <span class="n">config</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;&lt;your name&gt;&quot;</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;$$SITE_COMMIT_MESSAGE&quot;</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">git</span> <span class="n">push</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">echo</span> <span class="s2">&quot;done&quot;</span>
 </code></pre></div>
 
 

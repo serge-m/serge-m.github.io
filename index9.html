@@ -350,20 +350,20 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Example from Meyers "Effective C++"</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="n">Timer</span> {
-    <span class="n">public:</span>
-    <span class="n">explicit</span> <span class="n">Timer</span>(<span class="n">int</span> <span class="n">tickFrequency</span>);
-    <span class="n">virtual</span> <span class="n">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="n">each</span> <span class="n">tic</span>,<span class="sr"> </span>
-<span class="sr">    //</span> <span class="n">onTick</span>() <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="nb">to</span> <span class="nb">do</span> <span class="n">things</span>
-    ...
-    };
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="n">Timer</span> <span class="p">{</span>
+    <span class="n">public</span><span class="p">:</span>
+    <span class="n">explicit</span> <span class="n">Timer</span><span class="p">(</span><span class="nb nb-Type">int</span> <span class="n">tickFrequency</span><span class="p">);</span>
+    <span class="n">virtual</span> <span class="n">void</span> <span class="n">onTick</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="o">//</span> <span class="n">Called</span> <span class="n">automatically</span> <span class="k">for</span> <span class="n">each</span> <span class="n">tic</span><span class="p">,</span> 
+    <span class="o">//</span> <span class="n">onTick</span><span class="p">()</span> <span class="n">must</span> <span class="n">be</span> <span class="n">redefined</span> <span class="n">to</span> <span class="n">do</span> <span class="n">things</span>
+    <span class="o">...</span>
+    <span class="p">};</span>
 
 
-    <span class="k">class</span> <span class="n">Widget:</span> <span class="nb">private</span> <span class="n">Timer</span> { // <span class="nb">private</span> <span class="n">inheritance</span>
-    <span class="n">private:</span>
-    <span class="n">virtual</span> <span class="n">void</span> <span class="n">onTick</span>() <span class="n">const</span>; // <span class="n">redefined</span> <span class="nb">to</span> <span class="k">make</span> <span class="n">job</span> <span class="nb">done</span>
-    ... 
-    };
+    <span class="k">class</span> <span class="n">Widget</span><span class="p">:</span> <span class="n">private</span> <span class="n">Timer</span> <span class="p">{</span> <span class="o">//</span> <span class="n">private</span> <span class="n">inheritance</span>
+    <span class="n">private</span><span class="p">:</span>
+    <span class="n">virtual</span> <span class="n">void</span> <span class="n">onTick</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span> <span class="o">//</span> <span class="n">redefined</span> <span class="n">to</span> <span class="n">make</span> <span class="n">job</span> <span class="n">done</span>
+    <span class="o">...</span> 
+    <span class="p">};</span>
 </code></pre></div>
 
 

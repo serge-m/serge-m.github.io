@@ -141,11 +141,11 @@ Human driver (me) sends steering commands via the remote control (transmitter). 
   <span class="c1">// this function will be called on the interrupts</span>
   <span class="kt">void</span> <span class="nf">process</span><span class="p">();</span>
 
-  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf">micros_since_last_signal</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">micros_since_last_signal</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 
   <span class="c1">// return the latest pwm value</span>
-  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">value</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="nf">prev_time_micros</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">value</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">prev_time_micros</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
 <p>Full code:</p>
@@ -174,7 +174,7 @@ Human driver (me) sends steering commands via the remote control (transmitter). 
   <span class="p">}</span>
 
   <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">micros_since_last_signal</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">micros</span><span class="p">()</span> <span class="o">-</span> <span class="n">prev_time_</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nf">micros</span><span class="p">()</span> <span class="o">-</span> <span class="n">prev_time_</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">value</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>

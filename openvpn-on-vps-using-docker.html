@@ -140,7 +140,7 @@ The udp connection is perfect with these parameters (in client config):</p>
 
 <p>the negative dns-priority means only this dns server will be used.
 Then reload the config file:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli c reload &lt;vpn name&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">nmcli</span> <span class="n">c</span> <span class="n">reload</span> <span class="o">&lt;</span><span class="n">vpn</span> <span class="n">name</span><span class="o">&gt;</span>
 </code></pre></div>
 
 
@@ -222,14 +222,14 @@ CRL file: /ca/pki/crl.pem
 <span class="p">.</span><span class="o">+++</span><span class="w"></span>
 <span class="p">......................................</span><span class="o">+++</span><span class="w"></span>
 <span class="n">writing</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s1">&#39;/server/pki/private/server.key.75fVPXwcOd&#39;</span><span class="w"></span>
-<span class="c1">-----</span>
+<span class="o">-----</span><span class="w"></span>
 <span class="n">You</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">asked</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">incorporated</span><span class="w"></span>
 <span class="k">into</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="w"></span>
 <span class="n">What</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">called</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Distinguished</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">DN</span><span class="p">.</span><span class="w"></span>
 <span class="n">There</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">quite</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">few</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">leave</span><span class="w"> </span><span class="ow">some</span><span class="w"> </span><span class="n">blank</span><span class="w"></span>
 <span class="k">For</span><span class="w"> </span><span class="ow">some</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="n">there</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">value</span><span class="p">,</span><span class="w"></span>
 <span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">enter</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="n">will</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="nf">left</span><span class="w"> </span><span class="n">blank</span><span class="p">.</span><span class="w"></span>
-<span class="c1">-----</span>
+<span class="o">-----</span><span class="w"></span>
 <span class="n">Common</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">(</span><span class="nl">eg</span><span class="p">:</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="k">user</span><span class="p">,</span><span class="w"> </span><span class="k">host</span><span class="p">,</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="n">server</span><span class="o">]</span><span class="err">:</span><span class="n">vpn</span><span class="o">-</span><span class="n">server</span><span class="w"></span>
 
 <span class="n">Keypair</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="n">completed</span><span class="p">.</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="k">are</span><span class="err">:</span><span class="w"></span>
@@ -301,8 +301,8 @@ CRL file: /ca/pki/crl.pem
 
 
 <p>Create missing directories:</p>
-<div class="highlight"><pre><span></span><code><span class="err">mkdir /etc/openvpn/ccd</span>
-<span class="err">mkdir -p /var/log/openvpn/</span>
+<div class="highlight"><pre><span></span><code><span class="n">mkdir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">ccd</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span>
 </code></pre></div>
 
 
@@ -371,7 +371,7 @@ mute 20
 <ol>
 <li>Reload:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl daemon-reload</span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
 </code></pre></div>
 
 
@@ -407,25 +407,25 @@ mute 20
 <h4>OpenVPN config for client</h4>
 <div class="highlight"><pre><span></span><code><span class="n">dev</span> <span class="n">tun</span>
 <span class="n">proto</span> <span class="n">udp</span>
-<span class="n">remote</span> <span class="n">YOUR_SERVER_ADDRESS</span> <span class="mi">1194</span>
+<span class="k">remote</span> <span class="n">YOUR_SERVER_ADDRESS</span> <span class="mi">1194</span>
 <span class="n">client</span>
 <span class="n">resolv</span><span class="o">-</span><span class="n">retry</span> <span class="n">infinite</span>
 
 <span class="n">cipher</span> <span class="n">AES</span><span class="o">-</span><span class="mi">128</span><span class="o">-</span><span class="n">CBC</span>
 
-<span class="n">ca</span> <span class="ss">&quot;ca.crt&quot;</span>
-<span class="n">cert</span> <span class="ss">&quot;client1.crt&quot;</span>
-<span class="k">key</span> <span class="ss">&quot;client1.key&quot;</span>
-<span class="n">tls</span><span class="o">-</span><span class="n">auth</span> <span class="ss">&quot;ta.key&quot;</span> <span class="mi">1</span>
+<span class="n">ca</span> <span class="s2">&quot;ca.crt&quot;</span>
+<span class="n">cert</span> <span class="s2">&quot;client1.crt&quot;</span>
+<span class="n">key</span> <span class="s2">&quot;client1.key&quot;</span>
+<span class="n">tls</span><span class="o">-</span><span class="n">auth</span> <span class="s2">&quot;ta.key&quot;</span> <span class="mi">1</span>
 
-<span class="n">remote</span><span class="o">-</span><span class="n">cert</span><span class="o">-</span><span class="n">tls</span> <span class="n">server</span>
-<span class="n">persist</span><span class="o">-</span><span class="k">key</span>
+<span class="k">remote</span><span class="o">-</span><span class="n">cert</span><span class="o">-</span><span class="n">tls</span> <span class="n">server</span>
+<span class="n">persist</span><span class="o">-</span><span class="n">key</span>
 <span class="n">persist</span><span class="o">-</span><span class="n">tun</span>
 <span class="n">comp</span><span class="o">-</span><span class="n">lzo</span>
 <span class="n">verb</span> <span class="mi">4</span>
-<span class="o">#</span><span class="n">status</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">openvpn</span><span class="o">-</span><span class="n">status</span><span class="p">.</span><span class="n">log</span> <span class="mi">1</span>
-<span class="n">status</span><span class="o">-</span><span class="k">version</span> <span class="mi">3</span>
-<span class="o">#</span><span class="n">log</span><span class="o">-</span><span class="n">append</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">openvpn</span><span class="o">-</span><span class="n">client</span><span class="p">.</span><span class="n">log</span>
+<span class="c1">#status /var/log/openvpn/openvpn-status.log 1</span>
+<span class="n">status</span><span class="o">-</span><span class="n">version</span> <span class="mi">3</span>
+<span class="c1">#log-append /var/log/openvpn/openvpn-client.log</span>
 </code></pre></div>
 
 

@@ -289,8 +289,8 @@ I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera su
 </li>
 </ul>
 <h3>Update the system</h3>
-<div class="highlight"><pre><span></span><code><span class="err">sudo add-apt-repository ppa:ubuntu-raspi2/ppa  # for standard RPi tools </span>
-<span class="err">sudo apt update &amp;&amp; sudo apt upgrade  # this will take some time</span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="n">ppa</span><span class="p">:</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">raspi2</span><span class="o">/</span><span class="n">ppa</span>  <span class="c1"># for standard RPi tools </span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">upgrade</span>  <span class="c1"># this will take some time</span>
 </code></pre></div>
 
 
@@ -298,10 +298,10 @@ I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera su
 Try to install ntp: <code>sudo apt install ntp</code></p>
 <h3>Remove unnecessary tools</h3>
 <p>Removing cloud-init:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get purge cloud-init</span>
-<span class="err"># archive file for a backup</span>
-<span class="err">sudo tar --remove-files -cvzf ~/backup-cloud-init.tar.gz /etc/cloud/ /var/lib/cloud/</span>
-<span class="err">sudo reboot  # restart</span>
+<div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">cloud</span><span class="o">-</span><span class="n">init</span>
+<span class="c1"># archive file for a backup</span>
+<span class="n">sudo</span> <span class="n">tar</span> <span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">files</span> <span class="o">-</span><span class="n">cvzf</span> <span class="o">~/</span><span class="n">backup</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">init</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">cloud</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">reboot</span>  <span class="c1"># restart</span>
 </code></pre></div>
 
 

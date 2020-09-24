@@ -53,6 +53,20 @@ Convert to jpeg
     ffmpeg -i ./input_video.mp4 -qmax 1 -qmin 1 -start_number 0 output_image_%05d.jpg
 
 
+Stack images/videos
+--------------------------------------------------
+
+.. code-block:: sh
+
+  # stack horizontally
+  ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2 output.mp4
+
+  # stack vertically
+  ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex vstack=inputs=2 output.mp4
+
+
+
+
 
 See also
 ==============================

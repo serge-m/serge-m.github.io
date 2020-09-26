@@ -9,22 +9,21 @@
 
 
 
-<link rel="canonical" href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html">
+<link rel="canonical" href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="data science,project management,work in progress" />
-        <meta name="description" content="[Work in progress] why does your data science project fail again You work in a mid size company. Business goes well. Engineering department is split into many small teams. One of them works on data intense project. Like rooting of parcels from a warehouse or demand prediction for millions of …" />
+        <meta name="keywords" content="data science,pm" />
+        <meta name="description" content="why does your data science project fail again Your data scientists aren&#39;t real scientists For example, science differs from non-science by writing down the results. Maybe your data scientists just talks about awesomeness of his new model and doesn&#39;t provide you with written reports and measurements? Then probably you will …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="why does your data science project fail again"/>
-        <meta property="og:url" content="https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html"/>
-        <meta property="og:description" content="[Work in progress] why does your data science project fail again You work in a mid size company. Business goes well. Engineering department is split into many small teams. One of them works on data intense project. Like rooting of parcels from a warehouse or demand prediction for millions of …"/>
+        <meta property="og:url" content="https://serge-m.github.io/why-does-your-data-science-project-fail-again.html"/>
+        <meta property="og:description" content="why does your data science project fail again Your data scientists aren&#39;t real scientists For example, science differs from non-science by writing down the results. Maybe your data scientists just talks about awesomeness of his new model and doesn&#39;t provide you with written reports and measurements? Then probably you will …"/>
         <meta property="article:published_time" content="2017-10-29" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="data science" />
-            <meta property="article:tag" content="project management" />
-            <meta property="article:tag" content="work in progress" />
+            <meta property="article:tag" content="pm" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -82,7 +81,7 @@ sergem personal public notebook            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html"
+                    <a href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.html"
                        rel="bookmark"
                        title="Permalink to why does your data science project fail again">
                         why does your data science project fail again
@@ -105,38 +104,86 @@ sergem personal public notebook            </a>
 <span class="label label-default">Tags</span>
 	<a href="https://serge-m.github.io/tag/data-science.html">data science</a>
         /
-	<a href="https://serge-m.github.io/tag/project-management.html">project management</a>
-        /
-	<a href="https://serge-m.github.io/tag/work-in-progress.html">work in progress</a>
+	<a href="https://serge-m.github.io/tag/pm.html">pm</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>[Work in progress]</p>
-<h2>why does your data science project fail again</h2>
-<p>You work in a mid size company. Business goes well. Engineering department is split into many small teams. One of them works on data intense project. Like rooting of parcels from a warehouse or demand prediction for millions of sales per month. Everything is ok, but upgrading from very basic algorithm that is here from the beginning fails miserably. Maybe it fails multiple times in a row. Changing leads and even heads of the department doesn't help. </p>
-<p>Well old system works. It is obsolete, too slow, has bad precision but the team</p>
-<h2>your data scientists aren't real scientists</h2>
+                <h2>why does your data science project fail again</h2>
+<ul>
+<li>Your data scientists aren't real scientists</li>
+</ul>
 <p>For example, science differs from non-science by writing down the results. 
 Maybe your data scientists just talks about awesomeness of his new model and doesn't provide you with written reports and measurements? Then probably you will go in circles of to the dead end. </p>
 <p>No progress proven == no need for changes at all.</p>
-<h2>you don't perform reproducible experiments</h2>
-<p>reproducible experiments allow you to compare your old solution with a new one. If you can run the new algorithm on current data only it is not a proof that it works. It can be really a coincidence.</p>
-<h2>you don't measure your performance</h2>
-<p>You just build a new algorithm and you think it is better because it is a) optimal by design b) robust c) easy to build d) reduces technical depth e) based on a new cool technology f) reduces the coupling g) but you version here. </p>
+<ul>
+<li>You don't perform reproducible experiments</li>
+</ul>
+<p>reproducible experiments allow you to compare your old solution with a new one. 
+  If you can run the new algorithm on current data only it is not a proof that it works. 
+  It can be really a coincidence.</p>
+<ul>
+<li>You don't measure your performance</li>
+</ul>
+<p>If you build a new algorithm and it is better only because it's 
+  a) optimal by design 
+  b) robust 
+  c) easy to build 
+  d) reduces technical depth 
+  e) based on a new cool technology 
+  f) reduces the coupling 
+  g) but you version here. </p>
 <p>It is not a proof! Probably you lie!</p>
-<h2>you have only engineers in your team</h2>
-<p>Many tasks cannot be done by pure engineers. These guys can build robust architectures, they write reliable and maintainable code, they understand concepts of testing and continuous integration. But they don't know how to approach research. They may tell you they know and continue trying solving research topics with building a new super flexible architecture instead of experimenting and discovering solutions. They prefer depth first search instead of breadth first search. Write what you really need is a combination of both.</p>
-<h2>You are afraid of changes in your system</h2>
-<h3>technical changes</h3>
-<p>You probably don't have tests, you deploy rarely and you don't maintain your code clean. That makes you being afraid of introducing new features. That leads to the degradation of the system.</p>
-<h3>business rules changes</h3>
-<p>Business changes. That's totally fine. How to prepare for these changes. I think it is good to have high level acceptance tests that are written together with your product guy. Ideally he/she is able to write such test alone. You should run those test together with unit tests if possible or regularly, say once a day. At least for each major release.</p>
+<p>Interesting talk about optimization in C++ and scientific approach from CppCon 2020: 
+  <a href="https://cppcon2020.sched.com/event/e7g0/performance-matters?linkback=grid-full&amp;iframe=no">Performance Matters</a> 
+  by Emery Berger.</p>
+<blockquote>
+<p>I'll show -- using a new experimental methodology -- that the difference between clang's -O2 and -O3 optimization levels is essentially indistinguishable from noise.</p>
+</blockquote>
+<ul>
+<li>
+<p>You have only engineers in your team
+  Many tasks cannot be done by pure engineers. 
+  These guys can build robust architectures, they write reliable and maintainable code, 
+  they understand concepts of testing and continuous integration. 
+  But they don't know how to approach research. They may tell you they know and continue trying solving 
+  research topics with building a new super flexible architecture 
+  instead of experimenting and discovering solutions. 
+  They prefer depth first search instead of breadth first search. Write 
+  what you really need is a combination of both.</p>
+</li>
+<li>
+<p>You are afraid of changes in your system</p>
+</li>
+<li>
+<p>technical changes</p>
+<p>You probably don't have tests, you deploy rarely and you don't maintain your code clean. 
+That makes you being afraid of introducing new features. That leads to the degradation of the system.</p>
+</li>
+<li>
+<p>business rules changes</p>
+<p>Business changes. That's totally fine. How to prepare for these changes. 
+I think it is good to have high level acceptance tests that are written together with your product guy. 
+Ideally he/she is able to write such test alone. 
+You should run those test together with unit tests if possible or regularly, say once a day. 
+At least for each major release.</p>
 <p>When new use case comes you write a new test and implement a feature in the system. Then you test that it didn't break old acceptance tests. If old test breaks you investigate together with product and find our what is the desired/correct behavior. </p>
 <p>This requires a lot of efforts but I believe it pays off in a long run. </p>
-<h2>you don't really need data science</h2>
-<p>Business people 99% of the cases don't need complicated, powerful algorithms. They need some linear models and ability to play with parameters. They need fast and reliable enough simulations and ability to fix the errors or steer the parameters.</p>
-<p>Smart models are often too rigid, slow and complicated. Business changes fast. Excel is widely used because it is a universal tool, that can be easily adapted to the changing needs, everyone knows how to work with it. 
-Cmpanies usually hire experts that know the market pretty good. They do mistakes but it is very difficult to replace them with software products. So probably software should first try to help them, not to replace them</p>
+</li>
+<li>
+<p>You don't really need data science</p>
+</li>
+</ul>
+<p>Business doesn't need sophisticated algorithms in 99% of the cases. 
+  Usually a linear models and ability to play with parameters is more than enough. 
+  It's very nice to have a fast and reliable enough simulations,
+  plus ability to fix the errors as you go.</p>
+<p>Smart models are often too rigid, slow and complicated. Business changes fast. 
+  Excel is still the biggest competitor for the most of the startups. 
+  It is widely used because it is a universal tool, that can be easily adapted to the changing needs, 
+  everyone knows how to work with it.</p>
+<p>Companies usually hire experts that know the market pretty good. 
+  They do mistakes but it is very difficult to replace them with software products. 
+  So probably software should first try to help them, not to replace them.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -151,8 +198,8 @@ Cmpanies usually hire experts that know the market pretty good. They do mistakes
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.identifier = '2017-10-29-why-does-your-data-science-project-fail-again.md';
-                        this.page.url = 'https://serge-m.github.io/why-does-your-data-science-project-fail-again.md.html';
+                        this.page.identifier = '2017-10-29-why-does-your-data-science-project-fail-again';
+                        this.page.url = 'https://serge-m.github.io/why-does-your-data-science-project-fail-again.html';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
@@ -273,9 +320,6 @@ Cmpanies usually hire experts that know the market pretty good. They do mistakes
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/depth.html">depth</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/diy.html">diy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -414,6 +458,9 @@ Cmpanies usually hire experts that know the market pretty good. They do mistakes
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/pm.html">pm</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>

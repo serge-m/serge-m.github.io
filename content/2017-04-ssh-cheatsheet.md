@@ -2,33 +2,29 @@ Title: SSH cheat sheet
 Author: SergeM
 Date: 2017-04-12 12:11:00
 Slug: ssh-cheatsheet
-Tags: ssh, keys, useful
+Tags: ssh, keys, useful, tunnel, security, linux
 
 
 ## Create more secure ssh keys
 Create a key using elliptic curve cryptography (more secure): 
-```
-ssh-keygen -a 100 -t ed25519
-```
+
+    ssh-keygen -a 100 -t ed25519
 
 generate RSA key of length 4096 to file `my_key`
-```
-ssh-keygen -t rsa -b 4096 -C "your@e-mail.com" -f my_key
-```
+   
+    ssh-keygen -t rsa -b 4096 -C "your@e-mail.com" -f my_key
 
 Generate md5 fingerprint of the key (works in newer ubuntu, 16):
-```
-ssh-keygen -lf ./my_key -E md5
-```
+
+    ssh-keygen -lf ./my_key -E md5
 
 
 see also: [Upgrade Your SSH Key to Ed25519](https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54)
 
 
 ## How to prevent SSH from scanning all the keys in .ssh directory
-```
-$ ssh -o IdentitiesOnly=yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
-```
+    
+    $ ssh -o IdentitiesOnly=yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 
 The options are as follows:
 
@@ -271,36 +267,34 @@ sudo systemctl restart sshd
 ```
 
 ### Add user for ssh tunnel only
-```
-useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash
-passwd sshtunnel
-```
+
+    useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash
+    passwd sshtunnel
+
 
 in `.profile` in the home directory of the user (in our example it is /home/sshtunnel/):
-```
-PATH=""
-```
+
+    PATH=""
+
 
 Forbid changes:
 
-```
-chmod 555 /home/sshtunnel/
-cd /home/sshtunnel/
-chmod 444 .bash_logout .bashrc .profile
-```
+    chmod 555 /home/sshtunnel/
+    cd /home/sshtunnel/
+    chmod 444 .bash_logout .bashrc .profile
+
 
 [source](http://www.ab-weblog.com/en/creating-a-restricted-ssh-user-for-ssh-tunneling-only/)
 
 
 Restrictions in sshd config:
-```
-Match User that-restricted-guy
-  AllowTcpForwarding yes
-  X11Forwarding no
-  AllowAgentForwarding no
-  ForceCommand /bin/false
 
-```
+    Match User that-restricted-guy
+      AllowTcpForwarding yes
+      X11Forwarding no
+      AllowAgentForwarding no
+      ForceCommand /bin/false
+
 [source](https://unix.stackexchange.com/a/337445)
 
 ### Restricting root user
@@ -414,3 +408,15 @@ Then one can set up a socks proxy in the settings of the browser.
 
 
 [src](https://medium.com/@therockspush/building-a-quick-and-easy-ssh-socks-proxy-3a440f5d35a7)
+
+
+## Faster retry after disconnecting
+
+In order to make recovery faster after network issues use options 
+`-o "ServerAliveInterval 2" -o "ServerAliveCountMax 2"`.
+
+Alternatively one can add the following to `~/.ssh/config`:
+
+    Host *
+      ServerAliveInterval 2
+      ServerAliveCountMax 2

@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://serge-m.github.io/ssh-cheatsheet.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="ssh,keys,useful" />
+        <meta name="keywords" content="ssh,keys,useful,tunnel,security,linux" />
         <meta name="description" content="Create more secure ssh keys Create a key using elliptic curve cryptography (more secure): ssh-keygen -a 100 -t ed25519 generate RSA key of length 4096 to file my_key ssh-keygen -t rsa -b 4096 -C &#34;your@e-mail.com&#34; -f my_key Generate md5 fingerprint of the key (works in newer ubuntu, 16 …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -25,6 +25,9 @@
             <meta property="article:tag" content="ssh" />
             <meta property="article:tag" content="keys" />
             <meta property="article:tag" content="useful" />
+            <meta property="article:tag" content="tunnel" />
+            <meta property="article:tag" content="security" />
+            <meta property="article:tag" content="linux" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -108,6 +111,12 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/keys.html">keys</a>
         /
 	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/tunnel.html">tunnel</a>
+        /
+	<a href="https://serge-m.github.io/tag/security.html">security</a>
+        /
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -468,6 +477,14 @@ Also it doesn't require to install anything on the server except openssh server.
 <p><code>-N</code> causes remote commands not to be executed, just straight port forwarding.</p>
 <p>Then one can set up a socks proxy in the settings of the browser.</p>
 <p><a href="https://medium.com/@therockspush/building-a-quick-and-easy-ssh-socks-proxy-3a440f5d35a7">src</a></p>
+<h2>Faster retry after disconnecting</h2>
+<p>In order to make recovery faster after network issues use options 
+<code>-o "ServerAliveInterval 2" -o "ServerAliveCountMax 2"</code>.</p>
+<p>Alternatively one can add the following to <code>~/.ssh/config</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Host *</span>
+<span class="err">  ServerAliveInterval 2</span>
+<span class="err">  ServerAliveCountMax 2</span>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

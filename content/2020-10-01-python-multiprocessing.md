@@ -186,3 +186,11 @@ Sample output:
 
 Full code is [here](https://github.com/serge-m/code-training/tree/master/python/parallel/stateful_process_workers).
 
+There are some alternative workarounds to deal with initialization in standard `multiprocessing`. 
+They usually require some global variables. See for example:
+
+* Stack overflow [how to use initializer to set up my multiprocess pool?](https://stackoverflow.com/questions/10117073/how-to-use-initializer-to-set-up-my-multiprocess-pool)
+
+* [Multiprocessing.Pool - Pass Data to Workers w/o Globals: A Proposal](https://thelaziestprogrammer.com/python/multiprocessing-pool-expect-initret-proposal)
+
+

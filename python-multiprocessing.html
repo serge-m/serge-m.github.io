@@ -13,13 +13,13 @@
 
         <meta name="author" content="SergeM" />
         <meta name="keywords" content="python,multiprocessing,useful,libraries" />
-        <meta name="description" content="Libraries Standard multiprocessing Pebble - pretty close to the standard one, but with a bit nicer interface Dask - well maintained and (almost) drop-in replacement of numpy and pandas: ```python Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x …" />
+        <meta name="description" content="Libraries Standard multiprocessing Pebble - pretty close to the standard one, but with a bit nicer interface Dask - well maintained and (almost) drop-in replacement of numpy and pandas: # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.T …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Python multiprocessing"/>
         <meta property="og:url" content="https://serge-m.github.io/python-multiprocessing.html"/>
-        <meta property="og:description" content="Libraries Standard multiprocessing Pebble - pretty close to the standard one, but with a bit nicer interface Dask - well maintained and (almost) drop-in replacement of numpy and pandas: ```python Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x …"/>
+        <meta property="og:description" content="Libraries Standard multiprocessing Pebble - pretty close to the standard one, but with a bit nicer interface Dask - well maintained and (almost) drop-in replacement of numpy and pandas: # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.T …"/>
         <meta property="article:published_time" content="2020-10-01" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="python" />
@@ -126,23 +126,28 @@ sergem personal public notebook            </a>
 <li>
 <p><a href="https://dask.org/">Dask</a> 
   - well maintained and (almost) drop-in replacement of numpy and pandas:</p>
-<p>```python</p>
-<h1>Arrays implement the Numpy API</h1>
-<p>import dask.array as da
-x = da.random.random(size=(10000, 10000),
-                     chunks=(1000, 1000))
-x + x.T - x.mean(axis=0)</p>
-<h1>Dataframes implement the Pandas API</h1>
-<p>import dask.dataframe as dd
-df = dd.read_csv('s3://.../2018-<em>-</em>.csv')
-df.groupby(df.account_id).balance.sum()</p>
-<h1>Dask-ML implements the Scikit-Learn API</h1>
-<p>from dask_ml.linear_model \
-  import LogisticRegression
-lr = LogisticRegression()
-lr.fit(train, test)
-```</p>
 </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Arrays implement the Numpy API</span>
+<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">),</span>
+                     <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">T</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Dataframes implement the Pandas API</span>
+<span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="nn">dd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;s3://.../2018-*-*.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">account_id</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Dask-ML implements the Scikit-Learn API</span>
+<span class="kn">from</span> <span class="nn">dask_ml.linear_model</span> \
+  <span class="kn">import</span> <span class="nn">LogisticRegression</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
+</code></pre></div>
+
+
+<ul>
 <li>
 <p><a href="https://github.com/PamelaM/mptools">mptools</a> - seems like an abandoned project.
   The autor had a nice article though: 
@@ -158,11 +163,21 @@ lr.fit(train, test)
 
 <h2>Using Pipes for parallel stateful processes</h2>
 <p>Let's consider the following task. We have to implement a controller.
-The controller defines a processing graph with 4 interconnected stages:
-* detector
-* size_estimator (depends on detector)
-* classifier (depends on detector)
-* aggregator (depends on size_estimator and classifier)</p>
+The controller defines a processing graph with 4 interconnected stages:</p>
+<ul>
+<li>
+<p>detector</p>
+</li>
+<li>
+<p>size_estimator (depends on detector)</p>
+</li>
+<li>
+<p>classifier (depends on detector)</p>
+</li>
+<li>
+<p>aggregator (depends on size_estimator and classifier)</p>
+</li>
+</ul>
 <p>This could be a model for some computer vision pipeline and controller processes frames coming from a camera.</p>
 <p>Sequential version of the controller could look like this</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Controller</span><span class="p">:</span>

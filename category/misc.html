@@ -106,12 +106,13 @@ sergem personal public notebook            </a>
 <li>
 <p><a href="https://dask.org/">Dask</a> 
   - well maintained and (almost) drop-in replacement of numpy and pandas:</p>
-<p>```python</p>
-<h1>Arrays implement the Numpy API</h1>
-<p>import dask.array as da
-x = da.random.random(size=(10000, 10000),
-                     chunks=(1000, 1000))
-x + x …</p></li></ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Arrays implement the Numpy API</span>
+<span class="kn">import</span> <span class="nn">dask.array</span> <span class="k">as</span> <span class="nn">da</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">da</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">),</span>
+                     <span class="n">chunks</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">T …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-multiprocessing.html">more ...</a>
                 </div>
             </article>

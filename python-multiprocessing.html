@@ -295,6 +295,16 @@ Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
 
 
 <p>Full code is <a href="https://github.com/serge-m/code-training/tree/master/python/parallel/stateful_process_workers">here</a>.</p>
+<p>There are some alternative workarounds to deal with initialization in standard <code>multiprocessing</code>. 
+They usually require some global variables. See for example:</p>
+<ul>
+<li>
+<p>Stack overflow <a href="https://stackoverflow.com/questions/10117073/how-to-use-initializer-to-set-up-my-multiprocess-pool">how to use initializer to set up my multiprocess pool?</a></p>
+</li>
+<li>
+<p><a href="https://thelaziestprogrammer.com/python/multiprocessing-pool-expect-initret-proposal">Multiprocessing.Pool - Pass Data to Workers w/o Globals: A Proposal</a></p>
+</li>
+</ul>
             </div>
             <!-- /.entry-content -->
     <hr/>

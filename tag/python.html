@@ -71,6 +71,51 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/python-multiprocessing.html">Python multiprocessing</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-10-01T20:00:00+02:00"> 2020-10-01T20:00:00, Thu</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>Libraries</h2>
+<ul>
+<li>
+<p>Standard <a href="https://docs.python.org/3/library/multiprocessing.html">multiprocessing</a></p>
+</li>
+<li>
+<p><a href="https://pypi.org/project/Pebble/">Pebble</a> 
+  - pretty close to the standard one, but with a bit nicer interface</p>
+</li>
+<li>
+<p><a href="https://dask.org/">Dask</a> 
+  - well maintained and (almost) drop-in replacement of numpy and pandas:</p>
+<p>```python</p>
+<h1>Arrays implement the Numpy API</h1>
+<p>import dask.array as da
+x = da.random.random(size=(10000, 10000),
+                     chunks=(1000, 1000))
+x + x …</p></li></ul>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/python-multiprocessing.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -742,36 +787,6 @@ add '%(default)' to the help parameter to control what is displayed.</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">Run docker as pytest fixture</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-12-19T21:30:00+01:00"> 2016-12-19T21:30:00, Mon</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
-        /
-	<a href="https://serge-m.github.io/tag/docker.html">docker</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I need to test external API or perform integration test for my application. 
-The extenal application can be accessible through docker image. I want to write a test that has 
-* <code>docker run</code> as set-up step
-* <code>docker stop/docker rm</code> as tear down step</p>
-<p>As an example lets consider <a href="https://github.com/chrislusf/seaweedfs">Seaweedfs</a> as …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/run-docker-as-pytest-fixture.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev disabled"><a href="#">&laquo;</a></li>
@@ -795,6 +810,7 @@ The extenal application can be accessible through docker image. I want to write 
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/jupyter-notebooks-on-emr.html">Jupyter notebooks on EMR</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html">Spark in Docker with AWS credentials</a></li>
@@ -806,7 +822,6 @@ The extenal application can be accessible through docker image. I want to write 
     <li class="list-group-item"><a href="https://serge-m.github.io/flask-and-sqlalchemy-explained.html">Flask and SQLAlchemy explained</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/mixins-in-python.html">Mixin pattern in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/pytest-cheatsheet.html">Pytest cheatsheet</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/sample-ember-and-flask.html">Sample project with Ember and Flask</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -902,9 +917,6 @@ The extenal application can be accessible through docker image. I want to write 
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ego-motion.html">ego motion.</a>
     </li>
     <li class="list-group-item tag-3">
@@ -967,6 +979,9 @@ The extenal application can be accessible through docker image. I want to write 
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
     </li>
@@ -996,6 +1011,9 @@ The extenal application can be accessible through docker image. I want to write 
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
@@ -1089,9 +1107,6 @@ The extenal application can be accessible through docker image. I want to write 
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>

@@ -70,6 +70,48 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/disk-usage-ubuntu.html">Reducing disk usage in Ubuntu</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-08-16T00:10:00+02:00"> 2018-08-16T00:10:00, Thu</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/links.html">links</a>
+        /
+	<a href="https://serge-m.github.io/tag/disk-usage.html">disk usage</a>
+        /
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+        /
+	<a href="https://serge-m.github.io/tag/ubuntu.html">ubuntu</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Here are some recipies to make ubuntu installed on USB drive to work faster.</p>
+<p><a href="http://stevehanov.ca/blog/index.php?id=48">[1]</a></p>
+<p><a href="https://www.cyrius.com/debian/nslu2/linux-on-flash/">[2]</a></p>
+<h2>reducing swapping</h2>
+<p>Add these lines to /etc/sysctl.conf, and reboot.</p>
+<div class="highlight"><pre><span></span><code><span class="err">vm.swappiness = 0</span>
+<span class="err">vm.dirty_background_ratio = 20</span>
+<span class="err">vm.dirty_expire_centisecs = 0</span>
+<span class="err">vm.dirty_ratio = 80</span>
+<span class="err">vm.dirty_writeback_centisecs = 0</span>
+</code></pre></div>
+
+
+<h2>More caching while writting on disk</h2>
+<p>Add <code>noatime …</code></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/disk-usage-ubuntu.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/spark-in-docker-with-aws-credentials.html">Spark in Docker with AWS credentials</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -724,40 +766,6 @@ We will have a main page and <code>users</code> page in our …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/module-import-in-python.html">Module import in python</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-07-09T23:07:00+02:00"> 2017-07-09T23:07:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>Import module by path/name</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">importlib</span>
-<span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
-</code></pre></div>
-
-
-<h2>Find class implementing certain interface in a module</h2>
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_class_from_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
-    <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
-    <span class="n">list_classes</span> <span class="o">=</span> <span class="n">get_all_classes_implementing_interface</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">target_class</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">list_classes</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Unable to find implemented interface </span><span class="si">{}</span><span class="s2"> in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target_class</span><span class="p">,</span> <span class="n">module_path</span><span class="p">))</span>
-    <span class="k">if</span> <span class="nb">len …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/module-import-in-python.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem.html">&laquo;</a>
@@ -798,6 +806,7 @@ We will have a main page and <code>users</code> page in our …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/which-backbone-to-choose.html">Which pretrained backbone to choose</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
@@ -809,7 +818,6 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/robocar.html">Robocar project</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/ros-experience.html">ROS experience</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -905,9 +913,6 @@ We will have a main page and <code>users</code> page in our …</p>
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/e490.html">e490</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/ego-motion.html">ego motion.</a>
     </li>
     <li class="list-group-item tag-3">
@@ -970,6 +975,9 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
     </li>
@@ -999,6 +1007,9 @@ We will have a main page and <code>users</code> page in our …</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
@@ -1092,9 +1103,6 @@ We will have a main page and <code>users</code> page in our …</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/thinkpad.html">thinkpad</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/tools.html">tools</a>

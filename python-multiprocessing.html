@@ -214,14 +214,17 @@ The controller defines a processing graph with 4 interconnected stages:</p>
 </code></pre></div>
 
 
-<p>As I have mentioned above two stages - size estimation and classification can be executed in parallel. 
+<p>As I have mentioned above two stages - size estimation and classification - can be executed in parallel. 
 A standard solution for that could be <code>multiprocessing.Pool</code> with a function like <code>map</code> or <code>imap</code>.
-That works if our processing stages don't have the state and initialization of <code>size_estimator</code> and <code>classifier</code>
-are cheap.
-It is not always the case. 
-If <code>classifier</code> requires a slow initialization, e.g. loading a big neural network into memory, it would be 
-nice to have it initialized only once. We can create a process for that. </p>
-<p>Communication between parallel processes is a dangerous thing. Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
+That works if our processing stages are <strong>stateless and the initialization is cheap</strong>
+It is not always the case. </p>
+<p>If <code>classifier</code> requires a costly initialization, e.g. loading a big neural network into memory, it would be 
+nice to have it initialized only once. We can do it in a separate process. 
+If we were using a programming language other than Python, we could use threads for it. 
+But in python we have GIL. </p>
+<p>Controller has to send data to another process and receive the results.
+Communication between parallel processes is a dangerous thing. 
+Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ParallelPipeController</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size_estimator_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">Processor</span><span class="p">(</span><span class="n">fn</span><span class="o">=</span><span class="n">_compute_size</span><span class="p">)):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pipe_size_estimator</span><span class="p">,</span> <span class="n">pipe_size_worker</span> <span class="o">=</span> <span class="n">Pipe</span><span class="p">()</span>

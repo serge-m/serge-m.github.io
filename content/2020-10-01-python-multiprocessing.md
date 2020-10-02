@@ -98,15 +98,19 @@ def execute_test(controller):
     return t
 ``` 
 
-As I have mentioned above two stages - size estimation and classification can be executed in parallel. 
+As I have mentioned above two stages - size estimation and classification - can be executed in parallel. 
 A standard solution for that could be `multiprocessing.Pool` with a function like `map` or `imap`.
-That works if our processing stages don't have the state and initialization of `size_estimator` and `classifier`
-are cheap.
+That works if our processing stages are **stateless and the initialization is cheap**
 It is not always the case. 
-If `classifier` requires a slow initialization, e.g. loading a big neural network into memory, it would be 
-nice to have it initialized only once. We can create a process for that. 
 
-Communication between parallel processes is a dangerous thing. Let's try to use `multiprocessing.Pipe` for that.
+If `classifier` requires a costly initialization, e.g. loading a big neural network into memory, it would be 
+nice to have it initialized only once. We can do it in a separate process. 
+If we were using a programming language other than Python, we could use threads for it. 
+But in python we have GIL. 
+
+Controller has to send data to another process and receive the results.
+Communication between parallel processes is a dangerous thing. 
+Let's try to use `multiprocessing.Pipe` for that.
 
 ```python
 class ParallelPipeController:

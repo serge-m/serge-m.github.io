@@ -14,24 +14,24 @@ Tags: python, multiprocessing, useful, libraries, multiprocessing
 * [Dask](https://dask.org/) 
   \- well maintained and (almost) drop-in replacement of numpy and pandas:
 
-    ```python
-    # Arrays implement the Numpy API
-    import dask.array as da
-    x = da.random.random(size=(10000, 10000),
-                         chunks=(1000, 1000))
-    x + x.T - x.mean(axis=0)
-    
-    # Dataframes implement the Pandas API
-    import dask.dataframe as dd
-    df = dd.read_csv('s3://.../2018-*-*.csv')
-    df.groupby(df.account_id).balance.sum()
-    
-    # Dask-ML implements the Scikit-Learn API
-    from dask_ml.linear_model \
-      import LogisticRegression
-    lr = LogisticRegression()
-    lr.fit(train, test)
-    ```
+```python
+# Arrays implement the Numpy API
+import dask.array as da
+x = da.random.random(size=(10000, 10000),
+                     chunks=(1000, 1000))
+x + x.T - x.mean(axis=0)
+
+# Dataframes implement the Pandas API
+import dask.dataframe as dd
+df = dd.read_csv('s3://.../2018-*-*.csv')
+df.groupby(df.account_id).balance.sum()
+
+# Dask-ML implements the Scikit-Learn API
+from dask_ml.linear_model \
+  import LogisticRegression
+lr = LogisticRegression()
+lr.fit(train, test)
+```
 
 * [mptools](https://github.com/PamelaM/mptools) - seems like an abandoned project.
   The autor had a nice article though: 
@@ -51,9 +51,13 @@ Tags: python, multiprocessing, useful, libraries, multiprocessing
 
 Let's consider the following task. We have to implement a controller.
 The controller defines a processing graph with 4 interconnected stages:
+
 * detector
+
 * size_estimator (depends on detector)
+
 * classifier (depends on detector)
+
 * aggregator (depends on size_estimator and classifier)
 
 This could be a model for some computer vision pipeline and controller processes frames coming from a camera.

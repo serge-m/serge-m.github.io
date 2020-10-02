@@ -2,7 +2,7 @@ Title: posts by year
 Author: SergeM
 Date: 2013-12-11 12:11:00
 Slug: posts-by-year
-Tags: 
+Tags: year
 
 
 [2013](/posts/2013/)
@@ -18,6 +18,10 @@ Tags:
 [2018](/posts/2018/)
 
 [2019](/posts/2019/)
+
+[2020](/posts/2020/)
+
+[2021](/posts/2021/)
 
 
 

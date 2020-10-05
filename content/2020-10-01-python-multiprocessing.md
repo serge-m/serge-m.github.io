@@ -1,4 +1,4 @@
-Title: Python multiprocessing
+Title: Python - Multiprocessing
 Author: SergeM
 Date: 2020-10-01 20:00:00
 Slug: python-multiprocessing
@@ -46,6 +46,66 @@ lr.fit(train, test)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uPeCk7Wx8HU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+
+## Progress bar for parallel tasks
+
+Often one need to run some slow function in parallel in order to speed up the computation.
+In user facing apps it's important to visualize the progress.
+One can use `multiprocessing.Pool` and `tqdm` for it.
+```python
+import multiprocessing
+import numpy as np
+import tqdm
+
+
+def slow_operation(a):
+    """
+    Slow operation, return value is not needed in main.
+    For example the function opens a file, processes it and dumps the results to a new location.
+    """
+    z = np.random.random([1000, 1000])
+    for i in range(50):
+        z = z * (z - 0.5)
+    return z
+
+```
+
+
+One cannot apply tqdm to the `Pool.map` because the whole processing happens before the tqdm can iterate the result.  
+However it's possible to use `Pool.imap` or `Pool.imap_unordered` if the order is not important.
+
+```python
+
+def parallel_with_imap_unordered():
+    with  multiprocessing.Pool(6) as pool:
+        for _ in tqdm.tqdm(pool.imap_unordered(slow_operation, range(100)), total=100):
+            pass
+```
+
+It's nice that we don't need to do `pool.join()` here because `imap*` waits for all the tasks to complete.
+
+Don't forget to set chunk size:
+
+> For very long iterables using a large value for chunksize can make the job complete much faster than using the default value of 1.
+
+
+Alternatively we can use callbacks to update a global progress bar in a main process:
+
+```python
+def parallel_with_callback():
+    pbar = tqdm.tqdm(total=100)
+
+    def update(*a):
+        pbar.update()
+
+    pool = multiprocessing.Pool(6)
+    for i in range(pbar.total):
+        pool.apply_async(slow_operation, args=(i,), callback=update)
+    pool.close()
+    pool.join()
+```
+
+That method requires `pool.join` to wait for all the processes to finish. 
 
 ## Using Pipes for parallel stateful processes
 

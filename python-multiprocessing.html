@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Python multiprocessing - sergem personal public notebook</title>
+    <title>Python - Multiprocessing - sergem personal public notebook</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
 
         <meta property="og:site_name" content="sergem personal public notebook" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Python multiprocessing"/>
+        <meta property="og:title" content="Python - Multiprocessing"/>
         <meta property="og:url" content="https://serge-m.github.io/python-multiprocessing.html"/>
         <meta property="og:description" content="Libraries Standard multiprocessing Pebble - pretty close to the standard one, but with a bit nicer interface Dask - well maintained and (almost) drop-in replacement of numpy and pandas: # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.T …"/>
         <meta property="article:published_time" content="2020-10-01" />
@@ -85,8 +85,8 @@ sergem personal public notebook            </a>
                 <h1>
                     <a href="https://serge-m.github.io/python-multiprocessing.html"
                        rel="bookmark"
-                       title="Permalink to Python multiprocessing">
-                        Python multiprocessing
+                       title="Permalink to Python - Multiprocessing">
+                        Python - Multiprocessing
                     </a>
                 </h1>
             </header>
@@ -161,6 +161,57 @@ sergem personal public notebook            </a>
   <a href="https://towardsdatascience.com/10x-faster-parallel-python-without-python-multiprocessing-e5017c93cce1">10x Faster Parallel Python Without Python Multiprocessing</a></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uPeCk7Wx8HU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<h2>Progress bar for parallel tasks</h2>
+<p>Often one need to run some slow function in parallel in order to speed up the computation.
+In user facing apps it's important to visualize the progress.
+One can use <code>multiprocessing.Pool</code> and <code>tqdm</code> for it.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tqdm</span>
+
+
+<span class="k">def</span> <span class="nf">slow_operation</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Slow operation, return value is not needed in main.</span>
+<span class="sd">    For example the function opens a file, processes it and dumps the results to a new location.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">([</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+</code></pre></div>
+
+
+<p>One cannot apply tqdm to the <code>Pool.map</code> because the whole processing happens before the tqdm can iterate the result.<br>
+However it's possible to use <code>Pool.imap</code> or <code>Pool.imap_unordered</code> if the order is not important.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parallel_with_imap_unordered</span><span class="p">():</span>
+    <span class="k">with</span>  <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">imap_unordered</span><span class="p">(</span><span class="n">slow_operation</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)),</span> <span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+            <span class="k">pass</span>
+</code></pre></div>
+
+
+<p>It's nice that we don't need to do <code>pool.join()</code> here because <code>imap*</code> waits for all the tasks to complete.</p>
+<p>Don't forget to set chunk size:</p>
+<blockquote>
+<p>For very long iterables using a large value for chunksize can make the job complete much faster than using the default value of 1.</p>
+</blockquote>
+<p>Alternatively we can use callbacks to update a global progress bar in a main process:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parallel_with_callback</span><span class="p">():</span>
+    <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">):</span>
+        <span class="n">pbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">pbar</span><span class="o">.</span><span class="n">total</span><span class="p">):</span>
+        <span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">slow_operation</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="p">,),</span> <span class="n">callback</span><span class="o">=</span><span class="n">update</span><span class="p">)</span>
+    <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
+
+
+<p>That method requires <code>pool.join</code> to wait for all the processes to finish. </p>
 <h2>Using Pipes for parallel stateful processes</h2>
 <p>Let's consider the following task. We have to implement a controller.
 The controller defines a processing graph with 4 interconnected stages:</p>
@@ -351,7 +402,7 @@ They usually require some global variables. See for example:</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
-    <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python multiprocessing</a></li>
+    <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/which-backbone-to-choose.html">Which pretrained backbone to choose</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>

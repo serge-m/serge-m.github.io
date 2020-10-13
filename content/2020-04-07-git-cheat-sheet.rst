@@ -74,3 +74,14 @@ Disabling cache:
 .. code-block:: sh
 
     git config --global --unset credential.helper
+
+
+
+Export a repo to an archive without .git
+--------------------------------------------------
+
+.. code-block:: sh
+
+    git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
+
+`tar` archive is also supported. More info at `git-archive doc <https://git-scm.com/docs/git-archive>`_.

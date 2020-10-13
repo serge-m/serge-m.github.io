@@ -226,7 +226,6 @@ sergem personal public notebook            </a>
 <span class="err">vm.dirty_writeback_centisecs = 0</span>
 </code></pre></div>
 
-
 <h2>More caching while writting on disk</h2>
 <p>Add <code>noatime …</code></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/disk-usage-ubuntu.html">more ...</a>
@@ -305,21 +304,17 @@ Here is how to …</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
 </code></pre></div>
 
-
 <p>or </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
 </code></pre></div>
-
 
 <p>Delete user</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
 </code></pre></div>
 
-
 <p>Delete the user’s home directory and mail spool:</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
 </code></pre></div>
-
 
 <p>Remove user from a group</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd …</span></code></pre></div>
@@ -354,7 +349,6 @@ Here is how to …</p>
 <div class="highlight"><pre><span></span><code><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
 </code></pre></div>
 
-
 <p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
 <p><a href="http://stackoverflow.com/questions/23160191/compressing-text-heavy-pdfs-without-ghostscript-and-only-imagemagik-causes-blurr">source</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/combine-images-to-pdf.html">more ...</a>
@@ -388,7 +382,6 @@ Here is how to …</p>
 <p>Install devilspie:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install devilspie</span>
 </code></pre></div>
-
 
 <p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
 <p>How the rule was created</p>
@@ -429,11 +422,9 @@ Here is how to …</p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
 </code></pre></div>
 
-
 <p>generate RSA key of length 4096 to file <code>my_key</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
 </code></pre></div>
-
 
 <p>Generate md5 fingerprint of the key (works in newer ubuntu, 16 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssh-cheatsheet.html">more ...</a>
@@ -463,12 +454,10 @@ Here is how to …</p>
 <span class="err">No protocol specified</span>
 </code></pre></div>
 
-
 <p>The problem is <code>user2</code> doesn't have access to your screen.
 Solution:</p>
 <div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
 </code></pre></div>
-
 
 <p>Probably not the safest one.</p>
 <p>Source: <a href="http://unix.stackexchange.com/a/108787">thread</a></p>
@@ -501,7 +490,6 @@ Solution:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hplip-gui</span>
 </code></pre></div>
 
-
 <ul>
 <li>install recommended proprietary driver from <code>HP Toolbox</code> GUI</li>
 </ul>
@@ -509,7 +497,6 @@ Solution:</p>
 <h4>Another solution</h4>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">hp</span><span class="o">-</span><span class="n">ppd</span> <span class="n">hpijs</span> <span class="n">hpijs</span><span class="o">-</span><span class="n">ppds</span> <span class="n">hplip</span> <span class="n">hplip</span><span class="o">-</span><span class="n">cups</span> <span class="n">hplip</span><span class="o">-</span><span class="n">data</span> <span class="n">hplip</span><span class="o">-</span><span class="n">dbg</span> <span class="n">hplip</span><span class="o">-</span><span class="n">doc</span> <span class="n">hplip</span><span class="o">-</span><span class="n">gui</span> <span class="n">djtools</span>
 </code></pre></div>
-
 
 <p><a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335">source</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">more ...</a>
@@ -569,7 +556,6 @@ Solution:</p>
 <div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
 </code></pre></div>
 
-
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
@@ -617,7 +603,6 @@ The udp connection is perfect with these parameters (in client config):</p>
 <div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
 <span class="err">tun-mtu 1200</span>
 </code></pre></div>
-
 
 <h2>DNS doesn't work through VPN</h2>
 <p>Symptoms: Openvpn connects …</p>
@@ -686,7 +671,6 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <span class="err">s  list sessions</span>
 <span class="err">$  name session</span>
 </code></pre></div>
-
 
 <h3>Windows (tabs)</h3>
 <div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
@@ -760,11 +744,9 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <span class="err">mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share</span>
 </code></pre></div>
 
-
 <p>To allow write access one has to specify owning user and group:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share</span>
 </code></pre></div>
-
 
 <h2>Unmount …</h2>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>
@@ -834,13 +816,11 @@ I see the icon when i do</p>
 <span class="err">dropbox start</span>
 </code></pre></div>
 
-
 <p>but I cannot click on it.</p>
 <p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
 Don't forget to do</p>
 <div class="highlight"><pre><span></span><code>$ killall nemo
 </code></pre></div>
-
 
 <p>after installation to make it work.</p>
 <h1>Final Solution</h1>

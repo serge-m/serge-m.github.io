@@ -116,36 +116,29 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code>psql -U postgres
 </code></pre></div>
 
-
 <p>Connect to a specific database:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\c database_name;</span>
 </code></pre></div>
-
 
 <p>Quit the psql:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\q</span>
 </code></pre></div>
 
-
 <p>List all databases:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\l</span>
 </code></pre></div>
-
 
 <p>Lists all tables in the current database:</p>
 <div class="highlight"><pre><span></span><code><span class="err">\dt</span>
 </code></pre></div>
 
-
 <p>List all users: </p>
 <div class="highlight"><pre><span></span><code><span class="err">\du</span>
 </code></pre></div>
 
-
 <p>Create a new role <code>username</code> with a password:</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h3>Managing tables</h3>
 <p>Create a new table or a temporary table</p>
@@ -157,49 +150,40 @@ sergem personal public notebook            </a>
 <span class="p">);</span>
 </code></pre></div>
 
-
 <p>Add a new column to a table:</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="n">new_column_name</span> <span class="k">TYPE</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Drop a column in a table:</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">DROP</span> <span class="k">COLUMN</span> <span class="k">column_name</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>Rename a column:</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">column_name</span> <span class="k">TO</span> <span class="n">new_column_name</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Set or remove a default value for a column:</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ALTER</span> <span class="k">COLUMN</span> <span class="p">[</span><span class="k">SET</span> <span class="k">DEFAULT</span> <span class="n">value</span> <span class="o">|</span> <span class="k">DROP</span> <span class="k">DEFAULT</span><span class="p">]</span>
 </code></pre></div>
 
-
 <p>Add a primary key to a table.</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="k">column</span><span class="p">,...);</span>
 </code></pre></div>
-
 
 <p>Remove the primary key from a table.</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> 
 <span class="k">DROP</span> <span class="k">CONSTRAINT</span> <span class="n">primary_key_constraint_name</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>Rename a table.</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">RENAME</span> <span class="k">TO</span> <span class="n">new_table_name</span><span class="p">;</span>
 </code></pre></div>
-
 
 <h2>Credentials via environment variables</h2>
 <div class="highlight"><pre><span></span><code><span class="nv">PGHOST</span><span class="o">=</span><span class="m">10</span>.1.1.1 <span class="se">\</span>
   <span class="nv">PGUSER</span><span class="o">=</span>user <span class="nv">PGPASSWORD</span><span class="o">=</span>password <span class="se">\</span>
   psql my_db  -c <span class="s2">&quot;select * from my_table&quot;</span>
 </code></pre></div>
-
 
 <h2>See also</h2>
 <ul>

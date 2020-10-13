@@ -147,12 +147,10 @@ sergem personal public notebook            </a>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>To exclude some class from the loss function we can follow the advice from the <a href="https://forums.fast.ai/t/image-segmentation-leaving-some-pixels-unlabeled/40967/2">fast ai forum</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">hasLabel = (t != UNLABELED).float()</span>
 <span class="err">loss = mse(p * hasLabel, t * hasLabel)</span>
 </code></pre></div>
-
 
 <p>More specifically one can create a copy of the FlattenedLoss and patch it:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">FlattenedLossWithUnlabeled</span><span class="p">():</span>
@@ -185,7 +183,6 @@ sergem personal public notebook            </a>
         <span class="nb">input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">input</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_2d</span> <span class="k">else</span> <span class="nb">input</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Now use that class in your learner:</p>
 <div class="highlight"><pre><span></span><code><span class="n">learn</span> <span class="o">=</span> <span class="n">your_learner</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>  <span class="n">my_model</span><span class="p">,</span> <span class="n">wd</span><span class="o">=</span><span class="n">wd</span><span class="p">,</span>

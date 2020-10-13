@@ -151,7 +151,6 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt install dconf-editor</span>
 </code></pre></div>
 
-
 <p>Navigate to org &gt; gnome &gt; shell &gt; extensions &gt; dash-to-dock and check isolate-workspaces</p>
 <h3>Show workspace indicator in the main pannel</h3>
 <p>Enable "Workspace Indicator" extension.</p>
@@ -171,7 +170,6 @@ To align windows to the corners I use <a href="https://extensions.gnome.org/exte
 <div class="highlight"><pre><span></span><code><span class="err">xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search</span>
 </code></pre></div>
 
-
 <p>now if you run <code>xdg-open ./</code> or press <code>Super+E</code> nemo starts.</p>
 <p><a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html">source</a></p>
 <h2>Auto completion for fabric</h2>
@@ -189,7 +187,6 @@ complete -F _fab_completion fab
 }
 </code></pre></div>
 
-
 <p>to <code>~/.bash_completion</code>.</p>
 <p><a href="http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/">Source</a></p>
 <h2>Default permissions for directories</h2>
@@ -197,16 +194,13 @@ complete -F _fab_completion fab
 <div class="highlight"><pre><span></span><code><span class="err">u=rwx,g=rx,o=rx</span>
 </code></pre></div>
 
-
 <p>That means that other users, also other groups, will be able to read and execute your files. That is a legacy setting. you can change it by replacing</p>
 <div class="highlight"><pre><span></span><code><span class="err">UMASK       002 </span>
 </code></pre></div>
 
-
 <p>with </p>
 <div class="highlight"><pre><span></span><code><span class="err">UMASK       077</span>
 </code></pre></div>
-
 
 <p>in file <code>/etc/login.defs</code>. Here is the quote from this file:</p>
 <div class="highlight"><pre><span></span><code><span class="err"># UMASK is the default umask value for pam_umask and is used by</span>
@@ -221,7 +215,6 @@ complete -F _fab_completion fab
 <span class="err"># the same as the primary group name: for these, the user permissions will be</span>
 <span class="err"># used as group permissions, e. g. 022 will become 002.</span>
 </code></pre></div>
-
 
 <h1>Useful for server setup</h1>
 <ul>
@@ -240,13 +233,11 @@ complete -F _fab_completion fab
 <span class="err">today at 07:27 PM</span>
 </code></pre></div>
 
-
 <p>+1</p>
 <div class="highlight"><pre><span></span><code><span class="err">Включить и настроить swap</span>
 <span class="err">Включить использование zswap: https://wiki.archlinux.org/index.php/Zswap</span>
 <span class="err">Установить и настроить earlyoom — осторожно, может прибить все процессы</span>
 </code></pre></div>
-
 
 <p>ValdikSS
 today at 08:16 PM</p>

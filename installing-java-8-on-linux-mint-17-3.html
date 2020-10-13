@@ -119,11 +119,9 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <span class="err">sudo update-alternatives --install &quot;/usr/bin/javaws&quot; &quot;javaws&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&quot; 1</span>
 </code></pre></div>
 
-
 <p>Select alternatives:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo update-alternatives --config java</span>
 </code></pre></div>
-
 
 <p>Select an option corresponding to new path. </p>
 <p>Do the same for </p>
@@ -131,11 +129,9 @@ Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <span class="err">sudo update-alternatives --config javaws</span>
 </code></pre></div>
 
-
 <p>Update JAVA_HOME using </p>
 <div class="highlight"><pre><span></span><code><span class="err">gksudo gedit /etc/environment</span>
 </code></pre></div>
-
 
 <p>Don't forget to rerun terminal or reboot.</p>
 <p>Based on <a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre">this thread</a></p>

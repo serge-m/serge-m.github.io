@@ -93,7 +93,6 @@ sergem personal public notebook            </a>
 <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
 </code></pre></div>
 
-
 <h2>Find class implementing certain interface in a module</h2>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_class_from_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
     <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
@@ -130,13 +129,11 @@ sergem personal public notebook            </a>
     <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Output looks like this:</p>
 <div class="highlight"><pre><span></span><code>  <span class="o">--</span><span class="n">scan</span><span class="o">-</span><span class="n">time</span> <span class="p">[</span><span class="n">SCAN_TIME</span><span class="p">]</span>
                         <span class="n">Wait</span> <span class="n">SCAN</span><span class="o">-</span><span class="n">TIME</span> <span class="n">seconds</span> <span class="n">between</span> <span class="n">status</span> <span class="n">checks</span><span class="o">.</span>
                         <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Another tip:
 add '%(default)' to the help parameter to control what is displayed.</p>
@@ -176,21 +173,17 @@ add '%(default)' to the help parameter to control what is displayed.</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
 </code></pre></div>
 
-
 <p>or </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
 </code></pre></div>
-
 
 <p>Delete user</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
 </code></pre></div>
 
-
 <p>Delete the user’s home directory and mail spool:</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
 </code></pre></div>
-
 
 <p>Remove user from a group</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd …</span></code></pre></div>
@@ -222,7 +215,6 @@ add '%(default)' to the help parameter to control what is displayed.</p>
   your hidden code
 <span class="p">&lt;/</span><span class="nt">details</span><span class="p">&gt;</span>
 </code></pre></div>
-
 
 <p>Results:</p>
 <details>
@@ -392,7 +384,6 @@ An open source and collaborative framework for extracting the data you need from
 <div class="highlight"><pre><span></span><code><span class="err">convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf</span>
 </code></pre></div>
 
-
 <p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
 <p><a href="http://stackoverflow.com/questions/23160191/compressing-text-heavy-pdfs-without-ghostscript-and-only-imagemagik-causes-blurr">source</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/combine-images-to-pdf.html">more ...</a>
@@ -501,7 +492,6 @@ two DC motors or one stepper motor<br>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install devilspie</span>
 </code></pre></div>
 
-
 <p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
 <p>How the rule was created</p>
 <p>All rules created …</p>
@@ -541,11 +531,9 @@ two DC motors or one stepper motor<br>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
 </code></pre></div>
 
-
 <p>generate RSA key of length 4096 to file <code>my_key</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
 </code></pre></div>
-
 
 <p>Generate md5 fingerprint of the key (works in newer ubuntu, 16 …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ssh-cheatsheet.html">more ...</a>
@@ -601,12 +589,10 @@ two DC motors or one stepper motor<br>
 <span class="err">No protocol specified</span>
 </code></pre></div>
 
-
 <p>The problem is <code>user2</code> doesn't have access to your screen.
 Solution:</p>
 <div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
 </code></pre></div>
-
 
 <p>Probably not the safest one.</p>
 <p>Source: <a href="http://unix.stackexchange.com/a/108787">thread</a></p>
@@ -740,21 +726,17 @@ Clustering is based on histograms. 1 contributor. No …</p>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
 </code></pre></div>
 
-
 <h3>Delete index</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
 </code></pre></div>
-
 
 <h3>Delete all indices</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
 </code></pre></div>
 
-
 <h3>List of all doc_types in a given index</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
 </code></pre></div>
-
 
 <h2>Running elastic seach …</h2>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/elastic-search-cookbook.html">more ...</a>
@@ -781,7 +763,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
                 <div class="summary"><p>Show git history with branches </p>
 <div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span>
 </code></pre></div>
-
 
 <p>Less nice and shorter</p>
 <div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit …</span></code></pre></div>

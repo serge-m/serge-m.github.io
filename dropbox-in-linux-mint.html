@@ -114,13 +114,11 @@ I see the icon when i do</p>
 <span class="err">dropbox start</span>
 </code></pre></div>
 
-
 <p>but I cannot click on it.</p>
 <p>Installed <a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox">nemo-dropbox</a>. At least now I have "Copy dropbox link" command in menu.
 Don't forget to do</p>
 <div class="highlight"><pre><span></span><code>$ killall nemo
 </code></pre></div>
-
 
 <p>after installation to make it work.</p>
 <h1>Final Solution</h1>
@@ -129,13 +127,11 @@ Don't forget to do</p>
 <div class="highlight"><pre><span></span><code><span class="err">dropbox stop &amp;&amp; dbus-launch dropbox start</span>
 </code></pre></div>
 
-
 <p>Or</p>
 <p>Do: opening 'Preferences' -&gt; 'Startup Applications' and editing the dropbox entry so the command now reads:</p>
 <p>CODE: <a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">SELECT ALL</a></p>
 <div class="highlight"><pre><span></span><code><span class="err">dbus-launch dropbox start</span>
 </code></pre></div>
-
 
 <p>update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (<code>dbus-launch dropbox start</code>)</p>
             </div>

@@ -124,7 +124,6 @@ The udp connection is perfect with these parameters (in client config):</p>
 <span class="err">tun-mtu 1200</span>
 </code></pre></div>
 
-
 <h2>DNS doesn't work through VPN</h2>
 <p>Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping <code>google.com</code>)</p>
 <p><a href="https://bugs.launchpad.net/ubuntu/+source/openvpn/+bug/1211110">Solution</a>:</p>
@@ -137,12 +136,10 @@ The udp connection is perfect with these parameters (in client config):</p>
 <span class="na">dns-priority</span><span class="o">=</span><span class="s">-1</span>
 </code></pre></div>
 
-
 <p>the negative dns-priority means only this dns server will be used.
 Then reload the config file:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">nmcli</span> <span class="n">c</span> <span class="n">reload</span> <span class="o">&lt;</span><span class="n">vpn</span> <span class="n">name</span><span class="o">&gt;</span>
 </code></pre></div>
-
 
 <p>and toggle the vpn.</p>
 <p>/etc/resolv.conf should now only include the one dns ip address defined in the config file.</p>
@@ -169,7 +166,6 @@ init-pki complete<span class="p">;</span> you may now create a CA or requests.
 Your newly created PKI dir is: /easyrsa/pki
 </code></pre></div>
 
-
 <p>build-ca:</p>
 <div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nd">@a1aaf3e31e3a</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="c1"># ./easyrsa build-ca</span>
 <span class="n">Generating</span> <span class="n">a</span> <span class="mi">2048</span> <span class="n">bit</span> <span class="n">RSA</span> <span class="n">private</span> <span class="n">key</span>
@@ -193,7 +189,6 @@ Your newly created PKI dir is: /easyrsa/pki
 <span class="o">/</span><span class="n">easyrsa</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">ca</span><span class="o">.</span><span class="n">crt</span>
 </code></pre></div>
 
-
 <p>Copy <code>ca.crt</code>.</p>
 <div class="highlight"><pre><span></span><code>root@8bb29470d5c0:/easyrsa# ./easyrsa gen-crl
 Using configuration from ./openssl-easyrsa.cnf
@@ -206,7 +201,6 @@ An updated CRL has been created.
 CRL file: /ca/pki/crl.pem
 </code></pre></div>
 
-
 <p>Copy <code>crl.pem</code></p>
 <h4>On server</h4>
 <p>We have to initialize PKI (private key infrastructure) here as well, then we create a request to CA.</p>
@@ -215,7 +209,6 @@ CRL file: /ca/pki/crl.pem
 <span class="n">init</span><span class="o">-</span><span class="n">pki</span><span class="w"> </span><span class="n">complete</span><span class="p">;</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">CA</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">requests</span><span class="p">.</span><span class="w"></span>
 <span class="n">Your</span><span class="w"> </span><span class="n">newly</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="n">PKI</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="k">is</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="w"></span>
 </code></pre></div>
-
 
 <div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">req</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="n">nopass</span><span class="w"></span>
 <span class="n">Generating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="nc">bit</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="n">private</span><span class="w"> </span><span class="k">key</span><span class="w"></span>
@@ -237,7 +230,6 @@ CRL file: /ca/pki/crl.pem
 <span class="k">key</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="k">key</span><span class="w"></span>
 </code></pre></div>
 
-
 <p>Copy <code>server.req</code> to CA.</p>
 <h4>On CA</h4>
 <p>Import:</p>
@@ -246,7 +238,6 @@ CRL file: /ca/pki/crl.pem
 <span class="n">The</span> <span class="n">request</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">imported</span> <span class="n">with</span> <span class="n">a</span> <span class="kt">short</span> <span class="n">name</span> <span class="nl">of</span><span class="p">:</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
 <span class="n">You</span> <span class="n">may</span> <span class="n">now</span> <span class="n">use</span> <span class="n">this</span> <span class="n">name</span> <span class="n">to</span> <span class="n">perform</span> <span class="n">signing</span> <span class="n">operations</span> <span class="n">on</span> <span class="n">this</span> <span class="n">request</span><span class="p">.</span>
 </code></pre></div>
-
 
 <p>Sign <code>vpn-server</code> with type <code>server</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">root</span><span class="mi">@8</span><span class="nl">bb29470d5c0</span><span class="p">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span> <span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span> <span class="n">sign</span><span class="o">-</span><span class="n">req</span> <span class="n">server</span> <span class="n">vpn</span><span class="o">-</span><span class="n">server</span>
@@ -282,7 +273,6 @@ CRL file: /ca/pki/crl.pem
 <span class="n">Certificate</span> <span class="n">created</span> <span class="nl">at</span><span class="p">:</span> <span class="o">/</span><span class="n">ca</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">issued</span><span class="o">/</span><span class="n">vpn</span><span class="o">-</span><span class="n">server</span><span class="p">.</span><span class="n">crt</span>
 </code></pre></div>
 
-
 <h3>Launcing OpenVPN server</h3>
 <h4>Configuration</h4>
 <div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">dh</span><span class="w"></span>
@@ -295,21 +285,17 @@ CRL file: /ca/pki/crl.pem
 <span class="n">DH</span><span class="w"> </span><span class="k">parameters</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">dh</span><span class="p">.</span><span class="n">pem</span><span class="w"></span>
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code><span class="err">root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key</span>
 </code></pre></div>
-
 
 <p>Create missing directories:</p>
 <div class="highlight"><pre><span></span><code><span class="n">mkdir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span><span class="n">ccd</span>
 <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">/</span>
 </code></pre></div>
 
-
 <p>Create non-priviledged user <code>openvpn</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn</span>
 </code></pre></div>
-
 
 <p>Copy to <code>/etc/openvpn</code> the following files:
 * from CA: 
@@ -374,17 +360,14 @@ mute 20
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
 </code></pre></div>
 
-
 <h4>Launching service</h4>
 <div class="highlight"><pre><span></span><code><span class="err">sudo service openvpn restart</span>
 </code></pre></div>
-
 
 <p>After that you have to see logs in <code>/var/log/openvpn/</code></p>
 <p>If it doesn't start debug configuration with manual run:</p>
 <div class="highlight"><pre><span></span><code><span class="err">openvpn /etc/openvpn/server.conf</span>
 </code></pre></div>
-
 
 <h3>Launching client</h3>
 <p>On the client we want to have a password for a key:</p>
@@ -392,16 +375,13 @@ mute 20
 <span class="err">root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 </span>
 </code></pre></div>
 
-
 <p>Then copy request to CA, import.</p>
 <div class="highlight"><pre><span></span><code>$ ./easy-rsa sign-req &lt;path-to-client1.req&gt; client1
 </code></pre></div>
 
-
 <p>Signing request for a client:</p>
 <div class="highlight"><pre><span></span><code>$ ./easy-rsa sign-req client client1
 </code></pre></div>
-
 
 <p>Copy signed certificates and other necessary files to the client.</p>
 <h4>OpenVPN config for client</h4>
@@ -428,13 +408,11 @@ mute 20
 <span class="c1">#log-append /var/log/openvpn/openvpn-client.log</span>
 </code></pre></div>
 
-
 <h2>How to revoke a certificate (deactivate a user)</h2>
 <p>On CA:</p>
 <div class="highlight"><pre><span></span><code>$ ./easyrsa revoke &lt;client-name&gt;
 $ ./easyrsa gen-crl
 </code></pre></div>
-
 
 <p>Then you have to upload new crl.pem to your server and restart the server.</p>
             </div>

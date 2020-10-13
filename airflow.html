@@ -129,28 +129,23 @@ You can do something like this:</p>
 <span class="n">start_date_for_airflow</span> <span class="o">=</span> <span class="n">start_date_local</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># we convert to UTC and remove timezone</span>
 </code></pre></div>
 
-
 <h2>Running with LocalExecutor and Postgres from docker</h2>
 <p>We will run postgres in docker:</p>
 <div class="highlight"><pre><span></span><code><span class="err">docker run -it -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres</span>
 </code></pre></div>
 
-
 <p>Now we can specify in <code>airflow.cfg</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sql_alchemy_conn = postgresql://postgres:postgres@localhost:5432/postgres</span>
 </code></pre></div>
-
 
 <p>and </p>
 <div class="highlight"><pre><span></span><code><span class="err">executor = LocalExecutor</span>
 </code></pre></div>
 
-
 <p>Then run </p>
 <div class="highlight"><pre><span></span><code><span class="err">airflow initdb</span>
 <span class="err">airflow scheduler</span>
 </code></pre></div>
-
 
 <h2>How to specify AWS region for EmrCreateJobFlowOperator</h2>
 <p>There is no parameter in <code>EmrCreateJobFlowOperator</code> to specify<br>
@@ -163,7 +158,6 @@ Here we create connection <code>aws_my</code> with AWS region <code>eu-west-1</c
 <div class="highlight"><pre><span></span><code><span class="err">airflow connections -a --conn_id &#39;aws_my&#39; --conn_uri &#39;aws:&#39; --conn_extra &#39;{&quot;region_name&quot;: &quot;eu-west-1&quot;}&#39;</span>
 </code></pre></div>
 
-
 <p>Now we can use new connection for <code>EmrCreateJobFlowOperator</code> 
 to <strong>create Spark cluster on EMR</strong>.</p>
 <div class="highlight"><pre><span></span><code><span class="err">cluster_creator = EmrCreateJobFlowOperator(</span>
@@ -174,7 +168,6 @@ to <strong>create Spark cluster on EMR</strong>.</p>
 <span class="err">    dag=your_dag</span>
 <span class="err">) </span>
 </code></pre></div>
-
 
 <p>Done</p>
             </div>

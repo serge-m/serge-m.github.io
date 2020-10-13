@@ -143,14 +143,14 @@ sergem personal public notebook            </a>
 <p><a href="http://raspberrypi.stackexchange.com/a/36317">With  PCA9685 PWM Board</a> (stackexchange thread)</p>
 <p><a href="https://www.raspberrypi.org/forums/viewtopic.php?t=46732">One more thread</a></p>
 <h3>Controlling multiple servos</h3>
-<p>To control multiple servos you can use PCA9685 controller. Connection is shown below. It's better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.
+<p>To control multiple servos you can use PCA9685 controller. Connection is shown below. It's better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.</p>
 <div>
 <img src="https://serge-m.github.io/2016/12/servo_control_pca9685_2.jpg" style="width: 50%; height: 50%">
 <img src="https://serge-m.github.io/2016/12/servo_control_pca9685_1.jpg" style="width: 50%; height: 50%">
 <img src="https://serge-m.github.io/2016/12/servo_control_pca9685_3.jpg" style="width: 50%; height: 50%">
 <img src="https://serge-m.github.io/2016/12/servo_control_pca9685_4.jpg" style="width: 50%; height: 50%">
 </div>
-You have to enable I2C interface first with <code>sudo raspi-config</code>. Choose "Interfacing Options" -&gt; "I2C" -&gt; "Enable".</p>
+<p>You have to enable I2C interface first with <code>sudo raspi-config</code>. Choose "Interfacing Options" -&gt; "I2C" -&gt; "Enable".</p>
 <p>Now installing the diagnostic tool and running:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">i2c</span><span class="o">-</span><span class="n">tools</span>
 <span class="n">sudo</span> <span class="n">i2cdetect</span> <span class="o">-</span><span class="n">y</span> <span class="mi">1</span>
@@ -165,11 +165,9 @@ You have to enable I2C interface first with <code>sudo raspi-config</code>. Choo
 <span class="mi">70</span><span class="p">:</span> <span class="mi">70</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span> <span class="o">--</span>                         
 </code></pre></div>
 
-
 <p>Now we can install library:</p>
 <div class="highlight"><pre><span></span><code><span class="err">pip install Adafruit_PCA9685</span>
 </code></pre></div>
-
 
 <p>and run a simple program:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># sample.py</span>
@@ -221,11 +219,9 @@ You have to enable I2C interface first with <code>sudo raspi-config</code>. Choo
 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>running:</p>
 <div class="highlight"><pre><span></span><code><span class="err">python sample.py</span>
 </code></pre></div>
-
 
 <p>To control more than 16 servose one can chain multiple drivers. See <a href="https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all#chaining-drivers">Chaining Drivers section</a> for details. Some soldering is required to assign a unique address for each driver.</p>
 <p>See alow:
@@ -258,7 +254,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <div class="highlight"><pre><span></span><code><span class="err">ssh -Y user@raspberrypi-url</span>
 </code></pre></div>
 
-
 <h2>Access rasbberry Pi without monitor and ethernet</h2>
 <p>Assuming we have an operating system (raspbian) installed.</p>
 <ol>
@@ -275,7 +270,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <span class="err">}</span>
 </code></pre></div>
 
-
 <p>In the end the file should look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="n">country</span><span class="o">=</span><span class="n">GB</span>
 <span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="n">GROUP</span><span class="o">=</span><span class="n">netdev</span>
@@ -286,7 +280,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <span class="n">psk</span><span class="o">=</span><span class="s2">&quot;my-network-pass&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <p><code>country</code> field is essential. Wifi wont work without it. In the log you will see <code>raspberrypi systemd[1]: Started Disable WiFi if country not set.</code></p>
 <p>If you need to support multiple wifi connections use <code>id_str</code> field:</p>
@@ -303,7 +296,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <span class="err">}</span>
 </code></pre></div>
 
-
 <ol>
 <li>
 <p>Enable SSH access. Create an empty file <code>ssh</code> in <code>/boot/</code>.</p>
@@ -316,11 +308,9 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <div class="highlight"><pre><span></span><code><span class="err">ssh pi@raspberrypi</span>
 </code></pre></div>
 
-
 <p>or </p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;</span>
 </code></pre></div>
-
 
 <h2>Reading input (button) from GPIO</h2>
 <p><a href="http://raspi.tv/2013/rpi-gpio-basics-4-setting-up-rpi-gpio-numbering-systems-and-inputs">without interrupts, raspi.tv</a></p>
@@ -332,7 +322,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Requirements for running donkey car:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev</span>
 </code></pre></div>
-
 
 <h2>Other</h2>
 <ul>

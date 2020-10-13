@@ -122,7 +122,6 @@ Return on error: error code <span class="m">1</span>,  .<span class="se">\s</spa
 Frame number: <span class="m">0</span>
 </code></pre></div>
 
-
 <p>I started debug and found out the error appears in </p>
 <div class="highlight"><pre><span></span><code><span class="c">MFXVideoSession::mfxStatus Init(mfxIMPL impl, mfxVersion *ver)</span>
 <span class="err">{</span>
@@ -130,16 +129,13 @@ Frame number: <span class="m">0</span>
 <span class="err">}</span>
 </code></pre></div>
 
-
 <p>Error code</p>
 <div class="highlight"><pre><span></span><code><span class="err"> MFX_ERR_UNSUPPORTED                 = -3,   /* undeveloped feature */</span>
 </code></pre></div>
 
-
 <p>Of course, the cause was in missing dll.</p>
 <div class="highlight"><pre><span></span><code><span class="err">libmfxsw32.dlllibmfxsw64.dll</span>
 </code></pre></div>
-
 
 <p>After I added it to console's directory everything became fine.</p>
 <p>PS I could not build sample_encode with Visual Studio 2008. So use 2010 instead.</p>

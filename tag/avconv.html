@@ -95,11 +95,9 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code>avconv -i input_video.mp4 -qmax <span class="m">1</span> -qmin <span class="m">1</span> images_%05d.jpg
 </code></pre></div>
 
-
 <p>crop video:</p>
 <div class="highlight"><pre><span></span><code>avconv -i input.avi -vf <span class="nv">crop</span><span class="o">=</span>&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
 </code></pre></div>
-
 
 <p>create gif using </p>
 <p>http://gifmaker.me/</p>
@@ -161,7 +159,6 @@ sergem personal public notebook            </a>
                 <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
 <div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
 </code></pre></div>
-
 
 <p>size of input video is 1920x1088, format YUV420 progressive.</p>
 <p>UPD:

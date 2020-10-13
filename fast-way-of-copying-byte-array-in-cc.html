@@ -127,11 +127,9 @@ sergem personal public notebook            </a>
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>Array <code>conf_</code> is defined as follows: </p>
 <div class="highlight"><pre><span></span><code>    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">*&gt;</span> <span class="n">conf_</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>BYTE is unsigned char. That code is written with no doubt about software performance. It just works. When I do so I hope compiler make it better for me.
 This fragment takes about <strong>45 ms</strong> for copying of 2 images with ( 1980x1080 pixels ) x 3 planes = 6.2 MPixels.
@@ -150,7 +148,6 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>It takes about <strong>35 ms </strong>per full copy. </p>
 <p>Much better solution:</p>
 <div class="highlight"><pre><span></span><code>    <span class="c1">// Copy several buffers (images)</span>
@@ -168,7 +165,6 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
     <span class="p">}</span>
 </code></pre></div>
 
-
 <p>Everything is the same except for using additional temporary variable. This version runs for <strong>8 ms</strong>. 
 UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this code.</p>
 <p>And even better solution for Visual Studio:</p>
@@ -183,7 +179,6 @@ UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this cod
        <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span> <span class="n">arrSrc</span><span class="p">,</span> <span class="n">arrSrc</span> <span class="o">+</span> <span class="n">sizeOfArray</span><span class="p">,</span> <span class="n">arrDst</span> <span class="p">);</span>
     <span class="p">}</span>
 </code></pre></div>
-
 
 <p>It uses <strong>copy </strong>function from standard C++ library. Time of this version is <strong>2 ms</strong>. <br>
 UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this code too, but it seems that for multiple runs the last version is slightly slower than previous one for ICC. My previous time measuremets have integer precision. So for 50 frames ICC+last-version got <strong>141 ms</strong> and ICC+previous-version got <strong>112 ms.</strong> That is strange.</p>

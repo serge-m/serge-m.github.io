@@ -144,13 +144,11 @@ sergem personal public notebook            </a>
 <span class="err">        ],</span>
 </code></pre></div>
 
-
 <p>Set <code>KeepJobFlowAliveWhenNoSteps: true</code> and set up all the required python libraries using bootstrap scripts.</p>
 <p>After cluster is created and bootstrapped you can get an address of the master in the aws console. Create a ssh tunnel to the port 9443 on the master. it is a port of jupyterhub:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="n">HOST</span><span class="o">=&lt;</span><span class="n">public</span> <span class="n">address</span> <span class="n">of</span> <span class="n">your</span> <span class="k">master</span><span class="o">&gt;</span> 
 <span class="n">ssh</span> <span class="o">-</span><span class="n">i</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">your_private_key</span><span class="o">.</span><span class="n">pem</span> <span class="o">-</span><span class="n">L</span> <span class="mi">9443</span><span class="p">:</span><span class="o">$</span><span class="n">HOST</span><span class="p">:</span><span class="mi">9443</span> <span class="n">hadoop</span><span class="err">@</span><span class="o">$</span><span class="n">HOST</span>
 </code></pre></div>
-
 
 <p>Now when you connect to your local 9443 port it is redirected to the master's 9443 port.</p>
 <p>Open the browser an connect to <a href="https://localhost:9443/hub/login">https://localhost:9443/hub/login</a>. HTTPS and the endpoint is important!</p>
@@ -162,11 +160,9 @@ sergem personal public notebook            </a>
 <span class="n">Invalid</span> <span class="n">status</span> <span class="n">code</span> <span class="s1">&#39;404&#39;</span> <span class="n">from</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ip</span><span class="o">-</span><span class="mi">123</span><span class="o">-</span><span class="mi">123</span><span class="o">-</span><span class="mi">123</span><span class="o">-</span><span class="mf">123.</span><span class="n">eu</span><span class="o">-</span><span class="n">west</span><span class="o">-</span><span class="mf">1.</span><span class="n">compute</span><span class="o">.</span><span class="n">internal</span><span class="p">:</span><span class="mi">8998</span><span class="o">/</span><span class="n">sessions</span><span class="o">/</span><span class="mi">1</span> <span class="n">with</span> <span class="n">error</span> <span class="n">payload</span><span class="p">:</span> <span class="s2">&quot;Session &#39;1&#39; not found.&quot;</span>
 </code></pre></div>
 
-
 <p>To fix it add the following to your emr  cluster  <code>Configurations</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">[{&#39;classification&#39;: &#39;livy-conf&#39;,&#39;Properties&#39;: {&#39;livy.server.session.timeout&#39;:&#39;5h&#39;}}]</span>
 </code></pre></div>
-
 
 <p><a href="https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap">source</a></p>
 <h2>See also</h2>

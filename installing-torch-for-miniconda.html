@@ -118,7 +118,6 @@ Linking CXX executable mshrable</p>
 <span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr</span>
 </code></pre></div>
 
-
 <p>The same was for python3 and python2 environments. 
 The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</p>
 <p>Solution from <a href="https://github.com/ContinuumIO/anaconda-issues/issues/152">here</a></p>
@@ -126,11 +125,9 @@ The solution (at least for python 2) was to remove miniconda from path and compi
 <div class="highlight"><pre><span></span><code><span class="err">conda remove --force readline</span>
 </code></pre></div>
 
-
 <p>and install the python bindings with</p>
 <div class="highlight"><pre><span></span><code><span class="err">pip install readline</span>
 </code></pre></div>
-
 
 <p>That way, I presume it is using the system <code>readline</code></p>
             </div>

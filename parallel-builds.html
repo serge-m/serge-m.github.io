@@ -119,22 +119,18 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">make -j8</span>
 </code></pre></div>
 
-
 <p>Parallelization for cmake:</p>
 <div class="highlight"><pre><span></span><code><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
 </code></pre></div>
-
 
 <p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
 <div class="highlight"><pre><span></span><code><span class="err">python setup.py install</span>
 </code></pre></div>
 
-
 <p>Setup script doesn't accept parameters.
 Then you could pass them through environment variables:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="n">MAKEFLAGS</span><span class="o">=</span><span class="s2">&quot;-j 8&quot;</span>
 </code></pre></div>
-
 
 <p>see also
 * <a href="https://programming.d3.ru/doklad-pro-cmake-s-konferentsii-c-russia2018-1783629/">intro to CMake</a> video, russian.</p>

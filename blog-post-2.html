@@ -114,7 +114,6 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">int * p = static_cast&lt;int*&gt;(malloc(100));</span>
 </code></pre></div>
 
-
 <p>Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции <code>undefined</code>. То есть, возможно такое приведение: <code>static_cast&lt;Derived*&gt;(pBase)</code>, даже если <code>pBase</code> не указывает на <code>Derived</code>, но программа при этом будет вести себя странно.</p>
             </div>
             <!-- /.entry-content -->

@@ -129,14 +129,12 @@ sergem personal public notebook            </a>
 <span class="o">-</span> <span class="n">make</span> <span class="n">github</span>
 </code></pre></div>
 
-
 <p>Here we ask Travis to use python 3, build only master, install pelican and markdown and run <code>make github</code> command in the end.</p>
 <p>Installing markdown is important here. Without it you can end up with failures. Pelican will say:</p>
 <div class="highlight"><pre><span></span><code><span class="n">WARNING</span><span class="o">:</span> <span class="n">No</span> <span class="n">valid</span> <span class="n">files</span> <span class="n">found</span> <span class="k">in</span> <span class="n">content</span><span class="o">.</span>
 <span class="n">WARNING</span><span class="o">:</span> <span class="n">sitemap</span> <span class="n">plugin</span><span class="o">:</span> <span class="n">SITEMAP</span><span class="o">[</span><span class="s1">&#39;format&#39;</span><span class="o">]</span> <span class="n">must</span> <span class="n">be</span> <span class="err">`</span><span class="n">txt</span><span class="s1">&#39; or `xml&#39;</span>
 <span class="n">WARNING</span><span class="o">:</span> <span class="n">sitemap</span> <span class="n">plugin</span><span class="o">:</span> <span class="n">Setting</span> <span class="n">SITEMAP</span><span class="o">[</span><span class="s1">&#39;format&#39;</span><span class="o">]</span> <span class="n">on</span> <span class="err">`</span><span class="n">xml</span><span class="err">&#39;</span>
 </code></pre></div>
-
 
 <p>That means Pelican doesn't know about markdown format.</p>
 <p>Now you need to configure Makefile and <code>github</code> target. I modified default Pelicans <code>github</code> target as follows. Remove lines startign from "#" - they are just comments.</p>
@@ -162,7 +160,6 @@ sergem personal public notebook            </a>
     <span class="n">echo</span> <span class="s2">&quot;done&quot;</span>
 </code></pre></div>
 
-
 <p>At this point you will likely get access errors during the build on travis. The cause is that git on travis doesn't have access to modifying your html repository.</p>
 <p>I followed the  guide from <a href="https://github.com/alrra/travis-scripts/blob/master/doc/github-deploy-keys.md">here</a> sections 1 -- 2.5. Instead of section 2.6:
 1. I put my encoded private key <code>blog_deploy_key.enc</code> to <code>.travis/blog_deploy_key.enc</code>
@@ -177,7 +174,6 @@ sergem personal public notebook            </a>
 <span class="err">              &quot;  LogLevel ERROR&quot; &gt;&gt; ~/.ssh/config</span>
 <span class="err">- make github</span>
 </code></pre></div>
-
 
 <p>Keys <code>VALUE_FROM_TRAVIS</code> you get while making steps 1 - 2.5 from the guide.</p>
             </div>

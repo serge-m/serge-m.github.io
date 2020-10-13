@@ -152,6 +152,12 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span>git config --global --unset credential.helper
 </pre></div>
 </div>
+<div class="section" id="export-a-repo-to-an-archive-without-git">
+<h2>Export a repo to an archive without .git</h2>
+<div class="highlight"><pre><span></span>git archive --prefix<span class="o">=</span>ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
+</pre></div>
+<p><cite>tar</cite> archive is also supported. More info at <a class="reference external" href="https://git-scm.com/docs/git-archive">git-archive doc</a>.</p>
+</div>
 
             </div>
             <!-- /.entry-content -->

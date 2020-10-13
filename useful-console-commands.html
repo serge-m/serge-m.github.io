@@ -123,67 +123,54 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
 </code></pre></div>
 
-
 <p>or </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
 </code></pre></div>
-
 
 <p>Delete user</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
 </code></pre></div>
 
-
 <p>Delete the user’s home directory and mail spool:</p>
 <div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
 </code></pre></div>
-
 
 <p>Remove user from a group</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd -d user group</span>
 </code></pre></div>
 
-
 <p>list all users:</p>
 <div class="highlight"><pre><span></span><code>$ getent passwd
 </code></pre></div>
-
 
 <p>list all groups:</p>
 <div class="highlight"><pre><span></span><code>$ getent group
 </code></pre></div>
 
-
 <p>list all groups of the current user:</p>
 <div class="highlight"><pre><span></span><code>$ groups
 </code></pre></div>
-
 
 <p>list all groups of a user:</p>
 <div class="highlight"><pre><span></span><code>$ groups &lt;user&gt;
 </code></pre></div>
 
-
 <p>Change shell for user <code>user</code> to bash</p>
 <div class="highlight"><pre><span></span><code><span class="err">chsh -s /bin/bash user</span>
 </code></pre></div>
-
 
 <p>Disable user from login including ssh</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod --expiredate 1 user1</span>
 </code></pre></div>
 
-
 <p>Reenable the user:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo usermod --expiredate &quot;&quot; user1</span>
 </code></pre></div>
-
 
 <h1>Processes</h1>
 <p>Kill processes occupying a certain port:</p>
 <div class="highlight"><pre><span></span><code><span class="err">fuser -k 8080/tcp</span>
 </code></pre></div>
-
 
 <h2>Detach process</h2>
 <p>Sometimes I need to detach from a process running on a remote machine so that it continues running after I logout.</p>
@@ -202,7 +189,6 @@ sergem personal public notebook            </a>
 $ <span class="nb">exit</span>
 </code></pre></div>
 
-
 <p><a href="https://en.wikipedia.org/wiki/Nohup">wiki</a></p>
 <h1>Network</h1>
 <h2>Scan IP range</h2>
@@ -211,11 +197,9 @@ $ <span class="nb">exit</span>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install nmap</span>
 </code></pre></div>
 
-
 <p>Once it is installed, enter</p>
 <div class="highlight"><pre><span></span><code><span class="err">nmap -sn 192.168.1.0/24</span>
 </code></pre></div>
-
 
 <p>This will show you which hosts responded to ping requests on the network between 192.168.1.0 and 192.168.1.255.</p>
 <p><a href="https://askubuntu.com/a/224567">Source</a></p>
@@ -224,16 +208,13 @@ $ <span class="nb">exit</span>
 <div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i &quot;s/text_to_find/text_to_put/g&quot;</span>
 </code></pre></div>
 
-
 <p>To keep original files with <code>.original</code> extension:</p>
 <div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i.original &quot;s/text_to_find/text_to_put/g&quot;</span>
 </code></pre></div>
 
-
 <p>If your text contain slashes, you should use another delimiter:</p>
 <div class="highlight"><pre><span></span><code><span class="err">find . -type f | xargs sed -i.original &quot;s|text/to/find/|text/to/put|g&quot;</span>
 </code></pre></div>
-
 
 <h1>Misc</h1>
 <p>Encode/decode binary file to ascii using command line </p>
@@ -241,7 +222,6 @@ $ <span class="nb">exit</span>
 <p>Restart now:</p>
 <div class="highlight"><pre><span></span><code><span class="err">shutdown -r 0</span>
 </code></pre></div>
-
 
 <h2>Disk space</h2>
 <p><code>df</code> - check free disk space</p>

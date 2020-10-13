@@ -168,22 +168,18 @@ the client will see a list of users that we get from backend.</p>
     <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Now you can already launch your backend, but frontend will not work of course.</p>
 <div class="highlight"><pre><span></span><code><span class="err">FLASK_DEBUG=1 FLASK_APP=api.py python -m flask run --port=5000</span>
 </code></pre></div>
-
 
 <p>How to check:</p>
 <div class="highlight"><pre><span></span><code><span class="err">curl localhost:5000/api/users</span>
 </code></pre></div>
 
-
 <h2>writting frontend</h2>
 <p>First we need to install <a href="">node js</a> and ember:</p>
 <div class="highlight"><pre><span></span><code>$ npm install -g ember-cli
 </code></pre></div>
-
 
 <p>Initialize new ember project</p>
 <div class="highlight"><pre><span></span><code>$ ember new frontend
@@ -228,7 +224,6 @@ NPM: Installed dependencies
 Successfully initialized git.
 </code></pre></div>
 
-
 <p>Now we need to generate couple of new files:</p>
 <div class="highlight"><pre><span></span><code>$ ember create model user
 $ ember generate  model user
@@ -236,7 +231,6 @@ $ ember generate route users
 $ ember generate route index
 $ ember generate adapter user
 </code></pre></div>
-
 
 <p>We need an adapter to specify the location of the endpoint where 
 Ember can get data for users. Here we want Ember to look for data on the same server
@@ -250,7 +244,6 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
 <span class="p">});</span>
 </code></pre></div>
 
-
 <p>We define <code>user</code> model that contains only <code>info</code> attribute.</p>
 <div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
 <span class="kn">import</span> <span class="nn">DS</span> <span class="nn">from</span> <span class="s1">&#39;ember-data&#39;</span><span class="p">;</span>
@@ -259,7 +252,6 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
   <span class="n">info</span><span class="p">:</span> <span class="n">DS</span><span class="o">.</span><span class="n">attr</span><span class="p">()</span>  
 <span class="p">});</span>
 </code></pre></div>
-
 
 <p>We add route <code>/users</code> to display all available users</p>
 <div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">router</span><span class="o">.</span><span class="n">js</span>
@@ -278,7 +270,6 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
 <span class="n">export</span> <span class="n">default</span> <span class="n">Router</span><span class="p">;</span>
 </code></pre></div>
 
-
 <p>Data will be loaded according to the adapter's settings. 
 <code>user</code> is converted to <code>users</code> automatically.</p>
 <div class="highlight"><pre><span></span><code><span class="o">//</span> <span class="nb">file</span> <span class="n">frontend</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">routes</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">js</span>
@@ -292,7 +283,6 @@ and port but with suffix <code>/api</code>. For example if you server the fronte
   <span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div>
-
 
 <p>Here we define a template for html code for the whole application. 
 There will be a header and a link to <code>users</code> page.</p>
@@ -317,7 +307,6 @@ There will be a header and a link to <code>users</code> page.</p>
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 
-
 <p>Here we define how output for users will look like. 
 We iterate through all entities and display only attribute <code>info</code> for them.</p>
 <div class="highlight"><pre><span></span><code>// file frontend/app/templates/users.hbs
@@ -328,22 +317,18 @@ We iterate through all entities and display only attribute <code>info</code> for
 <span class="cp">{{</span><span class="o">/</span><span class="nv">each</span><span class="cp">}}</span>
 </code></pre></div>
 
-
 <h2>How to run in debug mode</h2>
 <p>First we run Flask-based api from <code>backend/</code></p>
 <div class="highlight"><pre><span></span><code>$ <span class="nv">FLASK_DEBUG</span><span class="o">=</span><span class="m">1</span> <span class="nv">FLASK_APP</span><span class="o">=</span>api.py python -m flask run
 </code></pre></div>
 
-
 <p>Maybe here you need to install depencencies from <code>frontend/</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">npm install</span>
 </code></pre></div>
 
-
 <p>Now let's run Ember server in debug mode fom <code>frontend/</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="err">ember serve --proxy http://localhost:5000</span>
 </code></pre></div>
-
 
 <p>Ember server needs to know where API is located. This is done with option <code>--proxy http://localhost:5000</code>.
 Otherwise Ember tries to get data from <code>http://localhost:4200/api/users</code></p>

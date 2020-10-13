@@ -112,7 +112,6 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
 </code></pre></div>
 
-
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
@@ -130,12 +129,10 @@ sergem personal public notebook            </a>
 <span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="k">user</span><span class="p">.</span><span class="n">target</span><span class="w"></span>
 </code></pre></div>
 
-
 <p>Here we first stop and delete the docker container. If it doesn't exist we continue (there is a "-" in before the command).</p>
 <p>Run</p>
 <div class="highlight"><pre><span></span><code><span class="err">systemctl enable your-service </span>
 </code></pre></div>
-
 
 <h2>Commands</h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># prints the status</span>
@@ -152,19 +149,16 @@ sergem personal public notebook            </a>
 <span class="n">systemctl</span> <span class="n">stop</span> <span class="n">levels_tracker</span><span class="o">.</span><span class="n">service</span> 
 </code></pre></div>
 
-
 <h2>Recipies</h2>
 <h3>Specify working directory</h3>
 <div class="highlight"><pre><span></span><code><span class="k">[Service]</span>
 <span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/home/pi</span>
 </code></pre></div>
 
-
 <h3>Running python script from virtual environment</h3>
 <p>Just specify python interpreter from the environment:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ExecStart=&lt;absolute path to your environment&gt;/bin/python file_to_run.py</span>
 </code></pre></div>
-
 
 <h3>Environment variables</h3>
 <p>You can set environment variables that are used for your process</p>
@@ -172,23 +166,19 @@ sergem personal public notebook            </a>
 <span class="na">Environment</span><span class="o">=</span><span class="s">VARIABLE=value</span>
 </code></pre></div>
 
-
 <p>Now you can use it in the <code>ExecStart</code> command for example:</p>
 <div class="highlight"><pre><span></span><code>ExecStart=<span class="nt">&lt;absolute</span> <span class="err">path</span> <span class="err">to</span> <span class="err">your</span> <span class="err">environment</span><span class="nt">&gt;</span>/bin/python file_to_run.py <span class="cp">${</span><span class="n">VARIABLE</span><span class="cp">}</span>
 </code></pre></div>
-
 
 <h3>How to stdout of python-based service in syslog</h3>
 <p>Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:</p>
 <div class="highlight"><pre><span></span><code><span class="err">StandardOutput=syslog</span>
 </code></pre></div>
 
-
 <p>You may see nothing in the logs. You should set environment variable for python <code>PYTHONUNBUFFERED</code> to see the results immediately:</p>
 <div class="highlight"><pre><span></span><code><span class="n">#in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="o">[</span><span class="n">Service</span><span class="o">]</span><span class="w"> </span><span class="k">section</span><span class="err">:</span><span class="w"></span>
 <span class="n">Environment</span><span class="o">=</span><span class="ss">&quot;PYTHONUNBUFFERED=1&quot;</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>source: <a href="https://unix.stackexchange.com/questions/164987/output-of-a-python-script-running-as-unit-is-out-of-order-while-shells-seems-unn">[here]</a></p>
 <p>Probably better approach when you are allowed to install modules: https://medium.com/@trstringer/logging-to-systemd-in-python-45150662440a</p>

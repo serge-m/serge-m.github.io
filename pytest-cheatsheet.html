@@ -126,12 +126,10 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">pytest -m &quot;integration&quot;</span>
 </code></pre></div>
 
-
 <p>if you want to run only tests that have "@pytest.mark.integration" annotation.</p>
 <p>Similarly you can run only tests that don't are not marked.</p>
 <div class="highlight"><pre><span></span><code><span class="err">pytest -m &quot;not your_mark&quot;</span>
 </code></pre></div>
-
 
 <p>That command will test everything that is not marked as "your_mark".</p>
 <h2>How to verify exception message using pytest</h2>
@@ -142,7 +140,6 @@ sergem personal public notebook            </a>
 
     <span class="k">assert</span> <span class="s1">&#39;Failed to establish a new connection&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">excinfo</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p><code>excinfo</code> here stays defined also outside of the context scope.</p>
 <h2>Running pytests on Travis CI</h2>
@@ -166,19 +163,16 @@ URL: https://travis-ci.org/profile/YOUR_GITHUB_NAME</p>
 <span class="n">global</span><span class="o">:</span>
 </code></pre></div>
 
-
 <p>[Optional] Add a status image like this
 <a href="https://travis-ci.org/serge-m/blog-sources"><img alt="Build Status" src="https://travis-ci.org/serge-m/blog-sources.svg?branch=master"></a>
 to your <code>readme.md</code> file:</p>
 <div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">!</span><span class="p">[</span><span class="n">Build</span> <span class="n">Status</span><span class="p">](</span><span class="nl">https</span><span class="p">:</span><span class="c1">//travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME.svg?branch=master)](https://travis-ci.org/YOUR_GITHUB_NAME/YOUR_REPO_NAME)</span>
 </code></pre></div>
 
-
 <h2>Running pytest with code coverage reports</h2>
 <p>One have to install <code>pytest-cov</code> module first. Then</p>
 <div class="highlight"><pre><span></span><code><span class="err">py.test --cov=&lt;DIRECTORY_WITH_SOURCES&gt; --cov-report html:htmlcov --cov-report term:skip-covered &lt;DIRECTORY_WITH_TESTS&gt;</span>
 </code></pre></div>
-
 
 <p>This command runs tests with code coverage report. Reports are printed in console (<code>--cov-report term:skip-covered</code>) and as html files in <code>htmlcov</code> directory (<code>--cov-report html:htmlcov</code>).
 To view html report now you can run for example <code>google-chrome ./htmlcov/index.html</code>.</p>
@@ -194,14 +188,12 @@ So that if you forgot to test one of 10000 files it is still a failure. unfortun
 <span class="n">omit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">DIRECTORY_WITH_TESTS</span><span class="o">&gt;</span><span class="w"> </span>
 </code></pre></div>
 
-
 <h3>pytest.ini</h3>
 <div class="highlight"><pre><span></span><code><span class="k">[pytest]</span>
 <span class="na">addopts</span> <span class="o">=</span><span class="s"></span>
 <span class="s">    --cov-config=.coveragerc --cov=&lt;DIRECTORY_WITH_SOURCES&gt; --cov-report xml:coverage.xml --cov-report term:skip-covered</span>
 <span class="na">testpaths</span> <span class="o">=</span> <span class="s">&lt;DIRECTORY_WITH_TESTS&gt;</span>
 </code></pre></div>
-
 
 <h2>Alternative tests automation solutions</h2>
 <p><a href="https://tox.readthedocs.io/en/latest/">Tox</a> -- tool for tests automation. Creates configurable virtual environments and run tests there. Can handle myltiple python versions.

@@ -119,13 +119,11 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install devilspie</span>
 </code></pre></div>
 
-
 <p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
 <p>How the rule was created</p>
 <p>All rules created must go in <code>~/.devilspie</code>, and have a .ds extension, so firstly create the folder if it doesn't exist with</p>
 <div class="highlight"><pre><span></span><code><span class="err">mkdir ~/.devilspie</span>
 </code></pre></div>
-
 
 <p>If you want to experiment to find the best window matching condition (class,name,etc), you can create a new file in ~/.devilspie called test.ds and place in it (debug) . Now you can enter devilspie &amp; and then for every program that you launch, devilspie will examine and provide some window information in the terminal:</p>
 <p>Window Title: 'Mozilla Firefox'; Application Name: 'Firefox'; Class: 'Firefox'; Geometry: 1280x970+0+27</p>
@@ -137,17 +135,14 @@ sergem personal public notebook            </a>
 <span class="p">(</span><span class="k">if</span> <span class="p">(</span><span class="k">is</span> <span class="p">(</span><span class="n">window_class</span><span class="p">)</span> <span class="ss">&quot;Firefox&quot;</span><span class="p">)</span> <span class="p">(</span><span class="n">undecorate</span><span class="p">))</span>
 </code></pre></div>
 
-
 <p>Comments are introduced with ; and are not read. You do not need to use begin in the command unless you are specifying multiple actions, such as (begin undecorate (set_workspace  2))) instead of just the single action (undecorate)).</p>
 <p>However, for devilspie to read the new rule you must restart it, so run</p>
 <div class="highlight"><pre><span></span><code><span class="err">killall devilspie </span>
 </code></pre></div>
 
-
 <p>and then restart it with</p>
 <div class="highlight"><pre><span></span><code><span class="err">devilspie &amp; </span>
 </code></pre></div>
-
 
 <p>You have to do this every time when you edit a rule or add a new one in ~/.devilspie, otherwise the changes or any new rules will not be read.</p>
 <p>It is also very important that you add it to startup applications using your desktop environment's menus.</p>

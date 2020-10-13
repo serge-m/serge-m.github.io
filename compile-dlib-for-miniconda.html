@@ -105,7 +105,6 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> activate py3
 </code></pre></div>
 
-
 <p>Produce initial steps from the readme:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> examples
 mkdir build
@@ -113,7 +112,6 @@ mkdir build
 cmake ..
 cmake --build . --config Release
 </code></pre></div>
-
 
 <p>inside function  <code>build_dlib()</code> of file <code>setup.py</code> add the highlighted code:</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">platform_arch</span> <span class="o">==</span> <span class="s1">&#39;64bit&#39;</span> <span class="ow">and</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
@@ -134,7 +132,6 @@ cmake --build . --config Release
 <span class="n">build_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_dir</span><span class="p">,</span> <span class="s2">&quot;./tools/python/build&quot;</span><span class="p">)</span>
 <span class="c1">#......................bla bla.....................................</span>
 </code></pre></div>
-
 
 <p>Replace <code>/home/user/miniconda</code> by your path to miniconda</p>
 <p>Run <code>python setup.py install</code> (as usual)</p>

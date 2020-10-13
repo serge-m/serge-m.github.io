@@ -114,20 +114,17 @@ sergem personal public notebook            </a>
     <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Output looks like this:</p>
 <div class="highlight"><pre><span></span><code>  <span class="o">--</span><span class="n">scan</span><span class="o">-</span><span class="n">time</span> <span class="p">[</span><span class="n">SCAN_TIME</span><span class="p">]</span>
                         <span class="n">Wait</span> <span class="n">SCAN</span><span class="o">-</span><span class="n">TIME</span> <span class="n">seconds</span> <span class="n">between</span> <span class="n">status</span> <span class="n">checks</span><span class="o">.</span>
                         <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Another tip:
 add '%(default)' to the help parameter to control what is displayed.</p>
 <div class="highlight"><pre><span></span><code><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--type&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;toto&quot;</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;toto&quot;</span><span class="p">,</span><span class="s2">&quot;titi&quot;</span><span class="p">],</span>
                               <span class="n">help</span> <span class="o">=</span> <span class="s2">&quot;type (default: </span><span class="si">%(default)s</span><span class="s2">)&quot;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p><a href="https://stackoverflow.com/questions/12151306/argparse-way-to-include-default-values-in-help">source</a></p>
             </div>

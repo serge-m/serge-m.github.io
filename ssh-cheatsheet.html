@@ -125,22 +125,18 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -a 100 -t ed25519</span>
 </code></pre></div>
 
-
 <p>generate RSA key of length 4096 to file <code>my_key</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -t rsa -b 4096 -C &quot;your@e-mail.com&quot; -f my_key</span>
 </code></pre></div>
-
 
 <p>Generate md5 fingerprint of the key (works in newer ubuntu, 16):</p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh-keygen -lf ./my_key -E md5</span>
 </code></pre></div>
 
-
 <p>see also: <a href="https://medium.com/risan/upgrade-your-ssh-key-to-ed25519-c6e8d60d3c54">Upgrade Your SSH Key to Ed25519</a></p>
 <h2>How to prevent SSH from scanning all the keys in .ssh directory</h2>
 <div class="highlight"><pre><span></span><code>$ ssh -o <span class="nv">IdentitiesOnly</span><span class="o">=</span>yes -F /dev/null -i ~/path/to/some_id_rsa root@server.mydom.com
 </code></pre></div>
-
 
 <p>The options are as follows:</p>
 <ul>
@@ -163,27 +159,22 @@ sergem personal public notebook            </a>
 <span class="n">Permission</span> <span class="n">denied</span> <span class="o">(</span><span class="n">publickey</span><span class="o">).</span>
 </code></pre></div>
 
-
 <p>Error message on server:</p>
 <div class="highlight"><pre><span></span><code><span class="n">Aug</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">10</span><span class="err">:</span><span class="mi">55</span><span class="err">:</span><span class="mi">21</span><span class="w"> </span><span class="n">comp</span><span class="w"> </span><span class="n">sshd</span><span class="o">[</span><span class="n">3446</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="k">Connection</span><span class="w"> </span><span class="n">closed</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mf">10.1.0.12</span><span class="w"> </span><span class="n">port</span><span class="w"> </span><span class="mi">47794</span><span class="w"> </span><span class="o">[</span><span class="n">preauth</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
-
 
 <p>And nothing more in logs.
 The reason was that <code>.ssh</code> directory on the server had too strict permissions:</p>
 <div class="highlight"><pre><span></span><code><span class="err">dr-------- 2 user-on-server user-on-server 4096 Aug 11 10:54 .ssh/</span>
 </code></pre></div>
 
-
 <p>Read only is not enough. It must be <code>rwx</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">chmod 700 .ssh</span>
 </code></pre></div>
 
-
 <p>For authorized_keys file use the following premissions:</p>
 <div class="highlight"><pre><span></span><code><span class="err">chmod 644 ~/.ssh/authorized_keys </span>
 </code></pre></div>
-
 
 <h2>Port forwarding</h2>
 <h3>Remote port forwarding</h3>
@@ -192,18 +183,15 @@ and forward it to <code>localhost:80</code> on the local machine:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh -R 0.0.0.0:8080:localhost:80 -N root@example.com</span>
 </code></pre></div>
 
-
 <p>The command above creates a general IPv4-only bind, 
 which means that the port is accessible on <strong>all</strong> interfaces via IPv4.</p>
 <p>This version binds to all interfaces individually:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh -R \*:8080:localhost:80 -N root@example.com</span>
 </code></pre></div>
 
-
 <p>Another option: </p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh -R &quot;[::]:8080:localhost:80&quot; -N root@example.com</span>
 </code></pre></div>
-
 
 <p>The third version is probably technically equivalent to the first, 
 but again it creates only a single bind to <code>::</code>, which means that the port is accessible via IPv6 
@@ -215,7 +203,6 @@ natively and via IPv4 through IPv4-mapped IPv6 addresses (doesn't work on Window
 <span class="err">     -R remote_socket:host:hostport</span>
 <span class="err">     -R remote_socket:local_socket</span>
 </code></pre></div>
-
 
 <p>Specifies that connections to the given TCP port or Unix socket on the remote (server) 
 host are to be forwarded to the given host and port, or Unix socket, on the local side.  </p>
@@ -234,7 +221,6 @@ the server will always force the port to be bound on the loopback interface only
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">1234</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">5678</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
 
-
 <p>With this command<br>
 * all the connections to the <code>localhost:1234</code> of the host machine
 * are forwarded to <code>localhost:5678</code> at the server (<code>1.1.1.1</code>).</p>
@@ -243,11 +229,9 @@ the server will always force the port to be bound on the loopback interface only
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">L</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">10002</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">10001</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
 
-
 <p>On machine 2:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ssh</span> <span class="o">-</span><span class="n">R</span> <span class="nl">localhost</span><span class="p">:</span><span class="mi">10001</span><span class="o">:</span><span class="nl">localhost</span><span class="p">:</span><span class="mi">10000</span> <span class="n">user</span><span class="mf">@1.1.1.1</span>
 </code></pre></div>
-
 
 <p>Now when I access <code>localhost:10002</code> on machine 1 the request is redirected to <code>localhost:10000</code> of machine 2.
 The connection goes through port <code>10001</code> of host <code>1.1.1.1</code></p>
@@ -263,11 +247,9 @@ In order to do that add the following to <code>~/.ssh/config</code>:</p>
 <span class="err">  LocalForward 9998 192.168.1.2:9998</span>
 </code></pre></div>
 
-
 <p>Now you can run a single command:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh all-port-forwards</span>
 </code></pre></div>
-
 
 <h3>Port forwarding on system startup with retry</h3>
 <p>We want our port to be forwarded on the startup of the system. Also we want to deal with failures: retry on disconnect etc.</p>
@@ -290,13 +272,11 @@ In order to do that add the following to <code>~/.ssh/config</code>:</p>
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </code></pre></div>
 
-
 <p>Then enable and start</p>
 <div class="highlight"><pre><span></span><code><span class="err">systemctl enable tunnelssh.service</span>
 <span class="err">systemctl start tunnelssh.service</span>
 <span class="err">systemctl status tunnelssh.service</span>
 </code></pre></div>
-
 
 <p>Unfortunately it doesn't work on startup. It says that the unit entered failed state and doesn't restart.
 The problem is that 
@@ -323,30 +303,25 @@ The problem is that
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </code></pre></div>
 
-
 <h2>Configuring SSH server</h2>
 <p>Enable only ssh v2:</p>
 <div class="highlight"><pre><span></span><code><span class="err">Protocol 2</span>
 </code></pre></div>
-
 
 <p>Disable password authentication. Replace corresponding values in <code>/etc/ssh/sshd_config</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">ChallengeResponseAuthentication no</span>
 <span class="err">PasswordAuthentication no</span>
 </code></pre></div>
 
-
 <p><a href="https://support.hostgator.com/articles/how-to-disable-password-authentication-for-ssh">source</a></p>
 <p>Restrict SSH access to only user accounts that should have it. For example, you may create a group called "sshlogin" and add the group name as the value associated with the <code>AllowGroups</code> variable located in the file <code>/etc/ssh/sshd_config</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="err">AllowGroups sshlogin</span>
 </code></pre></div>
 
-
 <p>Then add your permitted SSH users to the group "sshlogin", and restart the SSH service.</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo adduser username sshlogin</span>
 <span class="err">sudo systemctl restart sshd.service</span>
 </code></pre></div>
-
 
 <p><a href="https://help.ubuntu.com/lts/serverguide/user-management.html.en#other-security-considerations">source</a></p>
 <h3>Restarting ssh service</h3>
@@ -362,24 +337,20 @@ sudo service sshd restart
 sudo systemctl restart sshd
 </code></pre></div>
 
-
 <h3>Add user for ssh tunnel only</h3>
 <div class="highlight"><pre><span></span><code><span class="err">useradd sshtunnel -m -d /home/sshtunnel -s /bin/rbash</span>
 <span class="err">passwd sshtunnel</span>
 </code></pre></div>
 
-
 <p>in <code>.profile</code> in the home directory of the user (in our example it is /home/sshtunnel/):</p>
 <div class="highlight"><pre><span></span><code><span class="err">PATH=&quot;&quot;</span>
 </code></pre></div>
-
 
 <p>Forbid changes:</p>
 <div class="highlight"><pre><span></span><code><span class="err">chmod 555 /home/sshtunnel/</span>
 <span class="err">cd /home/sshtunnel/</span>
 <span class="err">chmod 444 .bash_logout .bashrc .profile</span>
 </code></pre></div>
-
 
 <p><a href="http://www.ab-weblog.com/en/creating-a-restricted-ssh-user-for-ssh-tunneling-only/">source</a></p>
 <p>Restrictions in sshd config:</p>
@@ -390,7 +361,6 @@ sudo systemctl restart sshd
 <span class="err">  ForceCommand /bin/false</span>
 </code></pre></div>
 
-
 <p><a href="https://unix.stackexchange.com/a/337445">source</a></p>
 <h3>Restricting root user</h3>
 <p>For security reason you should always block access to root user and group on a Linux or Unix-like systems. </p>
@@ -400,11 +370,9 @@ sudo systemctl restart sshd
 <span class="err">DenyGroups root</span>
 </code></pre></div>
 
-
 <p>set PermitRootLogin  to <code>no</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="err">PermitRootLogin no</span>
 </code></pre></div>
-
 
 <p>Save the file and restart the ssh service.</p>
 <h3>How To Configure SSH Key-Based Authentication on a Linux Server</h3>
@@ -418,11 +386,9 @@ sudo systemctl restart sshd
 Agent pid <span class="m">59566</span>
 </code></pre></div>
 
-
 <p>You can add your SSH private key to the ssh-agent using <code>ssh-add</code> and full path to the key:</p>
 <div class="highlight"><pre><span></span><code>    ssh-add ~/path_to_your_private_key/id_rsa
 </code></pre></div>
-
 
 <p>Now you can for example do <code>git clone</code> from github using ssh key.</p>
 <p>see also <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#adding-your-ssh-key-to-the-ssh-agent">1</a></p>
@@ -432,11 +398,9 @@ Agent pid <span class="m">59566</span>
 <span class="err">sudo sshfs -o allow_other,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet</span>
 </code></pre></div>
 
-
 <p>With identity files only:</p>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">sshfs</span> <span class="o">-</span><span class="n">o</span> <span class="n">allow_other</span><span class="p">,</span><span class="n">IdentitiesOnly</span><span class="o">=</span><span class="n">yes</span><span class="p">,</span><span class="n">IdentityFile</span><span class="o">=~/</span><span class="p">.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_rsa</span> <span class="n">user</span><span class="mf">@192.168.0.1</span><span class="o">:/</span><span class="n">remote</span><span class="o">/</span><span class="n">path</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">path</span><span class="o">/</span>
 </code></pre></div>
-
 
 <p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh">Source</a></p>
 <h2>Specific settings for a website</h2>
@@ -449,7 +413,6 @@ Agent pid <span class="m">59566</span>
 <span class="k">and</span> <span class="n">the</span> <span class="n">repository</span> <span class="k">exists</span><span class="p">.</span>
 </code></pre></div>
 
-
 <p>Probably git reads only keys with standard names (e.g. id_rsa). 
 To make it pick up your custome key you can create a config file 
 <code>~/.ssh/config</code>:</p>
@@ -457,7 +420,6 @@ To make it pick up your custome key you can create a config file
 <span class="err">  IdentityFile ~/.ssh/your_custom_private_key</span>
 <span class="err">  IdentitiesOnly yes</span>
 </code></pre></div>
-
 
 <p>More <a href="https://stackoverflow.com/questions/4565700/how-to-specify-the-private-ssh-key-to-use-when-executing-shell-command-on-git/11251797#11251797">here</a></p>
 <h3>See also</h3>
@@ -469,7 +431,6 @@ To make it pick up your custome key you can create a config file
 Also it doesn't require to install anything on the server except openssh server. </p>
 <div class="highlight"><pre><span></span><code><span class="err">ssh -D 1337 -q -C -N user@your_server.ip</span>
 </code></pre></div>
-
 
 <p><code>-D</code> defines the port on the local machine,</p>
 <p><code>-q</code> is quiet mode,</p>

@@ -115,14 +115,12 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
 </code></pre></div>
 
-
 <p>size of input video is 1920x1088, format YUV420 progressive.</p>
 <p>UPD:
 ffmpeg is renamed to avconv.
 Using it for trimming AVI video:</p>
 <div class="highlight"><pre><span></span><code><span class="err">avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png</span>
 </code></pre></div>
-
 
 <p>UPD2: it seems ffmpeg is back.</p>
             </div>

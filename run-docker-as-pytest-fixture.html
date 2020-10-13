@@ -139,7 +139,6 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
     <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;docker&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">,</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">container_id</span><span class="p">])</span>
 </code></pre></div>
 
-
 <p>Slave:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">seaweedfs_slave</span><span class="p">():</span>
@@ -155,7 +154,6 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
         <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;docker&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">,</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">container_id</span><span class="p">])</span>
 </code></pre></div>
 
-
 <p>Helper class and pytest fixture:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">SeaWeedFSConnection</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
@@ -167,7 +165,6 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
     <span class="k">with</span> <span class="n">seaweedfs_slave</span><span class="p">()</span> <span class="k">as</span> <span class="n">seaweed_url</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">SeaWeedFSConnection</span><span class="p">(</span><span class="n">seaweed_url</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Finally our test:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TestImageStorage</span><span class="p">:</span>

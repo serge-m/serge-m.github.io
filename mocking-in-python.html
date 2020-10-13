@@ -134,7 +134,6 @@ sergem personal public notebook            </a>
     <span class="k">return</span> <span class="n">final_result</span>
 </code></pre></div>
 
-
 <p>Here is how we can test object creation (Snippet is taken from <a href="https://docs.python.org/3/library/unittest.mock.html">official documentation</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
@@ -150,7 +149,6 @@ sergem personal public notebook            </a>
 <span class="n">test</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>I would say that in our case we need also to check that each object (<code>object1</code> and <code>object2</code>) were instanciated and called with correct parameters. Then we can use <code>assert_called_once_with</code> like this (example from <a href="https://docs.python.org/3/library/unittest.mock.html#quick-guide">official documentation</a>):</p>
 <div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">ProductionClass</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_method</span><span class="p">:</span>
     <span class="n">thing</span> <span class="o">=</span> <span class="n">ProductionClass</span><span class="p">()</span>
@@ -158,7 +156,6 @@ sergem personal public notebook            </a>
 
 <span class="n">mock_method</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Combining things together:</p>
 <div class="highlight"><pre><span></span><code><span class="n">mocked_intermediate_result</span> <span class="o">=</span> <span class="s2">&quot;some-intermediate-result&quot;</span>
@@ -181,11 +178,9 @@ sergem personal public notebook            </a>
     <span class="n">MockClass2</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">mocked_intermediate_result</span><span class="p">,</span> <span class="s2">&quot;parameter2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Seems good but a little bit too verbose. Assertions on calls could be eliminated. I would like to do it like in Java with <a href="http://static.javadoc.io/org.mockito/mockito-core/2.7.13/org/mockito/Mockito.html#stubbing">Mockito</a>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">when</span><span class="p">(</span><span class="n">mockedObject</span><span class="p">.</span><span class="na">foo</span><span class="p">(</span><span class="s">&quot;parameter&quot;</span><span class="p">)).</span><span class="na">thenReturn</span><span class="p">(</span><span class="s">&quot;mocked-result&quot;</span><span class="p">);</span>
 </code></pre></div>
-
 
 <p>That means you don't need to verify intermediate calls. If they fail, the consequent calls fail as well.</p>
 <p>The test would look like this:</p>
@@ -199,7 +194,6 @@ sergem personal public notebook            </a>
 
     <span class="k">assert</span> <span class="n">actual_result</span> <span class="o">==</span> <span class="n">mocked_final_result</span>    
 </code></pre></div>
-
 
 <p>You don't need calls assertions in the end. If for example <code>object1.run(parameter1)</code> returns something else, then condition of the second mock object is not met and the test fails.</p>
 <p><em>Question: is there a way to achieve that?</em></p>
@@ -221,7 +215,6 @@ There you can do virtually the same as in Java:</p>
 <span class="c1"># clean up</span>
 <span class="n">unstub</span><span class="p">()</span>
 </code></pre></div>
-
 
 <p>But:</p>
 <ul>
@@ -254,7 +247,6 @@ We want to check that the function throws an exception if page is not found (htt
             <span class="n">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p><code>m.post</code> mocks requests for the predefined url and returns status_code=404 and some text message. One can also specify returned JSON data.</p>
 <h2>How to avoid mocking</h2>
 <p>Python is <s>very</s> too flexible with respect to types. Sometimes it plays agains the developers. If interface of the mocked class <code>A</code> changes you don't notice that tests for a dependent class <code>B</code> are failing if you mock <code>A</code> in <code>test_B</code>.</p>
@@ -286,7 +278,6 @@ We want to check that the function throws an exception if page is not found (htt
     <span class="k">return</span> <span class="n">final_result</span>
 </code></pre></div>
 
-
 <p>Let's test:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_foo</span><span class="p">():</span>
     <span class="n">mocked_obj1</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
@@ -308,18 +299,15 @@ We want to check that the function throws an exception if page is not found (htt
     <span class="n">mocked_obj2</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="s2">&quot;result1&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Also you need to test the factory now. And it will require class monkey-patching. But in this case you put all monkey patching in one place.</p>
 <h2>Matching attributes for mocks</h2>
 <p>Keep in mind that standard mocks don't care about non-existent atttributes. I use</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>instead of </p>
 <div class="highlight"><pre><span></span><code><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>That adds automatic checking of non-existent attributes and catches more errors. 
 Let's see where <code>autospec=True</code> can save your life.</p>
@@ -332,7 +320,6 @@ Let's see where <code>autospec=True</code> can save your life.</p>
     <span class="k">return</span> <span class="s2">&quot;bar&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">()</span><span class="o">.</span><span class="n">foo</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>here comes a test:</p>
 <div class="highlight"><pre><span></span><code><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;module.A&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_bar</span><span class="p">(</span><span class="n">MockedA</span><span class="p">):</span>
@@ -340,19 +327,16 @@ Let's see where <code>autospec=True</code> can save your life.</p>
   <span class="k">assert</span> <span class="n">B</span><span class="p">()</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;bar&quot;</span> <span class="o">+</span> <span class="s2">&quot;mocked-foo&quot;</span>
 </code></pre></div>
 
-
 <p>At some point you decide to change class <code>A</code>. New version:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">oops</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;oops&quot;</span>
 </code></pre></div>
 
-
 <p>You change tests for <code>A</code> but you can forget to fix <code>B</code> and tests for <code>B</code>.  <code>test_bar</code> will still work because mocked <code>A</code> still have <code>foo</code>. Probably you can catch that error on integration tests level, but it is better to "fail fast".</p>
 <p>If you use <code>@mock.patch('module.A', autospec=True)</code>, then you get an error (about non-existent attribute) after you change <code>A</code> on </p>
 <div class="highlight"><pre><span></span><code><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&quot;mocked-foo&quot;</span>
 </code></pre></div>
-
 
 <p>I think <code>autospec=True</code> has to be default behaviour of <code>patch</code>.</p>
 <p>See also <a href="https://www.relaxdiego.com/2014/04/mocking-objects-in-python.html">Mocking Objects in Python</a> section "Danger: mocking non-existent attributes" </p>
@@ -371,14 +355,12 @@ Let's see where <code>autospec=True</code> can save your life.</p>
   <span class="k">assert</span> <span class="n">some_other_object</span> <span class="o">==</span> <span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>// Will it really work?</p>
 <h2>Mocking os.environ</h2>
 <div class="highlight"><pre><span></span><code><span class="err">@mock.patch.dict(os.environ, {&#39;YOUR_VARIABLE&#39;: &#39;MOCKED_VALUE&#39;})</span>
 <span class="err">def test_funciton():</span>
 <span class="err">  function_using_os_environment()</span>
 </code></pre></div>
-
 
 <h2>See also about testing in python</h2>
 <ul>

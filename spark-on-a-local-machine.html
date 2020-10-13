@@ -121,7 +121,6 @@ unpack to <code>/opt/hadoop/</code></li>
 <span class="k">export</span> <span class="n">SPARK_DIST_CLASSPATH</span><span class="o">=$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">lib</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">common</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">hdfs</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">hdfs</span><span class="o">/</span><span class="n">lib</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">hdfs</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">yarn</span><span class="o">/</span><span class="n">lib</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">yarn</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">mapreduce</span><span class="o">/</span><span class="n">lib</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">mapreduce</span><span class="o">/*</span><span class="p">:</span><span class="o">$</span><span class="n">HADOOP_HOME</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">lib</span><span class="o">/*</span>
 </code></pre></div>
 
-
 <p>Now you can run pyspark for example:</p>
 <div class="highlight"><pre><span></span><code><span class="o">$</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">pyspark</span> 
 <span class="n">Python</span> <span class="mf">2.7</span><span class="o">.</span><span class="mi">12</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Nov</span> <span class="mi">12</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">49</span><span class="p">)</span> 
@@ -150,14 +149,12 @@ unpack to <code>/opt/hadoop/</code></li>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">exit</span><span class="p">()</span>
 </code></pre></div>
 
-
 <h2>Running pyspark in jupyter notebooks locally</h2>
 <p>To open interactive pyspark session in jupyter notebooks do this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="n">PYSPARK_DRIVER_PYTHON</span><span class="o">=</span><span class="n">jupyter</span>
 <span class="k">export</span> <span class="n">PYSPARK_DRIVER_PYTHON_OPTS</span><span class="o">=</span><span class="s1">&#39;notebook&#39;</span>
 <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">spark</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">pyspark</span> 
 </code></pre></div>
-
 
 <p>Here jupyter server running locally connects to the spark running locally.  </p>
 <h2>Troubleshooting</h2>
@@ -190,7 +187,6 @@ unpack to <code>/opt/hadoop/</code></li>
     <span class="n">raise</span> <span class="n">Exception</span><span class="p">(</span><span class="s2">&quot;Java gateway process exited before sending its port number&quot;</span><span class="p">)</span>
 <span class="n">Exception</span><span class="p">:</span> <span class="n">Java</span> <span class="n">gateway</span> <span class="n">process</span> <span class="n">exited</span> <span class="n">before</span> <span class="n">sending</span> <span class="n">its</span> <span class="n">port</span> <span class="n">number</span>
 </code></pre></div>
-
 
 <p>that means that you haven't set <code>SPARK_DIST_CLASSPATH</code> (spark cannot find slf4j which is needed for logging)</p>
 <h2>See also</h2>

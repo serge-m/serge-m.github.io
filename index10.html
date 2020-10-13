@@ -89,9 +89,10 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>So, Javascript code for position changing is simple.
-Lets say comp - is your composition:
-<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);</span></blockquote>move pointer to time 0.2:
-<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">comp.time = 0.2;</span></blockquote></p>
+Lets say comp - is your composition:</p>
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);</span></blockquote>
+<p>move pointer to time 0.2:</p>
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace; font-size: x-small;">comp.time = 0.2;</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/move-time-indicator-in-composition.html">more ...</a>
                 </div>
             </article>
@@ -156,7 +157,6 @@ Lets say comp - is your composition:
 <a href="http://habrahabr.ru/post/208090/">http://habrahabr.ru/post/208090/</a></li>
 </ol>
 <h3 style="text-align: left;">Building opencv program in C</h3>
-
 <div><span style="background-color: #f7f7f9; color: #222222; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 20px; white-space: pre-wrap;">gcc -ggdb `pkg-config --cflags opencv` -o `basename test.c …</span></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-tutorials-in-russian.html">more ...</a>
                 </div>
@@ -181,10 +181,14 @@ Lets say comp - is your composition:
 	<a href="https://serge-m.github.io/tag/uml.html">uml</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I found free UML editor:
-<h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;">ArgoUML&nbsp;<a href="http://argouml.tigris.org/&quot; style=&quot;background-color: transparent;">http://argouml.tigris.org/</a></h1><div>It seems not bad</div><div></p>
-<p>I have tried gliffy.com. It is online and paid.
-www.lucidchart.com has free version but it seems not so convenient</p>
+                <div class="summary"><p>I found free UML editor:</p>
+<h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;">ArgoUML&nbsp;[http://argouml.tigris.org/](http://argouml.tigris.org/" style="background-color: transparent;)</h1>
+<div>It seems not bad</div>
+<div>
+
+
+I have tried gliffy.com. It is online and paid.
+www.lucidchart.com has free version but it seems not so convenient
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/free-uml-editor.html">more ...</a>
                 </div>
             </article>
@@ -331,12 +335,14 @@ readline.write_history_file( "log.py")</span></p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>We have such an example from openCV documentation:
+                <div class="summary"><p>We have such an example from openCV documentation:</p>
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>
 <span style="font-family: Courier New, Courier, monospace;">GaussianBlur(img, img, Size(7,7), 1.5, 1.5);</span></blockquote>
-<div>What does it mean?&nbsp;</div><div>Lets say I have an image img:
+<div>What does it mean?&nbsp;</div>
+<div>Lets say I have an image img:
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">typedef unsigned char BYTE;</span>
-<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image …</div></p>
+<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div>
+<div>Lets assume the image …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html">more ...</a>
                 </div>
             </article>
@@ -571,13 +577,16 @@ If you use single-channel image.</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
-<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
+<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span></p>
 <pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
       - project1
       - project2
           -subdir1
           -subdir2
-          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></p>
+          -subdir3        </span></code></pre>
+<div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div>
+<div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div>
+<pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">more ...</a>
                 </div>
             </article>
@@ -606,7 +615,6 @@ If you use single-channel image.</p>
                 <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
 <div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
 </code></pre></div>
-
 
 <p>size of input video is 1920x1088, format YUV420 progressive.</p>
 <p>UPD:

@@ -146,7 +146,6 @@ sergem personal public notebook            </a>
 <span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
 </code></pre></div>
 
-
 <ul>
 <li>
 <p><a href="https://github.com/PamelaM/mptools">mptools</a> - seems like an abandoned project.
@@ -181,7 +180,6 @@ One can use <code>multiprocessing.Pool</code> and <code>tqdm</code> for it.</p>
     <span class="k">return</span> <span class="n">z</span>
 </code></pre></div>
 
-
 <p>One cannot apply tqdm to the <code>Pool.map</code> because the whole processing happens before the tqdm can iterate the result.<br>
 However it's possible to use <code>Pool.imap</code> or <code>Pool.imap_unordered</code> if the order is not important.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">parallel_with_imap_unordered</span><span class="p">():</span>
@@ -189,7 +187,6 @@ However it's possible to use <code>Pool.imap</code> or <code>Pool.imap_unordered
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">tqdm</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">imap_unordered</span><span class="p">(</span><span class="n">slow_operation</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)),</span> <span class="n">total</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
             <span class="k">pass</span>
 </code></pre></div>
-
 
 <p>It's nice that we don't need to do <code>pool.join()</code> here because <code>imap*</code> waits for all the tasks to complete.</p>
 <p>Don't forget to set chunk size:</p>
@@ -209,7 +206,6 @@ However it's possible to use <code>Pool.imap</code> or <code>Pool.imap_unordered
     <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </code></pre></div>
-
 
 <p>That method requires <code>pool.join</code> to wait for all the processes to finish. </p>
 <h2>Using Pipes for parallel stateful processes</h2>
@@ -250,7 +246,6 @@ The controller defines a processing graph with 4 interconnected stages:</p>
         <span class="k">pass</span>
 </code></pre></div>
 
-
 <p>Usage of the controller:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">execute_test</span><span class="p">(</span><span class="n">controller</span><span class="p">):</span>
     <span class="n">num_frames</span> <span class="o">=</span> <span class="mi">10</span>
@@ -263,7 +258,6 @@ The controller defines a processing graph with 4 interconnected stages:</p>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;FPS: </span><span class="si">{</span><span class="n">num_frames</span> <span class="o">/</span> <span class="n">t</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">t</span>
 </code></pre></div>
-
 
 <p>As I have mentioned above two stages - size estimation and classification - can be executed in parallel. 
 A standard solution for that could be <code>multiprocessing.Pool</code> with a function like <code>map</code> or <code>imap</code>.
@@ -307,7 +301,6 @@ Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">size_estimator</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p><code>pipe_worker</code> would look like this:</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pipe_worker</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -326,14 +319,12 @@ Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
         <span class="n">pipe</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>Comparing those two controllers:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sequential&quot;</span><span class="p">)</span>
 <span class="n">execute_test</span><span class="p">(</span><span class="n">Controller</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parallel&quot;</span><span class="p">)</span>
 <span class="n">execute_test</span><span class="p">(</span><span class="n">ParallelPipeController</span><span class="p">())</span>
 </code></pre></div>
-
 
 <p>Sample output:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sequential</span>
@@ -343,7 +334,6 @@ Let's try to use <code>multiprocessing.Pipe</code> for that.</p>
 <span class="err">worker exited correctly</span>
 <span class="c">FPS: 2.820896038347416</span>
 </code></pre></div>
-
 
 <p>Full code is <a href="https://github.com/serge-m/code-training/tree/master/python/parallel/stateful_process_workers">here</a>.</p>
 <p>There are some alternative workarounds to deal with initialization in standard <code>multiprocessing</code>. 

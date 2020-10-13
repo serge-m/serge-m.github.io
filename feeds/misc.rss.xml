@@ -121,31 +121,25 @@ Human driver (me) sends …&lt;/p&gt;&lt;/div&gt;</description><dc:creator xmlns
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;psql -U postgres
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Connect to a specific database:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;\c database_name;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Quit the psql:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;\q&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;List all databases:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;\l&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Lists all tables in the current database:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;\dt&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;List all users: &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;\du&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Create a new role &lt;code&gt;username&lt;/code&gt; with a password:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;ROLE&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="n"&gt;NOINHERIT&lt;/span&gt; &lt;span class="n"&gt;LOGIN&lt;/span&gt; &lt;span class="n"&gt;PASSWORD&lt;/span&gt; &lt;span class="n"&gt;password …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 24 Apr 2019 08:30:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2019-04-24:/postgres-cheatsheet.html</guid><category>misc</category><category>postgres</category><category>postgresql</category><category>useful</category></item><item><title>Jupyter notebooks on EMR</title><link>https://serge-m.github.io/jupyter-notebooks-on-emr.html</link><description>&lt;p&gt;Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &lt;code&gt;"Applications"&lt;/code&gt; field for the emr cluster to contain …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 04 Feb 2019 18:37:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2019-02-04:/jupyter-notebooks-on-emr.html</guid><category>misc</category><category>spark</category><category>configuration</category><category>python</category><category>pyspark</category><category>emr</category><category>jupyter</category><category>ipython</category></item><item><title>Spark on a local machine</title><link>https://serge-m.github.io/spark-on-a-local-machine.html</link><description>&lt;h2&gt;How to install spark locally&lt;/h2&gt;
@@ -177,7 +171,6 @@ unpack to &lt;code&gt;/opt/hadoop/&lt;/code&gt;&lt;/li&gt;
 &lt;span class="err"&gt;vm.dirty_ratio = 80&lt;/span&gt;
 &lt;span class="err"&gt;vm.dirty_writeback_centisecs = 0&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;More caching while writting on disk&lt;/h2&gt;
 &lt;p&gt;Add &lt;code&gt;noatime …&lt;/code&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 16 Aug 2018 00:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-08-16:/disk-usage-ubuntu.html</guid><category>misc</category><category>links</category><category>disk usage</category><category>linux</category><category>ubuntu</category></item><item><title>Spark in Docker with AWS credentials</title><link>https://serge-m.github.io/spark-in-docker-with-aws-credentials.html</link><description>&lt;h1&gt;Running spark in docker container&lt;/h1&gt;
@@ -215,7 +208,6 @@ The advantages of click are&lt;/p&gt;
 &lt;span class="err"&gt;:E - the same&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h3&gt;Visual commands&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;&amp;gt; - shift right&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt; - shift left&lt;/span&gt;
@@ -223,7 +215,6 @@ The advantages of click are&lt;/p&gt;
 &lt;span class="err"&gt;d - delete marked text&lt;/span&gt;
 &lt;span class="err"&gt;~ - switch case&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h3&gt;Cut and Paste&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;yy - yank (copy) a line&lt;/span&gt;
@@ -280,7 +271,6 @@ Here is how to …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pytest -m &amp;quot;integration&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;if you want to run only tests that have "@pytest.mark.integration" annotation.&lt;/p&gt;
 &lt;p&gt;Similarly you can run only tests that don't …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 02 Jan 2018 22:50:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2018-01-02:/pytest-cheatsheet.html</guid><category>misc</category><category>pytest</category><category>python</category><category>testing</category><category>useful</category><category>travisci</category><category>ci</category></item><item><title>how to break a programmer</title><link>https://serge-m.github.io/how-to-break-a-programmer.html</link><description>&lt;h2&gt;How to make an engineer to accept your crazy idea&lt;/h2&gt;
 &lt;ul&gt;
@@ -303,16 +293,13 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;make -j8&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Parallelization for cmake:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;cmake --build &amp;lt;bindir&amp;gt; -- -j 8&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Sometimes you cannot pass parameters directly to &lt;code&gt;make&lt;/code&gt;. For example you are installing a python module using &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;python setup.py install&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Setup script doesn't accept …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 29 Jul 2017 16:07:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-07-29:/parallel-builds.html</guid><category>misc</category><category>make</category><category>cmake</category><category>python</category><category>parallel</category></item><item><title>Add months to datetime in python</title><link>https://serge-m.github.io/add-months-to-datetime-in-python.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;dateutil.relativedelta&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;relativedelta&lt;/span&gt;
@@ -320,7 +307,6 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
 &lt;span class="n"&gt;your_datetime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="n"&gt;your_datetime&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;relativedelta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;months&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# adds one month&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Intuitive solution doesn't work&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;your_datetime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -331,7 +317,6 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;importlib&lt;/span&gt;
 &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;importlib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;import_module&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;module_path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;Find class implementing certain interface in a module&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;load_class_from_module&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;module_path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;target_class&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;type&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -345,13 +330,11 @@ We will have a main page and &lt;code&gt;users&lt;/code&gt; page in our …&lt;/
     &lt;span class="n"&gt;formatter_class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;argparse&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ArgumentDefaultsHelpFormatter&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Output looks like this:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;  &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;scan&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;SCAN_TIME&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
                         &lt;span class="n"&gt;Wait&lt;/span&gt; &lt;span class="n"&gt;SCAN&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;TIME&lt;/span&gt; &lt;span class="n"&gt;seconds&lt;/span&gt; &lt;span class="n"&gt;between&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="n"&gt;checks&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
                         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Another tip:
 add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
@@ -361,21 +344,17 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo usermod -aG group user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;or &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Delete user&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;userdel user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Delete the user’s home directory and mail spool:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;userdel -r user&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Remove user from a group&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo gpasswd …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 09 Jun 2017 12:15:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-06-09:/useful-console-commands.html</guid><category>misc</category><category>useful</category><category>console</category><category>linux</category><category>network</category><category>users</category></item><item><title>Markdown tricks</title><link>https://serge-m.github.io/markdown-tricks.html</link><description>&lt;h2&gt;Expandable / collapsible code blocks in github&lt;/h2&gt;
@@ -385,7 +364,6 @@ add '%(default)' to the help parameter to control what is displayed.&lt;/p&gt;
   your hidden code
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;details&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Results:&lt;/p&gt;
 &lt;details&gt;
@@ -412,7 +390,6 @@ An open source and collaborative framework for extracting the data you need from
 &lt;p&gt;&lt;a href="https://habrahabr.ru/post/328800/"&gt;Web crawler с использованием Python и Chrome&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 17 May 2017 09:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-17:/crawling-tools.html</guid><category>misc</category><category>web</category><category>crawling</category><category>scrapping</category></item><item><title>Combine images to PDF in linux</title><link>https://serge-m.github.io/combine-images-to-pdf.html</link><description>&lt;p&gt;Using &lt;code&gt;convert&lt;/code&gt; utility we can join multiple image files (png, jpeg, pdf) into one pdf.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://stackoverflow.com/questions/23160191/compressing-text-heavy-pdfs-without-ghostscript-and-only-imagemagik-causes-blurr"&gt;source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 03 May 2017 07:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-05-03:/combine-images-to-pdf.html</guid><category>misc</category><category>linux</category><category>imagemagick</category><category>useful</category><category>images</category></item><item><title>Motor drivers / controllers</title><link>https://serge-m.github.io/motor-drivers-controllers.html</link><description>&lt;p&gt;Articles about raspberry pi: &lt;a href="/raspberry-pi-links.html"&gt;here&lt;/a&gt;
@@ -442,7 +419,6 @@ two DC motors or one stepper motor&lt;br&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get install devilspie&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn't quite work, so it is easiest to concoct a rule by reading the readme and the manpage.&lt;/p&gt;
 &lt;p&gt;How the rule was created&lt;/p&gt;
 &lt;p&gt;All rules created …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 13 Apr 2017 20:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-13:/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html</guid><category>misc</category><category>firefox</category><category>linux</category><category>cinnamon</category><category>mint</category></item><item><title>SSH cheat sheet</title><link>https://serge-m.github.io/ssh-cheatsheet.html</link><description>&lt;h2&gt;Create more secure ssh keys&lt;/h2&gt;
@@ -450,11 +426,9 @@ two DC motors or one stepper motor&lt;br&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ssh-keygen -a 100 -t ed25519&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;generate RSA key of length 4096 to file &lt;code&gt;my_key&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Generate md5 fingerprint of the key (works in newer ubuntu, 16 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 12 Apr 2017 12:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-04-12:/ssh-cheatsheet.html</guid><category>misc</category><category>ssh</category><category>keys</category><category>useful</category><category>tunnel</category><category>security</category><category>linux</category></item><item><title>Convert ovpn config file to .ca, .crt, .key</title><link>https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html</link><description>&lt;p&gt;How you can take an OpenVPN .ovpn config file and extract the certificates/keys &lt;/p&gt;
 &lt;ul&gt;
@@ -466,12 +440,10 @@ two DC motors or one stepper motor&lt;br&gt;
 &lt;span class="err"&gt;No protocol specified&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;The problem is &lt;code&gt;user2&lt;/code&gt; doesn't have access to your screen.
 Solution:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;xhost +&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Probably not the safest one.&lt;/p&gt;
 &lt;p&gt;Source: &lt;a href="http://unix.stackexchange.com/a/108787"&gt;thread&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 30 Mar 2017 00:01:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-03-30:/no-protocol-specified.html</guid><category>misc</category><category>linux</category></item><item><title>Mocking in Python</title><link>https://serge-m.github.io/mocking-in-python.html</link><description>&lt;p&gt;Let's consider  how python standard unittest module suppose to use mocks.&lt;/p&gt;
@@ -501,26 +473,21 @@ Clustering is based on histograms. 1 contributor. No …&lt;/p&gt;</description>
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;curl -X GET localhost:9200/_cat/indices&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h3&gt;Delete index&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;curl -X DELETE localhost:9200/YOUR_INDEX&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h3&gt;Delete all indices&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;curl -X GET localhost:9200/_all&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h3&gt;List of all doc_types in a given index&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h2&gt;Running elastic seach …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 10 Feb 2017 23:11:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-02-10:/elastic-search-cookbook.html</guid><category>misc</category><category>command line</category><category>elastic</category><category>search</category><category>elasticsearch</category><category>curl</category></item><item><title>Pretty git history with branches in command line</title><link>https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html</link><description>&lt;p&gt;Show git history with branches &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Less nice and shorter&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;git log --graph --abbrev-commit …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 28 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-28:/pretty-git-history-with-branches-in-command-line.html</guid><category>misc</category><category>git</category></item><item><title>Correct way of running long tasks in Flask</title><link>https://serge-m.github.io/correct-way-of-running-long-tasks-in-flask.html</link><description>&lt;p&gt;Key to the answer is Celery.&lt;/p&gt;
@@ -551,7 +518,6 @@ Clustering is based on histograms. 1 contributor. No …&lt;/p&gt;</description>
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get install hplip-gui&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;ul&gt;
 &lt;li&gt;install recommended proprietary driver from &lt;code&gt;HP Toolbox&lt;/code&gt; GUI&lt;/li&gt;
 &lt;/ul&gt;
@@ -560,7 +526,6 @@ Clustering is based on histograms. 1 contributor. No …&lt;/p&gt;</description>
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;hp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppd&lt;/span&gt; &lt;span class="n"&gt;hpijs&lt;/span&gt; &lt;span class="n"&gt;hpijs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ppds&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cups&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dbg&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt; &lt;span class="n"&gt;hplip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gui&lt;/span&gt; &lt;span class="n"&gt;djtools&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;&lt;a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335"&gt;source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 09 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-09:/setup-hp-1020-printer-in-linux-mint-18.html</guid><category>misc</category><category>linux</category><category>useful</category></item><item><title>Pelican Hints</title><link>https://serge-m.github.io/pelican-hints.html</link><description>&lt;p&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/content.html#articles-and-pages"&gt;Articles and pages&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/settings.html#date-format-and-locale"&gt;Format of dates&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://docs.getpelican.com/en/stable/settings.html#url-settings"&gt;Generate archives per year and month&lt;/a&gt; 
@@ -568,7 +533,6 @@ see &lt;code&gt;MONTH_ARCHIVE_SAVE_AS&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;To check out: &lt;a href="http://jbm.io/2013/03/adding-period-archives-to-pelican/"&gt;Adding period archives to Pelican&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 14:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/pelican-hints.html</guid><category>misc</category><category>pelican</category></item><item><title>Shell commands (page moved)</title><link>https://serge-m.github.io/shell-commands.html</link><description>&lt;p&gt;Page moved &lt;a href="/useful-console-commands.html"&gt;here&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 08 Jan 2017 11:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-08:/shell-commands.html</guid><category>misc</category><category>linux</category><category>useful</category><category>ubuntu</category><category>vim</category><category>console</category></item><item><title>Add service in ubuntu</title><link>https://serge-m.github.io/add-service-in-linux.html</link><description>&lt;p&gt;Create a file for service &lt;code&gt;your-service&lt;/code&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;touch /etc/systemd/system/your-service.service &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Let's assume you want to run docker container there. Put following text in the file:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Unit&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt;                                                                                                                                                                                                                                        &lt;/span&gt;
@@ -590,7 +554,6 @@ The udp connection is perfect with these parameters (in client config):&lt;/p&gt
 &lt;span class="err"&gt;tun-mtu 1200&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h2&gt;DNS doesn't work through VPN&lt;/h2&gt;
 &lt;p&gt;Symptoms: Openvpn connects …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 07 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-07:/openvpn-on-vps-using-docker.html</guid><category>misc</category><category>linux</category><category>docker</category><category>vpn</category><category>openvpn</category></item><item><title>Docker in Scaleway's vc1s Ubuntu Xenial</title><link>https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html</link><description>&lt;p&gt;In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like &lt;code&gt;docker ps&lt;/code&gt;&lt;/p&gt;
@@ -598,7 +561,6 @@ It hangs/fails on installation or on any significant docker command like &lt;cod
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 05 Jan 2017 07:10:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2017-01-05:/docker-in-scaleway-vc1s-ubuntu-xenial.html</guid><category>misc</category></item><item><title>Check server fingerprint for scaleway</title><link>https://serge-m.github.io/check-server-fingerpring-for-scaleway.html</link><description>&lt;p&gt;Run&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;curl -H &amp;#39;X-Auth-Token: &amp;lt;YOUR_TOKEN&amp;gt;&amp;#39; https://cp-ams1.scaleway.com/servers/&amp;lt;YOUR_SERVER_ID&amp;gt;/user_data/ssh-host-fingerprints&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;compare output with results of 
 ssh &lt;YOUR_USER&gt;@&lt;YOUR_SERVER_IP&gt;&lt;/p&gt;
@@ -681,7 +643,6 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get remove firefox&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;remove search addons. &lt;a href="http://superuser.com/a/1014373"&gt;Source&lt;/a&gt;.
@@ -691,7 +652,6 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 &lt;li&gt;&lt;a href="http://www.spotlightradio.net/"&gt;spotlightradio&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 14 Aug 2016 14:16:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-08-14:/podcasts.html</guid><category>misc</category></item><item><title>git apply patch from another repository</title><link>https://serge-m.github.io/git-apply-patch-from-another-repository.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ git --git-dir&lt;span class="o"&gt;=&lt;/span&gt;../&amp;lt;some_other_repo&amp;gt;/.git format-patch -k -1 --stdout &amp;lt;commit SHA&amp;gt; &lt;span class="p"&gt;|&lt;/span&gt; git am -3 -k
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Source:
 &lt;a href="http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit"&gt;http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit&lt;/a&gt; &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 14 Aug 2016 14:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-08-14:/git-apply-patch-from-another-repository.html</guid><category>misc</category></item><item><title>terminal setup in linux mint</title><link>https://serge-m.github.io/terminal-setup-in-linux-mint.html</link><description>&lt;h2&gt;Installation&lt;/h2&gt;
@@ -704,7 +664,6 @@ You can add google as a search engine. But suggestions don't work for me.&lt;/p&
 &lt;span class="err"&gt;s  list sessions&lt;/span&gt;
 &lt;span class="err"&gt;$  name session&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h3&gt;Windows (tabs)&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;c  create window&lt;/span&gt;
@@ -726,7 +685,6 @@ Assume we have following partitions:&lt;/p&gt;
 &lt;span class="err"&gt; home /sdb3 &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;ul&gt;
 &lt;li&gt;Do&lt;/li&gt;
 &lt;/ul&gt;
@@ -745,14 +703,12 @@ Assume we have following partitions:&lt;/p&gt;
 &lt;span class="n"&gt;img&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;imgPath&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;byte&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;display&lt;/span&gt;
 &lt;span class="err"&gt;require &amp;#39;gnuplot&amp;#39;&lt;/span&gt;
 &lt;span class="err"&gt;gnuplot.figure(1)&lt;/span&gt;
 &lt;span class="err"&gt;gnuplot.imagesc(img[1])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Torch&amp;lt;-&amp;gt;numpy dictionary
 &lt;a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users"&gt;https …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 26 Jun 2016 23:01:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-06-26:/how-torch-stores-images.html</guid><category>misc</category><category>torch</category></item><item><title>Installing torch for miniconda</title><link>https://serge-m.github.io/installing-torch-for-miniconda.html</link><description>&lt;p&gt;I got the error while installing torch for miniconda. Something like
@@ -764,7 +720,6 @@ Linking CXX executable mshrable&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate py3
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Produce initial steps from the readme:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; examples
 mkdir build
@@ -772,7 +727,6 @@ mkdir build
 cmake ..
 cmake --build . --config Release
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;inside function  &lt;code&gt;build_dlib()&lt;/code&gt; of file &lt;code&gt;setup.py&lt;/code&gt; add the highlighted code:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;platform_arch&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;64bit&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;platform&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;win32&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -782,11 +736,9 @@ cmake --build . --config Release
 &lt;span class="err"&gt;mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;To allow write access one has to specify owning user and group:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;Unmount …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 19 Jun 2016 12:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-06-19:/mount-windows-shares-in-linux.html</guid><category>misc</category><category>useful</category><category>linux</category><category>samba</category><category>mount</category><category>network</category></item><item><title>deep learning</title><link>https://serge-m.github.io/deep-learning.html</link><description>&lt;p&gt;&lt;a href="https://github.com/sugyan/tensorflow-mnist"&gt;Rest API example for tensorflow&lt;/a&gt;. It works: &lt;a href="https://tensorflow-mnist.herokuapp.com/"&gt;demo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://deepdetect.com/models/tf/"&gt;Trained models for tensorflow&lt;/a&gt;&lt;/p&gt;
@@ -815,7 +767,6 @@ in your home directory and put there&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create package and vitual environment. Something …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 16 May 2016 00:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2016-05-16:/pypy-with-numpy.html</guid><category>misc</category><category>numpy</category><category>python</category><category>pypy</category></item><item><title>About python</title><link>https://serge-m.github.io/about-python.html</link><description>&lt;h2&gt;Production&lt;/h2&gt;
@@ -824,7 +775,6 @@ in your home directory and put there&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;postgres://postgres@localhost/name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Possible with &lt;a href="https://github.com/kvesteri/sqlalchemy-utils"&gt;SQLAlchemy-Utils&lt;/a&gt; library. See &lt;a href="http://sqlalchemy-utils.readthedocs.io/en/latest/database_helpers.html"&gt;docs&lt;/a&gt;&lt;/p&gt;
 &lt;h4&gt;Infrastructure with Python&lt;/h4&gt;
@@ -837,13 +787,11 @@ I see the icon when i do&lt;/p&gt;
 &lt;span class="err"&gt;dropbox start&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;but I cannot click on it.&lt;/p&gt;
 &lt;p&gt;Installed &lt;a href="https://github.com/linuxmint/nemo-extensions/tree/master/nemo-dropbox"&gt;nemo-dropbox&lt;/a&gt;. At least now I have "Copy dropbox link" command in menu.
 Don't forget to do&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ killall nemo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;after installation to make it work.&lt;/p&gt;
 &lt;h1&gt;Final Solution&lt;/h1&gt;
@@ -858,7 +806,6 @@ Add the following to your launch.json:&lt;/p&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
 &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;numpy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="kp"&gt;broadcast&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]],[[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;],[&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;]]))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Running in console:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;gdb&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
@@ -882,11 +829,9 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;avconv -i input_video.mp4 -qmax &lt;span class="m"&gt;1&lt;/span&gt; -qmin &lt;span class="m"&gt;1&lt;/span&gt; images_%05d.jpg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;crop video:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;avconv -i input.avi -vf &lt;span class="nv"&gt;crop&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;create gif using &lt;/p&gt;
 &lt;p&gt;http://gifmaker.me/&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 14 Dec 2015 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-12-14:/avconv.html</guid><category>misc</category><category>useful</category><category>ffmpeg</category><category>avconv</category></item><item><title>М</title><link>https://serge-m.github.io/blog-post-11.html</link><description>&lt;p&gt;&lt;sup&gt;&lt;sup&gt;Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.&lt;/sup&gt;&lt;/sup&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 14 Dec 2015 01:15:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-12-14:/blog-post-11.html</guid><category>misc</category><category>useles</category></item><item><title>Operations with lists in Java</title><link>https://serge-m.github.io/operations-with-lists-in-java.html</link><description>&lt;p&gt;Initializa list:&lt;/p&gt;
@@ -904,7 +849,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pip install lingvoreader&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 11 Oct 2015 20:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-10-11:/golden-dict-instead-of-lingvo.html</guid><category>misc</category><category>useful</category></item><item><title>Detector of flying objects in IR video</title><link>https://serge-m.github.io/detector-of-flying-objects-in-ir-video.html</link><description>&lt;p&gt;Implemented using python&lt;/p&gt;
 &lt;p&gt;https://github.com/serge-m/object_detection_ir_video&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="http://2.bp.blogspot.com/-TTZ1XJOfRNY/VfRrfIILC9I/AAAAAAAADJs/J_eYryqDQAQ/s320/detection_for_frame_pair.png"&gt;
@@ -912,7 +856,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;avconv -i ./input.avi -q:v &lt;span class="m"&gt;1&lt;/span&gt; output_frame_%05d.jpg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 06 Sep 2015 15:52:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-09-06:/ffmpegavconv-jpeg-quality.html</guid><category>misc</category><category>avconv</category><category>useful</category><category>ffmpeg</category><category>video processing</category></item><item><title>Encode/decode binary file to ascii using command line</title><link>https://serge-m.github.io/encodedecode-binary-file-to-ascii.html</link><description>&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;base64 source_file &amp;gt; destination.ascii &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;base64 --decode destination.ascii &amp;gt; decoded_file&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 06 Sep 2015 14:17:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-09-06:/encodedecode-binary-file-to-ascii.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>Jobs 2015</title><link>https://serge-m.github.io/jobs-2015.html</link><description>&lt;p&gt;201503 Google  &lt;/p&gt;
@@ -935,16 +878,13 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get install openjdk-7-jdk&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;1b. Add JAVA_HOME variable to system environment &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo nano /etc/environment # or use any other editor&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;1c. Add line with path to your java location:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Reboot/Logout&lt;/p&gt;
 &lt;p&gt;2a. Go to &lt;a href="https://developer.android.com/sdk/index.html"&gt;https://developer …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 27 Apr 2015 12:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2015-04-27:/installing-android-sdk-april-2015-in.html</guid><category>misc</category></item><item><title>Take screenshot in linux mint</title><link>https://serge-m.github.io/take-scrinshot-in-linux-mint.html</link><description>&lt;p&gt;&lt;code&gt;Ctrl+PrintScreen&lt;/code&gt; -&amp;gt; whole screen&lt;/p&gt;
@@ -953,7 +893,6 @@ produces structure with obsolete pypy-c and libpypy-c.so in
 &lt;/ol&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sudo apt-get install clipit&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;ol&gt;
 &lt;li&gt;Run clipit. Go to Preferences-&amp;gt;Settings. Enable "Synchronize clipboards"&lt;/li&gt;
@@ -985,7 +924,6 @@ Some googling …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/d
 &lt;p&gt;Solution is:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;error message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;exc_info&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# for adding traceback to log&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Equivalent :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exception&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;message&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -1019,7 +957,8 @@ Some googling …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/d
         &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;
-    OF results:
+    OF results: 
+
 
     &lt;img alt="OF results" src="data:image/png;base64,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" /&gt;
     &lt;/td&gt;&lt;/tr&gt;
@@ -1030,17 +969,20 @@ Some googling …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/d
 Lets apply multiscale scheme now. We …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 21 Dec 2014 21:48:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-12-21:/writing-simple-optical-flow-in-python_21.html</guid><category>misc</category><category>python</category><category>optical flow</category></item><item><title>Writing simple optical flow in python. Part 2</title><link>https://serge-m.github.io/writing-simple-optical-flow-in-python-part2.html</link><description>&lt;p&gt;After fixing some errors, it seems my OF is working.
 &lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924&amp;quot; imageanchor=&amp;quot;1&amp;quot; style=&amp;quot;clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"&gt;&lt;/a&gt;&lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;div class="" style="clear: both; text-align: center;"&gt;[&lt;/a&gt;&lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"&gt;](https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;)Image I0&lt;/div&gt;&lt;img alt="" src="data:image/png;base64,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" /&gt;&lt;/td&gt;&lt;td&gt;Image I1
-[&lt;/a&gt;&lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"&gt;](https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 20 Dec 2014 01:19:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-12-20:/writing-simple-optical-flow-in-python-part2.html</guid><category>misc</category><category>python</category><category>optical flow</category></item><item><title>Writing simple optical flow in python</title><link>https://serge-m.github.io/writing-simple-optical-flow-in-python.html</link><description>&lt;p&gt;First of all we need a couple of test images:
+[&lt;/a&gt;&lt;a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"&gt;](https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em …&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 20 Dec 2014 01:19:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-12-20:/writing-simple-optical-flow-in-python-part2.html</guid><category>misc</category><category>python</category><category>optical flow</category></item><item><title>Writing simple optical flow in python</title><link>https://serge-m.github.io/writing-simple-optical-flow-in-python.html</link><description>&lt;p&gt;First of all we need a couple of test images:&lt;/p&gt;
 &lt;pre class="brush: python"&gt;#
 import numpy
-from StringIO import StringIO&lt;/p&gt;
-&lt;p&gt;I0 = numpy.loadtxt(StringIO("""
+from StringIO import StringIO
+
+I0 = numpy.loadtxt(StringIO("""
          0         0         0         0         0
          0         0    0.5000         0         0
          0         0    1.0000         0         0
          0         0    0.5000         0         0
-         0         0         0         0         0""") )&lt;/p&gt;
-&lt;p&gt;I1 = numpy …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 30 Nov 2014 14:46:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-11-30:/writing-simple-optical-flow-in-python.html</guid><category>misc</category><category>python</category><category>optical flow</category></item><item><title>Setting default parameters for imshow in pyplot</title><link>https://serge-m.github.io/setting-default-parameters-from-imshow.html</link><description>&lt;p&gt;I find default visualization settings for images in matplotlib inconvenient.
+         0         0         0         0         0""") )
+
+
+I1 = numpy …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 30 Nov 2014 14:46:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-11-30:/writing-simple-optical-flow-in-python.html</guid><category>misc</category><category>python</category><category>optical flow</category></item><item><title>Setting default parameters for imshow in pyplot</title><link>https://serge-m.github.io/setting-default-parameters-from-imshow.html</link><description>&lt;p&gt;I find default visualization settings for images in matplotlib inconvenient.
 Usually I prefer to see images in grayscale color map and without smoothing.
 Thus I see actual data without distortions. Grayscale is easier to understand.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
@@ -1056,12 +998,13 @@ I0 = numpy.loadtxt(StringIO("""
          0         0         0         0         0
          0         0    0.5000         0         0
          0         0    1.0000 …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 17 Nov 2014 23:01:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-11-17:/loading-numpy-array-from-string.html</guid><category>misc</category><category>useful</category><category>numpy</category><category>python</category></item><item><title>Quiver for optical flow</title><link>https://serge-m.github.io/quiver-for-optical-flow.html</link><description>&lt;p&gt;Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:&lt;/p&gt;
-&lt;p&gt;&lt;pre class="brush: cpp"&gt; 
+&lt;pre class="brush: cpp"&gt; 
 function [ output ] = quiver_flow( u, v )
 %QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014&lt;/p&gt;
-&lt;p&gt;output = quiver( u, v, 0);
-axis ij …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 06 Nov 2014 15:36:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-11-06:/quiver-for-optical-flow.html</guid><category>misc</category><category>useful</category><category>matlab</category><category>optical flow</category></item><item><title>Simple tests of classic OF methods</title><link>https://serge-m.github.io/simple-tests-of-classic-of-methods.html</link><description>&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
+%   SMatyunin2014
+
+output = quiver( u, v, 0);
+axis ij …&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 06 Nov 2014 15:36:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-11-06:/quiver-for-optical-flow.html</guid><category>misc</category><category>useful</category><category>matlab</category><category>optical flow</category></item><item><title>Simple tests of classic OF methods</title><link>https://serge-m.github.io/simple-tests-of-classic-of-methods.html</link><description>&lt;h2&gt;BA method, simple synthetic images&lt;/h2&gt;
 &lt;p&gt;For simple synthetic images:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;I0&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
 
@@ -1131,16 +1074,13 @@ try :
 &amp;nbsp;&amp;nbsp;&amp;nbsp; if(`__IPYTHON__`) :
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
 except NameError …&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 31 Aug 2014 12:10:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-08-31:/ipython-save-notebook-as-script.html</guid><category>misc</category><category>ipython</category></item><item><title>Use Matlab function from python</title><link>https://serge-m.github.io/use-matlab-function-from-python.html</link><description>&lt;p&gt;There are several solutions:
-Source: &lt;a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python"&gt;http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python&lt;/a&gt;
-&lt;h2&gt;pymat&lt;/h2&gt;A low level interface to Matlab using the matlab engine (&lt;code&gt;libeng&lt;/code&gt;) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow)
+Source: &lt;a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python"&gt;http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;pymat&lt;/h2&gt;
+&lt;p&gt;A low level interface to Matlab using the matlab engine (&lt;code&gt;libeng&lt;/code&gt;) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
+  &lt;a href="http://pymat.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://pymat.sourceforge.net&lt;/a&gt;
 Last updated: 2003
-  &amp;lt;h2&amp;gt;pymat2&amp;lt;/h2&amp;gt;A somewhat short lived continuation of the pymat development. Seems  to work on windows (including 64bit), linux and mac (with some changes).
-  [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&amp;quot; rel=&amp;quot;nofollow)
-Last updated: 2012
-  &amp;lt;h2&amp;gt;mlabwrap&amp;lt;/h2&amp;gt;A high level interface that also comes as a module which needs compilation and linking against  &amp;lt;code&amp;gt;libeng&amp;lt;/code&amp;gt;. It exposes Matlab functions to python so you can do fun stuff like
-  &amp;lt;code&amp;gt;mlab.plot(x, y," title="o"&gt;http://pymat.sourceforge.net&lt;/a&gt;&lt;/code&gt;
-  &lt;a href="http://mlabwrap.sourceforge.net/&amp;quot; rel=&amp;quot;nofollow"&gt;http://mlabwrap.sourceforge.net …&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 31 Aug 2014 11:56:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-08-31:/use-matlab-function-from-python.html</guid><category>misc</category><category>python</category><category>matlab</category></item><item><title>Pylearn2 out of memory error</title><link>https://serge-m.github.io/pylearn2-out-of-memory-error.html</link><description>&lt;p&gt;I am trying to train NN using pylearn2
+&lt;br&gt;
+&lt;h2&gt;pymat2 …&lt;/h2&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 31 Aug 2014 11:56:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-08-31:/use-matlab-function-from-python.html</guid><category>misc</category><category>python</category><category>matlab</category></item><item><title>Pylearn2 out of memory error</title><link>https://serge-m.github.io/pylearn2-out-of-memory-error.html</link><description>&lt;p&gt;I am trying to train NN using pylearn2
 I use stochastic gradient decent.
 I had always a message about failed GPU memory&amp;nbsp; allocation in
 train-&amp;gt;self.sgd_update(*batch)
@@ -1160,17 +1100,12 @@ batch_size: 100&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/
 &lt;p&gt;use
 &lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;%matplotlib inline&lt;/span&gt;
 &lt;span style="font-family: &amp;quot;Courier New&amp;quot;,Courier,monospace;"&gt;in ipython notebook to …&lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Fri, 06 Jun 2014 22:12:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-06:/displaying-multiple-grayscale-figures.html</guid><category>misc</category><category>python</category><category>ipython</category></item><item><title>Theano</title><link>https://serge-m.github.io/theano.html</link><description>&lt;h2 style="text-align: left;"&gt;&lt;span class="st"&gt;_Intro _&lt;/span&gt;&lt;/h2&gt;
-
 &lt;p&gt;&lt;span class="st"&gt;&lt;em&gt;Theano&lt;/em&gt; is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.&lt;/span&gt;&lt;/p&gt;
 &lt;h2 style="text-align: left;"&gt;&lt;span class="st"&gt;Check gpu is working&lt;/span&gt;&lt;/h2&gt;
-
 &lt;div style="text-align: left;"&gt;&lt;span class="st"&gt;Source: &lt;/span&gt;[&lt;span class="st"&gt;http://deeplearning.net/software/theano/tutorial/using_gpu.html&lt;/span&gt;](http://deeplearning.net/software/theano/tutorial/using_gpu.html)&lt;/div&gt;
-
 &lt;div style="text-align: left;"&gt;
 &lt;/div&gt;
-
 &lt;div style="text-align: left;"&gt;&lt;span class="st"&gt;Test script: &lt;/span&gt;&lt;/div&gt;
-
 &lt;blockquote class="tr_bq"&gt;
     ::::
     &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;theano&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;function&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shared …&lt;/span&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Thu, 05 Jun 2014 23:30:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-05:/theano.html</guid><category>misc</category><category>useful</category></item><item><title>windows life</title><link>https://serge-m.github.io/windows-life.html</link><description>&lt;p&gt;&lt;code&gt;doskey /history &amp;gt; commands.log&lt;/code&gt;- dump command line promt history to file&lt;/p&gt;
@@ -1180,7 +1115,6 @@ batch_size: 100&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/
 &lt;span class="err"&gt;netsh wlan …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 05 Jun 2014 23:00:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-06-05:/windows-life.html</guid><category>misc</category><category>windows</category><category>command line</category><category>wifi</category><category>wi-fi</category><category>sharing</category></item><item><title>linux life</title><link>https://serge-m.github.io/linux-life.html</link><description>&lt;h3&gt;Good start&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo apt install -y mc curl jq wget htop hwinfo nmap vim
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h3&gt;Some commands&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;top&lt;/strong&gt; - see running processes&lt;/p&gt;
@@ -1204,11 +1138,9 @@ allows us to wrap the costFunction for …&lt;/blockquote&gt;</description><dc:c
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;document&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Use the trim option, which takes four space separated values.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;trim={&amp;lt;left&amp;gt; &amp;lt;lower&amp;gt; &amp;lt;right&amp;gt; &amp;lt;upper&amp;gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;&lt;a href="http://tex.stackexchange.com/a/57420"&gt;Source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 21 May 2014 21:56:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-05-21:/crop-included-graphics-in-latex.html</guid><category>misc</category><category>latex</category></item><item><title>multiple "windows" in one linux terminal</title><link>https://serge-m.github.io/multiple-windows-in-one-linux-terminal.html</link><description>&lt;p&gt;use "screen" utility&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ctrl-a-p - switch&lt;/span&gt;
@@ -1218,17 +1150,14 @@ allows us to wrap the costFunction for …&lt;/blockquote&gt;</description><dc:c
 &lt;span class="err"&gt;ctrl-a-S - split, but doesn;t work&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;see also: &lt;a href="/terminal-setup-in-linux-mint.html"&gt;using tmux&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SM!</dc:creator><pubDate>Wed, 21 May 2014 21:22:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-05-21:/multiple-windows-in-one-linux-terminal.html</guid><category>misc</category><category>useful</category><category>linux</category></item><item><title>Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</title><link>https://serge-m.github.io/fixed-latex2png-error-eps2eps-failed-to.html</link><description>&lt;p&gt;OMG!! I finally fixed it.
 Under Windows latex2rtf diisplayed following error:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;latex2png&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;eps2eps&lt;/span&gt; &lt;span class="n"&gt;failed&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;translate&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;pdf&lt;/span&gt; &lt;span class="n"&gt;to&lt;/span&gt; &lt;span class="n"&gt;l2r_00123&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;eps&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;for each image in my latex file.&lt;/p&gt;
 &lt;p&gt;That was very sad because this method is used to convert all equations, fugures and tables in word format.&lt;/p&gt;
 &lt;p&gt;The configurations …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 15 Apr 2014 23:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-04-15:/fixed-latex2png-error-eps2eps-failed-to.html</guid><category>misc</category><category>latex</category><category>latex2rtf</category></item><item><title>Papers review</title><link>https://serge-m.github.io/papers-review.html</link><description>&lt;h2 style="text-align: left;"&gt;Depth map Estimation&lt;/h2&gt;
-
 &lt;div&gt;&lt;div&gt;Ashutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;&lt;/div&gt;&lt;div&gt;Depth estimation using machine learning from monocular cueues. Uses MRF model&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 14 Apr 2014 21:01:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-04-14:/papers-review.html</guid><category>misc</category></item><item><title>German resources</title><link>https://serge-m.github.io/german-resources.html</link><description>&lt;p&gt;http://www.c-plusplus.de/forum/&lt;/p&gt;
 &lt;p&gt;http://cvisioncentral.com/jobs/&lt;/p&gt;
 &lt;p&gt;Open positions in computer vision in german universities:
@@ -1261,12 +1190,9 @@ rocket jump (тз+1)
 nvidia (1)&lt;/p&gt;
 &lt;div&gt;artec (тз+1)
 Был в прикольной компании …&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 27 Feb 2014 19:13:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-27:/in-russian.html</guid><category>misc</category><category>russian</category></item><item><title>Hex editors</title><link>https://serge-m.github.io/hex-editors.html</link><description>&lt;h2 style="text-align: left;"&gt;radare, the reverse engineering framework &lt;/h2&gt;
-
 &lt;p&gt;&lt;a href="http://radare.nopcode.org/y/?p=features"&gt;http://radare.nopcode.org/y/?p=features&lt;/a&gt;&lt;/p&gt;
 &lt;h2 style="text-align: left;"&gt;010 Editor&lt;/h2&gt;
-
 &lt;div&gt;hex templates for binary formats parsing&lt;/div&gt;
-
 &lt;p&gt;&lt;a href="http://www.sweetscape.com/"&gt;http://www.sweetscape.com/&lt;/a&gt;
 &lt;a href="http://habrahabr.ru/post/213211/"&gt;http://habrahabr.ru/post/213211/&lt;/a&gt;&amp;nbsp;(rus)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 20 Feb 2014 10:12:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-20:/hex-editors.html</guid><category>misc</category><category>tools</category></item><item><title>C++11 stuff</title><link>https://serge-m.github.io/c11-stuff.html</link><description>&lt;p&gt;random numbers
 &lt;a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf"&gt;http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf&lt;/a&gt;&lt;/p&gt;
@@ -1280,45 +1206,47 @@ nvidia (1)&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;sqlite&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;create&lt;/span&gt; &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;exists&lt;/span&gt; &lt;span class="n"&gt;t3&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="nb nb-Type"&gt;int&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;h2&gt;adding two "rows"&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sqlite&amp;gt; insert into t3 (id, value) values (1, &amp;#39;a&amp;#39;);&lt;/span&gt;
 &lt;span class="err"&gt;sqlite&amp;gt; insert into t3 (id, value) values (2, &amp;#39;b&amp;#39;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;h2&gt;display results&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;sqlite …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 09 Feb 2014 14:53:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-09:/learning-sqlite.html</guid><category>misc</category><category>sql</category></item><item><title>remote desktop screen resolution</title><link>https://serge-m.github.io/remote-desktop-screen-resolution.html</link><description>&lt;p&gt;Today I finally found out that screen resolution for remote session in Windows can be changed in settings menu &lt;em&gt;before&lt;/em&gt; connection. Little discoveries happen every day... Damn....&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 05 Feb 2014 14:17:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-05:/remote-desktop-screen-resolution.html</guid><category>misc</category><category>little discovery</category></item><item><title>Multithreading links</title><link>https://serge-m.github.io/multithreading-links.html</link><description>&lt;p&gt;Руководство по отладке многопоточных приложений в Visual Studio 2010. video, examples&lt;a href="http://habrahabr.ru/post/97817/"&gt;http://habrahabr.ru/post/97817/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Считаем Пи параллельно. Часть 1. pthread, openmp, c++11 in comments&lt;a href="http://habrahabr.ru/post/147796/"&gt;http://habrahabr.ru/post/147796/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Потоки, блокировки и условные переменные в C++11 [Часть 1], exceptions, examples&lt;div&gt;&lt;a href="http://habrahabr.ru/post/182610/"&gt;http://habrahabr.ru/post/182610/&lt;/a&gt;&lt;/div&gt;&lt;div&gt;
 &lt;/div&gt;Потоки …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 03 Feb 2014 14:42:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-02-03:/multithreading-links.html</guid><category>misc</category><category>links</category></item><item><title>VapourSynth: pythonic alternative to avisynth</title><link>https://serge-m.github.io/vapoursynth-pythonic-alternative-to.html</link><description>&lt;p&gt;What do I know about VapourSynth&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://www.vapoursynth.com/"&gt;http://www.vapoursynth.com/&lt;/a&gt;&amp;nbsp;- website
-&lt;h2 style="text-align: left;"&gt;How to save data from VapourSynth&lt;/h2&gt;&lt;div&gt;You need to use vspipe.exe from Vapour distributive&lt;/div&gt;&lt;div&gt;It seems it returns raw data to stdout&lt;/div&gt;&lt;div&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/div&gt;&lt;h3 style="text-align: left;"&gt;Render using ffmpeg&lt;/h3&gt;&lt;div&gt;Don't know how jet&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;&lt;h3&gt;Render using ImageMagick/convert&lt;/h3&gt;&lt;div&gt;Don't know how jet&lt;/div&gt;&lt;div&gt;
-&lt;div&gt;&lt;h2&gt;Image …&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 25 Jan 2014 21:47:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-25:/vapoursynth-pythonic-alternative-to.html</guid><category>misc</category><category>vapoursynth</category><category>avisynth</category></item><item><title>Tables in Latex. Multiline, right alignment</title><link>https://serge-m.github.io/tables-in-latex-multiline-right.html</link><description>&lt;p&gt;I used _tabularx _package.
+&lt;p&gt;&lt;a href="http://www.vapoursynth.com/"&gt;http://www.vapoursynth.com/&lt;/a&gt;&amp;nbsp;- website&lt;/p&gt;
+&lt;h2 style="text-align: left;"&gt;How to save data from VapourSynth&lt;/h2&gt;
+&lt;div&gt;You need to use vspipe.exe from Vapour distributive&lt;/div&gt;
+&lt;div&gt;It seems it returns raw data to stdout&lt;/div&gt;
+&lt;div&gt;
+
+&lt;/div&gt;
+&lt;h3 style="text-align: left;"&gt;Render using ffmpeg&lt;/h3&gt;
+&lt;div&gt;Don't know how jet&lt;/div&gt;
+&lt;div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;h3&gt;Render using ImageMagick/convert&lt;/h3&gt;&lt;div&gt;Don't know how jet&lt;/div&gt;&lt;div&gt;
+&lt;div&gt;&lt;h2&gt;Image …&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sat, 25 Jan 2014 21:47:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-25:/vapoursynth-pythonic-alternative-to.html</guid><category>misc</category><category>vapoursynth</category><category>avisynth</category></item><item><title>Tables in Latex. Multiline, right alignment</title><link>https://serge-m.github.io/tables-in-latex-multiline-right.html</link><description>&lt;p&gt;I used _tabularx _package.
 Additional definitions:  &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;    \usepackage{array}&lt;/span&gt;
 &lt;span class="err"&gt;    \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment&lt;/span&gt;
 &lt;span class="err"&gt;    \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X}  % right multiline alignment&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Table:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}&lt;/span&gt;
 &lt;span class="err"&gt;     Text, aligned to the left, without margin \newline&lt;/span&gt;
 &lt;span class="err"&gt;     Tex in the same cell on the next line …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 23 Jan 2014 19:56:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-23:/tables-in-latex-multiline-right.html</guid><category>misc</category><category>latex</category></item><item><title>How?</title><link>https://serge-m.github.io/how.html</link><description>&lt;p&gt;How does start menu in Win7 select the most useless new application i've installed?&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 17 Jan 2014 20:59:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-17:/how.html</guid><category>misc</category></item><item><title>Building ConEmu</title><link>https://serge-m.github.io/building-conemu.html</link><description>&lt;div style="text-align: left;"&gt;Problems with ConEmu building from&amp;nbsp;&lt;/div&gt;
-
 &lt;div style="text-align: left;"&gt;https://github.com/Maximus5/ConEmu.git v14.01.06&lt;/div&gt;
-
 &lt;div style="text-align: left;"&gt;in Visual Studio 2010&lt;/div&gt;
-
 &lt;h4 style="text-align: left;"&gt;ConEmuC&lt;/h4&gt;
-
-&lt;p&gt;unresolved external symbol &lt;code&gt;__imp__&lt;/code&gt;wsprintfA&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;- add additional dependency&amp;nbsp;&lt;strong&gt;User32.lib&lt;/strong&gt;
+&lt;p&gt;unresolved external symbol &lt;code&gt;__imp__&lt;/code&gt;wsprintfA&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;- add additional dependency&lt;strong&gt;User32.lib&lt;/strong&gt;
 &lt;b&gt;
-&lt;/b&gt;
-&lt;h4 style="text-align: left;"&gt;&lt;strong&gt;ConEmuCD&lt;/strong&gt;&lt;/h4&gt;Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;3&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;error LNK2001: unresolved external symbol &lt;code&gt;__imp__&lt;/code&gt;CharUpperBuffW@8&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;
+&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;h4 style="text-align: left;"&gt;**ConEmuCD**&lt;/h4&gt;&lt;/p&gt;
+&lt;p&gt;Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;3&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;error LNK2001: unresolved external symbol &lt;code&gt;__imp__&lt;/code&gt;CharUpperBuffW@8&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;
 Error&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;4&lt;span class="Apple-tab-span" style="white-space: pre;"&gt; &lt;/span&gt;error LNK2001: unresolved external symbol &lt;code&gt;__imp__&lt;/code&gt;MapVirtualKeyW@8 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 16 Jan 2014 20:56:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-16:/building-conemu.html</guid><category>misc</category><category>c++</category><category>tools</category><category>software</category><category>dll</category><category>visual studio</category></item><item><title>Free software for screen video capture</title><link>https://serge-m.github.io/free-software-for-screen-video-capture.html</link><description>&lt;h2&gt;CamStudio 2.7&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://camstudio.org/"&gt;http://camstudio.org/&lt;/a&gt; works fine&lt;/p&gt;
 &lt;h2&gt;Rylstim-Screen-Recorder&lt;/h2&gt;
@@ -1345,18 +1273,16 @@ A guy made a script according to proposed instructions: https://github.com/onepr
 &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;branches&lt;/span&gt;
      &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Project1 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 08 Jan 2014 18:14:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-08:/migrating-from-svn-to-git.html</guid><category>misc</category><category>useful</category><category>mercurial</category><category>git</category><category>svn</category></item><item><title>Things about C++</title><link>https://serge-m.github.io/things-about-c.html</link><description>&lt;ol style="text-align: left;"&gt;&lt;li&gt;rules for resolving calls to overloaded functions:&amp;nbsp;&lt;/li&gt;- &lt;li&gt;identify the function that's the best match for the call (name, parameters etc)&lt;/li&gt;&lt;li&gt;checks accessibility for the best-match function.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;div&gt;
 &lt;/div&gt;
-
 &lt;div&gt;&lt;h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;"&gt;Resolving function overloads (my)&lt;/h2&gt;&lt;/div&gt;
-
 &lt;div&gt;
 &lt;/div&gt;
-
-&lt;p&gt;&lt;img alt="" src="http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png"&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;&lt;h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;"&gt;Resolving function overloads&lt;/h2&gt;&lt;/div&gt;&lt;div&gt;src:&lt;a href="http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&amp;quot; target=&amp;quot;_blank"&gt;http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&lt;/a&gt;&lt;/div&gt;&lt;div&gt;
-&lt;/div&gt;&lt;div&gt;&lt;div style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 13px;"&gt;The compiler works through the following …&lt;/div&gt;&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 06 Jan 2014 13:28:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-06:/things-about-c.html</guid><category>misc</category><category>c++</category></item><item><title>Private inheritance</title><link>https://serge-m.github.io/private-inheritance.html</link><description>&lt;p&gt;Example from Meyers "Effective C++"&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png"&gt;
+&lt;div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;div&gt;&lt;h2 style="font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 15pt;"&gt;Resolving function overloads&lt;/h2&gt;&lt;/div&gt;
+&lt;div&gt;src:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk …&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 06 Jan 2014 13:28:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-06:/things-about-c.html</guid><category>misc</category><category>c++</category></item><item><title>Private inheritance</title><link>https://serge-m.github.io/private-inheritance.html</link><description>&lt;p&gt;Example from Meyers "Effective C++"&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;public&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;explicit&lt;/span&gt; &lt;span class="n"&gt;Timer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb nb-Type"&gt;int&lt;/span&gt; &lt;span class="n"&gt;tickFrequency&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
@@ -1373,15 +1299,16 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     &lt;span class="p"&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;Now clients of Widget get interface …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 06 Jan 2014 12:49:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2014-01-06:/private-inheritance.html</guid><category>misc</category><category>c++</category></item><item><title>Blogs</title><link>https://serge-m.github.io/blogs.html</link><description>&lt;p&gt;How to write c++ programm for android (in Russian)
 &lt;a href="http://www.codeatcpp.com/2011/10/c-android-1.html"&gt;http://www.codeatcpp.com/2011/10/c-android-1.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://sivers.org/blog"&gt;http://sivers.org/blog&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;How to make a movement
-&lt;iframe allowfullscreen="" frameborder="0" height="315" mozallowfullscreen="" scrolling="no" src="http://embed.ted.com/talks/lang/ru/derek_sivers_how_to_start_a_movement.html" webkitallowfullscreen="" width="560"&gt;&lt;/iframe&gt; &lt;/p&gt;
+&lt;p&gt;How to make a movement&lt;/p&gt;
+&lt;iframe allowfullscreen="" frameborder="0" height="315" mozallowfullscreen="" scrolling="no" src="http://embed.ted.com/talks/lang/ru/derek_sivers_how_to_start_a_movement.html" webkitallowfullscreen="" width="560"&gt;&lt;/iframe&gt;
+
 &lt;p&gt;To translate:
-Source:&amp;nbsp;&lt;a href="http://habrahabr.ru/post/206258/"&gt;http://habrahabr.ru/post/206258/&lt;/a&gt;
-&lt;h5 style="background-color: white; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 14px; font-weight: normal; line-height: 20px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;2. Базар идей&lt;/h5&gt;&lt;span style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;"&gt;В какой-то момент в нашей организации вошла в моду фраза «продать идею». Особенно …&lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 15 Dec 2013 22:54:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-12-15:/blogs.html</guid><category>misc</category><category>memory</category></item><item><title>Dear programmers, developers, architects and others!</title><link>https://serge-m.github.io/dear-programmers-developers-architects.html</link><description>&lt;p&gt;In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!&lt;/p&gt;
+Source:&amp;nbsp;&lt;a href="http://habrahabr.ru/post/206258/"&gt;http://habrahabr.ru/post/206258/&lt;/a&gt;&lt;/p&gt;
+&lt;h5 style="background-color: white; border: 0px; color: #999999; font-family: Verdana, sans-serif; font-size: 14px; font-weight: normal; line-height: 20px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;"&gt;2. Базар идей&lt;/h5&gt;
+&lt;p&gt;&lt;span style="background-color: white; font-family: Verdana, sans-serif; font-size: 13px; line-height: 20px;"&gt;В какой-то момент в нашей организации вошла в моду фраза «продать идею». Особенно …&lt;/span&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 15 Dec 2013 22:54:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-12-15:/blogs.html</guid><category>misc</category><category>memory</category></item><item><title>Dear programmers, developers, architects and others!</title><link>https://serge-m.github.io/dear-programmers-developers-architects.html</link><description>&lt;p&gt;In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let's kludge together!&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="http://stevenbenner.com/wp-content/uploads/ducttape-150x150.png"&gt;&lt;div class="separator" style="clear: both; text-align: center;"&gt;&lt;a href="http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;quot;nofollow&amp;quot; target=&amp;quot;_blank"&gt;image source&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 13 Dec 2013 15:42:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-12-13:/dear-programmers-developers-architects.html</guid><category>misc</category><category>sarcasm</category></item><item><title>16 bit color formats</title><link>https://serge-m.github.io/16-bit-color-formats.html</link><description>&lt;p&gt;&lt;a href="http://forums.creativecow.net/thread/2/940078"&gt;http://forums.creativecow.net/thread/2/940078&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In adobe after effects:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#define PF_MAX_CHAN8            255&lt;/span&gt;
@@ -1431,12 +1358,12 @@ I also found out that viewer plugin SGView for TotalCommander can be &amp;nbsp;c
 &lt;p&gt;useParallel - automatic parallel&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 18 Nov 2013 20:00:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-18:/matlab.html</guid><category>misc</category><category>draft</category><category>matlab</category></item><item><title>Add backslash before all escape characters in python</title><link>https://serge-m.github.io/add-backslash-before-all-escape.html</link><description>&lt;p&gt;Useful for using in regular expressions:&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;import re
 re.escape( str )&lt;/blockquote&gt;
-
 &lt;p&gt;Python detects all escape characters that can be used by regex &amp;nbsp;and add slash before them
 &lt;a href="http://docs.python.org/2/library/re.html#re.escape"&gt;http://docs.python.org/2/library/re.html#re.escape&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 12 Nov 2013 17:14:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-12:/add-backslash-before-all-escape.html</guid><category>misc</category><category>python</category></item><item><title>Moving time indicator in composition timeline in After Effects CS6 using scripts</title><link>https://serge-m.github.io/move-time-indicator-in-composition.html</link><description>&lt;p&gt;So, Javascript code for position changing is simple.
-Lets say comp - is your composition:
-&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);&lt;/span&gt;&lt;/blockquote&gt;move pointer to time 0.2:
-&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;comp.time = 0.2;&lt;/span&gt;&lt;/blockquote&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 12 Nov 2013 14:52:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-12:/move-time-indicator-in-composition.html</guid><category>misc</category><category>after effects (aae)</category><category>javascript</category></item><item><title>То, что вы хотели знать про оптический поток, но стеснялись спросить</title><link>https://serge-m.github.io/blog-post-3.html</link><description>&lt;p&gt;Взято с &lt;a href="http://habrahabr.ru/post/201406/"&gt;http://habrahabr.ru/post/201406/&lt;/a&gt;&lt;/p&gt;
+Lets say comp - is your composition:&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;precomp = app.project.items.addComp( "ololo", width, height, 1.0, duration, frameRate);&lt;/span&gt;&lt;/blockquote&gt;
+&lt;p&gt;move pointer to time 0.2:&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace; font-size: x-small;"&gt;comp.time = 0.2;&lt;/span&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 12 Nov 2013 14:52:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-12:/move-time-indicator-in-composition.html</guid><category>misc</category><category>after effects (aae)</category><category>javascript</category></item><item><title>То, что вы хотели знать про оптический поток, но стеснялись спросить</title><link>https://serge-m.github.io/blog-post-3.html</link><description>&lt;p&gt;Взято с &lt;a href="http://habrahabr.ru/post/201406/"&gt;http://habrahabr.ru/post/201406/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;see also &lt;a href="https://habr.com/ru/company/ods/blog/446726/"&gt;Deep Learning в вычислении оптического потока&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.
 &lt;div&gt;
@@ -1451,11 +1378,14 @@ Lets say comp - is your composition:
 &lt;a href="http://habrahabr.ru/post/208090/"&gt;http://habrahabr.ru/post/208090/&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 style="text-align: left;"&gt;Building opencv program in C&lt;/h3&gt;
+&lt;div&gt;&lt;span style="background-color: #f7f7f9; color: #222222; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 20px; white-space: pre-wrap;"&gt;gcc -ggdb `pkg-config --cflags opencv` -o `basename test.c …&lt;/span&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 05 Nov 2013 20:44:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-05:/opencv-tutorials-in-russian.html</guid><category>misc</category><category>opencv</category><category>tuturials</category></item><item><title>Free UML editor</title><link>https://serge-m.github.io/free-uml-editor.html</link><description>&lt;p&gt;I found free UML editor:&lt;/p&gt;
+&lt;h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;"&gt;ArgoUML&amp;nbsp;[http://argouml.tigris.org/](http://argouml.tigris.org/" style="background-color: transparent;)&lt;/h1&gt;
+&lt;div&gt;It seems not bad&lt;/div&gt;
+&lt;div&gt;
 
-&lt;div&gt;&lt;span style="background-color: #f7f7f9; color: #222222; font-family: Menlo, Monaco, 'Courier New', monospace; font-size: 12px; line-height: 20px; white-space: pre-wrap;"&gt;gcc -ggdb `pkg-config --cflags opencv` -o `basename test.c …&lt;/span&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 05 Nov 2013 20:44:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-11-05:/opencv-tutorials-in-russian.html</guid><category>misc</category><category>opencv</category><category>tuturials</category></item><item><title>Free UML editor</title><link>https://serge-m.github.io/free-uml-editor.html</link><description>&lt;p&gt;I found free UML editor:
-&lt;h1 style="background-color: white; font-family: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif; font-size: large; font-weight: normal; line-height: 16px; margin-bottom: 0.5em; margin-top: 0.6em;"&gt;ArgoUML&amp;nbsp;&lt;a href="http://argouml.tigris.org/&amp;quot; style=&amp;quot;background-color: transparent;"&gt;http://argouml.tigris.org/&lt;/a&gt;&lt;/h1&gt;&lt;div&gt;It seems not bad&lt;/div&gt;&lt;div&gt;&lt;/p&gt;
-&lt;p&gt;I have tried gliffy.com. It is online and paid.
-www.lucidchart.com has free version but it seems not so convenient&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 25 Oct 2013 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-25:/free-uml-editor.html</guid><category>misc</category><category>software design</category><category>uml</category></item><item><title>How to open composition in viewer in Adobe After Effects using scripts</title><link>https://serge-m.github.io/how-to-open-composition-in-viewer-in.html</link><description>&lt;p&gt;// Make a composition
+
+I have tried gliffy.com. It is online and paid.
+www.lucidchart.com has free version but it seems not so convenient</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 25 Oct 2013 19:37:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-25:/free-uml-editor.html</guid><category>misc</category><category>software design</category><category>uml</category></item><item><title>How to open composition in viewer in Adobe After Effects using scripts</title><link>https://serge-m.github.io/how-to-open-composition-in-viewer-in.html</link><description>&lt;p&gt;// Make a composition
 var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );&lt;/p&gt;
 &lt;p&gt;// Open it in viewer
 comp.openInViewer();&lt;/p&gt;
@@ -1484,12 +1414,14 @@ readline.write_history_file( "log.py")&lt;/span&gt;&lt;/p&gt;</description><dc:c
 &lt;p&gt;Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.&lt;/p&gt;
 &lt;p&gt;Комбинация &lt;code&gt;'ALT+.'&lt;/code&gt; или &lt;code&gt;'&amp;lt;ESC&amp;gt; .'&lt;/code&gt;&lt;/p&gt;
 &lt;h3&gt;Девятое место&lt;/h3&gt;
-&lt;p&gt;Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 22 Oct 2013 12:39:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-22:/ten-best-console-commands-rus.html</guid><category>misc</category><category>useful</category><category>console</category><category>russian</category></item><item><title>OpenCV. Processing external byte buffer</title><link>https://serge-m.github.io/opencv-processing-external-byte-buffer.html</link><description>&lt;p&gt;We have such an example from openCV documentation:
+&lt;p&gt;Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 22 Oct 2013 12:39:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-22:/ten-best-console-commands-rus.html</guid><category>misc</category><category>useful</category><category>console</category><category>russian</category></item><item><title>OpenCV. Processing external byte buffer</title><link>https://serge-m.github.io/opencv-processing-external-byte-buffer.html</link><description>&lt;p&gt;We have such an example from openCV documentation:&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;Mat img(height, width, CV_8UC3, pixels, step);&lt;/span&gt;
 &lt;span style="font-family: Courier New, Courier, monospace;"&gt;GaussianBlur(img, img, Size(7,7), 1.5, 1.5);&lt;/span&gt;&lt;/blockquote&gt;
-&lt;div&gt;What does it mean?&amp;nbsp;&lt;/div&gt;&lt;div&gt;Lets say I have an image img:
+&lt;div&gt;What does it mean?&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Lets say I have an image img:
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: 'Courier New', Courier, monospace;"&gt;typedef unsigned char BYTE;&lt;/span&gt;
-&lt;span style="font-family: Courier New, Courier, monospace;"&gt;BYTE * img = new BYTE[ w * h ];&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;&lt;div&gt;Lets assume the image …&lt;/div&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 21 Oct 2013 13:40:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-21:/opencv-processing-external-byte-buffer.html</guid><category>misc</category></item><item><title>Fast way of copying byte array in C/C++ (With measurements)</title><link>https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html</link><description>&lt;p&gt;UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.&lt;/p&gt;
+&lt;span style="font-family: Courier New, Courier, monospace;"&gt;BYTE * img = new BYTE[ w * h ];&lt;/span&gt;&lt;/blockquote&gt;&lt;/div&gt;
+&lt;div&gt;Lets assume the image …&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Mon, 21 Oct 2013 13:40:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-10-21:/opencv-processing-external-byte-buffer.html</guid><category>misc</category></item><item><title>Fast way of copying byte array in C/C++ (With measurements)</title><link>https://serge-m.github.io/fast-way-of-copying-byte-array-in-cc.html</link><description>&lt;p&gt;UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.&lt;/p&gt;
 &lt;p&gt;I have the following code for copying several buffers from one object to another:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;    &lt;span class="c1"&gt;// Copy several buffers (images)&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;MIN&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt;
@@ -1520,16 +1452,18 @@ If you use single-channel image.&lt;/p&gt;
 &lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Mat&lt;/span&gt; &lt;span class="n"&gt;small&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CV_8UC1&lt;/span&gt; &lt;span class="p"&gt;);&lt;/span&gt;
 
 &lt;span class="n"&gt;cv&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="n"&gt;s_half&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;coeff …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 09 Jul 2013 23:23:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-07-09:/opencv-copy-image-from-unsigned-char.html</guid><category>misc</category><category>c++</category><category>opencv</category></item><item><title>SVN copy certain subdirectories to a branch</title><link>https://serge-m.github.io/svn-copy-certain-subdirectories-to.html</link><description>&lt;p&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;There was always a problem for me to copy only certain directories from one branch to another.&lt;/span&gt;
-&lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;
+&lt;span style="font-family: Times, Times New Roman, serif;"&gt;For example we have following directory structure:&lt;/span&gt;&lt;/p&gt;
 &lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;trunk
       - project1
       - project2
           -subdir1
           -subdir2
-          -subdir3        &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;div style="text-align: left;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.&lt;/span&gt;&lt;/code&gt;&lt;/div&gt;&lt;div style="text-align: left;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/code&gt;&lt;/span&gt;&lt;/div&gt;&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&lt;span style="font-size: small; line-height: normal; white-space: normal;"&gt;branches/branch1 …&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 03 Jul 2013 17:07:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</guid><category>misc</category></item><item><title>Trim frames from raw YUV video using FFMPEG</title><link>https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html</link><description>&lt;p&gt;Trim 5 frames starting from 160-th frame and write to png sequence&lt;/p&gt;
+          -subdir3        &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;div style="text-align: left;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.&lt;/span&gt;&lt;/code&gt;&lt;/div&gt;
+&lt;div style="text-align: left;"&gt;&lt;span style="font-family: Times, Times New Roman, serif;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;/code&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"&gt;&lt;code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;&lt;span style="font-size: small; line-height: normal; white-space: normal;"&gt;branches/branch1 …&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 03 Jul 2013 17:07:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-07-03:/svn-copy-certain-subdirectories-to.html</guid><category>misc</category></item><item><title>Trim frames from raw YUV video using FFMPEG</title><link>https://serge-m.github.io/trim-frames-from-raw-yuv-video-using.html</link><description>&lt;p&gt;Trim 5 frames starting from 160-th frame and write to png sequence&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;size of input video is 1920x1088, format YUV420 progressive.&lt;/p&gt;
 &lt;p&gt;UPD:
@@ -1542,11 +1476,9 @@ return v&lt;/blockquote&gt;2 …&lt;/p&gt;</description><dc:creator xmlns:dc="ht
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;PATH=$PATH:~/your_path&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-
 &lt;p&gt;or&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;PATH=~/your_path:$PATH&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 
 &lt;p&gt;Add path windows&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;PATH=%PATH%;C:\Your_Path;&lt;/span&gt;
@@ -1563,8 +1495,9 @@ you can download database and compare your metric to MOS by&amp;nbsp;Spearman co
 &lt;p&gt;Language: English&lt;/p&gt;
 &lt;p&gt;Pages: 1429&lt;/p&gt;
 &lt;p&gt;ISBN: 9780121197926, 0121197921&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 28 May 2013 16:04:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-28:/ssim-metric-for-video.html</guid><category>misc</category></item><item><title>SSIM по русски</title><link>https://serge-m.github.io/ssim.html</link><description>&lt;p&gt;Нужно будет тут записать как работает метрика SSIM по человечески&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 28 May 2013 15:48:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-28:/ssim.html</guid><category>misc</category><category>ssim</category><category>metric</category><category>russian</category><category>video</category></item><item><title>Replace \n in Microsoft word</title><link>https://serge-m.github.io/replace-n-in-microsoft-word.html</link><description>&lt;p&gt;To replace new lines in word use "^13" whild-char. "^p" doesn't work :(&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 26 May 2013 13:55:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-26:/replace-n-in-microsoft-word.html</guid><category>misc</category></item><item><title>Tips for debugging of video processing console</title><link>https://serge-m.github.io/tips-for-debugging-of-video-processing.html</link><description>&lt;p&gt;Assume we have Visual Stusio solution for console that makes some video processing.
-The console takes two input videos and generates the third video:
-&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;Console.exe --input1 video1.avi --input2 video2.avi --output result.avi&lt;/span&gt;&lt;/blockquote&gt;While debugging we need to run console on several datasets.
+The console takes two input videos and generates the third video:&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;Console.exe --input1 video1.avi --input2 video2.avi --output result.avi&lt;/span&gt;&lt;/blockquote&gt;
+&lt;p&gt;While debugging we need to run console on several datasets.
 1) dataset1 conststs of videos …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Thu, 16 May 2013 13:31:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-16:/tips-for-debugging-of-video-processing.html</guid><category>misc</category></item><item><title>Bjontegaard metric. Matlab script.</title><link>https://serge-m.github.io/bjontegaard-metric-matlab-script.html</link><description>&lt;p&gt;Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved.
 I is useful to determine how big is the gain between "before" and "after" versions.
 Or determine what curve is better if they have complex form (for example, intersecting).&lt;/p&gt;
@@ -1572,14 +1505,15 @@ Or determine what curve is better if they have complex form (for example, inters
 that calculates BD-PSNR, but it was not correct …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 15 May 2013 12:51:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-15:/bjontegaard-metric-matlab-script.html</guid><category>misc</category></item><item><title>Problems with debug run from Visual Studio with openMP</title><link>https://serge-m.github.io/problems-with-debug-run-from-visual.html</link><description>&lt;p&gt;I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
 &lt;img alt="" src="http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png"&gt;
 The solution is following.
-Folder
-&lt;blockquote class="tr_bq"&gt;Microsoft.VC90.DebugOpenMP&lt;/blockquote&gt;with files
+Folder&lt;/p&gt;
+&lt;blockquote class="tr_bq"&gt;Microsoft.VC90.DebugOpenMP&lt;/blockquote&gt;
+&lt;p&gt;with files&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;Microsoft.VC90.DebugOpenMP.manifest
-vcomp90d …&lt;/blockquote&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 14 May 2013 12:14:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-14:/problems-with-debug-run-from-visual.html</guid><category>misc</category></item><item><title>Another place with boost binaries</title><link>https://serge-m.github.io/another-place-with-boost-binaries.html</link><description>&lt;p&gt;&lt;a href="http://boost.teeks99.com/"&gt;http://boost.teeks99.com/&lt;/a&gt;&amp;nbsp;- Another place with boost binaries. It includes build for version 1.49&lt;/p&gt;
+vcomp90d …&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Tue, 14 May 2013 12:14:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-14:/problems-with-debug-run-from-visual.html</guid><category>misc</category></item><item><title>Another place with boost binaries</title><link>https://serge-m.github.io/another-place-with-boost-binaries.html</link><description>&lt;p&gt;&lt;a href="http://boost.teeks99.com/"&gt;http://boost.teeks99.com/&lt;/a&gt;&amp;nbsp;- Another place with boost binaries. It includes build for version 1.49&lt;/p&gt;
 &lt;p&gt;Before I new only&amp;nbsp;&lt;a href="http://www.boostpro.com/download/"&gt;http://www.boostpro.com/download/&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 14:57:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/another-place-with-boost-binaries.html</guid><category>misc</category></item><item><title>Error spawning cmd.exe</title><link>https://serge-m.github.io/error-spawning-cmdexe.html</link><description>&lt;p&gt;I got error message&amp;nbsp;&lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;Error spawning cmd.exe&lt;/span&gt;&lt;/blockquote&gt;during compiling of Blender sources.
-The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to&lt;/p&gt;
 &lt;blockquote class="tr_bq"&gt;&lt;span style="font-family: Courier New, Courier, monospace;"&gt;%SystemRoot%\system32;
-%SystemRoot …&lt;/span&gt;&lt;/blockquote&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 14:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/error-spawning-cmdexe.html</guid><category>misc</category><category>c++</category><category>errors</category><category>visual studio</category></item><item><title>Blogs about blender</title><link>https://serge-m.github.io/blogs-about-blender.html</link><description>&lt;p&gt;&lt;a href="http://blendersushi.blogspot.ru/"&gt;http://blendersushi.blogspot.ru/&lt;/a&gt;
+%SystemRoot …&lt;/span&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 14:11:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/error-spawning-cmdexe.html</guid><category>misc</category><category>c++</category><category>errors</category><category>visual studio</category></item><item><title>Blogs about blender</title><link>https://serge-m.github.io/blogs-about-blender.html</link><description>&lt;p&gt;&lt;a href="http://blendersushi.blogspot.ru/"&gt;http://blendersushi.blogspot.ru/&lt;/a&gt;
 - one of blender's developers&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html"&gt;http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html&lt;/a&gt;
 - ukrainian blog, &amp;nbsp;video tutorials in russian&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 12 May 2013 12:20:00 +0200</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2013-05-12:/blogs-about-blender.html</guid><category>misc</category></item><item><title>Overview of open-source node-based video editors (composers)</title><link>https://serge-m.github.io/overview-of-open-source-node-based.html</link><description>&lt;h2&gt;Synapse Compositor&lt;/h2&gt;

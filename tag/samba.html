@@ -101,11 +101,9 @@ sergem personal public notebook            </a>
 <span class="err">mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share</span>
 </code></pre></div>
 
-
 <p>To allow write access one has to specify owning user and group:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share</span>
 </code></pre></div>
-
 
 <h2>Unmount …</h2>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/mount-windows-shares-in-linux.html">more ...</a>

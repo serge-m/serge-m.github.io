@@ -122,7 +122,6 @@ sergem personal public notebook            </a>
 <span class="err">$  name session</span>
 </code></pre></div>
 
-
 <h3>Windows (tabs)</h3>
 <div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
 <span class="err">w  list windows</span>
@@ -132,7 +131,6 @@ sergem personal public notebook            </a>
 <span class="err">,  name window</span>
 <span class="err">&amp;  kill window</span>
 </code></pre></div>
-
 
 <h3>Panes (splits)</h3>
 <div class="highlight"><pre><span></span><code><span class="c">%  vertical split</span>
@@ -146,7 +144,6 @@ sergem personal public notebook            </a>
 ⍽  <span class="n">space</span> <span class="o">-</span> <span class="n">toggle</span> <span class="n">between</span> <span class="n">layouts</span>
 </code></pre></div>
 
-
 <h2>Set up scrolling and fix Shift-F5, Shift-Fn in mc</h2>
 <p>put this command in your ~/.tmux.conf</p>
 <div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="o">-</span><span class="k">g</span> <span class="n">mouse</span> <span class="k">on</span>    
@@ -158,11 +155,9 @@ sergem personal public notebook            </a>
 <span class="n">setw</span> <span class="o">-</span><span class="k">g</span> <span class="n">xterm</span><span class="o">-</span><span class="n">keys</span> <span class="k">on</span>
 </code></pre></div>
 
-
 <p>For older versions of tmux use </p>
 <div class="highlight"><pre><span></span><code><span class="err">setw -g mode-mouse on</span>
 </code></pre></div>
-
 
 <p>as a first line. Otherwise you get </p>
 <div class="highlight"><pre><span></span><code><span class="err">... .tmux.conf:1: unknown option: mode-mouse ... </span>

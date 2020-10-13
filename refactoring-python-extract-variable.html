@@ -128,7 +128,6 @@ sergem personal public notebook            </a>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Becomes:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">OystersGood:</span>
     <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="nb">month</span>):
@@ -151,7 +150,6 @@ sergem personal public notebook            </a>
         <span class="k">return</span> <span class="nb">self</span>.<span class="n">_result</span>
 </code></pre></div>
 
-
 <div class="highlight"><pre><span></span><code><span class="n">time_for_oysters</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="k">month</span><span class="p">)</span>
 <span class="n">time_for_tomatoes</span> <span class="o">=</span> <span class="n">TomatoesGood</span><span class="p">(</span><span class="k">month</span><span class="p">)</span>
 
@@ -162,7 +160,6 @@ sergem personal public notebook            </a>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">print</span><span class="p">(</span><span class="s1">&#39;%s is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="k">month</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>November is a good time to eat oysters</p>
 <p>Now the helper function is easy to test and introspect.</p>
@@ -176,7 +173,6 @@ sergem personal public notebook            </a>
 <span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_r</span>
 <span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_ary</span>
 </code></pre></div>
-
 
 <p><a href="http://mauveweb.co.uk/posts/2014/09/every-mock-patch-is-a-little-smell.html">Dependency injection for better testing</a></p>
             </div>

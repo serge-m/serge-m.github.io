@@ -122,13 +122,11 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy</span>
 </code></pre></div>
 
-
 </li>
 <li>
 <p>Create package and vitual environment. Something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="o">./</span><span class="n">pypy</span><span class="o">/</span><span class="k">tool</span><span class="o">/</span><span class="n">release</span><span class="o">/</span><span class="n">package</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">targetdir</span> <span class="o">./</span><span class="n">my_builds</span><span class="o">/</span><span class="n">build</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">bz2</span> <span class="o">--</span><span class="n">builddir</span> <span class="o">./</span><span class="n">tmp</span><span class="o">/</span> <span class="o">--</span><span class="n">nostrip</span> <span class="o">--</span><span class="n">archive</span><span class="o">-</span><span class="n">name</span> <span class="n">pypy_84341</span>
 </code></pre></div>
-
 
 <p>Needed to copy pypy-c and libpypy to pypy/goal beforehand.</p>
 </li>
@@ -143,7 +141,6 @@ sergem personal public notebook            </a>
 
 <span class="n">FAILED</span> <span class="p">(</span><span class="n">KNOWNFAIL</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">SKIP</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="mi">218</span><span class="p">,</span> <span class="n">failures</span><span class="o">=</span><span class="mi">83</span><span class="p">)</span>
 </code></pre></div>
-
 
 </li>
 </ol>

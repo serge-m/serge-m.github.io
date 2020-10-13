@@ -110,7 +110,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get remove firefox</span>
 </code></pre></div>
 
-
 </li>
 <li>
 <p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
@@ -118,18 +117,15 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get remove mint-search-addon</span>
 </code></pre></div>
 
-
 </li>
 <li>
 <p>delete file (or rename to have a backup):</p>
 <div class="highlight"><pre><span></span><code><span class="err">~/.mozilla/firefox/&lt;SOMETHING&gt;.default/search.json.mozlz4</span>
 </code></pre></div>
 
-
 <p>and contents of the directory:</p>
 <div class="highlight"><pre><span></span><code><span class="err">~/.mozilla/firefox/sf8ha7dx.default/searchplugins</span>
 </code></pre></div>
-
 
 </li>
 <li>
@@ -137,7 +133,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     It will create a new version of</p>
 <div class="highlight"><pre><span></span><code><span class="err">~/.mozilla/firefox/sf8ha7dx.default/searchplugins</span>
 </code></pre></div>
-
 
 </li>
 <li>
@@ -154,7 +149,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <span class="nt">&lt;/SearchPlugin&gt;</span>
 </code></pre></div>
 
-
 </li>
 <li>
 <p>remove official normal version of firefox</p>
@@ -163,7 +157,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <p>install mint version of firefox:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install firefox</span>
 </code></pre></div>
-
 
 <p>Now "mint" firefox will use <code>search.json.mozlz4</code> version from normal firefox and suggestions should work</p>
 </li>

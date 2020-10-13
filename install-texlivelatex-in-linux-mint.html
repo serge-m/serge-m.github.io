@@ -116,32 +116,26 @@ sergem personal public notebook            </a>
 <span class="err">rm -rf ~/.texlive2014 </span>
 </code></pre></div>
 
-
 <p>To use gui first I installed perl-tk: </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install prel-tk</span>
 </code></pre></div>
-
 
 <p>Then </p>
 <div class="highlight"><pre><span></span><code><span class="err">./install-tl -gui perltk</span>
 </code></pre></div>
 
-
 <p>After installation I needed to set up PATH variable. I made it temporarily for now: </p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span> <span class="n">PATH</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">texlive</span><span class="o">/</span><span class="mi">2014</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">i386</span><span class="o">-</span><span class="n">linux</span><span class="p">:</span><span class="o">$</span><span class="n">PATH</span>
 </code></pre></div>
-
 
 <p>Then I could use texlive package manager to update/install latex packages: </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui</span>
 </code></pre></div>
 
-
 <p><strike>
 UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. </p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo fc-cache -fsv</span>
 </code></pre></div>
-
 
 <p></strike></p>
 <p><strike>

@@ -113,7 +113,6 @@ Under Windows latex2rtf diisplayed following error:</p>
 <div class="highlight"><pre><span></span><code><span class="n">latex2png</span><span class="o">:</span> <span class="n">error</span><span class="o">:</span> <span class="n">eps2eps</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">translate</span> <span class="n">l2r_00123</span><span class="o">.</span><span class="na">pdf</span> <span class="n">to</span> <span class="n">l2r_00123</span><span class="o">.</span><span class="na">eps</span>
 </code></pre></div>
 
-
 <p>for each image in my latex file.</p>
 <p>That was very sad because this method is used to convert all equations, fugures and tables in word format.</p>
 <p>The configurations seemed ok:</p>
@@ -125,21 +124,17 @@ Under Windows latex2rtf diisplayed following error:</p>
 <div class="highlight"><pre><span></span><code><span class="err">&quot;C:\Program Files (x86)\gs\gs9.05\bin\gswin32c.exe&quot; -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%2 %1</span>
 </code></pre></div>
 
-
 <p>and changed script </p>
 <div class="highlight"><pre><span></span><code><span class="err">&quot;c:\Program Files (x86)\latex2rtf\latex2png&quot; </span>
 </code></pre></div>
-
 
 <p>I changed </p>
 <div class="highlight"><pre><span></span><code><span class="err">PDF2EPS=&quot;eps2eps&quot; </span>
 </code></pre></div>
 
-
 <p>with </p>
 <div class="highlight"><pre><span></span><code><span class="err">PDF2EPS=&quot;pdf2eps_my&quot; </span>
 </code></pre></div>
-
 
 <p>it works because miktex/bin directory is in my PATH</p>
             </div>

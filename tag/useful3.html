@@ -163,12 +163,13 @@ I0 = numpy.loadtxt(StringIO("""
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
-<p><pre class="brush: cpp"> 
+<pre class="brush: cpp"> 
 function [ output ] = quiver_flow( u, v )
 %QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014</p>
-<p>output = quiver( u, v, 0);
-axis ij …</p>
+%   SMatyunin2014
+
+output = quiver( u, v, 0);
+axis ij …</pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
                 </div>
             </article>
@@ -282,17 +283,12 @@ axis ij …</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><h2 style="text-align: left;"><span class="st">_Intro _</span></h2>
-
 <p><span class="st"><em>Theano</em> is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span></p>
 <h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2>
-
 <div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div>
-
 <div style="text-align: left;">
 </div>
-
 <div style="text-align: left;"><span class="st">Test script: </span></div>
-
 <blockquote class="tr_bq">
     ::::
     <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared …</span></blockquote>
@@ -326,7 +322,6 @@ axis ij …</p>
 <span class="err">ctrl-a-s - freeze</span>
 <span class="err">ctrl-a-S - split, but doesn;t work</span>
 </code></pre></div>
-
 
 <p>see also: <a href="/terminal-setup-in-linux-mint.html">using tmux</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/multiple-windows-in-one-linux-terminal.html">more ...</a>

@@ -136,12 +136,14 @@ readline.write_history_file( "log.py")</span></p>
 
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>We have such an example from openCV documentation:
+                <div class="summary"><p>We have such an example from openCV documentation:</p>
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">Mat img(height, width, CV_8UC3, pixels, step);</span>
 <span style="font-family: Courier New, Courier, monospace;">GaussianBlur(img, img, Size(7,7), 1.5, 1.5);</span></blockquote>
-<div>What does it mean?&nbsp;</div><div>Lets say I have an image img:
+<div>What does it mean?&nbsp;</div>
+<div>Lets say I have an image img:
 <blockquote class="tr_bq"><span style="font-family: 'Courier New', Courier, monospace;">typedef unsigned char BYTE;</span>
-<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div><div>Lets assume the image …</div></p>
+<span style="font-family: Courier New, Courier, monospace;">BYTE * img = new BYTE[ w * h ];</span></blockquote></div>
+<div>Lets assume the image …</div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-processing-external-byte-buffer.html">more ...</a>
                 </div>
             </article>
@@ -376,13 +378,16 @@ If you use single-channel image.</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p><span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
-<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>
+<span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span></p>
 <pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;">trunk
       - project1
       - project2
           -subdir1
           -subdir2
-          -subdir3        </span></code></pre><div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div><div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div><pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre></p>
+          -subdir3        </span></code></pre>
+<div style="text-align: left;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Times, Times New Roman, serif;">We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</span></code></div>
+<div style="text-align: left;"><span style="font-family: Times, Times New Roman, serif;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"></code></span></div>
+<pre style="background-color: #eeeeee; border: 0px; line-height: 18px; margin-bottom: 10px; max-height: 600px; overflow: auto; padding: 5px; vertical-align: baseline; width: auto;"><code style="border: 0px; margin: 0px; padding: 0px; vertical-align: baseline;"><span style="font-family: Courier New, Courier, monospace;"><span style="font-size: small; line-height: normal; white-space: normal;">branches/branch1 …</span></span></code></pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">more ...</a>
                 </div>
             </article>
@@ -411,7 +416,6 @@ If you use single-channel image.</p>
                 <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
 <div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
 </code></pre></div>
-
 
 <p>size of input video is 1920x1088, format YUV420 progressive.</p>
 <p>UPD:
@@ -464,11 +468,9 @@ return v</blockquote>2 …</p>
 <div class="highlight"><pre><span></span><code><span class="err">PATH=$PATH:~/your_path</span>
 </code></pre></div>
 
-
 <p>or</p>
 <div class="highlight"><pre><span></span><code><span class="err">PATH=~/your_path:$PATH</span>
 </code></pre></div>
-
 
 <p>Add path windows</p>
 <div class="highlight"><pre><span></span><code><span class="err">PATH=%PATH%;C:\Your_Path;</span>

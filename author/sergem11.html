@@ -85,8 +85,9 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Assume we have Visual Stusio solution for console that makes some video processing.
-The console takes two input videos and generates the third video:
-<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>While debugging we need to run console on several datasets.
+The console takes two input videos and generates the third video:</p>
+<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Console.exe --input1 video1.avi --input2 video2.avi --output result.avi</span></blockquote>
+<p>While debugging we need to run console on several datasets.
 1) dataset1 conststs of videos …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tips-for-debugging-of-video-processing.html">more ...</a>
                 </div>
@@ -134,10 +135,11 @@ that calculates BD-PSNR, but it was not correct …</p>
                 <div class="summary"><p>I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe.
 <img alt="" src="http://4.bp.blogspot.com/-XL6WF2QIesk/UZHwxlLsObI/AAAAAAAAAYE/9_XJHGufbj8/s320/error_about_parallel_configurations.png">
 The solution is following.
-Folder
-<blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP</blockquote>with files
+Folder</p>
+<blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP</blockquote>
+<p>with files</p>
 <blockquote class="tr_bq">Microsoft.VC90.DebugOpenMP.manifest
-vcomp90d …</blockquote></p>
+vcomp90d …</blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/problems-with-debug-run-from-visual.html">more ...</a>
                 </div>
             </article>
@@ -185,9 +187,9 @@ vcomp90d …</blockquote></p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I got error message&nbsp;<blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">Error spawning cmd.exe</span></blockquote>during compiling of Blender sources.
-The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to</p>
 <blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">%SystemRoot%\system32;
-%SystemRoot …</span></blockquote></p>
+%SystemRoot …</span></blockquote>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/error-spawning-cmdexe.html">more ...</a>
                 </div>
             </article>

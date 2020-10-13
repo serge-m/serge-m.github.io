@@ -140,7 +140,6 @@ A guy made a script according to proposed instructions: https://github.com/onepr
      <span class="o">/</span><span class="n">tags</span>
 </code></pre></div>
 
-
 <p>Each project will get synchronized over by project name:</p>
 <p>Ex: <code>./migration https://svnurl.com/basepath project1</code></p>
 <p>If you wish to convert the full repo over, use the following syntax:</p>
@@ -156,16 +155,13 @@ Branches are ok, but merged revisions are not marked as merged. In other words e
 <div class="highlight"><pre><span></span><code><span class="err">svnrdump dump https://&lt;your svn repo path&gt;/ &gt; dump.dump</span>
 </code></pre></div>
 
-
 <p>then create a new local repo</p>
 <div class="highlight"><pre><span></span><code><span class="err">svnadmin create newrepo</span>
 </code></pre></div>
 
-
 <p>loading dump to local repo:</p>
 <div class="highlight"><pre><span></span><code><span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump</span><span class="o">.</span><span class="n">dump</span>
 </code></pre></div>
-
 
 <p>I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).
 You can dump in several files if you specify revisions ranges:</p>
@@ -174,19 +170,16 @@ You can dump in several files if you specify revisions ranges:</p>
 <span class="err">svnrdump dump  https://&lt;your svn repo path&gt;/ -r 2001:3000 --incremental &gt; dump2001-3000-incremental.dump</span>
 </code></pre></div>
 
-
 <p>All dumps except the first are incremental</p>
 <p>then create a new local repo</p>
 <div class="highlight"><pre><span></span><code><span class="err">svnadmin create newrepo</span>
 </code></pre></div>
-
 
 <p>then loading:</p>
 <div class="highlight"><pre><span></span><code><span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump0001</span><span class="o">-</span><span class="mf">1000.</span><span class="n">dump</span>
 <span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump1001</span><span class="o">-</span><span class="mi">2000</span><span class="o">-</span><span class="n">incremental</span><span class="o">.</span><span class="n">dump</span>
 <span class="n">svnadmin</span> <span class="nb">load</span> <span class="n">newrepo</span> <span class="o">&lt;</span> <span class="n">dump2001</span><span class="o">-</span><span class="mi">3000</span><span class="o">-</span><span class="n">incremental</span><span class="o">.</span><span class="n">dump</span>
 </code></pre></div>
-
 
 <h2>SVN server on localhost</h2>
 <p>I used VisualSVN Server to make local SVN server.

@@ -92,12 +92,13 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Standard matlab's quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:</p>
-<p><pre class="brush: cpp"> 
+<pre class="brush: cpp"> 
 function [ output ] = quiver_flow( u, v )
 %QUIVER_FLOW Displays quiver for optical flow 
-%   SMatyunin2014</p>
-<p>output = quiver( u, v, 0);
-axis ij …</p>
+%   SMatyunin2014
+
+output = quiver( u, v, 0);
+axis ij …</pre>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/quiver-for-optical-flow.html">more ...</a>
                 </div>
             </article>
@@ -149,16 +150,13 @@ axis ij …</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>There are several solutions:
-Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a>
-<h2>pymat</h2>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
-  <a href="http://pymat.sourceforge.net/&quot; rel=&quot;nofollow)
+Source: <a href="http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python">http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python</a></p>
+<h2>pymat</h2>
+<p>A low level interface to Matlab using the matlab engine (<code>libeng</code>) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng.
+  <a href="http://pymat.sourceforge.net/&quot; rel=&quot;nofollow">http://pymat.sourceforge.net</a>
 Last updated: 2003
-  &lt;h2&gt;pymat2&lt;/h2&gt;A somewhat short lived continuation of the pymat development. Seems  to work on windows (including 64bit), linux and mac (with some changes).
-  [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&quot; rel=&quot;nofollow)
-Last updated: 2012
-  &lt;h2&gt;mlabwrap&lt;/h2&gt;A high level interface that also comes as a module which needs compilation and linking against  &lt;code&gt;libeng&lt;/code&gt;. It exposes Matlab functions to python so you can do fun stuff like
-  &lt;code&gt;mlab.plot(x, y," title="o">http://pymat.sourceforge.net</a></code>
-  <a href="http://mlabwrap.sourceforge.net/&quot; rel=&quot;nofollow">http://mlabwrap.sourceforge.net …</a></p>
+<br>
+<h2>pymat2 …</h2></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/use-matlab-function-from-python.html">more ...</a>
                 </div>
             </article>

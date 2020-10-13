@@ -146,12 +146,10 @@ It can be useful if you don't want to give root access to the client application
 <span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
 </code></pre></div>
 
-
 <p>run and check status</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl start pigpiod.service
 sudo systemctl status pigpiod.service
 </code></pre></div>
-
 
 <p>should be something like this:</p>
 <div class="highlight"><pre><span></span><code><span class="err">●</span> <span class="n">pigpiod</span><span class="o">.</span><span class="n">service</span> <span class="o">-</span> <span class="n">pigpiod</span> <span class="n">service</span>
@@ -162,16 +160,13 @@ sudo systemctl status pigpiod.service
            <span class="err">└─</span><span class="mi">10074</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">pigpiod</span> <span class="o">-</span><span class="n">l</span> <span class="o">-</span><span class="n">g</span>
 </code></pre></div>
 
-
 <p>Now enable the service:</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo systemctl enable pigpiod.service</span>
 </code></pre></div>
 
-
 <p>Now <code>pigpriod</code> has to run on startup of your raspberry pi and provide interface to gpio:</p>
 <div class="highlight"><pre><span></span><code><span class="err">pigs w 4 1</span>
 </code></pre></div>
-
 
 <p>If something went wrong and the pigpiod service doesn't start you will see</p>
 <div class="highlight"><pre><span></span><code>$ pigs w <span class="m">4</span> <span class="m">1</span> 

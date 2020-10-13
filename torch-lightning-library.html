@@ -151,7 +151,6 @@ sergem personal public notebook            </a>
         <span class="n">optimizer</span>.<span class="n">zero_grad</span>()
 </code></pre></div>
 
-
 <p>I have copied the code from the torch-lightning code. We have to add the gradient logging right before <code>optimizer.zero_grad</code>
 call. </p>
 <p>Then in the trainer definition we have to specify tensorboard logger:</p>
@@ -165,7 +164,6 @@ call. </p>
     <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>        
 <span class="p">)</span>
 </code></pre></div>
-
 
 <p>This is how the visualization look like:
 <img alt="torch lightning gradient visualization" src="media/2020-04-29-torch-lightning/torch-tensorboard-gradient-visualization.png"> </p>

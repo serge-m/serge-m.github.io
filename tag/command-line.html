@@ -133,21 +133,17 @@ Therefore I usually google it. I'll try to collect here some recipes that I usua
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
 </code></pre></div>
 
-
 <h3>Delete index</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
 </code></pre></div>
-
 
 <h3>Delete all indices</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
 </code></pre></div>
 
-
 <h3>List of all doc_types in a given index</h3>
 <div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
 </code></pre></div>
-
 
 <h2>Running elastic seach …</h2>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/elastic-search-cookbook.html">more ...</a>
@@ -216,7 +212,6 @@ Therefore I usually google it. I'll try to collect here some recipes that I usua
                 <div class="summary"><h3>Good start</h3>
 <div class="highlight"><pre><span></span><code>sudo apt install -y mc curl jq wget htop hwinfo nmap vim
 </code></pre></div>
-
 
 <h3>Some commands</h3>
 <p><strong>top</strong> - see running processes</p>

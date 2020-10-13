@@ -134,7 +134,6 @@ Quote from <a href="https://www.ianlewis.org/en/mixins-and-python">2</a>:</p>
         <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;Mixin2&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Now this code </p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">MyClass</span><span class="p">(</span><span class="n">BaseClass</span><span class="p">,</span> <span class="n">Mixin1</span><span class="p">,</span> <span class="n">Mixin2</span><span class="p">):</span>
     <span class="k">pass</span>
@@ -142,11 +141,9 @@ Quote from <a href="https://www.ianlewis.org/en/mixins-and-python">2</a>:</p>
 <span class="n">MyClass</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>prints</p>
 <div class="highlight"><pre><span></span><code><span class="err">BaseClass</span>
 </code></pre></div>
-
 
 <p>If you change the order of mixins:</p>
 <div class="highlight"><pre><span></span><code><span class="n">ass</span> <span class="n">MyClass</span><span class="p">(</span><span class="n">Mixin2</span><span class="p">,</span> <span class="n">Mixin1</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">,</span> <span class="p">):</span>
@@ -155,11 +152,9 @@ Quote from <a href="https://www.ianlewis.org/en/mixins-and-python">2</a>:</p>
 <span class="n">MyClass</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>you get</p>
 <div class="highlight"><pre><span></span><code><span class="err">Mixin2</span>
 </code></pre></div>
-
 
 <h2>References</h2>
 <ol>

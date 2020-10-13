@@ -131,7 +131,6 @@ sergem personal public notebook            </a>
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> 
 </code></pre></div>
 
-
 <p>Now we are ready to define tables and objects using predefined <code>db.Model</code> class:</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="n">User</span>(<span class="n">db</span>.<span class="n">Model</span>):
     <span class="nb">id</span> = <span class="n">db</span>.<span class="n">Column</span>(<span class="n">db</span>.<span class="n">Integer</span>, <span class="n">primary_key</span>=<span class="nb">True</span>)
@@ -142,7 +141,6 @@ sergem personal public notebook            </a>
         <span class="k">return</span> <span class="s">&#39;&lt;User %r&gt;&#39;</span> % <span class="nb">self</span>.<span class="n">username</span>
 </code></pre></div>
 
-
 <p>Now in your endpoint handlers you do:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">your_application</span> <span class="kn">import</span> <span class="n">db</span>
 
@@ -151,7 +149,6 @@ sergem personal public notebook            </a>
     <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">guest</span><span class="p">)</span>
     <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </code></pre></div>
-
 
 <h3>How to access multiple databases from one Flask application</h3>
 <p>There is a special mechanism for maintaining connections to multiple databases in your flask app: <a href="http://flask-sqlalchemy.pocoo.org/2.3/binds/">binds</a></p>
@@ -163,14 +160,12 @@ sergem personal public notebook            </a>
 <span class="err">}</span>
 </code></pre></div>
 
-
 <p>then you can specify binding key in your ORM-classes:</p>
 <div class="highlight"><pre><span></span><code><span class="err">class User(db.Model):</span>
 <span class="err">    __bind_key__ = &#39;users&#39;</span>
 <span class="err">    id = db.Column(db.Integer, primary_key=True)</span>
 <span class="err">    username = db.Column(db.String(80), unique=True)</span>
 </code></pre></div>
-
 
 <h2>Flask tutorials</h2>
 <p>Nice series of flask tutorials: <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins">Flask Mega-Tutorial</a>.</p>

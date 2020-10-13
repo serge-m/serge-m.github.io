@@ -126,11 +126,9 @@ sergem personal public notebook            </a>
          <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">0500</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">1000</span>
 </code></pre></div>
 
-
 <p>Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.  </p>
 <div class="highlight"><pre><span></span><code><span class="err">uv = estimate_flow_interface(I0, I1, &#39;classic-c-brightness&#39;, [], {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1});</span>
 </code></pre></div>
-
 
 <p>After first iteration ( <code>loop for ignc = 1:this.gnc_iters&amp;nbsp; in dsun_ijcv_flow_code\@ba_optical_flow\compute_flow.m</code>):
 <img alt="" src="http://4.bp.blogspot.com/-TW_Kgc_c4xM/VFo0XQRJdQI/AAAAAAAACDU/LmjLPEhpcFM/s1600/gnc_iter_1.png"> </p>
@@ -179,7 +177,6 @@ sergem personal public notebook            </a>
     <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>         <span class="mi">0</span>
 </code></pre></div>
 
-
 <p>1st iteration </p>
 <div class="highlight"><pre><span></span><code><span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
@@ -196,7 +193,6 @@ sergem personal public notebook            </a>
         <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>
         <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">8281</span>
 </code></pre></div>
-
 
 <p>2nd iteration </p>
 <div class="highlight"><pre><span></span><code>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
@@ -215,7 +211,6 @@ sergem personal public notebook            </a>
        <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>   <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5965</span>
 </code></pre></div>
 
-
 <p>3rd iteration </p>
 <div class="highlight"><pre><span></span><code>    <span class="n">uv</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span>
 
@@ -233,7 +228,6 @@ sergem personal public notebook            </a>
         <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5374</span>
 </code></pre></div>
 
-
 <p>Visually the same:
 <img alt="" src="http://2.bp.blogspot.com/-ihcssiAwj2c/VFo2yZDh_6I/AAAAAAAACDo/pHmB5EVb6Cw/s200/simple_gnc_iter_1.png"></p>
 <h2>HS method. Simple image</h2>
@@ -245,7 +239,6 @@ sergem personal public notebook            </a>
 <span class="err">    {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1, ...</span>
 <span class="err">     &#39;pyramid_spacing&#39;, sqrt(2)});</span>
 </code></pre></div>
-
 
 <p>I also use slightly modified code. I disabled automatic pyramid height calculation, so I set it manually. 
 Input  </p>
@@ -266,7 +259,6 @@ Input  </p>
              <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>         <span class="mi">0</span>
              <span class="mi">0</span>    <span class="mi">0</span><span class="p">.</span><span class="mi">5000</span>    <span class="mi">1</span><span class="p">.</span><span class="mi">0000</span>
 </code></pre></div>
-
 
 <p>Gives:
 <img alt="" src="http://3.bp.blogspot.com/-ZfNLO6E_ccc/VFt-E3fW64I/AAAAAAAACEA/4NseP5r2T7I/s1600/HS_no_borders.png"></p>
@@ -295,7 +287,6 @@ Input  </p>
              <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>         <span class="mi">0</span>
 </code></pre></div>
 
-
 <p>gives 
 <img alt="" src="http://2.bp.blogspot.com/-4Z1KIM8Hwk4/VFt-E5ZIFbI/AAAAAAAACD8/moc8gCLTEcA/s1600/HS_borders.png"></p>
 <h2>HS method. Multiscale.</h2>
@@ -320,16 +311,17 @@ Input  </p>
 <span class="err">       5 5 0 0 0 0 0 0 0 0 0 0       ] / 5.;</span>
 </code></pre></div>
 
-
 <p>```    </p>
 <p>Here the shift between frames is much larger than a pixel and the size of objects. So OF fail without resolution scaling. 
-  <table>  <tbody>
+<br>
+<table>  <tbody>
   <tr>
-  <td>1 pyramid level <img alt="" src="http://1.bp.blogspot.com/-cKPApsEww3w/VFuA8qfEpPI/AAAAAAAACEQ/UmqX4DYVnkk/s320/HS_pyramid_1.png"></td> 
-  <td>2 pyramid levels <img alt="" src="http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png"></td> 
-  <td>3 pyramid levels <img alt="" src="http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png"> </td></tr>
+  <td>1 pyramid level ![](http://1.bp.blogspot.com/-cKPApsEww3w/VFuA8qfEpPI/AAAAAAAACEQ/UmqX4DYVnkk/s320/HS_pyramid_1.png)</td> 
+  <td>2 pyramid levels ![](http://1.bp.blogspot.com/-wC_4IzeuNAE/VFuA8-z9U8I/AAAAAAAACEU/7K_vWoiou0Q/s320/HS_pyramid_2.png)</td> 
+  <td>3 pyramid levels ![](http://4.bp.blogspot.com/-ynqgbeq_-B0/VFuA8lHxFJI/AAAAAAAACEY/KR3szPexLP4/s320/HS_pyramid_3.png) </td></tr>
 </tbody>
-</table></p>
+</table>
+</p>
             </div>
             <!-- /.entry-content -->
     <hr/>

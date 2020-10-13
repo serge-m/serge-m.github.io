@@ -106,17 +106,12 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <h2 style="text-align: left;"><span class="st">_Intro _</span></h2>
-
 <p><span class="st"><em>Theano</em> is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span></p>
 <h2 style="text-align: left;"><span class="st">Check gpu is working</span></h2>
-
 <div style="text-align: left;"><span class="st">Source: </span>[<span class="st">http://deeplearning.net/software/theano/tutorial/using_gpu.html</span>](http://deeplearning.net/software/theano/tutorial/using_gpu.html)</div>
-
 <div style="text-align: left;">
 </div>
-
 <div style="text-align: left;"><span class="st">Test script: </span></div>
-
 <blockquote class="tr_bq">
     ::::
     <span class="kn">from</span> <span class="nn">theano</span> <span class="kn">import</span> <span class="n">function</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">shared</span><span class="p">,</span> <span class="n">sandbox</span>
@@ -142,15 +137,11 @@ sergem personal public notebook            </a>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">print</span> <span class="s">'Used the gpu'</span>
 </blockquote>
-
 <div style="text-align: left;">
 </div>
-
 <div style="text-align: left;"><span class="st">&nbsp;Run with two configurations:</span></div>
-
 <div style="text-align: left;">
 </div>
-
 <div class="highlight"><pre><span></span><code>$ <span class="nv">THEANO_FLAGS</span><span class="o">=</span><span class="nv">mode</span><span class="o">=</span>FAST_RUN,device<span class="o">=</span>cpu,floatX<span class="o">=</span>float32 python check1.py
 <span class="o">[</span>Elemwise<span class="o">{</span>exp,no_inplace<span class="o">}(</span>&lt;TensorType<span class="o">(</span>float32, vector<span class="o">)</span>&gt;<span class="o">)]</span>
 Looping <span class="m">1000</span> <span class="nb">times</span> took <span class="m">3</span>.06635117531 seconds
@@ -167,12 +158,15 @@ Result is <span class="o">[</span> <span class="m">1</span>.23178029  <span clas
 Used the gpu
 </code></pre></div>
 
-
-<p><div style="text-align: left;">
-</div><div style="text-align: left;">
-</div><div style="text-align: left;">
-</div><div style="text-align: left;">
-</div><div style="text-align: left;"></div></p>
+<div style="text-align: left;">
+</div>
+<div style="text-align: left;">
+</div>
+<div style="text-align: left;">
+</div>
+<div style="text-align: left;">
+</div>
+<div style="text-align: left;"></div>
             </div>
             <!-- /.entry-content -->
     <hr/>

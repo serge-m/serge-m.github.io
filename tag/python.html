@@ -489,7 +489,6 @@ For example according to ISO 8601 …</p>
 <div class="highlight"><pre><span></span><code><span class="err">pytest -m &quot;integration&quot;</span>
 </code></pre></div>
 
-
 <p>if you want to run only tests that have "@pytest.mark.integration" annotation.</p>
 <p>Similarly you can run only tests that don't …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pytest-cheatsheet.html">more ...</a>
@@ -553,16 +552,13 @@ We will have a main page and <code>users</code> page in our …</p>
 <div class="highlight"><pre><span></span><code><span class="err">make -j8</span>
 </code></pre></div>
 
-
 <p>Parallelization for cmake:</p>
 <div class="highlight"><pre><span></span><code><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
 </code></pre></div>
 
-
 <p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
 <div class="highlight"><pre><span></span><code><span class="err">python setup.py install</span>
 </code></pre></div>
-
 
 <p>Setup script doesn't accept …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/parallel-builds.html">more ...</a>
@@ -592,7 +588,6 @@ We will have a main page and <code>users</code> page in our …</p>
 <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 <span class="n">your_datetime</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># adds one month</span>
 </code></pre></div>
-
 
 <p>Intuitive solution doesn't work</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
@@ -625,7 +620,6 @@ We will have a main page and <code>users</code> page in our …</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">importlib</span>
 <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">)</span>
 </code></pre></div>
-
 
 <h2>Find class implementing certain interface in a module</h2>
 <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">load_class_from_module</span><span class="p">(</span><span class="n">module_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target_class</span><span class="p">:</span> <span class="nb">type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">type</span><span class="p">:</span>
@@ -663,13 +657,11 @@ We will have a main page and <code>users</code> page in our …</p>
     <span class="n">formatter_class</span><span class="o">=</span><span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentDefaultsHelpFormatter</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Output looks like this:</p>
 <div class="highlight"><pre><span></span><code>  <span class="o">--</span><span class="n">scan</span><span class="o">-</span><span class="n">time</span> <span class="p">[</span><span class="n">SCAN_TIME</span><span class="p">]</span>
                         <span class="n">Wait</span> <span class="n">SCAN</span><span class="o">-</span><span class="n">TIME</span> <span class="n">seconds</span> <span class="n">between</span> <span class="n">status</span> <span class="n">checks</span><span class="o">.</span>
                         <span class="p">(</span><span class="n">default</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>Another tip:
 add '%(default)' to the help parameter to control what is displayed.</p>

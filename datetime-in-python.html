@@ -153,7 +153,6 @@ As far as I can see there is no standard function for conversion in python.</p>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">string_representation</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%G</span><span class="s2">-%V-</span><span class="si">%u</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>It prints the week-based date to a string and then parses it using <code>%V</code> and <code>%u</code> format from python 3 (<a href="https://docs.python.org/3.6/library/datetime.html#strftime-and-strptime-behavior">docs</a>)
 Therefore you don't need to implement ISO logic of dates calculation. Hopefully such a funciton apppear in standard library.</p>
 <p>Python 2 doesn't have these <code>%V</code> and <code>%u</code> implemented. <code>:(</code></p>

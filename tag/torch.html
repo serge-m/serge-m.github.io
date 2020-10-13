@@ -93,14 +93,12 @@ sergem personal public notebook            </a>
 <span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">imgPath</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">byte</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>image is stored as float, conversion is (intensity/255.). stored top-&gt;bottom, line by line. format RGB.</p>
 <div class="highlight"><pre><span></span><code><span class="err">display</span>
 <span class="err">require &#39;gnuplot&#39;</span>
 <span class="err">gnuplot.figure(1)</span>
 <span class="err">gnuplot.imagesc(img[1])</span>
 </code></pre></div>
-
 
 <p>Torch&lt;-&gt;numpy dictionary
 <a href="https://github.com/torch/torch7/wiki/Torch-for-Numpy-users">https …</a></p>

@@ -202,7 +202,6 @@ sergem personal public notebook            </a>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install hplip-gui</span>
 </code></pre></div>
 
-
 <ul>
 <li>install recommended proprietary driver from <code>HP Toolbox</code> GUI</li>
 </ul>
@@ -210,7 +209,6 @@ sergem personal public notebook            </a>
 <h4>Another solution</h4>
 <div class="highlight"><pre><span></span><code><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">hp</span><span class="o">-</span><span class="n">ppd</span> <span class="n">hpijs</span> <span class="n">hpijs</span><span class="o">-</span><span class="n">ppds</span> <span class="n">hplip</span> <span class="n">hplip</span><span class="o">-</span><span class="n">cups</span> <span class="n">hplip</span><span class="o">-</span><span class="n">data</span> <span class="n">hplip</span><span class="o">-</span><span class="n">dbg</span> <span class="n">hplip</span><span class="o">-</span><span class="n">doc</span> <span class="n">hplip</span><span class="o">-</span><span class="n">gui</span> <span class="n">djtools</span>
 </code></pre></div>
-
 
 <p><a href="https://askubuntu.com/questions/462329/hp-laserjet-1020-plus-printer-not-working-in-ubuntu-14-04/462335#462335">source</a></p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/setup-hp-1020-printer-in-linux-mint-18.html">more ...</a>
@@ -296,7 +294,6 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
 </code></pre></div>
 
-
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
 <div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w">                                                                                                                                                                                                                                        </span>
 <span class="n">Description</span><span class="o">=</span><span class="n">YourService</span><span class="w">                                                                                                                                                                                                                           </span>
@@ -345,7 +342,6 @@ The udp connection is perfect with these parameters (in client config):</p>
 <span class="err">tun-mtu 1200</span>
 </code></pre></div>
 
-
 <h2>DNS doesn't work through VPN</h2>
 <p>Symptoms: Openvpn connects …</p>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/openvpn-on-vps-using-docker.html">more ...</a>
@@ -393,7 +389,6 @@ It hangs/fails on installation or on any significant docker command like <code>d
                 <div class="summary"><p>Run</p>
 <div class="highlight"><pre><span></span><code><span class="err">curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints</span>
 </code></pre></div>
-
 
 <p>compare output with results of 
 ssh <YOUR_USER>@<YOUR_SERVER_IP></p>
@@ -716,7 +711,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <div class="highlight"><pre><span></span><code><span class="err">sudo apt-get remove firefox</span>
 </code></pre></div>
 
-
 </li>
 <li>
 <p>remove search addons. <a href="http://superuser.com/a/1014373">Source</a>.
@@ -766,7 +760,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><div class="highlight"><pre><span></span><code>$ git --git-dir<span class="o">=</span>../&lt;some_other_repo&gt;/.git format-patch -k -1 --stdout &lt;commit SHA&gt; <span class="p">|</span> git am -3 -k
 </code></pre></div>
-
 
 <p>Source:
 <a href="http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit">http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit</a> </p>

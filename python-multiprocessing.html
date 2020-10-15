@@ -346,6 +346,14 @@ They usually require some global variables. See for example:</p>
 <p><a href="https://thelaziestprogrammer.com/python/multiprocessing-pool-expect-initret-proposal">Multiprocessing.Pool - Pass Data to Workers w/o Globals: A Proposal</a></p>
 </li>
 </ul>
+<h1>Processing KeyboardInterrupt in workers</h1>
+<p>Apparently there are some issue with KeyboardInterrupt and multiprocessing:</p>
+<blockquote>
+<p>when workers are idle, Python’s KeyboardInterrupt is not handled correctly 
+by the multiprocessing module, which results in not only a lot of stacktraces 
+spewed to the console, but also means the parent process will hang indefinitely.</p>
+</blockquote>
+<p><a href="https://noswap.com/blog/python-multiprocessing-keyboardinterrupt">Python: Using KeyboardInterrupt with a Multiprocessing Pool</a>, 2011.</p>
             </div>
             <!-- /.entry-content -->
     <hr/>

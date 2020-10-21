@@ -208,7 +208,35 @@ Harry Percival</p>
 <p><a href="https://github.com/apache/libcloud/">Apache libcloud</a> -- anouther cloud file system API. more alive</p>
 <h2>Testing, packaging, releasing</h2>
 <ul>
-<li><a href="https://blog.ionelmc.ro/2014/05/25/python-packaging/">Packaging a python library</a>, 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up <code>tox</code>, <code>pytest</code> etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary</li>
+<li>
+<p><a href="https://blog.ionelmc.ro/2014/05/25/python-packaging/">Packaging a python library</a>, 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up <code>tox</code>, <code>pytest</code> etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary</p>
+</li>
+<li>
+<p>About processing of KeyboardInterrupt exception, INT signals and background processes. 
+  <a href="https://stackoverflow.com/questions/40775054/capturing-sigint-using-keyboardinterrupt-exception-works-in-terminal-not-in-scr/40785230#40785230">Capturing SIGINT using KeyboardInterrupt exception works in terminal, not in script</a>
+  , stack overflow.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># invocation from interactive shell</span>
+<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import signal; print(signal.getsignal(signal.SIGINT))&quot;</span>
+<span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">default_int_handler</span><span class="o">&gt;</span>
+
+<span class="c1"># background job in interactive shell</span>
+<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import signal; print(signal.getsignal(signal.SIGINT))&quot;</span> <span class="o">&amp;</span>
+<span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">default_int_handler</span><span class="o">&gt;</span>
+
+<span class="c1"># invocation in non interactive shell</span>
+<span class="err">$</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;python -c &quot;import signal; print(signal.getsignal(signal.SIGINT))&quot;&#39;</span>
+<span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">default_int_handler</span><span class="o">&gt;</span>
+
+<span class="c1"># background job in non-interactive shell</span>
+<span class="err">$</span> <span class="n">sh</span> <span class="o">-</span><span class="n">c</span> <span class="s1">&#39;python -c &quot;import signal; print(signal.getsignal(signal.SIGINT))&quot; &amp;&#39;</span>
+<span class="mi">1</span>
+</code></pre></div>
+
+</li>
+</ul>
+<h2>Blogs</h2>
+<ul>
+<li><a href="https://snarky.ca/">https://snarky.ca/</a> - Python core developer. Dev manager for the Python extension for VS Code.</li>
 </ul>
             </div>
             <!-- /.entry-content -->

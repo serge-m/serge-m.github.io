@@ -69,4 +69,26 @@ Harry Percival
 
 * [Packaging a python library](https://blog.ionelmc.ro/2014/05/25/python-packaging/), 25 May 2014 (updated 30 September 2019) by ionelmc. The article proposes a way to structure the code of your python module, describes how to write setup.py file, set up `tox`, `pytest` etc. Cookie cutter library for initialization of new projects: https://github.com/ionelmc/cookiecutter-pylibrary
 
+* About processing of KeyboardInterrupt exception, INT signals and background processes. 
+  [Capturing SIGINT using KeyboardInterrupt exception works in terminal, not in script](https://stackoverflow.com/questions/40775054/capturing-sigint-using-keyboardinterrupt-exception-works-in-terminal-not-in-scr/40785230#40785230)
+  , stack overflow.
+      
+        # invocation from interactive shell
+        $ python -c "import signal; print(signal.getsignal(signal.SIGINT))"
+        <built-in function default_int_handler>
+        
+        # background job in interactive shell
+        $ python -c "import signal; print(signal.getsignal(signal.SIGINT))" &
+        <built-in function default_int_handler>
+        
+        # invocation in non interactive shell
+        $ sh -c 'python -c "import signal; print(signal.getsignal(signal.SIGINT))"'
+        <built-in function default_int_handler>
+        
+        # background job in non-interactive shell
+        $ sh -c 'python -c "import signal; print(signal.getsignal(signal.SIGINT))" &'
+        1
 
+## Blogs
+
+* [https://snarky.ca/](https://snarky.ca/) - Python core developer. Dev manager for the Python extension for VS Code.

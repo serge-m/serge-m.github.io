@@ -489,6 +489,14 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
 
 <p>may be caused by some blocking operations in arduino. I was using a standard library for Adafruit PCA9685. The library 
 uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
+<h1>Cmake + Clion + ROS</h1>
+<p>In order to have ROS environment and dependencies loaded to CLion one has to launch CLion in the sourced environment.</p>
+<div class="highlight"><pre><span></span><code><span class="err">source ./devel/setup.bash</span>
+<span class="err">sh PATH_TO_CLION/bin/clion.sh</span>
+</code></pre></div>
+
+<p>Then open a ROS project: 
+<code>File -&gt; Open -&gt; select YOUR_ROS_WORKSPACE/src/CMakeLists.txt  -&gt; Open as Project</code>. </p>
             </div>
             <!-- /.entry-content -->
     <hr/>

@@ -12,7 +12,6 @@
 CMake in VSCode
 ===============================
 
-
 VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions.
 I couldnt find a good extension for CMake integration that works out of box. I tried to make use of Cmake-tools and it kind of works, but
 the hotkeys and some settings are far from intuitive now (2020-03).
@@ -24,7 +23,7 @@ Here is my VSCode+Cmake template for small projects:
 
 
 
-Getting strted with Gtest
+Getting started with Gtest
 =====================================
 
 For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest.
@@ -47,7 +46,21 @@ Many projects use alternative approach. They clone GTest sources from github int
 That requires some custom scripting in your cmake files.
 
 See also:
-===============================
+---------------------------------------
 
 * `Getting started with Google Test (GTest) on Ubuntu <https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/>`_
+
+
+
+
+Handling dependencies in CMake
+=====================================================
+
+If i need to import a compiled 3rdparty library to my cmake project:
+
+.. code-block:: none
+
+    add_library(some_library SHARED IMPORTED)
+    set_property(TARGET some_library PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so")
+    set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 

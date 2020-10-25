@@ -416,3 +416,14 @@ Getting a lot of errors
 
 may be caused by some blocking operations in arduino. I was using a standard library for Adafruit PCA9685. The library 
 uses some synchronous calls from Wire.h. It seems that was causing issues.
+
+
+# Cmake + Clion + ROS
+
+In order to have ROS environment and dependencies loaded to CLion one has to launch CLion in the sourced environment.
+
+    source ./devel/setup.bash
+    sh PATH_TO_CLION/bin/clion.sh
+
+Then open a ROS project: 
+`File -> Open -> select YOUR_ROS_WORKSPACE/src/CMakeLists.txt  -> Open as Project`. 

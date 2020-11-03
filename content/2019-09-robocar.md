@@ -77,3 +77,28 @@ Main repository: [https://github.com/serge-m/sergem_robocar](https://github.com/
 [Wiki](https://github.com/serge-m/sergem_robocar/wiki/)
 
 [Some collected data to train your AI driver](https://github.com/serge-m/sergem_robocar/wiki/Training-AI-driver)
+
+
+
+## Ackermann steering for the next version of robocar
+
+
+
+I was looking for Ackerman steering model for Gazebo+ROS to develope a new version of the robot.
+* [https://github.com/trainman419/ackermann_vehicle-1](https://github.com/trainman419/ackermann_vehicle-1)
+  
+  from a [blog post](http://ros-developer.com/2017/11/09/ackermann-steering-car-robot-model-with-simulation-in-gazebo/)
+
+  original model   [https://github.com/jbpassot/ackermann_vehicle](https://github.com/jbpassot/ackermann_vehicle)
+
+* wiki article [https://en.wikipedia.org/wiki/Ackermann_steering_geometry](https://en.wikipedia.org/wiki/Ackermann_steering_geometry)
+
+* one more repo [https://github.com/benwarrick/simple_ackermann](https://github.com/benwarrick/simple_ackermann)
+
+* another with a gif [https://github.com/froohoo/ackermansteer](https://github.com/froohoo/ackermansteer)
+
+* Serious rally car [https://github.com/AutoRally/autorally](https://github.com/AutoRally/autorally)
+
+* Another one serious [https://github.com/prl-mushr/mushr#component-documentation](https://github.com/prl-mushr/mushr#component-documentation)
+
+

@@ -70,6 +70,33 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/logging-exceptions-with-traceback-in.html">Logging exceptions with traceback in python</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-02-02T23:00:00+01:00"> 2015-02-02T23:00:00, Mon</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>When using logging module one often need to print traceback along with error message.</p>
+<p>Solution is:</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;error message&#39;</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># for adding traceback to log</span>
+</code></pre></div>
+
+<p>Equivalent :</p>
+<div class="highlight"><pre><span></span><code><span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+</code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/logging-exceptions-with-traceback-in.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/installing-ubuntu-from-usb.html">Installing Ubuntu from USB</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -695,38 +722,6 @@ batch_size: 100</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html">displaying multiple grayscale figures in python's matplotlib</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-06-06T22:12:00+02:00"> 2014-06-06T22:12:00, Fri</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.figure()&nbsp; # without this it display one after another</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.imshow(image_two, cmap=cm.gray) #</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">plt.show()</span></p>
-<p>use
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">%matplotlib inline</span>
-<span style="font-family: &quot;Courier New&quot;,Courier,monospace;">in ipython notebook to …</span></p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/displaying-multiple-grayscale-figures.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index6.html">&laquo;</a>
@@ -767,6 +762,7 @@ batch_size: 100</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/which-backbone-to-choose.html">Which pretrained backbone to choose</a></li>
@@ -778,7 +774,6 @@ batch_size: 100</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/robocar.html">Robocar project</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -924,17 +919,11 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/kinetic.html">kinetic</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/led.html">LED</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -959,9 +948,6 @@ batch_size: 100</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
@@ -993,14 +979,23 @@ batch_size: 100</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pcl.html">pcl</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ply.html">ply</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pm.html">pm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/point-cloud.html">point cloud</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>

@@ -72,6 +72,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/add-months-to-datetime-in-python.html">Add months to datetime in python</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-07-20T07:07:00+02:00"> 2017-07-20T07:07:00, Thu</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+
+<span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">your_datetime</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># adds one month</span>
+</code></pre></div>
+
+<p>Intuitive solution doesn't work</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">your_datetime</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="n">File</span> <span class="err">““</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="err">?</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="err">‘</span><span class="n">months</span><span class="err">’</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="k">for</span> <span class="n">this</span> <span class="n">function …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-months-to-datetime-in-python.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/module-import-in-python.html">Module import in python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -743,33 +777,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">Pretty git history with branches in command line</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-01-28T07:10:00+01:00"> 2017-01-28T07:10:00, Sat</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/git.html">git</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Show git history with branches </p>
-<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span>
-</code></pre></div>
-
-<p>Less nice and shorter</p>
-<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc2.html">&laquo;</a>
@@ -810,6 +817,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/which-backbone-to-choose.html">Which pretrained backbone to choose</a></li>
@@ -821,7 +829,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/robocar.html">Robocar project</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -967,17 +974,11 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/jupyter.html">jupyter</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/kinetic.html">kinetic</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/led.html">LED</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/lenovo.html">lenovo</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -1002,9 +1003,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/melodic.html">melodic</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
@@ -1036,14 +1034,23 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pcl.html">pcl</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/ply.html">ply</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pm.html">pm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/point-cloud.html">point cloud</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>

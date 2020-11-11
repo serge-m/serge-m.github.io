@@ -60,8 +60,8 @@ HP is known for some fishy drivers that block your printer when non-original car
 
 Worth trying to switch to open source.
 
-The driver from foo2zjs.rkkda.com also looks pretty strange. It is distributed by non secure connection without the check sum.
-It would be good to make a good code review for it.
+The driver from foo2zjs.rkkda.com also looks pretty strange in terms of code distribution and quality. 
+Let's hope somebody reviewed it :)
 
 # Using proprietary drivers
 

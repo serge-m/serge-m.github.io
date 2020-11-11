@@ -61,6 +61,7 @@ HP is known for some fishy drivers that block your printer when non-original car
 Worth trying to switch to open source.
 
 The driver from foo2zjs.rkkda.com also looks pretty strange in terms of code distribution and quality. 
+But that driver is recommended by [openprinting](https://www.openprinting.org/printer/HP/HP-LaserJet_1020). 
 Let's hope somebody reviewed it :)
 
 # Using proprietary drivers

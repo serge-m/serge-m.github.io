@@ -326,14 +326,6 @@ class Trainer:
                     **{f"lr_{i}": lr for i, lr in enumerate(scheduler.get_last_lr())},
                 })
                 
-            if batch_idx == 0:   
-                if tb_writer:
-                    vis = images.detach().clone()
-                    for v in vis:
-                        v[:] = UnNormalize_(**imagenet_stats)(v)
-                    grid = torchvision.utils.make_grid(vis)
-                    tb_writer.add_image('images', grid, progr.cnt_total_iter)
-                    
 #             scheduler.step()  # for batch based scheduler
 
     def validate_epoch(self, data_loader, model, metric_proc, pbars):
@@ -497,10 +489,7 @@ class Trainer:
                 
         for batch_idx, (images, target) in enumerate(progr.track(pbars.secondary(data_loader))):
             # ...
-                
-            if batch_idx == 0:   
-                # ...
-                    
+                 
             # now we do scheduler step for every batch
             scheduler.step() 
 

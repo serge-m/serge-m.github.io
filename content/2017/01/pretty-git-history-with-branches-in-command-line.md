@@ -14,3 +14,7 @@ Less nice and shorter
 ```
 git log --graph --abbrev-commit --decorate --oneline --all
 ```
+
+# See also:
+
+* [Git cheat sheet]({filename}/git-cheat-sheet.rst)

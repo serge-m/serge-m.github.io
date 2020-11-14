@@ -72,6 +72,53 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/elastic-search-cookbook.html">Elasticsearch commands with curl</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-02-10T23:11:00+01:00"> 2017-02-10T23:11:00, Fri</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+        /
+	<a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
+        /
+	<a href="https://serge-m.github.io/tag/search.html">search</a>
+        /
+	<a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
+        /
+	<a href="https://serge-m.github.io/tag/curl.html">curl</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>Commands</h2>
+<h3>List indexes</h3>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
+</code></pre></div>
+
+<h3>Delete index</h3>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
+</code></pre></div>
+
+<h3>Delete all indices</h3>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
+</code></pre></div>
+
+<h3>List of all doc_types in a given index</h3>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
+</code></pre></div>
+
+<h2>Running elastic seach …</h2>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/elastic-search-cookbook.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">Pretty git history with branches in command line</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -756,30 +803,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/podcasts.html">podcasts</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-08-14T14:16:00+02:00"> 2016-08-14T14:16:00, Sun</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><ul>
-<li><a href="https://softskills.audio/">Soft Skills Engineering</a></li>
-<li><a href="http://dontspeak.podster.fm/">don't speak</a></li>
-<li><a href="http://www.spotlightradio.net/">spotlightradio</a></li>
-</ul>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/podcasts.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc3.html">&laquo;</a>
@@ -820,6 +843,7 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
@@ -831,7 +855,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -851,6 +874,9 @@ You can add google as a search engine. But suggestions don't work for me.</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/adamw.html">AdamW</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -920,9 +946,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
@@ -932,7 +955,7 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
@@ -981,7 +1004,7 @@ You can add google as a search engine. But suggestions don't work for me.</p>
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+      <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -998,6 +1021,9 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lrfinder.html">LRfinder</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -1011,13 +1037,13 @@ You can add google as a search engine. But suggestions don't work for me.</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1067,6 +1093,9 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/python.html">python</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pytoch.html">pytoch</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytorch.html">pytorch</a>
     </li>
@@ -1082,9 +1111,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -1093,9 +1119,6 @@ You can add google as a search engine. But suggestions don't work for me.</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>

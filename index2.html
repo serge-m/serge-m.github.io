@@ -70,6 +70,37 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/spark-on-a-local-machine.html">Spark on a local machine</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-01-30T08:30:00+01:00"> 2019-01-30T08:30:00, Wed</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/spark.html">spark</a>
+        /
+	<a href="https://serge-m.github.io/tag/configuration.html">configuration</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>How to install spark locally</h2>
+<p>Considering spark without hadoop built-in.</p>
+<ul>
+<li>Download <a href="https://mirror.checkdomain.de/apache/hadoop/common/hadoop-3.1.1/hadoop-3.1.1.tar.gz">hadoop</a>
+unpack to <code>/opt/hadoop/</code></li>
+<li>Download <a href="https://archive.apache.org/dist/spark/spark-2.3.2/spark-2.3.2-bin-without-hadoop.tgz">spark without hadoop</a>, unpack to <code>/opt/spark</code></li>
+<li>Install java. Set JAVA_HOVE environment variable. For example: <code>export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</code></li>
+<li>create environment variables required for spark to run. One can put those …</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/spark-on-a-local-machine.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/gpio-controls-for-rasbperry-pi.html">GPIO controls for Rasbperry Pi</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -724,47 +755,6 @@ We will have a main page and <code>users</code> page in our …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/parallel-builds.html">Speed up make/cmake build with multiprocessing</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-07-29T16:07:00+02:00"> 2017-07-29T16:07:00, Sat</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/make.html">make</a>
-        /
-	<a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
-        /
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Build time can be reduced by using multiple cores of your processor.</p>
-<p>Parallelization for make:</p>
-<div class="highlight"><pre><span></span><code><span class="err">make -j8</span>
-</code></pre></div>
-
-<p>Parallelization for cmake:</p>
-<div class="highlight"><pre><span></span><code><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
-</code></pre></div>
-
-<p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
-<div class="highlight"><pre><span></span><code><span class="err">python setup.py install</span>
-</code></pre></div>
-
-<p>Setup script doesn't accept …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/parallel-builds.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index.html">&laquo;</a>
@@ -805,6 +795,7 @@ We will have a main page and <code>users</code> page in our …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
@@ -816,7 +807,6 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -836,6 +826,9 @@ We will have a main page and <code>users</code> page in our …</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/adamw.html">AdamW</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -905,9 +898,6 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
@@ -917,7 +907,7 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
@@ -966,7 +956,7 @@ We will have a main page and <code>users</code> page in our …</p>
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+      <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -983,6 +973,9 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lrfinder.html">LRfinder</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -996,13 +989,13 @@ We will have a main page and <code>users</code> page in our …</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1052,6 +1045,9 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/python.html">python</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pytoch.html">pytoch</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytorch.html">pytorch</a>
     </li>
@@ -1067,9 +1063,6 @@ We will have a main page and <code>users</code> page in our …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -1078,9 +1071,6 @@ We will have a main page and <code>users</code> page in our …</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>

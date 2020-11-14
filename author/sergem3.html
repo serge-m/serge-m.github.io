@@ -70,6 +70,47 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/parallel-builds.html">Speed up make/cmake build with multiprocessing</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-07-29T16:07:00+02:00"> 2017-07-29T16:07:00, Sat</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/make.html">make</a>
+        /
+	<a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+        /
+	<a href="https://serge-m.github.io/tag/python.html">python</a>
+        /
+	<a href="https://serge-m.github.io/tag/parallel.html">parallel</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Build time can be reduced by using multiple cores of your processor.</p>
+<p>Parallelization for make:</p>
+<div class="highlight"><pre><span></span><code><span class="err">make -j8</span>
+</code></pre></div>
+
+<p>Parallelization for cmake:</p>
+<div class="highlight"><pre><span></span><code><span class="err">cmake --build &lt;bindir&gt; -- -j 8</span>
+</code></pre></div>
+
+<p>Sometimes you cannot pass parameters directly to <code>make</code>. For example you are installing a python module using </p>
+<div class="highlight"><pre><span></span><code><span class="err">python setup.py install</span>
+</code></pre></div>
+
+<p>Setup script doesn't accept …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/parallel-builds.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/add-months-to-datetime-in-python.html">Add months to datetime in python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -728,53 +769,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/elastic-search-cookbook.html">Elasticsearch commands with curl</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-02-10T23:11:00+01:00"> 2017-02-10T23:11:00, Fri</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/command-line.html">command line</a>
-        /
-	<a href="https://serge-m.github.io/tag/elastic.html">elastic</a>
-        /
-	<a href="https://serge-m.github.io/tag/search.html">search</a>
-        /
-	<a href="https://serge-m.github.io/tag/elasticsearch.html">elasticsearch</a>
-        /
-	<a href="https://serge-m.github.io/tag/curl.html">curl</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>Commands</h2>
-<h3>List indexes</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
-</code></pre></div>
-
-<h3>Delete index</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
-</code></pre></div>
-
-<h3>Delete all indices</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
-</code></pre></div>
-
-<h3>List of all doc_types in a given index</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
-</code></pre></div>
-
-<h2>Running elastic seach …</h2>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/elastic-search-cookbook.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem2.html">&laquo;</a>
@@ -815,6 +809,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
@@ -826,7 +821,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -846,6 +840,9 @@ Clustering is based on histograms. 1 contributor. No …</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/adamw.html">AdamW</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -915,9 +912,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
@@ -927,7 +921,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
@@ -976,7 +970,7 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+      <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -993,6 +987,9 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lrfinder.html">LRfinder</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -1006,13 +1003,13 @@ Clustering is based on histograms. 1 contributor. No …</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -1062,6 +1059,9 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/python.html">python</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pytoch.html">pytoch</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytorch.html">pytorch</a>
     </li>
@@ -1077,9 +1077,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -1088,9 +1085,6 @@ Clustering is based on histograms. 1 contributor. No …</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>

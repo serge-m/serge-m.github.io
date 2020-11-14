@@ -70,6 +70,41 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/avconv.html">convert video to jpeg with good quality</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-12-14T22:00:00+01:00"> 2015-12-14T22:00:00, Mon</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+        /
+	<a href="https://serge-m.github.io/tag/ffmpeg.html">ffmpeg</a>
+        /
+	<a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>convert video to jpeg with good quality:</p>
+<div class="highlight"><pre><span></span><code>avconv -i input_video.mp4 -qmax <span class="m">1</span> -qmin <span class="m">1</span> images_%05d.jpg
+</code></pre></div>
+
+<p>crop video:</p>
+<div class="highlight"><pre><span></span><code>avconv -i input.avi -vf <span class="nv">crop</span><span class="o">=</span>&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png
+</code></pre></div>
+
+<p>create gif using </p>
+<p>http://gifmaker.me/</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/avconv.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/blog-post-11.html">М</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -621,34 +656,6 @@ simple example:</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/suspend-and-hibernate-in-linux.html">Suspend and hibernate in Linux</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-02-04T14:04:00+01:00"> 2015-02-04T14:04:00, Wed</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-        /
-	<a href="https://serge-m.github.io/tag/linux-for-dummies.html">Linux for dummies</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. 
-http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/</p>
-<p>Only Suspend option was there.
-Suspend didn't work either. Computer couldn't wake up. It actually woke up, but stayed freezed displaying wallpaper.
-Some googling …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/suspend-and-hibernate-in-linux.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/author/sergem5.html">&laquo;</a>
@@ -689,6 +696,7 @@ Some googling …</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/self-supervised-depth-and-ego-motion.html">Self-supervised depth and ego motion estimation</a></li>
@@ -700,7 +708,6 @@ Some googling …</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/capture-pwm-signal-using-arduino.html">Capture PWM signal using Arduino</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/image-segmentation-with-unlabeled-areas-with-fast-ai.html">Image segmentation with unlabeled areas with fast.ai</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -720,6 +727,9 @@ Some googling …</p>
 <li class="list-group-item">
   <a href="https://serge-m.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/adamw.html">AdamW</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
     </li>
@@ -789,9 +799,6 @@ Some googling …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/docker.html">docker</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/donkeycar.html">donkeycar</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
     </li>
@@ -801,7 +808,7 @@ Some googling …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/fastai.html">fast.ai</a>
     </li>
     <li class="list-group-item tag-2">
@@ -850,7 +857,7 @@ Some googling …</p>
       <a href="https://serge-m.github.io/tag/latex.html">latex</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/led.html">LED</a>
+      <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
@@ -867,6 +874,9 @@ Some googling …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/linux-mint.html">linux mint</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/lrfinder.html">LRfinder</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/machine-learning.html">machine learning</a>
     </li>
@@ -880,13 +890,13 @@ Some googling …</p>
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/monitoring.html">monitoring</a>
-    </li>
-    <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/neural-networks.html">neural networks</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
@@ -936,6 +946,9 @@ Some googling …</p>
     <li class="list-group-item tag-1">
       <a href="https://serge-m.github.io/tag/python.html">python</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/pytoch.html">pytoch</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pytorch.html">pytorch</a>
     </li>
@@ -951,9 +964,6 @@ Some googling …</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robocar.html">robocar</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/robot.html">robot</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/robotics.html">robotics</a>
     </li>
@@ -962,9 +972,6 @@ Some googling …</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/russian.html">russian</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/segmentation.html">segmentation</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/server.html">server</a>

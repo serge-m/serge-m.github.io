@@ -2,7 +2,7 @@ Title: Effect of techniques from Fast.ai
 Author: SergeM
 Date: 2020-11-15 10:00:00
 Slug: effect-of-techniques-from-fastai
-Tags: pytoch, deep learning, computer vision, neural networks, fast.ai, fastai, AdamW, learning rate, LRfinder
+Tags: pytorch, deep learning, computer vision, neural networks, fast.ai, fastai, AdamW, learning rate, LRfinder, pytorch-nn-tools, resnet, one cycle 
 
 `fast.ai` is a brilliant [library](https://github.com/fastai/fastai) and a [course](https://course.fast.ai/) 
 by Jeremy Howard an co. They use pytorch as a base and explain 

@@ -427,14 +427,6 @@ in the future. </p>
                     <span class="o">**</span><span class="p">{</span><span class="sa">f</span><span class="s2">&quot;lr_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">lr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())},</span>
                 <span class="p">})</span>
 
-            <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   
-                <span class="k">if</span> <span class="n">tb_writer</span><span class="p">:</span>
-                    <span class="n">vis</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-                    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vis</span><span class="p">:</span>
-                        <span class="n">v</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">UnNormalize_</span><span class="p">(</span><span class="o">**</span><span class="n">imagenet_stats</span><span class="p">)(</span><span class="n">v</span><span class="p">)</span>
-                    <span class="n">grid</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_grid</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span>
-                    <span class="n">tb_writer</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">progr</span><span class="o">.</span><span class="n">cnt_total_iter</span><span class="p">)</span>
-
 <span class="c1">#             scheduler.step()  # for batch based scheduler</span>
 
     <span class="k">def</span> <span class="nf">validate_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">metric_proc</span><span class="p">,</span> <span class="n">pbars</span><span class="p">):</span>
@@ -575,9 +567,6 @@ up until lr=10.:</p>
 
         <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">progr</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">pbars</span><span class="o">.</span><span class="n">secondary</span><span class="p">(</span><span class="n">data_loader</span><span class="p">))):</span>
             <span class="c1"># ...</span>
-
-            <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   
-                <span class="c1"># ...</span>
 
             <span class="c1"># now we do scheduler step for every batch</span>
             <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span> 

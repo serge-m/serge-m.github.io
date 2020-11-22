@@ -6,7 +6,7 @@
 
 :slug: cpp-and-cmake
 
-:tags: c++, cpp, cmake
+:tags: c++, cpp, cmake, conan, gtest, catch2, testing, example
 
 
 CMake in VSCode
@@ -64,3 +64,11 @@ If i need to import a compiled 3rdparty library to my cmake project:
     set_property(TARGET some_library PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so")
     set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
+
+
+CMake with Conan and Catch2
+=====================================================
+
+Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing:
+
+`tst_conan <https://github.com/serge-m/code-training/tree/master/cpp/tst_conan>`_

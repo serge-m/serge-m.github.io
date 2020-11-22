@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://serge-m.github.io/cpp-and-cmake.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="c++,cpp,cmake" />
+        <meta name="keywords" content="c++,cpp,cmake,conan,gtest,catch2,testing,example" />
         <meta name="description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. I couldnt find a good extension for CMake integration that works out of box. I tried to make use of Cmake-tools and it kind …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -25,6 +25,11 @@
             <meta property="article:tag" content="c++" />
             <meta property="article:tag" content="cpp" />
             <meta property="article:tag" content="cmake" />
+            <meta property="article:tag" content="conan" />
+            <meta property="article:tag" content="gtest" />
+            <meta property="article:tag" content="catch2" />
+            <meta property="article:tag" content="testing" />
+            <meta property="article:tag" content="example" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -108,6 +113,16 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
         /
 	<a href="https://serge-m.github.io/tag/cmake.html">cmake</a>
+        /
+	<a href="https://serge-m.github.io/tag/conan.html">conan</a>
+        /
+	<a href="https://serge-m.github.io/tag/gtest.html">gtest</a>
+        /
+	<a href="https://serge-m.github.io/tag/catch2.html">catch2</a>
+        /
+	<a href="https://serge-m.github.io/tag/testing.html">testing</a>
+        /
+	<a href="https://serge-m.github.io/tag/example.html">example</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -149,6 +164,11 @@ That requires some custom scripting in your cmake files.</p>
 set_property(TARGET some_library PROPERTY IMPORTED_LOCATION &quot;${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so&quot;)
 set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES &quot;${CMAKE_CURRENT_SOURCE_DIR}/include/&quot;)
 </pre></div>
+</div>
+<div class="section" id="cmake-with-conan-and-catch2">
+<h2>CMake with Conan and Catch2</h2>
+<p>Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing:</p>
+<p><a class="reference external" href="https://github.com/serge-m/code-training/tree/master/cpp/tst_conan">tst_conan</a></p>
 </div>
 
             </div>
@@ -492,7 +512,7 @@ set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES &quot;${
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/testing.html">testing</a>
     </li>
     <li class="list-group-item tag-2">

@@ -420,3 +420,8 @@ Alternatively one can add the following to `~/.ssh/config`:
     Host *
       ServerAliveInterval 2
       ServerAliveCountMax 2
+
+
+## See also
+
+* [sshd_config - SSH Server Configuration](https://www.ssh.com/ssh/sshd_config/) - nice guidelines

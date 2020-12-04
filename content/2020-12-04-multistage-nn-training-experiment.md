@@ -53,3 +53,5 @@ Plan:
 
 
 
+There is also a [Reptile](https://github.com/dragen1860/Reptile-Pytorch) paper with code that can be useful.
+It proposes some simplification of gradient descent steps from MAML. 

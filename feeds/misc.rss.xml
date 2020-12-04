@@ -83,7 +83,17 @@ I couldnt find a good extension for CMake integration that works out of box. I t
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://askubuntu.com/questions/784781/system-monitoring-with-email-notifications"&gt;https://askubuntu.com/questions/784781/system-monitoring-with-email-notifications&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 22 Mar 2020 20:18:23 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-03-22:/system-monitoring.html</guid><category>misc</category><category>linux</category><category>monitoring</category></item><item><title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title><link>https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html</link><description>&lt;p&gt;Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Sun, 22 Mar 2020 20:18:23 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-03-22:/system-monitoring.html</guid><category>misc</category><category>linux</category><category>monitoring</category></item><item><title>Multistage NN training experiment</title><link>https://serge-m.github.io/multistage-nn-training-experiment.html</link><description>&lt;p&gt;Ideas for multistage NN training.&lt;/p&gt;
+&lt;p&gt;There is some research on continuous learning without catastrophic forgetting . 
+For example 
+ANML: Learning to Continually Learn (ECAI 2020)
+&lt;a href="https://arxiv.org/abs/2002.09571"&gt;arxiv&lt;/a&gt;
+&lt;a href="https://github.com/uvm-neurobotics-lab/ANML"&gt;code&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The code for the paper is based on another one:
+OML (Online-aware Meta-learning) ~ NeurIPS19
+&lt;a href="https://github.com/khurramjaved96/mrcl"&gt;code&lt;/a&gt;
+which derives some code from MAML:&lt;/p&gt;
+&lt;p&gt;Model-Agnostic Meta-Learning for …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Wed, 01 Jan 2020 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2020-01-01:/multistage-nn-training-experiment.html</guid><category>misc</category><category>pytorch</category><category>deep learning</category><category>computer vision</category><category>neural networks</category><category>draft</category></item><item><title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title><link>https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html</link><description>&lt;p&gt;Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the
 pulse width modulation and use only a couple of arduino's pins for many LEDs I used PCA9685 controller.&lt;/p&gt;
 &lt;p&gt;PCA9685 is connected to Arduino using I2C interface that requires only two data pins.&lt;/p&gt;
 &lt;img alt="breadboard Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685" src="media/2019-12-blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/sketch_bb.png" style="width: 600px;" /&gt;

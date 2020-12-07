@@ -14,11 +14,14 @@ For example
 ANML: Learning to Continually Learn (ECAI 2020)
 [arxiv](https://arxiv.org/abs/2002.09571)
 [code](https://github.com/uvm-neurobotics-lab/ANML)
+[video](https://www.youtube.com/watch?v=t7dSUY-4KHc)
 
 The code for the paper is based on another one:
 OML (Online-aware Meta-learning) ~ NeurIPS19
 [code](https://github.com/khurramjaved96/mrcl)
-which derives some code from MAML:
+[video](https://www.youtube.com/watch?v=XlEqFeQiuhk)
+
+OML paper derives some code from MAML:
 
 Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
 [pdf](https://arxiv.org/pdf/1703.03400.pdf)
@@ -55,3 +58,7 @@ Plan:
 
 There is also a [Reptile](https://github.com/dragen1860/Reptile-Pytorch) paper with code that can be useful.
 It proposes some simplification of gradient descent steps from MAML. 
+
+
+Video with a review of several methods of continual learning: 
+[Continual Learning in Neural Networks by Pulkit Agarwal](https://www.youtube.com/watch?v=06_iBtEeUTc)

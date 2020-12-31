@@ -5,7 +5,7 @@ Slug: symbolic-math-and-python
 Tags: python, symbolic math, math, cross product, sympy
 
 
-With the help of python and SymPy module one can do pretty neat computations.
+With the help of python and [SymPy](https://www.sympy.org/en/index.html) module one can do pretty neat computations.
 For example when I took a course about Robotic Preception on Coursera I had to find a cross product of 
 two vectors `v1 x v2` represented in a generic form:
 
@@ -52,3 +52,5 @@ Alternative operator for the cross product:
     >>> v1 ^ v2
     (-c*e)*C.i + c*d*C.j + (a*e - b*d)*C.k
 
+
+More info about vector operations: [SymPy documentation](https://docs.sympy.org/latest/modules/physics/vector/api/classes.html#vector)

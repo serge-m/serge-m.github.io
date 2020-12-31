@@ -72,6 +72,58 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/postgres-cheatsheet.html">Postgres cheatsheet</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2019-04-24T08:30:00+02:00"> 2019-04-24T08:30:00, Wed</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/postgres.html">postgres</a>
+        /
+	<a href="https://serge-m.github.io/tag/postgresql.html">postgresql</a>
+        /
+	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><h2>Basics</h2>
+<p>Connect as user <code>postgres</code>:</p>
+<div class="highlight"><pre><span></span><code>psql -U postgres
+</code></pre></div>
+
+<p>Connect to a specific database:</p>
+<div class="highlight"><pre><span></span><code><span class="err">\c database_name;</span>
+</code></pre></div>
+
+<p>Quit the psql:</p>
+<div class="highlight"><pre><span></span><code><span class="err">\q</span>
+</code></pre></div>
+
+<p>List all databases:</p>
+<div class="highlight"><pre><span></span><code><span class="err">\l</span>
+</code></pre></div>
+
+<p>Lists all tables in the current database:</p>
+<div class="highlight"><pre><span></span><code><span class="err">\dt</span>
+</code></pre></div>
+
+<p>List all users: </p>
+<div class="highlight"><pre><span></span><code><span class="err">\du</span>
+</code></pre></div>
+
+<p>Create a new role <code>username</code> with a password:</p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">ROLE</span> <span class="n">username</span> <span class="n">NOINHERIT</span> <span class="n">LOGIN</span> <span class="n">PASSWORD</span> <span class="n">password …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/postgres-cheatsheet.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/jupyter-notebooks-on-emr.html">Jupyter notebooks on EMR</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -733,35 +785,6 @@ Here is how to …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.html">why does your data science project fail again</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-10-29T23:50:00+01:00"> 2017-10-29T23:50:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/data-science.html">data science</a>
-        /
-	<a href="https://serge-m.github.io/tag/pm.html">pm</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>why does your data science project fail again</h2>
-<ul>
-<li>Your data scientists aren't real scientists</li>
-</ul>
-<p>For example, science differs from non-science by writing down the results. 
-Maybe your data scientists just talks about awesomeness of his new model and doesn't provide you with written reports and measurements? Then probably you will …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/why-does-your-data-science-project-fail-again.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc.html">&laquo;</a>
@@ -788,6 +811,8 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
                             href="https://serge-m.github.io/category/misc10.html">10</a></li>
                     <li class=""><a
                             href="https://serge-m.github.io/category/misc11.html">11</a></li>
+                    <li class=""><a
+                            href="https://serge-m.github.io/category/misc12.html">12</a></li>
                 <li class="next"><a
                         href="https://serge-m.github.io/category/misc3.html">&raquo;</a></li>
         </ul>
@@ -802,6 +827,7 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
@@ -813,7 +839,6 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/multistage-nn-training-experiment.html">Multistage NN training experiment</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -887,11 +912,11 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cross-product.html">cross product</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/depth.html">depth</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -904,9 +929,6 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ego-motion.html">ego motion.</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -959,9 +981,6 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
     </li>
@@ -983,14 +1002,14 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
@@ -1093,6 +1112,12 @@ Maybe your data scientists just talks about awesomeness of his new model and doe
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/symbolic-math.html">symbolic math</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sympy.html">sympy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>

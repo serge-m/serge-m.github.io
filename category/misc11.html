@@ -72,6 +72,39 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">OpenCV. Copy image from unsigned char buffer, resize and save to file</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-07-09T23:23:00+02:00"> 2013-07-09T23:23:00, Tue</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>How to copy image from unsigned char buffer, resize and save to file.
+If you use single-channel image.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;opencv/cv.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv/highgui.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="n">coeff</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">src</span><span class="p">(</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">CV_8UC1</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="n">source_byte_beffer</span> <span class="p">)</span> <span class="p">);</span>
+<span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">small</span><span class="p">(</span><span class="n">height</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">width</span><span class="o">/</span> <span class="n">coeff</span><span class="p">,</span> <span class="n">CV_8UC1</span> <span class="p">);</span>
+
+<span class="n">cv</span><span class="o">::</span><span class="n">Size</span> <span class="n">s_half</span><span class="p">(</span><span class="n">width</span><span class="o">/</span> <span class="n">coeff …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/opencv-copy-image-from-unsigned-char.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/svn-copy-certain-subdirectories-to.html">SVN copy certain subdirectories to a branch</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -564,12 +597,12 @@ The cause was in system PATH environment variable. Some buggy software I had ins
             </article>
             <hr/>
             <article>
-                <h2><a href="https://serge-m.github.io/conda-cheat-sheet.html">Conda cheat sheet</a></h2>
+                <h2><a href="https://serge-m.github.io/camera-model-and-projective-geometry.html">Camera model and projective geometry</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="1020-12-07T10:00:00+00:53"> 1020-12-07T10:00:00, Thu</time>
+        <i class="fa fa-calendar"></i><time datetime="1020-12-08T08:00:00+00:53"> 1020-12-08T08:00:00, Fri</time>
     </span>
 
 
@@ -577,49 +610,25 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
+	<a href="https://serge-m.github.io/tag/computer-vision.html">computer vision</a>
         /
-	<a href="https://serge-m.github.io/tag/conda.html">conda</a>
+	<a href="https://serge-m.github.io/tag/camera-model.html">camera model</a>
         /
-	<a href="https://serge-m.github.io/tag/anaconda.html">anaconda</a>
-        /
-	<a href="https://serge-m.github.io/tag/miniconda.html">miniconda</a>
+	<a href="https://serge-m.github.io/tag/calibration.html">calibration</a>
     
 </footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I usually prefer to keep (ana)conda deactivate in my system by default. One can chose such and option during conda installation.
-In order to activate base conda environment I run:</p>
-<div class="highlight"><pre><span></span><code><span class="err">source ~/anaconda3/etc/profile.d/conda.sh</span>
-</code></pre></div>
-
-<p>or </p>
-<div class="highlight"><pre><span></span><code><span class="err">source ~/miniconda3/etc/profile.d/conda.sh</span>
-</code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/conda-cheat-sheet.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/deep-learning-in-computer-vision.html">Deep learning in computer vision (draft)</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="1000-05-02T19:00:00+00:53"> 1000-05-02T19:00:00, Fri</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/draft.html">draft</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h1>Draft</h1>
+                <div class="summary"><h2>About camera models</h2>
 <ul>
-<li><a href="https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035">An Overview of ResNet and its Variants</a>, 2017</li>
+<li>
+<p><a href="https://docs.opencv.org/master/d9/d0c/group__calib3d.html">OpenCV camera model and calibration</a></p>
+</li>
+<li>
+<p><a href="https://physics.stackexchange.com/questions/223738/does-focal-length-mean-something-different-with-lenses-and-pinhole-cameras">Difference between pinhole camera model and thin lens model</a>.
+  One more <a href="https://dsp.stackexchange.com/questions/35522/the-position-of-image-plane-in-optical-imaging">note</a>,
+  One more article <a href="https://lhoangan.github.io/camera-params/">Pinhole camera model</a></p>
+</li>
 </ul>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/deep-learning-in-computer-vision.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/camera-model-and-projective-geometry.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -649,7 +658,10 @@ In order to activate base conda environment I run:</p>
                             href="https://serge-m.github.io/category/misc10.html">10</a></li>
                     <li class="active"><a
                             href="https://serge-m.github.io/category/misc11.html">11</a></li>
-                <li class="next disabled"><a href="#">&raquo;</a></li>
+                    <li class=""><a
+                            href="https://serge-m.github.io/category/misc12.html">12</a></li>
+                <li class="next"><a
+                        href="https://serge-m.github.io/category/misc12.html">&raquo;</a></li>
         </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -662,6 +674,7 @@ In order to activate base conda environment I run:</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/python-multiprocessing.html">Python - Multiprocessing</a></li>
@@ -673,7 +686,6 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/multistage-nn-training-experiment.html">Multistage NN training experiment</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685.html">Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -747,11 +759,11 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/cpp.html">cpp</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/cross-product.html">cross product</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/depth.html">depth</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/dll.html">dll</a>
@@ -764,9 +776,6 @@ In order to activate base conda environment I run:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/draft.html">draft</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ego-motion.html">ego motion.</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/errors.html">errors</a>
@@ -819,9 +828,6 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/learning-rate.html">learning rate</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/libraries.html">libraries</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/links.html">links</a>
     </li>
@@ -843,14 +849,14 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/management.html">management</a>
     </li>
+    <li class="list-group-item tag-3">
+      <a href="https://serge-m.github.io/tag/math.html">math</a>
+    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/matlab.html">matlab</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/memory.html">memory</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/multiprocessing.html">multiprocessing</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/network.html">network</a>
@@ -953,6 +959,12 @@ In order to activate base conda environment I run:</p>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/symbolic-math.html">symbolic math</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/sympy.html">sympy</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/tensorflow.html">tensorflow</a>

@@ -5,10 +5,13 @@ Slug: rounding-in-python
 Tags: python, math, floating point, 
 
 
-In school we round numbers like 0.5, 1123.5 towards the bigger number.
-That introduce an undesired bias some cases. For example if we have a large data set and
-we aggregate some column of it that contains a lot of `.5` fractions. 
+In school we round numbers like 0.5, 1123.5 towards the bigger number. 
+It's a ["round half up"](https://en.wikipedia.org/wiki/Rounding#Round_half_up) method.
+
+That introduces an undesired bias some cases. For example if we have a large data set, and
+we aggregate some column containing a lot of `.5` fractions. 
 In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied.
+It's ["Rounding half to even"](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even) or "banker's rounding".
 
 Rounding in python, numpy and pytorch works like this.
 

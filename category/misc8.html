@@ -72,6 +72,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/ipython-save-notebook-as-script.html">ipython. save notebook as script</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-31T12:10:00+02:00"> 2014-08-31T12:10:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/ipython.html">ipython</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Joint solution from <a href="http://stackoverflow.com/a/23619544&quot; target=&quot;_blank">http://stackoverflow.com/a/23619544</a> and <a href="http://stackoverflow.com/a/19067979&quot; target=&quot;_blank">http://stackoverflow.com/a/19067979</a></p>
+<blockquote class="tr_bq"># [1]
+%%javascript
+var kernel = IPython.notebook.kernel;
+var thename = window.document.getElementById("notebook_name").innerHTML;
+var command = "theNotebook = " + "'"+thename+"'";
+kernel.execute(command);
+
+# [2]
+try :
+&nbsp;&nbsp;&nbsp; if(`__IPYTHON__`) :
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; get_ipython().system(u'ipython nbconvert --to python {}.ipynb'.format(theNotebook))
+except NameError …</blockquote>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/ipython-save-notebook-as-script.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/use-matlab-function-from-python.html">Use Matlab function from python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -633,33 +667,6 @@ nvidia (1)</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/hex-editors.html">Hex editors</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-02-20T10:12:00+01:00"> 2014-02-20T10:12:00, Thu</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/tools.html">tools</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2 style="text-align: left;">radare, the reverse engineering framework </h2>
-<p><a href="http://radare.nopcode.org/y/?p=features">http://radare.nopcode.org/y/?p=features</a></p>
-<h2 style="text-align: left;">010 Editor</h2>
-<div>hex templates for binary formats parsing</div>
-<p><a href="http://www.sweetscape.com/">http://www.sweetscape.com/</a>
-<a href="http://habrahabr.ru/post/213211/">http://habrahabr.ru/post/213211/</a>&nbsp;(rus)</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/hex-editors.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc7.html">&laquo;</a>
@@ -702,6 +709,7 @@ nvidia (1)</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/point-cloud-processing.html">Point cloud processing</a></li>
@@ -713,7 +721,6 @@ nvidia (1)</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/multistage-nn-training-experiment.html">Multistage NN training experiment</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -816,6 +823,9 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/flask.html">flask</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/floating-point.html">floating point</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
@@ -921,9 +931,6 @@ nvidia (1)</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/pi.html">pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/ply.html">ply</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pm.html">pm</a>
@@ -1077,7 +1084,7 @@ nvidia (1)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2020 sergem
+         <div class="col-xs-10">&copy; 2021 sergem
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>

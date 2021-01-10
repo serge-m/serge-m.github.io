@@ -13,15 +13,18 @@ we aggregate some column containing a lot of `.5` fractions.
 In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied.
 It's ["Rounding half to even"](https://en.wikipedia.org/wiki/Rounding#Round_half_to_even) or "banker's rounding".
 
-Rounding in python, numpy and pytorch works like this.
+This method is used in IEEE Standard for Floating-Point Arithmetic (IEEE 754).
+Python, numpy and pytorch use it as well.
 
 Truncation like `int(0.5)` and `int(1.5)` just keeps the integer part.
+
+### Example
 
     >>> import torch
     >>> import math
     >>> import numpy as np
 
-Defining array with a lot of `.5`-s:    
+Defining an array with a lot of `.5`-s:    
 
     >>> a = [x / 2. for x in range(10)]
     >>> a

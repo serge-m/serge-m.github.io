@@ -6,7 +6,7 @@
 
 :slug: image-and-video-processing-recipes
 
-:tags: ffmpeg, video, image, command line
+:tags: ffmpeg, video, image, command line, avconv
 
 
 I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands.
@@ -42,6 +42,45 @@ Cut according to time (between seconds 5.5 and 122):
 .. code-block:: sh
 
     ffmpeg -y -i ./input_video.mp4 -vf "select=between(t\,5.5\,122)" -vsync 0 -vcodec libx264 -crf 15 -an ./output.mp4
+
+
+Resize video
+----------------------------
+
+
+.. code-block:: sh
+
+    ffmpeg -i "input.mp4" -vf scale="720:480" -vcodec libx264 -y output.mp4
+
+
+Crop:
+
+.. code-block:: sh
+
+    ffmpeg -i in.mp4 -filter:v "crop=80:60:200:100" -c:a copy out.mp4
+
+(audio is coped as is)
+
+
+Crop to the size divisible by 2 (for x264 encoding)
+
+.. code-block:: sh
+
+    ffmpeg -i "input.mp4" -filter:v "crop=(floor(iw/2)*2):(floor(ih/2)*2):0:0" -vcodec libx264 -crf 15 -y output.mp4
+
+Compile images into video with a given framerate
+------------------------------------------------------
+
+
+
+.. code-block:: sh
+
+    ffmpeg -framerate 5 -i "input_%04d.jpg" -vcodec libx264 -crf 15 -r 30 -y vis__compiled.mp4
+
+Images are assumed to have frame rate of 5.
+Video is saved with frame rate 30 (with duplicate frames).
+
+More info `here <https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video>`_
 
 
 

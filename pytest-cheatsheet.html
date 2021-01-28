@@ -190,8 +190,8 @@ So that if you forgot to test one of 10000 files it is still a failure. unfortun
 
 <h3>pytest.ini</h3>
 <div class="highlight"><pre><span></span><code><span class="k">[pytest]</span>
-<span class="na">addopts</span> <span class="o">=</span><span class="s"></span>
-<span class="s">    --cov-config=.coveragerc --cov=&lt;DIRECTORY_WITH_SOURCES&gt; --cov-report xml:coverage.xml --cov-report term:skip-covered</span>
+<span class="na">addopts</span> <span class="o">=</span>
+    <span class="na">--cov-config</span><span class="o">=</span><span class="s">.coveragerc --cov=&lt;DIRECTORY_WITH_SOURCES&gt; --cov-report xml:coverage.xml --cov-report term:skip-covered</span>
 <span class="na">testpaths</span> <span class="o">=</span> <span class="s">&lt;DIRECTORY_WITH_TESTS&gt;</span>
 </code></pre></div>
 
@@ -293,7 +293,7 @@ Doesn't work without creating virtualenvs, which is a pitty if you want to run t
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-3">

@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://serge-m.github.io/image-and-video-processing-recipes.html">
 
         <meta name="author" content="SergeM" />
-        <meta name="keywords" content="ffmpeg,video,image,command line" />
+        <meta name="keywords" content="ffmpeg,video,image,command line,avconv" />
         <meta name="description" content="I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations. Video conversions Cut …" />
 
         <meta property="og:site_name" content="sergem personal public notebook" />
@@ -26,6 +26,7 @@
             <meta property="article:tag" content="video" />
             <meta property="article:tag" content="image" />
             <meta property="article:tag" content="command line" />
+            <meta property="article:tag" content="avconv" />
             <meta property="article:author" content="SergeM" />
 
 
@@ -111,6 +112,8 @@ sergem personal public notebook            </a>
 	<a href="https://serge-m.github.io/tag/image.html">image</a>
         /
 	<a href="https://serge-m.github.io/tag/command-line.html">command line</a>
+        /
+	<a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -133,6 +136,26 @@ Therefore I usually google it. I'll try to collect here some recipes that I usua
 <p>Cut according to time (between seconds 5.5 and 122):</p>
 <div class="highlight"><pre><span></span>ffmpeg -y -i ./input_video.mp4 -vf <span class="s2">&quot;select=between(t\,5.5\,122)&quot;</span> -vsync <span class="m">0</span> -vcodec libx264 -crf <span class="m">15</span> -an ./output.mp4
 </pre></div>
+</div>
+<div class="section" id="resize-video">
+<h3>Resize video</h3>
+<div class="highlight"><pre><span></span>ffmpeg -i <span class="s2">&quot;input.mp4&quot;</span> -vf <span class="nv">scale</span><span class="o">=</span><span class="s2">&quot;720:480&quot;</span> -vcodec libx264 -y output.mp4
+</pre></div>
+<p>Crop:</p>
+<div class="highlight"><pre><span></span>ffmpeg -i <span class="k">in</span>.mp4 -filter:v <span class="s2">&quot;crop=80:60:200:100&quot;</span> -c:a copy out.mp4
+</pre></div>
+<p>(audio is coped as is)</p>
+<p>Crop to the size divisible by 2 (for x264 encoding)</p>
+<div class="highlight"><pre><span></span>ffmpeg -i <span class="s2">&quot;input.mp4&quot;</span> -filter:v <span class="s2">&quot;crop=(floor(iw/2)*2):(floor(ih/2)*2):0:0&quot;</span> -vcodec libx264 -crf <span class="m">15</span> -y output.mp4
+</pre></div>
+</div>
+<div class="section" id="compile-images-into-video-with-a-given-framerate">
+<h3>Compile images into video with a given framerate</h3>
+<div class="highlight"><pre><span></span>ffmpeg -framerate <span class="m">5</span> -i <span class="s2">&quot;input_%04d.jpg&quot;</span> -vcodec libx264 -crf <span class="m">15</span> -r <span class="m">30</span> -y vis__compiled.mp4
+</pre></div>
+<p>Images are assumed to have frame rate of 5.
+Video is saved with frame rate 30 (with duplicate frames).</p>
+<p>More info <a class="reference external" href="https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video">here</a></p>
 </div>
 <div class="section" id="convert-to-jpeg">
 <h3>Convert to jpeg</h3>
@@ -248,7 +271,7 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/argparse.html">argparse</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/avconv.html">avconv</a>
     </li>
     <li class="list-group-item tag-3">

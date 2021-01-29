@@ -2,7 +2,7 @@ Title: Datetime in Python
 Author: SergeM
 Date: 2018-01-17 07:07:00
 Slug: datetime-in-python
-Tags: python,datetime,calendar,calendar week,date
+Tags: python,datetime,calendar,calendar week,date, time, performance
 
 
 ## Conversion from calendar week to date
@@ -50,6 +50,35 @@ Therefore you don't need to implement ISO logic of dates calculation. Hopefully 
 
 Python 2 doesn't have these `%V` and `%u` implemented. `:(`
 
+
+## Measuring elapsed time
+
+Python standard library has a set of functions to measure elapsed time.
+
+One can get information about each function using `time.get_clock_info(name)`
+
+|Clock   	    | Adjustable    | 	Monotonic 	|   Resolution 	        | Tick Rate
+|---------------|---------------|---------------|-----------------------|-------------
+|process_time 	| False         | True          | 1e-07 	            | 10,000,000
+|clock 	     	| False         | True          | 4.665306263360271e-07 | 	2,143,482
+|perf_counter 	| False 	    | True 	        | 4.665306263360271e-07 |	2,143,482
+|monotonic 	    | False         | True 	        | 0.015625 	            |64
+|time 	        | True 	        | False 	    | 0.015625 	            |64
+
+source of measurements: [Python Clocks Explained](https://www.webucator.com/blog/2015/08/python-clocks-explained/), 2015.
+
+`time.perf_counter()` gives the most accurate results when testing the difference between two times and pretty fast.
+`timeit` uses `time.perf_counter()` by default.
+
+`time.process_time()` can be helpful to understand how long different parts of a program took to run. 
+
+> according to the PEP 0418, several modules use (or could use) time.monotonic(), 
+> including concurrent.futures, multiprocessing, queue, subprocess, telnet and threading modules to implement timeout. 
+
+
 ## See also
 * [How to add months to datetime object in python](/add-months-to-datetime-in-python.html)
 * [datetime module in python 3](https://docs.python.org/3.6/library/datetime.html#module-datetime)
+* [time — Time access and conversions](https://docs.python.org/3/library/time.html)
+* [How to not leap in time using Python](https://luminousmen.com/post/how-to-not-leap-in-time-using-python), 2020
+

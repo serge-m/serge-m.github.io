@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Sun, 10 Jan 2021 21:35:00 +0100</lastBuildDate><item><title>Rounding in Python</title><link>https://serge-m.github.io/rounding-in-python.html</link><description>&lt;p&gt;In school we round numbers like 0.5, 1123.5 towards the bigger number. 
+<rss version="2.0"><channel><title>sergem personal public notebook - misc</title><link>https://serge-m.github.io/</link><description></description><lastBuildDate>Fri, 29 Jan 2021 21:39:00 +0100</lastBuildDate><item><title>Data Structures And Algorithms in Python</title><link>https://serge-m.github.io/data-structures-and-algorithms-in-python.html</link><description>&lt;h1&gt;Data strucures&lt;/h1&gt;
+&lt;p&gt;Sources: 
+* &lt;a href="https://wiki.python.org/moin/TimeComplexity"&gt;https://wiki.python.org/moin/TimeComplexity&lt;/a&gt;
+* &lt;a href="https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt"&gt;https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;n&lt;/code&gt; is the number of elements in the container.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;k&lt;/code&gt; is either the value of a parameter, or the number of elements in the parameter.&lt;/p&gt;
+&lt;h2&gt;list&lt;/h2&gt;
+&lt;p&gt;It is actually an array …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">SergeM</dc:creator><pubDate>Fri, 29 Jan 2021 21:39:00 +0100</pubDate><guid isPermaLink="false">tag:serge-m.github.io,2021-01-29:/data-structures-and-algorithms-in-python.html</guid><category>misc</category><category>python</category><category>data structure</category><category>algorithm</category></item><item><title>Rounding in Python</title><link>https://serge-m.github.io/rounding-in-python.html</link><description>&lt;p&gt;In school we round numbers like 0.5, 1123.5 towards the bigger number. 
 It's a &lt;a href="https://en.wikipedia.org/wiki/Rounding#Round_half_up"&gt;"round half up"&lt;/a&gt; method.&lt;/p&gt;
 &lt;p&gt;That introduces an undesired bias some cases. For example if we have a large data set, and
 we aggregate some column containing a lot of &lt;code&gt;.5&lt;/code&gt; fractions. 

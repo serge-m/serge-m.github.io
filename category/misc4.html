@@ -72,6 +72,40 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-03-30T00:01:00+02:00"> 2017-03-30T00:01:00, Thu</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Running some GUI application as another user:</p>
+<div class="highlight"><pre><span></span><code><span class="err">user1@laptop:~$ su - user2</span>
+<span class="err">user2@laptop:~$ leafpad ~/somefile.txt</span>
+<span class="err">No protocol specified</span>
+</code></pre></div>
+
+<p>The problem is <code>user2</code> doesn't have access to your screen.
+Solution:</p>
+<div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
+</code></pre></div>
+
+<p>Probably not the safest one.</p>
+<p>Source: <a href="http://unix.stackexchange.com/a/108787">thread</a></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/no-protocol-specified.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/mocking-in-python.html">Mocking in Python</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -737,34 +771,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">Set up Travis CI for building personal page on Github Pages with Pelican</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-27T20:47:00+01:00"> 2016-11-27T20:47:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/travisci.html">TravisCI</a>
-        /
-	<a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
-        /
-	<a href="https://serge-m.github.io/tag/useful.html">useful</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. </p>
-<p>Registration on <a href="https://travis-ci.org/">https://travis-ci.org/</a> is straightforward.</p>
-<p>I have only public free accounts on github.  Thus I need two repositories: one …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/category/misc3.html">&laquo;</a>
@@ -807,6 +813,7 @@ We want to test endpoints behaviour including status codes and parameters encodi
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/effect-of-techniques-from-fastai.html">Effect of techniques from Fast.ai</a></li>
@@ -818,7 +825,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/system-monitoring.html">System monitoring</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -843,6 +849,9 @@ We want to test endpoints behaviour including status codes and parameters encodi
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/after-effects-aae.html">after effects (aae)</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -894,6 +903,9 @@ We want to test endpoints behaviour including status codes and parameters encodi
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/cross-product.html">cross product</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/data-structure.html">data structure</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/deep-learning.html">deep learning</a>
@@ -1021,9 +1033,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pca9685.html">pca9685</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/pcl.html">pcl</a>
-    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pelican.html">pelican</a>
     </li>
@@ -1032,9 +1041,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pm.html">pm</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/point-cloud.html">point cloud</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/pwm.html">pwm</a>

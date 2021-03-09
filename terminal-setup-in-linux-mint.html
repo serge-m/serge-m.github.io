@@ -117,50 +117,50 @@ sergem personal public notebook            </a>
 <h2>Commands</h2>
 <p>In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then:</p>
 <h3>Sessions</h3>
-<div class="highlight"><pre><span></span><code><span class="err">:new&lt;CR&gt;  new session</span>
-<span class="err">s  list sessions</span>
-<span class="err">$  name session</span>
+<div class="highlight"><pre><span></span><code>:new&lt;CR&gt;  new session
+s  list sessions
+$  name session
 </code></pre></div>
 
 <h3>Windows (tabs)</h3>
-<div class="highlight"><pre><span></span><code><span class="err">c  create window</span>
-<span class="err">w  list windows</span>
-<span class="err">n  next window</span>
-<span class="err">p  previous window</span>
-<span class="err">f  find window</span>
-<span class="err">,  name window</span>
-<span class="err">&amp;  kill window</span>
+<div class="highlight"><pre><span></span><code><span class="nv">c</span>  <span class="nv">create</span> <span class="nv">window</span>
+<span class="nv">w</span>  <span class="nv">list</span> <span class="nv">windows</span>
+<span class="nv">n</span>  <span class="k">next</span> <span class="nv">window</span>
+<span class="nv">p</span>  <span class="nv">previous</span> <span class="nv">window</span>
+<span class="nv">f</span>  <span class="nv">find</span> <span class="nv">window</span>
+,  <span class="nv">name</span> <span class="nv">window</span>
+<span class="o">&amp;</span>  <span class="nv">kill</span> <span class="nv">window</span>
 </code></pre></div>
 
 <h3>Panes (splits)</h3>
-<div class="highlight"><pre><span></span><code><span class="c">%  vertical split</span>
-&quot;  <span class="n">horizontal</span> <span class="n">split</span>
+<div class="highlight"><pre><span></span><code><span class="c">%  vertical split</span><span class="w"></span>
+&quot;<span class="w">  </span><span class="n">horizontal</span><span class="w"> </span><span class="nb">split</span><span class="w"></span>
 
-<span class="n">o</span>  <span class="s">swap</span> <span class="s">panes</span>
-<span class="n">q</span>  <span class="s">show</span> <span class="s">pane</span> <span class="s">numbers</span>
-<span class="n">x</span>  <span class="s">kill</span> <span class="s">pane</span>
-<span class="o">+</span>  <span class="k">break</span> <span class="n">pane</span> <span class="n">into</span> <span class="n">window</span> <span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span> <span class="n">to</span> <span class="n">select</span> <span class="n">text</span> <span class="n">by</span> <span class="n">mouse</span> <span class="n">to</span> <span class="n">copy</span><span class="p">)</span>
-<span class="o">-</span>  <span class="n">restore</span> <span class="n">pane</span> <span class="n">from</span> <span class="n">window</span>
-⍽  <span class="n">space</span> <span class="o">-</span> <span class="n">toggle</span> <span class="n">between</span> <span class="n">layouts</span>
+<span class="n">o</span><span class="w">  </span><span class="s">swap</span><span class="w"> </span><span class="s">panes</span><span class="w"></span>
+<span class="n">q</span><span class="w">  </span><span class="s">show</span><span class="w"> </span><span class="s">pane</span><span class="w"> </span><span class="s">numbers</span><span class="w"></span>
+<span class="n">x</span><span class="w">  </span><span class="s">kill</span><span class="w"> </span><span class="s">pane</span><span class="w"></span>
+<span class="o">+</span><span class="w">  </span><span class="k">break</span><span class="w"> </span><span class="n">pane</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">select</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">mouse</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">copy</span><span class="p">)</span><span class="w"></span>
+<span class="o">-</span><span class="w">  </span><span class="n">restore</span><span class="w"> </span><span class="n">pane</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">window</span><span class="w"></span>
+⍽<span class="w">  </span><span class="n">space</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">toggle</span><span class="w"> </span><span class="nb">between</span><span class="w"> </span><span class="n">layouts</span><span class="w"></span>
 </code></pre></div>
 
 <h2>Set up scrolling and fix Shift-F5, Shift-Fn in mc</h2>
 <p>put this command in your ~/.tmux.conf</p>
-<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="o">-</span><span class="k">g</span> <span class="n">mouse</span> <span class="k">on</span>    
+<div class="highlight"><pre><span></span><code><span class="nv">set</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">mouse</span> <span class="nv">on</span>    
 
-<span class="o">#</span> <span class="k">Lower</span> <span class="k">escape</span> <span class="n">timing</span> <span class="k">from</span> <span class="mi">500</span><span class="n">ms</span> <span class="k">to</span> <span class="mi">50</span><span class="n">ms</span> <span class="k">for</span> <span class="n">quicker</span> <span class="n">response</span> <span class="k">to</span> <span class="k">scroll</span><span class="o">-</span><span class="n">buffer</span> <span class="k">access</span><span class="p">.</span>
-<span class="k">set</span> <span class="o">-</span><span class="n">s</span> <span class="k">escape</span><span class="o">-</span><span class="k">time</span> <span class="mi">50</span>
+# <span class="nv">Lower</span> <span class="nv">escape</span> <span class="nv">timing</span> <span class="nv">from</span> <span class="mi">500</span><span class="nv">ms</span> <span class="nv">to</span> <span class="mi">50</span><span class="nv">ms</span> <span class="k">for</span> <span class="nv">quicker</span> <span class="nv">response</span> <span class="nv">to</span> <span class="nv">scroll</span><span class="o">-</span><span class="nv">buffer</span> <span class="nv">access</span>.
+<span class="nv">set</span> <span class="o">-</span><span class="nv">s</span> <span class="nv">escape</span><span class="o">-</span><span class="nv">time</span> <span class="mi">50</span>
 
-<span class="o">#</span> <span class="n">Fix</span> <span class="n">Shift</span><span class="o">+</span><span class="err">{</span><span class="n">Fn</span><span class="err">}</span> <span class="n">keys</span> <span class="k">in</span> <span class="n">Midnight</span> <span class="n">commander</span>
-<span class="n">setw</span> <span class="o">-</span><span class="k">g</span> <span class="n">xterm</span><span class="o">-</span><span class="n">keys</span> <span class="k">on</span>
+# <span class="nv">Fix</span> <span class="nv">Shift</span><span class="o">+</span>{<span class="nv">Fn</span>} <span class="nv">keys</span> <span class="nv">in</span> <span class="nv">Midnight</span> <span class="nv">commander</span>
+<span class="nv">setw</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">xterm</span><span class="o">-</span><span class="nv">keys</span> <span class="nv">on</span>
 </code></pre></div>
 
 <p>For older versions of tmux use </p>
-<div class="highlight"><pre><span></span><code><span class="err">setw -g mode-mouse on</span>
+<div class="highlight"><pre><span></span><code>setw -g mode-mouse on
 </code></pre></div>
 
 <p>as a first line. Otherwise you get </p>
-<div class="highlight"><pre><span></span><code><span class="err">... .tmux.conf:1: unknown option: mode-mouse ... </span>
+<div class="highlight"><pre><span></span><code>... .tmux.conf:1: unknown option: mode-mouse ... 
 </code></pre></div>
             </div>
             <!-- /.entry-content -->
@@ -208,6 +208,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -219,7 +220,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -247,6 +247,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -335,6 +338,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -413,9 +419,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -460,9 +463,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

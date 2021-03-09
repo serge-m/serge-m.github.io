@@ -141,7 +141,7 @@ sergem personal public notebook            </a>
 <p>Alternatively one can try to install it from wheels:
 https://www.tensorflow.org/install/pip?lang=python3#package-location</p>
 <p>The dependencies are better to install using pip and piwheels.org:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflow keras</span>
+<div class="highlight"><pre><span></span><code>sudo pip3 install --extra-index-url=https://www.piwheels.org/simple -U tensorflow keras
 </code></pre></div>
 
 <h3>Issues</h3>
@@ -151,21 +151,21 @@ https://www.tensorflow.org/install/pip?lang=python3#package-location</p>
 </code></pre></div>
 
 <p>installing </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install libhdf5-dev</span>
-<span class="err">sudo apt-get install libhdf5-serial-dev</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install libhdf5-dev
+sudo apt-get install libhdf5-serial-dev
 </code></pre></div>
 
 <p>didnt help.</p>
 <p>Some version mismatch</p>
 <p>I could resolve it by compiling h5py with my version:</p>
-<div class="highlight"><pre><span></span><code><span class="err">HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py</span>
+<div class="highlight"><pre><span></span><code>HDF5_VERSION=1.8.16 sudo pip3 install --no-binary=h5py h5py
 </code></pre></div>
 
 <h4>load_img</h4>
 <p><code>keras_preprocessing.image.utils.load_img</code> results in the error:</p>
 <div class="highlight"><pre><span></span><code>  <span class="n">File</span> <span class="s2">&quot;/home/ubuntu/sergem_robocar/py3/lib/python3.5/site-packages/keras_preprocessing/image/utils.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">108</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_img</span>
     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Could not import PIL.Image. &#39;</span>
-<span class="ne">ImportError</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">PIL.Image.</span> <span class="nn">The</span> <span class="nn">use</span> <span class="nn">of</span> <span class="sb">`load_img`</span> <span class="n">requires</span> <span class="n">PIL</span><span class="o">.</span>
+<span class="ne">ImportError</span><span class="p">:</span> <span class="n">Could</span> <span class="ow">not</span> <span class="kn">import</span> <span class="nn">PIL.Image.</span> <span class="n">The</span> <span class="n">use</span> <span class="n">of</span> <span class="err">`</span><span class="n">load_img</span><span class="err">`</span> <span class="n">requires</span> <span class="n">PIL</span><span class="o">.</span>
 </code></pre></div>
 
 <p>pillow is installed. </p>
@@ -180,7 +180,7 @@ I got the following error.</p>
 </code></pre></div>
 
 <p>Easily solvable by </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install libjpeg62</span>
+<div class="highlight"><pre><span></span><code>sudo apt install libjpeg62
 </code></pre></div>
 
 <h2>Name clash in dynamic_reconfigure</h2>
@@ -203,7 +203,7 @@ The problem was in the naming of the package (steering_translator) and the execu
 I would like to run ROS melodic on my Raspberry Pi 3 b+ with Raspberry Camera support.</p>
 <p>You can find the image I built <a href="https://yadi.sk/d/A76jFgiVx_vycA">here</a>.</p>
 <p>md5 checksum:</p>
-<div class="highlight"><pre><span></span><code><span class="err">a65a6968eb7cdf39655eaee9ee82b38c  20200207_ubuntu_armhf_ros_melodic.img.gz</span>
+<div class="highlight"><pre><span></span><code>a65a6968eb7cdf39655eaee9ee82b38c  20200207_ubuntu_armhf_ros_melodic.img.gz
 </code></pre></div>
 
 <p>To use it you need to download it and write on SD card as with any other image for RPi.</p>
@@ -301,46 +301,46 @@ I was installing <code>sudo apt install -y ros-melodic-ros-base</code> to save s
 <p>I would like to use the standard RPi camera with ROS. 
 There is a node <a href="https://github.com/UbiquityRobotics/raspicam_node">raspicam_node</a> by Ubiquity, but there is no compiled version 
 for ROS melodic that I could install using <code>apt</code>. Let's compile it. I have checked out <code>kinetic</code> branch, revision <code>3209cd801b1006c8959540f4efc3774ee19aaa78</code>.  </p>
-<div class="highlight"><pre><span></span><code><span class="err">mkdir -p ~/catkin_ws/src</span>
-<span class="err">cd ~/catkin_ws/src</span>
-<span class="err">git clone https://github.com/UbiquityRobotics/raspicam_node</span>
-<span class="err">cd ~/catkin_ws/</span>
-<span class="err">source /opt/ros/melodic/setup.bash</span>
+<div class="highlight"><pre><span></span><code>mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone https://github.com/UbiquityRobotics/raspicam_node
+cd ~/catkin_ws/
+source /opt/ros/melodic/setup.bash
 </code></pre></div>
 
 <p>Open file <code>/etc/ros/rosdep/sources.list.d/30-ubiquity.list</code> and add there the line:</p>
-<div class="highlight"><pre><span></span><code><span class="err">yaml https://raw.githubusercontent.com/UbiquityRobotics/rosdep/master/raspberry-pi.yaml</span>
+<div class="highlight"><pre><span></span><code>yaml https://raw.githubusercontent.com/UbiquityRobotics/rosdep/master/raspberry-pi.yaml
 </code></pre></div>
 
 <p>Now update dependencies:</p>
-<div class="highlight"><pre><span></span><code><span class="err">rosdep update</span>
-<span class="err">cd ~/catkin_ws</span>
-<span class="err">rosdep install --from-paths src --ignore-src --rosdistro=melodic -y</span>
+<div class="highlight"><pre><span></span><code>rosdep update
+cd ~/catkin_ws
+rosdep install --from-paths src --ignore-src --rosdistro=melodic -y
 </code></pre></div>
 
 <p>Build:</p>
-<div class="highlight"><pre><span></span><code><span class="err">catkin_make install</span>
+<div class="highlight"><pre><span></span><code>catkin_make install
 </code></pre></div>
 
 <p>Install rqt_image_view to see the results:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y ros-melodic-rqt-image-view</span>
+<div class="highlight"><pre><span></span><code>sudo apt install -y ros-melodic-rqt-image-view
 </code></pre></div>
 
 <p>Install tools to work with raspberry camera:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y libraspberrypi-bin libraspberrypi-bin-nonfree</span>
+<div class="highlight"><pre><span></span><code>sudo apt install -y libraspberrypi-bin libraspberrypi-bin-nonfree
 </code></pre></div>
 
 <p>For example, now you can make a photo using raspi camera:</p>
-<div class="highlight"><pre><span></span><code><span class="err">raspistill -o img.jpg</span>
+<div class="highlight"><pre><span></span><code>raspistill -o img.jpg
 </code></pre></div>
 
 <p>Test run of the raspicam_node:</p>
-<div class="highlight"><pre><span></span><code><span class="err">source ~/catkin_ws/devel/setup.bash</span>
-<span class="err">roslaunch raspicam_node camerav2_1280x960.launch</span>
+<div class="highlight"><pre><span></span><code><span class="n">source</span> <span class="err">~</span><span class="o">/</span><span class="n">catkin_ws</span><span class="o">/</span><span class="n">devel</span><span class="o">/</span><span class="n">setup</span><span class="err">.</span><span class="n">bash</span>
+<span class="n">roslaunch</span> <span class="n">raspicam_node</span> <span class="n">camerav2_1280x960</span><span class="err">.</span><span class="n">launch</span>
 </code></pre></div>
 
 <p>You have to see the following line in the end:</p>
-<div class="highlight"><pre><span></span><code><span class="err">[ INFO] [1581100897.421303654]: Video capture started</span>
+<div class="highlight"><pre><span></span><code>[ INFO] [1581100897.421303654]: Video capture started
 </code></pre></div>
 
 <p>Press Ctrl+C to stop the node.</p>
@@ -359,8 +359,8 @@ for ROS melodic that I could install using <code>apt</code>. Let's compile it. I
 <p>that mean you haven't enable camera. Look at the instructions above 
 about config.txt file.</p>
 <p>Now you can try to run camera node in the background and run rqt_image_view to check if the camera works:</p>
-<div class="highlight"><pre><span></span><code><span class="err">roslaunch raspicam_node camerav2_1280x960.launch &amp;</span>
-<span class="err">rosrun rqt_image_view rqt_image_view</span>
+<div class="highlight"><pre><span></span><code><span class="n">roslaunch</span> <span class="n">raspicam_node</span> <span class="n">camerav2_1280x960</span><span class="err">.</span><span class="n">launch</span> <span class="err">&amp;</span>
+<span class="n">rosrun</span> <span class="n">rqt_image_view</span> <span class="n">rqt_image_view</span>
 </code></pre></div>
 
 <p>Result should look like this:</p>
@@ -368,39 +368,39 @@ about config.txt file.</p>
 <h3>Enabling wifi connection</h3>
 <p>Let's say you want Raspberry pi to automatically connect to your home wifi network.</p>
 <p>Install NetworkManager: </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y network-manager</span>
+<div class="highlight"><pre><span></span><code>sudo apt install -y network-manager
 </code></pre></div>
 
 <p>enable network manager</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl enable NetworkManager</span>
-<span class="err">sudo systemctl start NetworkManager</span>
+<div class="highlight"><pre><span></span><code>sudo systemctl enable NetworkManager
+sudo systemctl start NetworkManager
 </code></pre></div>
 
 <p>add a connection to your Wifi router </p>
-<div class="highlight"><pre><span></span><code><span class="err">nmcli device wifi rescan</span>
-<span class="err">nmcli device wifi list</span>
-<span class="err">nmcli device wifi connect SSID-Name password PASSWORD</span>
+<div class="highlight"><pre><span></span><code><span class="nv">nmcli</span> <span class="nv">device</span> <span class="nv">wifi</span> <span class="nv">rescan</span>
+<span class="nv">nmcli</span> <span class="nv">device</span> <span class="nv">wifi</span> <span class="nv">list</span>
+<span class="nv">nmcli</span> <span class="nv">device</span> <span class="nv">wifi</span> <span class="k">connect</span> <span class="nv">SSID</span><span class="o">-</span><span class="nv">Name</span> <span class="nv">password</span> <span class="nv">PASSWORD</span>
 </code></pre></div>
 
 <h4>Enable hot spot Wifi on RaspberryPi (ubuntu 18.04)</h4>
 <p>Enabling hotspot on raspberry allows connection via Wifi without having a router or ethernet cable.</p>
 <p>install and enable network manager as described above</p>
 <p>Create hotspot connection:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli dev wifi hotspot ifname wlan0 ssid ub_rpi_net password &quot;robotwifi&quot;</span>
+<div class="highlight"><pre><span></span><code>sudo nmcli dev wifi hotspot ifname wlan0 ssid ub_rpi_net password &quot;robotwifi&quot;
 </code></pre></div>
 
 <p>Enable autoconnection and enable the connection:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli connection modify Hotspot connection.autoconnect True</span>
-<span class="err">nmcli con up Hotspot</span>
+<div class="highlight"><pre><span></span><code>sudo nmcli connection modify Hotspot connection.autoconnect True
+nmcli con up Hotspot
 </code></pre></div>
 
 <p>You can change the default IP addresses for the Hotspot (optional):</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo nmcli connection modify Hotspot ipv4.addresses 192.168.111.1/24</span>
-<span class="err">sudo nmcli connection modify Hotspot ipv4.gateway 192.168.111.1</span>
+<div class="highlight"><pre><span></span><code>sudo nmcli connection modify Hotspot ipv4.addresses 192.168.111.1/24
+sudo nmcli connection modify Hotspot ipv4.gateway 192.168.111.1
 </code></pre></div>
 
 <p>restart network manager to enable the changes:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo systemctl restart NetworkManager</span>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart NetworkManager
 </code></pre></div>
 
 <p>Your <code>/etc/NetworkManager/system-connections/Hotspot</code> file will look like this:</p>
@@ -442,20 +442,20 @@ about config.txt file.</p>
 <p>One can create the image using the standard Ubuntu Disks app on your laptop.
 Alternatively we can use <code>dd</code> with saves some clicks, but more dangerous is a way.</p>
 <p>Assuming <code>/dev/mmcblk0</code> is your SD card. Creating an image for the whole SD card:</p>
-<div class="highlight"><pre><span></span><code><span class="err">dd bs=1M if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz</span>
+<div class="highlight"><pre><span></span><code><span class="nv">dd</span> <span class="nv">bs</span><span class="o">=</span><span class="mi">1</span><span class="nv">M</span> <span class="k">if</span><span class="o">=/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">mmcblk0</span> <span class="o">|</span> <span class="nv">gzip</span> <span class="o">-</span><span class="nv">c</span> <span class="o">--</span><span class="nv">fast</span><span class="o">|</span> <span class="nv">dd</span> <span class="nv">of</span><span class="o">=/</span><span class="nv">path</span><span class="o">/</span><span class="nv">to</span><span class="o">/</span><span class="nv">image</span>.<span class="nv">gz</span>
 </code></pre></div>
 
 <p>That is the safest option.</p>
 <p>In my case the SD card is 32 Gb and the disk space occupied is about 6Gb. To save some disk space and decrease the 
 image size I resize the partition "writable" to something about 5.5 Gb, and then create a shorter version that should 
 also work:</p>
-<div class="highlight"><pre><span></span><code><span class="err">dd bs=1M count=&lt;size_in_MBs&gt; if=/dev/mmcblk0 | gzip -c --fast| dd of=/path/to/image.gz</span>
+<div class="highlight"><pre><span></span><code><span class="nv">dd</span> <span class="nv">bs</span><span class="o">=</span><span class="mi">1</span><span class="nv">M</span> <span class="nv">count</span><span class="o">=&lt;</span><span class="nv">size_in_MBs</span><span class="o">&gt;</span> <span class="k">if</span><span class="o">=/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">mmcblk0</span> <span class="o">|</span> <span class="nv">gzip</span> <span class="o">-</span><span class="nv">c</span> <span class="o">--</span><span class="nv">fast</span><span class="o">|</span> <span class="nv">dd</span> <span class="nv">of</span><span class="o">=/</span><span class="nv">path</span><span class="o">/</span><span class="nv">to</span><span class="o">/</span><span class="nv">image</span>.<span class="nv">gz</span>
 </code></pre></div>
 
 <p><code>size_in_MBs</code> is 6000 for me to cover both partitions.</p>
 <p><img alt="Creating an image of the SD card for recovery" src="media/2019-08-24-ros-experience/free-space-sd-card.png"></p>
 <p>How to restore the image. </p>
-<div class="highlight"><pre><span></span><code><span class="err">dd if=/path/to/image.gz | gunzip -c | dd bs=1M of=/dev/mmcblk0</span>
+<div class="highlight"><pre><span></span><code><span class="nv">dd</span> <span class="k">if</span><span class="o">=/</span><span class="nv">path</span><span class="o">/</span><span class="nv">to</span><span class="o">/</span><span class="nv">image</span>.<span class="nv">gz</span> <span class="o">|</span> <span class="nv">gunzip</span> <span class="o">-</span><span class="nv">c</span> <span class="o">|</span> <span class="nv">dd</span> <span class="nv">bs</span><span class="o">=</span><span class="mi">1</span><span class="nv">M</span> <span class="nv">of</span><span class="o">=/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">mmcblk0</span>
 </code></pre></div>
 
 <p>Be careful. There is no safety net for this command. You can corrupt your data. 
@@ -491,8 +491,8 @@ https://gitlab.com/Bjorn_Samuelsson/raspberry-pi-cloud-init-wifi.git </p>
 uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
 <h1>Cmake + Clion + ROS</h1>
 <p>In order to have ROS environment and dependencies loaded to CLion one has to launch CLion in the sourced environment.</p>
-<div class="highlight"><pre><span></span><code><span class="err">source ./devel/setup.bash</span>
-<span class="err">sh PATH_TO_CLION/bin/clion.sh</span>
+<div class="highlight"><pre><span></span><code>source ./devel/setup.bash
+sh PATH_TO_CLION/bin/clion.sh
 </code></pre></div>
 
 <p>Then open a ROS project: 
@@ -543,6 +543,7 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -554,7 +555,6 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -582,6 +582,9 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -670,6 +673,9 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -748,9 +754,6 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -795,9 +798,6 @@ uses some synchronous calls from Wire.h. It seems that was causing issues.</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

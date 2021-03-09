@@ -171,6 +171,15 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">hstack</span
 ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> output.mp4
 </pre></div>
 </div>
+<div class="section" id="strip-metadata-exif-from-multiple-images">
+<h3>Strip metadata (EXIF) from multiple images</h3>
+<p>Single file in-place</p>
+<div class="highlight"><pre><span></span>mogrify -strip filename.jpg
+</pre></div>
+<p>Multiple files (linux)</p>
+<div class="highlight"><pre><span></span>find . -name <span class="s2">&quot;*.jpg&quot;</span> <span class="p">|</span> sort <span class="p">|</span> xargs -I <span class="o">{}</span> mogrify -strip <span class="o">{}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See also</h2>
@@ -228,6 +237,7 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -239,7 +249,6 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -267,6 +276,9 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -355,6 +367,9 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -433,9 +448,6 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -480,9 +492,6 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex <span class="nv">vstack</span
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

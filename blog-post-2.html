@@ -111,7 +111,7 @@ sergem personal public notebook            </a>
                 <p>АлёнаC++:
 <a href="http://alenacpp.blogspot.ru/2005/08/c.html">http://alenacpp.blogspot.ru/2005/08/c.html</a></p>
 <p><code>static_cast</code> между указателями корректно, только если один из указателей - это указатель на <code>void</code> или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от <code>void*</code>, который возвращает <code>malloc</code>, следует использовать <code>static_cast</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="err">int * p = static_cast&lt;int*&gt;(malloc(100));</span>
+<div class="highlight"><pre><span></span><code>int * p = static_cast&lt;int*&gt;(malloc(100));
 </code></pre></div>
 
 <p>Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции <code>undefined</code>. То есть, возможно такое приведение: <code>static_cast&lt;Derived*&gt;(pBase)</code>, даже если <code>pBase</code> не указывает на <code>Derived</code>, но программа при этом будет вести себя странно.</p>
@@ -161,6 +161,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -172,7 +173,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -200,6 +200,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -288,6 +291,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -366,9 +372,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -413,9 +416,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

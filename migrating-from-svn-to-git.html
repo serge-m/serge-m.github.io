@@ -119,25 +119,25 @@ http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-ne
 <p>I found rather useful <a href="http://stackoverflow.com/a/9316931&quot; target=&quot;_blank">this one</a>.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS</p>
 <p>This script will convert projects stored in SVN with the following format:</p>
-<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">trunk</span>
-  <span class="o">/</span><span class="n">Project1</span>
-  <span class="o">/</span><span class="n">Project2</span>
-<span class="o">/</span><span class="n">branches</span>
-     <span class="o">/</span><span class="n">Project1</span>
-     <span class="o">/</span><span class="n">Project2</span>
-<span class="o">/</span><span class="n">tags</span>
- <span class="o">/</span><span class="n">Project1</span>
- <span class="o">/</span><span class="n">Project2</span>
-<span class="n">This</span> <span class="n">scheme</span> <span class="k">is</span> <span class="n">also</span> <span class="n">popular</span> <span class="k">and</span> <span class="n">supported</span> <span class="k">as</span> <span class="n">well</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code>/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1
+     /Project2
+/tags
+ /Project1
+ /Project2
+This scheme is also popular and supported as well:
 
-<span class="o">/</span><span class="n">Project1</span>
-     <span class="o">/</span><span class="n">trunk</span>
-     <span class="o">/</span><span class="n">branches</span>
-     <span class="o">/</span><span class="n">tags</span>
-<span class="o">/</span><span class="n">Project2</span>
-     <span class="o">/</span><span class="n">trunk</span>
-     <span class="o">/</span><span class="n">branches</span>
-     <span class="o">/</span><span class="n">tags</span>
+/Project1
+     /trunk
+     /branches
+     /tags
+/Project2
+     /trunk
+     /branches
+     /tags
 </code></pre></div>
 
 <p>Each project will get synchronized over by project name:</p>
@@ -152,11 +152,11 @@ Branches are ok, but merged revisions are not marked as merged. In other words e
 <p>I haven't tested them.</p>
 <h2>Backup SVN</h2>
 <p>if the repository is not local. Dump whole repo:</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnrdump dump https://&lt;your svn repo path&gt;/ &gt; dump.dump</span>
+<div class="highlight"><pre><span></span><code>svnrdump dump https://&lt;your svn repo path&gt;/ &gt; dump.dump
 </code></pre></div>
 
 <p>then create a new local repo</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnadmin create newrepo</span>
+<div class="highlight"><pre><span></span><code>svnadmin create newrepo
 </code></pre></div>
 
 <p>loading dump to local repo:</p>
@@ -165,14 +165,14 @@ Branches are ok, but merged revisions are not marked as merged. In other words e
 
 <p>I had a problem with loading (there was some internal error while loading more than 8000 revisions, so i try to make it another way).
 You can dump in several files if you specify revisions ranges:</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnrdump dump  https://&lt;your svn repo path&gt;/ -r 0:1000 &gt; dump0000-1000.dump</span>
-<span class="err">svnrdump dump  https://&lt;your svn repo path&gt;/ -r 1001:2000 --incremental &gt; dump1001-2000-incremental.dump</span>
-<span class="err">svnrdump dump  https://&lt;your svn repo path&gt;/ -r 2001:3000 --incremental &gt; dump2001-3000-incremental.dump</span>
+<div class="highlight"><pre><span></span><code>svnrdump dump  https://&lt;your svn repo path&gt;/ -r 0:1000 &gt; dump0000-1000.dump
+svnrdump dump  https://&lt;your svn repo path&gt;/ -r 1001:2000 --incremental &gt; dump1001-2000-incremental.dump
+svnrdump dump  https://&lt;your svn repo path&gt;/ -r 2001:3000 --incremental &gt; dump2001-3000-incremental.dump
 </code></pre></div>
 
 <p>All dumps except the first are incremental</p>
 <p>then create a new local repo</p>
-<div class="highlight"><pre><span></span><code><span class="err">svnadmin create newrepo</span>
+<div class="highlight"><pre><span></span><code>svnadmin create newrepo
 </code></pre></div>
 
 <p>then loading:</p>
@@ -237,6 +237,7 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -248,7 +249,6 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -276,6 +276,9 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -364,6 +367,9 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -442,9 +448,6 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -489,9 +492,6 @@ I added a new user, copied ready newrepo to a directory where VisualSVN Server s
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

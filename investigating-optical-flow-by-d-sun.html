@@ -111,39 +111,39 @@ sergem personal public notebook            </a>
 <p>Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. "A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them". International Journal of Computer Vision (IJCV), 2013 
 [ <a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf">pdf</a>] [<a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip">Source code</a>]</p>
 <p>Look inside the sources:</p>
-<div class="highlight"><pre><span></span><code><span class="err">    @alt_ba_optical_flow\</span>
-<span class="err">    @ba_optical_flow\</span>
-<span class="err">        ...</span>
-<span class="err">        compute_flow_base.m</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nv">@alt_ba_optical_flow</span><span class="err">\</span><span class="w"></span>
+<span class="w">    </span><span class="nv">@ba_optical_flow</span><span class="err">\</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">compute_flow_base</span><span class="p">.</span><span class="n">m</span><span class="w"></span>
 </code></pre></div>
 
 <p>itarates:</p>
 <p>1) Iterate flow computation</p>
 <p>2) Linearization update, for j = 1:this.max_linear. In the simple case <code>max_linear==1</code>, when I use <code>x = A\b</code> solver for linear system. Probably for more complicated solvers <code>max_linear &gt; 1</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">        compute_flow.m</span>
+<div class="highlight"><pre><span></span><code>        compute_flow.m
 </code></pre></div>
 
 <p>calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations: </p>
-<div class="highlight"><pre><span></span><code><span class="err">for ignc = 1:this.gnc_iters   </span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="nv">ignc</span> <span class="o">=</span> <span class="mi">1</span>:<span class="nv">this</span>.<span class="nv">gnc_iters</span>   
 </code></pre></div>
 
 <p>Calls <code>compute_flow_base.m</code>  </p>
-<div class="highlight"><pre><span></span><code><span class="err">    ...</span>
-<span class="err">    @classic_nl_optical_flow\</span>
-<span class="err">    @hs_optical_flow\</span>
-<span class="err">    data\</span>
-<span class="err">    utils\</span>
-<span class="err">        ... </span>
-<span class="err">        pre_process_data.m </span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="nv">@classic_nl_optical_flow</span><span class="err">\</span><span class="w"></span>
+<span class="w">    </span><span class="nv">@hs_optical_flow</span><span class="err">\</span><span class="w"></span>
+<span class="w">    </span><span class="k">data</span><span class="err">\</span><span class="w"></span>
+<span class="w">    </span><span class="n">utils</span><span class="err">\</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"> </span>
+<span class="w">        </span><span class="n">pre_process_data</span><span class="p">.</span><span class="n">m</span><span class="w"> </span>
 </code></pre></div>
 
 <p>-- several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd. 
 there is also following code:  </p>
-<div class="highlight"><pre><span></span><code><span class="c">% For segmentation purpose</span>
-    <span class="n">data</span><span class="p">.</span><span class="n">org_pyramid_images</span> <span class="p">=</span> <span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">images</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span><span class="k">...</span>
-        <span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span>
-    <span class="n">data</span><span class="p">.</span><span class="n">org_color_pyramid_images</span> <span class="p">=</span> <span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">color_images</span><span class="p">,</span><span class="k">...</span>
-        <span class="n">f</span><span class="p">,</span> <span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="c">% For segmentation purpose</span><span class="w"></span>
+<span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">org_pyramid_images</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">images</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">data</span><span class="p">.</span><span class="n">org_color_pyramid_images</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">compute_image_pyramid</span><span class="p">(</span><span class="n">this</span><span class="p">.</span><span class="n">color_images</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="w">        </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_levels</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">this</span><span class="p">.</span><span class="n">pyramid_spacing</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 
 <p>In my case I don't need segmentation and use simple OF method. It seems it's just bad code design. Dig deeper. </p>
@@ -224,6 +224,7 @@ there is also following code:  </p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -235,7 +236,6 @@ there is also following code:  </p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -263,6 +263,9 @@ there is also following code:  </p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -351,6 +354,9 @@ there is also following code:  </p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -429,9 +435,6 @@ there is also following code:  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -476,9 +479,6 @@ there is also following code:  </p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

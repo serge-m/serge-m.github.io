@@ -128,7 +128,7 @@ sergem personal public notebook            </a>
 <p>Here I assume that <code>Alt+Shift</code> switches languages inside a group.</p>
 <p>Save the scipt in <code>/usr/local/bin</code> as <code>toggle_en_ru.sh</code> (for example).
 Add execution permissions. </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo chmod +x /usr/local/bin/toggle_en_ru.sh</span>
+<div class="highlight"><pre><span></span><code>sudo chmod +x /usr/local/bin/toggle_en_ru.sh
 </code></pre></div>
 
 <p>Go to keyboard layouts settings and add a new shortcut. Assign a shortcut for switching between languages groups. I decided to use <code>Win+Space</code> for language pairs (EN/RU <code>&lt;-&gt;</code> EN/BY) switching. </p>
@@ -136,7 +136,7 @@ Add execution permissions. </p>
 <p>Sources and ideas from:
 <a href="http://superuser.com/questions/505466/2-and-more-keyboard-layout-groups-in-linux-changed-by-different-hot-key">http://superuser.com/questions/505466/2-and-more-keyboard-layout-groups-in-linux-changed-by-different-hot-key</a></p>
 <h1>Querying existing configuration</h1>
-<div class="highlight"><pre><span></span><code><span class="err">setxkbmap -query</span>
+<div class="highlight"><pre><span></span><code>setxkbmap -query
 </code></pre></div>
 
 <h1>Switch keyboard layout from command line</h1>
@@ -144,13 +144,13 @@ Add execution permissions. </p>
 <h2>xkblayout-state</h2>
 <p><a href="https://github.com/nonpop/xkblayout-state">xkblayout-state</a> - works for me.</p>
 <p>Compiling:</p>
-<div class="highlight"><pre><span></span><code><span class="err">git clone https://github.com/nonpop/xkblayout-state.git</span>
-<span class="err">cd xkblayout-state/</span>
-<span class="err">make</span>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/nonpop/xkblayout-state.git
+cd xkblayout-state/
+make
 </code></pre></div>
 
 <p>Usage: </p>
-<div class="highlight"><pre><span></span><code><span class="err">xkblayout-state set +1</span>
+<div class="highlight"><pre><span></span><code>xkblayout-state set +1
 </code></pre></div>
 
 <p>Now I can use the same method of assigning a custom keyboard shortcut for that command and have layout switching  by pressing  <code>Super+Space</code> for example.</p>
@@ -202,6 +202,7 @@ Add execution permissions. </p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -213,7 +214,6 @@ Add execution permissions. </p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -241,6 +241,9 @@ Add execution permissions. </p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -329,6 +332,9 @@ Add execution permissions. </p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -407,9 +413,6 @@ Add execution permissions. </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -454,9 +457,6 @@ Add execution permissions. </p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

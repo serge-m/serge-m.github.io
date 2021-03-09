@@ -107,26 +107,26 @@ sergem personal public notebook            </a>
                 </div>
                 <p>I got the error while installing torch for miniconda. Something like
 Linking CXX executable mshrable</p>
-<div class="highlight"><pre><span></span><code><span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39;</span>
-<span class="err">~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr</span>
+<div class="highlight"><pre><span></span><code>~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39;
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr
 </code></pre></div>
 
 <p>The same was for python3 and python2 environments. 
 The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</p>
 <p>Solution from <a href="https://github.com/ContinuumIO/anaconda-issues/issues/152">here</a></p>
 <p>same here, temporay fix for me is to remove conda readline from the environment:</p>
-<div class="highlight"><pre><span></span><code><span class="err">conda remove --force readline</span>
+<div class="highlight"><pre><span></span><code>conda remove --force readline
 </code></pre></div>
 
 <p>and install the python bindings with</p>
-<div class="highlight"><pre><span></span><code><span class="err">pip install readline</span>
+<div class="highlight"><pre><span></span><code>pip install readline
 </code></pre></div>
 
 <p>That way, I presume it is using the system <code>readline</code></p>
@@ -176,6 +176,7 @@ The solution (at least for python 2) was to remove miniconda from path and compi
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -187,7 +188,6 @@ The solution (at least for python 2) was to remove miniconda from path and compi
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -215,6 +215,9 @@ The solution (at least for python 2) was to remove miniconda from path and compi
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -303,6 +306,9 @@ The solution (at least for python 2) was to remove miniconda from path and compi
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -381,9 +387,6 @@ The solution (at least for python 2) was to remove miniconda from path and compi
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -428,9 +431,6 @@ The solution (at least for python 2) was to remove miniconda from path and compi
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

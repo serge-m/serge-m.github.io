@@ -258,9 +258,9 @@ axis ij …</pre>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p><a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz">Drawing on an image with TikZ</a></p>
 <p>Drawing label on figure (using tikz)</p>
-<div class="highlight"><pre><span></span><code><span class="o">\</span><span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span>
-            <span class="o">\</span><span class="n">node</span><span class="p">[</span><span class="n">anchor</span><span class="p">=</span><span class="n">south</span> <span class="n">west</span><span class="p">,</span><span class="n">inner</span> <span class="n">sep</span><span class="p">=</span><span class="mi">0</span><span class="p">]</span> <span class="n">at</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">\</span><span class="n">includegraphics</span><span class="p">[</span><span class="n">trim</span><span class="p">={</span>600<span class="n">px</span> 200<span class="n">px</span> 50<span class="n">px</span> 200<span class="n">px</span><span class="p">},</span><span class="n">clip</span><span class="p">,</span> <span class="n">width</span><span class="p">=</span><span class="mi">1</span><span class="o">\</span><span class="n">linewidth</span><span class="p">]{</span><span class="n">images</span><span class="o">/</span><span class="n">DP_10150_simpleCombinedBasedOnDPlen</span><span class="p">.</span><span class="n">exe_scale1_blank</span><span class="o">/</span><span class="n">frm00001</span><span class="p">}};</span>
-            <span class="c">%\draw[white,fill=white] (0.0,0.0 …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">\</span><span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="o">\</span><span class="n">node</span><span class="p">[</span><span class="n">anchor</span><span class="p">=</span><span class="n">south</span><span class="w"> </span><span class="n">west</span><span class="p">,</span><span class="n">inner</span><span class="w"> </span><span class="n">sep</span><span class="p">=</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="o">\</span><span class="n">includegraphics</span><span class="p">[</span><span class="n">trim</span><span class="p">={</span>600<span class="n">px</span><span class="w"> </span>200<span class="n">px</span><span class="w"> </span>50<span class="n">px</span><span class="w"> </span>200<span class="n">px</span><span class="p">},</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="nb">width</span><span class="p">=</span><span class="mi">1</span><span class="o">\</span><span class="n">linewidth</span><span class="p">]{</span><span class="n">images</span><span class="o">/</span><span class="n">DP_10150_simpleCombinedBasedOnDPlen</span><span class="p">.</span><span class="n">exe_scale1_blank</span><span class="o">/</span><span class="n">frm00001</span><span class="p">}};</span><span class="w"></span>
+<span class="w">            </span><span class="c">%\draw[white,fill=white] (0.0,0.0 …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tikz-cookbook.html">more ...</a>
                 </div>
             </article>
@@ -316,11 +316,11 @@ axis ij …</pre>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>use "screen" utility</p>
-<div class="highlight"><pre><span></span><code><span class="err">ctrl-a-p - switch</span>
-<span class="err">ctrl-a-c - new</span>
-<span class="err">ctrl-a-Q - remove freeze</span>
-<span class="err">ctrl-a-s - freeze</span>
-<span class="err">ctrl-a-S - split, but doesn;t work</span>
+<div class="highlight"><pre><span></span><code>ctrl-a-p - switch
+ctrl-a-c - new
+ctrl-a-Q - remove freeze
+ctrl-a-s - freeze
+ctrl-a-S - split, but doesn;t work
 </code></pre></div>
 
 <p>see also: <a href="/terminal-setup-in-linux-mint.html">using tmux</a></p>
@@ -356,11 +356,11 @@ http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-ne
 <p>I found rather useful <a href="http://stackoverflow.com/a/9316931&quot; target=&quot;_blank">this one</a>.
 A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS</p>
 <p>This script will convert projects stored in SVN with the following format:</p>
-<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">trunk</span>
-  <span class="o">/</span><span class="n">Project1</span>
-  <span class="o">/</span><span class="n">Project2</span>
-<span class="o">/</span><span class="n">branches</span>
-     <span class="o">/</span><span class="n">Project1 …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>/trunk
+  /Project1
+  /Project2
+/branches
+     /Project1 …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/migrating-from-svn-to-git.html">more ...</a>
                 </div>
             </article>
@@ -506,6 +506,9 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
     </li>
@@ -593,6 +596,9 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -671,9 +677,6 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -718,9 +721,6 @@ A guy made a script according to proposed instructions: https://github.com/onepr
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

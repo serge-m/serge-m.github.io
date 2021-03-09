@@ -148,7 +148,7 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 </ol>
 <h2>Desktop, workspaces and gnome extensions settings in Ubuntu 18.04</h2>
 <h3>only show applications of current workspace in launcher:</h3>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install dconf-editor</span>
+<div class="highlight"><pre><span></span><code>sudo apt install dconf-editor
 </code></pre></div>
 
 <p>Navigate to org &gt; gnome &gt; shell &gt; extensions &gt; dash-to-dock and check isolate-workspaces</p>
@@ -167,7 +167,7 @@ To align windows to the corners I use <a href="https://extensions.gnome.org/exte
 <h2>Autocomplete in shell</h2>
 <p>See <a href="/autocomplete-from-history-in-terminal.html">autocomplete from history in terminal</a></p>
 <h2>Set <code>nemo</code> as default file manager</h2>
-<div class="highlight"><pre><span></span><code><span class="err">xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search</span>
+<div class="highlight"><pre><span></span><code>xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 </code></pre></div>
 
 <p>now if you run <code>xdg-open ./</code> or press <code>Super+E</code> nemo starts.</p>
@@ -191,29 +191,29 @@ complete -F _fab_completion fab
 <p><a href="http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/">Source</a></p>
 <h2>Default permissions for directories</h2>
 <p>By default when you call <code>mkdir abc</code> the following permissions are created </p>
-<div class="highlight"><pre><span></span><code><span class="err">u=rwx,g=rx,o=rx</span>
+<div class="highlight"><pre><span></span><code>u=rwx,g=rx,o=rx
 </code></pre></div>
 
 <p>That means that other users, also other groups, will be able to read and execute your files. That is a legacy setting. you can change it by replacing</p>
-<div class="highlight"><pre><span></span><code><span class="err">UMASK       002 </span>
+<div class="highlight"><pre><span></span><code>UMASK       002 
 </code></pre></div>
 
 <p>with </p>
-<div class="highlight"><pre><span></span><code><span class="err">UMASK       077</span>
+<div class="highlight"><pre><span></span><code>UMASK       077
 </code></pre></div>
 
 <p>in file <code>/etc/login.defs</code>. Here is the quote from this file:</p>
-<div class="highlight"><pre><span></span><code><span class="err"># UMASK is the default umask value for pam_umask and is used by</span>
-<span class="err"># useradd and newusers to set the mode of the new home directories.</span>
-<span class="err"># 022 is the &quot;historical&quot; value in Debian for UMASK</span>
-<span class="err"># 027, or even 077, could be considered better for privacy</span>
-<span class="err"># There is no One True Answer here : each sysadmin must make up his/her</span>
-<span class="err"># mind.</span>
-<span class="err">#</span>
-<span class="err"># If USERGROUPS_ENAB is set to &quot;yes&quot;, that will modify this UMASK default value</span>
-<span class="err"># for private user groups, i. e. the uid is the same as gid, and username is</span>
-<span class="err"># the same as the primary group name: for these, the user permissions will be</span>
-<span class="err"># used as group permissions, e. g. 022 will become 002.</span>
+<div class="highlight"><pre><span></span><code># <span class="nv">UMASK</span> <span class="nv">is</span> <span class="nv">the</span> <span class="nv">default</span> <span class="nv">umask</span> <span class="nv">value</span> <span class="k">for</span> <span class="nv">pam_umask</span> <span class="nv">and</span> <span class="nv">is</span> <span class="nv">used</span> <span class="nv">by</span>
+# <span class="nv">useradd</span> <span class="nv">and</span> <span class="nv">newusers</span> <span class="nv">to</span> <span class="nv">set</span> <span class="nv">the</span> <span class="nv">mode</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">new</span> <span class="nv">home</span> <span class="nv">directories</span>.
+# <span class="mi">022</span> <span class="nv">is</span> <span class="nv">the</span> <span class="s2">&quot;</span><span class="s">historical</span><span class="s2">&quot;</span> <span class="nv">value</span> <span class="nv">in</span> <span class="nv">Debian</span> <span class="k">for</span> <span class="nv">UMASK</span>
+# <span class="mi">027</span>, <span class="nv">or</span> <span class="nv">even</span> <span class="mi">077</span>, <span class="nv">could</span> <span class="nv">be</span> <span class="nv">considered</span> <span class="nv">better</span> <span class="k">for</span> <span class="nv">privacy</span>
+# <span class="nv">There</span> <span class="nv">is</span> <span class="nv">no</span> <span class="nv">One</span> <span class="nv">True</span> <span class="nv">Answer</span> <span class="nv">here</span> : <span class="nv">each</span> <span class="nv">sysadmin</span> <span class="nv">must</span> <span class="nv">make</span> <span class="nv">up</span> <span class="nv">his</span><span class="o">/</span><span class="nv">her</span>
+# <span class="nv">mind</span>.
+#
+# <span class="k">If</span> <span class="nv">USERGROUPS_ENAB</span> <span class="nv">is</span> <span class="nv">set</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">yes</span><span class="s2">&quot;</span>, <span class="nv">that</span> <span class="nv">will</span> <span class="nv">modify</span> <span class="nv">this</span> <span class="nv">UMASK</span> <span class="nv">default</span> <span class="nv">value</span>
+# <span class="k">for</span> <span class="nv">private</span> <span class="nv">user</span> <span class="nv">groups</span>, <span class="nv">i</span>. <span class="nv">e</span>. <span class="nv">the</span> <span class="nv">uid</span> <span class="nv">is</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">gid</span>, <span class="nv">and</span> <span class="nv">username</span> <span class="nv">is</span>
+# <span class="nv">the</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">the</span> <span class="nv">primary</span> <span class="nv">group</span> <span class="nv">name</span>: <span class="k">for</span> <span class="nv">these</span>, <span class="nv">the</span> <span class="nv">user</span> <span class="nv">permissions</span> <span class="nv">will</span> <span class="nv">be</span>
+# <span class="nv">used</span> <span class="nv">as</span> <span class="nv">group</span> <span class="nv">permissions</span>, <span class="nv">e</span>. <span class="nv">g</span>. <span class="mi">022</span> <span class="nv">will</span> <span class="nv">become</span> <span class="mi">002</span>.
 </code></pre></div>
 
 <h1>Useful for server setup</h1>
@@ -229,14 +229,14 @@ complete -F _fab_completion fab
 <h1>Ubuntu freezes when RAM is full</h1>
 <p>(DRAFT, from https://habr.com/en/company/selectel/blog/498526/ )</p>
 <p>Кстати, никто не подскажет как вылечить зависание ubuntu при заполнении RAM?</p>
-<div class="highlight"><pre><span></span><code><span class="err">SergeyD</span>
-<span class="err">today at 07:27 PM</span>
+<div class="highlight"><pre><span></span><code>SergeyD
+today at 07:27 PM
 </code></pre></div>
 
 <p>+1</p>
-<div class="highlight"><pre><span></span><code><span class="err">Включить и настроить swap</span>
-<span class="err">Включить использование zswap: https://wiki.archlinux.org/index.php/Zswap</span>
-<span class="err">Установить и настроить earlyoom — осторожно, может прибить все процессы</span>
+<div class="highlight"><pre><span></span><code>Включить и настроить swap
+Включить использование zswap: https://wiki.archlinux.org/index.php/Zswap
+Установить и настроить earlyoom — осторожно, может прибить все процессы
 </code></pre></div>
 
 <p>ValdikSS
@@ -297,6 +297,7 @@ vm.watermark_scale_factor=200</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -308,7 +309,6 @@ vm.watermark_scale_factor=200</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -336,6 +336,9 @@ vm.watermark_scale_factor=200</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -424,6 +427,9 @@ vm.watermark_scale_factor=200</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -502,9 +508,6 @@ vm.watermark_scale_factor=200</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -549,9 +552,6 @@ vm.watermark_scale_factor=200</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

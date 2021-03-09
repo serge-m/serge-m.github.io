@@ -112,16 +112,16 @@ sergem personal public notebook            </a>
 <p>To get more fresh version you need fresher version from <a href="http://tug.org/texlive/">http://tug.org/texlive/</a>.</p>
 <p>Download and unpack installer from <a href="http://tug.org/texlive/acquire-netinstall.html">http://tug.org/texlive/acquire-netinstall.html</a>.</p>
 <p>Follow instructions from <a href="http://tug.org/texlive/quickinstall.html">http://tug.org/texlive/quickinstall.html</a>. Previously I had tried install it unsuccessfully, so I needed</p>
-<div class="highlight"><pre><span></span><code><span class="err">rm -rf /usr/local/texlive/2014</span>
-<span class="err">rm -rf ~/.texlive2014 </span>
+<div class="highlight"><pre><span></span><code>rm -rf /usr/local/texlive/2014
+rm -rf ~/.texlive2014 
 </code></pre></div>
 
 <p>To use gui first I installed perl-tk: </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt-get install prel-tk</span>
+<div class="highlight"><pre><span></span><code>sudo apt-get install prel-tk
 </code></pre></div>
 
 <p>Then </p>
-<div class="highlight"><pre><span></span><code><span class="err">./install-tl -gui perltk</span>
+<div class="highlight"><pre><span></span><code>./install-tl -gui perltk
 </code></pre></div>
 
 <p>After installation I needed to set up PATH variable. I made it temporarily for now: </p>
@@ -129,12 +129,12 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>Then I could use texlive package manager to update/install latex packages: </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui</span>
+<div class="highlight"><pre><span></span><code>sudo /usr/local/texlive/2014/bin/x86_64-linux/tlmgr --gui
 </code></pre></div>
 
 <p><strike>
 UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found' for commands \setmainfont{SourceSansPro} for any font. I needed to update font cache. </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo fc-cache -fsv</span>
+<div class="highlight"><pre><span></span><code>sudo fc-cache -fsv
 </code></pre></div>
 
 <p></strike></p>
@@ -187,6 +187,7 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -198,7 +199,6 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -226,6 +226,9 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -314,6 +317,9 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -392,9 +398,6 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -439,9 +442,6 @@ UPD: It seems I fixed problem with fonts. I had got errors line "font-not-found'
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

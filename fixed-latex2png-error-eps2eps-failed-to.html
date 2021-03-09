@@ -121,19 +121,19 @@ Under Windows latex2rtf diisplayed following error:</p>
 <p><img alt="" src="http://1.bp.blogspot.com/-FibSRgzVz3U/U02HYhFAIFI/AAAAAAAAAdE/oylmpY3XfWs/s1600/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82+2014-04-15+23.22.50.png"></p>
 <p>The problem was in eps2eps script in miktex. This script is magical. I haven't completely understood why it does nothing when called from latex2rtf. At the same time it runs successfuly when running standalone.</p>
 <p>i wrote my new script <code>pdf2eps_my.bat</code> with the following contents:</p>
-<div class="highlight"><pre><span></span><code><span class="err">&quot;C:\Program Files (x86)\gs\gs9.05\bin\gswin32c.exe&quot; -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%2 %1</span>
+<div class="highlight"><pre><span></span><code>&quot;C:\Program Files (x86)\gs\gs9.05\bin\gswin32c.exe&quot; -q -dNOCACHE -dNOPAUSE -dBATCH -dSAFER -sDEVICE=epswrite -sOutputFile=%2 %1
 </code></pre></div>
 
 <p>and changed script </p>
-<div class="highlight"><pre><span></span><code><span class="err">&quot;c:\Program Files (x86)\latex2rtf\latex2png&quot; </span>
+<div class="highlight"><pre><span></span><code>&quot;c:\Program Files (x86)\latex2rtf\latex2png&quot; 
 </code></pre></div>
 
 <p>I changed </p>
-<div class="highlight"><pre><span></span><code><span class="err">PDF2EPS=&quot;eps2eps&quot; </span>
+<div class="highlight"><pre><span></span><code>PDF2EPS=&quot;eps2eps&quot; 
 </code></pre></div>
 
 <p>with </p>
-<div class="highlight"><pre><span></span><code><span class="err">PDF2EPS=&quot;pdf2eps_my&quot; </span>
+<div class="highlight"><pre><span></span><code>PDF2EPS=&quot;pdf2eps_my&quot; 
 </code></pre></div>
 
 <p>it works because miktex/bin directory is in my PATH</p>
@@ -183,6 +183,7 @@ Under Windows latex2rtf diisplayed following error:</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -194,7 +195,6 @@ Under Windows latex2rtf diisplayed following error:</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -222,6 +222,9 @@ Under Windows latex2rtf diisplayed following error:</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -310,6 +313,9 @@ Under Windows latex2rtf diisplayed following error:</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -388,9 +394,6 @@ Under Windows latex2rtf diisplayed following error:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -435,9 +438,6 @@ Under Windows latex2rtf diisplayed following error:</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

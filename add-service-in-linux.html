@@ -109,7 +109,7 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+<div class="highlight"><pre><span></span><code>touch /etc/systemd/system/your-service.service 
 </code></pre></div>
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
@@ -131,7 +131,7 @@ sergem personal public notebook            </a>
 
 <p>Here we first stop and delete the docker container. If it doesn't exist we continue (there is a "-" in before the command).</p>
 <p>Run</p>
-<div class="highlight"><pre><span></span><code><span class="err">systemctl enable your-service </span>
+<div class="highlight"><pre><span></span><code>systemctl enable your-service 
 </code></pre></div>
 
 <h2>Commands</h2>
@@ -157,7 +157,7 @@ sergem personal public notebook            </a>
 
 <h3>Running python script from virtual environment</h3>
 <p>Just specify python interpreter from the environment:</p>
-<div class="highlight"><pre><span></span><code><span class="err">ExecStart=&lt;absolute path to your environment&gt;/bin/python file_to_run.py</span>
+<div class="highlight"><pre><span></span><code>ExecStart=&lt;absolute path to your environment&gt;/bin/python file_to_run.py
 </code></pre></div>
 
 <h3>Environment variables</h3>
@@ -172,7 +172,7 @@ sergem personal public notebook            </a>
 
 <h3>How to stdout of python-based service in syslog</h3>
 <p>Python buffers stdout. Therefore even if you have enable redirection of stdout to the syslog:</p>
-<div class="highlight"><pre><span></span><code><span class="err">StandardOutput=syslog</span>
+<div class="highlight"><pre><span></span><code>StandardOutput=syslog
 </code></pre></div>
 
 <p>You may see nothing in the logs. You should set environment variable for python <code>PYTHONUNBUFFERED</code> to see the results immediately:</p>
@@ -232,6 +232,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -243,7 +244,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -271,6 +271,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -359,6 +362,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -437,9 +443,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -484,9 +487,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

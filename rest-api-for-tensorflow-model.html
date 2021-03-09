@@ -131,28 +131,28 @@ Requires <a href="https://bazel.build/">Bazel</a> - Google's build tool. Doesn't
 <p><code>bazel-bin</code> directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). </p>
 <h3>Compiled examples for tensorflow serving</h3>
 <p>Download compiled examples <a href="https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing">here</a> and extract files:</p>
-<div class="highlight"><pre><span></span><code><span class="err">tar xf ./bazel-bin.tar.gz</span>
+<div class="highlight"><pre><span></span><code>tar xf ./bazel-bin.tar.gz
 </code></pre></div>
 
 <p>The package contains compiled tensorflow serving app and example apps. </p>
 <p>I prefer to run it in python virtual environment. Let's create one and install needed packages:</p>
-<div class="highlight"><pre><span></span><code><span class="err">virtualenv -p python2.7 py2</span>
-<span class="err">source ./py2/bin/activate</span>
-<span class="err">pip install numpy mock grpcio</span>
+<div class="highlight"><pre><span></span><code>virtualenv -p python2.7 py2
+source ./py2/bin/activate
+pip install numpy mock grpcio
 </code></pre></div>
 
 <p>To make compiled scripts use python from virtual environment we should patch wrapper files. 
 For example <code>bazel-bin/tensorflow_serving/example/mnist_saved_model</code> is a wrapper script for <code>mnist_saved_model.py</code>. </p>
 <p>We will change path to python that that wrapper uses. Use text editor to edit the wrapper. I use <code>nano</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="err">nano bazel-bin/tensorflow_serving/example/mnist_saved_model </span>
+<div class="highlight"><pre><span></span><code>nano bazel-bin/tensorflow_serving/example/mnist_saved_model 
 </code></pre></div>
 
 <p>Replace</p>
-<div class="highlight"><pre><span></span><code><span class="err">PYTHON_BINARY = &#39;/usr/bin/python&#39;</span>
+<div class="highlight"><pre><span></span><code>PYTHON_BINARY = &#39;/usr/bin/python&#39;
 </code></pre></div>
 
 <p>with </p>
-<div class="highlight"><pre><span></span><code><span class="err">PYTHON_BINARY = &#39;python&#39;</span>
+<div class="highlight"><pre><span></span><code>PYTHON_BINARY = &#39;python&#39;
 </code></pre></div>
 
 <p>save and exit. We will need to do that for each wrapper we want to run.</p>
@@ -163,13 +163,13 @@ For example <code>bazel-bin/tensorflow_serving/example/mnist_saved_model</code> 
 </details>
 
 <p>Now we can run a commands from Tensorflow Serving tutorial:</p>
-<div class="highlight"><pre><span></span><code><span class="err">bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model</span>
+<div class="highlight"><pre><span></span><code>bazel-bin/tensorflow_serving/example/mnist_saved_model --training_iteration=100 --model_version=1 /tmp/mnist_model
 </code></pre></div>
 
 <h3>Possible issues</h3>
 <h4>ImportError: No module named grpc.beta</h4>
 <p>Solution:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo pip install grpcio</span>
+<div class="highlight"><pre><span></span><code>sudo pip install grpcio
 </code></pre></div>
 
 <p>Copied from docker python scripts seems to be chained to global system python. Thus installing grpcio inside an active virtualenv doesn't work. </p>
@@ -191,7 +191,7 @@ Error message example:</p>
   <span class="n">File</span> <span class="s2">&quot;/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/contrib/util/loader.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">55</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_op_library</span>
     <span class="n">ret</span> <span class="o">=</span> <span class="n">load_library</span><span class="o">.</span><span class="n">load_op_library</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
   <span class="n">File</span> <span class="s2">&quot;/home/usr/serving/bazel-bin/tensorflow_serving/example/mnist_export.runfiles/org_tensorflow/tensorflow/python/framework/load_library.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">64</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_op_library</span>
-    <span class="bp">None</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">,</span> <span class="n">error_code</span><span class="p">)</span>
+    <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">error_msg</span><span class="p">,</span> <span class="n">error_code</span><span class="p">)</span>
 <span class="n">tensorflow</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">framework</span><span class="o">.</span><span class="n">errors_impl</span><span class="o">.</span><span class="n">NotFoundError</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">serving</span><span class="o">/</span><span class="n">bazel</span><span class="o">-</span><span class="nb">bin</span><span class="o">/</span><span class="n">tensorflow_serving</span><span class="o">/</span><span class="n">example</span><span class="o">/</span><span class="n">mnist_export</span><span class="o">.</span><span class="n">runfiles</span><span class="o">/</span><span class="n">org_tensorflow</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">/</span><span class="n">contrib</span><span class="o">/</span><span class="n">image</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">ops</span><span class="o">/</span><span class="n">_single_image_random_dot_stereograms</span><span class="o">.</span><span class="n">so</span><span class="p">:</span> <span class="n">undefined</span> <span class="n">symbol</span><span class="p">:</span> <span class="n">_ZN6google8protobuf8internal10LogMessageC1ENS0_8LogLevelEPKci</span>
 </code></pre></div>
 
@@ -201,7 +201,7 @@ Error message example:</p>
 </code></pre></div>
 
 <p>in</p>
-<div class="highlight"><pre><span></span><code><span class="err">bazel-bin/tensorflow_serving/example/mnist_saved_model.runfiles/org_tensorflow/tensorflow/contrib/image/__init__.py</span>
+<div class="highlight"><pre><span></span><code>bazel-bin/tensorflow_serving/example/mnist_saved_model.runfiles/org_tensorflow/tensorflow/contrib/image/__init__.py
 </code></pre></div>
 
 <p><a href="https://github.com/tensorflow/serving/issues/421#issuecomment-300718439">Source</a></p>
@@ -255,6 +255,7 @@ Error message example:</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -266,7 +267,6 @@ Error message example:</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -294,6 +294,9 @@ Error message example:</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -382,6 +385,9 @@ Error message example:</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -460,9 +466,6 @@ Error message example:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -507,9 +510,6 @@ Error message example:</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

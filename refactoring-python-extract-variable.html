@@ -121,11 +121,11 @@ sergem personal public notebook            </a>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="ow">or</span>
         <span class="n">month</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;ary&#39;</span><span class="p">)):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">8</span> <span class="o">&gt;</span> <span class="n">MONTHS</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat tomatoes&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="n">month</span><span class="p">)</span>
 </code></pre></div>
 
 <p>Becomes:</p>
@@ -150,28 +150,28 @@ sergem personal public notebook            </a>
         <span class="k">return</span> <span class="nb">self</span>.<span class="n">_result</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="n">time_for_oysters</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="k">month</span><span class="p">)</span>
-<span class="n">time_for_tomatoes</span> <span class="o">=</span> <span class="n">TomatoesGood</span><span class="p">(</span><span class="k">month</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="nv">time_for_oysters</span> <span class="o">=</span> <span class="nv">OystersGood</span><span class="ss">(</span><span class="nv">month</span><span class="ss">)</span>
+<span class="nv">time_for_tomatoes</span> <span class="o">=</span> <span class="nv">TomatoesGood</span><span class="ss">(</span><span class="nv">month</span><span class="ss">)</span>
 
-<span class="k">if</span> <span class="n">time_for_oysters</span><span class="p">:</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;%s is a good time to eat oysters&#39;</span> <span class="o">%</span> <span class="k">month</span><span class="p">)</span>
-<span class="n">elif</span> <span class="n">time_for_tomatoes</span><span class="p">:</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;%s is a good time to eat tomatoes&#39;</span> <span class="o">%</span> <span class="k">month</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">print</span><span class="p">(</span><span class="s1">&#39;%s is a good time to eat asparagus&#39;</span> <span class="o">%</span> <span class="k">month</span><span class="p">)</span>
+<span class="k">if</span> <span class="nv">time_for_oysters</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat oysters</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
+<span class="nv">elif</span> <span class="nv">time_for_tomatoes</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat tomatoes</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
+<span class="k">else</span>:
+    <span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">%s is a good time to eat asparagus</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nv">month</span><span class="ss">)</span>
 </code></pre></div>
 
 <p>November is a good time to eat oysters</p>
 <p>Now the helper function is easy to test and introspect.</p>
-<div class="highlight"><pre><span></span><code><span class="n">test</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="s1">&#39;November&#39;</span><span class="p">)</span>
-<span class="n">assert</span> <span class="n">test</span>
-<span class="n">assert</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_r</span>
-<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_ary</span>
+<div class="highlight"><pre><span></span><code>test = OystersGood(&#39;November&#39;)
+assert test
+assert test.ends_in_r
+assert not test.ends_in_ary
 
-<span class="n">test</span> <span class="o">=</span> <span class="n">OystersGood</span><span class="p">(</span><span class="s1">&#39;July&#39;</span><span class="p">)</span>
-<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span>
-<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_r</span>
-<span class="n">assert</span> <span class="k">not</span> <span class="n">test</span><span class="p">.</span><span class="n">ends_in_ary</span>
+test = OystersGood(&#39;July&#39;)
+assert not test
+assert not test.ends_in_r
+assert not test.ends_in_ary
 </code></pre></div>
 
 <p><a href="http://mauveweb.co.uk/posts/2014/09/every-mock-patch-is-a-little-smell.html">Dependency injection for better testing</a></p>
@@ -221,6 +221,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -232,7 +233,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -260,6 +260,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -348,6 +351,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -426,9 +432,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -473,9 +476,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

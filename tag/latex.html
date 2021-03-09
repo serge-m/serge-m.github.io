@@ -120,9 +120,9 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p><a href="http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz">Drawing on an image with TikZ</a></p>
 <p>Drawing label on figure (using tikz)</p>
-<div class="highlight"><pre><span></span><code><span class="o">\</span><span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span>
-            <span class="o">\</span><span class="n">node</span><span class="p">[</span><span class="n">anchor</span><span class="p">=</span><span class="n">south</span> <span class="n">west</span><span class="p">,</span><span class="n">inner</span> <span class="n">sep</span><span class="p">=</span><span class="mi">0</span><span class="p">]</span> <span class="n">at</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">\</span><span class="n">includegraphics</span><span class="p">[</span><span class="n">trim</span><span class="p">={</span>600<span class="n">px</span> 200<span class="n">px</span> 50<span class="n">px</span> 200<span class="n">px</span><span class="p">},</span><span class="n">clip</span><span class="p">,</span> <span class="n">width</span><span class="p">=</span><span class="mi">1</span><span class="o">\</span><span class="n">linewidth</span><span class="p">]{</span><span class="n">images</span><span class="o">/</span><span class="n">DP_10150_simpleCombinedBasedOnDPlen</span><span class="p">.</span><span class="n">exe_scale1_blank</span><span class="o">/</span><span class="n">frm00001</span><span class="p">}};</span>
-            <span class="c">%\draw[white,fill=white] (0.0,0.0 …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">\</span><span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="o">\</span><span class="n">node</span><span class="p">[</span><span class="n">anchor</span><span class="p">=</span><span class="n">south</span><span class="w"> </span><span class="n">west</span><span class="p">,</span><span class="n">inner</span><span class="w"> </span><span class="n">sep</span><span class="p">=</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="o">\</span><span class="n">includegraphics</span><span class="p">[</span><span class="n">trim</span><span class="p">={</span>600<span class="n">px</span><span class="w"> </span>200<span class="n">px</span><span class="w"> </span>50<span class="n">px</span><span class="w"> </span>200<span class="n">px</span><span class="p">},</span><span class="n">clip</span><span class="p">,</span><span class="w"> </span><span class="nb">width</span><span class="p">=</span><span class="mi">1</span><span class="o">\</span><span class="n">linewidth</span><span class="p">]{</span><span class="n">images</span><span class="o">/</span><span class="n">DP_10150_simpleCombinedBasedOnDPlen</span><span class="p">.</span><span class="n">exe_scale1_blank</span><span class="o">/</span><span class="n">frm00001</span><span class="p">}};</span><span class="w"></span>
+<span class="w">            </span><span class="c">%\draw[white,fill=white] (0.0,0.0 …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tikz-cookbook.html">more ...</a>
                 </div>
             </article>
@@ -157,7 +157,7 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>Use the trim option, which takes four space separated values.</p>
-<div class="highlight"><pre><span></span><code><span class="err">trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}</span>
+<div class="highlight"><pre><span></span><code>trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;}
 </code></pre></div>
 
 <p><a href="http://tex.stackexchange.com/a/57420">Source</a></p>
@@ -215,15 +215,15 @@ Under Windows latex2rtf diisplayed following error:</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I used _tabularx _package.
 Additional definitions:  </p>
-<div class="highlight"><pre><span></span><code><span class="err">    \usepackage{array}</span>
-<span class="err">    \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment</span>
-<span class="err">    \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment</span>
+<div class="highlight"><pre><span></span><code>    \usepackage{array}
+    \newcolumntype{L}{&gt;{\raggedright\arraybackslash}X} % left multiline alignment
+    \newcolumntype{R}{&gt;{\raggedleft\arraybackslash}X}  % right multiline alignment
 </code></pre></div>
 
 <p>Table:</p>
-<div class="highlight"><pre><span></span><code><span class="err">    \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R}</span>
-<span class="err">     Text, aligned to the left, without margin \newline</span>
-<span class="err">     Tex in the same cell on the next line …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>    \<span class="nv">begin</span>{<span class="nv">tabularx</span>}{\<span class="nv">textwidth</span>}{@{}<span class="nv">p</span>{<span class="mi">0</span>.<span class="mi">8</span>\<span class="nv">linewidth</span>} <span class="nv">R</span>}
+     <span class="nv">Text</span>, <span class="nv">aligned</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">left</span>, <span class="nv">without</span> <span class="nv">margin</span> \<span class="nv">newline</span>
+     <span class="nv">Tex</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">same</span> <span class="nv">cell</span> <span class="nv">on</span> <span class="nv">the</span> <span class="k">next</span> <span class="nv">line …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/tables-in-latex-multiline-right.html">more ...</a>
                 </div>
             </article>
@@ -272,6 +272,9 @@ Additional definitions:  </p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -360,6 +363,9 @@ Additional definitions:  </p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -438,9 +444,6 @@ Additional definitions:  </p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -485,9 +488,6 @@ Additional definitions:  </p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

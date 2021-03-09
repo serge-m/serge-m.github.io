@@ -110,8 +110,8 @@ sergem personal public notebook            </a>
                 </div>
                 <p>Hmm. It doesn't work.
 I see the icon when i do</p>
-<div class="highlight"><pre><span></span><code><span class="err">dropbox stop</span>
-<span class="err">dropbox start</span>
+<div class="highlight"><pre><span></span><code>dropbox stop
+dropbox start
 </code></pre></div>
 
 <p>but I cannot click on it.</p>
@@ -124,13 +124,13 @@ Don't forget to do</p>
 <h1>Final Solution</h1>
 <p><a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">source</a>&nbsp;</p>
 <p>Use</p>
-<div class="highlight"><pre><span></span><code><span class="err">dropbox stop &amp;&amp; dbus-launch dropbox start</span>
+<div class="highlight"><pre><span></span><code>dropbox stop &amp;&amp; dbus-launch dropbox start
 </code></pre></div>
 
 <p>Or</p>
 <p>Do: opening 'Preferences' -&gt; 'Startup Applications' and editing the dropbox entry so the command now reads:</p>
 <p>CODE: <a href="https://forums.linuxmint.com/viewtopic.php?f=47&amp;t=184839&amp;sid=1d53fe0089b25098495531994c543ee4&amp;start=80">SELECT ALL</a></p>
-<div class="highlight"><pre><span></span><code><span class="err">dbus-launch dropbox start</span>
+<div class="highlight"><pre><span></span><code>dbus-launch dropbox start
 </code></pre></div>
 
 <p>update might overwrite the change. I think it's better to leave the existing entry alone (only disabled) and create a new entry (e.g. "Launch DropBox") with the new start command (<code>dbus-launch dropbox start</code>)</p>
@@ -180,6 +180,7 @@ Don't forget to do</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -191,7 +192,6 @@ Don't forget to do</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -219,6 +219,9 @@ Don't forget to do</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -307,6 +310,9 @@ Don't forget to do</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -385,9 +391,6 @@ Don't forget to do</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -432,9 +435,6 @@ Don't forget to do</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

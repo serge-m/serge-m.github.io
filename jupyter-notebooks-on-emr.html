@@ -124,24 +124,24 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure <code>"Applications"</code> field for the emr cluster to contain also jupyter hub. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="err">&quot;Applications&quot;: [</span>
-<span class="err">            {</span>
-<span class="err">                &quot;Name&quot;: &quot;Ganglia&quot;,</span>
-<span class="err">                &quot;Version&quot;: &quot;3.7.2&quot;</span>
-<span class="err">            },</span>
-<span class="err">            {</span>
-<span class="err">                &quot;Name&quot;: &quot;Spark&quot;,</span>
-<span class="err">                &quot;Version&quot;: &quot;2.4.0&quot;</span>
-<span class="err">            },</span>
-<span class="err">            {</span>
-<span class="err">                &quot;Name&quot;: &quot;Zeppelin&quot;,</span>
-<span class="err">                &quot;Version&quot;: &quot;0.8.0&quot;</span>
-<span class="err">            },</span>
-<span class="err">            {</span>
-<span class="err">                &quot;Name&quot;: &quot;JupyterHub&quot;,</span>
-<span class="err">                &quot;Version&quot;: &quot;0.9.4&quot;</span>
-<span class="err">            }</span>
-<span class="err">        ],</span>
+<div class="highlight"><pre><span></span><code>&quot;Applications&quot;: [
+            {
+                &quot;Name&quot;: &quot;Ganglia&quot;,
+                &quot;Version&quot;: &quot;3.7.2&quot;
+            },
+            {
+                &quot;Name&quot;: &quot;Spark&quot;,
+                &quot;Version&quot;: &quot;2.4.0&quot;
+            },
+            {
+                &quot;Name&quot;: &quot;Zeppelin&quot;,
+                &quot;Version&quot;: &quot;0.8.0&quot;
+            },
+            {
+                &quot;Name&quot;: &quot;JupyterHub&quot;,
+                &quot;Version&quot;: &quot;0.9.4&quot;
+            }
+        ],
 </code></pre></div>
 
 <p>Set <code>KeepJobFlowAliveWhenNoSteps: true</code> and set up all the required python libraries using bootstrap scripts.</p>
@@ -161,7 +161,7 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>To fix it add the following to your emr  cluster  <code>Configurations</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="err">[{&#39;classification&#39;: &#39;livy-conf&#39;,&#39;Properties&#39;: {&#39;livy.server.session.timeout&#39;:&#39;5h&#39;}}]</span>
+<div class="highlight"><pre><span></span><code>[{&#39;classification&#39;: &#39;livy-conf&#39;,&#39;Properties&#39;: {&#39;livy.server.session.timeout&#39;:&#39;5h&#39;}}]
 </code></pre></div>
 
 <p><a href="https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap">source</a></p>
@@ -215,6 +215,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -226,7 +227,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -254,6 +254,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -342,6 +345,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -420,9 +426,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -467,9 +470,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

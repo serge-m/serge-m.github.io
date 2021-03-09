@@ -70,6 +70,30 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">Color problems in avisynth->overlay</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-06-21T11:22:00+02:00"> 2013-06-21T11:22:00, Fri</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation</p>
+<p>I have a depth map (from&nbsp;<a href="http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html">http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html</a>)
+<img alt="" src="http://3.bp.blogspot.com/-n-jVnbn0wO4/UcP9sySRrvI/AAAAAAAAAZA/RgR0BQEkjgY/s320/depth.jpg"><div class="separator" style="clear: both; text-align: center;">
+</div><div class="separator" style="clear: both; text-align: left;">And two scripts</div><div class="separator" style="clear: both; text-align: left;">1)&nbsp;just_show.avs</div><blockquote class="tr_bq">v = ImageSource( "depth.jpg" ).Trim(0, -1)
+return v</blockquote>2 …</p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/color-problems-in-avisynth-overlay.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">Add path in linux/cygwin and windows</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -85,15 +109,15 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>in cygwin:</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=$PATH:~/your_path</span>
+<div class="highlight"><pre><span></span><code>PATH=$PATH:~/your_path
 </code></pre></div>
 
 <p>or</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=~/your_path:$PATH</span>
+<div class="highlight"><pre><span></span><code>PATH=~/your_path:$PATH
 </code></pre></div>
 
 <p>Add path windows</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=%PATH%;C:\Your_Path;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">PATH</span><span class="o">=%</span><span class="nt">PATH</span><span class="o">%;</span><span class="nt">C</span><span class="o">:</span><span class="err">\</span><span class="nt">Your_Path</span><span class="o">;</span>
 </code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">more ...</a>
                 </div>
@@ -535,11 +559,11 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>I usually prefer to keep (ana)conda deactivate in my system by default. One can chose such and option during conda installation.
 In order to activate base conda environment I run:</p>
-<div class="highlight"><pre><span></span><code><span class="err">source ~/anaconda3/etc/profile.d/conda.sh</span>
+<div class="highlight"><pre><span></span><code>source ~/anaconda3/etc/profile.d/conda.sh
 </code></pre></div>
 
 <p>or </p>
-<div class="highlight"><pre><span></span><code><span class="err">source ~/miniconda3/etc/profile.d/conda.sh</span>
+<div class="highlight"><pre><span></span><code>source ~/miniconda3/etc/profile.d/conda.sh
 </code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/conda-cheat-sheet.html">more ...</a>
                 </div>
@@ -609,6 +633,7 @@ In order to activate base conda environment I run:</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -620,7 +645,6 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -648,6 +672,9 @@ In order to activate base conda environment I run:</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -736,6 +763,9 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -814,9 +844,6 @@ In order to activate base conda environment I run:</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -861,9 +888,6 @@ In order to activate base conda environment I run:</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

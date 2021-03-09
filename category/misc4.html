@@ -72,6 +72,32 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">Convert ovpn config file to .ca, .crt, .key</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-04-02T12:11:00+02:00"> 2017-04-02T12:11:00, Sun</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/openvpn.html">openvpn</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>How you can take an OpenVPN .ovpn config file and extract the certificates/keys </p>
+<ul>
+<li>Copy from between <code>&lt;ca&gt;</code> tags into <code>ca.crt</code>, remove <code>&lt;ca&gt;</code> tags from original file.</li>
+<li>Copy from between <code>&lt;cert&gt;</code> tags into <code>client.crt</code>, remove <code>&lt;cert&gt;</code> tags.</li>
+<li>Copy from between <code>&lt;key&gt;</code> tags into client.key, remove <code>&lt;key&gt;</code> tags …</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/convert-ovpn-to-ca-cert-key.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/no-protocol-specified.html">"No protocol specified" while running a program as another user</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -89,14 +115,14 @@ sergem personal public notebook            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Running some GUI application as another user:</p>
-<div class="highlight"><pre><span></span><code><span class="err">user1@laptop:~$ su - user2</span>
-<span class="err">user2@laptop:~$ leafpad ~/somefile.txt</span>
-<span class="err">No protocol specified</span>
+<div class="highlight"><pre><span></span><code><span class="n">user1</span><span class="nv">@laptop</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">su</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">user2</span><span class="w"></span>
+<span class="n">user2</span><span class="nv">@laptop</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">leafpad</span><span class="w"> </span><span class="o">~/</span><span class="n">somefile</span><span class="p">.</span><span class="n">txt</span><span class="w"></span>
+<span class="k">No</span><span class="w"> </span><span class="n">protocol</span><span class="w"> </span><span class="n">specified</span><span class="w"></span>
 </code></pre></div>
 
 <p>The problem is <code>user2</code> doesn't have access to your screen.
 Solution:</p>
-<div class="highlight"><pre><span></span><code><span class="err">xhost +</span>
+<div class="highlight"><pre><span></span><code>xhost +
 </code></pre></div>
 
 <p>Probably not the safest one.</p>
@@ -228,19 +254,19 @@ Clustering is based on histograms. 1 contributor. No …</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><h2>Commands</h2>
 <h3>List indexes</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_cat/indices</span>
+<div class="highlight"><pre><span></span><code>curl -X GET localhost:9200/_cat/indices
 </code></pre></div>
 
 <h3>Delete index</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X DELETE localhost:9200/YOUR_INDEX</span>
+<div class="highlight"><pre><span></span><code>curl -X DELETE localhost:9200/YOUR_INDEX
 </code></pre></div>
 
 <h3>Delete all indices</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/_all</span>
+<div class="highlight"><pre><span></span><code>curl -X GET localhost:9200/_all
 </code></pre></div>
 
 <h3>List of all doc_types in a given index</h3>
-<div class="highlight"><pre><span></span><code><span class="err">curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;</span>
+<div class="highlight"><pre><span></span><code>curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;
 </code></pre></div>
 
 <h2>Running elastic seach …</h2>
@@ -266,11 +292,11 @@ Clustering is based on histograms. 1 contributor. No …</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Show git history with branches </p>
-<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span>
+<div class="highlight"><pre><span></span><code>git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all
 </code></pre></div>
 
 <p>Less nice and shorter</p>
-<div class="highlight"><pre><span></span><code><span class="err">git log --graph --abbrev-commit …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>git log --graph --abbrev-commit …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/pretty-git-history-with-branches-in-command-line.html">more ...</a>
                 </div>
             </article>
@@ -505,7 +531,7 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Create a file for service <code>your-service</code></p>
-<div class="highlight"><pre><span></span><code><span class="err">touch /etc/systemd/system/your-service.service </span>
+<div class="highlight"><pre><span></span><code>touch /etc/systemd/system/your-service.service 
 </code></pre></div>
 
 <p>Let's assume you want to run docker container there. Put following text in the file:</p>
@@ -552,8 +578,8 @@ see <code>MONTH_ARCHIVE_SAVE_AS</code></p>
 <h2>Connection via OPenVPN is slow for https</h2>
 <p>Try the following <a href="https://forums.openvpn.net/viewtopic.php?t=21857">advice</a>
 The udp connection is perfect with these parameters (in client config):</p>
-<div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
-<span class="err">tun-mtu 1200</span>
+<div class="highlight"><pre><span></span><code>mssfix 1200
+tun-mtu 1200
 </code></pre></div>
 
 <h2>DNS doesn't work through VPN</h2>
@@ -580,7 +606,7 @@ The udp connection is perfect with these parameters (in client config):</p>
                 <div class="summary"><p>In ubuntu 16.04 image installed on VC1S server I was unable to install docker.
 It hangs/fails on installation or on any significant docker command like <code>docker ps</code></p>
 <p>The error I got was </p>
-<div class="highlight"><pre><span></span><code><span class="err">Job for docker.service failed because the control process exited with error code. See &quot;systemctl status …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nv">Job</span> <span class="k">for</span> <span class="nv">docker</span>.<span class="nv">service</span> <span class="nv">failed</span> <span class="nv">because</span> <span class="nv">the</span> <span class="nv">control</span> <span class="nv">process</span> <span class="nv">exited</span> <span class="nv">with</span> <span class="nv">error</span> <span class="nv">code</span>. <span class="nv">See</span> <span class="s2">&quot;</span><span class="s">systemctl status …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/docker-in-scaleway-vc1s-ubuntu-xenial.html">more ...</a>
                 </div>
             </article>
@@ -601,7 +627,7 @@ It hangs/fails on installation or on any significant docker command like <code>d
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Run</p>
-<div class="highlight"><pre><span></span><code><span class="err">curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints</span>
+<div class="highlight"><pre><span></span><code>curl -H &#39;X-Auth-Token: &lt;YOUR_TOKEN&gt;&#39; https://cp-ams1.scaleway.com/servers/&lt;YOUR_SERVER_ID&gt;/user_data/ssh-host-fingerprints
 </code></pre></div>
 
 <p>compare output with results of 
@@ -725,49 +751,9 @@ The extenal application can be accessible through docker image. I want to write 
                 <div class="summary"><p>Download JDK for Java 8 from Oracle's web-site.
 Unpack archive to let's say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <p>Update java alternatives:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1</span>
-<span class="err">sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1
+sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8 …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/installing-java-8-on-linux-mint-17-3.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">Testing json responses in Flask REST apps with pytest</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-11-27T22:47:00+01:00"> 2016-11-27T22:47:00, Sun</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/python.html">python</a>
-        /
-	<a href="https://serge-m.github.io/tag/flask.html">flask</a>
-        /
-	<a href="https://serge-m.github.io/tag/pytest.html">pytest</a>
-        /
-	<a href="https://serge-m.github.io/tag/rest.html">REST</a>
-        /
-	<a href="https://serge-m.github.io/tag/testing.html">testing</a>
-        /
-	<a href="https://serge-m.github.io/tag/connexion.html">connexion</a>
-        /
-	<a href="https://serge-m.github.io/tag/best-practices.html">best practices</a>
-        /
-	<a href="https://serge-m.github.io/tag/tests.html">tests</a>
-        /
-	<a href="https://serge-m.github.io/tag/api.html">API</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
-Here I try to explain how to test Flask-based web applications.
-We want to test endpoints behaviour including status codes and parameters encoding. It means …</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/testing-json-responses-in-Flask-REST-apps-with-pytest.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -813,6 +799,7 @@ We want to test endpoints behaviour including status codes and parameters encodi
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -824,7 +811,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -852,6 +838,9 @@ We want to test endpoints behaviour including status codes and parameters encodi
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -940,6 +929,9 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -1018,9 +1010,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -1065,9 +1054,6 @@ We want to test endpoints behaviour including status codes and parameters encodi
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

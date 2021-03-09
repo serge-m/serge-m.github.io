@@ -120,8 +120,8 @@ sergem personal public notebook            </a>
 <h2>Connection via OPenVPN is slow for https</h2>
 <p>Try the following <a href="https://forums.openvpn.net/viewtopic.php?t=21857">advice</a>
 The udp connection is perfect with these parameters (in client config):</p>
-<div class="highlight"><pre><span></span><code><span class="err">mssfix 1200</span>
-<span class="err">tun-mtu 1200</span>
+<div class="highlight"><pre><span></span><code>mssfix 1200
+tun-mtu 1200
 </code></pre></div>
 
 <h2>DNS doesn't work through VPN</h2>
@@ -184,8 +184,8 @@ Your newly created PKI dir is: /easyrsa/pki
 <span class="o">-----</span>
 <span class="n">Common</span> <span class="n">Name</span> <span class="p">(</span><span class="n">eg</span><span class="p">:</span> <span class="n">your</span> <span class="n">user</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="ow">or</span> <span class="n">server</span> <span class="n">name</span><span class="p">)</span> <span class="p">[</span><span class="n">Easy</span><span class="o">-</span><span class="n">RSA</span> <span class="n">CA</span><span class="p">]:</span><span class="n">test</span><span class="o">-</span><span class="n">ca</span>
 
-<span class="n">CA</span> <span class="n">creation</span> <span class="n">complete</span> <span class="ow">and</span> <span class="n">you</span> <span class="n">may</span> <span class="n">now</span> <span class="kn">import</span> <span class="nn">and</span> <span class="nn">sign</span> <span class="nn">cert</span> <span class="nn">requests.</span>
-<span class="n">Your</span> <span class="n">new</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="nb">file</span> <span class="k">for</span> <span class="n">publishing</span> <span class="ow">is</span> <span class="n">at</span><span class="p">:</span>
+<span class="n">CA</span> <span class="n">creation</span> <span class="n">complete</span> <span class="ow">and</span> <span class="n">you</span> <span class="n">may</span> <span class="n">now</span> <span class="kn">import</span> <span class="nn">and</span> <span class="n">sign</span> <span class="n">cert</span> <span class="n">requests</span><span class="o">.</span>
+<span class="n">Your</span> <span class="n">new</span> <span class="n">CA</span> <span class="n">certificate</span> <span class="n">file</span> <span class="k">for</span> <span class="n">publishing</span> <span class="ow">is</span> <span class="n">at</span><span class="p">:</span>
 <span class="o">/</span><span class="n">easyrsa</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">ca</span><span class="o">.</span><span class="n">crt</span>
 </code></pre></div>
 
@@ -285,7 +285,7 @@ CRL file: /ca/pki/crl.pem
 <span class="n">DH</span><span class="w"> </span><span class="k">parameters</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="k">size</span><span class="w"> </span><span class="mi">2048</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="k">at</span><span class="w"> </span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="o">/</span><span class="n">dh</span><span class="p">.</span><span class="n">pem</span><span class="w"></span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="err">root@df73a69e45da:/server/pki# openvpn --genkey --secret ta.key</span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">server</span><span class="o">/</span><span class="n">pki</span><span class="err">#</span><span class="w"> </span><span class="n">openvpn</span><span class="w"> </span><span class="c1">--genkey --secret ta.key</span>
 </code></pre></div>
 
 <p>Create missing directories:</p>
@@ -294,7 +294,7 @@ CRL file: /ca/pki/crl.pem
 </code></pre></div>
 
 <p>Create non-priviledged user <code>openvpn</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="err">adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn</span>
+<div class="highlight"><pre><span></span><code>adduser --system --no-create-home --home /nonexistent --disabled-login --group openvpn
 </code></pre></div>
 
 <p>Copy to <code>/etc/openvpn</code> the following files:
@@ -361,18 +361,18 @@ mute 20
 </code></pre></div>
 
 <h4>Launching service</h4>
-<div class="highlight"><pre><span></span><code><span class="err">sudo service openvpn restart</span>
+<div class="highlight"><pre><span></span><code>sudo service openvpn restart
 </code></pre></div>
 
 <p>After that you have to see logs in <code>/var/log/openvpn/</code></p>
 <p>If it doesn't start debug configuration with manual run:</p>
-<div class="highlight"><pre><span></span><code><span class="err">openvpn /etc/openvpn/server.conf</span>
+<div class="highlight"><pre><span></span><code>openvpn /etc/openvpn/server.conf
 </code></pre></div>
 
 <h3>Launching client</h3>
 <p>On the client we want to have a password for a key:</p>
-<div class="highlight"><pre><span></span><code><span class="err">root@df73a69e45da:/easyrsa# ./easyrsa init-pki</span>
-<span class="err">root@df73a69e45da:/easyrsa# ./easyrsa gen-req client1 </span>
+<div class="highlight"><pre><span></span><code><span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">init</span><span class="o">-</span><span class="n">pki</span><span class="w"></span>
+<span class="n">root</span><span class="nv">@df73a69e45da</span><span class="err">:</span><span class="o">/</span><span class="n">easyrsa</span><span class="err">#</span><span class="w"> </span><span class="p">.</span><span class="o">/</span><span class="n">easyrsa</span><span class="w"> </span><span class="n">gen</span><span class="o">-</span><span class="n">req</span><span class="w"> </span><span class="n">client1</span><span class="w"> </span>
 </code></pre></div>
 
 <p>Then copy request to CA, import.</p>
@@ -461,6 +461,7 @@ $ ./easyrsa gen-crl
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -472,7 +473,6 @@ $ ./easyrsa gen-crl
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -500,6 +500,9 @@ $ ./easyrsa gen-crl
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -588,6 +591,9 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -666,9 +672,6 @@ $ ./easyrsa gen-crl
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -713,9 +716,6 @@ $ ./easyrsa gen-crl
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

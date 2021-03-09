@@ -98,23 +98,23 @@ sergem personal public notebook            </a>
                 <div class="summary"><p>Some linux commands that I'll probably need in the future</p>
 <h1>User management</h1>
 <p>Add user to a group</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo usermod -aG group user</span>
+<div class="highlight"><pre><span></span><code>sudo usermod -aG group user
 </code></pre></div>
 
 <p>or </p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo adduser &lt;user&gt; &lt;group&gt;</span>
+<div class="highlight"><pre><span></span><code>sudo adduser &lt;user&gt; &lt;group&gt;
 </code></pre></div>
 
 <p>Delete user</p>
-<div class="highlight"><pre><span></span><code><span class="err">userdel user</span>
+<div class="highlight"><pre><span></span><code>userdel user
 </code></pre></div>
 
 <p>Delete the user’s home directory and mail spool:</p>
-<div class="highlight"><pre><span></span><code><span class="err">userdel -r user</span>
+<div class="highlight"><pre><span></span><code>userdel -r user
 </code></pre></div>
 
 <p>Remove user from a group</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo gpasswd …</span></code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo gpasswd …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/useful-console-commands.html">more ...</a>
                 </div>
             </article>
@@ -146,12 +146,12 @@ sergem personal public notebook            </a>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Use sudo if needed</p>
 <h2>Mount</h2>
-<div class="highlight"><pre><span></span><code><span class="err">mkdir /mnt/share</span>
-<span class="err">mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share</span>
+<div class="highlight"><pre><span></span><code>mkdir /mnt/share
+mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share
 </code></pre></div>
 
 <p>To allow write access one has to specify owning user and group:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share</span>
+<div class="highlight"><pre><span></span><code>sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share
 </code></pre></div>
 
 <h2>Unmount …</h2>
@@ -200,6 +200,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -288,6 +291,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -366,9 +372,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -413,9 +416,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

@@ -127,40 +127,40 @@ Python, numpy and pytorch use it as well.</p>
 </code></pre></div>
 
 <p>Defining an array with a lot of <code>.5</code>-s:    </p>
-<div class="highlight"><pre><span></span><code><span class="err">&gt;&gt;&gt; a = [x / 2. for x in range(10)]</span>
-<span class="err">&gt;&gt;&gt; a</span>
-<span class="err">[0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5]</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nv">a</span> <span class="o">=</span> [<span class="nv">x</span> <span class="o">/</span> <span class="mi">2</span>. <span class="k">for</span> <span class="nv">x</span> <span class="nv">in</span> <span class="nv">range</span><span class="ss">(</span><span class="mi">10</span><span class="ss">)</span>]
+<span class="o">&gt;&gt;&gt;</span> <span class="nv">a</span>
+[<span class="mi">0</span>.<span class="mi">0</span>, <span class="mi">0</span>.<span class="mi">5</span>, <span class="mi">1</span>.<span class="mi">0</span>, <span class="mi">1</span>.<span class="mi">5</span>, <span class="mi">2</span>.<span class="mi">0</span>, <span class="mi">2</span>.<span class="mi">5</span>, <span class="mi">3</span>.<span class="mi">0</span>, <span class="mi">3</span>.<span class="mi">5</span>, <span class="mi">4</span>.<span class="mi">0</span>, <span class="mi">4</span>.<span class="mi">5</span>]
 </code></pre></div>
 
 <p>Truncation just keeps the integer part:</p>
-<div class="highlight"><pre><span></span><code><span class="err">&gt;&gt;&gt; list(map(int, a))</span>
-<span class="err">[0, 0, 1, 1, 2, 2, 3, 3, 4, 4]</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; list(map(int, a))
+[0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
 </code></pre></div>
 
 <p>Rounding introduces more even numbers:    </p>
-<div class="highlight"><pre><span></span><code><span class="err">&gt;&gt;&gt; list(map(round, a))</span>
-<span class="err">[0, 0, 1, 2, 2, 2, 3, 4, 4, 4]</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; list(map(round, a))
+[0, 0, 1, 2, 2, 2, 3, 4, 4, 4]
 </code></pre></div>
 
 <p>Truncation in pytorch:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="nb">int</span><span class="p">)</span>
-<span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">int32</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; torch.tensor(a, dtype=torch.int)
+tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4], dtype=torch.int32)
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">torch</span><span class="p">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="p">.</span><span class="n">float64</span><span class="p">).</span><span class="k">type</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">int64</span><span class="p">)</span>
-<span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+&gt;&gt;&gt; torch.tensor(a, dtype=torch.float64).type(torch.int64)
+tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
 </code></pre></div>
 
 <p>Rounding in pytorch:</p>
-<div class="highlight"><pre><span></span><code><span class="err">&gt;&gt;&gt; torch.tensor(a, dtype=torch.float64).round()</span>
-<span class="err">tensor([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.], dtype=torch.float64)</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; torch.tensor(a, dtype=torch.float64).round()
+tensor([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.], dtype=torch.float64)
 </code></pre></div>
 
 <p>Truncation and rounding in numpy works the same way:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="p">.</span><span class="nb">array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nb">int</span><span class="p">)</span>
-<span class="nb">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; np.array(a, dtype=np.int)
+array([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">round</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">array</span><span class="p">([</span><span class="mi">0</span><span class="p">.,</span> <span class="mi">0</span><span class="p">.,</span> <span class="mi">1</span><span class="p">.,</span> <span class="mi">2</span><span class="p">.,</span> <span class="mi">2</span><span class="p">.,</span> <span class="mi">2</span><span class="p">.,</span> <span class="mi">3</span><span class="p">.,</span> <span class="mi">4</span><span class="p">.,</span> <span class="mi">4</span><span class="p">.,</span> <span class="mi">4</span><span class="p">.])</span>
+&gt;&gt;&gt; np.round(a)
+array([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.])
 </code></pre></div>
             </div>
             <!-- /.entry-content -->
@@ -208,6 +208,7 @@ Python, numpy and pytorch use it as well.</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -219,7 +220,6 @@ Python, numpy and pytorch use it as well.</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -247,6 +247,9 @@ Python, numpy and pytorch use it as well.</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -335,6 +338,9 @@ Python, numpy and pytorch use it as well.</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -413,9 +419,6 @@ Python, numpy and pytorch use it as well.</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -460,9 +463,6 @@ Python, numpy and pytorch use it as well.</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

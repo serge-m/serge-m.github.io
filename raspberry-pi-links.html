@@ -166,7 +166,7 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>Now we can install library:</p>
-<div class="highlight"><pre><span></span><code><span class="err">pip install Adafruit_PCA9685</span>
+<div class="highlight"><pre><span></span><code>pip install Adafruit_PCA9685
 </code></pre></div>
 
 <p>and run a simple program:</p>
@@ -220,7 +220,7 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>running:</p>
-<div class="highlight"><pre><span></span><code><span class="err">python sample.py</span>
+<div class="highlight"><pre><span></span><code>python sample.py
 </code></pre></div>
 
 <p>To control more than 16 servose one can chain multiple drivers. See <a href="https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all#chaining-drivers">Chaining Drivers section</a> for details. Some soldering is required to assign a unique address for each driver.</p>
@@ -251,7 +251,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p><a href="https://ulrichbuschbaum.wordpress.com/2014/09/17/the-l293d-motor-driver-and-makeblock/">[Arduino] using l293d</a></p>
 <p>Using transistors: (1)[http://electronics.stackexchange.com/questions/7235/motor-driver-using-only-a-2n2222-transistor], very weak</p>
 <h2>Connecting via ssh:</h2>
-<div class="highlight"><pre><span></span><code><span class="err">ssh -Y user@raspberrypi-url</span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">Y</span><span class="w"> </span><span class="k">user</span><span class="nv">@raspberrypi</span><span class="o">-</span><span class="n">url</span><span class="w"></span>
 </code></pre></div>
 
 <h2>Access rasbberry Pi without monitor and ethernet</h2>
@@ -264,10 +264,10 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Automatic connection to wifi. Edit <code>/etc/wpa_supplicant/wpa_supplicant.conf</code> and add the following lines:</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">network={</span>
-<span class="err">    ssid=&quot;my-network-name&quot;</span>
-<span class="err">    psk=&quot;my-network-pass&quot;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>network={
+    ssid=&quot;my-network-name&quot;
+    psk=&quot;my-network-pass&quot;
+}
 </code></pre></div>
 
 <p>In the end the file should look like this:</p>
@@ -283,17 +283,17 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 
 <p><code>country</code> field is essential. Wifi wont work without it. In the log you will see <code>raspberrypi systemd[1]: Started Disable WiFi if country not set.</code></p>
 <p>If you need to support multiple wifi connections use <code>id_str</code> field:</p>
-<div class="highlight"><pre><span></span><code><span class="n">network</span><span class="o">=</span><span class="err">{</span>
-    <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;my-network-name&quot;</span>
-    <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;my-network-pass&quot;</span>
-    <span class="n">id_str</span><span class="o">=</span><span class="ss">&quot;net1&quot;</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>network={
+    ssid=&quot;my-network-name&quot;
+    psk=&quot;my-network-pass&quot;
+    id_str=&quot;net1&quot;
+}
 
-<span class="n">network</span><span class="o">=</span><span class="err">{</span>
-    <span class="n">ssid</span><span class="o">=</span><span class="ss">&quot;another-network&quot;</span>
-    <span class="n">psk</span><span class="o">=</span><span class="ss">&quot;another pass&quot;</span>
-    <span class="n">id_str</span><span class="o">=</span><span class="ss">&quot;net2&quot;</span>
-<span class="err">}</span>
+network={
+    ssid=&quot;another-network&quot;
+    psk=&quot;another pass&quot;
+    id_str=&quot;net2&quot;
+}
 </code></pre></div>
 
 <ol>
@@ -305,11 +305,11 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 </li>
 </ol>
 <p>Now you can connect to raspberry via ssh:</p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh pi@raspberrypi</span>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="nf">pi</span><span class="nv">@raspberrypi</span><span class="w"></span>
 </code></pre></div>
 
 <p>or </p>
-<div class="highlight"><pre><span></span><code><span class="err">ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;</span>
+<div class="highlight"><pre><span></span><code>ssh pi@&lt;IP-OF-YOUR-RASPBERRY&gt;
 </code></pre></div>
 
 <h2>Reading input (button) from GPIO</h2>
@@ -320,7 +320,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <p>Interactive website for pinout of Raspberry Pi for different interfaces <a href="https://pinout.xyz/#">Pinout</a></p>
 <h2>Donkey car</h2>
 <p>Requirements for running donkey car:</p>
-<div class="highlight"><pre><span></span><code><span class="err">sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev</span>
+<div class="highlight"><pre><span></span><code>sudo apt install -y libatlas-base-dev libopenjp2-7-dev libtiff5-dev libhdf5-dev
 </code></pre></div>
 
 <h2>Other</h2>
@@ -391,6 +391,7 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -402,7 +403,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -430,6 +430,9 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -518,6 +521,9 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -596,9 +602,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -643,9 +646,6 @@ See <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=12067&amp;p=1611
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

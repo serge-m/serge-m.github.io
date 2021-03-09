@@ -115,28 +115,28 @@ sergem personal public notebook            </a>
 </code></pre></div>
 
 <p>Running in console:</p>
-<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">gdb</span> <span class="n">python</span>
-<span class="n">GNU</span> <span class="n">gdb</span> <span class="p">(</span><span class="n">Ubuntu</span> <span class="mi">7</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">ubuntu5</span><span class="o">~</span><span class="mi">14</span><span class="p">.</span><span class="mi">04</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span> <span class="mi">7</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">1</span>
-<span class="n">Copyright</span> <span class="p">(</span><span class="k">C</span><span class="p">)</span> <span class="mi">2014</span> <span class="k">Free</span> <span class="n">Software</span> <span class="n">Foundation</span><span class="p">,</span> <span class="n">Inc</span><span class="p">.</span>
-<span class="n">License</span> <span class="n">GPLv3</span><span class="o">+</span><span class="p">:</span> <span class="n">GNU</span> <span class="n">GPL</span> <span class="k">version</span> <span class="mi">3</span> <span class="k">or</span> <span class="n">later</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">gnu</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">licenses</span><span class="o">/</span><span class="n">gpl</span><span class="p">.</span><span class="n">html</span><span class="o">&gt;</span>
-<span class="n">This</span> <span class="k">is</span> <span class="k">free</span> <span class="n">software</span><span class="p">:</span> <span class="n">you</span> <span class="k">are</span> <span class="k">free</span> <span class="k">to</span> <span class="n">change</span> <span class="k">and</span> <span class="n">redistribute</span> <span class="n">it</span><span class="p">.</span>
-<span class="p">..................</span> <span class="n">bla</span> <span class="n">bla</span> <span class="n">bla</span> <span class="p">..................................................</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nv">gdb</span> <span class="nv">python</span>
+<span class="nv">GNU</span> <span class="nv">gdb</span> <span class="ss">(</span><span class="nv">Ubuntu</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="nv">ubuntu5</span><span class="o">~</span><span class="mi">14</span>.<span class="mi">04</span>.<span class="mi">2</span><span class="ss">)</span> <span class="mi">7</span>.<span class="mi">7</span>.<span class="mi">1</span>
+<span class="nv">Copyright</span> <span class="ss">(</span><span class="nv">C</span><span class="ss">)</span> <span class="mi">2014</span> <span class="nv">Free</span> <span class="nv">Software</span> <span class="nv">Foundation</span>, <span class="nv">Inc</span>.
+<span class="nv">License</span> <span class="nv">GPLv3</span><span class="o">+</span>: <span class="nv">GNU</span> <span class="nv">GPL</span> <span class="nv">version</span> <span class="mi">3</span> <span class="nv">or</span> <span class="nv">later</span> <span class="o">&lt;</span><span class="nv">http</span>:<span class="o">//</span><span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">licenses</span><span class="o">/</span><span class="nv">gpl</span>.<span class="nv">html</span><span class="o">&gt;</span>
+<span class="nv">This</span> <span class="nv">is</span> <span class="nv">free</span> <span class="nv">software</span>: <span class="nv">you</span> <span class="nv">are</span> <span class="nv">free</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">and</span> <span class="nv">redistribute</span> <span class="nv">it</span>.
+.................. <span class="nv">bla</span> <span class="nv">bla</span> <span class="nv">bla</span> ..................................................
 
-<span class="o">#</span> <span class="n">Adding</span> <span class="n">breakpoint</span> <span class="k">to</span> <span class="k">function</span> <span class="ss">&quot;arraymultiter_new&quot;</span> <span class="p">(</span><span class="n">example</span><span class="p">):</span>
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">break</span> <span class="n">arraymultiter_new</span>
+# <span class="nv">Adding</span> <span class="nv">breakpoint</span> <span class="nv">to</span> <span class="nv">function</span> <span class="s2">&quot;</span><span class="s">arraymultiter_new</span><span class="s2">&quot;</span> <span class="ss">(</span><span class="nv">example</span><span class="ss">)</span>:
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span> <span class="k">break</span> <span class="nv">arraymultiter_new</span>
 
-<span class="o">#</span> <span class="n">There</span> <span class="k">is</span> <span class="n">name</span> <span class="n">completition</span> <span class="k">by</span> <span class="n">Tab</span><span class="p">.</span>
-<span class="o">#</span> <span class="n">Run</span> <span class="n">script</span>
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">run</span> <span class="n">dbg_broadcast</span><span class="p">.</span><span class="n">py</span>
+# <span class="nv">There</span> <span class="nv">is</span> <span class="nv">name</span> <span class="nv">completition</span> <span class="nv">by</span> <span class="nv">Tab</span>.
+# <span class="nv">Run</span> <span class="nv">script</span>
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span> <span class="nv">run</span> <span class="nv">dbg_broadcast</span>.<span class="nv">py</span>
 
-<span class="n">Starting</span> <span class="n">program</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">asdasd</span><span class="o">/</span><span class="k">work</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span> <span class="n">dbg_broadcast</span><span class="p">.</span><span class="n">py</span>
-<span class="p">[</span><span class="n">Thread</span> <span class="n">debugging</span> <span class="k">using</span> <span class="n">libthread_db</span> <span class="n">enabled</span><span class="p">]</span>
-<span class="k">Using</span> <span class="k">host</span> <span class="n">libthread_db</span> <span class="n">library</span> <span class="ss">&quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;</span><span class="p">.</span>
-<span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">arraymultiter_new</span> <span class="p">(</span><span class="n">__NPY_UNUSED_TAGGEDsubtype</span><span class="o">=</span><span class="mi">0</span><span class="n">x7ffff6abbf80</span> <span class="o">&lt;</span><span class="n">PyArrayMultiIter_Type</span><span class="o">&gt;</span><span class="p">,</span>
-    <span class="n">args</span><span class="o">=</span><span class="mi">0</span><span class="n">x7ffff32dd050</span><span class="p">,</span> <span class="n">kwds</span><span class="o">=</span><span class="mi">0</span><span class="n">x0</span><span class="p">)</span> <span class="k">at</span> <span class="n">numpy</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">multiarray</span><span class="o">/</span><span class="n">iterators</span><span class="p">.</span><span class="k">c</span><span class="p">:</span><span class="mi">1578</span>
-<span class="mi">1578</span> <span class="err">{</span>
+<span class="nv">Starting</span> <span class="nv">program</span>: <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">asdasd</span><span class="o">/</span><span class="nv">work</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">python</span> <span class="nv">dbg_broadcast</span>.<span class="nv">py</span>
+[<span class="nv">Thread</span> <span class="nv">debugging</span> <span class="nv">using</span> <span class="nv">libthread_db</span> <span class="nv">enabled</span>]
+<span class="nv">Using</span> <span class="nv">host</span> <span class="nv">libthread_db</span> <span class="nv">library</span> <span class="s2">&quot;</span><span class="s">/lib/x86_64-linux-gnu/libthread_db.so.1</span><span class="s2">&quot;</span>.
+<span class="nv">Breakpoint</span> <span class="mi">1</span>, <span class="nv">arraymultiter_new</span> <span class="ss">(</span><span class="nv">__NPY_UNUSED_TAGGEDsubtype</span><span class="o">=</span><span class="mi">0</span><span class="nv">x7ffff6abbf80</span> <span class="o">&lt;</span><span class="nv">PyArrayMultiIter_Type</span><span class="o">&gt;</span>,
+    <span class="nv">args</span><span class="o">=</span><span class="mi">0</span><span class="nv">x7ffff32dd050</span>, <span class="nv">kwds</span><span class="o">=</span><span class="mi">0</span><span class="nv">x0</span><span class="ss">)</span> <span class="nv">at</span> <span class="nv">numpy</span><span class="o">/</span><span class="nv">core</span><span class="o">/</span><span class="nv">src</span><span class="o">/</span><span class="nv">multiarray</span><span class="o">/</span><span class="nv">iterators</span>.<span class="nv">c</span>:<span class="mi">1578</span>
+<span class="mi">1578</span> {
 
-<span class="p">(</span><span class="n">gdb</span><span class="p">)</span>
+<span class="ss">(</span><span class="nv">gdb</span><span class="ss">)</span>
 </code></pre></div>
 
 <p>And here we are.</p>
@@ -186,6 +186,7 @@ sergem personal public notebook            </a>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -197,7 +198,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -225,6 +225,9 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -313,6 +316,9 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -391,9 +397,6 @@ sergem personal public notebook            </a>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -438,9 +441,6 @@ sergem personal public notebook            </a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

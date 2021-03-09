@@ -70,6 +70,32 @@ sergem personal public notebook            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://serge-m.github.io/blog-post-2.html">Некоторые заметки о приведении типов в СиПлюсПлюс</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-10-04T17:59:00+02:00"> 2013-10-04T17:59:00, Fri</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://serge-m.github.io/tag/c.html">c++</a>
+        /
+	<a href="https://serge-m.github.io/tag/russian.html">russian</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>АлёнаC++:
+<a href="http://alenacpp.blogspot.ru/2005/08/c.html">http://alenacpp.blogspot.ru/2005/08/c.html</a></p>
+<p><code>static_cast</code> между указателями корректно, только если один из указателей - это указатель на <code>void</code> или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от <code>void*</code>, который возвращает <code>malloc</code>, следует использовать <code>static_cast …</code></p>
+                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/blog-post-2.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://serge-m.github.io/math-morphology-in-adobe-after-effects.html">Math morphology in Adobe After Effects</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -205,7 +231,7 @@ If you use single-channel image.</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Trim 5 frames starting from 160-th frame and write to png sequence</p>
-<div class="highlight"><pre><span></span><code><span class="err">ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png</span>
+<div class="highlight"><pre><span></span><code>ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png
 </code></pre></div>
 
 <p>size of input video is 1920x1088, format YUV420 progressive.</p>
@@ -256,15 +282,15 @@ return v</blockquote>2 …</p>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>in cygwin:</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=$PATH:~/your_path</span>
+<div class="highlight"><pre><span></span><code>PATH=$PATH:~/your_path
 </code></pre></div>
 
 <p>or</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=~/your_path:$PATH</span>
+<div class="highlight"><pre><span></span><code>PATH=~/your_path:$PATH
 </code></pre></div>
 
 <p>Add path windows</p>
-<div class="highlight"><pre><span></span><code><span class="err">PATH=%PATH%;C:\Your_Path;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">PATH</span><span class="o">=%</span><span class="nt">PATH</span><span class="o">%;</span><span class="nt">C</span><span class="o">:</span><span class="err">\</span><span class="nt">Your_Path</span><span class="o">;</span>
 </code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://serge-m.github.io/add-path-in-linuxcygwin-and-windows.html">more ...</a>
                 </div>
@@ -569,33 +595,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://serge-m.github.io/image-resize-in-nuke.html">Image resize in Nuke</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-05-07T15:50:00+02:00"> 2013-05-07T15:50:00, Tue</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://serge-m.github.io/tag/en.html">en</a>
-        /
-	<a href="https://serge-m.github.io/tag/nuke.html">nuke</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>So here we have two filters:
-1) Crop
-2) Reformat</p>
-<p>To cut a part from an image we use Crop. It also has option "reformat". Reformat cuts also borders behind area. If "Reformat" is disabled, black borders remain after crop.</p>
-                    <a class="btn btn-default btn-xs" href="https://serge-m.github.io/image-resize-in-nuke.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://serge-m.github.io/index10.html">&laquo;</a>
@@ -638,6 +637,7 @@ The cause was in system PATH environment variable. Some buggy software I had ins
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -649,7 +649,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -677,6 +676,9 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -765,6 +767,9 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -843,9 +848,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -890,9 +892,6 @@ The cause was in system PATH environment variable. Some buggy software I had ins
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

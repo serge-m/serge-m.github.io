@@ -131,7 +131,7 @@ sergem personal public notebook            </a>
 Therefore I change the default format so that service information (time, logger name, error level) 
 has a fixed length. It helps me visually parse important information (log messages) from the stream of logs.
 It can be achieved by using fixed width modificators in format string:</p>
-<div class="highlight"><pre><span></span><code><span class="c">%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s</span>
+<div class="highlight"><pre><span></span><code><span class="c">%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s</span><span class="w"></span>
 </code></pre></div>
 
 <p>More on logging format templates <a href="https://docs.python.org/3.6/library/logging.html#logrecord-attributes">here</a>.</p>
@@ -161,43 +161,43 @@ How can I disable log messages from the Requests library?</p>
 <h2>Setup logging in Flask</h2>
 <p>In this <b>example</b> we replace default Flask logging with manually configured one. It includes logging to stdio and a file. Also it has extended formatting.</p>
 <p>logging_config.py:</p>
-<div class="highlight"><pre><span></span><code><span class="err">logging_config = {</span>
-<span class="err">    &quot;version&quot;: 1,</span>
-<span class="err">    &quot;disable_existing_loggers&quot;: False,</span>
-<span class="err">    &quot;formatters&quot;: {</span>
-<span class="err">        &quot;simple&quot;: {</span>
-<span class="err">            &quot;format&quot;: &quot;%(asctime)s - %(name)s - %(levelname)s - %(message)s&quot;</span>
-<span class="err">        }</span>
-<span class="err">    },</span>
-<span class="err">    &quot;handlers&quot;: {</span>
-<span class="err">        &quot;console&quot;: {</span>
-<span class="err">            &quot;class&quot;: &quot;logging.StreamHandler&quot;,</span>
-<span class="err">            &quot;level&quot;: &quot;INFO&quot;,</span>
-<span class="err">            &quot;formatter&quot;: &quot;simple&quot;,</span>
-<span class="err">            &quot;stream&quot;: &quot;ext://sys.stdout&quot;</span>
-<span class="err">        },</span>
-<span class="err">        &quot;info_file_handler&quot;: {</span>
-<span class="err">            &quot;class&quot;: &quot;logging.handlers.RotatingFileHandler&quot;,</span>
-<span class="err">            &quot;level&quot;: &quot;INFO&quot;,</span>
-<span class="err">            &quot;formatter&quot;: &quot;simple&quot;,</span>
-<span class="err">            &quot;filename&quot;: &quot;log.txt&quot;,</span>
-<span class="err">            &quot;maxBytes&quot;: 10485760,</span>
-<span class="err">            &quot;backupCount&quot;: 20,</span>
-<span class="err">            &quot;encoding&quot;: &quot;utf8&quot;</span>
-<span class="err">        }</span>
-<span class="err">    },</span>
-<span class="err">    &quot;loggers&quot;: { # here you can add specific configuration for other libraries</span>
-<span class="err">        &quot;werkzeug&quot;: {</span>
-<span class="err">            &quot;level&quot;: &quot;INFO&quot;, # change to &quot;ERROR&quot; if you want to see less logs from flask</span>
-<span class="err">            &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;],</span>
-<span class="err">            &quot;propagate&quot;: False # required to avoid double logging</span>
-<span class="err">        }</span>
-<span class="err">    },</span>
-<span class="err">    &quot;root&quot;: {</span>
-<span class="err">        &quot;level&quot;: &quot;INFO&quot;,</span>
-<span class="err">        &quot;handlers&quot;: [&quot;console&quot;, &quot;info_file_handler&quot;]</span>
-<span class="err">    }</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="nv">logging_config</span> <span class="o">=</span> {
+    <span class="s2">&quot;</span><span class="s">version</span><span class="s2">&quot;</span>: <span class="mi">1</span>,
+    <span class="s2">&quot;</span><span class="s">disable_existing_loggers</span><span class="s2">&quot;</span>: <span class="nv">False</span>,
+    <span class="s2">&quot;</span><span class="s">formatters</span><span class="s2">&quot;</span>: {
+        <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>: {
+            <span class="s2">&quot;</span><span class="s">format</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">%(asctime)s - %(name)s - %(levelname)s - %(message)s</span><span class="s2">&quot;</span>
+        }
+    },
+    <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: {
+        <span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>: {
+            <span class="s2">&quot;</span><span class="s">class</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">logging.StreamHandler</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">formatter</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">stream</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">ext://sys.stdout</span><span class="s2">&quot;</span>
+        },
+        <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>: {
+            <span class="s2">&quot;</span><span class="s">class</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">logging.handlers.RotatingFileHandler</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">formatter</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">simple</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">filename</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">log.txt</span><span class="s2">&quot;</span>,
+            <span class="s2">&quot;</span><span class="s">maxBytes</span><span class="s2">&quot;</span>: <span class="mi">10485760</span>,
+            <span class="s2">&quot;</span><span class="s">backupCount</span><span class="s2">&quot;</span>: <span class="mi">20</span>,
+            <span class="s2">&quot;</span><span class="s">encoding</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">utf8</span><span class="s2">&quot;</span>
+        }
+    },
+    <span class="s2">&quot;</span><span class="s">loggers</span><span class="s2">&quot;</span>: { # <span class="nv">here</span> <span class="nv">you</span> <span class="nv">can</span> <span class="nv">add</span> <span class="nv">specific</span> <span class="nv">configuration</span> <span class="k">for</span> <span class="nv">other</span> <span class="nv">libraries</span>
+        <span class="s2">&quot;</span><span class="s">werkzeug</span><span class="s2">&quot;</span>: {
+            <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>, # <span class="nv">change</span> <span class="nv">to</span> <span class="s2">&quot;</span><span class="s">ERROR</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="nv">you</span> <span class="nv">want</span> <span class="nv">to</span> <span class="nv">see</span> <span class="nv">less</span> <span class="nv">logs</span> <span class="nv">from</span> <span class="nv">flask</span>
+            <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: [<span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>],
+            <span class="s2">&quot;</span><span class="s">propagate</span><span class="s2">&quot;</span>: <span class="nv">False</span> # <span class="nv">required</span> <span class="nv">to</span> <span class="nv">avoid</span> <span class="nv">double</span> <span class="nv">logging</span>
+        }
+    },
+    <span class="s2">&quot;</span><span class="s">root</span><span class="s2">&quot;</span>: {
+        <span class="s2">&quot;</span><span class="s">level</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">INFO</span><span class="s2">&quot;</span>,
+        <span class="s2">&quot;</span><span class="s">handlers</span><span class="s2">&quot;</span>: [<span class="s2">&quot;</span><span class="s">console</span><span class="s2">&quot;</span>, <span class="s2">&quot;</span><span class="s">info_file_handler</span><span class="s2">&quot;</span>]
+    }
+}
 </code></pre></div>
 
 <p>app.py:</p>
@@ -292,6 +292,7 @@ How can I disable log messages from the Requests library?</p>
 <li class="list-group-item">
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
   <ul class="list-group" id="recentposts">
+    <li class="list-group-item"><a href="https://serge-m.github.io/graph algorithms.html">Graph algorithms</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/data-structures-and-algorithms-in-python.html">Data Structures And Algorithms in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/rounding-in-python.html">Rounding in Python</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/symbolic-math-and-python.html">Symbolic math and python</a></li>
@@ -303,7 +304,6 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item"><a href="https://serge-m.github.io/parameters-parsing-for-python-applications.html">Parameters parsing for python applications</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/git-cheat-sheet.html">Git cheat sheet</a></li>
     <li class="list-group-item"><a href="https://serge-m.github.io/image-and-video-processing-recipes.html">Image and video processing recipes</a></li>
-    <li class="list-group-item"><a href="https://serge-m.github.io/cpp-and-cmake.html">C++ and CMake</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Recent Posts -->
@@ -331,6 +331,9 @@ How can I disable log messages from the Requests library?</p>
     </li>
     <li class="list-group-item tag-4">
       <a href="https://serge-m.github.io/tag/algorithm.html">algorithm</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/algorithms.html">algorithms</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/arduino.html">arduino</a>
@@ -419,6 +422,9 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/git.html">git</a>
     </li>
+    <li class="list-group-item tag-4">
+      <a href="https://serge-m.github.io/tag/graphs.html">graphs</a>
+    </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/hardware.html">hardware</a>
     </li>
@@ -497,9 +503,6 @@ How can I disable log messages from the Requests library?</p>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/numpy.html">numpy</a>
     </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/one-cycle.html">one cycle</a>
-    </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/opencv.html">opencv</a>
     </li>
@@ -544,9 +547,6 @@ How can I disable log messages from the Requests library?</p>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://serge-m.github.io/tag/raspberry-pi.html">raspberry pi</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://serge-m.github.io/tag/resnet.html">resnet</a>
     </li>
     <li class="list-group-item tag-3">
       <a href="https://serge-m.github.io/tag/rest.html">REST</a>

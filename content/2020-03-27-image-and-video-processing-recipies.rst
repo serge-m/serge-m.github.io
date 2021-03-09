@@ -105,6 +105,23 @@ Stack images/videos
 
 
 
+Strip metadata (EXIF) from multiple images
+----------------------------------------------------
+
+Single file in-place
+
+.. code-block:: sh
+
+    mogrify -strip filename.jpg
+
+Multiple files (linux)
+
+.. code-block:: sh
+
+    find . -name "*.jpg" | sort | xargs -I {} mogrify -strip {}
+
+
+
 
 
 See also

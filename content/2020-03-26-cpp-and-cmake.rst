@@ -56,11 +56,11 @@ Configure cmake settings
 
 add `cmake.configureSettings <https://vector-of-bool.github.io/docs/vscode-cmake-tools/settings.html#cmake-configuresettings>`_ to `settings.json`:
 
-     "cmake.configureSettings": {
+.. code-block:: none
+
+    "cmake.configureSettings": {
         "USE_MYMATH": "ON"
     }
-
-
 
 
 

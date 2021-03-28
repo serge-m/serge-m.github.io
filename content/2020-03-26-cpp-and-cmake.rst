@@ -6,7 +6,7 @@
 
 :slug: cpp-and-cmake
 
-:tags: c++, cpp, cmake, conan, gtest, catch2, testing, example, pybind11
+:tags: c++, cpp, cmake, conan, gtest, catch2, testing, example, pybind11, vscode
 
 
 CMake in VSCode

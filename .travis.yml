@@ -1,4 +1,5 @@
-language: minimal
+language: python
+dist: bionic
 
 # Install Hugo
 install:
@@ -6,6 +7,7 @@ install:
   - echo Downloading $url ...
   - curl -L $url --output ./hugo.deb
   - sudo dpkg -i ./hugo.deb
+  - pip install docutils
 
 script:
   - hugo

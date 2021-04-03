@@ -11,6 +11,7 @@ install:
 
 script:
   - hugo
+  - cp -r public/tags public/tag
 
 
 # Here is the magic part

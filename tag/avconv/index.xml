@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>avconv on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/avconv/</link>
+    <description>Recent content in avconv on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Mar 2020 07:18:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/avconv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image and video processing recipes</title>
+      <link>https://serge-m.github.io/posts/image-and-video-processing-recipes/</link>
+      <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
+      <description>I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations.
+Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+    </item>
+    
+    <item>
+      <title>convert video to jpeg with good quality</title>
+      <link>https://serge-m.github.io/posts/avconv/</link>
+      <pubDate>Mon, 14 Dec 2015 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/avconv/</guid>
+      <description>convert video to jpeg with good quality:
+1  avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg   crop video:
+1  avconv -i input.avi -vf crop=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png   create gif using
+http://gifmaker.me/</description>
+    </item>
+    
+    <item>
+      <title>ffmpeg(avconv) jpeg quality</title>
+      <link>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</link>
+      <pubDate>Sun, 06 Sep 2015 15:52:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</guid>
+      <description>conversion with good jpeg quality:
+1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </description>
+    </item>
+    
+    <item>
+      <title>Trim frames from raw YUV video using FFMPEG</title>
+      <link>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</link>
+      <pubDate>Tue, 02 Jul 2013 19:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</guid>
+      <description>Trim 5 frames starting from 160-th frame and write to png sequence
+ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png  size of input video is 1920x1088, format YUV420 progressive.
+UPD: ffmpeg is renamed to avconv. Using it for trimming AVI video:
+avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png  UPD2: it seems ffmpeg is back.</description>
+    </item>
+    
+  </channel>
+</rss>

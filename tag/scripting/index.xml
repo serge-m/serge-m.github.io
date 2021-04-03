@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scripting on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/scripting/</link>
+    <description>Recent content in scripting on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 24 Oct 2013 12:03:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to open composition in viewer in Adobe After Effects using scripts</title>
+      <link>https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/</link>
+      <pubDate>Thu, 24 Oct 2013 12:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/</guid>
+      <description>// Make a composition var comp = app.project.items.addComp(&amp;lsquo;MyComp&amp;rsquo;, 1920, 1080, 1.0, 10, 25.0 );
+// Open it in viewer comp.openInViewer();
+This solution works only in AAE CS 6.0
+My version of some cross-platform code
+function OpenInViewer( comp ) { var version = app.version.match(/(\d+.\d+)./)[1]; if( version &amp;gt;= 11.0 ) comp.openInViewer() ; else { var duration = comp.workAreaDuration; comp.workAreaDuration = 2comp.frameDuration; comp.ramPreviewTest(&amp;quot;&amp;quot;,1,&amp;quot;&amp;quot;); comp.workAreaDuration = duration; }
+}
+ inspired by&amp;nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646) </description>
+    </item>
+    
+  </channel>
+</rss>

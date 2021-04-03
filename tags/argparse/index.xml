@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>argparse on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/argparse/</link>
+    <description>Recent content in argparse on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Apr 2020 19:00:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/argparse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parameters parsing for python applications</title>
+      <link>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</link>
+      <pubDate>Tue, 21 Apr 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</guid>
+      <description>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
+argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
+Example of usage:
+#!/usr/bin/env bash import argparse def hello(count, name): &amp;quot;&amp;quot;&amp;quot;Simple program that greets NAME for a total of COUNT times.</description>
+    </item>
+    
+    <item>
+      <title>Argparse recipies</title>
+      <link>https://serge-m.github.io/posts/python-argparse-recipies/</link>
+      <pubDate>Sat, 24 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-argparse-recipies/</guid>
+      <description>How to include default values in &amp;lsquo;&amp;ndash;help&amp;rsquo; 1 2 3  parser = argparse.ArgumentParser( # ... other options ... formatter_class=argparse.ArgumentDefaultsHelpFormatter)   Output looks like this:
+1 2 3  --scan-time [SCAN_TIME] Wait SCAN-TIME seconds between status checks. (default: 5)   Another tip: add &amp;lsquo;%(default)&amp;rsquo; to the help parameter to control what is displayed.
+1 2  parser.add_argument(&amp;#34;--type&amp;#34;, default=&amp;#34;toto&amp;#34;, choices=[&amp;#34;toto&amp;#34;,&amp;#34;titi&amp;#34;], help = &amp;#34;type (default: %(default)s)&amp;#34;)   source</description>
+    </item>
+    
+  </channel>
+</rss>

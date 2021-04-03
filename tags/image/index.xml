@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>image on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/image/</link>
+    <description>Recent content in image on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Mar 2020 07:18:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image and video processing recipes</title>
+      <link>https://serge-m.github.io/posts/image-and-video-processing-recipes/</link>
+      <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
+      <description>I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations.
+Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+    </item>
+    
+    <item>
+      <title>Streaming camera output from Raspberry Pi</title>
+      <link>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</link>
+      <pubDate>Tue, 23 May 2017 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</guid>
+      <description>Task was to transmit image from camera on raspberry pi through web interface to the PC. PC is connected to raspberry through local network.
+ Enable camera on your raspberry pi in raspi-conf. Reboot. Save the following source code to a file on your raspberry (let&amp;rsquo;s say streaming.py) do sudo pip3 install picamera run python3 streaming.py on the target machine (PC) go to http://&amp;lt;your raspberry ip or host name&amp;gt;:8000. output from the camera must be streaming in realtime.</description>
+    </item>
+    
+    <item>
+      <title>Convert all *.avi files in current directory to png sequences</title>
+      <link>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</link>
+      <pubDate>Tue, 22 Oct 2013 23:49:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
+      <description>Using python and ffmpeg:
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) )   </description>
+    </item>
+    
+  </channel>
+</rss>

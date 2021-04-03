@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Aug 2019 20:32:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS experience</title>
+      <link>https://serge-m.github.io/posts/ros-experience/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ros-experience/</guid>
+      <description>ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html.
+It seems for me too old. It&amp;rsquo;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh&amp;hellip;
+It is possible to have ROS melodic on Raspberry Pi 3 B+. See in the next sections.
+Installing tensorflow for ROS on raspberry pi Alternatively one can try to install it from wheels: https://www.</description>
+    </item>
+    
+    <item>
+      <title>Arduino Experiments</title>
+      <link>https://serge-m.github.io/posts/arduino-experiments/</link>
+      <pubDate>Sun, 14 Jul 2019 14:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/arduino-experiments/</guid>
+      <description>Arduino board Arduino Nano v2.3 manual (pdf)
+Arduino and shift register 74HC595 74HC595 Datasheet (pdf)
+74HC595 Explanation
+Youtube tutorial with buttons:
+ Tutorial with arduino - I was using that.
+My version on a breadboard:
+ Code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  //the pins we are using int latchPin = 2; int clockPin = 3; int dataPin = 4; void setup() { //set all the pins used to talk to the chip  //as output pins so we can write to them  pinMode(latchPin, OUTPUT); pinMode(clockPin, OUTPUT); pinMode(dataPin, OUTPUT); } void loop() { for (int i = 0; i &amp;lt; 16; i++) { //take the latchPin low so the LEDs don&amp;#39;t change while we are writing data  digitalWrite(latchPin, LOW); //shift out the bits  shiftOut(dataPin, clockPin, MSBFIRST, i); //take the latch pin high so the pins reflect  //the data we have sent  digitalWrite(latchPin, HIGH); // pause before next value:  delay(50); } }   Alternatives  More powerful shift register: TPIC6B595 PWM: TLC5940, TLC5947 PWM with i2c: PCA9685, PCA9635  PWM via shift register PWM Through a 74HC595 Shift Register at forum.</description>
+    </item>
+    
+    <item>
+      <title>Reducing disk usage in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/disk-usage-ubuntu/</link>
+      <pubDate>Thu, 16 Aug 2018 00:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/disk-usage-ubuntu/</guid>
+      <description>Here are some recipies to make ubuntu installed on USB drive to work faster.
+[1]
+[2]
+reducing swapping Add these lines to /etc/sysctl.conf, and reboot.
+vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 vm.dirty_ratio = 80 vm.dirty_writeback_centisecs = 0 More caching while writting on disk Add noatime,commit=120,&amp;hellip; to /etc/fstab entries for / and /home</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu/linux settings</title>
+      <link>https://serge-m.github.io/posts/ubuntu-linux-settings/</link>
+      <pubDate>Thu, 11 Jan 2018 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ubuntu-linux-settings/</guid>
+      <description>Some settings I find useful for a workstation
+CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+  Go to Ubuntu Software and then search for system monitor extension.</description>
+    </item>
+    
+    <item>
+      <title>Set up HP 1020 printer in Linux Mint 18 / Ubuntu</title>
+      <link>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</link>
+      <pubDate>Mon, 09 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</guid>
+      <description>Using open source drivers Follow the instruction from http://foo2zjs.rkkda.com/
+or use my clone on git https://github.com/serge-m/foo2zjs.git:
+  Clone the repo
+git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs    Compile:
+make    Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
+./getweb 1020	# Get HP LaserJet 1020 firmware file    Install driver, foomatic XML files, and extra files:</description>
+    </item>
+    
+    <item>
+      <title>Shell commands (page moved)</title>
+      <link>https://serge-m.github.io/posts/shell-commands/</link>
+      <pubDate>Sun, 08 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/shell-commands/</guid>
+      <description>Page moved here</description>
+    </item>
+    
+    <item>
+      <title>linux life</title>
+      <link>https://serge-m.github.io/posts/linux-life/</link>
+      <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/linux-life/</guid>
+      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then</description>
+    </item>
+    
+  </channel>
+</rss>

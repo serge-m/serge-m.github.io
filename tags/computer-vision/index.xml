@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computer vision on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/computer-vision/</link>
+    <description>Recent content in computer vision on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Nov 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/computer-vision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effect of techniques from Fast.ai</title>
+      <link>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</link>
+      <pubDate>Sun, 15 Nov 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</guid>
+      <description>fast.ai is a brilliant library and a course by Jeremy Howard an co. They use pytorch as a base and explain deep learning from the foundations to a very decent level. In his course Jeremy Howard demonstrates a lot of interesting techniques that he finds in papers and that do NN training faster/better/cheaper.
+Here I want to reproduce some of the techniques in order to understand what is the effect they bring.</description>
+    </item>
+    
+    <item>
+      <title>Self-supervised depth and ego motion estimation</title>
+      <link>https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/</link>
+      <pubDate>Sun, 23 Aug 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/</guid>
+      <description>3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
+Learning
+Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
+Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information</description>
+    </item>
+    
+    <item>
+      <title>Which pretrained backbone to choose</title>
+      <link>https://serge-m.github.io/posts/which-backbone-to-choose/</link>
+      <pubDate>Wed, 01 Jul 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/which-backbone-to-choose/</guid>
+      <description>In 2020 which architecture should I use for my image classification/tracking/segmentation/&amp;hellip; task?
+I was asked on an interview that and I didn&amp;rsquo;t have a prepared answer.
+I made a small research and want to write down some thoughts.
+Most of the architectures build upon ideas from ResNet paper Deep Residual Learning for Image Recognition, 2015
+Here is some explanation of resnet family:An Overview of ResNet and its Variants by Vincent Fung, 2017.</description>
+    </item>
+    
+    <item>
+      <title>Multistage NN training experiment</title>
+      <link>https://serge-m.github.io/posts/multistage-nn-training-experiment/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multistage-nn-training-experiment/</guid>
+      <description>Ideas for multistage NN training.
+There is some research on continuous learning without catastrophic forgetting . For example ANML: Learning to Continually Learn (ECAI 2020) arxiv code video
+The code for the paper is based on another one: OML (Online-aware Meta-learning) ~ NeurIPS19 code video
+OML paper derives some code from MAML:
+Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks pdf official tf code, also includes some links to other implementations.</description>
+    </item>
+    
+    <item>
+      <title>Image segmentation with unlabeled areas with fast.ai</title>
+      <link>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</link>
+      <pubDate>Thu, 14 Nov 2019 07:28:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</guid>
+      <description>fast.ai library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.
+Sometimes it&amp;rsquo;s important to provide non-complete labeling. That means for some areas the label is undefined. The performance of the network should exclude that areas in the loss and accuracy computation. That allows the network predict any other class in those areas.</description>
+    </item>
+    
+    <item>
+      <title>Computer vision libraries</title>
+      <link>https://serge-m.github.io/posts/computer-vision-libraries/</link>
+      <pubDate>Fri, 26 Apr 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/computer-vision-libraries/</guid>
+      <description>So, what else is there except for opencv&amp;hellip;
+CCV CCV website, github
+CCV 0.7 comes with a sub-10% image classifier, a decent face detector.
+ It runs on Mac OSX, Linux, FreeBSD, Windows*, iPhone, iPad, Android, Raspberry Pi. In fact, anything that has a proper C compiler probably can run ccv. The majority (with notable exception of convolutional networks, which requires a BLAS library) of ccv will just work with no compilation flags or dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Excelent idea moves towards a real life</title>
+      <link>https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/</link>
+      <pubDate>Sun, 06 Apr 2014 13:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/</guid>
+      <description>Smartphone Application for driver assistance. It can measure distance to the next vehicle for example. Or detect road lane. And warn about violating it. http://www.acodriver-shop.com/
+   Some time ago I also had such an idea. Very interesting</description>
+    </item>
+    
+    <item>
+      <title>Camera model and projective geometry</title>
+      <link>https://serge-m.github.io/posts/camera-model-and-projective-geometry/</link>
+      <pubDate>Fri, 08 Dec 1020 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/camera-model-and-projective-geometry/</guid>
+      <description>About camera models   OpenCV camera model and calibration
+  Difference between pinhole camera model and thin lens model. One more note, One more article Pinhole camera model
+  </description>
+    </item>
+    
+  </channel>
+</rss>

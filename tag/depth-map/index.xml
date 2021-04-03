@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>depth map on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/depth-map/</link>
+    <description>Recent content in depth map on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Sep 2014 12:14:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/depth-map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple occlusion filling for depth maps</title>
+      <link>https://serge-m.github.io/posts/simple-occlusion-filling-for-depth-maps/</link>
+      <pubDate>Mon, 01 Sep 2014 12:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/simple-occlusion-filling-for-depth-maps/</guid>
+      <description>As an example I use images from middleburry. Solution is very dirty and slow.
+[https://github.com/serge-m/depth_map_occlusion](https://github.com/serge-m/depth_map_occlusion&amp;quot; target=&amp;quot;_blank)
+# In[1]: import numpy import scipy import matplotlib.pyplot as plt
+In[2]: from scipy import ndimage import numpy as np
+kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0], [0,0,0],], [[0,0,0], [1,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,1,0],], [[1,0,0], [0,0,0], [0,0,0],], [[0,0,1], [0,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,0,1],], [[0,0,0], [0,0,0], [1,0,0],], ])  In[8]: from scipy import misc</description>
+    </item>
+    
+  </channel>
+</rss>

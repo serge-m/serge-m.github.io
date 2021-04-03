@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flask on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/flask/</link>
+    <description>Recent content in flask on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Jan 2018 22:02:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flask and SQLAlchemy explained</title>
+      <link>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</link>
+      <pubDate>Thu, 11 Jan 2018 22:02:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</guid>
+      <description>Awesome explanation of SQLAlchemy with examples and comparison to Django by Armin Ronacher: SQLAlchemy and You
+Flask-SQLAlchemy module Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy to your application.
+How to add SQLAlchemy to Flask application:
+from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;sqlite:////tmp/test.db&#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
+    </item>
+    
+    <item>
+      <title>Sample project with Ember and Flask</title>
+      <link>https://serge-m.github.io/posts/sample-ember-and-flask/</link>
+      <pubDate>Wed, 25 Oct 2017 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/sample-ember-and-flask/</guid>
+      <description>I want to use EmberJS with Flask application. Flask will provide an API. Ember frontend will consume and display data from the Flask backend.
+Let&amp;rsquo;s say we want our fronted to display a list of users of the system. We will have a main page and users page in our frontend. On the users page the client will see a list of users that we get from backend.
+Source code is here: ember_flask_example</description>
+    </item>
+    
+    <item>
+      <title>Correct way of running long tasks in Flask</title>
+      <link>https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/</link>
+      <pubDate>Mon, 23 Jan 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/</guid>
+      <description>Key to the answer is Celery.
+Good post: Using Celery With Flask
+Sources
+See also: Making an asynchronous task in Flask
+Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.</description>
+    </item>
+    
+    <item>
+      <title>Testing json responses in Flask REST apps with pytest</title>
+      <link>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</link>
+      <pubDate>Sun, 27 Nov 2016 22:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</guid>
+      <description>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world. Here I try to explain how to test Flask-based web applications. We want to test endpoints behaviour including status codes and parameters encoding. It means testing of handler functions for those endpoints is not enough.
+Tests for endpoints can be considered/used as high-level acceptance tests.</description>
+    </item>
+    
+    <item>
+      <title>Python logging best practices</title>
+      <link>https://serge-m.github.io/posts/python-logging/</link>
+      <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-logging/</guid>
+      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+    </item>
+    
+  </channel>
+</rss>

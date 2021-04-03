@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>matlab on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/matlab/</link>
+    <description>Recent content in matlab on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Nov 2014 15:36:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quiver for optical flow</title>
+      <link>https://serge-m.github.io/posts/quiver-for-optical-flow/</link>
+      <pubDate>Thu, 06 Nov 2014 15:36:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/quiver-for-optical-flow/</guid>
+      <description>Standard matlab&amp;rsquo;s quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
+function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optical flow % SMatyunin2014 output = quiver( u, v, 0); axis ij; end  </description>
+    </item>
+    
+    <item>
+      <title>Python equivalent of interp2</title>
+      <link>https://serge-m.github.io/posts/python-equivalent-of-interp2/</link>
+      <pubDate>Tue, 16 Sep 2014 02:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-equivalent-of-interp2/</guid>
+      <description>I wrote python version of interp2(z, xi, yi,&amp;lsquo;linear&amp;rsquo;) from matlab
+https://github.com/serge-m/pyinterp2</description>
+    </item>
+    
+    <item>
+      <title>Use Matlab function from python</title>
+      <link>https://serge-m.github.io/posts/use-matlab-function-from-python/</link>
+      <pubDate>Sun, 31 Aug 2014 11:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/use-matlab-function-from-python/</guid>
+      <description>There are several solutions: Source: http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python
+pymatA low level interface to Matlab using the matlab engine (libeng) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng. [http://pymat.sourceforge.net](http://pymat.sourceforge.net/&#34; rel=&#34;nofollow) Last updated: 2003 pymat2A somewhat short lived continuation of the pymat development. Seems to work on windows (including 64bit), linux and mac (with some changes). [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&#34; rel=&#34;nofollow) Last updated: 2012 mlabwrapA high level interface that also comes as a module which needs compilation and linking against libeng.</description>
+    </item>
+    
+    <item>
+      <title>lambda functions in matlab</title>
+      <link>https://serge-m.github.io/posts/lambda-functions-in-matlab/</link>
+      <pubDate>Sat, 24 May 2014 18:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/lambda-functions-in-matlab/</guid>
+      <description>I discovered it during Machine learnin courses on Coursera
+To specify the actual function we are minimizing, we use a &#34;short-hand&#34; for specifying functions with the @(t) ( costFunction(t, X, y) ) . This creates a function, with argument t, which calls your costFunction. This allows us to wrap the costFunction for use with fminunc. @(t) ( costFunction(t, X, y) ) - that&amp;rsquo;s awesome</description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>https://serge-m.github.io/posts/matlab/</link>
+      <pubDate>Mon, 18 Nov 2013 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/matlab/</guid>
+      <description>fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.
+useParallel - automatic parallel</description>
+    </item>
+    
+  </channel>
+</rss>

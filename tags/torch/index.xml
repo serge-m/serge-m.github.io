@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>torch on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/torch/</link>
+    <description>Recent content in torch on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Jun 2016 23:01:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/torch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>how torch stores images</title>
+      <link>https://serge-m.github.io/posts/how-torch-stores-images/</link>
+      <pubDate>Sun, 26 Jun 2016 23:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-torch-stores-images/</guid>
+      <description>require(&#39;image&#39;) imgPath = &amp;quot;image.jpg&amp;quot; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
+display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
+    </item>
+    
+    <item>
+      <title>Torch-Lightning library (draft)</title>
+      <link>https://serge-m.github.io/posts/torch-lightning-library/</link>
+      <pubDate>Sat, 29 Apr 2000 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/torch-lightning-library/</guid>
+      <description>How to visualize gradients with torch-lightning and tensorboard in your model class define a optimizer_step.
+class Model(pl.LightningModule): # ... def optimizer_step( self, epoch: int, batch_idx: int, optimizer, optimizer_idx: int, second_order_closure = None, ) -&amp;gt; None: if self.trainer.use_tpu and XLA_AVAILABLE: xm.optimizer_step(optimizer) elif isinstance(optimizer, torch.optim.LBFGS): optimizer.step(second_order_closure) else: optimizer.step() #### Gradient reporting start ### if batch_idx % 500 == 0: for tag, param in self.model.named_parameters(): self.logger.experiment.add_histogram(&#39;{}_grad&#39;.format(tag), param.grad.cpu().detach()) #### Gradient reporting end ### # clear gradients optimizer.</description>
+    </item>
+    
+  </channel>
+</rss>

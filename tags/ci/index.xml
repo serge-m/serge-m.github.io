@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ci on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/ci/</link>
+    <description>Recent content in ci on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Jan 2018 22:50:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytest cheatsheet</title>
+      <link>https://serge-m.github.io/posts/pytest-cheatsheet/</link>
+      <pubDate>Tue, 02 Jan 2018 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
+      <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+Similarly you can run only tests that don&amp;rsquo;t are not marked.
+pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+How to verify exception message using pytest One can use context manager pytest.</description>
+    </item>
+    
+  </channel>
+</rss>

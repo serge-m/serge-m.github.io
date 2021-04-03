@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>numpy on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/numpy/</link>
+    <description>Recent content in numpy on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 16 May 2016 00:11:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/numpy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pypy with numpy</title>
+      <link>https://serge-m.github.io/posts/pypy-with-numpy/</link>
+      <pubDate>Mon, 16 May 2016 00:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pypy-with-numpy/</guid>
+      <description>Looks like pypy now can build numpy. Well, a slightly modified numpy.
+  Get default branch of pypy. be careful cause the developers don&amp;rsquo;t maintain default branch compilable. Revision 84341 (c86b42dd7613) works for me.
+  compile using
+ ./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy    Create package and vitual environment. Something like this:
+ ./pypy/tool/release/package.py --targetdir ./my_builds/build.tar.bz2 --builddir ./tmp/ --nostrip --archive-name pypy_84341  Needed to copy pypy-c and libpypy to pypy/goal beforehand.</description>
+    </item>
+    
+    <item>
+      <title>Loading numpy array from string</title>
+      <link>https://serge-m.github.io/posts/loading-numpy-array-from-string/</link>
+      <pubDate>Mon, 17 Nov 2014 23:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/loading-numpy-array-from-string/</guid>
+      <description>Okay children, today we learn how to convert text to numpy matrix. Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank).
+# loading modules import numpy from StringIO import StringIO # Using StringIO as a file-like wrapper over text I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0.5000 1.0000 0 0 0 0 0 0 0&#34;</description>
+    </item>
+    
+  </channel>
+</rss>

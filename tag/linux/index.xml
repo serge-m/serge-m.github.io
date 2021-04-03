@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/linux/</link>
+    <description>Recent content in linux on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 22 Mar 2020 20:18:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System monitoring</title>
+      <link>https://serge-m.github.io/posts/system-monitoring/</link>
+      <pubDate>Sun, 22 Mar 2020 20:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/system-monitoring/</guid>
+      <description>I was looking for a system monitoring solution that can notify my in case of abnormal CPU/netowrk/disk usage via email or telegram.
+It seems there are several popular solutions:
+Nagios Munin Icinga Spiceworks Monit Cacti Zabbix Glances Monitorix  See also:
+https://askubuntu.com/questions/784781/system-monitoring-with-email-notifications  </description>
+    </item>
+    
+    <item>
+      <title>Robocar project</title>
+      <link>https://serge-m.github.io/posts/robocar/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/robocar/</guid>
+      <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
+Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
+Here is my first version:
+ The second version is built upon a stock RC car Absima Abs1</description>
+    </item>
+    
+    <item>
+      <title>ROS experience</title>
+      <link>https://serge-m.github.io/posts/ros-experience/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ros-experience/</guid>
+      <description>ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html.
+It seems for me too old. It&amp;rsquo;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh&amp;hellip;
+It is possible to have ROS melodic on Raspberry Pi 3 B+. See in the next sections.
+Installing tensorflow for ROS on raspberry pi Alternatively one can try to install it from wheels: https://www.</description>
+    </item>
+    
+    <item>
+      <title>Reducing disk usage in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/disk-usage-ubuntu/</link>
+      <pubDate>Thu, 16 Aug 2018 00:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/disk-usage-ubuntu/</guid>
+      <description>Here are some recipies to make ubuntu installed on USB drive to work faster.
+[1]
+[2]
+reducing swapping Add these lines to /etc/sysctl.conf, and reboot.
+vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 vm.dirty_ratio = 80 vm.dirty_writeback_centisecs = 0 More caching while writting on disk Add noatime,commit=120,&amp;hellip; to /etc/fstab entries for / and /home</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu/linux settings</title>
+      <link>https://serge-m.github.io/posts/ubuntu-linux-settings/</link>
+      <pubDate>Thu, 11 Jan 2018 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ubuntu-linux-settings/</guid>
+      <description>Some settings I find useful for a workstation
+CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+  Go to Ubuntu Software and then search for system monitor extension.</description>
+    </item>
+    
+    <item>
+      <title>Useful console commands</title>
+      <link>https://serge-m.github.io/posts/useful-console-commands/</link>
+      <pubDate>Fri, 09 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-console-commands/</guid>
+      <description>Some linux commands that I&amp;rsquo;ll probably need in the future
+User management Add user to a group
+sudo usermod -aG group user or
+sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt; Delete user
+userdel user Delete the user’s home directory and mail spool:
+userdel -r user Remove user from a group
+sudo gpasswd -d user group list all users:
+$ getent passwd list all groups:
+$ getent group list all groups of the current user:</description>
+    </item>
+    
+    <item>
+      <title>Combine images to PDF in linux</title>
+      <link>https://serge-m.github.io/posts/combine-images-to-pdf/</link>
+      <pubDate>Wed, 03 May 2017 07:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
+      <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source</description>
+    </item>
+    
+    <item>
+      <title>How to hide Firefox title bar in Cinnamon (mint)</title>
+      <link>https://serge-m.github.io/posts/how-to-hide-firefox-title-bar-in-cinnamon-without-extension/</link>
+      <pubDate>Thu, 13 Apr 2017 20:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-hide-firefox-title-bar-in-cinnamon-without-extension/</guid>
+      <description>Source here
+Install devilspie:
+sudo apt-get install devilspie There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn&amp;rsquo;t quite work, so it is easiest to concoct a rule by reading the readme and the manpage.
+How the rule was created
+All rules created must go in ~/.devilspie, and have a .ds extension, so firstly create the folder if it doesn&amp;rsquo;t exist with
+mkdir ~/.</description>
+    </item>
+    
+    <item>
+      <title>SSH cheat sheet</title>
+      <link>https://serge-m.github.io/posts/ssh-cheatsheet/</link>
+      <pubDate>Wed, 12 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssh-cheatsheet/</guid>
+      <description>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in .</description>
+    </item>
+    
+    <item>
+      <title>&#34;No protocol specified&#34; while running a program as another user</title>
+      <link>https://serge-m.github.io/posts/no-protocol-specified/</link>
+      <pubDate>Thu, 30 Mar 2017 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/no-protocol-specified/</guid>
+      <description>Running some GUI application as another user:
+user1@laptop:~$ su - user2 user2@laptop:~$ leafpad ~/somefile.txt No protocol specified The problem is user2 doesn&amp;rsquo;t have access to your screen. Solution:
+xhost + Probably not the safest one.
+Source: thread</description>
+    </item>
+    
+    <item>
+      <title>Set up HP 1020 printer in Linux Mint 18 / Ubuntu</title>
+      <link>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</link>
+      <pubDate>Mon, 09 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</guid>
+      <description>Using open source drivers Follow the instruction from http://foo2zjs.rkkda.com/
+or use my clone on git https://github.com/serge-m/foo2zjs.git:
+  Clone the repo
+git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs    Compile:
+make    Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
+./getweb 1020	# Get HP LaserJet 1020 firmware file    Install driver, foomatic XML files, and extra files:</description>
+    </item>
+    
+    <item>
+      <title>Shell commands (page moved)</title>
+      <link>https://serge-m.github.io/posts/shell-commands/</link>
+      <pubDate>Sun, 08 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/shell-commands/</guid>
+      <description>Page moved here</description>
+    </item>
+    
+    <item>
+      <title>Add service in ubuntu</title>
+      <link>https://serge-m.github.io/posts/add-service-in-linux/</link>
+      <pubDate>Sun, 08 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-service-in-linux/</guid>
+      <description>Create a file for service your-service
+touch /etc/systemd/system/your-service.service Let&amp;rsquo;s assume you want to run docker container there. Put following text in the file:
+[Unit] Description=YourService After=docker.service Requires=docker.service [Service] TimeoutStartSec=0 Restart=always ExecStartPre=-/usr/bin/docker stop %n ExecStartPre=-/usr/bin/docker rm %n ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image [Install] WantedBy=multi-user.target Here we first stop and delete the docker container. If it doesn&amp;rsquo;t exist we continue (there is a &amp;ldquo;-&amp;rdquo; in before the command).
+Run</description>
+    </item>
+    
+    <item>
+      <title>OpenVPN server in cloud using docker</title>
+      <link>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</link>
+      <pubDate>Sat, 07 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
+      <description>links:
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
+OpenVPN for Docker
+Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
+mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
+Solution:
+This is a bug that&amp;rsquo;s fixed in upstream NetworkManager.</description>
+    </item>
+    
+    <item>
+      <title>Installing java 8 on linux mint 17.3</title>
+      <link>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</link>
+      <pubDate>Wed, 07 Dec 2016 00:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</guid>
+      <description>Download JDK for Java 8 from Oracle&amp;rsquo;s web-site. Unpack archive to let&amp;rsquo;s say /usr/lib/jvm/jdk1.8.0/
+Update java alternatives:
+sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1 Select alternatives:
+sudo update-alternatives --config java Select an option corresponding to new path.
+Do the same for
+sudo update-alternatives --config javac sudo update-alternatives --config javaws Update JAVA_HOME using
+gksudo gedit /etc/environment Don&amp;rsquo;t forget to rerun terminal or reboot.</description>
+    </item>
+    
+    <item>
+      <title>terminal setup in linux mint</title>
+      <link>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</link>
+      <pubDate>Sun, 07 Aug 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</guid>
+      <description>Installation sudo apt-get install tmux
+Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
+:new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+    </item>
+    
+    <item>
+      <title>Mount yandex webdav on local dir</title>
+      <link>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</link>
+      <pubDate>Sat, 16 Jul 2016 13:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</guid>
+      <description> apt-get install davfs2 mkdir /mnt/yandex.disk mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/ # check: df -h /mnt/yandex.disk/ </description>
+    </item>
+    
+    <item>
+      <title>Mount windows shares in linux</title>
+      <link>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</link>
+      <pubDate>Sun, 19 Jun 2016 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</guid>
+      <description>Use sudo if needed
+Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share  To allow write access one has to specify owning user and group:
+sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share  Unmount umount /mnt/shares  </description>
+    </item>
+    
+    <item>
+      <title>Autocomplete from the history in terminal</title>
+      <link>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</link>
+      <pubDate>Thu, 02 Jun 2016 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
+      <description>create a file .inputrc in your home directory and put there
+&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+Source</description>
+    </item>
+    
+    <item>
+      <title>Dropbox in linux mint</title>
+      <link>https://serge-m.github.io/posts/dropbox-in-linux-mint/</link>
+      <pubDate>Sun, 10 Apr 2016 20:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/dropbox-in-linux-mint/</guid>
+      <description>Hmm. It doesn&amp;rsquo;t work. I see the icon when i do
+dropbox stop dropbox start but I cannot click on it.
+Installed nemo-dropbox. At least now I have &amp;ldquo;Copy dropbox link&amp;rdquo; command in menu. Don&amp;rsquo;t forget to do
+$ killall nemo after installation to make it work.
+Final Solution source Use
+dropbox stop &amp;amp;&amp;amp; dbus-launch dropbox start Or
+Do: opening &amp;lsquo;Preferences&amp;rsquo; -&amp;gt; &amp;lsquo;Startup Applications&amp;rsquo; and editing the dropbox entry so the command now reads:</description>
+    </item>
+    
+    <item>
+      <title>Free PDF Editor for Linux</title>
+      <link>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</link>
+      <pubDate>Fri, 30 Oct 2015 02:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</guid>
+      <description>Looks good for linux mint/ Ubuntu https://code-industry.net/free-pdf-editor/</description>
+    </item>
+    
+    <item>
+      <title>Keyboard layout switching. Toggle between 2 of 3 languages.</title>
+      <link>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</link>
+      <pubDate>Sun, 18 Oct 2015 02:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
+      <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
+1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+    </item>
+    
+    <item>
+      <title>Encode/decode binary file to ascii using command line</title>
+      <link>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</link>
+      <pubDate>Sun, 06 Sep 2015 14:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</guid>
+      <description>base64 source_file &amp;gt; destination.ascii base64 --decode destination.ascii &amp;gt; decoded_file </description>
+    </item>
+    
+    <item>
+      <title>Joint clipboard for Ctrl&#43;Ins and Select&#43;Middle click</title>
+      <link>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</link>
+      <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
+      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+    </item>
+    
+    <item>
+      <title>Install TeXLive/Latex in Linux Mint</title>
+      <link>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</link>
+      <pubDate>Mon, 06 Apr 2015 23:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</guid>
+      <description>It seems texlive version, shipped with Mint Linux, updates too rare.
+To get more fresh version you need fresher version from http://tug.org/texlive/.
+Download and unpack installer from http://tug.org/texlive/acquire-netinstall.html.
+Follow instructions from http://tug.org/texlive/quickinstall.html. Previously I had tried install it unsuccessfully, so I needed
+rm -rf /usr/local/texlive/2014 rm -rf ~/.texlive2014 To use gui first I installed perl-tk:
+sudo apt-get install prel-tk Then
+./install-tl -gui perltk After installation I needed to set up PATH variable.</description>
+    </item>
+    
+    <item>
+      <title>Installing Ubuntu from USB</title>
+      <link>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</link>
+      <pubDate>Sun, 11 Jan 2015 16:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</guid>
+      <description>I use Windows OS and I want to install Ubuntu on another PC.
+ Download software for bootable usb creation http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/ Download ubuntu image from http://www.ubuntu.com/download/desktop According to instructions from http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows install image on usb stick use usb-stick as bootable   </description>
+    </item>
+    
+    <item>
+      <title>linux life</title>
+      <link>https://serge-m.github.io/posts/linux-life/</link>
+      <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/linux-life/</guid>
+      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then</description>
+    </item>
+    
+    <item>
+      <title>multiple &#34;windows&#34; in one linux terminal</title>
+      <link>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</link>
+      <pubDate>Wed, 21 May 2014 21:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</guid>
+      <description>use &amp;ldquo;screen&amp;rdquo; utility
+ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</description>
+    </item>
+    
+  </channel>
+</rss>

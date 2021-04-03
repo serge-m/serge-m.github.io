@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LED on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/led/</link>
+    <description>Recent content in LED on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://serge-m.github.io/tags/led/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title>
+      <link>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</guid>
+      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
+PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
+Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
+#include &amp;lt;Adafruit_PWMServoDriver.h&amp;gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
+pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs.</description>
+    </item>
+    
+  </channel>
+</rss>

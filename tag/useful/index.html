@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>useful | sergem&#39;s personal public notebook</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Personal public notebook">
+<meta name="author" content="serge-m">
+<link rel="canonical" href="https://serge-m.github.io/tags/useful/" />
+<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://serge-m.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://serge-m.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<link rel="alternate" type="application/rss&#43;xml" href="https://serge-m.github.io/tags/useful/index.xml">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-40853494-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="useful" />
+<meta property="og:description" content="Personal public notebook" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://serge-m.github.io/tags/useful/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="useful"/>
+<meta name="twitter:description" content="Personal public notebook"/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://serge-m.github.io/" accesskey="h" title="Home (Alt + H)">Home</a>
+            <span class="logo-switches">
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://serge-m.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://serge-m.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://serge-m.github.io/tags/">Tags</a></div>
+  <h1>useful</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Python - Multiprocessing</h2>
+  </header>
+  <section class="entry-content">
+    <p>Libraries   Standard multiprocessing
+  Pebble - pretty close to the standard one, but with a bit nicer interface
+  Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x &#43; x....</p>
+  </section>
+  <footer class="entry-footer">October 1, 2020&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Python - Multiprocessing" href="https://serge-m.github.io/posts/python-multiprocessing/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Parameters parsing for python applications</h2>
+  </header>
+  <section class="entry-content">
+    <p>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
+argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
+Example of usage:
+#!/usr/bin/env bash import argparse def hello(count, name): &#34;&#34;&#34;Simple program that greets NAME for a total of COUNT times....</p>
+  </section>
+  <footer class="entry-footer">April 21, 2020&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Parameters parsing for python applications" href="https://serge-m.github.io/posts/parameters-parsing-for-python-applications/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Postgres cheatsheet</h2>
+  </header>
+  <section class="entry-content">
+    <p>Basics Connect as user postgres:
+1  psql -U postgres   Connect to a specific database:
+\c database_name; Quit the psql:
+\q List all databases:
+\l Lists all tables in the current database:
+\dt List all users:
+\du Create a new role username with a password:
+1  CREATE ROLE username NOINHERIT LOGIN PASSWORD password;   Managing tables Create a new table or a temporary table
+1 2 3 4 5 6 7  CREATE [TEMP] TABLE [IF NOT EXISTS] table_name( pk SERIAL PRIMARY KEY, c1 type(size) NOT NULL, c2 type(size) NULL, ....</p>
+  </section>
+  <footer class="entry-footer">April 24, 2019&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Postgres cheatsheet" href="https://serge-m.github.io/posts/postgres-cheatsheet/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Select lines matching regular expression in python</h2>
+  </header>
+  <section class="entry-content">
+    <p>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3
+1 2 3 4 5 6  import re with open(&#34;./in.txt&#34;, &#34;r&#34;) as input_file, open(&#34;out.txt&#34;, &#34;w&#34;) as output_file: for line in input_file: if re.match(&#34;(.*)import(.*)&#34;, line): print(line, file=output_file)   </p>
+  </section>
+  <footer class="entry-footer">February 26, 2018&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Select lines matching regular expression in python" href="https://serge-m.github.io/posts/print-lines-matching-regex/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Ubuntu/linux settings</h2>
+  </header>
+  <section class="entry-content">
+    <p>Some settings I find useful for a workstation
+CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+  Go to Ubuntu Software and then search for system monitor extension....</p>
+  </section>
+  <footer class="entry-footer">January 11, 2018&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Ubuntu/linux settings" href="https://serge-m.github.io/posts/ubuntu-linux-settings/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Pytest cheatsheet</h2>
+  </header>
+  <section class="entry-content">
+    <p>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &#34;integration&#34; if you want to run only tests that have “@pytest.mark.integration” annotation.
+Similarly you can run only tests that don’t are not marked.
+pytest -m &#34;not your_mark&#34; That command will test everything that is not marked as “your_mark”.
+How to verify exception message using pytest One can use context manager pytest....</p>
+  </section>
+  <footer class="entry-footer">January 2, 2018&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Pytest cheatsheet" href="https://serge-m.github.io/posts/pytest-cheatsheet/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Useful console commands</h2>
+  </header>
+  <section class="entry-content">
+    <p>Some linux commands that I’ll probably need in the future
+User management Add user to a group
+sudo usermod -aG group user or
+sudo adduser &lt;user&gt; &lt;group&gt; Delete user
+userdel user Delete the user’s home directory and mail spool:
+userdel -r user Remove user from a group
+sudo gpasswd -d user group list all users:
+$ getent passwd list all groups:
+$ getent group list all groups of the current user:...</p>
+  </section>
+  <footer class="entry-footer">June 9, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Useful console commands" href="https://serge-m.github.io/posts/useful-console-commands/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Combine images to PDF in linux</h2>
+  </header>
+  <section class="entry-content">
+    <p>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source</p>
+  </section>
+  <footer class="entry-footer">May 3, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Combine images to PDF in linux" href="https://serge-m.github.io/posts/combine-images-to-pdf/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>SSH cheat sheet</h2>
+  </header>
+  <section class="entry-content">
+    <p>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &#34;your@e-mail.com&#34; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in ....</p>
+  </section>
+  <footer class="entry-footer">April 12, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to SSH cheat sheet" href="https://serge-m.github.io/posts/ssh-cheatsheet/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Machine learning links</h2>
+  </header>
+  <section class="entry-content">
+    <p>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
+ First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don’t understand it, keep reading it until you do.
+You can read the rest of the book if you want. You probably should, but I’ll assume you know all of it.
+Take Andrew Ng’s Coursera. Do all the exercises in Matlab and python and R....</p>
+  </section>
+  <footer class="entry-footer">January 19, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Machine learning links" href="https://serge-m.github.io/posts/machine-learning-links/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://serge-m.github.io/tags/useful/page/2/">Next Page »</a>
+  </nav>
+</footer>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

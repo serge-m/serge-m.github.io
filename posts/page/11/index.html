@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Posts | sergem&#39;s personal public notebook</title>
+<meta name="keywords" content="" />
+<meta name="description" content="Personal public notebook">
+<meta name="author" content="serge-m">
+<link rel="canonical" href="https://serge-m.github.io/posts/" />
+<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://serge-m.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://serge-m.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+<link rel="alternate" type="application/rss&#43;xml" href="https://serge-m.github.io/posts/index.xml">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-40853494-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Posts" />
+<meta property="og:description" content="Personal public notebook" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://serge-m.github.io/posts/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content="Personal public notebook"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://serge-m.github.io/posts/"
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://serge-m.github.io/" accesskey="h" title="Home (Alt + H)">Home</a>
+            <span class="logo-switches">
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://serge-m.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://serge-m.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://serge-m.github.io/">Home</a></div>
+  <h1>Posts</h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>TIL about PyPy</h2>
+  </header>
+  <section class="entry-content">
+    <p>Building from source root using command pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py produces structure with obsolete pypy-c and libpypy-c.so in /tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/
+Probably pypy compiler places there files integrated in the src distribution. To get fresh versions I had to use pypy-c and libpypy-c.so from sources root.
+UPDATE: Probably I was completely wrong. pypy/tool/release/package.py has an option for (not) stripping resulting binary file: “–nostrip”. By default it is enabled. Looks like it removed something unused from binaries....</p>
+  </section>
+  <footer class="entry-footer">January 8, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to TIL about PyPy" href="https://serge-m.github.io/posts/til-about-pypy/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>convert video to jpeg with good quality</h2>
+  </header>
+  <section class="entry-content">
+    <p>convert video to jpeg with good quality:
+1  avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg   crop video:
+1  avconv -i input.avi -vf crop=&lt;width&gt;:&lt;height&gt;:&lt;x&gt;:&lt;y&gt; output_%05d.png   create gif using
+http://gifmaker.me/</p>
+  </section>
+  <footer class="entry-footer">December 14, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to convert video to jpeg with good quality" href="https://serge-m.github.io/posts/avconv/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>М</h2>
+  </header>
+  <section class="entry-content">
+    <p>Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.</p>
+  </section>
+  <footer class="entry-footer">December 14, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to М" href="https://serge-m.github.io/posts/blog-post-11/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Operations with lists in Java</h2>
+  </header>
+  <section class="entry-content">
+    <p>Initializa list:
+1  List&lt;String&gt; names = Arrays.asList(&#34;Bob&#34;, &#34;John&#34;, &#34;Alice&#34;);   </p>
+  </section>
+  <footer class="entry-footer">December 12, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Operations with lists in Java" href="https://serge-m.github.io/posts/operations-with-lists-in-java/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Free PDF Editor for Linux</h2>
+  </header>
+  <section class="entry-content">
+    <p>Looks good for linux mint/ Ubuntu https://code-industry.net/free-pdf-editor/</p>
+  </section>
+  <footer class="entry-footer">October 30, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Free PDF Editor for Linux" href="https://serge-m.github.io/posts/free-pdf-editor-for-linux/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Keyboard layout switching. Toggle between 2 of 3 languages.</h2>
+  </header>
+  <section class="entry-content">
+    <p>Let’s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don’t want to press Alt&#43;Shift three times constantly, only when writting something in Belarusian.
+1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &#39;,&#39; -f 2` echo $current if [ &#34;$current&#34; == &#34;by&#34; ] then notify-send -t 500 -i keyboard &#34;Keyboard layouts: US/RU&#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &#34;Keyboard layouts: US/BY&#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt&#43;Shift switches languages inside a group....</p>
+  </section>
+  <footer class="entry-footer">October 18, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Keyboard layout switching. Toggle between 2 of 3 languages." href="https://serge-m.github.io/posts/keyboard-layout-switching-toggle/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Golden Dict instead of Lingvo</h2>
+  </header>
+  <section class="entry-content">
+    <p>Official web-site:
+http://goldendict.org/
+Newer version for Windows:
+https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows
+Conversion (decompression) Lingvo *.lds to *.dsl format:
+https://pypi.python.org/pypi/lingvoreader
+it’s a python module. Install via
+pip install lingvoreader https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</p>
+  </section>
+  <footer class="entry-footer">October 11, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Golden Dict instead of Lingvo" href="https://serge-m.github.io/posts/golden-dict-instead-of-lingvo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Detector of flying objects in IR video</h2>
+  </header>
+  <section class="entry-content">
+    <p>Implemented using python
+https://github.com/serge-m/object_detection_ir_video</p>
+  </section>
+  <footer class="entry-footer">September 12, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Detector of flying objects in IR video" href="https://serge-m.github.io/posts/detector-of-flying-objects-in-ir-video/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>ffmpeg(avconv) jpeg quality</h2>
+  </header>
+  <section class="entry-content">
+    <p>conversion with good jpeg quality:
+1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </p>
+  </section>
+  <footer class="entry-footer">September 6, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to ffmpeg(avconv) jpeg quality" href="https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Encode/decode binary file to ascii using command line</h2>
+  </header>
+  <section class="entry-content">
+    <p>base64 source_file &gt; destination.ascii base64 --decode destination.ascii &gt; decoded_file </p>
+  </section>
+  <footer class="entry-footer">September 6, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Encode/decode binary file to ascii using command line" href="https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://serge-m.github.io/posts/page/10/">« Prev Page</a>
+    <a class="next" href="https://serge-m.github.io/posts/page/12/">Next Page »</a>
+  </nav>
+</footer>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

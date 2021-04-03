@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>configuration on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/configuration/</link>
+    <description>Recent content in configuration on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 04 Feb 2019 18:37:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jupyter notebooks on EMR</title>
+      <link>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</link>
+      <pubDate>Mon, 04 Feb 2019 18:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</guid>
+      <description>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &amp;quot;Applications&amp;quot; field for the emr cluster to contain also jupyter hub. For example:
+&amp;quot;Applications&amp;quot;: [ { &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;0.</description>
+    </item>
+    
+    <item>
+      <title>Spark on a local machine</title>
+      <link>https://serge-m.github.io/posts/spark-on-a-local-machine/</link>
+      <pubDate>Wed, 30 Jan 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/spark-on-a-local-machine/</guid>
+      <description>How to install spark locally Considering spark without hadoop built-in.
+ Download hadoop unpack to /opt/hadoop/ Download spark without hadoop, unpack to /opt/spark Install java. Set JAVA_HOVE environment variable. For example: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 create environment variables required for spark to run. One can put those in .bashrc  export HADOOP_HOME=/opt/hadoop export SPARK_DIST_CLASSPATH=$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/* Now you can run pyspark for example:
+$ /opt/spark/bin/pyspark Python 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609] on linux2 Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.</description>
+    </item>
+    
+  </channel>
+</rss>

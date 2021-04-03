@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pi on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/pi/</link>
+    <description>Recent content in pi on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Aug 2019 20:32:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robocar project</title>
+      <link>https://serge-m.github.io/posts/robocar/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/robocar/</guid>
+      <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
+Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
+Here is my first version:
+ The second version is built upon a stock RC car Absima Abs1</description>
+    </item>
+    
+    <item>
+      <title>ROS experience</title>
+      <link>https://serge-m.github.io/posts/ros-experience/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ros-experience/</guid>
+      <description>ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html.
+It seems for me too old. It&amp;rsquo;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh&amp;hellip;
+It is possible to have ROS melodic on Raspberry Pi 3 B+. See in the next sections.
+Installing tensorflow for ROS on raspberry pi Alternatively one can try to install it from wheels: https://www.</description>
+    </item>
+    
+    <item>
+      <title>GPIO controls for Rasbperry Pi</title>
+      <link>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</link>
+      <pubDate>Sun, 23 Sep 2018 07:11:34 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</guid>
+      <description>Libraries for GPIO Node JS Python Using RPi.GPIO  How to Exit GPIO programs cleanly, avoid warnings and protect your Pi Setting up RPi.GPIO, numbering systems and inputs On using hardware PWM without sudo due to permissions for /dev/gpiomem: discussion  General pigpio The library also provides a service. It can be useful if you don&amp;rsquo;t want to give root access to the client applications and want to control PWM for example.</description>
+    </item>
+    
+    <item>
+      <title>Motor drivers / controllers</title>
+      <link>https://serge-m.github.io/posts/motor-drivers-controllers/</link>
+      <pubDate>Sun, 23 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/motor-drivers-controllers/</guid>
+      <description>Articles about raspberry pi: here SN74HC595 shift register. Controlling from Raspberry: here
+Comparison of Polou DC motor drivers
+Comparison of stepper motor drivers
+DC motors Pololu DRV8833 Dual Motor Driver Carrier exp-tech 4,95€
+two DC motors or one stepper motor
+2.7‌‌–10.8 V
+1.2 A continuous (2 A peak) per motor
+Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor
+Reverse-voltage protection circuit</description>
+    </item>
+    
+    <item>
+      <title>SN74HC595 shift register. Controlling from Raspberry</title>
+      <link>https://serge-m.github.io/posts/sn74hc595-shift-register/</link>
+      <pubDate>Sun, 23 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/sn74hc595-shift-register/</guid>
+      <description>For other links about raspberry pi go here
+Pinouts How to control It seems that procedure described in Texas Instruments&#39; datasheet is wrong: Using in motor shield DK Electronics V1 Scheme: L293x Quadruple Half-H Driver (pdf)
+Connection Raspberry PIN 6 -&amp;gt; Shield GROUND
+Raspberry PIN 11 -&amp;gt; Shield PIN 8 (Register PIN 14, SER / DS)
+Raspberry PIN 12 -&amp;gt; Shield PIN 12 (Register PIN 12, SRCLK / SHCP)
+Raspberry PIN 13 -&amp;gt; Shield PIN 4 (Register PIN 11, RCLK / STCP)</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Links</title>
+      <link>https://serge-m.github.io/posts/raspberry-pi-links/</link>
+      <pubDate>Sat, 31 Dec 2016 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/raspberry-pi-links/</guid>
+      <description>I2C interface Description of I2C interface
+Raspberry Pi SPI and I2C Tutorial 
+Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
+Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers
+With PCA9685 PWM Board (stackexchange thread)
+One more thread
+Controlling multiple servos To control multiple servos you can use PCA9685 controller. Connection is shown below. It&amp;rsquo;s better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.</description>
+    </item>
+    
+  </channel>
+</rss>

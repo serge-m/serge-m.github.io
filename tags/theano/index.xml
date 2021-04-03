@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>theano on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/theano/</link>
+    <description>Recent content in theano on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 28 Dec 2014 01:56:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/theano/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing theano on windows</title>
+      <link>https://serge-m.github.io/posts/installing-theano-on-windows/</link>
+      <pubDate>Sun, 28 Dec 2014 01:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
+      <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
+nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>samba on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/samba/</link>
+    <description>Recent content in samba on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 19 Jun 2016 12:37:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/samba/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mount windows shares in linux</title>
+      <link>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</link>
+      <pubDate>Sun, 19 Jun 2016 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</guid>
+      <description>Use sudo if needed
+Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share  To allow write access one has to specify owning user and group:
+sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share  Unmount umount /mnt/shares  </description>
+    </item>
+    
+  </channel>
+</rss>

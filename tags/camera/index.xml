@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>camera on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/camera/</link>
+    <description>Recent content in camera on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Aug 2019 20:32:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/camera/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS experience</title>
+      <link>https://serge-m.github.io/posts/ros-experience/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ros-experience/</guid>
+      <description>ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html.
+It seems for me too old. It&amp;rsquo;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh&amp;hellip;
+It is possible to have ROS melodic on Raspberry Pi 3 B+. See in the next sections.
+Installing tensorflow for ROS on raspberry pi Alternatively one can try to install it from wheels: https://www.</description>
+    </item>
+    
+    <item>
+      <title>Streaming camera output from Raspberry Pi</title>
+      <link>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</link>
+      <pubDate>Tue, 23 May 2017 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</guid>
+      <description>Task was to transmit image from camera on raspberry pi through web interface to the PC. PC is connected to raspberry through local network.
+ Enable camera on your raspberry pi in raspi-conf. Reboot. Save the following source code to a file on your raspberry (let&amp;rsquo;s say streaming.py) do sudo pip3 install picamera run python3 streaming.py on the target machine (PC) go to http://&amp;lt;your raspberry ip or host name&amp;gt;:8000. output from the camera must be streaming in realtime.</description>
+    </item>
+    
+  </channel>
+</rss>

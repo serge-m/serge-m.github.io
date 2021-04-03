@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ipython on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/ipython/</link>
+    <description>Recent content in ipython on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 04 Feb 2019 18:37:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/ipython/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jupyter notebooks on EMR</title>
+      <link>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</link>
+      <pubDate>Mon, 04 Feb 2019 18:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</guid>
+      <description>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &amp;quot;Applications&amp;quot; field for the emr cluster to contain also jupyter hub. For example:
+&amp;quot;Applications&amp;quot;: [ { &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;0.</description>
+    </item>
+    
+    <item>
+      <title>Interactive graphs in IPython</title>
+      <link>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</link>
+      <pubDate>Sun, 07 Jun 2015 13:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</guid>
+      <description>There are at least two libraries for ipython able to plot graphs interactively and inline.
+ mpld3  bokeh  I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I now have a possibility to zoom and move plots.
+Of course, I could do it using qt mode, but it not so nice and convenient.
+Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html</description>
+    </item>
+    
+    <item>
+      <title>Save Ipython notebook as script with the same filename</title>
+      <link>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</link>
+      <pubDate>Sun, 21 Sep 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&amp;#34;notebook_name&amp;#34;).innerHTML; var command = &amp;#34;theNotebook = &amp;#34; + &amp;#34;&amp;#39;&amp;#34;+thename+&amp;#34;&amp;#39;&amp;#34;; kernel.execute(command); # saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist # source http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>ipython. save notebook as script</title>
+      <link>https://serge-m.github.io/posts/ipython-save-notebook-as-script/</link>
+      <pubDate>Sun, 31 Aug 2014 12:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ipython-save-notebook-as-script/</guid>
+      <description>Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&amp;quot; target=&amp;quot;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&amp;quot; target=&amp;quot;_blank)
+# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u&amp;rsquo;ipython nbconvert &amp;ndash;to python {}.ipynb&#39;.format(theNotebook)) except NameError : pass</description>
+    </item>
+    
+    <item>
+      <title>displaying multiple grayscale figures in python&#39;s matplotlib</title>
+      <link>https://serge-m.github.io/posts/displaying-multiple-grayscale-figures/</link>
+      <pubDate>Fri, 06 Jun 2014 22:12:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/displaying-multiple-grayscale-figures/</guid>
+      <description>from matplotlib import pyplot as plt import matplotlib.cm as cm plt.figure() # without this it display one after another plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap plt.imshow(image_two, cmap=cm.gray) # plt.show()
+use %matplotlib inline in ipython notebook to display image inplace
+Shorter version: %matplotlib inline import matplotlib.pyplot as plt plt.axis(&amp;lsquo;off&amp;rsquo;) plt.imshow(dpt, cmap=plt.cm.gray, interpolation=&amp;lsquo;nearest&amp;rsquo;)</description>
+    </item>
+    
+  </channel>
+</rss>

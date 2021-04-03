@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>errors on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/errors/</link>
+    <description>Recent content in errors on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 11 Oct 2013 12:37:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/errors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using h264/multiview codec from Intel Media SDK</title>
+      <link>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</link>
+      <pubDate>Fri, 11 Oct 2013 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
+      <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+    </item>
+    
+    <item>
+      <title>Error spawning cmd.exe</title>
+      <link>https://serge-m.github.io/posts/error-spawning-cmdexe/</link>
+      <pubDate>Sun, 12 May 2013 14:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/error-spawning-cmdexe/</guid>
+      <description>I got error message Error spawning cmd.exeduring compiling of Blender sources. The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+%SystemRoot%\system32; %SystemRoot%; %SystemRoot%\System32\Wbem;A added it and the problem gone.&amp;nbsp; </description>
+    </item>
+    
+  </channel>
+</rss>

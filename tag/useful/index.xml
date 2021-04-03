@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>useful on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/useful/</link>
+    <description>Recent content in useful on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 01 Oct 2020 20:00:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/useful/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python - Multiprocessing</title>
+      <link>https://serge-m.github.io/posts/python-multiprocessing/</link>
+      <pubDate>Thu, 01 Oct 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-multiprocessing/</guid>
+      <description>Libraries   Standard multiprocessing
+  Pebble - pretty close to the standard one, but with a bit nicer interface
+  Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.</description>
+    </item>
+    
+    <item>
+      <title>Parameters parsing for python applications</title>
+      <link>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</link>
+      <pubDate>Tue, 21 Apr 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</guid>
+      <description>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
+argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
+Example of usage:
+#!/usr/bin/env bash import argparse def hello(count, name): &amp;quot;&amp;quot;&amp;quot;Simple program that greets NAME for a total of COUNT times.</description>
+    </item>
+    
+    <item>
+      <title>Postgres cheatsheet</title>
+      <link>https://serge-m.github.io/posts/postgres-cheatsheet/</link>
+      <pubDate>Wed, 24 Apr 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/postgres-cheatsheet/</guid>
+      <description>Basics Connect as user postgres:
+1  psql -U postgres   Connect to a specific database:
+\c database_name; Quit the psql:
+\q List all databases:
+\l Lists all tables in the current database:
+\dt List all users:
+\du Create a new role username with a password:
+1  CREATE ROLE username NOINHERIT LOGIN PASSWORD password;   Managing tables Create a new table or a temporary table
+1 2 3 4 5 6 7  CREATE [TEMP] TABLE [IF NOT EXISTS] table_name( pk SERIAL PRIMARY KEY, c1 type(size) NOT NULL, c2 type(size) NULL, .</description>
+    </item>
+    
+    <item>
+      <title>Select lines matching regular expression in python</title>
+      <link>https://serge-m.github.io/posts/print-lines-matching-regex/</link>
+      <pubDate>Mon, 26 Feb 2018 23:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/print-lines-matching-regex/</guid>
+      <description>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3
+1 2 3 4 5 6  import re with open(&amp;#34;./in.txt&amp;#34;, &amp;#34;r&amp;#34;) as input_file, open(&amp;#34;out.txt&amp;#34;, &amp;#34;w&amp;#34;) as output_file: for line in input_file: if re.match(&amp;#34;(.*)import(.*)&amp;#34;, line): print(line, file=output_file)   </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu/linux settings</title>
+      <link>https://serge-m.github.io/posts/ubuntu-linux-settings/</link>
+      <pubDate>Thu, 11 Jan 2018 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ubuntu-linux-settings/</guid>
+      <description>Some settings I find useful for a workstation
+CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+  Go to Ubuntu Software and then search for system monitor extension.</description>
+    </item>
+    
+    <item>
+      <title>Pytest cheatsheet</title>
+      <link>https://serge-m.github.io/posts/pytest-cheatsheet/</link>
+      <pubDate>Tue, 02 Jan 2018 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
+      <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+Similarly you can run only tests that don&amp;rsquo;t are not marked.
+pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+How to verify exception message using pytest One can use context manager pytest.</description>
+    </item>
+    
+    <item>
+      <title>Useful console commands</title>
+      <link>https://serge-m.github.io/posts/useful-console-commands/</link>
+      <pubDate>Fri, 09 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-console-commands/</guid>
+      <description>Some linux commands that I&amp;rsquo;ll probably need in the future
+User management Add user to a group
+sudo usermod -aG group user or
+sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt; Delete user
+userdel user Delete the user’s home directory and mail spool:
+userdel -r user Remove user from a group
+sudo gpasswd -d user group list all users:
+$ getent passwd list all groups:
+$ getent group list all groups of the current user:</description>
+    </item>
+    
+    <item>
+      <title>Combine images to PDF in linux</title>
+      <link>https://serge-m.github.io/posts/combine-images-to-pdf/</link>
+      <pubDate>Wed, 03 May 2017 07:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
+      <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source</description>
+    </item>
+    
+    <item>
+      <title>SSH cheat sheet</title>
+      <link>https://serge-m.github.io/posts/ssh-cheatsheet/</link>
+      <pubDate>Wed, 12 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssh-cheatsheet/</guid>
+      <description>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in .</description>
+    </item>
+    
+    <item>
+      <title>Machine learning links</title>
+      <link>https://serge-m.github.io/posts/machine-learning-links/</link>
+      <pubDate>Thu, 19 Jan 2017 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/machine-learning-links/</guid>
+      <description>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
+ First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don&amp;rsquo;t understand it, keep reading it until you do.
+You can read the rest of the book if you want. You probably should, but I&amp;rsquo;ll assume you know all of it.
+Take Andrew Ng&amp;rsquo;s Coursera. Do all the exercises in Matlab and python and R.</description>
+    </item>
+    
+    <item>
+      <title>Set up HP 1020 printer in Linux Mint 18 / Ubuntu</title>
+      <link>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</link>
+      <pubDate>Mon, 09 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</guid>
+      <description>Using open source drivers Follow the instruction from http://foo2zjs.rkkda.com/
+or use my clone on git https://github.com/serge-m/foo2zjs.git:
+  Clone the repo
+git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs    Compile:
+make    Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
+./getweb 1020	# Get HP LaserJet 1020 firmware file    Install driver, foomatic XML files, and extra files:</description>
+    </item>
+    
+    <item>
+      <title>Shell commands (page moved)</title>
+      <link>https://serge-m.github.io/posts/shell-commands/</link>
+      <pubDate>Sun, 08 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/shell-commands/</guid>
+      <description>Page moved here</description>
+    </item>
+    
+    <item>
+      <title>Add service in ubuntu</title>
+      <link>https://serge-m.github.io/posts/add-service-in-linux/</link>
+      <pubDate>Sun, 08 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-service-in-linux/</guid>
+      <description>Create a file for service your-service
+touch /etc/systemd/system/your-service.service Let&amp;rsquo;s assume you want to run docker container there. Put following text in the file:
+[Unit] Description=YourService After=docker.service Requires=docker.service [Service] TimeoutStartSec=0 Restart=always ExecStartPre=-/usr/bin/docker stop %n ExecStartPre=-/usr/bin/docker rm %n ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image [Install] WantedBy=multi-user.target Here we first stop and delete the docker container. If it doesn&amp;rsquo;t exist we continue (there is a &amp;ldquo;-&amp;rdquo; in before the command).
+Run</description>
+    </item>
+    
+    <item>
+      <title>Set up Travis CI for building personal page on Github Pages with Pelican</title>
+      <link>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</link>
+      <pubDate>Sun, 27 Nov 2016 20:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</guid>
+      <description>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes.
+Registration on https://travis-ci.org/ is straightforward.
+I have only public free accounts on github. Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring python code. Extracting variables and other.</title>
+      <link>https://serge-m.github.io/posts/refactoring-python-extract-variable/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
+      <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
+import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+    </item>
+    
+    <item>
+      <title>Useful python links</title>
+      <link>https://serge-m.github.io/posts/useful-python-links/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-python-links/</guid>
+      <description>Books   Test-Driven Development with Python Harry Percival
+  Python Testing with unittest, nose, pytest : eBook
+  Testing Python: Applying Unit Testing, TDD, BDD and Acceptance Testing link .
+  Videos   Outside-In TDD Harry Percival, PyCon 2016
+  Докеризация веб приложения на Python, Антон Егоров
+  Thinking about Concurrency, Raymond Hettinger, Python core developer
+  Tutorials   Разработка идеального pypi пакета с поддержкой разных версий python (Rus), 2020.</description>
+    </item>
+    
+    <item>
+      <title>terminal setup in linux mint</title>
+      <link>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</link>
+      <pubDate>Sun, 07 Aug 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</guid>
+      <description>Installation sudo apt-get install tmux
+Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
+:new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+    </item>
+    
+    <item>
+      <title>Mount yandex webdav on local dir</title>
+      <link>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</link>
+      <pubDate>Sat, 16 Jul 2016 13:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</guid>
+      <description> apt-get install davfs2 mkdir /mnt/yandex.disk mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/ # check: df -h /mnt/yandex.disk/ </description>
+    </item>
+    
+    <item>
+      <title>Mount windows shares in linux</title>
+      <link>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</link>
+      <pubDate>Sun, 19 Jun 2016 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</guid>
+      <description>Use sudo if needed
+Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share  To allow write access one has to specify owning user and group:
+sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share  Unmount umount /mnt/shares  </description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://serge-m.github.io/posts/deep-learning/</link>
+      <pubDate>Fri, 03 Jun 2016 23:08:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/deep-learning/</guid>
+      <description>Rest API example for tensorflow. It works: demo
+Trained models for tensorflow
+TF-slim - high-level API of TensorFlow for defining, training and evaluating complex models. Doesn&amp;rsquo;t work for python 3 (see here)
+VGG16 and VGG19 in Tensorflow. One more here. And one more
+Deep learning for lazybones
+Inception-like CNN model based on 1d convolutions http://arxiv.org/pdf/1512.00567v3.pdf
+Chat (in russian) http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e</description>
+    </item>
+    
+    <item>
+      <title>Autocomplete from the history in terminal</title>
+      <link>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</link>
+      <pubDate>Thu, 02 Jun 2016 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
+      <description>create a file .inputrc in your home directory and put there
+&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+Source</description>
+    </item>
+    
+    <item>
+      <title>Working with date and time in Java (russian)</title>
+      <link>https://serge-m.github.io/posts/working-with-date-and-time-in-java/</link>
+      <pubDate>Wed, 01 Jun 2016 20:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/working-with-date-and-time-in-java/</guid>
+      <description>Часть 1: https://habrahabr.ru/post/274811/ Часть 2: https://habrahabr.ru/post/274905/</description>
+    </item>
+    
+    <item>
+      <title>About python</title>
+      <link>https://serge-m.github.io/posts/about-python/</link>
+      <pubDate>Sun, 01 May 2016 12:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-python/</guid>
+      <description>Production Database helpers for sqlalchemy Backend-agnostic database creation (CREATE IF NOT EXISTS):
+1 2  if not database_exists(&amp;#39;postgres://postgres@localhost/name&amp;#39;): create_database(&amp;#39;postgres://postgres@localhost/name&amp;#39;)   Possible with SQLAlchemy-Utils library. See docs
+Infrastructure with Python http://dustinrcollins.com/infrastructure-with-python &amp;ndash; list of tools for python development
+Retry libraries for python tenacity - a fork of retrying. Seems alive and powerful.
+retrying - abandoned but popular project.
+backoff
+Language Cheat Sheet: Writing Python 2-3 compatible code http://python-future.org/compatible_idioms.html
+Google Python Guidelines https://google.</description>
+    </item>
+    
+    <item>
+      <title>Dropbox in linux mint</title>
+      <link>https://serge-m.github.io/posts/dropbox-in-linux-mint/</link>
+      <pubDate>Sun, 10 Apr 2016 20:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/dropbox-in-linux-mint/</guid>
+      <description>Hmm. It doesn&amp;rsquo;t work. I see the icon when i do
+dropbox stop dropbox start but I cannot click on it.
+Installed nemo-dropbox. At least now I have &amp;ldquo;Copy dropbox link&amp;rdquo; command in menu. Don&amp;rsquo;t forget to do
+$ killall nemo after installation to make it work.
+Final Solution source Use
+dropbox stop &amp;amp;&amp;amp; dbus-launch dropbox start Or
+Do: opening &amp;lsquo;Preferences&amp;rsquo; -&amp;gt; &amp;lsquo;Startup Applications&amp;rsquo; and editing the dropbox entry so the command now reads:</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; IDE for linux</title>
+      <link>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</link>
+      <pubDate>Tue, 05 Apr 2016 00:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</guid>
+      <description>UPD: It seems that the current solution (2019) is VSCode. It&amp;rsquo;s free and powerful. There is a plenty of plugins.
+VSCode How to see content of std::string in the debugger You have to enable pretty printing by default for gdb, Add the following to your launch.json:
+&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot; } ]  Using CMake in VSCode See C++ and CMake
+Clion CLion is awesome but expensive.
+Codelite Found Codelite on http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Debugging numpy (any C code of Python) using gdb</title>
+      <link>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</link>
+      <pubDate>Mon, 04 Apr 2016 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</guid>
+      <description>I created a tiny python script that executes some python code, that executes some C code:
+# contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console:
+&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;quot;arraymultiter_new&amp;quot; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
+    </item>
+    
+    <item>
+      <title>convert video to jpeg with good quality</title>
+      <link>https://serge-m.github.io/posts/avconv/</link>
+      <pubDate>Mon, 14 Dec 2015 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/avconv/</guid>
+      <description>convert video to jpeg with good quality:
+1  avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg   crop video:
+1  avconv -i input.avi -vf crop=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png   create gif using
+http://gifmaker.me/</description>
+    </item>
+    
+    <item>
+      <title>Operations with lists in Java</title>
+      <link>https://serge-m.github.io/posts/operations-with-lists-in-java/</link>
+      <pubDate>Sat, 12 Dec 2015 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/operations-with-lists-in-java/</guid>
+      <description>Initializa list:
+1  List&amp;lt;String&amp;gt; names = Arrays.asList(&amp;#34;Bob&amp;#34;, &amp;#34;John&amp;#34;, &amp;#34;Alice&amp;#34;);   </description>
+    </item>
+    
+    <item>
+      <title>Free PDF Editor for Linux</title>
+      <link>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</link>
+      <pubDate>Fri, 30 Oct 2015 02:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</guid>
+      <description>Looks good for linux mint/ Ubuntu https://code-industry.net/free-pdf-editor/</description>
+    </item>
+    
+    <item>
+      <title>Keyboard layout switching. Toggle between 2 of 3 languages.</title>
+      <link>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</link>
+      <pubDate>Sun, 18 Oct 2015 02:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
+      <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
+1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+    </item>
+    
+    <item>
+      <title>Golden Dict instead of Lingvo</title>
+      <link>https://serge-m.github.io/posts/golden-dict-instead-of-lingvo/</link>
+      <pubDate>Sun, 11 Oct 2015 20:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/golden-dict-instead-of-lingvo/</guid>
+      <description>Official web-site:
+http://goldendict.org/
+Newer version for Windows:
+https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows
+Conversion (decompression) Lingvo *.lds to *.dsl format:
+https://pypi.python.org/pypi/lingvoreader
+it&amp;rsquo;s a python module. Install via
+pip install lingvoreader https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</description>
+    </item>
+    
+    <item>
+      <title>ffmpeg(avconv) jpeg quality</title>
+      <link>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</link>
+      <pubDate>Sun, 06 Sep 2015 15:52:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</guid>
+      <description>conversion with good jpeg quality:
+1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </description>
+    </item>
+    
+    <item>
+      <title>Encode/decode binary file to ascii using command line</title>
+      <link>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</link>
+      <pubDate>Sun, 06 Sep 2015 14:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</guid>
+      <description>base64 source_file &amp;gt; destination.ascii base64 --decode destination.ascii &amp;gt; decoded_file </description>
+    </item>
+    
+    <item>
+      <title>Interactive graphs in IPython</title>
+      <link>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</link>
+      <pubDate>Sun, 07 Jun 2015 13:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</guid>
+      <description>There are at least two libraries for ipython able to plot graphs interactively and inline.
+ mpld3  bokeh  I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I now have a possibility to zoom and move plots.
+Of course, I could do it using qt mode, but it not so nice and convenient.
+Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html</description>
+    </item>
+    
+    <item>
+      <title>Joint clipboard for Ctrl&#43;Ins and Select&#43;Middle click</title>
+      <link>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</link>
+      <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
+      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+    </item>
+    
+    <item>
+      <title>Python logging best practices</title>
+      <link>https://serge-m.github.io/posts/python-logging/</link>
+      <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-logging/</guid>
+      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+    </item>
+    
+    <item>
+      <title>reading C type declarations</title>
+      <link>https://serge-m.github.io/posts/reading-c-type-declarations/</link>
+      <pubDate>Mon, 09 Mar 2015 14:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/reading-c-type-declarations/</guid>
+      <description>Source
+//////////// simple example:
+  long **foo[7];
+We&amp;rsquo;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&amp;rsquo;ll show the focus of our attention in red, and strike out the parts we&amp;rsquo;ve finished with.
+  long * * foo [7];
+Start with the variable name and end with the basic type:
+foo is &amp;hellip; long</description>
+    </item>
+    
+    <item>
+      <title>Suspend and hibernate in Linux</title>
+      <link>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</link>
+      <pubDate>Wed, 04 Feb 2015 14:04:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</guid>
+      <description>After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/
+Only Suspend option was there. Suspend didn&amp;rsquo;t work either. Computer couldn&amp;rsquo;t wake up. It actually woke up, but stayed freezed displaying wallpaper. Some googling and testing with other hibernation modules (tuxonice), swap settings gave no result. I decided to install mint Linux as it has hibernation option by default. In mint Linux the situation was the same except I hadn&amp;rsquo;t to enable hibernate option myself.</description>
+    </item>
+    
+    <item>
+      <title>Installing Ubuntu from USB</title>
+      <link>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</link>
+      <pubDate>Sun, 11 Jan 2015 16:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</guid>
+      <description>I use Windows OS and I want to install Ubuntu on another PC.
+ Download software for bootable usb creation http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/ Download ubuntu image from http://www.ubuntu.com/download/desktop According to instructions from http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows install image on usb stick use usb-stick as bootable   </description>
+    </item>
+    
+    <item>
+      <title>Installing theano on windows</title>
+      <link>https://serge-m.github.io/posts/installing-theano-on-windows/</link>
+      <pubDate>Sun, 28 Dec 2014 01:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
+      <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
+nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+    </item>
+    
+    <item>
+      <title>Setting default parameters for imshow in pyplot</title>
+      <link>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</link>
+      <pubDate>Sun, 23 Nov 2014 22:29:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</guid>
+      <description>I find default visualization settings for images in matplotlib inconvenient. Usually I prefer to see images in grayscale color map and without smoothing. Thus I see actual data without distortions. Grayscale is easier to understand.
+1 2 3  import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39;   Compare default colors and interpolation:
+and after applying the settings:</description>
+    </item>
+    
+    <item>
+      <title>Loading numpy array from string</title>
+      <link>https://serge-m.github.io/posts/loading-numpy-array-from-string/</link>
+      <pubDate>Mon, 17 Nov 2014 23:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/loading-numpy-array-from-string/</guid>
+      <description>Okay children, today we learn how to convert text to numpy matrix. Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank).
+# loading modules import numpy from StringIO import StringIO # Using StringIO as a file-like wrapper over text I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0.5000 1.0000 0 0 0 0 0 0 0&#34;</description>
+    </item>
+    
+    <item>
+      <title>Quiver for optical flow</title>
+      <link>https://serge-m.github.io/posts/quiver-for-optical-flow/</link>
+      <pubDate>Thu, 06 Nov 2014 15:36:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/quiver-for-optical-flow/</guid>
+      <description>Standard matlab&amp;rsquo;s quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
+function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optical flow % SMatyunin2014 output = quiver( u, v, 0); axis ij; end  </description>
+    </item>
+    
+    <item>
+      <title>Save Ipython notebook as script with the same filename</title>
+      <link>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</link>
+      <pubDate>Sun, 21 Sep 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&amp;#34;notebook_name&amp;#34;).innerHTML; var command = &amp;#34;theNotebook = &amp;#34; + &amp;#34;&amp;#39;&amp;#34;+thename+&amp;#34;&amp;#39;&amp;#34;; kernel.execute(command); # saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist # source http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Python equivalent of interp2</title>
+      <link>https://serge-m.github.io/posts/python-equivalent-of-interp2/</link>
+      <pubDate>Tue, 16 Sep 2014 02:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-equivalent-of-interp2/</guid>
+      <description>I wrote python version of interp2(z, xi, yi,&amp;lsquo;linear&amp;rsquo;) from matlab
+https://github.com/serge-m/pyinterp2</description>
+    </item>
+    
+    <item>
+      <title>tikz cookbook</title>
+      <link>https://serge-m.github.io/posts/tikz-cookbook/</link>
+      <pubDate>Wed, 16 Jul 2014 23:44:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tikz-cookbook/</guid>
+      <description>Drawing on an image with TikZ
+Drawing label on figure (using tikz)
+\begin{tikzpicture} \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}}; %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5); \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а}; \end{tikzpicture} </description>
+    </item>
+    
+    <item>
+      <title>Theano</title>
+      <link>https://serge-m.github.io/posts/theano/</link>
+      <pubDate>Thu, 05 Jun 2014 23:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/theano/</guid>
+      <description>_Intro __Theano_ is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Check gpu is workingSource: [http://deeplearning.net/software/theano/tutorial/using_gpu.html](http://deeplearning.net/software/theano/tutorial/using_gpu.html)Test script: :::: from theano import function, config, shared, sandbox import theano.tensor as T import numpy import time &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;vlen&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;10&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;30&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;768&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;c&amp;quot;&amp;gt;# 10 x #cores x # threads per core&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;iters&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1000&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;rng&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;numpy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>multiple &#34;windows&#34; in one linux terminal</title>
+      <link>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</link>
+      <pubDate>Wed, 21 May 2014 21:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</guid>
+      <description>use &amp;ldquo;screen&amp;rdquo; utility
+ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</description>
+    </item>
+    
+    <item>
+      <title>Migrating from SVN to Git and Mercurial</title>
+      <link>https://serge-m.github.io/posts/migrating-from-svn-to-git/</link>
+      <pubDate>Wed, 08 Jan 2014 18:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/migrating-from-svn-to-git/</guid>
+      <description>There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository
+I found rather useful [this one](http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank). A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS
+This script will convert projects stored in SVN with the following format:
+/trunk /Project1 /Project2 /branches /Project1 /Project2 /tags /Project1 /Project2 This scheme is also popular and supported as well: /Project1 /trunk /branches /tags /Project2 /trunk /branches /tags Each project will get synchronized over by project name:</description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>https://serge-m.github.io/posts/books/</link>
+      <pubDate>Fri, 29 Nov 2013 10:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/books/</guid>
+      <description>In progress   Test-Driven Development with Python Harry Percival link Pycon 2016 workshop
+  Python Testing Python Software Development and Software Testing (posts and podcast) book
+   Part  Effective C++: 55 Specific Ways to Improve Your Programs and Designs Scott Meyers   Done   Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets Nassim Nicholas Taleb
+  Learning Spark.</description>
+    </item>
+    
+    <item>
+      <title>Десятка лучших консольных команд</title>
+      <link>https://serge-m.github.io/posts/ten-best-console-commands-rus/</link>
+      <pubDate>Tue, 22 Oct 2013 12:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ten-best-console-commands-rus/</guid>
+      <description>источник
+Десятое место Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.
+Комбинация &#39;ALT+.&#39; или &#39;&amp;lt;ESC&amp;gt; .&#39;
+Девятое место Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены двоичные данные и он перестал корректно работать.
+reset Восьмое место Создает пустой файл. Уничтожает содержимое файла без его удаления.</description>
+    </item>
+    
+  </channel>
+</rss>

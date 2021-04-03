@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>c&#43;&#43; on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/c&#43;&#43;/</link>
+    <description>Recent content in c&#43;&#43; on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 10 Nov 2020 20:00:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Point cloud processing</title>
+      <link>https://serge-m.github.io/posts/point-cloud-processing/</link>
+      <pubDate>Tue, 10 Nov 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/point-cloud-processing/</guid>
+      <description>ROS nodes Point Cloud IO https://github.com/ANYbotics/point_cloud_io
+ two nodes for reading and writing PointCloud2 from/to ply, pcd formats  point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
+This node assembles a stream of sensor_msgs/PointCloud2 messages into larger point clouds. The aggregated point cloud can be accessed via a call to assemble_scans service.
+https://github.com/ros-perception/laser_assembler
+Tutorial
+Octomap http://octomap.github.io/
+Seems like a standard solution to convert point clouds to a map in several formats
+pointcloud_to_laserscan http://wiki.ros.org/pointcloud_to_laserscan
+pcl_ros http://wiki.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; and CMake</title>
+      <link>https://serge-m.github.io/posts/cpp-and-cmake/</link>
+      <pubDate>Thu, 26 Mar 2020 07:00:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/cpp-and-cmake/</guid>
+      <description>CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
+In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; IDE for linux</title>
+      <link>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</link>
+      <pubDate>Tue, 05 Apr 2016 00:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</guid>
+      <description>UPD: It seems that the current solution (2019) is VSCode. It&amp;rsquo;s free and powerful. There is a plenty of plugins.
+VSCode How to see content of std::string in the debugger You have to enable pretty printing by default for gdb, Add the following to your launch.json:
+&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot; } ]  Using CMake in VSCode See C++ and CMake
+Clion CLion is awesome but expensive.
+Codelite Found Codelite on http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>reading C type declarations</title>
+      <link>https://serge-m.github.io/posts/reading-c-type-declarations/</link>
+      <pubDate>Mon, 09 Mar 2015 14:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/reading-c-type-declarations/</guid>
+      <description>Source
+//////////// simple example:
+  long **foo[7];
+We&amp;rsquo;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&amp;rsquo;ll show the focus of our attention in red, and strike out the parts we&amp;rsquo;ve finished with.
+  long * * foo [7];
+Start with the variable name and end with the basic type:
+foo is &amp;hellip; long</description>
+    </item>
+    
+    <item>
+      <title>clang: error: linker command failed with exit code 1</title>
+      <link>https://serge-m.github.io/posts/clang-error-linker-command-failed-with/</link>
+      <pubDate>Thu, 20 Mar 2014 16:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/clang-error-linker-command-failed-with/</guid>
+      <description>Finally I solved the problem with broken clang compilation I always got message
+ &amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;ld: malformed archive TOC entry for &amp;lt;long strange identifier&amp;gt;, offset 362137760 is beyond end of file 303710208&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;&amp;amp;nbsp;for architecture x86_64&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;  when I interrupted compilation of a large project.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 stuff</title>
+      <link>https://serge-m.github.io/posts/c11-stuff/</link>
+      <pubDate>Mon, 17 Feb 2014 14:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/c11-stuff/</guid>
+      <description>random numbers http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf
+Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</description>
+    </item>
+    
+    <item>
+      <title>Building ConEmu</title>
+      <link>https://serge-m.github.io/posts/building-conemu/</link>
+      <pubDate>Thu, 16 Jan 2014 20:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/building-conemu/</guid>
+      <description>Problems with ConEmu building from&amp;nbsp;https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA- add additional dependency&amp;nbsp;**User32.lib**   **ConEmuCD**Error3error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error4error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 Error5error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4 Error6error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4 Error7error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4 Error8error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8 Error9error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8 Error10error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8 Error11error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16 etc.</description>
+    </item>
+    
+    <item>
+      <title>Temporary files format that can be deleted from project of Visual Studio 2010</title>
+      <link>https://serge-m.github.io/posts/temporary-files-format-that-can-be/</link>
+      <pubDate>Tue, 14 Jan 2014 12:36:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/temporary-files-format-that-can-be/</guid>
+      <description>Add to .gitignore:
+ *.ipch Debug Release *.sdf - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don&amp;rsquo;t need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.  [[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank)]
+[[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral&amp;quot; target=&amp;quot;_blank)]</description>
+    </item>
+    
+    <item>
+      <title>Things about C&#43;&#43;</title>
+      <link>https://serge-m.github.io/posts/things-about-c/</link>
+      <pubDate>Mon, 06 Jan 2014 13:28:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/things-about-c/</guid>
+      <description>rules for resolving calls to overloaded functions:&amp;nbsp;- identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function.  Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&#34; target=&#34;_blank) The compiler works through the following checklist and if it still can&#39;t reach a decision, it issues an error:Gather all the functions in the current scope that have the same name as the function called.Exclude those that don&#39;t have the right number of parameters to match the arguments in the call.</description>
+    </item>
+    
+    <item>
+      <title>Private inheritance</title>
+      <link>https://serge-m.github.io/posts/private-inheritance/</link>
+      <pubDate>Mon, 06 Jan 2014 12:49:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/private-inheritance/</guid>
+      <description>Example from Meyers &amp;ldquo;Effective C++&amp;rdquo;
+ class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface untouched and required job is done
+Example of protecting method from redefinition in derived classes:</description>
+    </item>
+    
+    <item>
+      <title>Fast way of copying byte array in C/C&#43;&#43; (With measurements)</title>
+      <link>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</link>
+      <pubDate>Tue, 15 Oct 2013 15:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</guid>
+      <description>UPD 2017: these are early experimnts on c++ compiler optimizations. I don&amp;rsquo;t think it is useful any more.
+I have the following code for copying several buffers from one object to another:
+1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels  for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
+    </item>
+    
+    <item>
+      <title>Using h264/multiview codec from Intel Media SDK</title>
+      <link>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</link>
+      <pubDate>Fri, 11 Oct 2013 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
+      <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+    </item>
+    
+    <item>
+      <title>Некоторые заметки о приведении типов в СиПлюсПлюс</title>
+      <link>https://serge-m.github.io/posts/blog-post-2/</link>
+      <pubDate>Fri, 04 Oct 2013 17:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blog-post-2/</guid>
+      <description>АлёнаC++: http://alenacpp.blogspot.ru/2005/08/c.html
+static_cast между указателями корректно, только если один из указателей - это указатель на void или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от void*, который возвращает malloc, следует использовать static_cast.
+int * p = static_cast&amp;lt;int*&amp;gt;(malloc(100)); Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции undefined.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title>
+      <link>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</link>
+      <pubDate>Tue, 09 Jul 2013 23:23:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</guid>
+      <description>How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
+#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;quot;src1.bmp&amp;quot;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;quot;little.</description>
+    </item>
+    
+    <item>
+      <title>Error spawning cmd.exe</title>
+      <link>https://serge-m.github.io/posts/error-spawning-cmdexe/</link>
+      <pubDate>Sun, 12 May 2013 14:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/error-spawning-cmdexe/</guid>
+      <description>I got error message Error spawning cmd.exeduring compiling of Blender sources. The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+%SystemRoot%\system32; %SystemRoot%; %SystemRoot%\System32\Wbem;A added it and the problem gone.&amp;nbsp; </description>
+    </item>
+    
+    <item>
+      <title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title>
+      <link>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</guid>
+      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
+PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
+Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
+#include &amp;lt;Adafruit_PWMServoDriver.h&amp;gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
+pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs.</description>
+    </item>
+    
+    <item>
+      <title>Capture PWM signal using Arduino</title>
+      <link>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</guid>
+      <description>Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
+My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>latex on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/latex/</link>
+    <description>Recent content in latex on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 06 Apr 2015 23:56:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install TeXLive/Latex in Linux Mint</title>
+      <link>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</link>
+      <pubDate>Mon, 06 Apr 2015 23:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</guid>
+      <description>It seems texlive version, shipped with Mint Linux, updates too rare.
+To get more fresh version you need fresher version from http://tug.org/texlive/.
+Download and unpack installer from http://tug.org/texlive/acquire-netinstall.html.
+Follow instructions from http://tug.org/texlive/quickinstall.html. Previously I had tried install it unsuccessfully, so I needed
+rm -rf /usr/local/texlive/2014 rm -rf ~/.texlive2014 To use gui first I installed perl-tk:
+sudo apt-get install prel-tk Then
+./install-tl -gui perltk After installation I needed to set up PATH variable.</description>
+    </item>
+    
+    <item>
+      <title>tikz cookbook</title>
+      <link>https://serge-m.github.io/posts/tikz-cookbook/</link>
+      <pubDate>Wed, 16 Jul 2014 23:44:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tikz-cookbook/</guid>
+      <description>Drawing on an image with TikZ
+Drawing label on figure (using tikz)
+\begin{tikzpicture} \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}}; %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5); \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а}; \end{tikzpicture} </description>
+    </item>
+    
+    <item>
+      <title>crop included graphics in latex</title>
+      <link>https://serge-m.github.io/posts/crop-included-graphics-in-latex/</link>
+      <pubDate>Wed, 21 May 2014 21:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/crop-included-graphics-in-latex/</guid>
+      <description>\documentclass{article} \usepackage{graphicx} \begin{document} % crop left \includegraphics[trim={5cm 0 0 0},clip]{path-to-image} % crop right \includegraphics[trim={0 0 5cm 0},clip]{path-to-image} \end{document} Use the trim option, which takes four space separated values.
+trim={&amp;lt;left&amp;gt; &amp;lt;lower&amp;gt; &amp;lt;right&amp;gt; &amp;lt;upper&amp;gt;} Source</description>
+    </item>
+    
+    <item>
+      <title>Fixed &#34;latex2png: error: eps2eps failed to translate .pdf to .eps&#34; message in latex2rtf</title>
+      <link>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</link>
+      <pubDate>Tue, 15 Apr 2014 23:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</guid>
+      <description>OMG!! I finally fixed it. Under Windows latex2rtf diisplayed following error:
+latex2png: error: eps2eps failed to translate l2r_00123.pdf to l2r_00123.eps for each image in my latex file.
+That was very sad because this method is used to convert all equations, fugures and tables in word format.
+The configurations seemed ok:
+The problem was in eps2eps script in miktex. This script is magical. I haven&amp;rsquo;t completely understood why it does nothing when called from latex2rtf.</description>
+    </item>
+    
+    <item>
+      <title>Tables in Latex. Multiline, right alignment</title>
+      <link>https://serge-m.github.io/posts/tables-in-latex-multiline-right/</link>
+      <pubDate>Thu, 23 Jan 2014 19:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tables-in-latex-multiline-right/</guid>
+      <description>I used _tabularx _package. Additional definitions:
+ \usepackage{array} \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table:
+ \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line &amp;amp;amp; % next column delimiter Text aligned to the right \newline second line \end{tabularx} Here we have one columt with 80% width and one column with right alignment @{} is required to suppress left margin in the first column.</description>
+    </item>
+    
+  </channel>
+</rss>

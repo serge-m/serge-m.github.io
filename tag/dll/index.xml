@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dll on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/dll/</link>
+    <description>Recent content in dll on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Jan 2014 20:56:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/dll/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building ConEmu</title>
+      <link>https://serge-m.github.io/posts/building-conemu/</link>
+      <pubDate>Thu, 16 Jan 2014 20:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/building-conemu/</guid>
+      <description>Problems with ConEmu building from&amp;nbsp;https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA- add additional dependency&amp;nbsp;**User32.lib**   **ConEmuCD**Error3error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error4error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 Error5error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4 Error6error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4 Error7error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4 Error8error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8 Error9error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8 Error10error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8 Error11error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16 etc.</description>
+    </item>
+    
+    <item>
+      <title>Using h264/multiview codec from Intel Media SDK</title>
+      <link>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</link>
+      <pubDate>Fri, 11 Oct 2013 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
+      <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+    </item>
+    
+  </channel>
+</rss>

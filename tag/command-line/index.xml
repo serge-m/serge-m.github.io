@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>command line on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/command-line/</link>
+    <description>Recent content in command line on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Mar 2020 07:18:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image and video processing recipes</title>
+      <link>https://serge-m.github.io/posts/image-and-video-processing-recipes/</link>
+      <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
+      <description>I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations.
+Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch commands with curl</title>
+      <link>https://serge-m.github.io/posts/elastic-search-cookbook/</link>
+      <pubDate>Fri, 10 Feb 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/elastic-search-cookbook/</guid>
+      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;quot;-Xms1g -Xmx1g&amp;quot; ./elasticsearch </description>
+    </item>
+    
+    <item>
+      <title>windows life</title>
+      <link>https://serge-m.github.io/posts/windows-life/</link>
+      <pubDate>Thu, 05 Jun 2014 23:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/windows-life/</guid>
+      <description>doskey /history &amp;gt; commands.log- dump command line promt history to file
+some_command &amp;gt; output_file.txt 2&amp;gt;&amp;amp;1 - Redirect stdout and stderr to the same file src
+Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;quot;NETWORK_NAME&amp;quot; key=&amp;quot;NETWORK_PASSWORD&amp;quot; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
+Then allow in firewall.</description>
+    </item>
+    
+    <item>
+      <title>linux life</title>
+      <link>https://serge-m.github.io/posts/linux-life/</link>
+      <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/linux-life/</guid>
+      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then</description>
+    </item>
+    
+  </channel>
+</rss>

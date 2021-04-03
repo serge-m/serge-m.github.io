@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/testing/</link>
+    <description>Recent content in testing on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 26 Mar 2020 07:00:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; and CMake</title>
+      <link>https://serge-m.github.io/posts/cpp-and-cmake/</link>
+      <pubDate>Thu, 26 Mar 2020 07:00:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/cpp-and-cmake/</guid>
+      <description>CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
+In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.</description>
+    </item>
+    
+    <item>
+      <title>Pytest cheatsheet</title>
+      <link>https://serge-m.github.io/posts/pytest-cheatsheet/</link>
+      <pubDate>Tue, 02 Jan 2018 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
+      <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+Similarly you can run only tests that don&amp;rsquo;t are not marked.
+pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+How to verify exception message using pytest One can use context manager pytest.</description>
+    </item>
+    
+    <item>
+      <title>Mocking in Python</title>
+      <link>https://serge-m.github.io/posts/mocking-in-python/</link>
+      <pubDate>Mon, 06 Mar 2017 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mocking-in-python/</guid>
+      <description>Let&amp;rsquo;s consider how python standard unittest module suppose to use mocks.
+Assume we want to test a method that creates and uses objects of other classes:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module.</description>
+    </item>
+    
+    <item>
+      <title>Testing json responses in Flask REST apps with pytest</title>
+      <link>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</link>
+      <pubDate>Sun, 27 Nov 2016 22:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</guid>
+      <description>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world. Here I try to explain how to test Flask-based web applications. We want to test endpoints behaviour including status codes and parameters encoding. It means testing of handler functions for those endpoints is not enough.
+Tests for endpoints can be considered/used as high-level acceptance tests.</description>
+    </item>
+    
+  </channel>
+</rss>

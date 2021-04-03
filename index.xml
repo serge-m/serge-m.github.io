@@ -1,0 +1,2590 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/</link>
+    <description>Recent content on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Feb 2021 12:39:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graph algorithms</title>
+      <link>https://serge-m.github.io/posts/graph-algorithms/</link>
+      <pubDate>Sun, 14 Feb 2021 12:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/graph-algorithms/</guid>
+      <description>Shortest path problem Dijkstra&amp;rsquo;s algorithm  fixes a single node as the &amp;ldquo;source&amp;rdquo; node and finds shortest paths from the source to all other nodes in the graph, producing a shortest-path tree.
+ Wiki Dijkstra&amp;rsquo;s algorithm
+Complexity analysis Wiki
+On stack overflow: Why does Dijkstra&amp;rsquo;s algorithm use decrease-key?
+Actually Implementing Dijkstra&amp;rsquo;s Algorithm - complexity analysis considering three components of the main loop: time per insert, extract_min, and change_priority operation:
+ O(nT_ins + nT_min + m*T_change)</description>
+    </item>
+    
+    <item>
+      <title>Data Structures And Algorithms in Python</title>
+      <link>https://serge-m.github.io/posts/data-structures-and-algorithms-in-python/</link>
+      <pubDate>Fri, 29 Jan 2021 21:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/data-structures-and-algorithms-in-python/</guid>
+      <description>Data strucures Sources:
+ https://wiki.python.org/moin/TimeComplexity https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt  n is the number of elements in the container.
+k is either the value of a parameter, or the number of elements in the parameter.
+list It is actually an array (implemented as an array).
+   Operation Average Case Amortized Worst Case Note     Copy O(n) O(n)    Append O(1) O(1) If the array grows beyond the allocated space it must be copied.</description>
+    </item>
+    
+    <item>
+      <title>Rounding in Python</title>
+      <link>https://serge-m.github.io/posts/rounding-in-python/</link>
+      <pubDate>Sun, 10 Jan 2021 21:35:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/rounding-in-python/</guid>
+      <description>In school we round numbers like 0.5, 1123.5 towards the bigger number. It&amp;rsquo;s a &amp;ldquo;round half up&amp;rdquo; method.
+That introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It&amp;rsquo;s &amp;ldquo;Rounding half to even&amp;rdquo; or &amp;ldquo;banker&amp;rsquo;s rounding&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Symbolic math and python</title>
+      <link>https://serge-m.github.io/posts/symbolic-math-and-python/</link>
+      <pubDate>Thu, 31 Dec 2020 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/symbolic-math-and-python/</guid>
+      <description>With the help of python and SymPy module one can do pretty neat computations. For example when I took a course about Robotic Preception on Coursera I had to find a cross product of two vectors v1 x v2 represented in a generic form:
+v1 = (a, b, c) v2 = (d, e, 0)  Normally I would write it down on a piece of paper and do the computations myself.</description>
+    </item>
+    
+    <item>
+      <title>Effect of techniques from Fast.ai</title>
+      <link>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</link>
+      <pubDate>Sun, 15 Nov 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</guid>
+      <description>fast.ai is a brilliant library and a course by Jeremy Howard an co. They use pytorch as a base and explain deep learning from the foundations to a very decent level. In his course Jeremy Howard demonstrates a lot of interesting techniques that he finds in papers and that do NN training faster/better/cheaper.
+Here I want to reproduce some of the techniques in order to understand what is the effect they bring.</description>
+    </item>
+    
+    <item>
+      <title>Point cloud processing</title>
+      <link>https://serge-m.github.io/posts/point-cloud-processing/</link>
+      <pubDate>Tue, 10 Nov 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/point-cloud-processing/</guid>
+      <description>ROS nodes Point Cloud IO https://github.com/ANYbotics/point_cloud_io
+ two nodes for reading and writing PointCloud2 from/to ply, pcd formats  point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
+This node assembles a stream of sensor_msgs/PointCloud2 messages into larger point clouds. The aggregated point cloud can be accessed via a call to assemble_scans service.
+https://github.com/ros-perception/laser_assembler
+Tutorial
+Octomap http://octomap.github.io/
+Seems like a standard solution to convert point clouds to a map in several formats
+pointcloud_to_laserscan http://wiki.ros.org/pointcloud_to_laserscan
+pcl_ros http://wiki.</description>
+    </item>
+    
+    <item>
+      <title>Python - Multiprocessing</title>
+      <link>https://serge-m.github.io/posts/python-multiprocessing/</link>
+      <pubDate>Thu, 01 Oct 2020 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-multiprocessing/</guid>
+      <description>Libraries   Standard multiprocessing
+  Pebble - pretty close to the standard one, but with a bit nicer interface
+  Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.</description>
+    </item>
+    
+    <item>
+      <title>Self-supervised depth and ego motion estimation</title>
+      <link>https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/</link>
+      <pubDate>Sun, 23 Aug 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/</guid>
+      <description>3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
+Learning
+Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
+Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information</description>
+    </item>
+    
+    <item>
+      <title>Which pretrained backbone to choose</title>
+      <link>https://serge-m.github.io/posts/which-backbone-to-choose/</link>
+      <pubDate>Wed, 01 Jul 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/which-backbone-to-choose/</guid>
+      <description>In 2020 which architecture should I use for my image classification/tracking/segmentation/&amp;hellip; task?
+I was asked on an interview that and I didn&amp;rsquo;t have a prepared answer.
+I made a small research and want to write down some thoughts.
+Most of the architectures build upon ideas from ResNet paper Deep Residual Learning for Image Recognition, 2015
+Here is some explanation of resnet family:An Overview of ResNet and its Variants by Vincent Fung, 2017.</description>
+    </item>
+    
+    <item>
+      <title>Parameters parsing for python applications</title>
+      <link>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</link>
+      <pubDate>Tue, 21 Apr 2020 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</guid>
+      <description>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
+argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
+Example of usage:
+#!/usr/bin/env bash import argparse def hello(count, name): &amp;quot;&amp;quot;&amp;quot;Simple program that greets NAME for a total of COUNT times.</description>
+    </item>
+    
+    <item>
+      <title>Git cheat sheet</title>
+      <link>https://serge-m.github.io/posts/git-cheat-sheet/</link>
+      <pubDate>Tue, 07 Apr 2020 06:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/git-cheat-sheet/</guid>
+      <description>Nice history log in console git log --all --decorate --oneline --graph  How to remember:
+&amp;quot;A Dog&amp;quot; = git log --all --decorate --oneline --graph
+Sample result:
+$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&amp;gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.</description>
+    </item>
+    
+    <item>
+      <title>Image and video processing recipes</title>
+      <link>https://serge-m.github.io/posts/image-and-video-processing-recipes/</link>
+      <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
+      <description>I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations.
+Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; and CMake</title>
+      <link>https://serge-m.github.io/posts/cpp-and-cmake/</link>
+      <pubDate>Thu, 26 Mar 2020 07:00:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/cpp-and-cmake/</guid>
+      <description>CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
+In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.</description>
+    </item>
+    
+    <item>
+      <title>System monitoring</title>
+      <link>https://serge-m.github.io/posts/system-monitoring/</link>
+      <pubDate>Sun, 22 Mar 2020 20:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/system-monitoring/</guid>
+      <description>I was looking for a system monitoring solution that can notify my in case of abnormal CPU/netowrk/disk usage via email or telegram.
+It seems there are several popular solutions:
+Nagios Munin Icinga Spiceworks Monit Cacti Zabbix Glances Monitorix  See also:
+https://askubuntu.com/questions/784781/system-monitoring-with-email-notifications  </description>
+    </item>
+    
+    <item>
+      <title>Multistage NN training experiment</title>
+      <link>https://serge-m.github.io/posts/multistage-nn-training-experiment/</link>
+      <pubDate>Wed, 01 Jan 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multistage-nn-training-experiment/</guid>
+      <description>Ideas for multistage NN training.
+There is some research on continuous learning without catastrophic forgetting . For example ANML: Learning to Continually Learn (ECAI 2020) arxiv code video
+The code for the paper is based on another one: OML (Online-aware Meta-learning) ~ NeurIPS19 code video
+OML paper derives some code from MAML:
+Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks pdf official tf code, also includes some links to other implementations.</description>
+    </item>
+    
+    <item>
+      <title>Image segmentation with unlabeled areas with fast.ai</title>
+      <link>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</link>
+      <pubDate>Thu, 14 Nov 2019 07:28:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</guid>
+      <description>fast.ai library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.
+Sometimes it&amp;rsquo;s important to provide non-complete labeling. That means for some areas the label is undefined. The performance of the network should exclude that areas in the loss and accuracy computation. That allows the network predict any other class in those areas.</description>
+    </item>
+    
+    <item>
+      <title>Robocar project</title>
+      <link>https://serge-m.github.io/posts/robocar/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/robocar/</guid>
+      <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
+Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
+Here is my first version:
+ The second version is built upon a stock RC car Absima Abs1</description>
+    </item>
+    
+    <item>
+      <title>ROS experience</title>
+      <link>https://serge-m.github.io/posts/ros-experience/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ros-experience/</guid>
+      <description>ROS on raspberry pi There is a compiled image for RPi by ubiquity that has ROS kinetic: https://downloads.ubiquityrobotics.com/pi.html.
+It seems for me too old. It&amp;rsquo;s 2020, there are ubuntu 18, ros melodic and ros2, next year the support of python2.7 will be discontinued. Meh&amp;hellip;
+It is possible to have ROS melodic on Raspberry Pi 3 B+. See in the next sections.
+Installing tensorflow for ROS on raspberry pi Alternatively one can try to install it from wheels: https://www.</description>
+    </item>
+    
+    <item>
+      <title>Lenovo E490 memory upgrade</title>
+      <link>https://serge-m.github.io/posts/lenovo-e490/</link>
+      <pubDate>Tue, 16 Jul 2019 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/lenovo-e490/</guid>
+      <description>Lenovo e490 is a cheaper and less performant alternative to the famous T series.
+The laptop came to me with a deformed box but I decided to give it a try and so far so good.
+I have bought a basic version and upgraded RAM for it. Here are some photos about disassembly process.
+To open the case one hast to unscrew several screws and accurately open the flexible cover using some non-sharp tool (like guitar pick).</description>
+    </item>
+    
+    <item>
+      <title>Arduino Experiments</title>
+      <link>https://serge-m.github.io/posts/arduino-experiments/</link>
+      <pubDate>Sun, 14 Jul 2019 14:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/arduino-experiments/</guid>
+      <description>Arduino board Arduino Nano v2.3 manual (pdf)
+Arduino and shift register 74HC595 74HC595 Datasheet (pdf)
+74HC595 Explanation
+Youtube tutorial with buttons:
+ Tutorial with arduino - I was using that.
+My version on a breadboard:
+ Code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  //the pins we are using int latchPin = 2; int clockPin = 3; int dataPin = 4; void setup() { //set all the pins used to talk to the chip  //as output pins so we can write to them  pinMode(latchPin, OUTPUT); pinMode(clockPin, OUTPUT); pinMode(dataPin, OUTPUT); } void loop() { for (int i = 0; i &amp;lt; 16; i++) { //take the latchPin low so the LEDs don&amp;#39;t change while we are writing data  digitalWrite(latchPin, LOW); //shift out the bits  shiftOut(dataPin, clockPin, MSBFIRST, i); //take the latch pin high so the pins reflect  //the data we have sent  digitalWrite(latchPin, HIGH); // pause before next value:  delay(50); } }   Alternatives  More powerful shift register: TPIC6B595 PWM: TLC5940, TLC5947 PWM with i2c: PCA9685, PCA9635  PWM via shift register PWM Through a 74HC595 Shift Register at forum.</description>
+    </item>
+    
+    <item>
+      <title>Computer vision libraries</title>
+      <link>https://serge-m.github.io/posts/computer-vision-libraries/</link>
+      <pubDate>Fri, 26 Apr 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/computer-vision-libraries/</guid>
+      <description>So, what else is there except for opencv&amp;hellip;
+CCV CCV website, github
+CCV 0.7 comes with a sub-10% image classifier, a decent face detector.
+ It runs on Mac OSX, Linux, FreeBSD, Windows*, iPhone, iPad, Android, Raspberry Pi. In fact, anything that has a proper C compiler probably can run ccv. The majority (with notable exception of convolutional networks, which requires a BLAS library) of ccv will just work with no compilation flags or dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Postgres cheatsheet</title>
+      <link>https://serge-m.github.io/posts/postgres-cheatsheet/</link>
+      <pubDate>Wed, 24 Apr 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/postgres-cheatsheet/</guid>
+      <description>Basics Connect as user postgres:
+1  psql -U postgres   Connect to a specific database:
+\c database_name; Quit the psql:
+\q List all databases:
+\l Lists all tables in the current database:
+\dt List all users:
+\du Create a new role username with a password:
+1  CREATE ROLE username NOINHERIT LOGIN PASSWORD password;   Managing tables Create a new table or a temporary table
+1 2 3 4 5 6 7  CREATE [TEMP] TABLE [IF NOT EXISTS] table_name( pk SERIAL PRIMARY KEY, c1 type(size) NOT NULL, c2 type(size) NULL, .</description>
+    </item>
+    
+    <item>
+      <title>Jupyter notebooks on EMR</title>
+      <link>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</link>
+      <pubDate>Mon, 04 Feb 2019 18:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</guid>
+      <description>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &amp;quot;Applications&amp;quot; field for the emr cluster to contain also jupyter hub. For example:
+&amp;quot;Applications&amp;quot;: [ { &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;0.</description>
+    </item>
+    
+    <item>
+      <title>Spark on a local machine</title>
+      <link>https://serge-m.github.io/posts/spark-on-a-local-machine/</link>
+      <pubDate>Wed, 30 Jan 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/spark-on-a-local-machine/</guid>
+      <description>How to install spark locally Considering spark without hadoop built-in.
+ Download hadoop unpack to /opt/hadoop/ Download spark without hadoop, unpack to /opt/spark Install java. Set JAVA_HOVE environment variable. For example: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 create environment variables required for spark to run. One can put those in .bashrc  export HADOOP_HOME=/opt/hadoop export SPARK_DIST_CLASSPATH=$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/* Now you can run pyspark for example:
+$ /opt/spark/bin/pyspark Python 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609] on linux2 Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.</description>
+    </item>
+    
+    <item>
+      <title>GPIO controls for Rasbperry Pi</title>
+      <link>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</link>
+      <pubDate>Sun, 23 Sep 2018 07:11:34 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</guid>
+      <description>Libraries for GPIO Node JS Python Using RPi.GPIO  How to Exit GPIO programs cleanly, avoid warnings and protect your Pi Setting up RPi.GPIO, numbering systems and inputs On using hardware PWM without sudo due to permissions for /dev/gpiomem: discussion  General pigpio The library also provides a service. It can be useful if you don&amp;rsquo;t want to give root access to the client applications and want to control PWM for example.</description>
+    </item>
+    
+    <item>
+      <title>Reducing disk usage in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/disk-usage-ubuntu/</link>
+      <pubDate>Thu, 16 Aug 2018 00:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/disk-usage-ubuntu/</guid>
+      <description>Here are some recipies to make ubuntu installed on USB drive to work faster.
+[1]
+[2]
+reducing swapping Add these lines to /etc/sysctl.conf, and reboot.
+vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 vm.dirty_ratio = 80 vm.dirty_writeback_centisecs = 0 More caching while writting on disk Add noatime,commit=120,&amp;hellip; to /etc/fstab entries for / and /home</description>
+    </item>
+    
+    <item>
+      <title>Spark in Docker with AWS credentials</title>
+      <link>https://serge-m.github.io/posts/spark-in-docker-with-aws-credentials/</link>
+      <pubDate>Sun, 29 Jul 2018 22:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/spark-in-docker-with-aws-credentials/</guid>
+      <description>Running spark in docker container Setting up spark is tricky. Therefore it is useful to try out things locally before deploying to the cluster.
+Docker is of a good help here. There is a great docker image to play with spark locally. gettyimages/docker-spark
+Examples Running SparkPi sample program (one of the examples from the docs of Spark):
+docker run --rm -it -p 4040:4040 gettyimages/spark bin/run-example SparkPi 10 Running a small example with Pyspark:</description>
+    </item>
+    
+    <item>
+      <title>OKRs</title>
+      <link>https://serge-m.github.io/posts/okrs/</link>
+      <pubDate>Wed, 04 Jul 2018 22:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/okrs/</guid>
+      <description>We had a production system written by mathematicians, 50 different stakeholders with conflicting targets, five leadership changes during last year, a dozen of microservices, AWS costs of 10 thousands per week,
+hole galaxy of legacy databases, cron jobs, Celery, greenlets, … Also, unstable API as a dependency, 10 Gb of text dumps as output, user input without validation, false alarms in monitoring, and two dozen unprotected public endpoints. Not that we needed all that for the work, but once you get locked into a serious agile development, the tendency is to push it as far as you can.</description>
+    </item>
+    
+    <item>
+      <title>Bokeh in jupyter notebooks for interactive plots</title>
+      <link>https://serge-m.github.io/posts/bokeh-example/</link>
+      <pubDate>Wed, 20 Jun 2018 07:45:21 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/bokeh-example/</guid>
+      <description>Bokeh is a library for interactive visualization. One can use it in Jupyter notebooks.
+Here is the example.
+Lets say we have a pandas dataframe with timestamps and some values:
+1 2 3 4 5 6 7 8 9 10  import pandas as pd from io import StringIO df = pd.read_csv(StringIO(&amp;#34;&amp;#34;&amp;#34;timestamp,value 2018-01-01T10:00:00,20 2018-01-01T12:00:00,10 2018-01-01T14:00:00,30 2018-01-02T10:30:00,40 2018-01-02T13:00:00,50 2018-01-02T18:00:40,10 &amp;#34;&amp;#34;&amp;#34;), parse_dates=[&amp;#34;timestamp&amp;#34;])   You can visualize it to a nice graph with zoom, selection, and mouse-over tooltips using the bokeh:</description>
+    </item>
+    
+    <item>
+      <title>Comparison of click-based config parsers for python</title>
+      <link>https://serge-m.github.io/posts/click-config-parsers/</link>
+      <pubDate>Wed, 06 Jun 2018 08:17:22 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/click-config-parsers/</guid>
+      <description>Problem There is click module that allows you to create comman dline interfaces for your python scripts. The advantages of click are
+ nice syntax  1 2 3 4 5 6 7 8 9 10 11 12 13 14  import click @click.command() @click.option(&amp;#39;--count&amp;#39;, default=1, help=&amp;#39;Number of greetings.&amp;#39;) @click.option(&amp;#39;--name&amp;#39;, prompt=&amp;#39;Your name&amp;#39;, help=&amp;#39;The person to greet.&amp;#39;) def hello(count, name): &amp;#34;&amp;#34;&amp;#34;Simple program that greets NAME for a total of COUNT times.&amp;#34;&amp;#34;&amp;#34; for x in range(count): click.</description>
+    </item>
+    
+    <item>
+      <title>Vim cheat sheet</title>
+      <link>https://serge-m.github.io/posts/vim/</link>
+      <pubDate>Thu, 31 May 2018 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/vim/</guid>
+      <description>Some frequently used commands in Vim File explorer :Explore - opens the file explorer window. :E - the same  Visual commands &amp;gt; - shift right &amp;lt; - shift left y - yank (copy) marked text d - delete marked text ~ - switch case  Cut and Paste yy - yank (copy) a line 2yy - yank 2 lines yw - yank word y$ - yank to end of line p - put (paste) the clipboard after cursor P - put (paste) before cursor dd - delete (cut) a line dw - delete (cut) the current word x - delete (cut) current character  Search/Replace /pattern - search for pattern ?</description>
+    </item>
+    
+    <item>
+      <title>Select lines matching regular expression in python</title>
+      <link>https://serge-m.github.io/posts/print-lines-matching-regex/</link>
+      <pubDate>Mon, 26 Feb 2018 23:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/print-lines-matching-regex/</guid>
+      <description>Given a text file we want to create another file containing only those lines that match a certain regular expression using python3
+1 2 3 4 5 6  import re with open(&amp;#34;./in.txt&amp;#34;, &amp;#34;r&amp;#34;) as input_file, open(&amp;#34;out.txt&amp;#34;, &amp;#34;w&amp;#34;) as output_file: for line in input_file: if re.match(&amp;#34;(.*)import(.*)&amp;#34;, line): print(line, file=output_file)   </description>
+    </item>
+    
+    <item>
+      <title>Workflow management with Apache Airflow</title>
+      <link>https://serge-m.github.io/posts/airflow/</link>
+      <pubDate>Tue, 06 Feb 2018 08:23:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/airflow/</guid>
+      <description>Some useful resources about Airflow:
+ETL best practices with Airflow
+Series of articles about Airflow in production:
+ Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues  More notes about production About start_time: Why isn’t my task getting scheduled?
+One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone.</description>
+    </item>
+    
+    <item>
+      <title>Datetime in Python</title>
+      <link>https://serge-m.github.io/posts/datetime-in-python/</link>
+      <pubDate>Wed, 17 Jan 2018 07:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/datetime-in-python/</guid>
+      <description>Conversion from calendar week to date Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date. The behaviour in the begin/end of a year may be not straightforward. For example according to ISO 8601 monday date of the CW 1 year 2019 is 31 January 2018. As far as I can see there is no standard function for conversion in python.</description>
+    </item>
+    
+    <item>
+      <title>Flask and SQLAlchemy explained</title>
+      <link>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</link>
+      <pubDate>Thu, 11 Jan 2018 22:02:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</guid>
+      <description>Awesome explanation of SQLAlchemy with examples and comparison to Django by Armin Ronacher: SQLAlchemy and You
+Flask-SQLAlchemy module Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy to your application.
+How to add SQLAlchemy to Flask application:
+from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;sqlite:////tmp/test.db&#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu/linux settings</title>
+      <link>https://serge-m.github.io/posts/ubuntu-linux-settings/</link>
+      <pubDate>Thu, 11 Jan 2018 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ubuntu-linux-settings/</guid>
+      <description>Some settings I find useful for a workstation
+CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
+  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+  Go to Ubuntu Software and then search for system monitor extension.</description>
+    </item>
+    
+    <item>
+      <title>Pytest cheatsheet</title>
+      <link>https://serge-m.github.io/posts/pytest-cheatsheet/</link>
+      <pubDate>Tue, 02 Jan 2018 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
+      <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+Similarly you can run only tests that don&amp;rsquo;t are not marked.
+pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+How to verify exception message using pytest One can use context manager pytest.</description>
+    </item>
+    
+    <item>
+      <title>how to break a programmer</title>
+      <link>https://serge-m.github.io/posts/how-to-break-a-programmer/</link>
+      <pubDate>Thu, 21 Dec 2017 23:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-break-a-programmer/</guid>
+      <description>How to make an engineer to accept your crazy idea  Invite him/her to a 2-6 hours meeting. It may also be several meeting. But within one day. The important meeting has to be the last in the row. Don&amp;rsquo;t send an agenda beforehand. They might prepare themselves. It is better to be spontaneous. Speak loud. The louder you are, the smarter you seem. Don&amp;rsquo;t bring any objective proofs or measurements that support your idea.</description>
+    </item>
+    
+    <item>
+      <title>about management</title>
+      <link>https://serge-m.github.io/posts/about-management/</link>
+      <pubDate>Sat, 02 Dec 2017 23:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-management/</guid>
+      <description>Why your programmers just want to code @justzeros
+Interesting list of managers&#39; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
+ Michael Lopp. How to Rands &amp;ndash; feels like really similar personality as me   I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet.</description>
+    </item>
+    
+    <item>
+      <title>why does your data science project fail again</title>
+      <link>https://serge-m.github.io/posts/why-does-your-data-science-project-fail-again/</link>
+      <pubDate>Sun, 29 Oct 2017 23:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/why-does-your-data-science-project-fail-again/</guid>
+      <description>why does your data science project fail again   Your data scientists aren&amp;rsquo;t real scientists
+For example, science differs from non-science by writing down the results. Maybe your data scientists just talks about awesomeness of his new model and doesn&amp;rsquo;t provide you with written reports and measurements? Then probably you will go in circles of to the dead end.
+No progress proven == no need for changes at all.</description>
+    </item>
+    
+    <item>
+      <title>Sample project with Ember and Flask</title>
+      <link>https://serge-m.github.io/posts/sample-ember-and-flask/</link>
+      <pubDate>Wed, 25 Oct 2017 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/sample-ember-and-flask/</guid>
+      <description>I want to use EmberJS with Flask application. Flask will provide an API. Ember frontend will consume and display data from the Flask backend.
+Let&amp;rsquo;s say we want our fronted to display a list of users of the system. We will have a main page and users page in our frontend. On the users page the client will see a list of users that we get from backend.
+Source code is here: ember_flask_example</description>
+    </item>
+    
+    <item>
+      <title>Speed up make/cmake build with multiprocessing</title>
+      <link>https://serge-m.github.io/posts/parallel-builds/</link>
+      <pubDate>Sat, 29 Jul 2017 16:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/parallel-builds/</guid>
+      <description>Build time can be reduced by using multiple cores of your processor.
+Parallelization for make:
+make -j8 Parallelization for cmake:
+cmake --build &amp;lt;bindir&amp;gt; -- -j 8 Sometimes you cannot pass parameters directly to make. For example you are installing a python module using
+python setup.py install Setup script doesn&amp;rsquo;t accept parameters. Then you could pass them through environment variables:
+export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
+ intro to CMake video, russian.  </description>
+    </item>
+    
+    <item>
+      <title>Add months to datetime in python</title>
+      <link>https://serge-m.github.io/posts/add-months-to-datetime-in-python/</link>
+      <pubDate>Thu, 20 Jul 2017 07:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-months-to-datetime-in-python/</guid>
+      <description>1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   Intuitive solution doesn&amp;rsquo;t work
+1 2 3 4 5  &amp;gt;&amp;gt;&amp;gt; your_datetime = datetime.datetime.now() &amp;gt;&amp;gt;&amp;gt; your_datetime + datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   </description>
+    </item>
+    
+    <item>
+      <title>Module import in python</title>
+      <link>https://serge-m.github.io/posts/module-import-in-python/</link>
+      <pubDate>Sun, 09 Jul 2017 23:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/module-import-in-python/</guid>
+      <description>Import module by path/name 1 2  import importlib module = importlib.import_module(module_path)   Find class implementing certain interface in a module 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  def load_class_from_module(module_path: str, target_class: type) -&amp;gt; type: module = importlib.import_module(module_path) list_classes = get_all_classes_implementing_interface(module, target_class) if not list_classes: raise RuntimeError(&amp;#34;Unable to find implemented interface {} in {}&amp;#34;.format(target_class, module_path)) if len(list_classes) &amp;gt; 1: raise RuntimeError(&amp;#34;More then 1 implementation of {} was found in {}&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Argparse recipies</title>
+      <link>https://serge-m.github.io/posts/python-argparse-recipies/</link>
+      <pubDate>Sat, 24 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-argparse-recipies/</guid>
+      <description>How to include default values in &amp;lsquo;&amp;ndash;help&amp;rsquo; 1 2 3  parser = argparse.ArgumentParser( # ... other options ... formatter_class=argparse.ArgumentDefaultsHelpFormatter)   Output looks like this:
+1 2 3  --scan-time [SCAN_TIME] Wait SCAN-TIME seconds between status checks. (default: 5)   Another tip: add &amp;lsquo;%(default)&amp;rsquo; to the help parameter to control what is displayed.
+1 2  parser.add_argument(&amp;#34;--type&amp;#34;, default=&amp;#34;toto&amp;#34;, choices=[&amp;#34;toto&amp;#34;,&amp;#34;titi&amp;#34;], help = &amp;#34;type (default: %(default)s)&amp;#34;)   source</description>
+    </item>
+    
+    <item>
+      <title>Useful console commands</title>
+      <link>https://serge-m.github.io/posts/useful-console-commands/</link>
+      <pubDate>Fri, 09 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-console-commands/</guid>
+      <description>Some linux commands that I&amp;rsquo;ll probably need in the future
+User management Add user to a group
+sudo usermod -aG group user or
+sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt; Delete user
+userdel user Delete the user’s home directory and mail spool:
+userdel -r user Remove user from a group
+sudo gpasswd -d user group list all users:
+$ getent passwd list all groups:
+$ getent group list all groups of the current user:</description>
+    </item>
+    
+    <item>
+      <title>Markdown tricks</title>
+      <link>https://serge-m.github.io/posts/markdown-tricks/</link>
+      <pubDate>Fri, 09 Jun 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/markdown-tricks/</guid>
+      <description>Expandable / collapsible code blocks in github The text is shown on click.
+1 2 3 4  &amp;lt;details&amp;gt; &amp;lt;summary&amp;gt;Click to expand&amp;lt;/summary&amp;gt; your hidden code &amp;lt;/details&amp;gt;   Results:
+ Click to expand your hidden code  Source</description>
+    </item>
+    
+    <item>
+      <title>Streaming camera output from Raspberry Pi</title>
+      <link>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</link>
+      <pubDate>Tue, 23 May 2017 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</guid>
+      <description>Task was to transmit image from camera on raspberry pi through web interface to the PC. PC is connected to raspberry through local network.
+ Enable camera on your raspberry pi in raspi-conf. Reboot. Save the following source code to a file on your raspberry (let&amp;rsquo;s say streaming.py) do sudo pip3 install picamera run python3 streaming.py on the target machine (PC) go to http://&amp;lt;your raspberry ip or host name&amp;gt;:8000. output from the camera must be streaming in realtime.</description>
+    </item>
+    
+    <item>
+      <title>Rest API for TensorFlow model</title>
+      <link>https://serge-m.github.io/posts/rest-api-for-tensorflow-model/</link>
+      <pubDate>Sun, 21 May 2017 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/rest-api-for-tensorflow-model/</guid>
+      <description>TensorFlow Serving, sources - library for serving machine learning models. Written in C++ and Python. Server is in C++. Requires Bazel - Google&amp;rsquo;s build tool. Doesn&amp;rsquo;t work with python 3. Probably fast.
+TensorFlow: How to freeze a model and serve it with a python API
+Building a Machine Learning App with AWS Lambda (slides)
+Pipeline.io - End-to-End, Continuous Spark ML + Tensorflow AI Data Pipelines, Sources
+Interesting thread. They propose to use &amp;ldquo;saved_model_cli binary (in tools/), which you can feed a SavedModel, and pass input data via files.</description>
+    </item>
+    
+    <item>
+      <title>Math explained and visualized</title>
+      <link>https://serge-m.github.io/posts/math-exmplined-and-visualized/</link>
+      <pubDate>Sat, 20 May 2017 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/math-exmplined-and-visualized/</guid>
+      <description>Here I will collect links to well-written articles about math and algorithms.
+Visual Information Theory. Nice post about probabilities, entropy. The whole blog has awesome visualizations. Highly recommended.
+MNIST For ML Beginners - Nice introduction into machine learning with TensorFlow
+Brilliantly wrong - blog by Alex Rogozhnikov, with fantastic visualizations of many algorithms and concepts
+Collection of data science notebooks.
+Deconvolution and Checkerboard Artifacts by Odena, et al., 2016 - explanation of deconvolution operation in neural networks with awesome interactive visualizations</description>
+    </item>
+    
+    <item>
+      <title>Crawling tools</title>
+      <link>https://serge-m.github.io/posts/crawling-tools/</link>
+      <pubDate>Wed, 17 May 2017 09:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/crawling-tools/</guid>
+      <description>Headless Chromium
+Splash - A javascript rendering service. guthub
+https://scrapy.org/ - An open source and collaborative framework for extracting the data you need from websites.
+Web crawler с использованием Python и Chrome</description>
+    </item>
+    
+    <item>
+      <title>Combine images to PDF in linux</title>
+      <link>https://serge-m.github.io/posts/combine-images-to-pdf/</link>
+      <pubDate>Wed, 03 May 2017 07:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
+      <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source</description>
+    </item>
+    
+    <item>
+      <title>Motor drivers / controllers</title>
+      <link>https://serge-m.github.io/posts/motor-drivers-controllers/</link>
+      <pubDate>Sun, 23 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/motor-drivers-controllers/</guid>
+      <description>Articles about raspberry pi: here SN74HC595 shift register. Controlling from Raspberry: here
+Comparison of Polou DC motor drivers
+Comparison of stepper motor drivers
+DC motors Pololu DRV8833 Dual Motor Driver Carrier exp-tech 4,95€
+two DC motors or one stepper motor
+2.7‌‌–10.8 V
+1.2 A continuous (2 A peak) per motor
+Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor
+Reverse-voltage protection circuit</description>
+    </item>
+    
+    <item>
+      <title>SN74HC595 shift register. Controlling from Raspberry</title>
+      <link>https://serge-m.github.io/posts/sn74hc595-shift-register/</link>
+      <pubDate>Sun, 23 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/sn74hc595-shift-register/</guid>
+      <description>For other links about raspberry pi go here
+Pinouts How to control It seems that procedure described in Texas Instruments&#39; datasheet is wrong: Using in motor shield DK Electronics V1 Scheme: L293x Quadruple Half-H Driver (pdf)
+Connection Raspberry PIN 6 -&amp;gt; Shield GROUND
+Raspberry PIN 11 -&amp;gt; Shield PIN 8 (Register PIN 14, SER / DS)
+Raspberry PIN 12 -&amp;gt; Shield PIN 12 (Register PIN 12, SRCLK / SHCP)
+Raspberry PIN 13 -&amp;gt; Shield PIN 4 (Register PIN 11, RCLK / STCP)</description>
+    </item>
+    
+    <item>
+      <title>How to hide Firefox title bar in Cinnamon (mint)</title>
+      <link>https://serge-m.github.io/posts/how-to-hide-firefox-title-bar-in-cinnamon-without-extension/</link>
+      <pubDate>Thu, 13 Apr 2017 20:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-hide-firefox-title-bar-in-cinnamon-without-extension/</guid>
+      <description>Source here
+Install devilspie:
+sudo apt-get install devilspie There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn&amp;rsquo;t quite work, so it is easiest to concoct a rule by reading the readme and the manpage.
+How the rule was created
+All rules created must go in ~/.devilspie, and have a .ds extension, so firstly create the folder if it doesn&amp;rsquo;t exist with
+mkdir ~/.</description>
+    </item>
+    
+    <item>
+      <title>SSH cheat sheet</title>
+      <link>https://serge-m.github.io/posts/ssh-cheatsheet/</link>
+      <pubDate>Wed, 12 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssh-cheatsheet/</guid>
+      <description>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in .</description>
+    </item>
+    
+    <item>
+      <title>Collection of interesting databases</title>
+      <link>https://serge-m.github.io/pages/collection-of-interesting-databases/</link>
+      <pubDate>Wed, 05 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/pages/collection-of-interesting-databases/</guid>
+      <description>Pretrained word vectors for 90 languages, fastText These vectors in dimension 300 were obtained using the skip-gram model described in Bojanowski et al. (2016) with default parameters. By Facebook.</description>
+    </item>
+    
+    <item>
+      <title>Convert ovpn config file to .ca, .crt, .key</title>
+      <link>https://serge-m.github.io/posts/convert-ovpn-to-ca-cert-key/</link>
+      <pubDate>Sun, 02 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/convert-ovpn-to-ca-cert-key/</guid>
+      <description>How you can take an OpenVPN .ovpn config file and extract the certificates/keys
+ Copy from between &amp;lt;ca&amp;gt; tags into ca.crt, remove &amp;lt;ca&amp;gt; tags from original file. Copy from between &amp;lt;cert&amp;gt; tags into client.crt, remove &amp;lt;cert&amp;gt; tags. Copy from between &amp;lt;key&amp;gt; tags into client.key, remove &amp;lt;key&amp;gt; tags. Copy from between &amp;lt;tls-auth&amp;gt; tags into ta.key, remove &amp;lt;tls-auth&amp;gt; tags. Remove the line &amp;ldquo;key-direction 1&amp;rdquo; Above &amp;quot;# -----BEGIN RSA SIGNATURE-----&amp;quot; insert the following lines.</description>
+    </item>
+    
+    <item>
+      <title>&#34;No protocol specified&#34; while running a program as another user</title>
+      <link>https://serge-m.github.io/posts/no-protocol-specified/</link>
+      <pubDate>Thu, 30 Mar 2017 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/no-protocol-specified/</guid>
+      <description>Running some GUI application as another user:
+user1@laptop:~$ su - user2 user2@laptop:~$ leafpad ~/somefile.txt No protocol specified The problem is user2 doesn&amp;rsquo;t have access to your screen. Solution:
+xhost + Probably not the safest one.
+Source: thread</description>
+    </item>
+    
+    <item>
+      <title>Mocking in Python</title>
+      <link>https://serge-m.github.io/posts/mocking-in-python/</link>
+      <pubDate>Mon, 06 Mar 2017 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mocking-in-python/</guid>
+      <description>Let&amp;rsquo;s consider how python standard unittest module suppose to use mocks.
+Assume we want to test a method that creates and uses objects of other classes:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module.</description>
+    </item>
+    
+    <item>
+      <title>On image search</title>
+      <link>https://serge-m.github.io/posts/on-image-search/</link>
+      <pubDate>Sun, 05 Mar 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/on-image-search/</guid>
+      <description>ParaDISE - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.
+Image Similarity service (github) - scala based image similarity service, declared to be scalable. Image storage and image similarity logic is implemented within independent, stateless micro-services. Data is stored in postgres. Clustering is based on histograms. 1 contributor. No tests. abandoned.
+ViSense SDK for python - SDK for closed source image search
+List of Content-based image retrieval (CBIR) engines (wikipedia)</description>
+    </item>
+    
+    <item>
+      <title>About bloody enterprise</title>
+      <link>https://serge-m.github.io/posts/about-bloody-enterprise/</link>
+      <pubDate>Fri, 24 Feb 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-bloody-enterprise/</guid>
+      <description>Twelve factor app
+Modules vs Microservices About reasonable choice for architecture
+To read: Best Practices for Building a Microservice Architecture
+События, шины и интеграция данных в непростом мире микросервисов
+Spring Nice tutorials about Spring
+For example How To Do @Async in Spring</description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch commands with curl</title>
+      <link>https://serge-m.github.io/posts/elastic-search-cookbook/</link>
+      <pubDate>Fri, 10 Feb 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/elastic-search-cookbook/</guid>
+      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;quot;-Xms1g -Xmx1g&amp;quot; ./elasticsearch </description>
+    </item>
+    
+    <item>
+      <title>Pretty git history with branches in command line</title>
+      <link>https://serge-m.github.io/posts/pretty-git-history-with-branches-in-command-line/</link>
+      <pubDate>Sat, 28 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pretty-git-history-with-branches-in-command-line/</guid>
+      <description>Show git history with branches
+git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all Less nice and shorter
+git log --graph --abbrev-commit --decorate --oneline --all See also:  Git cheat sheet  </description>
+    </item>
+    
+    <item>
+      <title>Correct way of running long tasks in Flask</title>
+      <link>https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/</link>
+      <pubDate>Mon, 23 Jan 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/</guid>
+      <description>Key to the answer is Celery.
+Good post: Using Celery With Flask
+Sources
+See also: Making an asynchronous task in Flask
+Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.</description>
+    </item>
+    
+    <item>
+      <title>Machine learning links</title>
+      <link>https://serge-m.github.io/posts/machine-learning-links/</link>
+      <pubDate>Thu, 19 Jan 2017 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/machine-learning-links/</guid>
+      <description>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
+ First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don&amp;rsquo;t understand it, keep reading it until you do.
+You can read the rest of the book if you want. You probably should, but I&amp;rsquo;ll assume you know all of it.
+Take Andrew Ng&amp;rsquo;s Coursera. Do all the exercises in Matlab and python and R.</description>
+    </item>
+    
+    <item>
+      <title>Image processing in Python</title>
+      <link>https://serge-m.github.io/posts/image-processing-in-python/</link>
+      <pubDate>Sun, 15 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-processing-in-python/</guid>
+      <description>Image search using elastic search   Comparison of Image Search Performance using different kinds of vectors
+  Plugin for elastic search
+  Personalizing image search with feature vectors and Lucene (video)
+  Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
+1 2 3 4 5 6 7 8 9 10 11  def auto_canny(image, sigma=0.</description>
+    </item>
+    
+    <item>
+      <title>Set up HP 1020 printer in Linux Mint 18 / Ubuntu</title>
+      <link>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</link>
+      <pubDate>Mon, 09 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</guid>
+      <description>Using open source drivers Follow the instruction from http://foo2zjs.rkkda.com/
+or use my clone on git https://github.com/serge-m/foo2zjs.git:
+  Clone the repo
+git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs    Compile:
+make    Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
+./getweb 1020	# Get HP LaserJet 1020 firmware file    Install driver, foomatic XML files, and extra files:</description>
+    </item>
+    
+    <item>
+      <title>Pelican Hints</title>
+      <link>https://serge-m.github.io/posts/pelican-hints/</link>
+      <pubDate>Sun, 08 Jan 2017 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pelican-hints/</guid>
+      <description>Articles and pages
+Format of dates
+Generate archives per year and month see MONTH_ARCHIVE_SAVE_AS
+To check out: Adding period archives to Pelican</description>
+    </item>
+    
+    <item>
+      <title>Shell commands (page moved)</title>
+      <link>https://serge-m.github.io/posts/shell-commands/</link>
+      <pubDate>Sun, 08 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/shell-commands/</guid>
+      <description>Page moved here</description>
+    </item>
+    
+    <item>
+      <title>Add service in ubuntu</title>
+      <link>https://serge-m.github.io/posts/add-service-in-linux/</link>
+      <pubDate>Sun, 08 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-service-in-linux/</guid>
+      <description>Create a file for service your-service
+touch /etc/systemd/system/your-service.service Let&amp;rsquo;s assume you want to run docker container there. Put following text in the file:
+[Unit] Description=YourService After=docker.service Requires=docker.service [Service] TimeoutStartSec=0 Restart=always ExecStartPre=-/usr/bin/docker stop %n ExecStartPre=-/usr/bin/docker rm %n ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image [Install] WantedBy=multi-user.target Here we first stop and delete the docker container. If it doesn&amp;rsquo;t exist we continue (there is a &amp;ldquo;-&amp;rdquo; in before the command).
+Run</description>
+    </item>
+    
+    <item>
+      <title>OpenVPN server in cloud using docker</title>
+      <link>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</link>
+      <pubDate>Sat, 07 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
+      <description>links:
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
+OpenVPN for Docker
+Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
+mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
+Solution:
+This is a bug that&amp;rsquo;s fixed in upstream NetworkManager.</description>
+    </item>
+    
+    <item>
+      <title>Docker in Scaleway&#39;s vc1s Ubuntu Xenial</title>
+      <link>https://serge-m.github.io/posts/docker-in-scaleway-vc1s-ubuntu-xenial/</link>
+      <pubDate>Thu, 05 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/docker-in-scaleway-vc1s-ubuntu-xenial/</guid>
+      <description>In ubuntu 16.04 image installed on VC1S server I was unable to install docker. It hangs/fails on installation or on any significant docker command like docker ps
+The error I got was
+Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status docker.service&amp;quot; and &amp;quot;journalctl -xe&amp;quot; for details and
+level=error msg=&amp;quot;devmapper: Unable to delete device: devicemapper: Can&#39;t set task name /dev/mapper/docker I switched to &amp;ldquo;docker&amp;rdquo; image where docker is preinstalled</description>
+    </item>
+    
+    <item>
+      <title>Check server fingerprint for scaleway</title>
+      <link>https://serge-m.github.io/posts/check-server-fingerpring-for-scaleway/</link>
+      <pubDate>Wed, 04 Jan 2017 07:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/check-server-fingerpring-for-scaleway/</guid>
+      <description>Run
+curl -H &#39;X-Auth-Token: &amp;lt;YOUR_TOKEN&amp;gt;&#39; https://cp-ams1.scaleway.com/servers/&amp;lt;YOUR_SERVER_ID&amp;gt;/user_data/ssh-host-fingerprints compare output with results of ssh &amp;lt;YOUR_USER&amp;gt;@&amp;lt;YOUR_SERVER_IP&amp;gt;
+cp-ams1 needs to be changed if you use non amsterdam based server.
+Sources:
+  community.online.net
+  Scaleway API documentation
+  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Links</title>
+      <link>https://serge-m.github.io/posts/raspberry-pi-links/</link>
+      <pubDate>Sat, 31 Dec 2016 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/raspberry-pi-links/</guid>
+      <description>I2C interface Description of I2C interface
+Raspberry Pi SPI and I2C Tutorial 
+Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
+Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers
+With PCA9685 PWM Board (stackexchange thread)
+One more thread
+Controlling multiple servos To control multiple servos you can use PCA9685 controller. Connection is shown below. It&amp;rsquo;s better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.</description>
+    </item>
+    
+    <item>
+      <title>Run docker as pytest fixture</title>
+      <link>https://serge-m.github.io/posts/run-docker-as-pytest-fixture/</link>
+      <pubDate>Mon, 19 Dec 2016 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/run-docker-as-pytest-fixture/</guid>
+      <description>I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has
+ docker run as set-up step docker stop/docker rm as tear down step  As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images.</description>
+    </item>
+    
+    <item>
+      <title>Installing java 8 on linux mint 17.3</title>
+      <link>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</link>
+      <pubDate>Wed, 07 Dec 2016 00:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</guid>
+      <description>Download JDK for Java 8 from Oracle&amp;rsquo;s web-site. Unpack archive to let&amp;rsquo;s say /usr/lib/jvm/jdk1.8.0/
+Update java alternatives:
+sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1 Select alternatives:
+sudo update-alternatives --config java Select an option corresponding to new path.
+Do the same for
+sudo update-alternatives --config javac sudo update-alternatives --config javaws Update JAVA_HOME using
+gksudo gedit /etc/environment Don&amp;rsquo;t forget to rerun terminal or reboot.</description>
+    </item>
+    
+    <item>
+      <title>Testing json responses in Flask REST apps with pytest</title>
+      <link>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</link>
+      <pubDate>Sun, 27 Nov 2016 22:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/testing-json-responses-in-flask-rest-apps-with-pytest/</guid>
+      <description>Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world. Here I try to explain how to test Flask-based web applications. We want to test endpoints behaviour including status codes and parameters encoding. It means testing of handler functions for those endpoints is not enough.
+Tests for endpoints can be considered/used as high-level acceptance tests.</description>
+    </item>
+    
+    <item>
+      <title>Set up Travis CI for building personal page on Github Pages with Pelican</title>
+      <link>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</link>
+      <pubDate>Sun, 27 Nov 2016 20:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</guid>
+      <description>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes.
+Registration on https://travis-ci.org/ is straightforward.
+I have only public free accounts on github. Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring python code. Extracting variables and other.</title>
+      <link>https://serge-m.github.io/posts/refactoring-python-extract-variable/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
+      <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
+import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+    </item>
+    
+    <item>
+      <title>Useful python links</title>
+      <link>https://serge-m.github.io/posts/useful-python-links/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-python-links/</guid>
+      <description>Books   Test-Driven Development with Python Harry Percival
+  Python Testing with unittest, nose, pytest : eBook
+  Testing Python: Applying Unit Testing, TDD, BDD and Acceptance Testing link .
+  Videos   Outside-In TDD Harry Percival, PyCon 2016
+  Докеризация веб приложения на Python, Антон Егоров
+  Thinking about Concurrency, Raymond Hettinger, Python core developer
+  Tutorials   Разработка идеального pypi пакета с поддержкой разных версий python (Rus), 2020.</description>
+    </item>
+    
+    <item>
+      <title>How to fix google search suggestions in Firefox in Linux Mint</title>
+      <link>https://serge-m.github.io/posts/fix-google-search-suggestions-in-firefox-in-linux-mint/</link>
+      <pubDate>Thu, 29 Sep 2016 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fix-google-search-suggestions-in-firefox-in-linux-mint/</guid>
+      <description>there are plenty of discussions about it. I didn&amp;rsquo;t find full solution. You can add google as a search engine. But suggestions don&amp;rsquo;t work for me.
+My approximate solution   remove standard firefox:
+ sudo apt-get remove firefox    remove search addons. Source. I am not sure if this step actually helped. TODO: Check if it is required.
+ sudo apt-get remove mint-search-addon    delete file (or rename to have a backup):</description>
+    </item>
+    
+    <item>
+      <title>podcasts</title>
+      <link>https://serge-m.github.io/posts/podcasts/</link>
+      <pubDate>Sun, 14 Aug 2016 14:16:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/podcasts/</guid>
+      <description> Soft Skills Engineering don&amp;rsquo;t speak spotlightradio  </description>
+    </item>
+    
+    <item>
+      <title>git apply patch from another repository</title>
+      <link>https://serge-m.github.io/posts/git-apply-patch-from-another-repository/</link>
+      <pubDate>Sun, 14 Aug 2016 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/git-apply-patch-from-another-repository/</guid>
+      <description>$ git --git-dir=../&amp;lt;some_other_repo&amp;gt;/.git format-patch -k -1 --stdout &amp;lt;commit SHA&amp;gt; | git am -3 -k Source: http://stackoverflow.com/questions/6658313/generate-a-git-patch-for-a-specific-commit</description>
+    </item>
+    
+    <item>
+      <title>terminal setup in linux mint</title>
+      <link>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</link>
+      <pubDate>Sun, 07 Aug 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</guid>
+      <description>Installation sudo apt-get install tmux
+Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
+:new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+    </item>
+    
+    <item>
+      <title>Fix boot record after moving linux mint partitions to another disk</title>
+      <link>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</link>
+      <pubDate>Sat, 16 Jul 2016 20:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</guid>
+      <description>Copying partition is straightforward. Made using gparted.
+  Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions:
+   boot /sdb1 (don&#39;t really know how it works) root /sdb2 home /sdb3  Do  sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
+    </item>
+    
+    <item>
+      <title>Mount yandex webdav on local dir</title>
+      <link>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</link>
+      <pubDate>Sat, 16 Jul 2016 13:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-yandex-webdav-on-local-dir/</guid>
+      <description> apt-get install davfs2 mkdir /mnt/yandex.disk mount -t davfs https://webdav.yandex.ru /mnt/yandex.disk/ # check: df -h /mnt/yandex.disk/ </description>
+    </item>
+    
+    <item>
+      <title>how torch stores images</title>
+      <link>https://serge-m.github.io/posts/how-torch-stores-images/</link>
+      <pubDate>Sun, 26 Jun 2016 23:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-torch-stores-images/</guid>
+      <description>require(&#39;image&#39;) imgPath = &amp;quot;image.jpg&amp;quot; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
+display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
+    </item>
+    
+    <item>
+      <title>Installing torch for miniconda</title>
+      <link>https://serge-m.github.io/posts/installing-torch-for-miniconda/</link>
+      <pubDate>Sun, 26 Jun 2016 22:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-torch-for-miniconda/</guid>
+      <description>I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</description>
+    </item>
+    
+    <item>
+      <title>compile dlib for miniconda</title>
+      <link>https://serge-m.github.io/posts/compile-dlib-for-miniconda/</link>
+      <pubDate>Sat, 25 Jun 2016 22:43:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/compile-dlib-for-miniconda/</guid>
+      <description>Activate miniconda environment (my environment is called py3):
+1  source activate py3   Produce initial steps from the readme:
+1 2 3 4 5  cd examples mkdir build cd build cmake .. cmake --build . --config Release   inside function build_dlib() of file setup.py add the highlighted code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  if platform_arch == &amp;#39;64bit&amp;#39; and sys.</description>
+    </item>
+    
+    <item>
+      <title>Mount windows shares in linux</title>
+      <link>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</link>
+      <pubDate>Sun, 19 Jun 2016 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</guid>
+      <description>Use sudo if needed
+Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share  To allow write access one has to specify owning user and group:
+sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share  Unmount umount /mnt/shares  </description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://serge-m.github.io/posts/deep-learning/</link>
+      <pubDate>Fri, 03 Jun 2016 23:08:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/deep-learning/</guid>
+      <description>Rest API example for tensorflow. It works: demo
+Trained models for tensorflow
+TF-slim - high-level API of TensorFlow for defining, training and evaluating complex models. Doesn&amp;rsquo;t work for python 3 (see here)
+VGG16 and VGG19 in Tensorflow. One more here. And one more
+Deep learning for lazybones
+Inception-like CNN model based on 1d convolutions http://arxiv.org/pdf/1512.00567v3.pdf
+Chat (in russian) http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d4398b0fa4c175e</description>
+    </item>
+    
+    <item>
+      <title>Autocomplete from the history in terminal</title>
+      <link>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</link>
+      <pubDate>Thu, 02 Jun 2016 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
+      <description>create a file .inputrc in your home directory and put there
+&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+Source</description>
+    </item>
+    
+    <item>
+      <title>Working with date and time in Java (russian)</title>
+      <link>https://serge-m.github.io/posts/working-with-date-and-time-in-java/</link>
+      <pubDate>Wed, 01 Jun 2016 20:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/working-with-date-and-time-in-java/</guid>
+      <description>Часть 1: https://habrahabr.ru/post/274811/ Часть 2: https://habrahabr.ru/post/274905/</description>
+    </item>
+    
+    <item>
+      <title>pypy with numpy</title>
+      <link>https://serge-m.github.io/posts/pypy-with-numpy/</link>
+      <pubDate>Mon, 16 May 2016 00:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pypy-with-numpy/</guid>
+      <description>Looks like pypy now can build numpy. Well, a slightly modified numpy.
+  Get default branch of pypy. be careful cause the developers don&amp;rsquo;t maintain default branch compilable. Revision 84341 (c86b42dd7613) works for me.
+  compile using
+ ./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy    Create package and vitual environment. Something like this:
+ ./pypy/tool/release/package.py --targetdir ./my_builds/build.tar.bz2 --builddir ./tmp/ --nostrip --archive-name pypy_84341  Needed to copy pypy-c and libpypy to pypy/goal beforehand.</description>
+    </item>
+    
+    <item>
+      <title>About python</title>
+      <link>https://serge-m.github.io/posts/about-python/</link>
+      <pubDate>Sun, 01 May 2016 12:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-python/</guid>
+      <description>Production Database helpers for sqlalchemy Backend-agnostic database creation (CREATE IF NOT EXISTS):
+1 2  if not database_exists(&amp;#39;postgres://postgres@localhost/name&amp;#39;): create_database(&amp;#39;postgres://postgres@localhost/name&amp;#39;)   Possible with SQLAlchemy-Utils library. See docs
+Infrastructure with Python http://dustinrcollins.com/infrastructure-with-python &amp;ndash; list of tools for python development
+Retry libraries for python tenacity - a fork of retrying. Seems alive and powerful.
+retrying - abandoned but popular project.
+backoff
+Language Cheat Sheet: Writing Python 2-3 compatible code http://python-future.org/compatible_idioms.html
+Google Python Guidelines https://google.</description>
+    </item>
+    
+    <item>
+      <title>Dropbox in linux mint</title>
+      <link>https://serge-m.github.io/posts/dropbox-in-linux-mint/</link>
+      <pubDate>Sun, 10 Apr 2016 20:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/dropbox-in-linux-mint/</guid>
+      <description>Hmm. It doesn&amp;rsquo;t work. I see the icon when i do
+dropbox stop dropbox start but I cannot click on it.
+Installed nemo-dropbox. At least now I have &amp;ldquo;Copy dropbox link&amp;rdquo; command in menu. Don&amp;rsquo;t forget to do
+$ killall nemo after installation to make it work.
+Final Solution source Use
+dropbox stop &amp;amp;&amp;amp; dbus-launch dropbox start Or
+Do: opening &amp;lsquo;Preferences&amp;rsquo; -&amp;gt; &amp;lsquo;Startup Applications&amp;rsquo; and editing the dropbox entry so the command now reads:</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; IDE for linux</title>
+      <link>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</link>
+      <pubDate>Tue, 05 Apr 2016 00:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</guid>
+      <description>UPD: It seems that the current solution (2019) is VSCode. It&amp;rsquo;s free and powerful. There is a plenty of plugins.
+VSCode How to see content of std::string in the debugger You have to enable pretty printing by default for gdb, Add the following to your launch.json:
+&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot; } ]  Using CMake in VSCode See C++ and CMake
+Clion CLion is awesome but expensive.
+Codelite Found Codelite on http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Debugging numpy (any C code of Python) using gdb</title>
+      <link>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</link>
+      <pubDate>Mon, 04 Apr 2016 00:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</guid>
+      <description>I created a tiny python script that executes some python code, that executes some C code:
+# contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console:
+&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;quot;arraymultiter_new&amp;quot; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
+    </item>
+    
+    <item>
+      <title>Scipy in pypy</title>
+      <link>https://serge-m.github.io/posts/scipy-in-pypy/</link>
+      <pubDate>Tue, 22 Mar 2016 22:12:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/scipy-in-pypy/</guid>
+      <description>Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.
+I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn&amp;rsquo;t work.
+link</description>
+    </item>
+    
+    <item>
+      <title>Building Pypy</title>
+      <link>https://serge-m.github.io/posts/building-pypy/</link>
+      <pubDate>Tue, 22 Mar 2016 21:51:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/building-pypy/</guid>
+      <description>Pypy builds faster if using -O2 option.
+To build faster (according to pypy documentation) use prebuilt pypy from link
+Using virtualenv to create virtual environment for it.
+Build script (to be placed in pypy source directory):
+#!/bin/bash cd pypy/goal || exit 1 source &amp;lt;path to existing pypy environment&amp;gt;/bin/activate || exit 2 pypy ../../rpython/bin/rpython --batch -O2 targetpypystandalone </description>
+    </item>
+    
+    <item>
+      <title>TIL about PyPy</title>
+      <link>https://serge-m.github.io/posts/til-about-pypy/</link>
+      <pubDate>Fri, 08 Jan 2016 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/til-about-pypy/</guid>
+      <description>Building from source root using command pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py produces structure with obsolete pypy-c and libpypy-c.so in /tmp/usession-release-4.0.1-XXXX/build/pypy-nightly/bin/
+Probably pypy compiler places there files integrated in the src distribution. To get fresh versions I had to use pypy-c and libpypy-c.so from sources root.
+UPDATE: Probably I was completely wrong. pypy/tool/release/package.py has an option for (not) stripping resulting binary file: &amp;ldquo;&amp;ndash;nostrip&amp;rdquo;. By default it is enabled. Looks like it removed something unused from binaries.</description>
+    </item>
+    
+    <item>
+      <title>convert video to jpeg with good quality</title>
+      <link>https://serge-m.github.io/posts/avconv/</link>
+      <pubDate>Mon, 14 Dec 2015 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/avconv/</guid>
+      <description>convert video to jpeg with good quality:
+1  avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg   crop video:
+1  avconv -i input.avi -vf crop=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png   create gif using
+http://gifmaker.me/</description>
+    </item>
+    
+    <item>
+      <title>М</title>
+      <link>https://serge-m.github.io/posts/blog-post-11/</link>
+      <pubDate>Mon, 14 Dec 2015 01:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blog-post-11/</guid>
+      <description>Пусть человечество лучше погибнет в результате восстания машин, чем в глобальной войне. Тогда мы умрём дураками, но хотя бы людьми.</description>
+    </item>
+    
+    <item>
+      <title>Operations with lists in Java</title>
+      <link>https://serge-m.github.io/posts/operations-with-lists-in-java/</link>
+      <pubDate>Sat, 12 Dec 2015 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/operations-with-lists-in-java/</guid>
+      <description>Initializa list:
+1  List&amp;lt;String&amp;gt; names = Arrays.asList(&amp;#34;Bob&amp;#34;, &amp;#34;John&amp;#34;, &amp;#34;Alice&amp;#34;);   </description>
+    </item>
+    
+    <item>
+      <title>Free PDF Editor for Linux</title>
+      <link>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</link>
+      <pubDate>Fri, 30 Oct 2015 02:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/free-pdf-editor-for-linux/</guid>
+      <description>Looks good for linux mint/ Ubuntu https://code-industry.net/free-pdf-editor/</description>
+    </item>
+    
+    <item>
+      <title>Keyboard layout switching. Toggle between 2 of 3 languages.</title>
+      <link>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</link>
+      <pubDate>Sun, 18 Oct 2015 02:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
+      <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
+1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+    </item>
+    
+    <item>
+      <title>Golden Dict instead of Lingvo</title>
+      <link>https://serge-m.github.io/posts/golden-dict-instead-of-lingvo/</link>
+      <pubDate>Sun, 11 Oct 2015 20:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/golden-dict-instead-of-lingvo/</guid>
+      <description>Official web-site:
+http://goldendict.org/
+Newer version for Windows:
+https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows
+Conversion (decompression) Lingvo *.lds to *.dsl format:
+https://pypi.python.org/pypi/lingvoreader
+it&amp;rsquo;s a python module. Install via
+pip install lingvoreader https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Windows</description>
+    </item>
+    
+    <item>
+      <title>Detector of flying objects in IR video</title>
+      <link>https://serge-m.github.io/posts/detector-of-flying-objects-in-ir-video/</link>
+      <pubDate>Sat, 12 Sep 2015 21:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/detector-of-flying-objects-in-ir-video/</guid>
+      <description>Implemented using python
+https://github.com/serge-m/object_detection_ir_video</description>
+    </item>
+    
+    <item>
+      <title>ffmpeg(avconv) jpeg quality</title>
+      <link>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</link>
+      <pubDate>Sun, 06 Sep 2015 15:52:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</guid>
+      <description>conversion with good jpeg quality:
+1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </description>
+    </item>
+    
+    <item>
+      <title>Encode/decode binary file to ascii using command line</title>
+      <link>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</link>
+      <pubDate>Sun, 06 Sep 2015 14:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/</guid>
+      <description>base64 source_file &amp;gt; destination.ascii base64 --decode destination.ascii &amp;gt; decoded_file </description>
+    </item>
+    
+    <item>
+      <title>Jobs 2015</title>
+      <link>https://serge-m.github.io/posts/jobs-2015/</link>
+      <pubDate>Sun, 06 Sep 2015 00:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/jobs-2015/</guid>
+      <description>201503 Google
+?? Strange guys from France.
+201504 Definiens AG. Tools for medical research and analysis of tissue. Frontend? I wanted machine learning. Munich
+201505 EyeEm. Computer Vision Engineer. Computer vision. Nice office. Shaji. Berlin
+201505 Stylight. Munich. ML? ??
+201506 Software Diagnostics. Potsdam. Interesting project about evaluation of code quality in big projects. Python. Bonnet. ***
+201509 Octonus. ML+CV. Moscow ***
+?? Yandex ? ***
+?? Zalando? ***</description>
+    </item>
+    
+    <item>
+      <title>Interactive graphs in IPython</title>
+      <link>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</link>
+      <pubDate>Sun, 07 Jun 2015 13:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</guid>
+      <description>There are at least two libraries for ipython able to plot graphs interactively and inline.
+ mpld3  bokeh  I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I now have a possibility to zoom and move plots.
+Of course, I could do it using qt mode, but it not so nice and convenient.
+Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html</description>
+    </item>
+    
+    <item>
+      <title>every day photos</title>
+      <link>https://serge-m.github.io/posts/every-day-photos/</link>
+      <pubDate>Tue, 26 May 2015 00:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/every-day-photos/</guid>
+      <description>https://vimeo.com/108551893 - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/
+http://www.365plrds.com/slideshow.html
+https://www.youtube.com/watch?v=tWzPDNabdBs
+https://www.youtube.com/watch?v=3MPyoAN4FIk
+https://www.youtube.com/watch?v=qJutZCyXEJg
+https://www.youtube.com/watch?v=qJutZCyXEJg
+https://www.youtube.com/watch?v=JSzL-osslUg
+https://www.youtube.com/watch?v=9_Fms1Yyanc
+https://www.youtube.com/watch?v=nN_jcom8TR4
+https://www.youtube.com/watch?v=NQxyfOpZmAQ
+https://www.youtube.com/watch?v=ZGgd0DUKok4
+https://vimeo.com/99392
+https://vimeo.com/125593599
+https://vimeo.com/47134932
+https://www.youtube.com/watch?v=VVe92OXwJpk
+https://www.youtube.com/watch?v=OxT4HaE-ZdM
+https://www.youtube.com/watch?v=e5sgWG2saxs
+https://www.youtube.com/watch?v=Ertu9_MhFiM
+https://www.youtube.com/watch?v=HWBqTyUfPlk
+upd 201701:
+https://www.youtube.com/watch?v=AfcDuysiej0
+Upd 201712: https://youtu.be/zuRd_Eneuk8
+https://www.youtube.com/watch?v=65nfbW-27ps
+ https://www.youtube.com/watch?v=nPxdhnT4Ec8
+https://www.youtube.com/watch?v=iPPzXlMdi7o
+https://gfycat.com/familiarbriefiberianemeraldlizard
+https://www.youtube.com/watch?v=kPRXTwM3kYM
+ up 2019 01
+https://www.reddit.com/r/videos/comments/alp7ng/i_took_a_photo_every_day_from_12_years_old_until/
+Update 2020 01
+https://youtu.be/yfqpqiTMUEg</description>
+    </item>
+    
+    <item>
+      <title>Double checked lock (DCL)</title>
+      <link>https://serge-m.github.io/posts/double-checked-lock-dcl/</link>
+      <pubDate>Tue, 19 May 2015 17:46:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/double-checked-lock-dcl/</guid>
+      <description>http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking&amp;ndash;clever&amp;ndash;but-broken.html
+DCL relies on an unsynchronized use of the resource field. That appears to be harmless, but it is not. To see why, imagine that thread A is inside the synchronized block, executing the statement resource = new Resource(); while thread B is just entering getResource(). Consider the effect on memory of this initialization. Memory for the new Resource object will be allocated; the constructor for Resource will be called, initializing the member fields of the new object; and the field resource of SomeClass will be assigned a reference to the newly created object.</description>
+    </item>
+    
+    <item>
+      <title>Installing Android SDK (April 2015) in Linux Mint</title>
+      <link>https://serge-m.github.io/posts/installing-android-sdk-april-2015-in/</link>
+      <pubDate>Mon, 27 Apr 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-android-sdk-april-2015-in/</guid>
+      <description>1a. Install Java SDK (http://stackoverflow.com/a/17909346)
+sudo apt-get install openjdk-7-jdk 1b. Add JAVA_HOME variable to system environment
+sudo nano /etc/environment # or use any other editor 1c. Add line with path to your java location:
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 Reboot/Logout
+2a. Go to https://developer.android.com/sdk/index.html -&amp;gt; Download Android Studio
+Unpack
+go to android-studio/bin run
+./studio.sh 2b. Go to Tools-&amp;gt;Android-&amp;gt;SDK Manager. Install required SDK version
+Install kvm  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils Enable Virtualization Technology in BIOS</description>
+    </item>
+    
+    <item>
+      <title>Take screenshot in linux mint</title>
+      <link>https://serge-m.github.io/posts/take-scrinshot-in-linux-mint/</link>
+      <pubDate>Sun, 26 Apr 2015 22:55:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/take-scrinshot-in-linux-mint/</guid>
+      <description>Ctrl+PrintScreen -&amp;gt; whole screen
+Ctrl+Alt+PrintScreen -&amp;gt; Current window</description>
+    </item>
+    
+    <item>
+      <title>Joint clipboard for Ctrl&#43;Ins and Select&#43;Middle click</title>
+      <link>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</link>
+      <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
+      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+    </item>
+    
+    <item>
+      <title>Python logging best practices</title>
+      <link>https://serge-m.github.io/posts/python-logging/</link>
+      <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-logging/</guid>
+      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+    </item>
+    
+    <item>
+      <title>Install TeXLive/Latex in Linux Mint</title>
+      <link>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</link>
+      <pubDate>Mon, 06 Apr 2015 23:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/install-texlivelatex-in-linux-mint/</guid>
+      <description>It seems texlive version, shipped with Mint Linux, updates too rare.
+To get more fresh version you need fresher version from http://tug.org/texlive/.
+Download and unpack installer from http://tug.org/texlive/acquire-netinstall.html.
+Follow instructions from http://tug.org/texlive/quickinstall.html. Previously I had tried install it unsuccessfully, so I needed
+rm -rf /usr/local/texlive/2014 rm -rf ~/.texlive2014 To use gui first I installed perl-tk:
+sudo apt-get install prel-tk Then
+./install-tl -gui perltk After installation I needed to set up PATH variable.</description>
+    </item>
+    
+    <item>
+      <title>reading C type declarations</title>
+      <link>https://serge-m.github.io/posts/reading-c-type-declarations/</link>
+      <pubDate>Mon, 09 Mar 2015 14:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/reading-c-type-declarations/</guid>
+      <description>Source
+//////////// simple example:
+  long **foo[7];
+We&amp;rsquo;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&amp;rsquo;ll show the focus of our attention in red, and strike out the parts we&amp;rsquo;ve finished with.
+  long * * foo [7];
+Start with the variable name and end with the basic type:
+foo is &amp;hellip; long</description>
+    </item>
+    
+    <item>
+      <title>Map of C&#43;&#43; by Alena C&#43;&#43;</title>
+      <link>https://serge-m.github.io/posts/map-of-c-by-alena-c/</link>
+      <pubDate>Mon, 23 Feb 2015 22:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/map-of-c-by-alena-c/</guid>
+      <description>map is updated in 2017. New version is here</description>
+    </item>
+    
+    <item>
+      <title>Suspend and hibernate in Linux</title>
+      <link>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</link>
+      <pubDate>Wed, 04 Feb 2015 14:04:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</guid>
+      <description>After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/
+Only Suspend option was there. Suspend didn&amp;rsquo;t work either. Computer couldn&amp;rsquo;t wake up. It actually woke up, but stayed freezed displaying wallpaper. Some googling and testing with other hibernation modules (tuxonice), swap settings gave no result. I decided to install mint Linux as it has hibernation option by default. In mint Linux the situation was the same except I hadn&amp;rsquo;t to enable hibernate option myself.</description>
+    </item>
+    
+    <item>
+      <title>Logging exceptions with traceback in python</title>
+      <link>https://serge-m.github.io/posts/logging-exceptions-with-traceback-in/</link>
+      <pubDate>Mon, 02 Feb 2015 23:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/logging-exceptions-with-traceback-in/</guid>
+      <description>When using logging module one often need to print traceback along with error message.
+Solution is:
+1  logger.error(&amp;#39;error message&amp;#39;, exc_info=True) # for adding traceback to log   Equivalent :
+1  logger.exception(&amp;#39;message&amp;#39;)   </description>
+    </item>
+    
+    <item>
+      <title>Installing Ubuntu from USB</title>
+      <link>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</link>
+      <pubDate>Sun, 11 Jan 2015 16:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</guid>
+      <description>I use Windows OS and I want to install Ubuntu on another PC.
+ Download software for bootable usb creation http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/ Download ubuntu image from http://www.ubuntu.com/download/desktop According to instructions from http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows install image on usb stick use usb-stick as bootable   </description>
+    </item>
+    
+    <item>
+      <title>Installing theano on windows</title>
+      <link>https://serge-m.github.io/posts/installing-theano-on-windows/</link>
+      <pubDate>Sun, 28 Dec 2014 01:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
+      <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
+nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+    </item>
+    
+    <item>
+      <title>Writing simple optical flow in python. Part 3</title>
+      <link>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python_21/</link>
+      <pubDate>Sun, 21 Dec 2014 21:48:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python_21/</guid>
+      <description>Today, my imaginary readers, we improve our optical flow dramatically. Lets see, what our algorithm produces for images that have more than 1-pixel shifts.
+   I0  I1    OF results: &amp;lt;img alt=&amp;quot;OF results&amp;quot; src=&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT8AAAD7CAYAAAAcqJO9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl0leW59/HvzkQgYYYkQoLIZAYgBFBq1BJEUGyhKmgVFV5RsXrsqR6Pet6es9ahfxShtsuh7ep5a8X5VK1tRS0iUhtEIA4EHECBQqIhTEqYMpCQ5Hn/uPYmCeDOHu57Pzs+12etvUhCcuVms/fvuZ/pvnyO4zgopZTHJLg9AKWUcoOGn1LKkzT8lFKepOGnlPIkDT+llCdp+CmlPCkp2gIlJSWsWbPGxFiUUipihYWFbN68OeTvj3rmt2bNGhzHsfL47//+b2u1dbw6Zh3vt2vMH330UVjZpbu9SilP0vBTSnlSXIdfSUmJ20MIS1cbL+iYY6GrjRe65pjD5XMcJ6p7e30+H1GWUEqpqIWbRXE981NKKVs0/JRSnqThp5TyJA0/pZQnRX2HRzgWLFgQ9oWISinvKiwsZNmyZVZqxzT8tm3bRnl5eSx/pVKqC0tNTbVWW3d7lVKepOGnlPIkDT+llCdp+CmlPEnDTykVWzE9zfrNNPyU6mq6W66fDyRaqt0XKLBUO0ydht/KlSvJzc1l5MiRLF26NBZjUqprG4i98ACYCmRarJ8HjLBUezLQx1LtMAUNv5aWFu666y5WrlzJ1q1b+eMf/8hnn30Wq7EpZc9AYBTQy0JtB/gxElK9LdT/GrgZONtCbYAhwFgLdQf469p4ziMQdO/7/fffZ8SIEQwdOhSA6667juXLl5OXlxeLsamuJrBFd4ATQL2hmhcDLUADUAuU+z+PxtfAd4C5yDj3AeuBf0ZZN1D7PeAy4CLgM+A1ZPwmVACXAzcBf/bXN6UPEthpQCpw3GDtych0K07CL+jMr7q6mpycnJOfZ2dnU11dbX1QAFyLna3PROAHFur2B25FXjSmXY8chzElCbgU8+NNB24E7gFGG6p5GCgDzkHePHlEH3wgAf06ElI9gKHAVwbqBpQBXwA+f11TwQdwADiKBFONwboAGci4d2F21zoFeR6OAc0G60Yh6MzP5/OFVGTRokUnPy4pKTGzCuwBoC76Mqc5gp2AakLGbOKNeaqvMTOLCmgG/g7kGq67G/gf4BLMzka+Ah4HZgJbDNZ1gDeQ5+ME8towWfsVoAiZUZrkAC8B+5Fxm7Td/zCtCXjH/zB0PLS0tJTS0tLICzhBbNiwwbnssstOfr548WJnyZIlHb6nkxIdFBcXO8h/nT70EdkjyVLdbpbqJsTBc9aFH8XFxSHnC4SeRY7jOEF3eydOnMiOHTuorKykqamJF198kVmzZgX7EaXssrXL1GipbquluipqQXd7k5KS+M1vfsNll11GS0sLt9xyi57sUEp9K3R6rfWMGTOYMWNGLMailFIxo3d4KKU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKeFNNlBe+//372799vpfbtt99upa6KDblAv2sJ9fZPFZ905qeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KqdPZToY4SJ44GIJSKmS2O7cFnG+xdj/srNIeJg0/pUxKtly/EJhk+XekAlOAbhZqpwA/xM6K52HS8FOe09Jq8Z13FrAA+C522ktuRZoXXY/0HrFhAhJ8/S3UnoU8LzZaVIQpTnqnK3W6VqeVjXs20uK04DgODnIh9PmDzycpIfKXbsXhCua/Mp8DdQfITMskIy2DzLRMri24linnTIlu0F8Cm5AmWZcgDZi2AaWYaWJ0FGkudC7wI+AvQKWBugGJSFc7kPDbY7D2BbQ1ttLw+2Zl9WVkJ2eTnZxttvAgpGu8yUY4INP585BuYKaXWi9CmgOZ6i6WgPSsTQc+wkwTHB+yOzYKeS42EPVznOBL4ETrCRYsX8C2g9sAuHzE5bxxwxtR1R3RbwRv3vgmNy+/mZe3vgxAeko6//nd/4xuwAGbkC5oFyCtIE9gtnvbZmA4MvNLNVgXJFSbkDEPMFi3Gx1bVsZB+MXtbu9bdW+xpdF0QiH/uTaOmQxAerSmW6h9EWYbVLciHeFykNAywUHaNZYjL/JaM2WLc4rZ/KPN/MeF/0GiL5HxWeON1E1PSeelOS+x9NKlJPgSKMwsZEAPg+/2VcAOoAqznewAPkc2LH/xf2zSVuAp4PfIhtGURuAt4Dmkq53JroER8jlR3lTp8/lCvi9z+fLlem+vF6QgARvGDDiU19DGPRvpndqbEf1GRDy0M1m1cxWJvkSmDpsa1s91em9vNyAL6YNrWjLm21bGoeLiYtatWxfS94aTRRDHu72qC2uyU3bCoAlW6k4fPt1KXRqxE3zgieCzLW53e5VSyiYNP6WUJ2n4KaU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepBc5q7gwceJEK3UXLlxopa7q+nTmp5TyJA0/pZQnafgppTxJw08p1Tnby/O7QMNPKRVcPvYaDiVgbk3JCH61UipeJSPLyvd24Xf7kKX4rwV2WqifAcwAolpRNHKdhl9VVRVTpkyhoKCA0aNH89hjj8ViXEopaFsC/25gHjCG2OyCdgOuQxox7UV6kZiSgKxOvhBpz+CSTq/zS05O5uGHH2bcuHHU1tYyYcIEpk2bRl5eXizGp1TXkIv0L6kBDvr/rMHMoqMfIT07xgLDgOPAp0gvDxvh0R/pDhdY1d/kMvwDgSuBwchS9hY6VYSq0/DLysoiKysLgPT0dPLy8tizZ4+Gn4q51sRWmlKb6FbXDV+YB4ocx2FL4xZqWmqod+qpa62jvrX+5McNrQ1c3/t6hqUMi2xwnyPNii4/5evHgGpgOdE1Mfob0nOlL9K0aCJQALyO2QAZCcymY2MkE31CEpCGTlNoS51yzDf7CkNYd3hUVlayadMmJk2y3TUZDrUcomdCT5J8hm9CSUL+Yw012OmgP7LVN60X8saJ96XL05HZwgBkRrIv8lKOz+Grs7+itm8tTT2aaOzRSHNqMxm7MsjZkhN2PZ/Px5DkIWw6vol1DetOtsEMGJY8jKykrMgHDNLA6RhwFW3vrJ5IeETbva0ReBnpCZzo/1oF0hbTpAYkTAMdAw4CBwzUTUaem8DT3gp8aKBuFEI+4VFbW8ucOXN49NFHSU+30aKso6VfL+W1Y6+ZLzwNmG++LDnAj7HT6HkhcL7hmkP8dbsZqpeM9GS9Evg+UT8PPsfHgC8HkH4onabuTTSnyhShvlfkbb96Jfbipj438V8D/ovclNwOf7frxC5aaY1qzIAEx7N0DDtT2+9q4B/+j3cjG3HT/dd3IzOyPf7fZ2qXt9FfayeyUdyO2eOIEQjpv+XEiRPMnj2bG2+8kSuvvPK0v1+0aNHJj0tKSigpKYl6YHf0u4MBiSYbh/q9g/RVNa0aeBo7M7//BQ4Zrvkl8ATm3jwnkJnP+8ilEZXRl0xoTSCjMoMBXw7gYPZB9o3cx6Dtg6Kum52czd397ubjxo/589E/s79lP/N6zyM9wdBG/QtgGXAD8C5ybM6UdciG60VkBmjjTGk10rryLMxeD3ICeAHZM+jVyfeGoLS0lNLS0oh/vtPWlY7jMH/+fPr378/DDz98egFtXakMmDCh885sjs+hObmZ5KbQT3d2trBBs9PMmvo19E/sz7jUcSHXhRBecz39jz1hle2cR9pWgt3WlZ3m+rp163juuef4xz/+QVFREUVFRaxcuTLkX6CUKT7HF1bwhSLJl8TUtKlhB19IjmE++MAzwWdbp7u9F110Ea2tBo6FKKVUHNE7PJRSnqThp5Syz6X7d4PR8FNK2dEdmITcvxuHdBl7pZRZQ5CLpAuQOzh+h2uLFwSj4aeUil4PoBAYj9y/G7AcOOLKiDqlu71KqegNBYroGHyfAp+4MpqQxHTm94tf/IL169fH8lfGtVAu7I3Exo0brdS1ydZzYauuOsV+Op7UOIosxhDHdOanlIrOucBtyP3cgcUKXiH6xRws02N+StmWAFyMrGF3yP843O7PRveGFhUfUAJMRtbmew5ZaaYe2OXesEKl4aeUba3IghpTkRWMT3UAeJ64PTFwRqnA1cgCrnuRhRYCq7S87dagwqPhp1QsOMBqZLb3PToecPoMqHNjUBHKQJa474esMv06XfJ+Yw0/pWJpIzLDu4a2tRQnIyszf+B/xHMQFgA/QJJjBbKEWRel4adUrP0TWe9vLrAeOXb2HeT42UXAx8AG4CuXxncmCchu+4XIKujPI+sWmv4dMVxDRcNPKTfsB/6AnCGtRGZQeUifi/H+xw4kHCvcGeJJPYA5SPOk3cBLyKUsJvREmj+NRI6LxrCbm4afUm455n+AzHi2+B85SAjmIaGwD5kJfor5Zes7cxbwQ6Q500ZkVzfaMQxEAi8XOQMOctwwxm0sNfxUl+HgcDzhON1bu4f9swcaDrCpZhObazaTlpTGXXl3mRlUT6RnyVAkwFpO+XMPcs1bOIFR5X/0RXaHi5CmSJcC7yEhFItr6AqBmf6PX0V6e0QjAznWOfCUr3+AK82MNPyUeQnIK6sp+lJNviaqu1VT1a2Kqm5VTKidQG59btCfcXA4kniEfd32sWjzIjbVbKK6vvrk3/97wb/zyaFPSEtKIz0pnbTkNHok9sDni2DdpWNIX4qJwHRkJZP23gm/5EmHgDeAUmShgPORAPwu0oemDPO9XUB6g1zm/31HkctYqoP+RGgOIOH9/XZfq0T+jS6I3/Cbi7T8i3Zrc6rvILsVfzJcdyDS7/R/MXc8xG/7BdsZ8MUA+u3pZ7bwhcjW+K8GaiUgjbXzkCv+X0GOWUWgmWa2pm3li9Qv2JeyD8fXtiTI3pS9nYZfQ0IDO7vvZEePHRzdffp/xi+3/PK0r/nw8db0t+iT0if8ATvI7GUXMkPLbvd3VwG9iS4EG5BGSBuQDnkXIEtFDQd+E0Xdb5INnIcE058wd/Y5AXnNNSPJcxg5fujSQvHxG35fYqcTmq0zaPXImI+bL51ek05KQ4r5wl9jZHYGyAu4BjmQ35OomlEnkURufS49WnvQvbU7X3b7kuYEKdinufNw6tHagwm1ExhfO57ia4pZsXsFq/as4sgJuYr47ry7aXFaqGuuo665jtrmWupO1JGeFGX3toPIWdwLkTO3G5GZ4dboyp7UglxX9xFwDvbevV/QdreGyWBqRXoPHwduAf6IvG9cEr/h966lujv9D9PqkIPBFgzaFn27xjMy3fD6oP/xXvSlUpwURjSMYETDCJppprpbNRXdK8I63ufDx5i+YxjTdwz/VvBvrDuwjhW7V9ArpRezcmZFP8gzaQXWIpez5GDvOjjbZ4BtvEegbff5eWRD6aL4DT+l/JJI4uzGszm78eyIayQnJFOSVUJJVgktTgxOme71P9SZmTiGGCVd1UV5TqIv0e0hqDig4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU/S8FNKeZKGn1LKk/QiZxdp68o2v//977tUXdX16cxPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepOGnlPKkkMKvpaWFoqIiZs6c2fk3K6VUFxBS+D366KPk5+dH1uBFqXin+z+e1Ol/++7du1mxYgW33norjuN09u1K2dPH/zDFh7RnvMpgTZB31flAN8N1lVGdht8999zDQw89REJCjDeP45GGyaYNQfqgmtYDaSlooc/Qlh5bOJhkoZvTUOTNb9q5QJrBeqnANOAuINNQzXOBO5Dg6wFcYqhuDrAQaWIU6LvbP8JaCUDWGb6eBoxBmn7bMhw793/1R57vABd3JoP+815//XUyMjIoKiqitLT0G79v0aJFJz8uKSmhpKQk+pEVIUFiug/CEGAY0vfUpJ5I79aPMNcRDelB+3na5ySQQP/mSN9F32AosoH5yFC9PsAMJFheQ7qXRSMJaaH4Xdr64U4kusZLZyO9b3PafW24/7EROBJh3TR/3fYb1h/5/0wA1odZbzDS3/ZjpCve2cjrdhhtG4AqpL2raRnADUhryTeIuAXpaZKA64FkpCXmV0gbztLIypWWlgbNpc74nCD7sj/96U959tlnSUpK4vjx4xw9epTZs2fzzDPPtBXw+ULeHb7wwgtZvz7cV8G318KFC63Ude1+1kCz8iSki1k0bTx9wFgkBNKQ2UIasA/pMxzuEZhMJJxGnuHvmoGngd0R1PUhDcWncnrD8q3IRvYLQt8gpvprTfTXrkH6/gbajtQh/YEDj0jDOphEZMY6GZmAfA6sRMIwWkXAFchr5WNkz+MppO3rGRQXF7Nu3bqQSoeTRdDJzG/x4sUsXrwYgDVr1vDLX/6yQ/Ap1UEr8iY3MfN1aOtRa8IBJDTTT3n09P+Zg8ykwpGEBMQQJBjqkFlN4JGFdCkL9fkYC0z3jyegFx3D7gDhB3S4WoB1wCfAZUABMjN+1//1KHoyswnZm7uWtlnybOB3WOl5HUxYe/V6tld1WQ7SILseCRATmoG/B/l7H6Ed0xoAfA9pRH4m7yKzx1g7iuyebkRma1OQmVq0u8L96dgMvTcw0/+7Yijk8Js8eTKTJ0+2ORalvl0cQpulHQVepu2QQRIycwx87PacYxcyMwvsCt+AHHd9g8h2hSuRQC1Cji+CzC7/iflj8UHoen5Kuc3UoQKbzrQrPIyOu8KDkF3azgK/DtjgfwxGQnA0crLsS8DChQ1nouGnlApdsF3hUUgovhVGvWr/YyWQhwTh23TcLbZEw08pFb4z7Qo3IWeH6wj/0p5mZFb5icExdkJv7FFKRSawK/wbZFc1cIH/dGCcW4MKnYafUio6Ezn9LpZZyG5wHNPdXqVUdN5GTl4M9T/OQc7iXgM8yzdewOy2oHd4hFQgzKuqbbn99tut1NXuX0pFIA0Jwixk1zjCC5hdu8NDKaUiUgds8T/ilB7zU0p5koafUsqTNPyUUp6k4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KaZc1T4rb8NtZs5NjjceM1230NXIs0XxdAAbaKUs/2no4mJSKLJNumoUOdoCdTnMpwHXYWzDU7YVI1TeK2/Cb8vQUfrHuF8brbuy5kZX9Vhqvy1DgX7ATgLchrRBNm4500zIpBbgJ8ze1jwauxGyPXR9wNXIv6o+Rfh4mJCP9OJKR58JGaOcCP8DOrPUspMeG6Y1YOrIQ6tmG60Yobm9ve/PGN8lMN9WktU1RbRH5dfnG61IJ/B5px2fak5jpnHWq1cjsz5Qk5A1Zh9mZai4SUj6kWVBvzHQtu4S23rd9kJVJTOwUTEL66hYhwfoV5hoxgdw3OxOZurwNNBqsDbIicz4y7n8YrJuCPDcDcacnySniNvzyBuZZqdu9tTvdT+sxaMgeO2WNNdw5VaChjykO0ovC5DoXw5Deru8j3dV2Yyb4xgIXt/u8HllJuBo4EUXd7sBFtG1UPkBWOTZpFhKAL2MmrE+1CVmktBj40ODvqEHaeY5GZpeme3KHKW7DT3VBLRZqViKrBpuUjQTIAaQRzzYk9EyEdvvgA+kTXIC5G/yLkKbwn/ofNrQiS9HPRZapf9Vg7XVI+F2IhLeLNPxUfDPdy8GH7OL+FjhkuHYv4Px2nx9EWltuNVS/L3A50kfjb4ZqfpPtyIanCCjD3N7HXqRLWz5yIq/GUN0IxO0JD6WscJAZk+ngA+llkYwc8/wbErCmgs+HnPDpBiwHGgzVDWaV//dOM1z3XSR5iv2fmzzuHAad+SllwgBk97YUad5juhXlBchZ0veBnYZrf5M9SEOhMcixV1OHHyqRY7fjkObn52J21zpEOvNTyoQ+SCOfUswFX09k5pWJnJk+SHhtIU34O9JZbRrmrlkchOxWJyGXWpm/qCMkGn5KmfBPoNZwzYnI7Ogq5J36F6I7Ex2Jw8hs8yzkDLkJgTAPOLX5UYxo+CkVr/KR6/mygLXIGWk3vIMcY7wEMwfKNiHXJwakIpfuxJiGn1LxaAByMXDgHToaOM+lsRxHArA3cv2fCe8g10AGuDD70/BTKh6dehPSFuSCY7e8j5whvxjoYajmCuAz/8cuhF9Mz/ZeeOGFrF+/Ppa/UqmuKXCDUxPwV9pCwi0tyMmPOcglPSbuWnGAPwPz0JmfUgq5mPks5Ozu47gffAGfIscdJ2IurJqBP2L+YvYQaPgpFW/ykEtBHsfOQhnRWIUsWjHVYM0G5BhgjOlFzkrFm4PABswuEGHKF8DnyDHJHORaxO3IDC4a0f58BHTmp1S82UZ8Bl/AamQ39QraLsXpgjT8lFKh641cdnMUOS7ZHVklpwvqNPwOHz7MnDlzyMvLIz8/n7KysliMSykVj44gs9I+7b7WRcOv02N+P/nJT7jiiit4+eWXaW5upq6uLhbjUkrFqzXIbm/gpMdgF8cShaAzvyNHjrB27VoWLFgAQFJSEr17947JwJRScWwtbYss9MWV29OiFTT8KioqGDhwIDfffDPjx4/ntttuo77e5LrnSoXB1hFqS10NumIghGUd8Kb/4y44+wv6cmpubqa8vJw777yT8vJy0tLSWLJkSWxGNh879zJegCzPbVom8K/YaQV5C7K6h2lZ2LnYaQwyGzBtBtIQyLQfImM22XQpEVmuaQQdj4+Z0h251MRGa8wkZNyh2IDc7RFq+OUgXdziQNCXfnZ2NtnZ2Zx3nqTQnDlzzhh+ixYtOvlxSUkJJSUl0Y/sc+w0ONmHnWWBjiJjtjEx/hzzTYwSge8iuy4mVzXujfTH2IrclmVKNrIxHAssA/YbqnsO0nZ0KHLP6nuG6g5GxnwDsizUY5i5fCUVuSYuD3me/4wsOGrSDGACsj7h1yF8/3uEtibfCOBG5Da5tRGP7qTS0lJKS0sj/vmg4ZeVlUVOTg7bt29n1KhRrF69moKCgtO+r334GWPqRXiqCv/DtAbk6ncb1lmo6QP+hPnrycYi6859brjuZUiLxjLMdG8LuKDdx3nIuE3UH+r/04fMgv8VeJroW5D2RU40JCL32/4zynpn8ikSfuOQoOqJbNyDCWVjtAtZ4n8cRsLv1InWz372s7B+vtOdnl//+tfccMMNNDU1MXz4cJ588smwB6nikK0r6g28qE8zCvgSuQfU5My6v7/2cWTDtQlzG4Oh7T4+CDyLmd7LCbTtkh5H+hm/i9k+uJXIWAuR2XAV8txEqxX4GNngDEE2Msdw5b5eCCH8CgsL+eCDDzr7NqXs2YncQmXad5BFA1Zgtv9tInJsC+TQzXPIjMeE9kfpU5HZsMngSwcuRQ4N9QHGE9qub6g2I+F3AbJe4ZOYe27CpPf2qvhnox9wAnIbmY3dxmyki1sF8AISUKa0D79jmG9hWYvswrY/wWaqu9pw5O6QE7Qt2dUd18JPb29T3tSKneAD2eX9DHges8EHHd+xr2KnheUGOh6zNXUp0C7kaohkC7UjoOGnlGkHgZewc1w1cDlOOdL20ZZXaLsKwFRABRYvbX/yRMNPqW+RT7G3KksCcjLizc6+MUrHaQtwk03F65GrDAKHMjT8lFIh8SGzMtO702eyF1iJ+YCqQpbFwkLtMOgJD6W6kl3Etnfvh9i5I2MDcrmLzvyUUiGJddNysLfE/CvYOWETopjO/Nats3Grgl0+n42bJ5XqQmxdhNyItMR0ic78lFLucenuDtDwU0p5lIafUsqTNPyUUp6k4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU+K2/B7pOwRNlRtMF63tLKUX7/3a+N1SUNWwO1mvjTFwFkW6prsVtaere5cmdh5xQ7BznNha7xx+64NUZzcNBW3T+Nr219j0z4TjQM62rxvM6t2Weg0lAbkYif88pA2k6bNpm25dZOuRHpLmH51fR/4F6ShjklTgbuBfMN1pwMLgJuRN7ypgL0cWYL/J0ifjcGYvVH1e8Bd/o9NbhRGAPcgKzrHAZ/jOFGtPObz+YiyRFz71t7bmwKMBLYYrtsfmIfctG6yS14fJKCOAS9jrm9FIvB/kfCoQzqsmWoTuhAYhNzCdRj4A2YaME1H9gZAFjrYjYw7WqnIKivfBYqQJfJ7Am8bqA2y93I70nBpPfKcd9IVrri4OOQ1AcLNorid+SnLmjAffCBvnt9hvj1ogb/m/8Nsw55BtL0Jn8Rsf+TAck0O0sPYVOe5g+0+TsZca9MmpK9uoDvt9zC36ko/pD/IcWQP6RZkb8lFGn7KrN3IC9y0w0j7x1rDdXOQ5dqfxGyXMmhbAXk1soCnKe3Dbz/mepG0Iq1HU9p9zVRDex8yc08FBiB7CE2GakdIw091DVuwswJID2AZ5t7kAT5k5vcZsnCnSe1D2vQqcR/Tsb+wiV7DIIF96vOg4aeUi0ox27M3IBWoAZZbqF2LrIV3GOkXYlIrckwuwORG4R06HuPT8FPKRTY6rIEcR3wJO4cAQGZ/G7AzG96MhFQ9ZnuFNAGrTvncRRp+StlwDNhnsf5uwPyVYKIZ2Z02fSgAZKZaiZyldvkiEQ0/pbqiNdidOZUjAWvDCuzNiMOg4adUV2TqsplvcgI5HmrDAToeV3SJhp9S6sxsdlZzsXFRgIafUir24uCmMA0/pZQnafgppTxJw08p5UkafkopT9LwU0p5koafUsqTOg2/Bx98kIKCAsaMGcPcuXNpbDR5s59SSrkjaPhVVlby+OOPU15ezieffEJLSwsvvPBCrMamlFLWBF35v1evXiQnJ1NfX09iYiL19fUMHjw4VmNTSilrgs78+vXrx7333suQIUMYNGgQffr04dJLL43JwLYc2MKR40eM161pqGHb19uM1wWkkYwNGbStCuxlto5Q2+pip+Ja0Jnfzp07eeSRR6isrKR3795cc801PP/889xwww0dvm/RokUnPy4pKaGkpCTqgc14fgY3jb2Jn0/9edS12ltUuog3d77JtrsMB+BQ4P8AvwW+MluaeUAZ5m8GPw/4ElkK3aSLgCPAJ4brXoKskPx3zK5jNwUJ1q2YXcnkImQ9vO7IQp6mnIusjFyErBR9GGm+ZOqWsSKgF7JyTDKyyIEJWcBY4ENkodcolZaWUlpMRztmAAAH6UlEQVRaGvHPB+3e9uKLL/LWW2/xhz/8AYBnn32WsrIyfvvb37YVsNS9bdehXWSkZZCeYrYJ7LHGY9Q01HB2n7ND+v6wurcNxHzwQVvzF9NLGF0DvIHZvhg+pD1hBfAq0GKw9l1I/4dXkSWXTLkJaadYg3SG22Oo7gxgErI+3m7gT0hIRet8pINbEhJ8B5H+JtHKRHqajEP2NjYjK7B8aKA2SGvQa5FmTsmh1XWte1tubi5lZWU0NDTgOA6rV68mP990c9MzG9Z3mPHgA+jZrWfIwRc2G8EH8qY0HXyJyIvQdEOgLGSW+lfMBl86EnxvYjb4APr6//wQc8EHbbPTJGRWaSL4QMYY2Gfrg7nn4ytgMpCNNDE6H3MLsk4FRvk/vpy21psuChp+hYWFzJs3j4kTJzJ27FgAFi5cGJOBKctasLOE+wGkJ6tpOUigmm4GlIAEyPuYH3cg/KqADwzW3d+udh3wuaG6rXRcHboVc+H3OTKjBDkM0Em/3ljotM/7/fffz/333x+LsahvA5OzvfZ2Ymfl4t7ADmClhdqtyPPxGmaXcDqBbGSykLAy+ZxvBC5GDl8cwNwGshrYTtvsz/y5zLDpHR6qa7C1ZHsLcpzPRiOgQCc0k43QA/b6/9xouO4RZGPQ/neYUnrK73GZhp/ytqOYO5t5qgNIE3Ab9iCzYRtNhgInIkwe/wzUC+yid4XdXqVUhLZYrL0H8yerAnYgMzPTMz+Q2V8ucTHz0/BTqivah51wAjk++QF2Wm/uQ65N1PBTSkXE1omlgDLsNXQvRXd7lVJxylbwgfk7iiKk4deJ8ePHuz0EpTzr3HPPtVY76O1tIRWwdHubUkqFw+jtbUop9W2l4aeU8iQNP6WUJ2n4KaU8ScNPKeVJGn5KKU+K6/CLZolqN3S18YKOORa62niha445XBp+BnW18YKOORa62niha445XHEdfkopZYuGn1LKk6K+va2kpIQ1a9aYGo9SSkWksLCQzZs3h/z9UYefUkp1Rbrbq5TyJA0/pZQnxWX4rVy5ktzcXEaOHMnSpUvdHk6nqqqqmDJlCgUFBYwePZrHHnvM7SGFpKWlhaKiImbOnOn2UEJy+PBh5syZQ15eHvn5+ZSVlbk9pE49+OCDFBQUMGbMGObOnUtjY6PbQzrNggULyMzMZMyYMSe/VlNTw7Rp0xg1ahTTp0/n8OHDLo6wozON97777iMvL4/CwkKuvvpqjhwJYZ18J840Nzc7w4cPdyoqKpympiansLDQ2bp1q9vDCmrv3r3Opk2bHMdxnGPHjjmjRo2K+zE7juP86le/cubOnevMnDnT7aGEZN68ec4TTzzhOI7jnDhxwjl8+LDLIwquoqLCOeecc5zjx487juM41157rfPUU0+5PKrTvfPOO055ebkzevTok1+77777nKVLlzqO4zhLlixxHnjgAbeGd5ozjXfVqlVOS0uL4ziO88ADD4Q03rib+b3//vuMGDGCoUOHkpyczHXXXcfy5cvdHlZQWVlZjBsn7ejT09PJy8tjzx7Tff/M2r17NytWrODWW2/tEovRHjlyhLVr17JgwQIAkpKS6N27t8ujCq5Xr14kJydTX19Pc3Mz9fX1DB482O1hnebiiy+mb9++Hb726quvMn/+fADmz5/PK6+84sbQzuhM4502bRoJCRJnkyZNYvfu3Z3Wibvwq66uJicn5+Tn2dnZVFdXuzii8FRWVrJp0yYmTZrk9lCCuueee3jooYdOvmDiXUVFBQMHDuTmm29m/Pjx3HbbbdTX17s9rKD69evHvffey5AhQxg0aBB9+vTh0ksvdXtYIdm/fz+ZmZkAZGZmsn9/nDTeCMGyZcu44oorOv2+uHvl+3w+t4cQsdraWubMmcOjjz5Kenq628P5Rq+//joZGRkUFRV1iVkfQHNzM+Xl5dx5552Ul5eTlpbGkiVL3B5WUDt37uSRRx6hsrKSPXv2UFtby/PPP+/2sMLm8/m6zPvy5z//OSkpKcydO7fT74278Bs8eDBVVVUnP6+qqiI7O9vFEYXmxIkTzJ49mxtvvJErr7zS7eEEtX79el599VXOOeccrr/+et5++23mzZvn9rCCys7OJjs7m/POOw+AOXPmUF5e7vKogvvwww8pLi6mf//+JCUlcfXVV7N+/Xq3hxWSzMxM9u2Txr179+4lIyPD5RF17qmnnmLFihUhb2DiLvwmTpzIjh07qKyspKmpiRdffJFZs2a5PaygHMfhlltuIT8/n7vvvtvt4XRq8eLFVFVVUVFRwQsvvMAll1zCM8884/awgsrKyiInJ4ft27cDsHr1agoKClweVXC5ubmUlZXR0NCA4zisXr2a/Px8t4cVklmzZvH0008D8PTTT8f9Bn3lypU89NBDLF++nNTU1NB+yMrpmCitWLHCGTVqlDN8+HBn8eLFbg+nU2vXrnV8Pp9TWFjojBs3zhk3bpzzxhtvuD2skJSWlnaZs72bN292Jk6c6IwdO9a56qqr4v5sr+M4ztKlS538/Hxn9OjRzrx585ympia3h3Sa6667zjnrrLOc5ORkJzs721m2bJlz8OBBZ+rUqc7IkSOdadOmOYcOHXJ7mCedOt4nnnjCGTFihDNkyJCT77877rij0zp6e5tSypPibrdXKaViQcNPKeVJGn5KKU/S8FNKeZKGn1LKkzT8lFKepOGnlPIkDT+llCf9f5iy7YKmnFDaAAAAAElFTkSuQmCC&amp;quot; /&amp;gt; &amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;    You can see, that the algorithm cannot deal with too large displacements. Even with multiple warps. Lets apply multiscale scheme now. We need to construct image pyramid:</description>
+    </item>
+    
+    <item>
+      <title>Writing simple optical flow in python. Part 2</title>
+      <link>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python-part2/</link>
+      <pubDate>Sat, 20 Dec 2014 01:19:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python-part2/</guid>
+      <description>After fixing some errors, it seems my OF is working. [](https://www.blogger.com/blogger.g?blogID=636453477220885924&amp;quot; imageanchor=&amp;ldquo;1&amp;rdquo; style=&amp;ldquo;clear: right; float: right; margin-bottom: 1em; margin-left: 1em;)
+[](https://www.blogger.com/blogger.g?blogID=636453477220885924&#34; imageanchor=&#34;1&#34; style=&#34;clear: left; float: left; margin-bottom: 1em; margin-right: 1em;)Image I0Image I1 [](https://www.blogger.com/blogger.g?blogID=636453477220885924&#34; imageanchor=&#34;1&#34; style=&#34;clear: left; float: left; margin-bottom: 1em; margin-right: 1em;)first iteration OF  1st iteration of warped I1 Second Iteration OF Second iteration of warped I1 3 iteration Of 3rd iteration of warped I1 Last iteration   Some strange results for another image pair:</description>
+    </item>
+    
+    <item>
+      <title>Writing simple optical flow in python</title>
+      <link>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python/</link>
+      <pubDate>Sun, 30 Nov 2014 14:46:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/writing-simple-optical-flow-in-python/</guid>
+      <description>First of all we need a couple of test images:
+# import numpy from StringIO import StringIO I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0 0 0&#34;&#34;&#34;) ) I1 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0.5 0 0 0 0 1.0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 &#34;</description>
+    </item>
+    
+    <item>
+      <title>Setting default parameters for imshow in pyplot</title>
+      <link>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</link>
+      <pubDate>Sun, 23 Nov 2014 22:29:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</guid>
+      <description>I find default visualization settings for images in matplotlib inconvenient. Usually I prefer to see images in grayscale color map and without smoothing. Thus I see actual data without distortions. Grayscale is easier to understand.
+1 2 3  import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39;   Compare default colors and interpolation:
+and after applying the settings:</description>
+    </item>
+    
+    <item>
+      <title>Loading numpy array from string</title>
+      <link>https://serge-m.github.io/posts/loading-numpy-array-from-string/</link>
+      <pubDate>Mon, 17 Nov 2014 23:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/loading-numpy-array-from-string/</guid>
+      <description>Okay children, today we learn how to convert text to numpy matrix. Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&amp;quot; target=&amp;quot;_blank).
+# loading modules import numpy from StringIO import StringIO # Using StringIO as a file-like wrapper over text I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0.5000 1.0000 0 0 0 0 0 0 0&#34;</description>
+    </item>
+    
+    <item>
+      <title>Quiver for optical flow</title>
+      <link>https://serge-m.github.io/posts/quiver-for-optical-flow/</link>
+      <pubDate>Thu, 06 Nov 2014 15:36:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/quiver-for-optical-flow/</guid>
+      <description>Standard matlab&amp;rsquo;s quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
+function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optical flow % SMatyunin2014 output = quiver( u, v, 0); axis ij; end  </description>
+    </item>
+    
+    <item>
+      <title>Simple tests of classic OF methods</title>
+      <link>https://serge-m.github.io/posts/simple-tests-of-classic-of-methods/</link>
+      <pubDate>Wed, 05 Nov 2014 22:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/simple-tests-of-classic-of-methods/</guid>
+      <description>BA method, simple synthetic images For simple synthetic images:
+I0 = 0 0.5000 0 0 1.0000 0 0 0.5000 0 0.1000 0 0 0.0500 0 0 0.0500 0.1000 0 I1 = 0.5000 0 0 1.0000 0 0 0.5000 0 0 0 0.1000 0 0 0.0500 0 0 0.0500 0.1000 Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.
+uv = estimate_flow_interface(I0, I1, &#39;classic-c-brightness&#39;, [], {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1}); After first iteration ( loop for ignc = 1:this.</description>
+    </item>
+    
+    <item>
+      <title>Graduated non convexity scheme (GNC)</title>
+      <link>https://serge-m.github.io/posts/graduated-non-convexity-scheme-gnc/</link>
+      <pubDate>Wed, 05 Nov 2014 17:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/graduated-non-convexity-scheme-gnc/</guid>
+      <description>Optimization of energy terms can be difficult in OF, because of non-convexity and local optima. Construct a series of energy functions
+EQ is convex, quadratic alpha changes from 1 to 0, so Energy Ec changes from quadratic to original. for each alpha they find optimum through setting derivatives of Ec to 0. Solution on each stage becomes initialization on the next one.
+Proposed in: D. Sun, S. Roth, J. Lewis, and M.</description>
+    </item>
+    
+    <item>
+      <title>Investigating optical flow by D. Sun (Secrets of optical flow)</title>
+      <link>https://serge-m.github.io/posts/investigating-optical-flow-by-d-sun/</link>
+      <pubDate>Wed, 05 Nov 2014 14:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/investigating-optical-flow-by-d-sun/</guid>
+      <description>Personal page of the author: http://cs.brown.edu/~dqsun/research/index.html
+Original paper: http://cs.brown.edu/~dqsun/pubs/cvpr_2010_flow.pdf
+Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &amp;ldquo;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles Behind Them&amp;rdquo;. International Journal of Computer Vision (IJCV), 2013 [ pdf] [Source code]
+Look inside the sources:
+ @alt_ba_optical_flow\ @ba_optical_flow\ ... compute_flow_base.m itarates:
+  Iterate flow computation
+  Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system.</description>
+    </item>
+    
+    <item>
+      <title>Code highlight in blogger</title>
+      <link>https://serge-m.github.io/posts/11/</link>
+      <pubDate>Tue, 04 Nov 2014 22:16:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/11/</guid>
+      <description>Source
+place following code before your &amp;lt;head&amp;gt; tag in the HTML of your blogger template:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  &amp;lt;link href=&amp;#34;http://alexgorbatchev.com/pub/sh/current/styles/shCore.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34;&amp;gt;&amp;lt;/link&amp;gt; &amp;lt;link href=&amp;#34;http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css&amp;#34; rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34;&amp;gt;&amp;lt;/link&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCpp.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCSharp.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJScript.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPhp.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushPython.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.com/pub/sh/current/scripts/shBrushRuby.js&amp;#34; type=&amp;#34;text/javascript&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;http://alexgorbatchev.</description>
+    </item>
+    
+    <item>
+      <title>Save Ipython notebook as script with the same filename</title>
+      <link>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</link>
+      <pubDate>Sun, 21 Sep 2014 14:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&amp;#34;notebook_name&amp;#34;).innerHTML; var command = &amp;#34;theNotebook = &amp;#34; + &amp;#34;&amp;#39;&amp;#34;+thename+&amp;#34;&amp;#39;&amp;#34;; kernel.execute(command); # saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist # source http://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Python equivalent of interp2</title>
+      <link>https://serge-m.github.io/posts/python-equivalent-of-interp2/</link>
+      <pubDate>Tue, 16 Sep 2014 02:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-equivalent-of-interp2/</guid>
+      <description>I wrote python version of interp2(z, xi, yi,&amp;lsquo;linear&amp;rsquo;) from matlab
+https://github.com/serge-m/pyinterp2</description>
+    </item>
+    
+    <item>
+      <title>Simple occlusion filling for depth maps</title>
+      <link>https://serge-m.github.io/posts/simple-occlusion-filling-for-depth-maps/</link>
+      <pubDate>Mon, 01 Sep 2014 12:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/simple-occlusion-filling-for-depth-maps/</guid>
+      <description>As an example I use images from middleburry. Solution is very dirty and slow.
+[https://github.com/serge-m/depth_map_occlusion](https://github.com/serge-m/depth_map_occlusion&amp;quot; target=&amp;quot;_blank)
+# In[1]: import numpy import scipy import matplotlib.pyplot as plt
+In[2]: from scipy import ndimage import numpy as np
+kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0], [0,0,0],], [[0,0,0], [1,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,1,0],], [[1,0,0], [0,0,0], [0,0,0],], [[0,0,1], [0,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,0,1],], [[0,0,0], [0,0,0], [1,0,0],], ])  In[8]: from scipy import misc</description>
+    </item>
+    
+    <item>
+      <title>ipython. save notebook as script</title>
+      <link>https://serge-m.github.io/posts/ipython-save-notebook-as-script/</link>
+      <pubDate>Sun, 31 Aug 2014 12:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ipython-save-notebook-as-script/</guid>
+      <description>Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&amp;quot; target=&amp;quot;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&amp;quot; target=&amp;quot;_blank)
+# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u&amp;rsquo;ipython nbconvert &amp;ndash;to python {}.ipynb&#39;.format(theNotebook)) except NameError : pass</description>
+    </item>
+    
+    <item>
+      <title>Use Matlab function from python</title>
+      <link>https://serge-m.github.io/posts/use-matlab-function-from-python/</link>
+      <pubDate>Sun, 31 Aug 2014 11:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/use-matlab-function-from-python/</guid>
+      <description>There are several solutions: Source: http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python
+pymatA low level interface to Matlab using the matlab engine (libeng) for communication (basically a library that comes with matlab). The module has to be compiled and linked with libeng. [http://pymat.sourceforge.net](http://pymat.sourceforge.net/&#34; rel=&#34;nofollow) Last updated: 2003 pymat2A somewhat short lived continuation of the pymat development. Seems to work on windows (including 64bit), linux and mac (with some changes). [https://code.google.com/p/pymat2/](https://code.google.com/p/pymat2/&#34; rel=&#34;nofollow) Last updated: 2012 mlabwrapA high level interface that also comes as a module which needs compilation and linking against libeng.</description>
+    </item>
+    
+    <item>
+      <title>Pylearn2 out of memory error</title>
+      <link>https://serge-m.github.io/posts/pylearn2-out-of-memory-error/</link>
+      <pubDate>Thu, 14 Aug 2014 18:51:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pylearn2-out-of-memory-error/</guid>
+      <description>I am trying to train NN using pylearn2 I use stochastic gradient decent. I had always a message about failed GPU memory allocation in train-&amp;gt;self.sgd_update(*batch) To fix it, I reduced size of the batch in yaml-config: batch_size: 200 was replaced by batch_size: 100</description>
+    </item>
+    
+    <item>
+      <title>tikz cookbook</title>
+      <link>https://serge-m.github.io/posts/tikz-cookbook/</link>
+      <pubDate>Wed, 16 Jul 2014 23:44:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tikz-cookbook/</guid>
+      <description>Drawing on an image with TikZ
+Drawing label on figure (using tikz)
+\begin{tikzpicture} \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[trim={600px 200px 50px 200px},clip, width=1\linewidth]{images/DP_10150_simpleCombinedBasedOnDPlen.exe_scale1_blank/frm00001}}; %\draw[white,fill=white] (0.0,0.0) rectangle (0.5,0.5); \node[minimum size=.6cm, fill=white,anchor=south west] at (0.0,0.0){а}; \end{tikzpicture} </description>
+    </item>
+    
+    <item>
+      <title>displaying multiple grayscale figures in python&#39;s matplotlib</title>
+      <link>https://serge-m.github.io/posts/displaying-multiple-grayscale-figures/</link>
+      <pubDate>Fri, 06 Jun 2014 22:12:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/displaying-multiple-grayscale-figures/</guid>
+      <description>from matplotlib import pyplot as plt import matplotlib.cm as cm plt.figure() # without this it display one after another plt.imshow(image_one, cmap=cm.gray) # without cm.gray it displays grayscale images in colormap plt.imshow(image_two, cmap=cm.gray) # plt.show()
+use %matplotlib inline in ipython notebook to display image inplace
+Shorter version: %matplotlib inline import matplotlib.pyplot as plt plt.axis(&amp;lsquo;off&amp;rsquo;) plt.imshow(dpt, cmap=plt.cm.gray, interpolation=&amp;lsquo;nearest&amp;rsquo;)</description>
+    </item>
+    
+    <item>
+      <title>Theano</title>
+      <link>https://serge-m.github.io/posts/theano/</link>
+      <pubDate>Thu, 05 Jun 2014 23:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/theano/</guid>
+      <description>_Intro __Theano_ is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Check gpu is workingSource: [http://deeplearning.net/software/theano/tutorial/using_gpu.html](http://deeplearning.net/software/theano/tutorial/using_gpu.html)Test script: :::: from theano import function, config, shared, sandbox import theano.tensor as T import numpy import time &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;vlen&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;10&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;30&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;*&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;768&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;c&amp;quot;&amp;gt;# 10 x #cores x # threads per core&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;iters&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;mi&amp;quot;&amp;gt;1000&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;rng&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;=&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;n&amp;quot;&amp;gt;numpy&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;o&amp;quot;&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>windows life</title>
+      <link>https://serge-m.github.io/posts/windows-life/</link>
+      <pubDate>Thu, 05 Jun 2014 23:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/windows-life/</guid>
+      <description>doskey /history &amp;gt; commands.log- dump command line promt history to file
+some_command &amp;gt; output_file.txt 2&amp;gt;&amp;amp;1 - Redirect stdout and stderr to the same file src
+Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;quot;NETWORK_NAME&amp;quot; key=&amp;quot;NETWORK_PASSWORD&amp;quot; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
+Then allow in firewall.</description>
+    </item>
+    
+    <item>
+      <title>linux life</title>
+      <link>https://serge-m.github.io/posts/linux-life/</link>
+      <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/linux-life/</guid>
+      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then</description>
+    </item>
+    
+    <item>
+      <title>lambda functions in matlab</title>
+      <link>https://serge-m.github.io/posts/lambda-functions-in-matlab/</link>
+      <pubDate>Sat, 24 May 2014 18:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/lambda-functions-in-matlab/</guid>
+      <description>I discovered it during Machine learnin courses on Coursera
+To specify the actual function we are minimizing, we use a &#34;short-hand&#34; for specifying functions with the @(t) ( costFunction(t, X, y) ) . This creates a function, with argument t, which calls your costFunction. This allows us to wrap the costFunction for use with fminunc. @(t) ( costFunction(t, X, y) ) - that&amp;rsquo;s awesome</description>
+    </item>
+    
+    <item>
+      <title>crop included graphics in latex</title>
+      <link>https://serge-m.github.io/posts/crop-included-graphics-in-latex/</link>
+      <pubDate>Wed, 21 May 2014 21:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/crop-included-graphics-in-latex/</guid>
+      <description>\documentclass{article} \usepackage{graphicx} \begin{document} % crop left \includegraphics[trim={5cm 0 0 0},clip]{path-to-image} % crop right \includegraphics[trim={0 0 5cm 0},clip]{path-to-image} \end{document} Use the trim option, which takes four space separated values.
+trim={&amp;lt;left&amp;gt; &amp;lt;lower&amp;gt; &amp;lt;right&amp;gt; &amp;lt;upper&amp;gt;} Source</description>
+    </item>
+    
+    <item>
+      <title>multiple &#34;windows&#34; in one linux terminal</title>
+      <link>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</link>
+      <pubDate>Wed, 21 May 2014 21:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/</guid>
+      <description>use &amp;ldquo;screen&amp;rdquo; utility
+ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</description>
+    </item>
+    
+    <item>
+      <title>Fixed &#34;latex2png: error: eps2eps failed to translate .pdf to .eps&#34; message in latex2rtf</title>
+      <link>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</link>
+      <pubDate>Tue, 15 Apr 2014 23:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</guid>
+      <description>OMG!! I finally fixed it. Under Windows latex2rtf diisplayed following error:
+latex2png: error: eps2eps failed to translate l2r_00123.pdf to l2r_00123.eps for each image in my latex file.
+That was very sad because this method is used to convert all equations, fugures and tables in word format.
+The configurations seemed ok:
+The problem was in eps2eps script in miktex. This script is magical. I haven&amp;rsquo;t completely understood why it does nothing when called from latex2rtf.</description>
+    </item>
+    
+    <item>
+      <title>Papers review</title>
+      <link>https://serge-m.github.io/posts/papers-review/</link>
+      <pubDate>Mon, 14 Apr 2014 21:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/papers-review/</guid>
+      <description>Depth map EstimationAshutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005Depth estimation using machine learning from monocular cueues. Uses MRF model </description>
+    </item>
+    
+    <item>
+      <title>German resources</title>
+      <link>https://serge-m.github.io/posts/german-resources/</link>
+      <pubDate>Sun, 06 Apr 2014 13:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/german-resources/</guid>
+      <description>http://www.c-plusplus.de/forum/
+http://cvisioncentral.com/jobs/
+Open positions in computer vision in german universities: http://hci.iwr.uni-heidelberg.de/Links/German_Vision/
+Brox&amp;rsquo;s lab. Need at least one first authon in good conference http://lmb.informatik.uni-freiburg.de/jobs/OpeningERC_postdoc.html
+About salaries in German universities (TV L 13) http://de.wikipedia.org/wiki/Tarifvertrag_f%C3%BCr_den_%C3%B6ffentlichen_Dienst_der_L%C3%A4nder</description>
+    </item>
+    
+    <item>
+      <title>Excelent idea moves towards a real life</title>
+      <link>https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/</link>
+      <pubDate>Sun, 06 Apr 2014 13:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/</guid>
+      <description>Smartphone Application for driver assistance. It can measure distance to the next vehicle for example. Or detect road lane. And warn about violating it. http://www.acodriver-shop.com/
+   Some time ago I also had such an idea. Very interesting</description>
+    </item>
+    
+    <item>
+      <title>Cool 3d web design</title>
+      <link>https://serge-m.github.io/posts/cool-3d-web-design/</link>
+      <pubDate>Sun, 23 Mar 2014 23:58:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/cool-3d-web-design/</guid>
+      <description>http://www.snowflakecreative.co.uk/</description>
+    </item>
+    
+    <item>
+      <title>About sublime</title>
+      <link>https://serge-m.github.io/posts/about-sublime/</link>
+      <pubDate>Fri, 21 Mar 2014 11:21:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-sublime/</guid>
+      <description>Convenient json formatting http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text</description>
+    </item>
+    
+    <item>
+      <title>clang: error: linker command failed with exit code 1</title>
+      <link>https://serge-m.github.io/posts/clang-error-linker-command-failed-with/</link>
+      <pubDate>Thu, 20 Mar 2014 16:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/clang-error-linker-command-failed-with/</guid>
+      <description>Finally I solved the problem with broken clang compilation I always got message
+ &amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;ld: malformed archive TOC entry for &amp;lt;long strange identifier&amp;gt;, offset 362137760 is beyond end of file 303710208&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;&amp;amp;nbsp;for architecture x86_64&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;  when I interrupted compilation of a large project.</description>
+    </item>
+    
+    <item>
+      <title>Cyrillic characters decoder</title>
+      <link>https://serge-m.github.io/posts/cyrillic-characters-decoder/</link>
+      <pubDate>Mon, 17 Mar 2014 10:35:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/cyrillic-characters-decoder/</guid>
+      <description>Very useful for determining what text is encoded for example in unicode characters/ http://2cyr.com/decode/</description>
+    </item>
+    
+    <item>
+      <title>Собеседования (in Russian)</title>
+      <link>https://serge-m.github.io/posts/in-russian/</link>
+      <pubDate>Thu, 27 Feb 2014 19:13:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/in-russian/</guid>
+      <description>подходят к концу
+yandex (skype) asoft (1+тз) dressformer (1+не делал тз) samsung research center (2) s1 (1+тз)  (1) - идиоты Infowatch (не помню) mail.ru (2) align technology (phone+1) huawei (skype) performance lab (2) rocket jump (тз+1) nvidia (1)
+artec (тз+1) Был в прикольной компании. Занимаются разработкой и продажей 3д сканеров. Декларируют очень высокое разрешение и точность - до &amp;nbsp;долей миллиметра. Есть две модели сканера для совсем близких расстояний и для расстояний побольше.</description>
+    </item>
+    
+    <item>
+      <title>Hex editors</title>
+      <link>https://serge-m.github.io/posts/hex-editors/</link>
+      <pubDate>Thu, 20 Feb 2014 10:12:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/hex-editors/</guid>
+      <description>radare, the reverse engineering framework [http://radare.nopcode.org/y/?p=features](http://radare.nopcode.org/y/?p=features) 010 Editorhex templates for binary formats parsing[http://www.sweetscape.com/](http://www.sweetscape.com/) [http://habrahabr.ru/post/213211/](http://habrahabr.ru/post/213211/)&amp;nbsp;(rus) </description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;11 stuff</title>
+      <link>https://serge-m.github.io/posts/c11-stuff/</link>
+      <pubDate>Mon, 17 Feb 2014 14:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/c11-stuff/</guid>
+      <description>random numbers http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3551.pdf
+Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</description>
+    </item>
+    
+    <item>
+      <title>Programming interviews resources</title>
+      <link>https://serge-m.github.io/posts/programming-interviews-resources/</link>
+      <pubDate>Mon, 17 Feb 2014 12:21:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/programming-interviews-resources/</guid>
+      <description>screencasts with solutions of typical interview tasks https://www.youtube.com/user/ProgrammingInterview/
+Gayle Laakmann McDowell. Cracking the Coding Interview: 150 Programming Questions and Solutions http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
+140 Google Interview Questions http://www.impactinterview.com/2009/10/140-google-interview-questions/</description>
+    </item>
+    
+    <item>
+      <title>learning sqlite</title>
+      <link>https://serge-m.github.io/posts/learning-sqlite/</link>
+      <pubDate>Sun, 09 Feb 2014 14:53:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/learning-sqlite/</guid>
+      <description>create table named t3 (id, value). id is integer. value is text sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &amp;ldquo;rows&amp;rdquo; sqlite&amp;gt; insert into t3 (id, value) values (1, &#39;a&#39;); sqlite&amp;gt; insert into t3 (id, value) values (2, &#39;b&#39;); display results sqlite&amp;gt; select * &amp;amp;nbsp;from t3; 1|a 2|b update id=1 if exists, insert otherwise (id=1 exists) sqlite&amp;gt; insert or replace into t3 (id,value) values (1,&amp;lsquo;c&amp;rsquo; ); sqlite&amp;gt; select * from t3; 2|b 1|c</description>
+    </item>
+    
+    <item>
+      <title>remote desktop screen resolution</title>
+      <link>https://serge-m.github.io/posts/remote-desktop-screen-resolution/</link>
+      <pubDate>Wed, 05 Feb 2014 14:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/remote-desktop-screen-resolution/</guid>
+      <description>Today I finally found out that screen resolution for remote session in Windows can be changed in settings menu before connection. Little discoveries happen every day&amp;hellip; Damn&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Multithreading links</title>
+      <link>https://serge-m.github.io/posts/multithreading-links/</link>
+      <pubDate>Mon, 03 Feb 2014 14:42:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multithreading-links/</guid>
+      <description>Руководство по отладке многопоточных приложений в Visual Studio 2010. video, exampleshttp://habrahabr.ru/post/97817/
+Считаем Пи параллельно. Часть 1. pthread, openmp, c++11 in commentshttp://habrahabr.ru/post/147796/
+Потоки, блокировки и условные переменные в C++11 [Часть 1], exceptions, exampleshttp://habrahabr.ru/post/182610/
+Потоки, блокировки и условные переменные в C++11 [Часть 2][http://habrahabr.ru/post/182626/](http://habrahabr.ru/post/182626/) </description>
+    </item>
+    
+    <item>
+      <title>VapourSynth: pythonic alternative to avisynth</title>
+      <link>https://serge-m.github.io/posts/vapoursynth-pythonic-alternative-to/</link>
+      <pubDate>Sat, 25 Jan 2014 21:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/vapoursynth-pythonic-alternative-to/</guid>
+      <description>What do I know about VapourSynth
+http://www.vapoursynth.com/ - website
+How to save data from VapourSynthYou need to use vspipe.exe from Vapour distributiveIt seems it returns raw data to stdout Render using ffmpegDon&#39;t know how jet Render using ImageMagick/convertDon&#39;t know how jet Image ReadingImage reading causes crash of AvsPmod, in which I using Vapoursynth[http://forum.doom9.org/showthread.php?t=166088](http://forum.doom9.org/showthread.php?t=166088)src:&amp;nbsp;[https://github.com/chikuzen/vsimagereader](https://github.com/chikuzen/vsimagereader&#34; target=&#34;_blank) Other AvsPmod - new version of AvsP. AvsP is a tabbed avs editor with convenient results preview.</description>
+    </item>
+    
+    <item>
+      <title>Tables in Latex. Multiline, right alignment</title>
+      <link>https://serge-m.github.io/posts/tables-in-latex-multiline-right/</link>
+      <pubDate>Thu, 23 Jan 2014 19:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tables-in-latex-multiline-right/</guid>
+      <description>I used _tabularx _package. Additional definitions:
+ \usepackage{array} \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table:
+ \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line &amp;amp;amp; % next column delimiter Text aligned to the right \newline second line \end{tabularx} Here we have one columt with 80% width and one column with right alignment @{} is required to suppress left margin in the first column.</description>
+    </item>
+    
+    <item>
+      <title>How?</title>
+      <link>https://serge-m.github.io/posts/how/</link>
+      <pubDate>Fri, 17 Jan 2014 20:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how/</guid>
+      <description>How does start menu in Win7 select the most useless new application i&amp;rsquo;ve installed?</description>
+    </item>
+    
+    <item>
+      <title>Building ConEmu</title>
+      <link>https://serge-m.github.io/posts/building-conemu/</link>
+      <pubDate>Thu, 16 Jan 2014 20:56:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/building-conemu/</guid>
+      <description>Problems with ConEmu building from&amp;nbsp;https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA- add additional dependency&amp;nbsp;**User32.lib**   **ConEmuCD**Error3error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error4error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 Error5error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4 Error6error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4 Error7error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4 Error8error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8 Error9error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8 Error10error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8 Error11error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16 etc.</description>
+    </item>
+    
+    <item>
+      <title>Free software for screen video capture</title>
+      <link>https://serge-m.github.io/posts/free-software-for-screen-video-capture/</link>
+      <pubDate>Wed, 15 Jan 2014 19:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/free-software-for-screen-video-capture/</guid>
+      <description>CamStudio 2.7 http://camstudio.org/ works fine
+Rylstim-Screen-Recorder http://www.sketchman-studio.com/rylstim-screen-recorder/
+There were some troubles while recording ConEmu software Portable version is available
+HyperCam 2 http://www.hyperionics.com/hc/
+Works well</description>
+    </item>
+    
+    <item>
+      <title>Temporary files format that can be deleted from project of Visual Studio 2010</title>
+      <link>https://serge-m.github.io/posts/temporary-files-format-that-can-be/</link>
+      <pubDate>Tue, 14 Jan 2014 12:36:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/temporary-files-format-that-can-be/</guid>
+      <description>Add to .gitignore:
+ *.ipch Debug Release *.sdf - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don&amp;rsquo;t need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.  [[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank)]
+[[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral&amp;quot; target=&amp;quot;_blank)]</description>
+    </item>
+    
+    <item>
+      <title>Migrating from SVN to Git and Mercurial</title>
+      <link>https://serge-m.github.io/posts/migrating-from-svn-to-git/</link>
+      <pubDate>Wed, 08 Jan 2014 18:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/migrating-from-svn-to-git/</guid>
+      <description>There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository
+I found rather useful [this one](http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank). A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS
+This script will convert projects stored in SVN with the following format:
+/trunk /Project1 /Project2 /branches /Project1 /Project2 /tags /Project1 /Project2 This scheme is also popular and supported as well: /Project1 /trunk /branches /tags /Project2 /trunk /branches /tags Each project will get synchronized over by project name:</description>
+    </item>
+    
+    <item>
+      <title>Things about C&#43;&#43;</title>
+      <link>https://serge-m.github.io/posts/things-about-c/</link>
+      <pubDate>Mon, 06 Jan 2014 13:28:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/things-about-c/</guid>
+      <description>rules for resolving calls to overloaded functions:&amp;nbsp;- identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function.  Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&#34; target=&#34;_blank) The compiler works through the following checklist and if it still can&#39;t reach a decision, it issues an error:Gather all the functions in the current scope that have the same name as the function called.Exclude those that don&#39;t have the right number of parameters to match the arguments in the call.</description>
+    </item>
+    
+    <item>
+      <title>Private inheritance</title>
+      <link>https://serge-m.github.io/posts/private-inheritance/</link>
+      <pubDate>Mon, 06 Jan 2014 12:49:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/private-inheritance/</guid>
+      <description>Example from Meyers &amp;ldquo;Effective C++&amp;rdquo;
+ class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface untouched and required job is done
+Example of protecting method from redefinition in derived classes:</description>
+    </item>
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://serge-m.github.io/posts/blogs/</link>
+      <pubDate>Sun, 15 Dec 2013 22:54:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blogs/</guid>
+      <description>How to write c++ programm for android (in Russian) http://www.codeatcpp.com/2011/10/c-android-1.html
+http://sivers.org/blog
+How to make a movement
+ To translate: Source: http://habrahabr.ru/post/206258/
+2. Базар идейВ какой-то момент в нашей организации вошла в моду фраза «продать идею». Особенно активно я начал натыкаться на эти торги идеями с поднятием по карьерной лестнице, и имея частые совещания с теми, с которыми нас не связывали отношения подчинения. Фраза «продать идею» базируется на маркетинговом термине «sell idea», только понимание оного в проекции на организационную структуру было извращено.</description>
+    </item>
+    
+    <item>
+      <title>Dear programmers, developers, architects and others!</title>
+      <link>https://serge-m.github.io/posts/dear-programmers-developers-architects/</link>
+      <pubDate>Fri, 13 Dec 2013 15:42:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/dear-programmers-developers-architects/</guid>
+      <description>In a new year please continue writting bad programs, make bugs, create bad architecture and so on! All this destroying activity provide infinite flow of well-paid job! Thanks to those people! Let&amp;rsquo;s kludge together!
+[image source](http://stevenbenner.com/2010/07/the-5-types-of-programmers/&amp;quot; rel=&amp;ldquo;nofollow&amp;rdquo; target=&amp;quot;_blank)</description>
+    </item>
+    
+    <item>
+      <title>16 bit color formats</title>
+      <link>https://serge-m.github.io/posts/16-bit-color-formats/</link>
+      <pubDate>Wed, 11 Dec 2013 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/16-bit-color-formats/</guid>
+      <description>http://forums.creativecow.net/thread/2/940078
+In adobe after effects:
+:::: #define PF_MAX_CHAN8	255 #define PF_HALF_CHAN8	128 #define PF_MAX_CHAN16	32768 #define PF_HALF_CHAN16	16384 #define CONVERT8TO16(A)	( (((long)(A) * PF_MAX_CHAN16) + PF_HALF_CHAN8) / PF_MAX_CHAN8 )  </description>
+    </item>
+    
+    <item>
+      <title>Import Sihlouette roto masks into several Nuke shapes</title>
+      <link>https://serge-m.github.io/posts/import-sihlouette-roto-masks-into/</link>
+      <pubDate>Tue, 10 Dec 2013 12:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/import-sihlouette-roto-masks-into/</guid>
+      <description>Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.
+In SihlouetteFX select several nodes. Go File-&amp;gt;Export-&amp;gt;nuke 6.2+ Shapes and save Nuke project
+I tried to use also File-&amp;gt;Export-&amp;gt;Nuke Shapes but in Nuke 7.0 it wasn&amp;rsquo;t opened properly
+Open saved project in Nuke. There is a single RotoPaint node. It contains several layers with several shapes in each. I need separate layers into many nodes to use them separately.</description>
+    </item>
+    
+    <item>
+      <title>Binarization in Adobe After Effects</title>
+      <link>https://serge-m.github.io/posts/binarization-in-adobe-after-effects/</link>
+      <pubDate>Fri, 29 Nov 2013 16:23:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/binarization-in-adobe-after-effects/</guid>
+      <description>I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings: I think that everything that is less or equal to 128 is transformet to 0 and the rest is transformet to 255. BUT. On the result i have such a places with outlier value: WTF? What is the logic of AAE developers? So the solution is using real numbers for input black and white:Results are sharp: !</description>
+    </item>
+    
+    <item>
+      <title>Free open-source alternative to Total Commander</title>
+      <link>https://serge-m.github.io/posts/fre-open-source-alternative-to-total/</link>
+      <pubDate>Fri, 29 Nov 2013 15:35:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fre-open-source-alternative-to-total/</guid>
+      <description>It seems I almost found alternative for [TotalCommander](http://www.ghisler.com/&amp;quot; target=&amp;quot;_blank). Let me present [DoubleCommander](http://doublecmd.sourceforge.net/&amp;quot; target=&amp;quot;_blank). It is free, open-source, extendible by Total&amp;rsquo;s plugins. That&amp;rsquo;s awesome. I also found out that viewer plugin SGView for TotalCommander can be completely replaced by ImaginePlugin. Imagine has x64 version. The issue was to assign hotkeys like in SGView.</description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>https://serge-m.github.io/posts/books/</link>
+      <pubDate>Fri, 29 Nov 2013 10:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/books/</guid>
+      <description>In progress   Test-Driven Development with Python Harry Percival link Pycon 2016 workshop
+  Python Testing Python Software Development and Software Testing (posts and podcast) book
+   Part  Effective C++: 55 Specific Ways to Improve Your Programs and Designs Scott Meyers   Done   Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets Nassim Nicholas Taleb
+  Learning Spark.</description>
+    </item>
+    
+    <item>
+      <title>По простому о matting laplacian</title>
+      <link>https://serge-m.github.io/posts/matting-laplacian/</link>
+      <pubDate>Mon, 18 Nov 2013 20:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/matting-laplacian/</guid>
+      <description>В математике у нас есть уравнение Лапласа \delta u = 0 Перепишем: Вспомним, как можно расписывать вторую производную: Для изображения равенство нулю оператора лапласа означает, что в каждая точка должна быть равна среднему из своих соседей.  Уравнение маттинг лапласиана - это то же самое, но только делается не обычное усреднение, а усреднение с весами. Веса зависят от похожести пикселей.</description>
+    </item>
+    
+    <item>
+      <title>MATLAB</title>
+      <link>https://serge-m.github.io/posts/matlab/</link>
+      <pubDate>Mon, 18 Nov 2013 20:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/matlab/</guid>
+      <description>fmincor( ponter to target function, initial point, list of constrains) - some improved gradient decent. Step is adaptive.
+useParallel - automatic parallel</description>
+    </item>
+    
+    <item>
+      <title>Add backslash before all escape characters in python</title>
+      <link>https://serge-m.github.io/posts/add-backslash-before-all-escape/</link>
+      <pubDate>Tue, 12 Nov 2013 17:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-backslash-before-all-escape/</guid>
+      <description>Useful for using in regular expressions:
+import re re.escape( str ) Python detects all escape characters that can be used by regex &amp;nbsp;and add slash before them [http://docs.python.org/2/library/re.html#re.escape](http://docs.python.org/2/library/re.html#re.escape) </description>
+    </item>
+    
+    <item>
+      <title>Moving time indicator in composition timeline in After Effects CS6 using scripts</title>
+      <link>https://serge-m.github.io/posts/move-time-indicator-in-composition/</link>
+      <pubDate>Tue, 12 Nov 2013 14:52:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/move-time-indicator-in-composition/</guid>
+      <description>So, Javascript code for position changing is simple. Lets say comp - is your composition:
+precomp = app.project.items.addComp( &#34;ololo&#34;, width, height, 1.0, duration, frameRate);move pointer to time 0.2: comp.time = 0.2; </description>
+    </item>
+    
+    <item>
+      <title>То, что вы хотели знать про оптический поток, но стеснялись спросить</title>
+      <link>https://serge-m.github.io/posts/blog-post-3/</link>
+      <pubDate>Tue, 12 Nov 2013 11:17:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blog-post-3/</guid>
+      <description>Взято с http://habrahabr.ru/post/201406/
+see also Deep Learning в вычислении оптического потока
+Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.   Обработка изображений*,&amp;nbsp;Алгоритмы*Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео. Однако если мы захотим его по-быстрому реализовать в своем проекте, прочитав про него на википедии или где-нибудь еще, то, скорее всего, очень быстро наткнемся на то, что он работает очень плохо и сбоит при определении сдвигов уже порядка 1-2 пикселей (по крайней мере так было у меня).</description>
+    </item>
+    
+    <item>
+      <title>OpenCV tutorials (Russian)</title>
+      <link>https://serge-m.github.io/posts/opencv-tutorials-in-russian/</link>
+      <pubDate>Tue, 05 Nov 2013 20:44:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/opencv-tutorials-in-russian/</guid>
+      <description>Делаем детектор движения, или OpenCV — это просто http://habrahabr.ru/company/avi/blog/200804/ 2. OpenCV шаг за шагом http://robocraft.ru/blog/computervision/265.html Пару слов о распознавании образов http://habrahabr.ru/post/208090/  Building opencv program in Cgcc -ggdb `pkg-config --cflags opencv` -o `basename test.c .c` test.c `pkg-config --libs opencv`**Description:**`pkg-config --cflags opencv`&amp;nbsp;— подставляет путь для инклудов через pkgconfig. `pkg-config --libs opencv`&amp;nbsp;— подставляет название либ для линковки через pkgconfig. При установке opencv поместила файлик .pc (в моём случае это /usr/lib/pkgconfig/opencv.pc), в котором рассказывается, где находятся заголовочные файлы этой библиотеки, а где сами либы для линковки.</description>
+    </item>
+    
+    <item>
+      <title>Free UML editor</title>
+      <link>https://serge-m.github.io/posts/free-uml-editor/</link>
+      <pubDate>Fri, 25 Oct 2013 19:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/free-uml-editor/</guid>
+      <description>I found free UML editor:
+ArgoUML&amp;nbsp;[http://argouml.tigris.org/](http://argouml.tigris.org/&#34; style=&#34;background-color: transparent;)It seems not bad I have tried gliffy.com. It is online and paid. www.lucidchart.com has free version but it seems not so convenient</description>
+    </item>
+    
+    <item>
+      <title>How to open composition in viewer in Adobe After Effects using scripts</title>
+      <link>https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/</link>
+      <pubDate>Thu, 24 Oct 2013 12:03:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/</guid>
+      <description>// Make a composition var comp = app.project.items.addComp(&amp;lsquo;MyComp&amp;rsquo;, 1920, 1080, 1.0, 10, 25.0 );
+// Open it in viewer comp.openInViewer();
+This solution works only in AAE CS 6.0
+My version of some cross-platform code
+function OpenInViewer( comp ) { var version = app.version.match(/(\d+.\d+)./)[1]; if( version &amp;gt;= 11.0 ) comp.openInViewer() ; else { var duration = comp.workAreaDuration; comp.workAreaDuration = 2comp.frameDuration; comp.ramPreviewTest(&amp;quot;&amp;quot;,1,&amp;quot;&amp;quot;); comp.workAreaDuration = duration; }
+}
+ inspired by&amp;nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646) </description>
+    </item>
+    
+    <item>
+      <title>Convert all *.avi files in current directory to png sequences</title>
+      <link>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</link>
+      <pubDate>Tue, 22 Oct 2013 23:49:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
+      <description>Using python and ffmpeg:
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) )   </description>
+    </item>
+    
+    <item>
+      <title>Print all commands that were entered in interactive mode in Python</title>
+      <link>https://serge-m.github.io/posts/print-all-commands-that-were-enteren-in/</link>
+      <pubDate>Tue, 22 Oct 2013 23:44:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/print-all-commands-that-were-enteren-in/</guid>
+      <description>import readline readline.write_history_file( &amp;ldquo;log.py&amp;rdquo;)</description>
+    </item>
+    
+    <item>
+      <title>Десятка лучших консольных команд</title>
+      <link>https://serge-m.github.io/posts/ten-best-console-commands-rus/</link>
+      <pubDate>Tue, 22 Oct 2013 12:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ten-best-console-commands-rus/</guid>
+      <description>источник
+Десятое место Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.
+Комбинация &#39;ALT+.&#39; или &#39;&amp;lt;ESC&amp;gt; .&#39;
+Девятое место Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены двоичные данные и он перестал корректно работать.
+reset Восьмое место Создает пустой файл. Уничтожает содержимое файла без его удаления.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV. Processing external byte buffer</title>
+      <link>https://serge-m.github.io/posts/opencv-processing-external-byte-buffer/</link>
+      <pubDate>Mon, 21 Oct 2013 13:40:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/opencv-processing-external-byte-buffer/</guid>
+      <description>We have such an example from openCV documentation:
+Mat img(height, width, CV_8UC3, pixels, step); GaussianBlur(img, img, Size(7,7), 1.5, 1.5); What does it mean?&amp;nbsp;Lets say I have an image img: typedef unsigned char BYTE; BYTE * img = new BYTE[ w * h ];Lets assume the image is scanned line by line. So img[ 10 * w + 3 ] is a 3-rd pixel in 10-line of image.Then I import it in openCV is such a way: Mat img(h, w, CV_8UC1, dmDst, w); last argument is a pitch or stride.</description>
+    </item>
+    
+    <item>
+      <title>Fast way of copying byte array in C/C&#43;&#43; (With measurements)</title>
+      <link>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</link>
+      <pubDate>Tue, 15 Oct 2013 15:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</guid>
+      <description>UPD 2017: these are early experimnts on c++ compiler optimizations. I don&amp;rsquo;t think it is useful any more.
+I have the following code for copying several buffers from one object to another:
+1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels  for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
+    </item>
+    
+    <item>
+      <title>How to cheat on video encoder comparisons</title>
+      <link>https://serge-m.github.io/posts/how-to-cheat-on-video-encoder/</link>
+      <pubDate>Fri, 11 Oct 2013 12:57:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-cheat-on-video-encoder/</guid>
+      <description>Source:[Diary Of An x264 Developer](http://x264dev.multimedia.cx/archives/472&#34; target=&#34;_blank)Filed under:&amp;nbsp;[benchmark](http://x264dev.multimedia.cx/archives/category/benchmark&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in benchmark),[H.264](http://x264dev.multimedia.cx/archives/category/h264&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in H.264),[stupidity](http://x264dev.multimedia.cx/archives/category/stupidity&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in stupidity),[test sequences](http://x264dev.multimedia.cx/archives/category/test-sequences&#34; rel=&#34;category tag&#34; style=&#34;letter-spacing: 0px;&#34; title=&#34;View all posts in test sequences)&amp;nbsp;::Over the past few years, practically everyone and their dog has published some sort of encoder comparison.&amp;nbsp; Sometimes they’re actually intended to be something for the world to rely on, like the old Doom9 comparisons and the MSU comparisons.</description>
+    </item>
+    
+    <item>
+      <title>Using h264/multiview codec from Intel Media SDK</title>
+      <link>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</link>
+      <pubDate>Fri, 11 Oct 2013 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
+      <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+    </item>
+    
+    <item>
+      <title>Using ls command</title>
+      <link>https://serge-m.github.io/posts/using-ls-command/</link>
+      <pubDate>Tue, 08 Oct 2013 12:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-ls-command/</guid>
+      <description>ls -w1 */  - show only subdirectories in current directory (*/) and display in 1 column (-w1) ls -c  - sort by date</description>
+    </item>
+    
+    <item>
+      <title>Некоторые заметки о приведении типов в СиПлюсПлюс</title>
+      <link>https://serge-m.github.io/posts/blog-post-2/</link>
+      <pubDate>Fri, 04 Oct 2013 17:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blog-post-2/</guid>
+      <description>АлёнаC++: http://alenacpp.blogspot.ru/2005/08/c.html
+static_cast между указателями корректно, только если один из указателей - это указатель на void или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от void*, который возвращает malloc, следует использовать static_cast.
+int * p = static_cast&amp;lt;int*&amp;gt;(malloc(100)); Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции undefined.</description>
+    </item>
+    
+    <item>
+      <title>Math morphology in Adobe After Effects</title>
+      <link>https://serge-m.github.io/posts/math-morphology-in-adobe-after-effects/</link>
+      <pubDate>Wed, 18 Sep 2013 00:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/math-morphology-in-adobe-after-effects/</guid>
+      <description>Errosion and dilation in AE is implemented in Minimax filter. See settings bellow: </description>
+    </item>
+    
+    <item>
+      <title>Opencv and &#34;OpenCV Error: Bad flag&#34;</title>
+      <link>https://serge-m.github.io/posts/opencv-and-opencv-error-bad-flag/</link>
+      <pubDate>Mon, 05 Aug 2013 16:59:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/opencv-and-opencv-error-bad-flag/</guid>
+      <description>I had pretty simple code with opencv:
+ cv::Mat t;  t = cv::imread( &amp;ldquo;qq.bmp&amp;rdquo; ) ;  cv::imwrite( &amp;ldquo;q.bmp&amp;rdquo;, t );  cv::namedWindow( &amp;ldquo;asdads&amp;rdquo;, CV_WINDOW_AUTOSIZE );  cv::imshow( &amp;ldquo;asdads&amp;rdquo;, t );  cv::waitKey( -1 );  return 0;
+It caused crash in debug configuration:
+OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ed array type) in unknown function, file ......\src\opencv\modules\core\src\ar ray.cpp, line 2482  In release configuration it was ok.</description>
+    </item>
+    
+    <item>
+      <title>OpenCV. Copy image from unsigned char buffer, resize and save to file</title>
+      <link>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</link>
+      <pubDate>Tue, 09 Jul 2013 23:23:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</guid>
+      <description>How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
+#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;quot;src1.bmp&amp;quot;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;quot;little.</description>
+    </item>
+    
+    <item>
+      <title>SVN copy certain subdirectories to a branch</title>
+      <link>https://serge-m.github.io/posts/svn-copy-certain-subdirectories-to/</link>
+      <pubDate>Wed, 03 Jul 2013 17:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/svn-copy-certain-subdirectories-to/</guid>
+      <description>There was always a problem for me to copy only certain directories from one branch to another. For example we have following directory structure:
+trunk - project1 - project2 -subdir1 -subdir2 -subdir3 We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.branches/branch1  - project1 - project2 -subdir2&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;quot;font-family: Times, Times New Roman, serif; font-size: 14px;&amp;quot;&amp;gt;  We want to copy only subdir2 to a branch /branches/branch1 with saving all the structure of projects.</description>
+    </item>
+    
+    <item>
+      <title>Trim frames from raw YUV video using FFMPEG</title>
+      <link>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</link>
+      <pubDate>Tue, 02 Jul 2013 19:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</guid>
+      <description>Trim 5 frames starting from 160-th frame and write to png sequence
+ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png  size of input video is 1920x1088, format YUV420 progressive.
+UPD: ffmpeg is renamed to avconv. Using it for trimming AVI video:
+avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png  UPD2: it seems ffmpeg is back.</description>
+    </item>
+    
+    <item>
+      <title>Color problems in avisynth-&gt;overlay</title>
+      <link>https://serge-m.github.io/posts/color-problems-in-avisynth-overlay/</link>
+      <pubDate>Fri, 21 Jun 2013 11:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/color-problems-in-avisynth-overlay/</guid>
+      <description>I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
+I have a depth map (from http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html) And two scripts1)&amp;nbsp;just_show.avsv = ImageSource( &#34;depth.jpg&#34; ).Trim(0, -1) return v2) overlay.avs v = ImageSource( &#34;depth.jpg&#34; ).Trim(0, -1) return overlay( v, v, mode = &#34;blend&#34;, opacity = 0.80)&amp;nbsp; They have slightly different colors. ![](http://4.bp.blogspot.com/-Lj-uQIVor4c/UcP-amr12PI/AAAAAAAAAZQ/RvXjjb2Vc14/s320/just_show.png)just show![](http://1.bp.blogspot.com/-O1GkOsIX8rU/UcP-avb8uEI/AAAAAAAAAZU/x9p_nPsHSwU/s320/overlay.png)overlayOverlay has chroma componentThe cause was in wrong color conversion in avisynth 2.5.8. I downloaded&amp;nbsp;AVS 2.</description>
+    </item>
+    
+    <item>
+      <title>Add path in linux/cygwin and windows</title>
+      <link>https://serge-m.github.io/posts/add-path-in-linuxcygwin-and-windows/</link>
+      <pubDate>Sun, 09 Jun 2013 18:45:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-path-in-linuxcygwin-and-windows/</guid>
+      <description>in cygwin:
+PATH=$PATH:~/your_path or
+PATH=~/your_path:$PATH Add path windows
+PATH=%PATH%;C:\Your_Path; </description>
+    </item>
+    
+    <item>
+      <title>Never never!</title>
+      <link>https://serge-m.github.io/posts/never-never/</link>
+      <pubDate>Wed, 29 May 2013 20:48:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/never-never/</guid>
+      <description>Never-Never-NEVER open file for reading until you think twice what mode (text/binary) of operation do you need!!</description>
+    </item>
+    
+    <item>
+      <title>How to compare video metrics</title>
+      <link>https://serge-m.github.io/posts/how-to-compare-video-metrics/</link>
+      <pubDate>Tue, 28 May 2013 16:31:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/how-to-compare-video-metrics/</guid>
+      <description>There are specific databases which were subjectively tested. Ans MOS was calculated for example http://www.ponomarenko.info/tid2008.htm you can download database and compare your metric to MOS by Spearman correlation</description>
+    </item>
+    
+    <item>
+      <title>SSIM metric for video</title>
+      <link>https://serge-m.github.io/posts/ssim-metric-for-video/</link>
+      <pubDate>Tue, 28 May 2013 16:04:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssim-metric-for-video/</guid>
+      <description>See good explanation is in
+ Title: Handbook of image and video processing 
+Author(s): Bovik A. (ed.)
+Series: Periodical:
+Publisher: Elsevier Academic Press
+Year: 2005
+Edition: 2ed.
+Language: English
+Pages: 1429
+ISBN: 9780121197926, 0121197921</description>
+    </item>
+    
+    <item>
+      <title>SSIM по русски</title>
+      <link>https://serge-m.github.io/posts/ssim/</link>
+      <pubDate>Tue, 28 May 2013 15:48:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssim/</guid>
+      <description>Нужно будет тут записать как работает метрика SSIM по человечески</description>
+    </item>
+    
+    <item>
+      <title>Replace \n in Microsoft word</title>
+      <link>https://serge-m.github.io/posts/replace-n-in-microsoft-word/</link>
+      <pubDate>Sun, 26 May 2013 13:55:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/replace-n-in-microsoft-word/</guid>
+      <description>To replace new lines in word use &amp;ldquo;^13&amp;rdquo; whild-char. &amp;ldquo;^p&amp;rdquo; doesn&amp;rsquo;t work :(</description>
+    </item>
+    
+    <item>
+      <title>Tips for debugging of video processing console</title>
+      <link>https://serge-m.github.io/posts/tips-for-debugging-of-video-processing/</link>
+      <pubDate>Thu, 16 May 2013 13:31:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/tips-for-debugging-of-video-processing/</guid>
+      <description>Assume we have Visual Stusio solution for console that makes some video processing. The console takes two input videos and generates the third video:
+Console.exe --input1 video1.avi --input2 video2.avi --output result.aviWhile debugging we need to run console on several datasets. 1) dataset1 conststs of videos set1_video1.avi and set1_video2.avi 2) dataset2 conststs of videos set2_video1.avi and set2_video2.avi .... n) .... It seem rather convenient to distrubute videos between folders. One folder for each dataset.</description>
+    </item>
+    
+    <item>
+      <title>Bjontegaard metric. Matlab script.</title>
+      <link>https://serge-m.github.io/posts/bjontegaard-metric-matlab-script/</link>
+      <pubDate>Wed, 15 May 2013 12:51:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/bjontegaard-metric-matlab-script/</guid>
+      <description>Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved. I is useful to determine how big is the gain between &amp;ldquo;before&amp;rdquo; and &amp;ldquo;after&amp;rdquo; versions. Or determine what curve is better if they have complex form (for example, intersecting).
+I found matlab script, that calculates BD-PSNR, but it was not correct. The limits of integration were wrong. Difference between two curves can be calculated only in the area of thein projections intersection.</description>
+    </item>
+    
+    <item>
+      <title>Problems with debug run from Visual Studio with openMP</title>
+      <link>https://serge-m.github.io/posts/problems-with-debug-run-from-visual/</link>
+      <pubDate>Tue, 14 May 2013 12:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/problems-with-debug-run-from-visual/</guid>
+      <description>I had a problem while running debug+openmp configuration of my console. Meanwhile in Release+openmp configuration everything is ok. Diagnostic message I see is something about wrong parallel configurations, system log and sxstrace.exe. The solution is following. Folder
+Microsoft.VC90.DebugOpenMPwith files Microsoft.VC90.DebugOpenMP.manifest vcomp90d.dll&amp;nbsp;were missing. I knew this problem for the folder I specify in debug properties in visual studio: ![](http://3.bp.blogspot.com/-YWMVBmpI050/UZHxfnKVd5I/AAAAAAAAAYM/8syrhPsNbIc/s320/error_about_parallel_configurations_dialog1.png)In that folder I already had Microsoft.VC90.DebugOpenMP. But to avoid error I should place it in output directory (where my binary exe file is placed): !</description>
+    </item>
+    
+    <item>
+      <title>Another place with boost binaries</title>
+      <link>https://serge-m.github.io/posts/another-place-with-boost-binaries/</link>
+      <pubDate>Sun, 12 May 2013 14:57:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/another-place-with-boost-binaries/</guid>
+      <description>http://boost.teeks99.com/ - Another place with boost binaries. It includes build for version 1.49
+Before I new only http://www.boostpro.com/download/</description>
+    </item>
+    
+    <item>
+      <title>Error spawning cmd.exe</title>
+      <link>https://serge-m.github.io/posts/error-spawning-cmdexe/</link>
+      <pubDate>Sun, 12 May 2013 14:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/error-spawning-cmdexe/</guid>
+      <description>I got error message Error spawning cmd.exeduring compiling of Blender sources. The cause was in system PATH environment variable. Some buggy software I had installed and uninstalled before erased all contents of PATH. So I found out that Visual Studio 2008 has missing paths to
+%SystemRoot%\system32; %SystemRoot%; %SystemRoot%\System32\Wbem;A added it and the problem gone.&amp;nbsp; </description>
+    </item>
+    
+    <item>
+      <title>Blogs about blender</title>
+      <link>https://serge-m.github.io/posts/blogs-about-blender/</link>
+      <pubDate>Sun, 12 May 2013 12:20:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blogs-about-blender/</guid>
+      <description>http://blendersushi.blogspot.ru/
+ one of blender&amp;rsquo;s developers  http://blender3d.org.ua/tutorial/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D1%83%D1%80%D0%BE%D0%BA%D0%B8.html
+ ukrainian blog, video tutorials in russian  </description>
+    </item>
+    
+    <item>
+      <title>Overview of open-source node-based video editors (composers)</title>
+      <link>https://serge-m.github.io/posts/overview-of-open-source-node-based/</link>
+      <pubDate>Sun, 12 May 2013 11:51:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/overview-of-open-source-node-based/</guid>
+      <description>Synapse Compositor Seems unsupported for a long time
+Very raw
+Blender Good stuff, but it is designed originally for 3D modeling. Video editing is performed in composing mode. Rendering is veeery sloooowww. Open source. Available for linux and windows. Source code</description>
+    </item>
+    
+    <item>
+      <title>Image resize in Nuke</title>
+      <link>https://serge-m.github.io/posts/image-resize-in-nuke/</link>
+      <pubDate>Tue, 07 May 2013 15:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-resize-in-nuke/</guid>
+      <description>So here we have two filters:
+ Crop Reformat  To cut a part from an image we use Crop. It also has option &amp;ldquo;reformat&amp;rdquo;. Reformat cuts also borders behind area. If &amp;ldquo;Reformat&amp;rdquo; is disabled, black borders remain after crop.</description>
+    </item>
+    
+    <item>
+      <title>Torch-Lightning library (draft)</title>
+      <link>https://serge-m.github.io/posts/torch-lightning-library/</link>
+      <pubDate>Sat, 29 Apr 2000 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/torch-lightning-library/</guid>
+      <description>How to visualize gradients with torch-lightning and tensorboard in your model class define a optimizer_step.
+class Model(pl.LightningModule): # ... def optimizer_step( self, epoch: int, batch_idx: int, optimizer, optimizer_idx: int, second_order_closure = None, ) -&amp;gt; None: if self.trainer.use_tpu and XLA_AVAILABLE: xm.optimizer_step(optimizer) elif isinstance(optimizer, torch.optim.LBFGS): optimizer.step(second_order_closure) else: optimizer.step() #### Gradient reporting start ### if batch_idx % 500 == 0: for tag, param in self.model.named_parameters(): self.logger.experiment.add_histogram(&#39;{}_grad&#39;.format(tag), param.grad.cpu().detach()) #### Gradient reporting end ### # clear gradients optimizer.</description>
+    </item>
+    
+    <item>
+      <title>Camera model and projective geometry</title>
+      <link>https://serge-m.github.io/posts/camera-model-and-projective-geometry/</link>
+      <pubDate>Fri, 08 Dec 1020 08:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/camera-model-and-projective-geometry/</guid>
+      <description>About camera models   OpenCV camera model and calibration
+  Difference between pinhole camera model and thin lens model. One more note, One more article Pinhole camera model
+  </description>
+    </item>
+    
+    <item>
+      <title>Conda cheat sheet</title>
+      <link>https://serge-m.github.io/posts/conda-cheat-sheet/</link>
+      <pubDate>Thu, 07 Dec 1020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/conda-cheat-sheet/</guid>
+      <description>I usually prefer to keep (ana)conda deactivate in my system by default. One can chose such and option during conda installation. In order to activate base conda environment I run:
+source ~/anaconda3/etc/profile.d/conda.sh  or
+source ~/miniconda3/etc/profile.d/conda.sh  </description>
+    </item>
+    
+    <item>
+      <title>Deep learning in computer vision (draft)</title>
+      <link>https://serge-m.github.io/posts/deep-learning-in-computer-vision/</link>
+      <pubDate>Fri, 02 May 1000 19:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/deep-learning-in-computer-vision/</guid>
+      <description>Draft  An Overview of ResNet and its Variants, 2017  </description>
+    </item>
+    
+    
+    <item>
+      <title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title>
+      <link>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</guid>
+      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
+PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
+Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
+#include &amp;lt;Adafruit_PWMServoDriver.h&amp;gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
+pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs.</description>
+    </item>
+    
+    <item>
+      <title>Capture PWM signal using Arduino</title>
+      <link>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</guid>
+      <description>Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
+My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</description>
+    </item>
+    
+    <item>
+      <title>Mixin pattern in Python</title>
+      <link>https://serge-m.github.io/posts/mixins-in-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/mixins-in-python/</guid>
+      <description>Design pattern Mixin is often used in python. There are two main situations where mixins are used 1:
+ You want to provide a lot of optional features for a class. You want to use one particular feature in a lot of different classes.  Order of mixins definition Order in which you use mixins defines the behaviour. Quote from 2:
+in Python the class hierarchy is defined right to left, so in this case the Mixin2 class is the base class, extended by Mixin1 and finally by BaseClass.</description>
+    </item>
+    
+    <item>
+      <title>Presentations in browser</title>
+      <link>https://serge-m.github.io/posts/presentations-in-browser/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/presentations-in-browser/</guid>
+      <description>There are many ways for showing slides beyond powerpoint.
+Powerpoint is not cross-platform solution. Google Presentations require internet connection.
+There are solutions for making presentations with html and javascript:
+ reveal.js &amp;ndash; more powerful, flexible formats, markdown support, plots a splugins remark many others : https://en.wikipedia.org/wiki/Web-based_slideshow  RevealJS example: [https://revealjs.com/#/]
+Remark Example Example of html code for 3-slides presentaiton from github of the project:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45  &amp;lt;!</description>
+    </item>
+    
+    
+  </channel>
+</rss>

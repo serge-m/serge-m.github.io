@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workaround on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/workaround/</link>
+    <description>Recent content in workaround on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Jun 2016 22:11:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/workaround/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing torch for miniconda</title>
+      <link>https://serge-m.github.io/posts/installing-torch-for-miniconda/</link>
+      <pubDate>Sun, 26 Jun 2016 22:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/installing-torch-for-miniconda/</guid>
+      <description>I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</description>
+    </item>
+    
+  </channel>
+</rss>

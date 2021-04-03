@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>latex2rtf on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/latex2rtf/</link>
+    <description>Recent content in latex2rtf on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Apr 2014 23:37:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/latex2rtf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixed &#34;latex2png: error: eps2eps failed to translate .pdf to .eps&#34; message in latex2rtf</title>
+      <link>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</link>
+      <pubDate>Tue, 15 Apr 2014 23:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/</guid>
+      <description>OMG!! I finally fixed it. Under Windows latex2rtf diisplayed following error:
+latex2png: error: eps2eps failed to translate l2r_00123.pdf to l2r_00123.eps for each image in my latex file.
+That was very sad because this method is used to convert all equations, fugures and tables in word format.
+The configurations seemed ok:
+The problem was in eps2eps script in miktex. This script is magical. I haven&amp;rsquo;t completely understood why it does nothing when called from latex2rtf.</description>
+    </item>
+    
+  </channel>
+</rss>

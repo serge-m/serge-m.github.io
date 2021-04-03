@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>arduino on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/arduino/</link>
+    <description>Recent content in arduino on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 14 Jul 2019 14:22:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/arduino/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arduino Experiments</title>
+      <link>https://serge-m.github.io/posts/arduino-experiments/</link>
+      <pubDate>Sun, 14 Jul 2019 14:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/arduino-experiments/</guid>
+      <description>Arduino board Arduino Nano v2.3 manual (pdf)
+Arduino and shift register 74HC595 74HC595 Datasheet (pdf)
+74HC595 Explanation
+Youtube tutorial with buttons:
+ Tutorial with arduino - I was using that.
+My version on a breadboard:
+ Code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  //the pins we are using int latchPin = 2; int clockPin = 3; int dataPin = 4; void setup() { //set all the pins used to talk to the chip  //as output pins so we can write to them  pinMode(latchPin, OUTPUT); pinMode(clockPin, OUTPUT); pinMode(dataPin, OUTPUT); } void loop() { for (int i = 0; i &amp;lt; 16; i++) { //take the latchPin low so the LEDs don&amp;#39;t change while we are writing data  digitalWrite(latchPin, LOW); //shift out the bits  shiftOut(dataPin, clockPin, MSBFIRST, i); //take the latch pin high so the pins reflect  //the data we have sent  digitalWrite(latchPin, HIGH); // pause before next value:  delay(50); } }   Alternatives  More powerful shift register: TPIC6B595 PWM: TLC5940, TLC5947 PWM with i2c: PCA9685, PCA9635  PWM via shift register PWM Through a 74HC595 Shift Register at forum.</description>
+    </item>
+    
+    <item>
+      <title>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</title>
+      <link>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</guid>
+      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
+PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
+Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
+#include &amp;lt;Adafruit_PWMServoDriver.h&amp;gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
+pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs.</description>
+    </item>
+    
+    <item>
+      <title>Capture PWM signal using Arduino</title>
+      <link>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</guid>
+      <description>Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
+My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</description>
+    </item>
+    
+  </channel>
+</rss>

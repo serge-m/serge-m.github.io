@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pylearn2 on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/pylearn2/</link>
+    <description>Recent content in pylearn2 on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 14 Aug 2014 18:51:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/pylearn2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pylearn2 out of memory error</title>
+      <link>https://serge-m.github.io/posts/pylearn2-out-of-memory-error/</link>
+      <pubDate>Thu, 14 Aug 2014 18:51:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pylearn2-out-of-memory-error/</guid>
+      <description>I am trying to train NN using pylearn2 I use stochastic gradient decent. I had always a message about failed GPU memory allocation in train-&amp;gt;self.sgd_update(*batch) To fix it, I reduced size of the batch in yaml-config: batch_size: 200 was replaced by batch_size: 100</description>
+    </item>
+    
+  </channel>
+</rss>

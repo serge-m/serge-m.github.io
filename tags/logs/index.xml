@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logs on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/logs/</link>
+    <description>Recent content in logs on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 21 Apr 2015 23:05:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/logs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python logging best practices</title>
+      <link>https://serge-m.github.io/posts/python-logging/</link>
+      <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-logging/</guid>
+      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+    </item>
+    
+  </channel>
+</rss>

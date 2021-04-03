@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raspberry pi on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/raspberry-pi/</link>
+    <description>Recent content in raspberry pi on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 23 Sep 2018 07:11:34 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPIO controls for Rasbperry Pi</title>
+      <link>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</link>
+      <pubDate>Sun, 23 Sep 2018 07:11:34 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/</guid>
+      <description>Libraries for GPIO Node JS Python Using RPi.GPIO  How to Exit GPIO programs cleanly, avoid warnings and protect your Pi Setting up RPi.GPIO, numbering systems and inputs On using hardware PWM without sudo due to permissions for /dev/gpiomem: discussion  General pigpio The library also provides a service. It can be useful if you don&amp;rsquo;t want to give root access to the client applications and want to control PWM for example.</description>
+    </item>
+    
+    <item>
+      <title>Streaming camera output from Raspberry Pi</title>
+      <link>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</link>
+      <pubDate>Tue, 23 May 2017 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/streaming-camera-output-from-raspberry-pi/</guid>
+      <description>Task was to transmit image from camera on raspberry pi through web interface to the PC. PC is connected to raspberry through local network.
+ Enable camera on your raspberry pi in raspi-conf. Reboot. Save the following source code to a file on your raspberry (let&amp;rsquo;s say streaming.py) do sudo pip3 install picamera run python3 streaming.py on the target machine (PC) go to http://&amp;lt;your raspberry ip or host name&amp;gt;:8000. output from the camera must be streaming in realtime.</description>
+    </item>
+    
+    <item>
+      <title>Motor drivers / controllers</title>
+      <link>https://serge-m.github.io/posts/motor-drivers-controllers/</link>
+      <pubDate>Sun, 23 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/motor-drivers-controllers/</guid>
+      <description>Articles about raspberry pi: here SN74HC595 shift register. Controlling from Raspberry: here
+Comparison of Polou DC motor drivers
+Comparison of stepper motor drivers
+DC motors Pololu DRV8833 Dual Motor Driver Carrier exp-tech 4,95€
+two DC motors or one stepper motor
+2.7‌‌–10.8 V
+1.2 A continuous (2 A peak) per motor
+Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor
+Reverse-voltage protection circuit</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Links</title>
+      <link>https://serge-m.github.io/posts/raspberry-pi-links/</link>
+      <pubDate>Sat, 31 Dec 2016 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/raspberry-pi-links/</guid>
+      <description>I2C interface Description of I2C interface
+Raspberry Pi SPI and I2C Tutorial 
+Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
+Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers
+With PCA9685 PWM Board (stackexchange thread)
+One more thread
+Controlling multiple servos To control multiple servos you can use PCA9685 controller. Connection is shown below. It&amp;rsquo;s better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>svn on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/svn/</link>
+    <description>Recent content in svn on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 08 Jan 2014 18:14:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating from SVN to Git and Mercurial</title>
+      <link>https://serge-m.github.io/posts/migrating-from-svn-to-git/</link>
+      <pubDate>Wed, 08 Jan 2014 18:14:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/migrating-from-svn-to-git/</guid>
+      <description>There is a lot of answers here: http://stackoverflow.com/questions/79165/how-to-migrate-svn-with-history-to-a-new-git-repository
+I found rather useful [this one](http://stackoverflow.com/a/9316931&amp;quot; target=&amp;quot;_blank). A guy made a script according to proposed instructions: https://github.com/onepremise/SGMS
+This script will convert projects stored in SVN with the following format:
+/trunk /Project1 /Project2 /branches /Project1 /Project2 /tags /Project1 /Project2 This scheme is also popular and supported as well: /Project1 /trunk /branches /tags /Project2 /trunk /branches /tags Each project will get synchronized over by project name:</description>
+    </item>
+    
+  </channel>
+</rss>

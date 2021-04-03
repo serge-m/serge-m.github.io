@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/sql/</link>
+    <description>Recent content in sql on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 11 Jan 2018 22:02:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flask and SQLAlchemy explained</title>
+      <link>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</link>
+      <pubDate>Thu, 11 Jan 2018 22:02:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/flask-and-sqlalchemy-explained/</guid>
+      <description>Awesome explanation of SQLAlchemy with examples and comparison to Django by Armin Ronacher: SQLAlchemy and You
+Flask-SQLAlchemy module Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy to your application.
+How to add SQLAlchemy to Flask application:
+from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;sqlite:////tmp/test.db&#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
+    </item>
+    
+    <item>
+      <title>learning sqlite</title>
+      <link>https://serge-m.github.io/posts/learning-sqlite/</link>
+      <pubDate>Sun, 09 Feb 2014 14:53:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/learning-sqlite/</guid>
+      <description>create table named t3 (id, value). id is integer. value is text sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &amp;ldquo;rows&amp;rdquo; sqlite&amp;gt; insert into t3 (id, value) values (1, &#39;a&#39;); sqlite&amp;gt; insert into t3 (id, value) values (2, &#39;b&#39;); display results sqlite&amp;gt; select * &amp;amp;nbsp;from t3; 1|a 2|b update id=1 if exists, insert otherwise (id=1 exists) sqlite&amp;gt; insert or replace into t3 (id,value) values (1,&amp;lsquo;c&amp;rsquo; ); sqlite&amp;gt; select * from t3; 2|b 1|c</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tunnel on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/tunnel/</link>
+    <description>Recent content in tunnel on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Apr 2017 12:11:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH cheat sheet</title>
+      <link>https://serge-m.github.io/posts/ssh-cheatsheet/</link>
+      <pubDate>Wed, 12 Apr 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssh-cheatsheet/</guid>
+      <description>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in .</description>
+    </item>
+    
+  </channel>
+</rss>

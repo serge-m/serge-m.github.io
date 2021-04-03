@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux for dummies on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/linux-for-dummies/</link>
+    <description>Recent content in Linux for dummies on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Jul 2016 20:07:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/linux-for-dummies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fix boot record after moving linux mint partitions to another disk</title>
+      <link>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</link>
+      <pubDate>Sat, 16 Jul 2016 20:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</guid>
+      <description>Copying partition is straightforward. Made using gparted.
+  Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions:
+   boot /sdb1 (don&#39;t really know how it works) root /sdb2 home /sdb3  Do  sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
+    </item>
+    
+    <item>
+      <title>Autocomplete from the history in terminal</title>
+      <link>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</link>
+      <pubDate>Thu, 02 Jun 2016 23:24:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
+      <description>create a file .inputrc in your home directory and put there
+&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+Source</description>
+    </item>
+    
+    <item>
+      <title>Keyboard layout switching. Toggle between 2 of 3 languages.</title>
+      <link>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</link>
+      <pubDate>Sun, 18 Oct 2015 02:26:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
+      <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
+1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+    </item>
+    
+    <item>
+      <title>Take screenshot in linux mint</title>
+      <link>https://serge-m.github.io/posts/take-scrinshot-in-linux-mint/</link>
+      <pubDate>Sun, 26 Apr 2015 22:55:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/take-scrinshot-in-linux-mint/</guid>
+      <description>Ctrl+PrintScreen -&amp;gt; whole screen
+Ctrl+Alt+PrintScreen -&amp;gt; Current window</description>
+    </item>
+    
+    <item>
+      <title>Joint clipboard for Ctrl&#43;Ins and Select&#43;Middle click</title>
+      <link>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</link>
+      <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
+      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+    </item>
+    
+    <item>
+      <title>Suspend and hibernate in Linux</title>
+      <link>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</link>
+      <pubDate>Wed, 04 Feb 2015 14:04:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/suspend-and-hibernate-in-linux/</guid>
+      <description>After installing ubuntu 14.04 I found hibernation was disabled. It was deleted from system menu at all. http://ubuntuhandbook.org/index.php/2014/04/enable-hibernate-ubuntu-14-04/
+Only Suspend option was there. Suspend didn&amp;rsquo;t work either. Computer couldn&amp;rsquo;t wake up. It actually woke up, but stayed freezed displaying wallpaper. Some googling and testing with other hibernation modules (tuxonice), swap settings gave no result. I decided to install mint Linux as it has hibernation option by default. In mint Linux the situation was the same except I hadn&amp;rsquo;t to enable hibernate option myself.</description>
+    </item>
+    
+  </channel>
+</rss>

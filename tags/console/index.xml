@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>console on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/console/</link>
+    <description>Recent content in console on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 09 Jun 2017 12:15:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful console commands</title>
+      <link>https://serge-m.github.io/posts/useful-console-commands/</link>
+      <pubDate>Fri, 09 Jun 2017 12:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-console-commands/</guid>
+      <description>Some linux commands that I&amp;rsquo;ll probably need in the future
+User management Add user to a group
+sudo usermod -aG group user or
+sudo adduser &amp;lt;user&amp;gt; &amp;lt;group&amp;gt; Delete user
+userdel user Delete the user’s home directory and mail spool:
+userdel -r user Remove user from a group
+sudo gpasswd -d user group list all users:
+$ getent passwd list all groups:
+$ getent group list all groups of the current user:</description>
+    </item>
+    
+    <item>
+      <title>Shell commands (page moved)</title>
+      <link>https://serge-m.github.io/posts/shell-commands/</link>
+      <pubDate>Sun, 08 Jan 2017 11:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/shell-commands/</guid>
+      <description>Page moved here</description>
+    </item>
+    
+    <item>
+      <title>terminal setup in linux mint</title>
+      <link>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</link>
+      <pubDate>Sun, 07 Aug 2016 11:20:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/terminal-setup-in-linux-mint/</guid>
+      <description>Installation sudo apt-get install tmux
+Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
+:new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+    </item>
+    
+    <item>
+      <title>linux life</title>
+      <link>https://serge-m.github.io/posts/linux-life/</link>
+      <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/linux-life/</guid>
+      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then</description>
+    </item>
+    
+    <item>
+      <title>Десятка лучших консольных команд</title>
+      <link>https://serge-m.github.io/posts/ten-best-console-commands-rus/</link>
+      <pubDate>Tue, 22 Oct 2013 12:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ten-best-console-commands-rus/</guid>
+      <description>источник
+Десятое место Ввод последнего аргумента недавних команд. Удерживая ALT или ESC, с каждым нажатием на точку в строку ввода будут подставляться параметры предыдущих команд, начиная от недавно введенных к старым.
+Комбинация &#39;ALT+.&#39; или &#39;&amp;lt;ESC&amp;gt; .&#39;
+Девятое место Переинициализация терминала без завершения текущей сессии. Например, в случае когда в терминал были выведены двоичные данные и он перестал корректно работать.
+reset Восьмое место Создает пустой файл. Уничтожает содержимое файла без его удаления.</description>
+    </item>
+    
+  </channel>
+</rss>

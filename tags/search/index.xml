@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>search on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/search/</link>
+    <description>Recent content in search on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Feb 2017 23:11:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elasticsearch commands with curl</title>
+      <link>https://serge-m.github.io/posts/elastic-search-cookbook/</link>
+      <pubDate>Fri, 10 Feb 2017 23:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/elastic-search-cookbook/</guid>
+      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;quot;-Xms1g -Xmx1g&amp;quot; ./elasticsearch </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fast.ai on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/fast.ai/</link>
+    <description>Recent content in fast.ai on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 15 Nov 2020 10:00:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/fast.ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effect of techniques from Fast.ai</title>
+      <link>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</link>
+      <pubDate>Sun, 15 Nov 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/effect-of-techniques-from-fastai/</guid>
+      <description>fast.ai is a brilliant library and a course by Jeremy Howard an co. They use pytorch as a base and explain deep learning from the foundations to a very decent level. In his course Jeremy Howard demonstrates a lot of interesting techniques that he finds in papers and that do NN training faster/better/cheaper.
+Here I want to reproduce some of the techniques in order to understand what is the effect they bring.</description>
+    </item>
+    
+    <item>
+      <title>Image segmentation with unlabeled areas with fast.ai</title>
+      <link>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</link>
+      <pubDate>Thu, 14 Nov 2019 07:28:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-segmentation-with-unlabeled-areas-with-fast-ai/</guid>
+      <description>fast.ai library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.
+Sometimes it&amp;rsquo;s important to provide non-complete labeling. That means for some areas the label is undefined. The performance of the network should exclude that areas in the loss and accuracy computation. That allows the network predict any other class in those areas.</description>
+    </item>
+    
+  </channel>
+</rss>

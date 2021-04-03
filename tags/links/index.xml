@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>links on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/links/</link>
+    <description>Recent content in links on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Aug 2018 00:10:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/links/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reducing disk usage in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/disk-usage-ubuntu/</link>
+      <pubDate>Thu, 16 Aug 2018 00:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/disk-usage-ubuntu/</guid>
+      <description>Here are some recipies to make ubuntu installed on USB drive to work faster.
+[1]
+[2]
+reducing swapping Add these lines to /etc/sysctl.conf, and reboot.
+vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 vm.dirty_ratio = 80 vm.dirty_writeback_centisecs = 0 More caching while writting on disk Add noatime,commit=120,&amp;hellip; to /etc/fstab entries for / and /home</description>
+    </item>
+    
+    <item>
+      <title>Workflow management with Apache Airflow</title>
+      <link>https://serge-m.github.io/posts/airflow/</link>
+      <pubDate>Tue, 06 Feb 2018 08:23:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/airflow/</guid>
+      <description>Some useful resources about Airflow:
+ETL best practices with Airflow
+Series of articles about Airflow in production:
+ Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues  More notes about production About start_time: Why isn’t my task getting scheduled?
+One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone.</description>
+    </item>
+    
+    <item>
+      <title>about management</title>
+      <link>https://serge-m.github.io/posts/about-management/</link>
+      <pubDate>Sat, 02 Dec 2017 23:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-management/</guid>
+      <description>Why your programmers just want to code @justzeros
+Interesting list of managers&#39; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
+ Michael Lopp. How to Rands &amp;ndash; feels like really similar personality as me   I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet.</description>
+    </item>
+    
+    <item>
+      <title>Math explained and visualized</title>
+      <link>https://serge-m.github.io/posts/math-exmplined-and-visualized/</link>
+      <pubDate>Sat, 20 May 2017 22:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/math-exmplined-and-visualized/</guid>
+      <description>Here I will collect links to well-written articles about math and algorithms.
+Visual Information Theory. Nice post about probabilities, entropy. The whole blog has awesome visualizations. Highly recommended.
+MNIST For ML Beginners - Nice introduction into machine learning with TensorFlow
+Brilliantly wrong - blog by Alex Rogozhnikov, with fantastic visualizations of many algorithms and concepts
+Collection of data science notebooks.
+Deconvolution and Checkerboard Artifacts by Odena, et al., 2016 - explanation of deconvolution operation in neural networks with awesome interactive visualizations</description>
+    </item>
+    
+    <item>
+      <title>On image search</title>
+      <link>https://serge-m.github.io/posts/on-image-search/</link>
+      <pubDate>Sun, 05 Mar 2017 12:11:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/on-image-search/</guid>
+      <description>ParaDISE - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.
+Image Similarity service (github) - scala based image similarity service, declared to be scalable. Image storage and image similarity logic is implemented within independent, stateless micro-services. Data is stored in postgres. Clustering is based on histograms. 1 contributor. No tests. abandoned.
+ViSense SDK for python - SDK for closed source image search
+List of Content-based image retrieval (CBIR) engines (wikipedia)</description>
+    </item>
+    
+    <item>
+      <title>Machine learning links</title>
+      <link>https://serge-m.github.io/posts/machine-learning-links/</link>
+      <pubDate>Thu, 19 Jan 2017 14:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/machine-learning-links/</guid>
+      <description>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
+ First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don&amp;rsquo;t understand it, keep reading it until you do.
+You can read the rest of the book if you want. You probably should, but I&amp;rsquo;ll assume you know all of it.
+Take Andrew Ng&amp;rsquo;s Coursera. Do all the exercises in Matlab and python and R.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi Links</title>
+      <link>https://serge-m.github.io/posts/raspberry-pi-links/</link>
+      <pubDate>Sat, 31 Dec 2016 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/raspberry-pi-links/</guid>
+      <description>I2C interface Description of I2C interface
+Raspberry Pi SPI and I2C Tutorial 
+Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
+Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers
+With PCA9685 PWM Board (stackexchange thread)
+One more thread
+Controlling multiple servos To control multiple servos you can use PCA9685 controller. Connection is shown below. It&amp;rsquo;s better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.</description>
+    </item>
+    
+    <item>
+      <title>About python</title>
+      <link>https://serge-m.github.io/posts/about-python/</link>
+      <pubDate>Sun, 01 May 2016 12:33:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/about-python/</guid>
+      <description>Production Database helpers for sqlalchemy Backend-agnostic database creation (CREATE IF NOT EXISTS):
+1 2  if not database_exists(&amp;#39;postgres://postgres@localhost/name&amp;#39;): create_database(&amp;#39;postgres://postgres@localhost/name&amp;#39;)   Possible with SQLAlchemy-Utils library. See docs
+Infrastructure with Python http://dustinrcollins.com/infrastructure-with-python &amp;ndash; list of tools for python development
+Retry libraries for python tenacity - a fork of retrying. Seems alive and powerful.
+retrying - abandoned but popular project.
+backoff
+Language Cheat Sheet: Writing Python 2-3 compatible code http://python-future.org/compatible_idioms.html
+Google Python Guidelines https://google.</description>
+    </item>
+    
+    <item>
+      <title>Python logging best practices</title>
+      <link>https://serge-m.github.io/posts/python-logging/</link>
+      <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/python-logging/</guid>
+      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+    </item>
+    
+    <item>
+      <title>Programming interviews resources</title>
+      <link>https://serge-m.github.io/posts/programming-interviews-resources/</link>
+      <pubDate>Mon, 17 Feb 2014 12:21:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/programming-interviews-resources/</guid>
+      <description>screencasts with solutions of typical interview tasks https://www.youtube.com/user/ProgrammingInterview/
+Gayle Laakmann McDowell. Cracking the Coding Interview: 150 Programming Questions and Solutions http://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X
+140 Google Interview Questions http://www.impactinterview.com/2009/10/140-google-interview-questions/</description>
+    </item>
+    
+    <item>
+      <title>Multithreading links</title>
+      <link>https://serge-m.github.io/posts/multithreading-links/</link>
+      <pubDate>Mon, 03 Feb 2014 14:42:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/multithreading-links/</guid>
+      <description>Руководство по отладке многопоточных приложений в Visual Studio 2010. video, exampleshttp://habrahabr.ru/post/97817/
+Считаем Пи параллельно. Часть 1. pthread, openmp, c++11 in commentshttp://habrahabr.ru/post/147796/
+Потоки, блокировки и условные переменные в C++11 [Часть 1], exceptions, exampleshttp://habrahabr.ru/post/182610/
+Потоки, блокировки и условные переменные в C++11 [Часть 2][http://habrahabr.ru/post/182626/](http://habrahabr.ru/post/182626/) </description>
+    </item>
+    
+  </channel>
+</rss>

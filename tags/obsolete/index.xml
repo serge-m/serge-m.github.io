@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>obsolete on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/obsolete/</link>
+    <description>Recent content in obsolete on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 15 Oct 2013 15:22:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/obsolete/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fast way of copying byte array in C/C&#43;&#43; (With measurements)</title>
+      <link>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</link>
+      <pubDate>Tue, 15 Oct 2013 15:22:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</guid>
+      <description>UPD 2017: these are early experimnts on c++ compiler optimizations. I don&amp;rsquo;t think it is useful any more.
+I have the following code for copying several buffers from one object to another:
+1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels  for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
+    </item>
+    
+  </channel>
+</rss>

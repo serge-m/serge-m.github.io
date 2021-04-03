@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>video on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/video/</link>
+    <description>Recent content in video on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 27 Mar 2020 07:18:23 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image and video processing recipes</title>
+      <link>https://serge-m.github.io/posts/image-and-video-processing-recipes/</link>
+      <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
+      <description>I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands. Therefore I usually google it. I&#39;ll try to collect here some recipes that I usually use with a bit of explanations.
+Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+    </item>
+    
+    <item>
+      <title>Refactoring python code. Extracting variables and other.</title>
+      <link>https://serge-m.github.io/posts/refactoring-python-extract-variable/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
+      <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
+import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+    </item>
+    
+    <item>
+      <title>Useful python links</title>
+      <link>https://serge-m.github.io/posts/useful-python-links/</link>
+      <pubDate>Sat, 08 Oct 2016 01:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/useful-python-links/</guid>
+      <description>Books   Test-Driven Development with Python Harry Percival
+  Python Testing with unittest, nose, pytest : eBook
+  Testing Python: Applying Unit Testing, TDD, BDD and Acceptance Testing link .
+  Videos   Outside-In TDD Harry Percival, PyCon 2016
+  Докеризация веб приложения на Python, Антон Егоров
+  Thinking about Concurrency, Raymond Hettinger, Python core developer
+  Tutorials   Разработка идеального pypi пакета с поддержкой разных версий python (Rus), 2020.</description>
+    </item>
+    
+    <item>
+      <title>every day photos</title>
+      <link>https://serge-m.github.io/posts/every-day-photos/</link>
+      <pubDate>Tue, 26 May 2015 00:15:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/every-day-photos/</guid>
+      <description>https://vimeo.com/108551893 - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/
+http://www.365plrds.com/slideshow.html
+https://www.youtube.com/watch?v=tWzPDNabdBs
+https://www.youtube.com/watch?v=3MPyoAN4FIk
+https://www.youtube.com/watch?v=qJutZCyXEJg
+https://www.youtube.com/watch?v=qJutZCyXEJg
+https://www.youtube.com/watch?v=JSzL-osslUg
+https://www.youtube.com/watch?v=9_Fms1Yyanc
+https://www.youtube.com/watch?v=nN_jcom8TR4
+https://www.youtube.com/watch?v=NQxyfOpZmAQ
+https://www.youtube.com/watch?v=ZGgd0DUKok4
+https://vimeo.com/99392
+https://vimeo.com/125593599
+https://vimeo.com/47134932
+https://www.youtube.com/watch?v=VVe92OXwJpk
+https://www.youtube.com/watch?v=OxT4HaE-ZdM
+https://www.youtube.com/watch?v=e5sgWG2saxs
+https://www.youtube.com/watch?v=Ertu9_MhFiM
+https://www.youtube.com/watch?v=HWBqTyUfPlk
+upd 201701:
+https://www.youtube.com/watch?v=AfcDuysiej0
+Upd 201712: https://youtu.be/zuRd_Eneuk8
+https://www.youtube.com/watch?v=65nfbW-27ps
+ https://www.youtube.com/watch?v=nPxdhnT4Ec8
+https://www.youtube.com/watch?v=iPPzXlMdi7o
+https://gfycat.com/familiarbriefiberianemeraldlizard
+https://www.youtube.com/watch?v=kPRXTwM3kYM
+ up 2019 01
+https://www.reddit.com/r/videos/comments/alp7ng/i_took_a_photo_every_day_from_12_years_old_until/
+Update 2020 01
+https://youtu.be/yfqpqiTMUEg</description>
+    </item>
+    
+    <item>
+      <title>Convert all *.avi files in current directory to png sequences</title>
+      <link>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</link>
+      <pubDate>Tue, 22 Oct 2013 23:49:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
+      <description>Using python and ffmpeg:
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) )   </description>
+    </item>
+    
+    <item>
+      <title>Using h264/multiview codec from Intel Media SDK</title>
+      <link>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</link>
+      <pubDate>Fri, 11 Oct 2013 12:37:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
+      <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+    </item>
+    
+    <item>
+      <title>Trim frames from raw YUV video using FFMPEG</title>
+      <link>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</link>
+      <pubDate>Tue, 02 Jul 2013 19:01:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</guid>
+      <description>Trim 5 frames starting from 160-th frame and write to png sequence
+ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png  size of input video is 1920x1088, format YUV420 progressive.
+UPD: ffmpeg is renamed to avconv. Using it for trimming AVI video:
+avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png  UPD2: it seems ffmpeg is back.</description>
+    </item>
+    
+    <item>
+      <title>SSIM по русски</title>
+      <link>https://serge-m.github.io/posts/ssim/</link>
+      <pubDate>Tue, 28 May 2013 15:48:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ssim/</guid>
+      <description>Нужно будет тут записать как работает метрика SSIM по человечески</description>
+    </item>
+    
+  </channel>
+</rss>

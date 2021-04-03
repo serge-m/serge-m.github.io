@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgresql on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/postgresql/</link>
+    <description>Recent content in postgresql on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 24 Apr 2019 08:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postgres cheatsheet</title>
+      <link>https://serge-m.github.io/posts/postgres-cheatsheet/</link>
+      <pubDate>Wed, 24 Apr 2019 08:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/postgres-cheatsheet/</guid>
+      <description>Basics Connect as user postgres:
+1  psql -U postgres   Connect to a specific database:
+\c database_name; Quit the psql:
+\q List all databases:
+\l Lists all tables in the current database:
+\dt List all users:
+\du Create a new role username with a password:
+1  CREATE ROLE username NOINHERIT LOGIN PASSWORD password;   Managing tables Create a new table or a temporary table
+1 2 3 4 5 6 7  CREATE [TEMP] TABLE [IF NOT EXISTS] table_name( pk SERIAL PRIMARY KEY, c1 type(size) NOT NULL, c2 type(size) NULL, .</description>
+    </item>
+    
+  </channel>
+</rss>

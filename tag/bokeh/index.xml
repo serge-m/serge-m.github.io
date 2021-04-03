@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bokeh on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/bokeh/</link>
+    <description>Recent content in bokeh on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Jun 2018 07:45:21 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/bokeh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bokeh in jupyter notebooks for interactive plots</title>
+      <link>https://serge-m.github.io/posts/bokeh-example/</link>
+      <pubDate>Wed, 20 Jun 2018 07:45:21 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/bokeh-example/</guid>
+      <description>Bokeh is a library for interactive visualization. One can use it in Jupyter notebooks.
+Here is the example.
+Lets say we have a pandas dataframe with timestamps and some values:
+1 2 3 4 5 6 7 8 9 10  import pandas as pd from io import StringIO df = pd.read_csv(StringIO(&amp;#34;&amp;#34;&amp;#34;timestamp,value 2018-01-01T10:00:00,20 2018-01-01T12:00:00,10 2018-01-01T14:00:00,30 2018-01-02T10:30:00,40 2018-01-02T13:00:00,50 2018-01-02T18:00:40,10 &amp;#34;&amp;#34;&amp;#34;), parse_dates=[&amp;#34;timestamp&amp;#34;])   You can visualize it to a nice graph with zoom, selection, and mouse-over tooltips using the bokeh:</description>
+    </item>
+    
+  </channel>
+</rss>

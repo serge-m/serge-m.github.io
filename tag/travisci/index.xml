@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TravisCI on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/travisci/</link>
+    <description>Recent content in TravisCI on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 02 Jan 2018 22:50:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/travisci/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytest cheatsheet</title>
+      <link>https://serge-m.github.io/posts/pytest-cheatsheet/</link>
+      <pubDate>Tue, 02 Jan 2018 22:50:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
+      <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+Similarly you can run only tests that don&amp;rsquo;t are not marked.
+pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+How to verify exception message using pytest One can use context manager pytest.</description>
+    </item>
+    
+    <item>
+      <title>Set up Travis CI for building personal page on Github Pages with Pelican</title>
+      <link>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</link>
+      <pubDate>Sun, 27 Nov 2016 20:47:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/</guid>
+      <description>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes.
+Registration on https://travis-ci.org/ is straightforward.
+I have only public free accounts on github. Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html.</description>
+    </item>
+    
+  </channel>
+</rss>

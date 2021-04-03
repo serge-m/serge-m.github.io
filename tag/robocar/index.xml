@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>robocar on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/robocar/</link>
+    <description>Recent content in robocar on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Aug 2019 20:32:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/robocar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Robocar project</title>
+      <link>https://serge-m.github.io/posts/robocar/</link>
+      <pubDate>Sat, 24 Aug 2019 20:32:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/robocar/</guid>
+      <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
+Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
+Here is my first version:
+ The second version is built upon a stock RC car Absima Abs1</description>
+    </item>
+    
+    <item>
+      <title>Capture PWM signal using Arduino</title>
+      <link>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/</guid>
+      <description>Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
+My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>disk usage on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/disk-usage/</link>
+    <description>Recent content in disk usage on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Aug 2018 00:10:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/disk-usage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reducing disk usage in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/disk-usage-ubuntu/</link>
+      <pubDate>Thu, 16 Aug 2018 00:10:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/disk-usage-ubuntu/</guid>
+      <description>Here are some recipies to make ubuntu installed on USB drive to work faster.
+[1]
+[2]
+reducing swapping Add these lines to /etc/sysctl.conf, and reboot.
+vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 vm.dirty_ratio = 80 vm.dirty_writeback_centisecs = 0 More caching while writting on disk Add noatime,commit=120,&amp;hellip; to /etc/fstab entries for / and /home</description>
+    </item>
+    
+  </channel>
+</rss>

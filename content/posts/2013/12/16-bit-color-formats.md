@@ -3,7 +3,7 @@ Title: 16 bit color formats
 Author: SergeM
 Date: 2013-12-11 12:11:00
 Slug: 16-bit-color-formats
-aliases: [16-bit-color-formats.html]
+aliases: [/16-bit-color-formats.html]
 Tags: [ ]
 ---
 

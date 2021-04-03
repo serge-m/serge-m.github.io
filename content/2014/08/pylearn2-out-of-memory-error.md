@@ -1,8 +1,13 @@
+---
 Title: Pylearn2 out of memory error
 Author: SM!
 Date: 2014-08-14 18:51:00
 Slug: pylearn2-out-of-memory-error
-Tags: pylearn2
+aliases: [/pylearn2-out-of-memory-error.html]
+Tags: [ pylearn2]
+---
+
+
 
 I am trying to train NN using pylearn2
 I use stochastic gradient decent.

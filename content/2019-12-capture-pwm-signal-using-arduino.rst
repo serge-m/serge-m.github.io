@@ -1,13 +1,11 @@
-:date: 2019-12-24 10:02
-
-:title: Capture PWM signal using Arduino
-
-:author: SergeM
-
-:slug: capture-pwm-signal-using-arduino
-
-:tags: arduino, pwm, robocar, pwm, c++
-
+---
+date: "2019-12-24 10:02"
+title: "Capture PWM signal using Arduino"
+author: "SergeM"
+slug: "capture-pwm-signal-using-arduino"
+aliases: [/capture-pwm-signal-using-arduino.html]
+tags: [arduino, pwm, robocar, pwm, c++]
+---
 
 Parsing PWM signals
 =======================
@@ -19,20 +17,20 @@ Human driver (me) sends steering commands via the remote control (transmitter). 
 
 For analysis of the PWM signal I have found a library ``PinChangeInterrupt``: 
 
-.. code-block:: cpp
+.. code-block:: 
 
     #include <PinChangeInterrupt.h>
 
 the wires from the receiver are connected to the pins 10 and 11 of my arduino nano:
 
-.. code-block:: cpp
+.. code-block:: 
 
    const int pin_pwm_in_steering = 11;
    const int pin_pwm_in_throttle = 10;
 
 Let's create ``PwmListener`` class that listens to the interrupts on the given pin and returns the width of the last impulse.
 
-.. code-block:: cpp
+.. code-block:: 
 
   class PwmListener
   {
@@ -58,7 +56,7 @@ Let's create ``PwmListener`` class that listens to the interrupts on the given p
 
 Full code:
 
-.. code-block:: cpp
+.. code-block:: 
 
     class PwmListener
     {
@@ -100,7 +98,7 @@ Full code:
 
 now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer.
 
-.. code-block:: cpp
+.. code-block:: 
 
     PwmListener pwm_listener_steering (pin_pwm_in_steering, DEFAULT_PULSE_WIDTH);
     PwmListener pwm_listener_throttle (pin_pwm_in_throttle, DEFAULT_PULSE_WIDTH);
@@ -109,7 +107,7 @@ now we create two listeners and define dummy caller functions for them. The dumm
     
 later in the ``setup()`` function we have to set up the pins:
 
-.. code-block:: cpp
+.. code-block:: 
 
     void setup() {
       // starting input pwm monitoring...
@@ -126,7 +124,7 @@ later in the ``setup()`` function we have to set up the pins:
 
 on every loop we send the values to the host computer:
 
-.. code-block:: cpp
+.. code-block:: 
     
     void loop() { 
       const int steering =   pwm_listener_steering.value();
@@ -149,7 +147,8 @@ We have also enabled the serial interface to report the values to the host machi
 
 On the host machine we run python listener:
 
-.. code-block:: python
+.. code-block::
+
     import serial
     
     ports = ['/dev/ttyUSB0', '/dev/ttyUSB1']
@@ -187,7 +186,8 @@ Analysis
 I have got the following graph (interactive):
 
 .. raw:: html
-    :file: static/2019-12-pwm_visualization.html
+
+    :file: /static/2019-12-pwm_visualization.html
 
 Let's consider steering series. It has three parts.
 

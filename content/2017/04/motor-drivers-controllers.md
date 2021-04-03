@@ -1,8 +1,13 @@
+---
 Title: Motor drivers / controllers 
 Author: SergeM
 Date: 2017-04-23 12:11:00
 Slug: motor-drivers-controllers
-Tags: raspberry, pi, raspberry pi, hardware
+aliases: [/motor-drivers-controllers.html]
+Tags: [ raspberry, pi, raspberry pi, hardware]
+---
+
+
 
 
 Articles about raspberry pi: [here](/raspberry-pi-links.html)
@@ -26,7 +31,7 @@ two DC motors or one stepper motor
 Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor  
 Reverse-voltage protection circuit  
 
-<img src="{filename}/2017/04/drivers/Pololu DRV8833.png" width="250">
+<img src="../drivers/Pololu DRV8833.png" width="250">
 
 [datasheet](http://www.pololu.com/file/0J534/drv8833.pdf)
 
@@ -75,10 +80,10 @@ Very similar to DRV8833 dual motor driver carrier in operating voltage range and
 The DRV8833 has a higher peak current rating (2 A per channel vs 1.5 A), optional built-in current-limiting, and no need for externally supplied logic voltage.
 
 Mode 1:  
-<img src="{filename}/2017/04/drivers/drv8835.png" width="250">
+<img src="../drivers/drv8835.png" width="250">
 
 Mode 2:  
-<img src="{filename}/2017/04/drivers/drv8835-mode2.png" width="250">
+<img src="../drivers/drv8835-mode2.png" width="250">
 
 
 
@@ -86,8 +91,8 @@ Mode 2:
 [exp-tech 5,20€](http://www.exp-tech.de/pololu-drv8801-single-brushed-dc-motor-driver-carrier)  
 [polou.com 4,95$](https://www.pololu.com/product/2136)
 
-<img src="{filename}/2017/04/drivers/Pololu DRV8801 1.jpg" width="250">
-<img src="{filename}/2017/04/drivers/Pololu DRV8801 2.jpg" width="250">  
+<img src="/media/images/drivers/Pololu DRV8801 1.jpg" width="250">
+<img src="/media/images/drivers/Pololu DRV8801 2.jpg" width="250">  
 
 Drives a single brushed DC motor  
 Motor supply voltage: 8–36 V  
@@ -106,7 +111,7 @@ Under-voltage lockout and protection against over-current and over-temperature
 
 [Arduino library](https://github.com/pololu/a4990-motor-shield)
 
-<img src="{filename}/2017/04/drivers/A4990 Dual Motor Driver Carrier.png" width="250">
+<img src="../drivers/A4990 Dual Motor Driver Carrier.png" width="250">
 
 
 Dual-H-bridge motor driver: 
@@ -174,7 +179,7 @@ Reverse voltage protection?:    N
 ### Pololu DRV8824 Stepper Motor Driver Carrier, Low Current
 [6,99 €](http://www.exp-tech.de/pololu-drv8824-stepper-motor-driver-carrier-low-current)
 
-<img src="{filename}/2017/04/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
+<img src="../drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
 
 Minimum operating voltage:  8.2 V  
 Maximum operating voltage:  45 V  

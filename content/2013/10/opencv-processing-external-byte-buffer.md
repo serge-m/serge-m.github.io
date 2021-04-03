@@ -1,8 +1,13 @@
+---
 Title: OpenCV. Processing external byte buffer
 Author: SergeM
 Date: 2013-10-21 13:40:00
 Slug: opencv-processing-external-byte-buffer
-Tags: 
+aliases: [/opencv-processing-external-byte-buffer.html]
+Tags: [ ]
+---
+
+
 
 
 

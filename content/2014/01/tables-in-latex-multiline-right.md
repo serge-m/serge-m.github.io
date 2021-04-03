@@ -1,8 +1,13 @@
+---
 Title: Tables in Latex. Multiline, right alignment
 Author: SergeM
 Date: 2014-01-23 19:56:00
 Slug: tables-in-latex-multiline-right
-Tags: latex
+aliases: [/tables-in-latex-multiline-right.html]
+Tags: [ latex]
+---
+
+
 
 I used _tabularx _package.
 Additional definitions:  

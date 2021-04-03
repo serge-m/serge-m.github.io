@@ -1,8 +1,13 @@
+---
 Title: Data Structures And Algorithms in Python
 Author: SergeM
 Date: 2021-01-29 21:39:00
 Slug: data-structures-and-algorithms-in-python
-Tags: python, data structure, algorithm 
+aliases: [/data-structures-and-algorithms-in-python.html]
+Tags: [ python, data structure, algorithm ]
+---
+
+
 
 
 

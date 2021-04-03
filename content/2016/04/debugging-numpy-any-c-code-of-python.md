@@ -1,8 +1,13 @@
+---
 Title: Debugging numpy (any C code of Python) using gdb
 Author: SergeM
 Date: 2016-04-04 00:01:00
 Slug: debugging-numpy-any-c-code-of-python
-Tags: useful,python
+aliases: [/debugging-numpy-any-c-code-of-python.html]
+Tags: [ useful,python]
+---
+
+
 
 
 I created a tiny python script that executes some python code, that executes some C code:

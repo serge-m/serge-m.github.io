@@ -1,8 +1,13 @@
+---
 Title: Docker in Scaleway's vc1s Ubuntu Xenial
 Author: SergeM
 Date: 2017-01-05 07:10:00
 Slug: docker-in-scaleway-vc1s-ubuntu-xenial
-Tags: 
+aliases: [/docker-in-scaleway-vc1s-ubuntu-xenial.html]
+Tags: [ ]
+---
+
+
 
 
 In ubuntu 16.04 image installed on VC1S server I was unable to install docker.

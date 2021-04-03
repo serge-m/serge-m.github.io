@@ -1,8 +1,13 @@
+---
 Title: Color problems in avisynth->overlay
 Author: SergeM
 Date: 2013-06-21 11:22:00
 Slug: color-problems-in-avisynth-overlay
-Tags: 
+aliases: [/color-problems-in-avisynth-overlay.html]
+Tags: [ ]
+---
+
+
 
 I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
 

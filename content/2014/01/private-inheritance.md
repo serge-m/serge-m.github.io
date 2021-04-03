@@ -1,8 +1,13 @@
+---
 Title: Private inheritance
 Author: SergeM
 Date: 2014-01-06 12:49:00
 Slug: private-inheritance
-Tags: c++
+aliases: [/private-inheritance.html]
+Tags: [ c++]
+---
+
+
 
 Example from Meyers "Effective C++"
 

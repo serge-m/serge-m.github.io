@@ -1,8 +1,13 @@
+---
 Title: OpenCV. Copy image from unsigned char buffer, resize and save to file
 Author: SergeM
 Date: 2013-07-09 23:23:00
 Slug: opencv-copy-image-from-unsigned-char
-Tags: c++,opencv
+aliases: [/opencv-copy-image-from-unsigned-char.html]
+Tags: [ c++,opencv]
+---
+
+
 
 
 How to copy image from unsigned char buffer, resize and save to file.

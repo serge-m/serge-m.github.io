@@ -1,8 +1,13 @@
-Title: Presentaitons in browser
+---
+Title: Presentations in browser
 Author: SergeM
-Date: 2018-03-18 15:28
+Date: "2018-03-18 15:28"
 Slug: presentations-in-browser
-Tags: presentations,html,javascript,slides
+aliases: [/presentations-in-browser.html]
+Tags: [ presentations,html,javascript,slides]
+---
+
+
 
 
 There are many ways for showing slides beyond powerpoint. 
@@ -70,7 +75,7 @@ class: center, middle
 
 This is how the slide look like in browser:
 
-<img src="{filename}/2018/03/slide-35-15.png" style="border: 1px solid black;">
+![](/media/images/slide-35-15.png) 
 
 Well this example requires internet connection to download js and fonts, but you can put them in the same folder.
 

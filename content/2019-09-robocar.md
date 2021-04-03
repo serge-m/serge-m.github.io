@@ -1,8 +1,13 @@
+---
 Title: Robocar project
 Author: SergeM
 Date: 2019-08-24 20:32:00
 Slug: robocar
-Tags: robocar, donkeycar, ros, linux, robotics, raspberry, pi, robot, 
+aliases: [/robocar.html]
+Tags: [ robocar, donkeycar, ros, linux, robotics, raspberry, pi, robot, ]
+---
+
+
 
 
 For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
@@ -16,7 +21,7 @@ Here is my first version:
 
 The second version is built upon a stock RC car Absima Abs1
 
-![Robocar RC car base](media/2019-09-robocar/absima_abs1_unpacked.jpg)
+![Robocar RC car base](/media/2019-09-robocar/absima_abs1_unpacked.jpg)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xK2RTwvaCCo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -34,11 +39,11 @@ I had patched it significantly to make it work for my hardware.
 ## Hardware
 Donkeycar standard architecture looks like this:
 
-![Donkeycar standard architecture](media/2019-09-robocar/architecture_donkeycar_bb.png)
+![Donkeycar standard architecture](/media/2019-09-robocar/architecture_donkeycar_bb.png)
 
 I decided to introduce an intermediate layer of arduino that will (hopefully) protect my raspberry from undesired influence of high-current electornics of the car.
 
-![sergem robocar architecture with arduino](media/2019-09-robocar/architecture_robocar_bb.png)
+![sergem robocar architecture with arduino](/media/2019-09-robocar/architecture_robocar_bb.png)
 
 
 ## Software 

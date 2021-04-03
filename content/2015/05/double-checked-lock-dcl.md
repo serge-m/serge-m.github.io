@@ -1,8 +1,13 @@
+---
 Title: Double checked lock (DCL)
 Author: SergeM
 Date: 2015-05-19 17:46:00
 Slug: double-checked-lock-dcl
-Tags: multithreading
+aliases: [/double-checked-lock-dcl.html]
+Tags: [ multithreading]
+---
+
+
 
 [http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html](http://www.javaworld.com/article/2074979/java-concurrency/double-checked-locking--clever--but-broken.html)
 

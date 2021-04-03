@@ -1,8 +1,13 @@
+---
 Title: lambda functions in matlab
 Author: SM!
 Date: 2014-05-24 18:56:00
 Slug: lambda-functions-in-matlab
-Tags: matlab
+aliases: [/lambda-functions-in-matlab.html]
+Tags: [ matlab]
+---
+
+
 
 I discovered it during Machine learnin courses on Coursera
 

@@ -1,8 +1,13 @@
+---
 Title: Add backslash before all escape characters in python 
 Author: SergeM
 Date: 2013-11-12 17:14:00
 Slug: add-backslash-before-all-escape
-Tags: python
+aliases: [/add-backslash-before-all-escape.html]
+Tags: [ python]
+---
+
+
 
 Useful for using in regular expressions:
 

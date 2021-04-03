@@ -1,8 +1,13 @@
+---
 Title: multiple "windows" in one linux terminal
 Author: SM!
 Date: 2014-05-21 21:22:00
 Slug: multiple-windows-in-one-linux-terminal
-Tags: useful,linux
+aliases: [/multiple-windows-in-one-linux-terminal.html]
+Tags: [ useful,linux]
+---
+
+
 
 use "screen" utility
 

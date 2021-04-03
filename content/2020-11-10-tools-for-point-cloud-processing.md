@@ -1,8 +1,13 @@
+---
 Title: Point cloud processing
 Author: SergeM
 Date: 2020-11-10 20:00:00
 Slug: point-cloud-processing
-Tags: pcl, ros, python, c++, point cloud, pcl, ply
+aliases: [/point-cloud-processing.html]
+Tags: [ pcl, ros, python, c++, point cloud, pcl, ply]
+---
+
+
 
 ## ROS nodes
 

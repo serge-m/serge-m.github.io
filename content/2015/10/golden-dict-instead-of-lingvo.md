@@ -1,8 +1,13 @@
+---
 Title: Golden Dict instead of Lingvo
 Author: SergeM
 Date: 2015-10-11 20:37:00
 Slug: golden-dict-instead-of-lingvo
-Tags: useful
+aliases: [/golden-dict-instead-of-lingvo.html]
+Tags: [ useful]
+---
+
+
 
 Official web-site:
 

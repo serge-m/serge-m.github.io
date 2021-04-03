@@ -1,8 +1,14 @@
+---
 Title: Collection of interesting databases
 Author: SergeM
 Date: 2017-04-05 12:11:00
 Slug: collection-of-interesting-databases
-Tags: databases
+aliases: [/collection-of-interesting-databases.html]
+categories: ["pages"]
+Tags: [ databases]
+---
+
+
 
 
 

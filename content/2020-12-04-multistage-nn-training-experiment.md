@@ -1,8 +1,13 @@
+---
 Title: Multistage NN training experiment
 Author: SergeM
 Date: 2020-01-01 10:00:00
 Slug: multistage-nn-training-experiment
-Tags: pytorch, deep learning, computer vision, neural networks, draft
+aliases: [/multistage-nn-training-experiment.html]
+Tags: [ pytorch, deep learning, computer vision, neural networks, draft]
+---
+
+
 
 
 

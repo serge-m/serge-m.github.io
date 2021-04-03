@@ -1,8 +1,13 @@
+---
 Title: Binarization in Adobe After Effects 
 Author: SergeM
 Date: 2013-11-29 16:23:00
 Slug: binarization-in-adobe-after-effects
-Tags: 
+aliases: [/binarization-in-adobe-after-effects.html]
+Tags: [ ]
+---
+
+
 
 I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings:
 ![](http://4.bp.blogspot.com/-nluWlFcUinc/UpiF4uKuWHI/AAAAAAAAAaY/Lzros6uPzDE/s320/levels_1.png)

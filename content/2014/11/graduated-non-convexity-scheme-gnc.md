@@ -1,8 +1,13 @@
+---
 Title: Graduated non convexity scheme (GNC)
 Author: SergeM
 Date: 2014-11-05 17:15:00
 Slug: graduated-non-convexity-scheme-gnc
-Tags: optical flow
+aliases: [/graduated-non-convexity-scheme-gnc.html]
+Tags: [ optical flow]
+---
+
+
 
 Optimization of energy terms can be difficult in OF, because of  non-convexity and local optima.
 Construct a series of energy functions

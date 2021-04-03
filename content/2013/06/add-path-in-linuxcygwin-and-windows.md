@@ -1,8 +1,13 @@
+---
 Title: Add path in linux/cygwin and windows
 Author: SergeM
 Date: 2013-06-09 18:45:00
 Slug: add-path-in-linuxcygwin-and-windows
-Tags: 
+aliases: [/add-path-in-linuxcygwin-and-windows.html]
+Tags: [ ]
+---
+
+
 
 
 in cygwin:

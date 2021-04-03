@@ -1,12 +1,12 @@
-:date: 2020-08-23 19:00:00
+---
+date: "2020-08-23 19:00:00"
+title: "Self-supervised depth and ego motion estimation"
+author: "SergeM"
+slug: "self-supervised-depth-and-ego-motion"
+aliases: [/self-supervised-depth-and-ego-motion.html]
+tags: [machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion.]
+---
 
-:title: Self-supervised depth and ego motion estimation
-
-:author: SergeM
-
-:slug: self-supervised-depth-and-ego-motion
-
-:tags: machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion.
 
 3D Packing for Self-Supervised Monocular Depth Estimation
 --------------------------------------------------------------
@@ -58,7 +58,7 @@ by Berkley and google
 
 
 
-.. image:: media/2020-08-23/sfm-teaser.png
+.. image:: /media/2020-08-23/sfm-teaser.png
    :width: 600
 
 One of the previous works, that became a foundation for 3d-pack.

@@ -1,8 +1,13 @@
+---
 Title: Sample project with Ember and Flask
 Author: SergeM
-Date: 2017-10-25 23:24
+Date: 2017-10-25 23:24:00
 Slug: sample-ember-and-flask
-Tags: python,flask,ember
+aliases: [/sample-ember-and-flask.html]
+Tags: [ python,flask,ember]
+---
+
+
 
 
 I want to use EmberJS with Flask application. Flask will provide an API.

@@ -1,8 +1,13 @@
+---
 Title: Save Ipython notebook as script with the same filename
 Author: SergeM
 Date: 2014-09-21 14:59:00
 Slug: save-ipython-notebook-as-script-with
-Tags: useful,ipython
+aliases: [/save-ipython-notebook-as-script-with.html]
+Tags: [ useful,ipython]
+---
+
+
 
 ```python
 # creating a variable theNotebook with the name of notebook

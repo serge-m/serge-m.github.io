@@ -1,8 +1,13 @@
+---
 Title: Fix boot record after moving linux mint partitions to another disk
 Author: SergeM
 Date: 2016-07-16 20:07:00
 Slug: fix-boot-record-after-moving-linux-mint
-Tags: Linux for dummies
+aliases: [/fix-boot-record-after-moving-linux-mint.html]
+Tags: [ Linux for dummies]
+---
+
+
 
 * Copying partition is straightforward. Made using gparted.
 

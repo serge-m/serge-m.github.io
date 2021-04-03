@@ -1,8 +1,13 @@
+---
 Title: tikz cookbook
 Author: SergeM
 Date: 2014-07-16 23:44:00
 Slug: tikz-cookbook
-Tags: useful,latex,tikz
+aliases: [/tikz-cookbook.html]
+Tags: [ useful,latex,tikz]
+---
+
+
 
 
 [Drawing on an image with TikZ](http://tex.stackexchange.com/questions/9559/drawing-on-an-image-with-tikz)

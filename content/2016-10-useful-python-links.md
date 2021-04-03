@@ -1,8 +1,13 @@
+---
 Title: Useful python links
 Author: SergeM
 Date: 2016-10-08 01:10:00
 Slug: useful-python-links
-Tags: python, useful, youtube, video, packaging, setup.py, tox, pytest
+aliases: [/useful-python-links.html]
+Tags: [ python, useful, youtube, video, packaging, setup.py, tox, pytest]
+---
+
+
 
 ## Books
 

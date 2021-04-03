@@ -1,8 +1,13 @@
+---
 Title: Rest API for TensorFlow model
 Author: SergeM
-Date: 2017-05-21 22:00
+Date: 2017-05-21 22:00:00
 Slug: rest-api-for-tensorflow-model
-Tags: tensorflow,server,REST,machine learning
+aliases: [/rest-api-for-tensorflow-model.html]
+Tags: [ tensorflow,server,REST,machine learning]
+---
+
+
 
 
 

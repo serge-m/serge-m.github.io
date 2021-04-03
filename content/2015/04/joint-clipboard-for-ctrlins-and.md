@@ -1,8 +1,13 @@
+---
 Title: Joint clipboard for Ctrl+Ins and Select+Middle click
 Author: SergeM
 Date: 2015-04-26 22:54:00
 Slug: joint-clipboard-for-ctrl-ins-and
-Tags: useful,linux,Linux for dummies,linux mint
+aliases: [/joint-clipboard-for-ctrl-ins-and.html]
+Tags: [ useful,linux,Linux for dummies,linux mint]
+---
+
+
 
 
 1. Install clipit application:

@@ -1,8 +1,13 @@
+---
 Title: Некоторые заметки о приведении типов в СиПлюсПлюс
 Author: SergeM
 Date: 2013-10-04 17:59:00
 Slug: blog-post-2
-Tags: c++,russian
+aliases: [/blog-post-2.html]
+Tags: [ c++,russian]
+---
+
+
 
 АлёнаC++:
 [http://alenacpp.blogspot.ru/2005/08/c.html](http://alenacpp.blogspot.ru/2005/08/c.html)

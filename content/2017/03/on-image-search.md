@@ -1,8 +1,13 @@
+---
 Title: On image search
 Author: SergeM
 Date: 2017-03-05 12:11:00
 Slug: on-image-search
-Tags: image processing, image search, links
+aliases: [/on-image-search.html]
+Tags: [ image processing, image search, links]
+---
+
+
 
 
 

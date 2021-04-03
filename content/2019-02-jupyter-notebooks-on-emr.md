@@ -1,8 +1,13 @@
+---
 Title: Jupyter notebooks on EMR
 Author: SergeM
 Date: 2019-02-04 18:37:00
 Slug: jupyter-notebooks-on-emr
-Tags: spark, configuration, python, pyspark, emr, jupyter, ipython
+aliases: [/jupyter-notebooks-on-emr.html]
+Tags: [ spark, configuration, python, pyspark, emr, jupyter, ipython]
+---
+
+
 
 
 

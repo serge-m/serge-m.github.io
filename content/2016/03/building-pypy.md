@@ -1,8 +1,13 @@
+---
 Title: Building Pypy
 Author: SergeM
 Date: 2016-03-22 21:51:00
 Slug: building-pypy
-Tags: pypy
+aliases: [/building-pypy.html]
+Tags: [ pypy]
+---
+
+
 
 Pypy builds faster if using `-O2` option.
 

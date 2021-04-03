@@ -1,8 +1,13 @@
+---
 Title: SSH cheat sheet
 Author: SergeM
 Date: 2017-04-12 12:11:00
 Slug: ssh-cheatsheet
-Tags: ssh, keys, useful, tunnel, security, linux
+aliases: [/ssh-cheatsheet.html]
+Tags: [ ssh, keys, useful, tunnel, security, linux]
+---
+
+
 
 
 ## Create more secure ssh keys

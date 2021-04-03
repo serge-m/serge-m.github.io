@@ -1,8 +1,13 @@
+---
 Title: Combine images to PDF in linux
 Author: SergeM
 Date: 2017-05-03 07:11:00
 Slug: combine-images-to-pdf
-Tags: linux, imagemagick, useful, images
+aliases: [/combine-images-to-pdf.html]
+Tags: [ linux, imagemagick, useful, images]
+---
+
+
 
 
 Using `convert` utility we can join multiple image files (png, jpeg, pdf) into one pdf.

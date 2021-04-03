@@ -1,8 +1,13 @@
+---
 Title: Image resize in Nuke
 Author: SergeM
 Date: 2013-05-07 15:50:00
 Slug: image-resize-in-nuke
-Tags: en,nuke
+aliases: [/image-resize-in-nuke.html]
+Tags: [ en,nuke]
+---
+
+
 
 So here we have two filters:
 1) Crop

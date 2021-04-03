@@ -1,8 +1,13 @@
+---
 Title: Rounding in Python
 Author: SergeM
 Date: 2021-01-10 21:35:00
 Slug: rounding-in-python 
-Tags: python, math, floating point, 
+aliases: [/rounding-in-python.html]
+Tags: [ python, math, floating point, ]
+---
+
+
 
 
 In school we round numbers like 0.5, 1123.5 towards the bigger number. 

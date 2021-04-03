@@ -1,8 +1,13 @@
+---
 Title: Loading numpy array from string
 Author: SergeM
 Date: 2014-11-17 23:01:00
 Slug: loading-numpy-array-from-string
-Tags: useful,numpy,python
+aliases: [/loading-numpy-array-from-string.html]
+Tags: [ useful,numpy,python]
+---
+
+
 
 Okay children, today we learn how to convert text to numpy matrix.
 Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html" target="_blank).

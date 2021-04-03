@@ -1,8 +1,13 @@
+---
 Title: Run docker as pytest fixture 
 Author: SergeM
 Date: 2016-12-19 21:30:00
 Slug: run-docker-as-pytest-fixture
-Tags: python,pytest,docker
+aliases: [/run-docker-as-pytest-fixture.html]
+Tags: [ python,pytest,docker]
+---
+
+
 
 
 I need to test external API or perform integration test for my application. 

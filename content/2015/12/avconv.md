@@ -1,8 +1,13 @@
+---
 Title: convert video to jpeg with good quality
 Author: SergeM
 Date: 2015-12-14 22:00:00
 Slug: avconv
-Tags: useful,ffmpeg,avconv
+aliases: [/avconv.html]
+Tags: [ useful,ffmpeg,avconv]
+---
+
+
 
 
 convert video to jpeg with good quality:

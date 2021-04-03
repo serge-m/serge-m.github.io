@@ -1,8 +1,13 @@
+---
 Title: 16 bit color formats
 Author: SergeM
 Date: 2013-12-11 12:11:00
 Slug: 16-bit-color-formats
-Tags: 
+aliases: [16-bit-color-formats.html]
+Tags: [ ]
+---
+
+
 
 [http://forums.creativecow.net/thread/2/940078](http://forums.creativecow.net/thread/2/940078)
 

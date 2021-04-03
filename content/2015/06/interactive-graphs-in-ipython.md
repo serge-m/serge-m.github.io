@@ -1,8 +1,13 @@
+---
 Title: Interactive graphs in IPython
 Author: SergeM
 Date: 2015-06-07 13:39:00
 Slug: interactive-graphs-in-ipython
-Tags: useful,ipython
+aliases: [/interactive-graphs-in-ipython.html]
+Tags: [ useful,ipython]
+---
+
+
 
 There are at least two libraries for ipython able to plot graphs interactively and inline.
 1) [mpld3 ](http://mpld3.github.io/)

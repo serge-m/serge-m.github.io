@@ -1,8 +1,13 @@
+---
 Title: Things about C++
 Author: SergeM
 Date: 2014-01-06 13:28:00
 Slug: things-about-c
-Tags: c++
+aliases: [/things-about-c.html]
+Tags: [ c++]
+---
+
+
 
 <ol style="text-align: left;"><li>rules for resolving calls to overloaded functions:&nbsp;</li>- <li>identify the function that's the best match for the call (name, parameters etc)</li><li>checks accessibility for the best-match function.</li>
 </ol><div>

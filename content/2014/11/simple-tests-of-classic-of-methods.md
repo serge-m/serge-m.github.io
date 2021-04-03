@@ -1,8 +1,13 @@
+---
 Title: Simple tests of classic OF methods
 Author: SergeM
 Date: 2014-11-05 22:30:00
 Slug: simple-tests-of-classic-of-methods
-Tags: optical flow
+aliases: [/simple-tests-of-classic-of-methods.html]
+Tags: [ optical flow]
+---
+
+
 
 ## BA method, simple synthetic images 
 

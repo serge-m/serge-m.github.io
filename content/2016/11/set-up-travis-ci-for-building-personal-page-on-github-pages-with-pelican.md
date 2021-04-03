@@ -1,8 +1,13 @@
+---
 Title: Set up Travis CI for building personal page on Github Pages with Pelican
 Author: SergeM
 Date: 2016-11-27 20:47:00
 Slug: set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican
-Tags: TravisCI,pelican,useful
+aliases: [/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican.html]
+Tags: [ TravisCI,pelican,useful]
+---
+
+
 
 I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes. 
 

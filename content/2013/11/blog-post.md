@@ -1,8 +1,13 @@
+---
 Title: То, что вы хотели знать про оптический поток, но стеснялись спросить
 Author: SergeM
 Date: 2013-11-12 11:17:00
 Slug: blog-post-3
-Tags: opencv,russian,optical flow
+aliases: [/blog-post-3.html]
+Tags: [ opencv,russian,optical flow]
+---
+
+
 
 Взято с [http://habrahabr.ru/post/201406/](http://habrahabr.ru/post/201406/)
 

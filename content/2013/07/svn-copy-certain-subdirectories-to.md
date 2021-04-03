@@ -1,8 +1,13 @@
+---
 Title: SVN copy certain subdirectories to a branch 
 Author: SergeM
 Date: 2013-07-03 17:07:00
 Slug: svn-copy-certain-subdirectories-to
-Tags: 
+aliases: [/svn-copy-certain-subdirectories-to.html]
+Tags: [ ]
+---
+
+
 
 <span style="font-family: Times, Times New Roman, serif;">There was always a problem for me to copy only certain directories from one branch to another.</span>
 <span style="font-family: Times, Times New Roman, serif;">For example we have following directory structure:</span>

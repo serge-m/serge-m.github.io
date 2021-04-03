@@ -1,8 +1,13 @@
+---
 Title: Image segmentation with unlabeled areas with fast.ai
 Author: SergeM
-Date: 2019-11-14 07:28
+Date: 2019-11-14 07:28:00
 Slug: image-segmentation-with-unlabeled-areas-with-fast-ai
-Tags: machine learning, fast.ai, segmentation, computer vision
+aliases: [/image-segmentation-with-unlabeled-areas-with-fast-ai.html]
+Tags: [ machine learning, fast.ai, segmentation, computer vision]
+---
+
+
 
 
 [fast.ai](http://fast.ai) library has a pretty easy to use yet powerful capabilities for semantic image segmentation. By default all the classes are treated the same. The network is trained to predict all the labels.

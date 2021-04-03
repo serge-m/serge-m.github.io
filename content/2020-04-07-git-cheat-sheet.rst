@@ -1,18 +1,17 @@
-:date: 2020-04-07 06:00:00
-
-:title: Git cheat sheet
-
-:author: SergeM
-
-:slug: git-cheat-sheet
-
-:tags: git
+---
+date: "2020-04-07 06:00:00"
+title: "Git cheat sheet"
+author: "SergeM"
+slug: "git-cheat-sheet"
+aliases: [/git-cheat-sheet.html]
+tags: [git]
+---
 
 
 Nice history log in console
 ----------------------------------------
 
-.. code-block:: sh
+.. code-block::
 
     git log --all --decorate --oneline --graph
 
@@ -23,7 +22,7 @@ How to remember:
 
 Sample result:
 
-.. code-block:: sh
+.. code-block::
 
     $ git log --all --decorate --oneline --graph
     * e4689e3 (HEAD -> master, origin/master, origin/HEAD) tree iteration
@@ -55,7 +54,7 @@ Set date/time for git commits
 ------------------------------------------------------
 
 
-.. code-block:: sh
+.. code-block::
 
     export GIT_COMMITTER_DATE="2020-01-01 12:00:00"; git commit --date "$GIT_COMMITTER_DATE" -m "commit message"
 
@@ -65,13 +64,13 @@ Caching credentials
 
 Remember credentials for 1 hour (3600 seconds):
 
-.. code-block:: sh
+.. code-block::
 
     git config --global credential.helper 'cache --timeout=3600'
 
 Disabling cache:
 
-.. code-block:: sh
+.. code-block::
 
     git config --global --unset credential.helper
 
@@ -80,7 +79,7 @@ Disabling cache:
 Export a repo to an archive without .git
 --------------------------------------------------
 
-.. code-block:: sh
+.. code-block::
 
     git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
 

@@ -1,8 +1,13 @@
+---
 Title: Blogs about blender
 Author: SergeM
 Date: 2013-05-12 12:20:00
 Slug: blogs-about-blender
-Tags: 
+aliases: [/blogs-about-blender.html]
+Tags: [ ]
+---
+
+
 
 [http://blendersushi.blogspot.ru/](http://blendersushi.blogspot.ru/)
 - one of blender's developers

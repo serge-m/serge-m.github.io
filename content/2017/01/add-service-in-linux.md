@@ -1,8 +1,13 @@
+---
 Title: Add service in ubuntu 
 Author: SergeM
 Date: 2017-01-08 07:10:00
 Slug: add-service-in-linux
-Tags: linux,useful
+aliases: [/add-service-in-linux.html]
+Tags: [ linux,useful]
+---
+
+
 
 
 Create a file for service `your-service`

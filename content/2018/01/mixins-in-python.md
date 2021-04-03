@@ -1,8 +1,13 @@
+---
 Title: Mixin pattern in Python
 Author: SergeM
-Date: 2018-01-10 07:50
+Date: "2018-01-10 07:50"
 Slug: mixins-in-python
-Tags: mixins,python,design patterns
+aliases: [/mixins-in-python.html]
+Tags: [ mixins,python,design patterns]
+---
+
+
 
 
 Design pattern [Mixin](https://en.wikipedia.org/wiki/Mixin) is often used in python. 

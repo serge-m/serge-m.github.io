@@ -1,8 +1,13 @@
+---
 Title: About python
 Author: SergeM
 Date: 2016-05-01 12:33:00
 Slug: about-python
-Tags: useful,python,links
+aliases: [/about-python.html]
+Tags: [ useful,python,links]
+---
+
+
 
 
 ## Production

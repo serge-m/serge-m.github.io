@@ -1,8 +1,13 @@
+---
 Title: pypy with numpy
 Author: SergeM
 Date: 2016-05-16 00:11:00
 Slug: pypy-with-numpy
-Tags: numpy,python,pypy
+aliases: [/pypy-with-numpy.html]
+Tags: [ numpy,python,pypy]
+---
+
+
 
 Looks like pypy now can build numpy. Well, a slightly modified numpy.
 

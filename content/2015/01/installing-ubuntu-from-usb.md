@@ -1,8 +1,13 @@
+---
 Title: Installing Ubuntu from USB
 Author: SergeM
 Date: 2015-01-11 16:59:00
 Slug: installing-ubuntu-from-usb
-Tags: useful,linux
+aliases: [/installing-ubuntu-from-usb.html]
+Tags: [ useful,linux]
+---
+
+
 
 I use&nbsp; Windows OS and I want to install Ubuntu on another PC.
 1. Download software for bootable usb creation

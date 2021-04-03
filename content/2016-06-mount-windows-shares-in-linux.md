@@ -1,8 +1,14 @@
+---
 Title: Mount windows shares in linux
 Author: SergeM
 Date: 2016-06-19 12:37:00
 Slug: mount-windows-shares-in-linux
-Tags: useful, linux, samba, mount, network
+aliases: [/mount-windows-shares-in-linux.html]
+Tags: [ useful, linux, samba, mount, network]
+categories: ["themes", "syntax"]
+---
+
+
 
 
 Use sudo if needed

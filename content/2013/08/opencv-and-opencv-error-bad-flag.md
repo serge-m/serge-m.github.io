@@ -1,8 +1,13 @@
-Title: Opencv and "OpenCV Error: Bad flag"
+---
+Title: 'Opencv and "OpenCV Error: Bad flag"'
 Author: SergeM
 Date: 2013-08-05 16:59:00
 Slug: opencv-and-opencv-error-bad-flag
-Tags: 
+aliases: [/opencv-and-opencv-error-bad-flag.html]
+Tags: [ ]
+---
+
+
 
 
 &nbsp; &nbsp;

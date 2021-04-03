@@ -1,8 +1,13 @@
+---
 Title: compile dlib for miniconda
 Author: SergeM
 Date: 2016-06-25 22:43:00
 Slug: compile-dlib-for-miniconda
-Tags: 
+aliases: [/compile-dlib-for-miniconda.html]
+Tags: [ ]
+---
+
+
 
 Activate miniconda environment (my environment is called py3):
 ```bash

@@ -1,8 +1,13 @@
+---
 Title: Theano
 Author: SM!
 Date: 2014-06-05 23:30:00
 Slug: theano
-Tags: useful
+aliases: [/theano.html]
+Tags: [ useful]
+---
+
+
 
 <h2 style="text-align: left;"><span class="st">_Intro _</span></h2><span class="st">_Theano_ is a Python library that allows you to  define, optimize, and evaluate mathematical expressions involving  multi-dimensional arrays efficiently.</span>
 

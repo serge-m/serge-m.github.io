@@ -1,8 +1,13 @@
+---
 Title: Free software for screen video capture
 Author: SergeM
 Date: 2014-01-15 19:11:00
 Slug: free-software-for-screen-video-capture
-Tags: tools,freeware
+aliases: [/free-software-for-screen-video-capture.html]
+Tags: [ tools,freeware]
+---
+
+
 
 ## CamStudio 2.7
 [http://camstudio.org/](http://camstudio.org/) works fine

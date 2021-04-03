@@ -1,8 +1,13 @@
+---
 Title: Simple occlusion filling for depth maps 
 Author: SergeM
 Date: 2014-09-01 12:14:00
 Slug: simple-occlusion-filling-for-depth-maps
-Tags: depth map,python
+aliases: [/simple-occlusion-filling-for-depth-maps.html]
+Tags: [ depth map,python]
+---
+
+
 
 As an example I use images from middleburry.
 Solution is very dirty and slow.

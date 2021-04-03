@@ -1,27 +1,32 @@
+---
 Title: SN74HC595 shift register. Controlling from Raspberry
 Author: SergeM
 Date: 2017-04-23 12:11:00
 Slug: sn74hc595-shift-register
-Tags: raspberry, pi
+aliases: [/sn74hc595-shift-register.html]
+Tags: [ raspberry, pi]
+---
+
+
 
 
 For other links about raspberry pi go [here](/raspberry-pi-links.html)
 
 ### Pinouts
-<img src="{filename}/2017/04/sn74hc595-shift-register-pinout.jpg" width="300">
+<img src="/media/images/sn74hc595-shift-register-pinout.jpg" width="300">
 
 
 ### How to control
-<img src="{filename}/2017/04/sn74hc595-shift-register-control.jpg" width="80%">
+<img src="/media/images/sn74hc595-shift-register-control.jpg" width="80%">
 
 It seems that procedure described in Texas Instruments' datasheet is wrong:
-<img src="{filename}/2017/04/sn74hc595-shift-register-wrong-control.jpg" width="80%">
+<img src="/media/images/sn74hc595-shift-register-wrong-control.jpg" width="80%">
 
 
 
 ## Using in motor shield DK Electronics V1
 Scheme:
-![shield scheme]({filename}/2017/04/sn74hc595-shift-register-mshieldv1-schem.png)
+![shield scheme](/media/images/sn74hc595-shift-register-mshieldv1-schem.png)
 
 
 [L293x Quadruple Half-H Driver](http://www.ti.com/lit/ds/symlink/l293.pdf) (pdf)

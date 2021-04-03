@@ -1,8 +1,13 @@
+---
 Title: Testing json responses in Flask REST apps with pytest
 Author: SergeM
 Date: 2016-11-27 22:47:00
 Slug: testing-json-responses-in-Flask-REST-apps-with-pytest
-Tags: python,flask,pytest,REST,testing,connexion,best practices,tests,API
+aliases: [/testing-json-responses-in-Flask-REST-apps-with-pytest.html]
+Tags: [ python,flask,pytest,REST,testing,connexion,best practices,tests,API]
+---
+
+
 
 Testing is an essential part of software developmnet process. Unfortunately best prictives for python are established not as good as for example in Java world.
 Here I try to explain how to test Flask-based web applications.

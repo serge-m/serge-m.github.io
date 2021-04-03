@@ -1,8 +1,13 @@
+---
 Title: Trim frames from raw YUV video using FFMPEG
 Author: SergeM
 Date: 2013-07-02 19:01:00
 Slug: trim-frames-from-raw-yuv-video-using
-Tags: ffmpeg, video, avconv
+aliases: [/trim-frames-from-raw-yuv-video-using.html]
+Tags: [ ffmpeg, video, avconv]
+---
+
+
 
 Trim 5 frames starting from 160-th frame and write to png sequence
 

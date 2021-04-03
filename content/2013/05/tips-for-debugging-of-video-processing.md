@@ -1,8 +1,13 @@
+---
 Title: Tips for debugging of video processing console
 Author: SergeM
 Date: 2013-05-16 13:31:00
 Slug: tips-for-debugging-of-video-processing
-Tags: 
+aliases: [/tips-for-debugging-of-video-processing.html]
+Tags: [ ]
+---
+
+
 
 Assume we have Visual Stusio solution for console that makes some video processing.
 The console takes two input videos and generates the third video:

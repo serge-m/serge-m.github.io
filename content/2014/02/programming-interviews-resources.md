@@ -1,8 +1,13 @@
+---
 Title: Programming interviews resources
 Author: SergeM
 Date: 2014-02-17 12:21:00
 Slug: programming-interviews-resources
-Tags: interview,links
+aliases: [/programming-interviews-resources.html]
+Tags: [ interview,links]
+---
+
+
 
 screencasts with solutions of typical interview tasks
 [https://www.youtube.com/user/ProgrammingInterview/](https://www.youtube.com/user/ProgrammingInterview/)

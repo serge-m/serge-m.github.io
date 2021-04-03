@@ -1,8 +1,13 @@
+---
 Title: Bjontegaard metric. Matlab script.
 Author: SergeM
 Date: 2013-05-15 12:51:00
 Slug: bjontegaard-metric-matlab-script
-Tags: 
+aliases: [/bjontegaard-metric-matlab-script.html]
+Tags: [ ]
+---
+
+
 
 
 Bjontegaard metric (BD-PSNR) describes the distance between two RD-curved.

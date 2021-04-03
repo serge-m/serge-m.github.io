@@ -1,8 +1,13 @@
+---
 Title: crop included graphics in latex
 Author: SergeM
 Date: 2014-05-21 21:56:00
 Slug: crop-included-graphics-in-latex
-Tags: latex
+aliases: [/crop-included-graphics-in-latex.html]
+Tags: [ latex]
+---
+
+
 
 
 ```

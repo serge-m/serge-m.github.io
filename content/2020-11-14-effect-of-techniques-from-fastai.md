@@ -1,8 +1,13 @@
+---
 Title: Effect of techniques from Fast.ai
 Author: SergeM
 Date: 2020-11-15 10:00:00
 Slug: effect-of-techniques-from-fastai
-Tags: pytorch, deep learning, computer vision, neural networks, fast.ai, fastai, AdamW, learning rate, LRfinder, pytorch-nn-tools, resnet, one cycle 
+aliases: [/effect-of-techniques-from-fastai.html]
+Tags: [ pytorch, deep learning, computer vision, neural networks, fast.ai, fastai, AdamW, learning rate, LRfinder, pytorch-nn-tools, resnet, one cycle ]
+---
+
+
 
 `fast.ai` is a brilliant [library](https://github.com/fastai/fastai) and a [course](https://course.fast.ai/) 
 by Jeremy Howard an co. They use pytorch as a base and explain 
@@ -390,11 +395,11 @@ We achieve accuracy for top 1 about 69% and for top 5 about 96 %. That is in lin
 values that other people get for that dataset: [Imagewoof Leaderboard](https://github.com/fastai/imagenette#imagewoof-leaderboard)
 
 
-![](media/2020-11-14/lr_base_avg.val.acc1.svg)
+![](/media/2020-11-14/lr_base_avg.val.acc1.svg)
 *top1 accuracy*
 
 
-![](media/2020-11-14/lr_base_avg.val.acc5.svg)
+![](/media/2020-11-14/lr_base_avg.val.acc5.svg)
 *top5 accuracy*
 
 
@@ -439,7 +444,7 @@ _, recommended_lr = lr_finder.plot(log_lr=False)
 lr_finder.reset()
 ```
 
-![](media/2020-11-14/lr_finder.png)
+![](/media/2020-11-14/lr_finder.png)
 
 My recommended LR is about 0.02. I can launch with the same optimizer, lr schedule, but with the new base LR:
 
@@ -520,12 +525,12 @@ trainer.fit(
 
 
 
-![training loss after lr finder](media/2020-11-14/lr_base_vs_finder_avg.train.loss.svg) 
+![training loss after lr finder](/media/2020-11-14/lr_base_vs_finder_avg.train.loss.svg) 
 *train loss. lr=0.1 vs lr=0.02 found by LRFinder*
 
 Top 1 Accuracy improved significantly from 0.69 to 0.78!
 
-![top 1 accuracy after lr finder](media/2020-11-14/lr_base_vs_finder_avg.val.acc1.svg) 
+![top 1 accuracy after lr finder](/media/2020-11-14/lr_base_vs_finder_avg.val.acc1.svg) 
 *top 1 accuracy on validation. lr=0.1 vs lr=0.02 found by LRFinder*
 
  
@@ -537,7 +542,7 @@ gradually decrease.
 
 Here is how the LR graphs look like:
 
-![learning rate schedules](media/2020-11-14/lr_one_cycle.svg)
+![learning rate schedules](/media/2020-11-14/lr_one_cycle.svg)
 *learning rate schedules. Gray line is a "one cycle"*
   
 We don't get accuracy increase here. But we don't need to hand craft the learning rate schedule any more. 
@@ -545,7 +550,7 @@ That is positive.
 
 Hopefully one cycle brings some numerical stability. 
 
-![accuracy top 1 for one cycle](media/2020-11-14/one_cycle_avg.val.acc1.svg)
+![accuracy top 1 for one cycle](/media/2020-11-14/one_cycle_avg.val.acc1.svg)
 *Accuracy top 1 for one cycle. Gray line is a "one cycle"*
 
 
@@ -594,10 +599,10 @@ trainer.fit(
 That helps a lot. We go from 79.5% to 82.6% of accuracy: 
 
 
-![accuracy top 1 for one cycle](media/2020-11-14/adamw_avg.val.acc1.svg)
+![accuracy top 1 for one cycle](/media/2020-11-14/adamw_avg.val.acc1.svg)
 *Accuracy top 1 for AdamW. Dark red line is a AdamW*
 
-![train loss for one cycle](media/2020-11-14/adamw_avg.train.loss.svg)
+![train loss for one cycle](/media/2020-11-14/adamw_avg.train.loss.svg)
 *Train loss for AdamW. Dark red line is a AdamW*
 
 

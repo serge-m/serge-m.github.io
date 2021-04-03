@@ -1,8 +1,13 @@
-Title: "No protocol specified" while running a program as another user
+---
+Title: '"No protocol specified" while running a program as another user'
 Author: SergeM
 Date: 2017-03-30 00:01:00
 Slug: no-protocol-specified
-Tags: linux
+aliases: [/no-protocol-specified.html]
+Tags: [ linux]
+---
+
+
 
 Running some GUI application as another user:
 ```

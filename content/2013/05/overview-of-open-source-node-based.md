@@ -1,8 +1,13 @@
+---
 Title: Overview of open-source node-based video editors (composers)
 Author: SergeM
 Date: 2013-05-12 11:51:00
 Slug: overview-of-open-source-node-based
-Tags: video editing,node based,software
+aliases: [/overview-of-open-source-node-based.html]
+Tags: [ video editing,node based,software]
+---
+
+
 
 ## Synapse Compositor 
 

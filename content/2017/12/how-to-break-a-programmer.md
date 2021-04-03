@@ -1,8 +1,13 @@
+---
 Title: how to break a programmer
 Author: SergeM
-Date: 2017-12-21 23:50
+Date: 2017-12-21 23:50:00
 Slug: how-to-break-a-programmer
-Tags: pm
+aliases: [/how-to-break-a-programmer.html]
+Tags: [ pm]
+---
+
+
 
 
 ## How to make an engineer to accept your crazy idea

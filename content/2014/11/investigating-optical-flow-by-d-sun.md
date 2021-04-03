@@ -1,8 +1,13 @@
+---
 Title: Investigating optical flow by D. Sun (Secrets of optical flow)
 Author: SergeM
 Date: 2014-11-05 14:33:00
 Slug: investigating-optical-flow-by-d-sun
-Tags: optical flow
+aliases: [/investigating-optical-flow-by-d-sun.html]
+Tags: [ optical flow]
+---
+
+
 
 Personal page of the author:
 [http://cs.brown.edu/~dqsun/research/index.html](http://cs.brown.edu/~dqsun/research/index.html)

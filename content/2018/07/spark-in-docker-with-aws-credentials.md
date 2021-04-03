@@ -1,8 +1,13 @@
+---
 Title: Spark in Docker with AWS credentials
 Author: SergeM
 Date: 2018-07-29 22:07:00
 Slug: spark-in-docker-with-aws-credentials
-Tags: spark,python, aws
+aliases: [/spark-in-docker-with-aws-credentials.html]
+Tags: [ spark,python, aws]
+---
+
+
 
 
 # Running spark in docker container 

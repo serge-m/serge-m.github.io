@@ -1,8 +1,13 @@
+---
 Title: Reducing disk usage in Ubuntu  
 Author: SergeM
 Date: 2018-08-16 00:10:00
 Slug: disk-usage-ubuntu
-Tags: links,disk usage,linux, ubuntu
+aliases: [/disk-usage-ubuntu.html]
+Tags: [ links,disk usage,linux, ubuntu]
+---
+
+
 
 
 Here are some recipies to make ubuntu installed on USB drive to work faster.

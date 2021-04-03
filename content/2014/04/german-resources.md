@@ -1,8 +1,13 @@
+---
 Title: German resources
 Author: SergeM
 Date: 2014-04-06 13:05:00
 Slug: german-resources
-Tags: 
+aliases: [/german-resources.html]
+Tags: [ ]
+---
+
+
 
 
 http://www.c-plusplus.de/forum/

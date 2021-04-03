@@ -1,12 +1,11 @@
-:date: 2020-03-26 07:00:23
-
-:title: C++ and CMake
-
-:author: SergeM
-
-:slug: cpp-and-cmake
-
-:tags: c++, cpp, cmake, conan, gtest, catch2, testing, example, pybind11, vscode
+---
+date: "2020-03-26 07:00:23"
+title: C++ and CMake
+author: SergeM
+slug: cpp-and-cmake
+aliases: [/cpp-and-cmake.html]
+tags: [c++, cpp, cmake, conan, gtest, catch2, testing, example, pybind11, vscode]
+---
 
 
 CMake in VSCode
@@ -56,7 +55,8 @@ Configure cmake settings
 
 add `cmake.configureSettings <https://vector-of-bool.github.io/docs/vscode-cmake-tools/settings.html#cmake-configuresettings>`_ to `settings.json`:
 
-.. code-block:: none
+
+.. code-block::
 
     "cmake.configureSettings": {
         "USE_MYMATH": "ON"
@@ -71,7 +71,7 @@ For any decent project in Cpp it's good to set up testing system. For C++ the st
 
 Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.
 
-.. code-block:: none
+.. code-block::
 
     sudo apt-get install libgtest-dev
     sudo apt-get install cmake # install cmake
@@ -99,7 +99,7 @@ Handling dependencies in CMake
 
 If i need to import a compiled 3rdparty library to my cmake project:
 
-.. code-block:: none
+.. code-block::
 
     add_library(some_library SHARED IMPORTED)
     set_property(TARGET some_library PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so")

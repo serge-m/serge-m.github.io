@@ -1,8 +1,13 @@
-Title: VapourSynth: pythonic alternative to avisynth
+---
+Title: "VapourSynth: pythonic alternative to avisynth"
 Author: SergeM
 Date: 2014-01-25 21:47:00
 Slug: vapoursynth-pythonic-alternative-to
-Tags: vapoursynth,avisynth
+aliases: [/vapoursynth-pythonic-alternative-to.html]
+Tags: [ vapoursynth,avisynth]
+---
+
+
 
 What do I know about VapourSynth
 

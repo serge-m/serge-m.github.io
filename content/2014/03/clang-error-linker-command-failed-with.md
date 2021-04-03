@@ -1,8 +1,13 @@
-Title: clang: error: linker command failed with exit code 1 
+---
+Title: "clang: error: linker command failed with exit code 1" 
 Author: SergeM
 Date: 2014-03-20 16:14:00
 Slug: clang-error-linker-command-failed-with
-Tags: c++,xcode,clang
+aliases: [/clang-error-linker-command-failed-with.html]
+Tags: [ c++,xcode,clang]
+---
+
+
 
 Finally I solved the problem with broken clang compilation
 I always got message

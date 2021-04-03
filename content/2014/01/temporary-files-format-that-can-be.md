@@ -1,8 +1,13 @@
+---
 Title: Temporary files format that can be deleted from project of Visual Studio 2010
 Author: SergeM
 Date: 2014-01-14 12:36:00
 Slug: temporary-files-format-that-can-be
-Tags: c++,2010,git,visual studio
+aliases: [/temporary-files-format-that-can-be.html]
+Tags: [ c++,2010,git,visual studio]
+---
+
+
 
 Add to .gitignore:
 

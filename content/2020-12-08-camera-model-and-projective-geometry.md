@@ -1,8 +1,13 @@
+---
 Title: Camera model and projective geometry
 Author: SergeM
 Date: 1020-12-08 08:00:00
 Slug: camera-model-and-projective-geometry 
-Tags: computer vision, camera model, calibration
+aliases: [/camera-model-and-projective-geometry.html]
+Tags: [ computer vision, camera model, calibration]
+---
+
+
 
 ## About camera models
 

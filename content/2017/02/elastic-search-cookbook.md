@@ -1,8 +1,13 @@
+---
 Title: Elasticsearch commands with curl
 Author: SergeM
 Date: 2017-02-10 23:11:00
 Slug: elastic-search-cookbook
-Tags: command line, elastic, search, elasticsearch, curl
+aliases: [/elastic-search-cookbook.html]
+Tags: [ command line, elastic, search, elasticsearch, curl]
+---
+
+
 
 ## Commands
 ### List indexes

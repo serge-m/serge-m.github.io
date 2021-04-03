@@ -1,8 +1,13 @@
+---
 Title: Keyboard layout switching. Toggle between 2 of 3 languages.
 Author: SergeM
 Date: 2015-10-18 02:26:00
 Slug: keyboard-layout-switching-toggle
-Tags: useful,linux,Linux for dummies
+aliases: [/keyboard-layout-switching-toggle.html]
+Tags: [ useful,linux,Linux for dummies]
+---
+
+
 
 Let's say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don't want to press Alt+Shift three times constantly, only when writting something in Belarusian.
 

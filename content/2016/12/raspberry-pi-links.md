@@ -1,7 +1,11 @@
+---
 Title: Raspberry Pi Links
 Author: SergeM
 Date: 2016-12-31 21:30:00
-Tags: links, raspberry, pi, servo, stepper, motor shield, pwm, raspberry pi, ssh, pca9685
+Tags: [ links, raspberry, pi, servo, stepper, motor shield, pwm, raspberry pi, ssh, pca9685]
+---
+
+
 
 
 ## I2C interface
@@ -27,10 +31,10 @@ Continuous deployment (Russian)
 ### Controlling multiple servos 
 To control multiple servos you can use PCA9685 controller. Connection is shown below. It's better to connect VCC of the controller (red wire) to +5V or raspberry or to external power supply.
 <div>
-<img src="{filename}/2016/12/servo_control_pca9685_2.jpg" style="width: 50%; height: 50%">
-<img src="{filename}/2016/12/servo_control_pca9685_1.jpg" style="width: 50%; height: 50%">
-<img src="{filename}/2016/12/servo_control_pca9685_3.jpg" style="width: 50%; height: 50%">
-<img src="{filename}/2016/12/servo_control_pca9685_4.jpg" style="width: 50%; height: 50%">
+<img src="/media/images/servo_control_pca9685_2.jpg" style="width: 50%; height: 50%">
+<img src="/media/images/servo_control_pca9685_1.jpg" style="width: 50%; height: 50%">
+<img src="/media/images/servo_control_pca9685_3.jpg" style="width: 50%; height: 50%">
+<img src="/media/images/servo_control_pca9685_4.jpg" style="width: 50%; height: 50%">
 </div>
 You have to enable I2C interface first with `sudo raspi-config`. Choose "Interfacing Options" -> "I2C" -> "Enable".
 
@@ -228,9 +232,9 @@ or
 
 
 ## RaspberryPi Zero pins Layout
-![GPIO raspberry pins scheme]({filename}/2016/12/gpio.png)
+![GPIO raspberry pins scheme](/media/images/gpio.png)
 
-![pins layout photo]({filename}/2016/12/gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)
+![pins layout photo](/media/images/gpio-raspberry-zero.png) [image source](http://pi4j.com/pins/model-zero-rev1.html)
 
 Interactive website for pinout of Raspberry Pi for different interfaces [Pinout](https://pinout.xyz/#)
 

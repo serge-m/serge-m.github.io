@@ -1,8 +1,13 @@
+---
 Title: Argparse recipies
 Author: SergeM
 Date: 2017-06-24 12:15:00
 Slug: python-argparse-recipies
-Tags: python,argparse
+aliases: [/python-argparse-recipies.html]
+Tags: [ python,argparse]
+---
+
+
 
 
 ## How to include default values in '--help'

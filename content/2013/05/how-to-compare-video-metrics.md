@@ -1,8 +1,13 @@
+---
 Title: How to compare video metrics
 Author: SergeM
 Date: 2013-05-28 16:31:00
 Slug: how-to-compare-video-metrics
-Tags: 
+aliases: [/how-to-compare-video-metrics.html]
+Tags: [ ]
+---
+
+
 
 There are specific databases which were subjectively tested. Ans MOS was calculated
 for example

@@ -1,8 +1,13 @@
+---
 Title: Streaming camera output from Raspberry Pi
 Author: SergeM
 Date: 2017-05-23 22:50:00
 Slug: streaming-camera-output-from-raspberry-pi
-Tags: server,camera,streaming,image,raspberry pi,pi zero
+aliases: [/streaming-camera-output-from-raspberry-pi.html]
+Tags: [ server,camera,streaming,image,raspberry pi,pi zero]
+---
+
+
 
 Task was to transmit image from camera on raspberry pi through web interface to the PC. 
 PC is connected to raspberry through local network.

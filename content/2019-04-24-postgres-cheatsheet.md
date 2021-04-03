@@ -1,8 +1,13 @@
+---
 Title: Postgres cheatsheet
 Author: SergeM
 Date: 2019-04-24 08:30:00
 Slug: postgres-cheatsheet
-Tags: postgres, postgresql, useful
+aliases: [/postgres-cheatsheet.html]
+Tags: [ postgres, postgresql, useful]
+---
+
+
 
 ## Basics
 Connect as user `postgres`:

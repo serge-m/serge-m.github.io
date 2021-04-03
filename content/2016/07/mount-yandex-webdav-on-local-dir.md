@@ -1,8 +1,13 @@
+---
 Title: Mount yandex webdav on local dir
 Author: SergeM
 Date: 2016-07-16 13:45:00
 Slug: mount-yandex-webdav-on-local-dir
-Tags: useful,linux
+aliases: [/mount-yandex-webdav-on-local-dir.html]
+Tags: [ useful,linux]
+---
+
+
 
 ```
     apt-get install davfs2

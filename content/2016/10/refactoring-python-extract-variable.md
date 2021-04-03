@@ -1,8 +1,13 @@
+---
 Title: Refactoring python code. Extracting variables and other.
 Author: SergeM
 Date: 2016-10-08 01:10:00
 Slug: refactoring-python-extract-variable
-Tags: python, useful, youtube, video
+aliases: [/refactoring-python-extract-variable.html]
+Tags: [ python, useful, youtube, video]
+---
+
+
 
 [Pycon2016 talk by Brett Slatkin](https://www.youtube.com/watch?v=D_6ybDcU5gc)
 [Example 1: Extract variable](https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb)

@@ -1,8 +1,13 @@
+---
 Title: about management
 Author: SergeM
-Date: 2017-12-02 23:50
+Date: 2017-12-02 23:50:00
 Slug: about-management
-Tags: management,links
+aliases: [/about-management.html]
+Tags: [ management,links]
+---
+
+
 
 
 

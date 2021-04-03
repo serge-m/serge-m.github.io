@@ -1,8 +1,13 @@
+---
 Title: Datetime in Python
 Author: SergeM
 Date: 2018-01-17 07:07:00
 Slug: datetime-in-python
-Tags: python,datetime,calendar,calendar week,date, time, performance
+aliases: [/datetime-in-python.html]
+Tags: [ python,datetime,calendar,calendar week,date, time, performance]
+---
+
+
 
 
 ## Conversion from calendar week to date

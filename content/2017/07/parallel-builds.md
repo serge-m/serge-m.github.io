@@ -1,8 +1,13 @@
+---
 Title: Speed up make/cmake build with multiprocessing
 Author: SergeM
 Date: 2017-07-29 16:07:00
 Slug: parallel-builds
-Tags: make,cmake,python,parallel
+aliases: [/parallel-builds.html]
+Tags: [ make,cmake,python,parallel]
+---
+
+
 
 
 Build time can be reduced by using multiple cores of your processor.

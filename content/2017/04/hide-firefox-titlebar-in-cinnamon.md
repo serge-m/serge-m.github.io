@@ -1,8 +1,13 @@
+---
 Title: How to hide Firefox title bar in Cinnamon (mint) 
 Author: SergeM
 Date: 2017-04-13 20:11:00
 Slug: how-to-hide-firefox-title-bar-in-cinnamon-without-extension
-Tags: firefox, linux, cinnamon, mint
+aliases: [/how-to-hide-firefox-title-bar-in-cinnamon-without-extension.html]
+Tags: [ firefox, linux, cinnamon, mint]
+---
+
+
 
 
 

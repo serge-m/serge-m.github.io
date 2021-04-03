@@ -1,8 +1,13 @@
+---
 Title: OpenCV tutorials (Russian)
 Author: SergeM
 Date: 2013-11-05 20:44:00
 Slug: opencv-tutorials-in-russian
-Tags: opencv,tuturials
+aliases: [/opencv-tutorials-in-russian.html]
+Tags: [ opencv,tuturials]
+---
+
+
 
 
 1. Делаем детектор движения, или OpenCV — это просто

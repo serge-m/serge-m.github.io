@@ -1,13 +1,11 @@
-:date: 2020-04-21 19:00:00
-
-:title: Parameters parsing for python applications
-
-:author: SergeM
-
-:slug: parameters-parsing-for-python-applications
-
-:tags: python, argparse, click, fire, useful
-
+---
+date: "2020-04-21 19:00:00"
+title: "Parameters parsing for python applications"
+author: "SergeM"
+slug: "parameters-parsing-for-python-applications"
+aliases: [/parameters-parsing-for-python-applications.html]
+tags: [python, argparse, click, fire, useful]
+---
 
 command line arguments is a standard and one of the most common ways to pass parameters to a python script.
 There exist a list of python libraries that help with that task. Here I am going to list some of them.
@@ -23,9 +21,9 @@ The module is included in python standard library and comes together with any py
 Example of usage:
 
 
-.. code-block:: python
+.. code-block::
 
-    #!/usr/bin/env python3
+    #!/usr/bin/env bash
     import argparse
 
 
@@ -43,7 +41,7 @@ Example of usage:
         hello(args.count, args.name)
 
 
-.. code-block:: sh
+.. code-block::
 
     $ ./test.py john --count 2
     Hello john!
@@ -75,7 +73,7 @@ see `python3-limitations <https://click.palletsprojects.com/en/7.x/python3/#pyth
 
 Example of usage:
 
-.. code-block:: python
+.. code-block::
 
     #!/usr/bin/env python3
     import click
@@ -94,7 +92,7 @@ Example of usage:
 
 Running :
 
-.. code-block:: sh
+.. code-block::
 
     $ ./test.py --name john --count 3
     Hello john!
@@ -111,7 +109,7 @@ Running :
 
 As you can see you cannot mix positional and named arguments. To define positional arguments you have to use `argument`
 
-.. code-block:: python
+.. code-block::
 
     #!/usr/bin/env python3
     import click
@@ -128,7 +126,7 @@ As you can see you cannot mix positional and named arguments. To define position
         hello()
 
 
-.. code-block:: sh
+.. code-block::
 
     $ ./test.py john  --count
     Error: --count option requires an argument
@@ -148,7 +146,7 @@ As you can see you cannot mix positional and named arguments. To define position
 How to make a flag:
 *************************************************
 
-.. code-block:: python
+.. code-block::
 
     @click.option('--shout', is_flag=True)
 
@@ -160,7 +158,7 @@ https://github.com/google/python-fire
 
 Examples from the official `documentation <https://github.com/google/python-fire/blob/master/docs/guide.md>`_ :
 
-.. code-block:: python
+.. code-block::
 
     import fire
 
@@ -173,7 +171,7 @@ Examples from the official `documentation <https://github.com/google/python-fire
     if __name__ == '__main__':
       fire.Fire()
 
-.. code-block:: sh
+.. code-block::
 
     $ python example.py add 10 20
     30
@@ -183,7 +181,7 @@ Examples from the official `documentation <https://github.com/google/python-fire
 
 another example:
 
-.. code-block:: python
+.. code-block::
 
   import fire
 
@@ -198,7 +196,7 @@ another example:
     fire.Fire(Calculator)
 
 
-.. code-block:: sh
+.. code-block::
 
     $ python example.py add 10 20
     30

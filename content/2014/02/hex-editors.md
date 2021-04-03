@@ -1,8 +1,13 @@
+---
 Title: Hex editors
 Author: SergeM
 Date: 2014-02-20 10:12:00
 Slug: hex-editors
-Tags: tools
+aliases: [/hex-editors.html]
+Tags: [ tools]
+---
+
+
 
 <h2 style="text-align: left;">radare, the reverse engineering framework </h2>[http://radare.nopcode.org/y/?p=features](http://radare.nopcode.org/y/?p=features)
 

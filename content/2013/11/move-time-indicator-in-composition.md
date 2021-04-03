@@ -1,8 +1,13 @@
+---
 Title: Moving time indicator in composition timeline in After Effects CS6 using scripts
 Author: SergeM
 Date: 2013-11-12 14:52:00
 Slug: move-time-indicator-in-composition
-Tags: after effects (aae),javascript
+aliases: [/move-time-indicator-in-composition.html]
+Tags: [ after effects (aae),javascript]
+---
+
+
 
 So, Javascript code for position changing is simple.
 Lets say comp - is your composition:

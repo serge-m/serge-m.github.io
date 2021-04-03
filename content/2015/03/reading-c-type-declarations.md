@@ -1,8 +1,13 @@
+---
 Title: reading C type declarations
 Author: SergeM
 Date: 2015-03-09 14:26:00
 Slug: reading-c-type-declarations
-Tags: c++,useful
+aliases: [/reading-c-type-declarations.html]
+Tags: [ c++,useful]
+---
+
+
 
 [Source](http://www.unixwiz.net/techtips/reading-cdecl.html)
 

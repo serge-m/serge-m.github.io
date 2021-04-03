@@ -1,8 +1,13 @@
+---
 Title: Building ConEmu
 Author: SergeM
 Date: 2014-01-16 20:56:00
 Slug: building-conemu
-Tags: c++,tools,software,dll,visual studio
+aliases: [/building-conemu.html]
+Tags: [ c++,tools,software,dll,visual studio]
+---
+
+
 
 <div style="text-align: left;">Problems with ConEmu building from&nbsp;</div><div style="text-align: left;">https://github.com/Maximus5/ConEmu.git v14.01.06</div><div style="text-align: left;">in Visual Studio 2010</div><h4 style="text-align: left;">ConEmuC</h4>unresolved external symbol `__imp__`wsprintfA<span class="Apple-tab-span" style="white-space: pre;"> </span>- add additional dependency&nbsp;**User32.lib**
 <b>

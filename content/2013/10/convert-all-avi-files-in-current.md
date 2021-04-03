@@ -1,8 +1,13 @@
+---
 Title: Convert all *.avi files in current directory to png sequences 
 Author: SergeM
 Date: 2013-10-22 23:49:00
 Slug: convert-all-avi-files-in-current
-Tags: ffmpeg, python, video, image 
+aliases: [/convert-all-avi-files-in-current.html]
+Tags: [ ffmpeg, python, video, image ]
+---
+
+
 
 Using python and ffmpeg:
 

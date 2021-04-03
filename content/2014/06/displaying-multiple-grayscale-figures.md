@@ -1,8 +1,13 @@
+---
 Title: displaying multiple grayscale figures in python's matplotlib
 Author: SM!
 Date: 2014-06-06 22:12:00
 Slug: displaying-multiple-grayscale-figures
-Tags: python,ipython
+aliases: [/displaying-multiple-grayscale-figures.html]
+Tags: [ python,ipython]
+---
+
+
 
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">from matplotlib import pyplot as plt</span>
 <span style="font-family: &quot;Courier New&quot;,Courier,monospace;">import matplotlib.cm as cm</span>

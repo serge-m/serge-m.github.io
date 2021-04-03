@@ -1,8 +1,13 @@
+---
 Title: По простому о matting laplacian
 Author: SergeM
 Date: 2013-11-18 20:01:00
 Slug: matting-laplacian
-Tags: matting,russian,Laplacian
+aliases: [/matting-laplacian.html]
+Tags: [ matting,russian,Laplacian]
+---
+
+
 
 В математике у нас есть уравнение Лапласа
 \delta u = 0

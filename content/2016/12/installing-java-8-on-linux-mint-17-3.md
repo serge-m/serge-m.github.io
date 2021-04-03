@@ -1,8 +1,13 @@
+---
 Title: Installing java 8 on linux mint 17.3
 Author: SergeM
 Date: 2016-12-07 00:30:00
 Slug: installing-java-8-on-linux-mint-17-3
-Tags: linux,java,java8
+aliases: [/installing-java-8-on-linux-mint-17-3.html]
+Tags: [ linux,java,java8]
+---
+
+
 
 Download JDK for Java 8 from Oracle's web-site.
 Unpack archive to let's say `/usr/lib/jvm/jdk1.8.0/`

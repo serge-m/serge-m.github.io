@@ -1,8 +1,13 @@
+---
 Title: Installing theano on windows
 Author: SergeM
 Date: 2014-12-28 01:56:00
 Slug: installing-theano-on-windows
-Tags: useful,windows,theano,python
+aliases: [/installing-theano-on-windows.html]
+Tags: [ useful,windows,theano,python]
+---
+
+
 
 
 0. install Anaconda

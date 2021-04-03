@@ -1,8 +1,13 @@
+---
 Title: Workflow management with Apache Airflow
 Author: SergeM
 Date: 2018-02-06 08:23:00
 Slug: airflow
-Tags: python,airflow,links
+aliases: [/airflow.html]
+Tags: [ python,airflow,links]
+---
+
+
 
 
 Some useful resources about [Airflow](https://github.com/apache/incubator-airflow):

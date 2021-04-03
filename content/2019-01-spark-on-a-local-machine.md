@@ -1,8 +1,13 @@
+---
 Title: Spark on a local machine
 Author: SergeM
 Date: 2019-01-30 08:30:00
 Slug: spark-on-a-local-machine
-Tags: spark, configuration
+aliases: [/spark-on-a-local-machine.html]
+Tags: [ spark, configuration]
+---
+
+
 
 
 ## How to install spark locally

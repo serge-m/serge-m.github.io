@@ -1,8 +1,13 @@
+---
 Title: Mocking in Python
 Author: SergeM
 Date: 2017-03-06 00:01:00
 Slug: mocking-in-python
-Tags: python, testing, unittests
+aliases: [/mocking-in-python.html]
+Tags: [ python, testing, unittests]
+---
+
+
 
 
 Let's consider  how python standard unittest module suppose to use mocks.

@@ -1,8 +1,13 @@
+---
 Title: Useful console commands 
 Author: SergeM
 Date: 2017-06-09 12:15:00
 Slug: useful-console-commands
-Tags: useful,console,linux,network,users
+aliases: [/useful-console-commands.html]
+Tags: [ useful,console,linux,network,users]
+---
+
+
 
 
 Some linux commands that I'll probably need in the future

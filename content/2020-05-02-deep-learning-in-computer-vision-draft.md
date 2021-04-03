@@ -1,8 +1,13 @@
+---
 Title: Deep learning in computer vision (draft)
 Author: SergeM
 Date: 1000-05-02 19:00:00
 Slug: deep-learning-in-computer-vision
-Tags: draft
+aliases: [/deep-learning-in-computer-vision.html]
+Tags: [ draft]
+---
+
+
 
 
 # Draft

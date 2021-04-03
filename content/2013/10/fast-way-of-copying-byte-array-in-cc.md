@@ -1,8 +1,13 @@
+---
 Title: Fast way of copying byte array in C/C++ (With measurements)
 Author: SergeM
 Date: 2013-10-15 15:22:00
 Slug: fast-way-of-copying-byte-array-in-cc
-Tags: c++,algorithm performance,video processing,obsolete
+aliases: [/fast-way-of-copying-byte-array-in-cc.html]
+Tags: [ c++,algorithm performance,video processing,obsolete]
+---
+
+
 
 
 UPD 2017: these are early experimnts on c++ compiler optimizations. I don't think it is useful any more.

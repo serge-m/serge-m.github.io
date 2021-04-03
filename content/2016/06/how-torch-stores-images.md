@@ -1,8 +1,13 @@
+---
 Title: how torch stores images
 Author: SergeM
 Date: 2016-06-26 23:01:00
 Slug: how-torch-stores-images
-Tags: torch
+aliases: [/how-torch-stores-images.html]
+Tags: [ torch]
+---
+
+
 
 ```
 require('image')

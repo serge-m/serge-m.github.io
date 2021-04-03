@@ -1,8 +1,13 @@
+---
 Title: Comparison of click-based config parsers for python
 Author: SergeM
 Date: 2018-06-06 08:17:22
 Slug: click-config-parsers
-Tags: python,click,comparison
+aliases: [/click-config-parsers.html]
+Tags: [ python,click,comparison]
+---
+
+
 
 
 ## Problem 

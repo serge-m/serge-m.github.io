@@ -1,8 +1,13 @@
+---
 Title: Pelican Hints
 Author: SergeM
 Date: 2017-01-08 14:10:00
 Slug: pelican-hints
-Tags: pelican
+aliases: [/pelican-hints.html]
+Tags: [ pelican]
+---
+
+
 
 
 [Articles and pages](http://docs.getpelican.com/en/3.6.3/content.html#articles-and-pages)

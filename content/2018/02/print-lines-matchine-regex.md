@@ -1,8 +1,13 @@
+---
 Title: Select lines matching regular expression in python 
 Author: SergeM
 Date: 2018-02-26 23:14:00
 Slug: print-lines-matching-regex
-Tags: python,useful
+aliases: [/print-lines-matching-regex.html]
+Tags: [ python,useful]
+---
+
+
 
 Given a text file we want to create another file containing only those lines that match a certain regular expression using python3
 

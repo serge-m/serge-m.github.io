@@ -1,8 +1,13 @@
+---
 Title: every day photos
 Author: SergeM
 Date: 2015-05-26 00:15:00
 Slug: every-day-photos
-Tags: data, dataset, video
+aliases: [/every-day-photos.html]
+Tags: [ data, dataset, video]
+---
+
+
 
 [https://vimeo.com/108551893](https://vimeo.com/108551893) - 16 years, related http://jk-keller.com/daily-photo/related-photo-projects/
 

@@ -1,8 +1,13 @@
+---
 Title: Python logging best practices
 Author: SergeM
 Date: 2015-04-21 23:05:00
 Slug: python-logging
-Tags: useful,python,links,flask,logging,logger,logs,best practices
+aliases: [/python-logging.html]
+Tags: [ useful,python,links,flask,logging,logger,logs,best practices]
+---
+
+
 
 ## Simple logger setup for standalone scripts
 When I write a simple script in python I want to have a nicely formatted log messages. 

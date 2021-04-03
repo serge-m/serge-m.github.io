@@ -1,8 +1,13 @@
+---
 Title: deep learning 
 Author: SergeM
 Date: 2016-06-03 23:08:00
 Slug: deep-learning
-Tags: deep learning,neural networks,useful
+aliases: [/deep-learning.html]
+Tags: [ deep learning,neural networks,useful]
+---
+
+
 
 
 [Rest API example for tensorflow](https://github.com/sugyan/tensorflow-mnist). It works: [demo](https://tensorflow-mnist.herokuapp.com/)

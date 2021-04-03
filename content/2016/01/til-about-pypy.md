@@ -1,8 +1,13 @@
+---
 Title: TIL about PyPy
 Author: SergeM
 Date: 2016-01-08 08:30:00
 Slug: til-about-pypy
-Tags: python,pypy
+aliases: [/til-about-pypy.html]
+Tags: [ python,pypy]
+---
+
+
 
 Building from source root using command
 <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">pypy_src$ rpython/bin/rpython -Ojit pypy/goal/targetpypystandalone.py</span>

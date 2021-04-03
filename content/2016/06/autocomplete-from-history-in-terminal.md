@@ -1,8 +1,13 @@
+---
 Title: Autocomplete from the history in terminal
 Author: SergeM
 Date: 2016-06-02 23:24:00
 Slug: autocomplete-from-history-in-terminal
-Tags: useful,linux,Linux for dummies,terminal
+aliases: [/autocomplete-from-history-in-terminal.html]
+Tags: [ useful,linux,Linux for dummies,terminal]
+---
+
+
 
 create a file ```.inputrc```
 in your home directory and put there

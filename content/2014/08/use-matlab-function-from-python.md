@@ -1,8 +1,13 @@
+---
 Title: Use Matlab function from python
 Author: SergeM
 Date: 2014-08-31 11:56:00
 Slug: use-matlab-function-from-python
-Tags: python,matlab
+aliases: [/use-matlab-function-from-python.html]
+Tags: [ python,matlab]
+---
+
+
 
 There are several solutions:
 Source: [http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python](http://stackoverflow.com/questions/2883189/calling-matlab-functions-from-python)

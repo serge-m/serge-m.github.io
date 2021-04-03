@@ -1,8 +1,13 @@
+---
 Title: OpenVPN server in cloud using docker
 Author: SergeM
 Date: 2017-01-07 07:10:00
 Slug: openvpn-on-vps-using-docker
-Tags: linux,docker,vpn,openvpn
+aliases: [/openvpn-on-vps-using-docker.html]
+Tags: [ linux,docker,vpn,openvpn]
+---
+
+
 
 
 links:

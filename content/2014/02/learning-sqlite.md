@@ -1,8 +1,13 @@
+---
 Title: learning sqlite
 Author: SergeM
 Date: 2014-02-09 14:53:00
 Slug: learning-sqlite
-Tags: sql
+aliases: [/learning-sqlite.html]
+Tags: [ sql]
+---
+
+
 
 ## create table named t3 (id, value). id is integer. value is text
 ```

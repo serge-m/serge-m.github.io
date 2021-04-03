@@ -1,8 +1,13 @@
+---
 Title: Blogs
 Author: SergeM
 Date: 2013-12-15 22:54:00
 Slug: blogs
-Tags: memory
+aliases: [/blogs.html]
+Tags: [ memory]
+---
+
+
 
 How to write c++ programm for android (in Russian)
 [http://www.codeatcpp.com/2011/10/c-android-1.html](http://www.codeatcpp.com/2011/10/c-android-1.html)

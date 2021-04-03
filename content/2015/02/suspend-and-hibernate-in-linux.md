@@ -1,8 +1,13 @@
+---
 Title: Suspend and hibernate in Linux
 Author: SergeM
 Date: 2015-02-04 14:04:00
 Slug: suspend-and-hibernate-in-linux
-Tags: useful,Linux for dummies
+aliases: [/suspend-and-hibernate-in-linux.html]
+Tags: [ useful,Linux for dummies]
+---
+
+
 
 
 

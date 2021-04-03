@@ -1,8 +1,13 @@
+---
 Title: How to open composition in viewer in Adobe After Effects using scripts
 Author: SergeM
 Date: 2013-10-24 12:03:00
 Slug: how-to-open-composition-in-viewer-in
-Tags: after effects (aae),scripting
+aliases: [/how-to-open-composition-in-viewer-in.html]
+Tags: [ after effects (aae),scripting]
+---
+
+
 
 // Make a composition
 var comp = app.project.items.addComp('MyComp', 1920, 1080, 1.0, 10, 25.0 );

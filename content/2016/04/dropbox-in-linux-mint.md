@@ -1,8 +1,13 @@
+---
 Title: Dropbox in linux mint
 Author: SergeM
 Date: 2016-04-10 20:50:00
 Slug: dropbox-in-linux-mint
-Tags: useful,linux
+aliases: [/dropbox-in-linux-mint.html]
+Tags: [ useful,linux]
+---
+
+
 
 
 Hmm. It doesn't work.

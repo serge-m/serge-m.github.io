@@ -1,8 +1,13 @@
+---
 Title: Detector of flying objects in IR video
 Author: SergeM
 Date: 2015-09-12 21:14:00
 Slug: detector-of-flying-objects-in-ir-video
-Tags: machine learning,python
+aliases: [/detector-of-flying-objects-in-ir-video.html]
+Tags: [ machine learning,python]
+---
+
+
 
 Implemented using python
 

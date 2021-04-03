@@ -1,8 +1,13 @@
+---
 Title: ROS experience
 Author: SergeM
 Date: 2019-08-24 20:32:00
 Slug: ros-experience
-Tags: ros, linux, robotics, raspberry, pi, ubuntu, melodic, kinetic, camera, tensorflow
+aliases: [/ros-experience.html]
+Tags: [ ros, linux, robotics, raspberry, pi, ubuntu, melodic, kinetic, camera, tensorflow]
+---
+
+
 
 
 ## ROS on raspberry pi
@@ -153,7 +158,7 @@ If you want to build the image yourself, you can follow the instructions bellow.
       
   * Another option is to change the settings of the connection on the laptop so that the connection in shared.
    This way IP gets automatically assigned to both laptop and Raspberry.
-    ![connection-editor-shared-lan-connection](media/2019-08-24-ros-experience/connection-editor-shared-lan-connection.png)
+    ![connection-editor-shared-lan-connection](/media/2019-08-24-ros-experience/connection-editor-shared-lan-connection.png)
 
 
   * find the ip address of the connected Raspberry with one of the commands:
@@ -263,7 +268,7 @@ Now you can try to run camera node in the background and run rqt_image_view to c
     
 Result should look like this:
 
-![rqt_image_view for raspicam_node, ros melodic on Raspberry pi 3 over ssh](media/2019-08-24-ros-experience/rqt_image_view.jpg)
+![rqt_image_view for raspicam_node, ros melodic on Raspberry pi 3 over ssh](/media/2019-08-24-ros-experience/rqt_image_view.jpg)
 
 
 ### Enabling wifi connection
@@ -369,7 +374,7 @@ also work:
     
 `size_in_MBs` is 6000 for me to cover both partitions.
 
-![Creating an image of the SD card for recovery](media/2019-08-24-ros-experience/free-space-sd-card.png)
+![Creating an image of the SD card for recovery](/media/2019-08-24-ros-experience/free-space-sd-card.png)
 
 
 How to restore the image. 

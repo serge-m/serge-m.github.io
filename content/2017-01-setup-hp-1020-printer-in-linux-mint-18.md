@@ -1,8 +1,13 @@
+---
 Title: Set up HP 1020 printer in Linux Mint 18 / Ubuntu
 Author: SergeM
 Date: 2017-01-09 07:10:00
 Slug: setup-hp-1020-printer-in-linux-mint-18
-Tags: linux,useful, ubuntu, printer, hp, driver, 
+aliases: [/setup-hp-1020-printer-in-linux-mint-18.html]
+Tags: [ linux,useful, ubuntu, printer, hp, driver, ]
+---
+
+
 
 # Using open source drivers
 

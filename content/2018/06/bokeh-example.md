@@ -1,8 +1,13 @@
+---
 Title: Bokeh in jupyter notebooks for interactive plots
 Author: SergeM
 Date: 2018-06-20 07:45:21
 Slug: bokeh-example
-Tags: python,bokeh,jupyter,plot
+aliases: [/bokeh-example.html]
+Tags: [ python,bokeh,jupyter,plot]
+---
+
+
 
 [Bokeh](https://bokeh.pydata.org/en/latest/) is a library for interactive visualization. One can use it in Jupyter notebooks.
 

@@ -1,8 +1,13 @@
-Title: Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf
+---
+Title: 'Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf'
 Author: SergeM
 Date: 2014-04-15 23:37:00
 Slug: fixed-latex2png-error-eps2eps-failed-to
-Tags: latex,latex2rtf
+aliases: [/fixed-latex2png-error-eps2eps-failed-to.html]
+Tags: [ latex,latex2rtf]
+---
+
+
 
 OMG!! I finally fixed it.
 Under Windows latex2rtf diisplayed following error:

@@ -1,8 +1,13 @@
+---
 Title: Markdown tricks
 Author: SergeM
-Date: 2017-06-09 12:00
+Date: 2017-06-09 12:00:00
 Slug: markdown-tricks
-Tags: markdown
+aliases: [/markdown-tricks.html]
+Tags: [ markdown]
+---
+
+
 
 
 ## Expandable / collapsible code blocks in github

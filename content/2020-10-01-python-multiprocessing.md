@@ -1,8 +1,13 @@
+---
 Title: Python - Multiprocessing
 Author: SergeM
 Date: 2020-10-01 20:00:00
 Slug: python-multiprocessing
-Tags: python, multiprocessing, useful, libraries, multiprocessing
+aliases: [/python-multiprocessing.html]
+Tags: [ python, multiprocessing, useful, libraries, multiprocessing]
+---
+
+
 
 ## Libraries
 

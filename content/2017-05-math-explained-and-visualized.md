@@ -1,8 +1,13 @@
+---
 Title: Math explained and visualized
 Author: SergeM
-Date: 2017-05-20 22:00
+Date: 2017-05-20 22:00:00
 Slug: math-exmplined-and-visualized
-Tags: math,books,links,eli5
+aliases: [/math-exmplined-and-visualized.html]
+Tags: [ math,books,links,eli5]
+---
+
+
 
 
 Here I will collect links to well-written articles about math and algorithms. 
@@ -34,9 +39,9 @@ More about deconvolutions in Tensorflow on [stack overflow](https://stackoverflo
 
 [The Annotated Transformer](http://nlp.seas.harvard.edu/2018/04/03/attention.html) - description with code (notebook)
 
-![transformer model](media/2017-05-math-explained-and-visualized/transformer-architecture.png)
+![transformer model](/media/2017-05-math-explained-and-visualized/transformer-architecture.png)
 
-![transformer blocks](media/2017-05-math-explained-and-visualized/transformer-blocks.png)
+![transformer blocks](/media/2017-05-math-explained-and-visualized/transformer-blocks.png)
 
 [original paper](https://arxiv.org/abs/1706.03762)
 

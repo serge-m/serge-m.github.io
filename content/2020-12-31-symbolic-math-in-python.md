@@ -1,8 +1,13 @@
+---
 Title: Symbolic math and python
 Author: SergeM
 Date: 2020-12-31 08:00:00
 Slug: symbolic-math-and-python 
-Tags: python, symbolic math, math, cross product, sympy
+aliases: [/symbolic-math-and-python.html]
+Tags: [ python, symbolic math, math, cross product, sympy]
+---
+
+
 
 
 With the help of python and [SymPy](https://www.sympy.org/en/index.html) module one can do pretty neat computations.

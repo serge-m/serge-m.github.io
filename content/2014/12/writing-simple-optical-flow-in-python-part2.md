@@ -1,8 +1,13 @@
+---
 Title: Writing simple optical flow in python. Part 2
 Author: SergeM
 Date: 2014-12-20 01:19:00
 Slug: writing-simple-optical-flow-in-python-part2
-Tags: python,optical flow
+aliases: [/writing-simple-optical-flow-in-python-part2.html]
+Tags: [ python,optical flow]
+---
+
+
 
 After fixing some errors, it seems my OF is working.
 [</a><a href="https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;">](https://www.blogger.com/blogger.g?blogID=636453477220885924" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;)

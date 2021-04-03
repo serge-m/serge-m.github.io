@@ -1,8 +1,13 @@
+---
 Title: why does your data science project fail again
 Author: SergeM
-Date: 2017-10-29 23:50
+Date: 2017-10-29 23:50:00
 Slug: why-does-your-data-science-project-fail-again
-Tags: data science, pm
+aliases: [/why-does-your-data-science-project-fail-again.html]
+Tags: [ data science, pm]
+---
+
+
 
 ## why does your data science project fail again
 

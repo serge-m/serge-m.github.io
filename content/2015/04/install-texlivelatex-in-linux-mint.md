@@ -1,8 +1,13 @@
+---
 Title: Install TeXLive/Latex in Linux Mint
 Author: SergeM
 Date: 2015-04-06 23:56:00
 Slug: install-texlivelatex-in-linux-mint
-Tags: latex,linux
+aliases: [/install-texlivelatex-in-linux-mint.html]
+Tags: [ latex,linux]
+---
+
+
 
 It seems texlive version, shipped with Mint Linux, updates too rare.
 

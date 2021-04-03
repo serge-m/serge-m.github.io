@@ -1,8 +1,13 @@
+---
 Title: Module import in python
 Author: SergeM
 Date: 2017-07-09 23:07:00
 Slug: module-import-in-python
-Tags: python
+aliases: [/module-import-in-python.html]
+Tags: [ python]
+---
+
+
 
 
 ## Import module by path/name

@@ -1,8 +1,13 @@
+---
 Title: Ubuntu/linux settings
 Author: SergeM
-Date: 2018-01-11 08:00
+Date: 2018-01-11 08:00:00
 Slug: ubuntu-linux-settings
-Tags: linux,useful,settings,ubuntu,shell, ubuntu 18, extensions, gui
+aliases: [/ubuntu-linux-settings.html]
+Tags: [ linux,useful,settings,ubuntu,shell, ubuntu 18, extensions, gui]
+---
+
+
 
 
 Some settings I find useful for a workstation
@@ -35,11 +40,11 @@ Navigate to org > gnome > shell > extensions > dash-to-dock and check isolate-wo
 
 Enable "Workspace Indicator" extension.
 
-<img src="media/2018-01-ubuntu-linux-settings/extensions_settings.png" alt="extensions settings in ubuntu 18"/>
+<img src="/media/2018-01-ubuntu-linux-settings/extensions_settings.png" alt="extensions settings in ubuntu 18"/>
 
 ### Static number of workspaces
 
-<img src="media/2018-01-ubuntu-linux-settings/workspaces_settings.png" alt="workspaces settings in ubuntu 18"/>
+<img src="/media/2018-01-ubuntu-linux-settings/workspaces_settings.png" alt="workspaces settings in ubuntu 18"/>
 
 ### Showing windows instead of notification "window is ready"
 
@@ -47,7 +52,7 @@ Install extension [noannoyance](https://extensions.gnome.org/extension/1236/noan
 
 or use dconf:
 
-![show window insread of notification window is ready](media/2018-01-ubuntu-linux-settings/dconf-auto-raise.png)
+![show window insread of notification window is ready](/media/2018-01-ubuntu-linux-settings/dconf-auto-raise.png)
 
 ### Align windows to the corners or sides of the screen
 

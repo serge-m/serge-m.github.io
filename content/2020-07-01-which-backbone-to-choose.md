@@ -1,8 +1,13 @@
+---
 Title: Which pretrained backbone to choose 
 Author: SergeM
 Date: 2020-07-01 19:00:00
 Slug: which-backbone-to-choose
-Tags: machine learning, computer vision, DNN, CNN, deep learning, backbone, pytorch
+aliases: [/which-backbone-to-choose.html]
+Tags: [ machine learning, computer vision, DNN, CNN, deep learning, backbone, pytorch]
+---
+
+
 
 
 In 2020 which architecture should I use for my image classification/tracking/segmentation/... task?
@@ -24,7 +29,7 @@ A recent paper
 by Mingxing Tan, Quoc V. Le, 2019](https://arxiv.org/abs/1905.11946)
 explores the scaling of model hyperpameters to achieve computational effectiveness and performance in standard image classification tasks. 
 
-![efficientnet](media/2020-07-01-which-backbone-to-choose/efficientnet.png)
+![efficientnet](/media/2020-07-01-which-backbone-to-choose/efficientnet.png)
 
 The architecture is pretty simple. They focus on the scaling parameters of the network rather than finding good building blocks.
 
@@ -48,9 +53,9 @@ Great discussion thread on fast.ai: https://forums.fast.ai/t/efficientnet/46978/
 
 MnasNet paper [MnasNet: Platform-Aware Neural Architecture Search for Mobile](https://arxiv.org/pdf/1807.11626.pdf), Tan et. al 2019
 
-![mnasnet](media/2020-07-01-which-backbone-to-choose/mnas-scheme.png)
+![mnasnet](/media/2020-07-01-which-backbone-to-choose/mnas-scheme.png)
 
-![mnasnet](media/2020-07-01-which-backbone-to-choose/mnas-performance.png)
+![mnasnet](/media/2020-07-01-which-backbone-to-choose/mnas-performance.png)
 
 Good - Pareto analysis, provide a range of networks for different speed/quality tradeoff. AutoML. They use MobilenetV2 as a base.
 

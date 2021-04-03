@@ -1,8 +1,13 @@
+---
 Title: terminal setup in linux mint
 Author: SergeM
 Date: 2016-08-07 11:20:00
 Slug: terminal-setup-in-linux-mint
-Tags: useful,console,linux
+aliases: [/terminal-setup-in-linux-mint.html]
+Tags: [ useful,console,linux]
+---
+
+
 
 ## Installation 
 sudo apt-get install tmux

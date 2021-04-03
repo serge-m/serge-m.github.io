@@ -1,8 +1,13 @@
+---
 Title: Pretty git history with branches in command line
 Author: SergeM
 Date: 2017-01-28 07:10:00
 Slug: pretty-git-history-with-branches-in-command-line
-Tags: git
+aliases: [/pretty-git-history-with-branches-in-command-line.html]
+Tags: [ git]
+---
+
+
 
 
 
@@ -17,4 +22,4 @@ git log --graph --abbrev-commit --decorate --oneline --all
 
 # See also:
 
-* [Git cheat sheet]({filename}/git-cheat-sheet.rst)
+* [Git cheat sheet](/posts/git-cheat-sheet)

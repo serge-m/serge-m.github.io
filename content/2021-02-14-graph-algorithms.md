@@ -1,8 +1,13 @@
+---
 Title: Graph algorithms
 Author: SergeM
 Date: 2021-02-14 12:39:00
-Slug: graph algorithms
-Tags: algorithms, graphs 
+Slug: graph-algorithms
+aliases: [/graph-algorithms.html]
+Tags: [ algorithms, graphs ]
+---
+
+
 
 
 # Shortest path problem

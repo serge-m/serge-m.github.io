@@ -1,8 +1,13 @@
+---
 Title: Scipy in pypy
 Author: SergeM
 Date: 2016-03-22 22:12:00
 Slug: scipy-in-pypy
-Tags: pypy
+aliases: [/scipy-in-pypy.html]
+Tags: [ pypy]
+---
+
+
 
 Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.
 

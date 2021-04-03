@@ -1,8 +1,13 @@
+---
 Title: Add months to datetime in python
 Author: SergeM
 Date: 2017-07-20 07:07:00
 Slug: add-months-to-datetime-in-python
-Tags: python
+aliases: [/add-months-to-datetime-in-python.html]
+Tags: [ python]
+---
+
+
 
 
 ```python

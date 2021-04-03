@@ -1,8 +1,13 @@
+---
 Title: Setting default parameters for imshow in pyplot
 Author: SergeM
 Date: 2014-11-23 22:29:00
 Slug: setting-default-parameters-from-imshow
-Tags: useful,python,matplotlib,plt,images
+aliases: [/setting-default-parameters-from-imshow.html]
+Tags: [ useful,python,matplotlib,plt,images]
+---
+
+
 
 
 
@@ -18,8 +23,8 @@ plt.rcParams['image.interpolation'] = 'nearest'
 
 Compare default colors and interpolation:
 
-<img src="{filename}/2014/11/images/img_default.png">
+<img src="../images/img_default.png">
 
 and after applying the settings:
 
-<img src="{filename}/2014/11/images/img_gray.png">
+<img src="../images/img_gray.png">

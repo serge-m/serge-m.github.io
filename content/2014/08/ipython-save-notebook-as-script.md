@@ -1,8 +1,13 @@
+---
 Title: ipython. save notebook as script
 Author: SergeM
 Date: 2014-08-31 12:10:00
 Slug: ipython-save-notebook-as-script
-Tags: ipython
+aliases: [/ipython-save-notebook-as-script.html]
+Tags: [ ipython]
+---
+
+
 
 Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544" target="_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979" target="_blank)
 

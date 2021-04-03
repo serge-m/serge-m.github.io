@@ -1,8 +1,13 @@
+---
 Title: Free open-source alternative to Total Commander
 Author: SergeM
 Date: 2013-11-29 15:35:00
 Slug: fre-open-source-alternative-to-total
-Tags: 
+aliases: [/fre-open-source-alternative-to-total.html]
+Tags: [ ]
+---
+
+
 
 It seems I almost found alternative for [TotalCommander](http://www.ghisler.com/" target="_blank).
 Let me present [DoubleCommander](http://doublecmd.sourceforge.net/" target="_blank).

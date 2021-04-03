@@ -1,8 +1,13 @@
+---
 Title: Torch-Lightning library (draft)
 Author: SergeM
 Date: 2000-04-29 19:00:00
 Slug: torch-lightning-library
-Tags: python, deep learning, pytorch, torch, torch-lightning, tensorboard
+aliases: [/torch-lightning-library.html]
+Tags: [ python, deep learning, pytorch, torch, torch-lightning, tensorboard]
+---
+
+
 
 
 # How to visualize gradients with torch-lightning and tensorboard
@@ -55,7 +60,7 @@ Then in the trainer definition we have to specify tensorboard logger:
 
 
 This is how the visualization look like:
-![torch lightning gradient visualization](media/2020-04-29-torch-lightning/torch-tensorboard-gradient-visualization.png) 
+![torch lightning gradient visualization](/media/2020-04-29-torch-lightning/torch-tensorboard-gradient-visualization.png) 
 
 In the code of torch-lightning there is also a hook `on_before_zero_grad` for that: 
 [github search](https://github.com/search?q=on_before_zero_grad&type=Code) But I wasn't able to understand how to use it.

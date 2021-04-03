@@ -1,8 +1,13 @@
+---
 Title: Собеседования (in Russian)
 Author: SergeM
 Date: 2014-02-27 19:13:00
 Slug: in-russian
-Tags: russian
+aliases: [/in-russian.html]
+Tags: [ russian]
+---
+
+
 
 подходят к концу
 

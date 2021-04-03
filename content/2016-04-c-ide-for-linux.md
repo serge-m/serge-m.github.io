@@ -1,8 +1,13 @@
+---
 Title: C++ IDE for linux
 Author: SergeM
 Date: 2016-04-05 00:45:00
 Slug: c-plus-plus-ide-for-linux
-Tags: c++,useful
+aliases: [/c-plus-plus-ide-for-linux.html]
+Tags: [ c++,useful]
+---
+
+
 
 
 **UPD**: It seems that the current solution (2019) is VSCode. It's free and powerful. There is a plenty of plugins. 
@@ -39,4 +44,4 @@ I was able to debug C code of Numpy in Virtualenv.
 
 3. Run (F5)
 
-![screenshot quick debug in codelite]({filename}/media/2016-04-c-ide-for-linux/screenshot_quick_debug.png)
+![screenshot quick debug in codelite](/media/2016-04-c-ide-for-linux/screenshot_quick_debug.png)

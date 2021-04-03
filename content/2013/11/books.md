@@ -1,8 +1,13 @@
+---
 Title: Books
 Author: SergeM
 Date: 2013-11-29 10:33:00
 Slug: books
-Tags: memory,books,useful
+aliases: [/books.html]
+Tags: [ memory,books,useful]
+---
+
+
 
 
 # In progress

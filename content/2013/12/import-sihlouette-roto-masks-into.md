@@ -1,8 +1,13 @@
+---
 Title: Import Sihlouette roto masks into several Nuke shapes
 Author: SergeM
 Date: 2013-12-10 12:03:00
 Slug: import-sihlouette-roto-masks-into
-Tags: nuke,python,roto
+aliases: [/import-sihlouette-roto-masks-into.html]
+Tags: [ nuke,python,roto]
+---
+
+
 
 Today kids, I tell you how to split imported Sihlouette shapes into Nuke RotoPaint nodes.
 

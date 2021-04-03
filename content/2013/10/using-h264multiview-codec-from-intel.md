@@ -1,8 +1,13 @@
+---
 Title: Using h264/multiview codec from Intel Media SDK
 Author: SergeM
 Date: 2013-10-11 12:37:00
 Slug: using-h264multiview-codec-from-intel
-Tags: c++,errors,dll,video
+aliases: [/using-h264multiview-codec-from-intel.html]
+Tags: [ c++,errors,dll,video]
+---
+
+
 
 
 I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:

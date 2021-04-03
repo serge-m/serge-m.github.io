@@ -1,8 +1,13 @@
+---
 Title: Writing simple optical flow in python
 Author: SergeM
 Date: 2014-11-30 14:46:00
 Slug: writing-simple-optical-flow-in-python
-Tags: python,optical flow
+aliases: [/writing-simple-optical-flow-in-python.html]
+Tags: [ python,optical flow]
+---
+
+
 
 First of all we need a couple of test images:
 <pre class="brush: python">#

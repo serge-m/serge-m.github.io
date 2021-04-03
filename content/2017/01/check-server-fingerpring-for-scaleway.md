@@ -1,8 +1,13 @@
+---
 Title: Check server fingerprint for scaleway
 Author: SergeM
 Date: 2017-01-04 07:10:00
 Slug: check-server-fingerpring-for-scaleway
-Tags: 
+aliases: [/check-server-fingerpring-for-scaleway.html]
+Tags: [ ]
+---
+
+
 
 Run
 ```

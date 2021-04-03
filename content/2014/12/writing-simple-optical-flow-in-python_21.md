@@ -1,8 +1,13 @@
+---
 Title: Writing simple optical flow in python. Part 3
 Author: SergeM
 Date: 2014-12-21 21:48:00
 Slug: writing-simple-optical-flow-in-python_21
-Tags: python,optical flow
+aliases: [/writing-simple-optical-flow-in-python_21.html]
+Tags: [ python,optical flow]
+---
+
+
 
 Today, my imaginary readers, we improve our optical flow dramatically.  Lets see, what our algorithm produces for images that have more than 1-pixel shifts.
 

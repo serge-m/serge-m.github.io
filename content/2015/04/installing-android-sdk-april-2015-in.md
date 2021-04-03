@@ -1,8 +1,13 @@
+---
 Title: Installing Android SDK (April 2015) in Linux Mint
 Author: SergeM
 Date: 2015-04-27 12:00:00
 Slug: installing-android-sdk-april-2015-in
-Tags: 
+aliases: [/installing-android-sdk-april-2015-in.html]
+Tags: [ ]
+---
+
+
 
 1a. Install Java SDK ([http://stackoverflow.com/a/17909346](http://stackoverflow.com/a/17909346))
 ```

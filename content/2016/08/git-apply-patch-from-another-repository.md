@@ -1,8 +1,13 @@
+---
 Title: git apply patch from another repository
 Author: SergeM
 Date: 2016-08-14 14:10:00
 Slug: git-apply-patch-from-another-repository
-Tags: 
+aliases: [/git-apply-patch-from-another-repository.html]
+Tags: [ ]
+---
+
+
 
 ```
 $ git --git-dir=../<some_other_repo>/.git format-patch -k -1 --stdout <commit SHA> | git am -3 -k

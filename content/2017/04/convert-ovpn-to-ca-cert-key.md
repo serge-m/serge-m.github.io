@@ -1,8 +1,13 @@
+---
 Title: Convert ovpn config file to .ca, .crt, .key
 Author: SergeM
 Date: 2017-04-02 12:11:00
 Slug: convert-ovpn-to-ca-cert-key
-Tags: openvpn
+aliases: [/convert-ovpn-to-ca-cert-key.html]
+Tags: [ openvpn]
+---
+
+
 
 How you can take an OpenVPN .ovpn config file and extract the certificates/keys 
 

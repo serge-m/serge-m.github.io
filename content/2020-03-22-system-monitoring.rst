@@ -1,13 +1,11 @@
-:date: 2020-03-22 20:18:23
-
-:title: System monitoring
-
-:author: SergeM
-
-:slug: system-monitoring
-
-:tags: linux, monitoring
-
+---
+date: "2020-03-22 20:18:23"
+title: "System monitoring"
+author: "SergeM"
+slug: "system-monitoring"
+aliases: [/system-monitoring.html]
+tags: [linux, monitoring]
+---
 
 I was looking for a system monitoring solution that can notify my in case of abnormal CPU/netowrk/disk usage via email or telegram.
 

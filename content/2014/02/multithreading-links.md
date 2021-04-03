@@ -1,8 +1,13 @@
+---
 Title: Multithreading links
 Author: SergeM
 Date: 2014-02-03 14:42:00
 Slug: multithreading-links
-Tags: links
+aliases: [/multithreading-links.html]
+Tags: [ links]
+---
+
+
 
 Руководство по отладке многопоточных приложений в Visual Studio 2010. video, examples[http://habrahabr.ru/post/97817/](http://habrahabr.ru/post/97817/)
 

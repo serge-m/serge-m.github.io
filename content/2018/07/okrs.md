@@ -1,8 +1,13 @@
+---
 Title: OKRs
 Author: SergeM
 Date: 2018-07-04 22:10:00
 Slug: okrs
-Tags: okrs,fun,management
+aliases: [/okrs.html]
+Tags: [ okrs,fun,management]
+---
+
+
 
 
 

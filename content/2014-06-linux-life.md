@@ -1,8 +1,14 @@
+---
 Title: linux life
 Author: SM!
 Date: 2014-06-02 23:18:00
 Slug: linux-life
-Tags: linux, ubuntu, console, cheatsheet, command line
+aliases: [/linux-life.html]
+aliases: [/linux-life.html]
+Tags: [ linux, ubuntu, console, cheatsheet, command line]
+---
+
+
 
 
 ### Good start

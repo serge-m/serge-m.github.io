@@ -1,8 +1,13 @@
+---
 Title: podcasts
 Author: SergeM
 Date: 2016-08-14 14:16:00
 Slug: podcasts
-Tags: 
+aliases: [/podcasts.html]
+Tags: [ ]
+---
+
+
 
 * [Soft Skills Engineering](https://softskills.audio/)
 * [don't speak](http://dontspeak.podster.fm/)

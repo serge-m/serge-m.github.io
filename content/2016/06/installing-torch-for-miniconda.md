@@ -1,8 +1,13 @@
+---
 Title: Installing torch for miniconda
 Author: SergeM
 Date: 2016-06-26 22:11:00
 Slug: installing-torch-for-miniconda
-Tags: workaround
+aliases: [/installing-torch-for-miniconda.html]
+Tags: [ workaround]
+---
+
+
 
 I got the error while installing torch for miniconda. Something like
 Linking CXX executable mshrable

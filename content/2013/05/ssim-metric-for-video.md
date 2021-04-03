@@ -1,11 +1,17 @@
+---
 Title: SSIM metric for video
 Author: SergeM
 Date: 2013-05-28 16:04:00
 Slug: ssim-metric-for-video
-Tags: 
+aliases: [/ssim-metric-for-video.html]
+Tags: [ ]
+---
+
+
 
 See good explanation is in
 
+---
 Title: **Handbook of image and video processing&nbsp;**
 
 Author(s): Bovik A. (ed.)

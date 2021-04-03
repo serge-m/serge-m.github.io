@@ -1,8 +1,13 @@
+---
 Title: Computer vision libraries
 Author: SergeM
 Date: 2019-04-26 08:30:00
 Slug: computer-vision-libraries
-Tags: computer vision, cv, vision
+aliases: [/computer-vision-libraries.html]
+Tags: [ computer vision, cv, vision]
+---
+
+
 
 So, what else is there except for opencv...
 

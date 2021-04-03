@@ -1,8 +1,13 @@
+---
 Title: windows life
 Author: SergeM
 Date: 2014-06-05 23:00:00
 Slug: windows-life
-Tags: windows, command line, wifi, wi-fi, sharing
+aliases: [/windows-life.html]
+Tags: [ windows, command line, wifi, wi-fi, sharing]
+---
+
+
 
 `doskey /history > commands.log`- dump command line promt history to file
 

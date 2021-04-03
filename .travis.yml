@@ -1,21 +1,30 @@
-language: python
-python:
-  - "3.6"
-branches:
-  only:
-  - master
-install:
-- pip install -U pelican==4.2.0 markdown
-script:
-- |
-  declare -r SSH_FILE="$(mktemp -u $HOME/.ssh/blog_deploy_key_decrypted_XXXXXX)"
-  openssl aes-256-cbc -K $encrypted_d5bd62f799ff_key -iv $encrypted_d5bd62f799ff_iv -in ".travis/blog_deploy_key.enc" -out "$SSH_FILE" -d
-  chmod 600 "$SSH_FILE" && printf "%s\n" \
-              "Host github.com" \
-              "  IdentityFile $SSH_FILE" \
-              "  LogLevel ERROR" >> ~/.ssh/config
-- make clean
-- make github
+language: minimal
 
-env:
-  global:
+# Install Hugo
+install:
+  - url=https://github.com/gohugoio/hugo/releases/download/v0.82.0/hugo_0.82.0_Linux-64bit.deb
+  - echo Downloading $url ...
+  - curl -L $url --output ./hugo.deb
+  - sudo dpkg -i ./hugo.deb
+
+script:
+  - hugo
+
+
+# Here is the magic part
+deploy:
+  # Use Github pages deploy process
+  provider: pages
+  # Keep builded pages
+  skip-cleanup: true
+  # Directory where your generated files are located
+  local_dir: public
+  # Github security/auth token
+  github-token: $GITHUB_TOKEN
+  # Incremental commit to keep old build/files from previous deployments
+  keep-history: true
+  # Git branch on which it should deploy (master, gh-pages, foo...)
+  target_branch: gh-pages
+  on:
+    # Which branch on commit/push will trigger deployment
+    branch: main

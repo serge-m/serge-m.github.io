@@ -4,7 +4,7 @@ Author: SergeM
 Date: 2017-05-21 22:00:00
 Slug: rest-api-for-tensorflow-model
 aliases: [/rest-api-for-tensorflow-model.html]
-Tags: [ tensorflow,server,REST,machine learning]
+Tags: [ tensorflow,server,REST,machine learning, bazel, python]
 ---
 
 
@@ -40,7 +40,8 @@ I was able to build tensorflow in a docker as explained [here](http://tensorflow
 `bazel-bin` directory can be extracted from the docker and binaries can be executed outside of the docker (on Ubuntu machine in works for me). 
 
 ### Compiled examples for tensorflow serving
-Download compiled examples [here](https://drive.google.com/file/d/0Bwavy70LtHVUeGxSQ0tRbXVkWjg/view?usp=sharing) and extract files:
+<!-- (sbm) -->
+Download compiled examples [here](https://drive.google.com/file/d/18TY1ZqQY44MS8Z8vBGSYV6Veoukkm67n/view?usp=sharing)  and extract files:
 ```
 tar xf ./bazel-bin.tar.gz
 ```

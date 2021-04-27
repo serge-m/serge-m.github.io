@@ -2,8 +2,7 @@
 
 [![Build Status](https://travis-ci.com/serge-m/serge-m.github.io.svg?branch=main)](https://travis-ci.com/serge-m/serge-m.github.io)
 
-
-[Compiled site](https://serge-m.github.io/)
+[Compiled page](https://serge-m.github.io/)
 
 I use
 * Markdown format to store content (`content` directory)

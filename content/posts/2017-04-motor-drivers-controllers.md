@@ -31,7 +31,7 @@ two DC motors or one stepper motor
 Motor outputs can be paralleled to deliver 2.4 A continuous (4 A peak) to a single motor  
 Reverse-voltage protection circuit  
 
-<img src="/media/drivers/Pololu DRV8833.png" width="250">
+<img src="/media/images/drivers/Pololu DRV8833.png" width="250">
 
 [datasheet](http://www.pololu.com/file/0J534/drv8833.pdf)
 
@@ -80,10 +80,10 @@ Very similar to DRV8833 dual motor driver carrier in operating voltage range and
 The DRV8833 has a higher peak current rating (2 A per channel vs 1.5 A), optional built-in current-limiting, and no need for externally supplied logic voltage.
 
 Mode 1:  
-<img src="/media/drivers/drv8835.png" width="250">
+<img src="/media/images/drivers/drv8835.png" width="250">
 
 Mode 2:  
-<img src="/media/drivers/drv8835-mode2.png" width="250">
+<img src="/media/images/drivers/drv8835-mode2.png" width="250">
 
 
 
@@ -111,7 +111,7 @@ Under-voltage lockout and protection against over-current and over-temperature
 
 [Arduino library](https://github.com/pololu/a4990-motor-shield)
 
-<img src="/media/drivers/A4990 Dual Motor Driver Carrier.png" width="250">
+<img src="/media/images/drivers/A4990 Dual Motor Driver Carrier.png" width="250">
 
 
 Dual-H-bridge motor driver: 
@@ -179,7 +179,7 @@ Reverse voltage protection?:    N
 ### Pololu DRV8824 Stepper Motor Driver Carrier, Low Current
 [6,99 €](http://www.exp-tech.de/pololu-drv8824-stepper-motor-driver-carrier-low-current)
 
-<img src="/media/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
+<img src="/media/images/drivers/pololu-drv8824-stepper-motor-driver-carrier-low-current.png" width="250">
 
 Minimum operating voltage:  8.2 V  
 Maximum operating voltage:  45 V  

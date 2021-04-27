@@ -4,12 +4,13 @@ title: "Image and video processing recipes"
 author: "SergeM"
 slug: "image-and-video-processing-recipes"
 aliases: [/image-and-video-processing-recipes.html]
-tags: [ffmpeg, video, image, command line, avconv]
+tags: [ffmpeg, video, image, command line, avconv, compression, conversion, processing, batch, automation, mp4, jpg, png, x264]
 ---
 
 
-I often need to perform some operations on video. Usually I use linux and ffmpeg to do that, but I strugle to remember all the commands.
-Therefore I usually google it. I'll try to collect here some recipes that I usually use with a bit of explanations.
+I often need to perform some operations on videos or image sequences.
+Usually I use linux and `ffmpeg`, and sometimes I struggle to remember all the commands.
+Here is a collection of recipes that I usually use with a bit of explanations.
 
 Video conversions
 ==========================
@@ -89,6 +90,20 @@ Convert to jpeg
 .. code-block::
 
     ffmpeg -i ./input_video.mp4 -qmax 1 -qmin 1 -start_number 0 output_image_%05d.jpg
+
+
+Converting indexed a sequence of images to a sequence of images (png to jpeg compression), starting from 80th frame and
+saving starting from 80th index:
+
+.. code-block::
+
+    ffmpeg -start_number 80 -i input_image_%09d.png -qmin 1 -qscale:v 1.5 -start_number 80 output_image_%09d.jpg
+
+
+Here we specified `-qmin 1` to allow `-qscale:v` to be lower than 2. 2 is a default minimum.
+The compression is visually close to lossless.
+
+
 
 
 Stack images/videos

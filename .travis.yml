@@ -17,13 +17,14 @@ script:
 # Here is the magic part
 deploy:
   # Use Github pages deploy process
-  provider: pages
+  provider: pages:git
   # Keep builded pages
   skip-cleanup: true
   # Directory where your generated files are located
   local_dir: public
-  # Github security/auth token
-  github-token: $GITHUB_TOKEN
+  # Github deploy key
+  deploy_key: $GITHUB_DEPLOY_KEY
+  edge: true # opt in to dpl v2
   # Incremental commit to keep old build/files from previous deployments
   keep-history: true
   # Git branch on which it should deploy (master, gh-pages, foo...)
@@ -31,3 +32,4 @@ deploy:
   on:
     # Which branch on commit/push will trigger deployment
     branch: main
+

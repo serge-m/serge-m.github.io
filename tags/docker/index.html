@@ -128,6 +128,23 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Notes on docker</h2>
+  </header>
+  <section class="entry-content">
+    <p>Docker ARG vs ENV https://vsupalov.com/docker-arg-vs-env/
+Running GUI apps in docker ROS GUI in docker: https://tuw-cpsg.github.io/tutorials/docker-ros/
+ROS GUI with NVIDIA: https://github.com/dkarunakaran/rviz_docker, https://medium.com/intro-to-artificial-intelligence/rviz-on-docker-bdf4d0fca5b
+rocker A tool to run docker images with customized local support injected for things like nvidia support. And user id specific files for cleaner mounting file permissions.
+rocker on github
+Build arguments example Dockerfile:
+FROM busybox ARG user USER $user # ...  A user builds this file by calling:...</p>
+  </section>
+  <footer class="entry-footer">April 25, 2021&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Notes on docker" href="https://serge-m.github.io/posts/notes-on-docker/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>OpenVPN server in cloud using docker</h2>
   </header>
   <section class="entry-content">

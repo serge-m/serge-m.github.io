@@ -143,6 +143,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>On image search</h2>
+  </header>
+  <section class="entry-content">
+    <p>ParaDISE - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.
+Image Similarity service (github) - scala based image similarity service, declared to be scalable. Image storage and image similarity logic is implemented within independent, stateless micro-services. Data is stored in postgres. Clustering is based on histograms. 1 contributor. No tests. abandoned.
+ViSense SDK for python - SDK for closed source image search
+List of Content-based image retrieval (CBIR) engines (wikipedia)...</p>
+  </section>
+  <footer class="entry-footer">March 5, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to On image search" href="https://serge-m.github.io/posts/on-image-search/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>About bloody enterprise</h2>
   </header>
   <section class="entry-content">
@@ -264,20 +278,6 @@ To check out: Adding period archives to Pelican</p>
   </section>
   <footer class="entry-footer">January 8, 2017&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Shell commands (page moved)" href="https://serge-m.github.io/posts/shell-commands/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Add service in ubuntu</h2>
-  </header>
-  <section class="entry-content">
-    <p>Create a file for service your-service
-touch /etc/systemd/system/your-service.service Let’s assume you want to run docker container there. Put following text in the file:
-[Unit] Description=YourService After=docker.service Requires=docker.service [Service] TimeoutStartSec=0 Restart=always ExecStartPre=-/usr/bin/docker stop %n ExecStartPre=-/usr/bin/docker rm %n ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image [Install] WantedBy=multi-user.target Here we first stop and delete the docker container. If it doesn’t exist we continue (there is a “-” in before the command).
-Run...</p>
-  </section>
-  <footer class="entry-footer">January 8, 2017&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Add service in ubuntu" href="https://serge-m.github.io/posts/add-service-in-linux/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -139,6 +139,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>OpenCV. Copy image from unsigned char buffer, resize and save to file</h2>
+  </header>
+  <section class="entry-content">
+    <p>How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
+#include &lt;opencv/cv.h&gt; #include &lt;opencv/highgui.h&gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;(IplImage)src); cvSaveImage(&#34;src1.bmp&#34;, writeImage); cvReleaseImage( &amp;writeImage ); writeImage=cvCloneImage(&amp;(IplImage)small); cvSaveImage(&#34;little....</p>
+  </section>
+  <footer class="entry-footer">July 9, 2013&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to OpenCV. Copy image from unsigned char buffer, resize and save to file" href="https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>SVN copy certain subdirectories to a branch</h2>
   </header>
   <section class="entry-content">
@@ -251,18 +263,6 @@ ISBN: 9780121197926, 0121197921</p>
   </section>
   <footer class="entry-footer">May 26, 2013&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Replace \n in Microsoft word" href="https://serge-m.github.io/posts/replace-n-in-microsoft-word/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Tips for debugging of video processing console</h2>
-  </header>
-  <section class="entry-content">
-    <p>Assume we have Visual Stusio solution for console that makes some video processing. The console takes two input videos and generates the third video:
-Console.exe --input1 video1.avi --input2 video2.avi --output result.aviWhile debugging we need to run console on several datasets. 1) dataset1 conststs of videos set1_video1.avi and set1_video2.avi 2) dataset2 conststs of videos set2_video1.avi and set2_video2.avi .... n) .... It seem rather convenient to distrubute videos between folders. One folder for each dataset....</p>
-  </section>
-  <footer class="entry-footer">May 16, 2013&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Tips for debugging of video processing console" href="https://serge-m.github.io/posts/tips-for-debugging-of-video-processing/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

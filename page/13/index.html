@@ -139,6 +139,23 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>reading C type declarations</h2>
+  </header>
+  <section class="entry-content">
+    <p>Source
+//////////// simple example:
+  long **foo[7];
+We’ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we’ll show the focus of our attention in red, and strike out the parts we’ve finished with.
+  long * * foo [7];
+Start with the variable name and end with the basic type:
+foo is … long...</p>
+  </section>
+  <footer class="entry-footer">March 9, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to reading C type declarations" href="https://serge-m.github.io/posts/reading-c-type-declarations/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Map of C&#43;&#43; by Alena C&#43;&#43;</h2>
   </header>
   <section class="entry-content">
@@ -245,18 +262,6 @@ and after applying the settings:</p>
   </section>
   <footer class="entry-footer">November 23, 2014&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Setting default parameters for imshow in pyplot" href="https://serge-m.github.io/posts/setting-default-parameters-from-imshow/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Loading numpy array from string</h2>
-  </header>
-  <section class="entry-content">
-    <p>Okay children, today we learn how to convert text to numpy matrix. Source is [here](http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html&#34; target=&#34;_blank).
-# loading modules import numpy from StringIO import StringIO # Using StringIO as a file-like wrapper over text I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0.5000 1.0000 0 0 0 0 0 0 0&#34;...</p>
-  </section>
-  <footer class="entry-footer">November 17, 2014&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Loading numpy array from string" href="https://serge-m.github.io/posts/loading-numpy-array-from-string/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

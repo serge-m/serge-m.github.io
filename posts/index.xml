@@ -9,7 +9,22 @@
       <link>https://serge-m.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 14 Feb 2021 12:39:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 22:39:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes on docker</title>
+      <link>https://serge-m.github.io/posts/notes-on-docker/</link>
+      <pubDate>Sun, 25 Apr 2021 22:39:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/notes-on-docker/</guid>
+      <description>Docker ARG vs ENV https://vsupalov.com/docker-arg-vs-env/
+Running GUI apps in docker ROS GUI in docker: https://tuw-cpsg.github.io/tutorials/docker-ros/
+ROS GUI with NVIDIA: https://github.com/dkarunakaran/rviz_docker, https://medium.com/intro-to-artificial-intelligence/rviz-on-docker-bdf4d0fca5b
+rocker A tool to run docker images with customized local support injected for things like nvidia support. And user id specific files for cleaner mounting file permissions.
+rocker on github
+Build arguments example Dockerfile:
+FROM busybox ARG user USER $user # ...  A user builds this file by calling:</description>
+    </item>
+    
     <item>
       <title>Graph algorithms</title>
       <link>https://serge-m.github.io/posts/graph-algorithms/</link>

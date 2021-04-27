@@ -139,6 +139,21 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Building Pypy</h2>
+  </header>
+  <section class="entry-content">
+    <p>Pypy builds faster if using -O2 option.
+To build faster (according to pypy documentation) use prebuilt pypy from link
+Using virtualenv to create virtual environment for it.
+Build script (to be placed in pypy source directory):
+#!/bin/bash cd pypy/goal || exit 1 source &lt;path to existing pypy environment&gt;/bin/activate || exit 2 pypy ../../rpython/bin/rpython --batch -O2 targetpypystandalone </p>
+  </section>
+  <footer class="entry-footer">March 22, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Building Pypy" href="https://serge-m.github.io/posts/building-pypy/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>TIL about PyPy</h2>
   </header>
   <section class="entry-content">
@@ -250,17 +265,6 @@ https://github.com/serge-m/object_detection_ir_video</p>
   </section>
   <footer class="entry-footer">September 6, 2015&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to ffmpeg(avconv) jpeg quality" href="https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Encode/decode binary file to ascii using command line</h2>
-  </header>
-  <section class="entry-content">
-    <p>base64 source_file &gt; destination.ascii base64 --decode destination.ascii &gt; decoded_file </p>
-  </section>
-  <footer class="entry-footer">September 6, 2015&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Encode/decode binary file to ascii using command line" href="https://serge-m.github.io/posts/encodedecode-binary-file-to-ascii/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

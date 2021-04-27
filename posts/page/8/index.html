@@ -143,6 +143,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Add service in ubuntu</h2>
+  </header>
+  <section class="entry-content">
+    <p>Create a file for service your-service
+touch /etc/systemd/system/your-service.service Let’s assume you want to run docker container there. Put following text in the file:
+[Unit] Description=YourService After=docker.service Requires=docker.service [Service] TimeoutStartSec=0 Restart=always ExecStartPre=-/usr/bin/docker stop %n ExecStartPre=-/usr/bin/docker rm %n ExecStart=/usr/bin/docker run -d -p 8080:8080/tcp --name %n your_docker_image [Install] WantedBy=multi-user.target Here we first stop and delete the docker container. If it doesn’t exist we continue (there is a “-” in before the command).
+Run...</p>
+  </section>
+  <footer class="entry-footer">January 8, 2017&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Add service in ubuntu" href="https://serge-m.github.io/posts/add-service-in-linux/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>OpenVPN server in cloud using docker</h2>
   </header>
   <section class="entry-content">
@@ -271,23 +285,6 @@ class OystersGood: def __init__(self, month): month = month month_lowered = mont
   </section>
   <footer class="entry-footer">October 8, 2016&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Refactoring python code. Extracting variables and other." href="https://serge-m.github.io/posts/refactoring-python-extract-variable/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Useful python links</h2>
-  </header>
-  <section class="entry-content">
-    <p>Books   Test-Driven Development with Python Harry Percival
-  Python Testing with unittest, nose, pytest : eBook
-  Testing Python: Applying Unit Testing, TDD, BDD and Acceptance Testing link .
-  Videos   Outside-In TDD Harry Percival, PyCon 2016
-  Докеризация веб приложения на Python, Антон Егоров
-  Thinking about Concurrency, Raymond Hettinger, Python core developer
-  Tutorials   Разработка идеального pypi пакета с поддержкой разных версий python (Rus), 2020....</p>
-  </section>
-  <footer class="entry-footer">October 8, 2016&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Useful python links" href="https://serge-m.github.io/posts/useful-python-links/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

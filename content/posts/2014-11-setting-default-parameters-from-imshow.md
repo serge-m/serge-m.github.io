@@ -23,8 +23,8 @@ plt.rcParams['image.interpolation'] = 'nearest'
 
 Compare default colors and interpolation:
 
-<img src="../images/img_default.png">
+<img src="/media/images/imshow/img_default.png">
 
 and after applying the settings:
 
-<img src="../images/img_gray.png">
+<img src="/media/images/imshow/img_gray.png">

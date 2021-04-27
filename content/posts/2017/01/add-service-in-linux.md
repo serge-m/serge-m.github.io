@@ -59,8 +59,10 @@ systemctl stop levels_tracker.service
 
 
 
-## Recipies
+## Recipes
+
 ### Specify working directory
+
 ```
 [Service]
 WorkingDirectory=/home/pi

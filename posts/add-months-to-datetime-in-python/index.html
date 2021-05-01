@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Add months to datetime in python | sergem&#39;s personal public notebook</title>
-<meta name="keywords" content="python" />
-<meta name="description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   Intuitive solution doesn&rsquo;t work
-1 2 3 4 5  &gt;&gt;&gt; your_datetime = datetime.datetime.now() &gt;&gt;&gt; your_datetime &#43; datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   ">
+<meta name="keywords" content="python, date, datetime, time" />
+<meta name="description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:
+1 2 3 4 5 6 7 8 9 10  &gt;&gt;&gt; datetime(2021, 1, 28) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 29) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 30) &#43; relativedelta(months=1) datetime.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/add-months-to-datetime-in-python/" />
 <link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
@@ -33,8 +33,8 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="Add months to datetime in python" />
-<meta property="og:description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   Intuitive solution doesn&rsquo;t work
-1 2 3 4 5  &gt;&gt;&gt; your_datetime = datetime.datetime.now() &gt;&gt;&gt; your_datetime &#43; datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   " />
+<meta property="og:description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:
+1 2 3 4 5 6 7 8 9 10  &gt;&gt;&gt; datetime(2021, 1, 28) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 29) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 30) &#43; relativedelta(months=1) datetime." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/add-months-to-datetime-in-python/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-07-20T07:07:00&#43;00:00" />
@@ -44,8 +44,8 @@ if (!doNotTrack) {
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Add months to datetime in python"/>
-<meta name="twitter:description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   Intuitive solution doesn&rsquo;t work
-1 2 3 4 5  &gt;&gt;&gt; your_datetime = datetime.datetime.now() &gt;&gt;&gt; your_datetime &#43; datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   "/>
+<meta name="twitter:description" content="1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime &#43; relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:
+1 2 3 4 5 6 7 8 9 10  &gt;&gt;&gt; datetime(2021, 1, 28) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 29) &#43; relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &gt;&gt;&gt; datetime(2021, 1, 30) &#43; relativedelta(months=1) datetime."/>
 
 
 <script type="application/ld+json">
@@ -74,12 +74,12 @@ if (!doNotTrack) {
   "@type": "BlogPosting",
   "headline": "Add months to datetime in python",
   "name": "Add months to datetime in python",
-  "description": "1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   Intuitive solution doesn\u0026rsquo;t work\n1 2 3 4 5  \u0026gt;\u0026gt;\u0026gt; your_datetime = datetime.datetime.now() \u0026gt;\u0026gt;\u0026gt; your_datetime + datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   ",
+  "description": "1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:\n1 2 3 4 5 6 7 8 9 10  \u0026gt;\u0026gt;\u0026gt; datetime(2021, 1, 28) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) \u0026gt;\u0026gt;\u0026gt; datetime(2021, 1, 29) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) \u0026gt;\u0026gt;\u0026gt; datetime(2021, 1, 30) + relativedelta(months=1) datetime.",
   "keywords": [
-    "python"
+    "python", "date", "datetime", "time"
   ],
-  "articleBody": "1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   Intuitive solution doesn’t work\n1 2 3 4 5   your_datetime = datetime.datetime.now()  your_datetime + datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   ",
-  "wordCount" : "59",
+  "articleBody": "1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:\n1 2 3 4 5 6 7 8 9 10   datetime(2021, 1, 28) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0)  datetime(2021, 1, 29) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0)  datetime(2021, 1, 30) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0)  datetime(2021, 1, 31) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0)  datetime(2021, 1, 31) + relativedelta(months=2) datetime.datetime(2021, 3, 31, 0, 0)   Intuitive solution doesn’t work\n1 2 3 4 5   your_datetime = datetime.datetime.now()  your_datetime + datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   Probably “months” are not included in the standard library because of non-obvious semantic of the overflow.\n",
+  "wordCount" : "149",
   "inLanguage": "en",
   "datePublished": "2017-07-20T07:07:00Z",
   "dateModified": "2017-07-20T07:07:00Z",
@@ -215,6 +215,33 @@ if (!doNotTrack) {
 <span class="n">your_datetime</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># adds one month</span>
 </code></pre></td></tr></table>
 </div>
+</div><p>That function clips the overflowing day of the months:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> <span class="o">+</span> <span class="n">relativedelta</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
 </div><p>Intuitive solution doesn&rsquo;t work</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -232,11 +259,16 @@ if (!doNotTrack) {
 <span class="ne">TypeError</span><span class="p">:</span> <span class="err">‘</span><span class="n">months</span><span class="err">’</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">invalid</span> <span class="n">keyword</span> <span class="n">argument</span> <span class="k">for</span> <span class="n">this</span> <span class="n">function</span>
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>Probably &ldquo;months&rdquo; are not included in the standard library because of
+non-obvious semantic of the overflow.</p>
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://serge-m.github.io/tags/python/">python</a></li>
+      <li><a href="https://serge-m.github.io/tags/date/">date</a></li>
+      <li><a href="https://serge-m.github.io/tags/datetime/">datetime</a></li>
+      <li><a href="https://serge-m.github.io/tags/time/">time</a></li>
     </ul>
     <nav class="paginav">
       <a class="prev" href="https://serge-m.github.io/posts/parallel-builds/">
@@ -252,7 +284,7 @@ if (!doNotTrack) {
     </nav>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Add months to datetime in python on twitter"
-        href="https://twitter.com/intent/tweet/?text=Add%20months%20to%20datetime%20in%20python&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fadd-months-to-datetime-in-python%2f&amp;hashtags=python">
+        href="https://twitter.com/intent/tweet/?text=Add%20months%20to%20datetime%20in%20python&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fadd-months-to-datetime-in-python%2f&amp;hashtags=python%2cdate%2cdatetime%2ctime">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

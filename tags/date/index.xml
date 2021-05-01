@@ -19,5 +19,15 @@
       <description>Conversion from calendar week to date Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date. The behaviour in the begin/end of a year may be not straightforward. For example according to ISO 8601 monday date of the CW 1 year 2019 is 31 January 2018. As far as I can see there is no standard function for conversion in python.</description>
     </item>
     
+    <item>
+      <title>Add months to datetime in python</title>
+      <link>https://serge-m.github.io/posts/add-months-to-datetime-in-python/</link>
+      <pubDate>Thu, 20 Jul 2017 07:07:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/add-months-to-datetime-in-python/</guid>
+      <description>1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:
+1 2 3 4 5 6 7 8 9 10  &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 28) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 29) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 30) + relativedelta(months=1) datetime.</description>
+    </item>
+    
   </channel>
 </rss>

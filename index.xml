@@ -525,8 +525,8 @@ export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
       <pubDate>Thu, 20 Jul 2017 07:07:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/add-months-to-datetime-in-python/</guid>
-      <description>1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   Intuitive solution doesn&amp;rsquo;t work
-1 2 3 4 5  &amp;gt;&amp;gt;&amp;gt; your_datetime = datetime.datetime.now() &amp;gt;&amp;gt;&amp;gt; your_datetime + datetime.timedelta(months=1) Traceback (most recent call last): File ““, line 1, in ? TypeError: ‘months’ is an invalid keyword argument for this function   </description>
+      <description>1 2 3 4 5  import datetime from dateutil.relativedelta import relativedelta your_datetime = datetime.datetime.now() your_datetime + relativedelta(months=1) # adds one month   That function clips the overflowing day of the months:
+1 2 3 4 5 6 7 8 9 10  &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 28) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 29) + relativedelta(months=1) datetime.datetime(2021, 2, 28, 0, 0) &amp;gt;&amp;gt;&amp;gt; datetime(2021, 1, 30) + relativedelta(months=1) datetime.</description>
     </item>
     
     <item>

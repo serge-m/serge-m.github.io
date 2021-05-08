@@ -135,20 +135,49 @@ This will show you which hosts responded to ping requests on the network between
 
 # Text 
 
-## Replace text in files
+## Replace text in a file using command line
+
+replace regex in files using command line and `sed`:
+
+    sed -i -E 's/source/destination/g' ./file.txt
+
+all occurrences of `source` will be replaced with `destination` and the substitution will be done in-place. No backup!
+
+
+More complex example:
+
+    sed -i.back -E 's/^(\S+) 123 (\S+)$/\1 456 \2/g' ./file.txt
+
+Here I replace 123 to 456 when it is between two other words in a string.  For example 
 
 ```
-find . -type f | xargs sed -i "s/text_to_find/text_to_put/g"
-```
-To keep original files with `.original` extension:
-```
-find . -type f | xargs sed -i.original "s/text_to_find/text_to_put/g"
+123some_word_without_spaces 123 must_match
+123
+aaa 123 multiple words - not matched
 ```
 
-If your text contain slashes, you should use another delimiter:
+will become 
+
 ```
-find . -type f | xargs sed -i.original "s|text/to/find/|text/to/put|g"
+123some_word_without_spaces 456 must_match
+123
+aaa 123 multiple words - not matched
 ```
+
+Also there will be a backup file with `.back` extension.
+
+
+If your text contain slashes, you can use another delimiter:
+```
+xargs sed -i.original "s|text/to/find/|text/to/put|g" ./file.txt
+```
+
+
+## Text replacement recursively in many files
+
+replacing all occurences of `source` with `destination` in files `*.txt`, inplace, with a backup.
+
+    find . -name "*.txt" -exec sed -i.back -E 's/source/destination/g' {} \;
 
 
 # Misc

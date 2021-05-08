@@ -4,7 +4,7 @@ Author: SergeM
 Date: 2017-06-09 12:15:00
 Slug: useful-console-commands
 aliases: [/useful-console-commands.html]
-Tags: [ useful,console,linux,network,users]
+Tags: [ useful,console,linux,network,users, sed, find, regex, replace,]
 ---
 
 

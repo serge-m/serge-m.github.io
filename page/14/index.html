@@ -139,6 +139,19 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Setting default parameters for imshow in pyplot</h2>
+  </header>
+  <section class="entry-content">
+    <p>I find default visualization settings for images in matplotlib inconvenient. Usually I prefer to see images in grayscale color map and without smoothing. Thus I see actual data without distortions. Grayscale is easier to understand.
+1 2 3  import matplotlib.pyplot as plt plt.rcParams[&#39;image.cmap&#39;] = &#39;gray&#39; plt.rcParams[&#39;image.interpolation&#39;] = &#39;nearest&#39;   Compare default colors and interpolation:
+and after applying the settings:</p>
+  </section>
+  <footer class="entry-footer">November 23, 2014&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Setting default parameters for imshow in pyplot" href="https://serge-m.github.io/posts/setting-default-parameters-from-imshow/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Loading numpy array from string</h2>
   </header>
   <section class="entry-content">
@@ -253,18 +266,6 @@ kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0]
   </section>
   <footer class="entry-footer">September 1, 2014&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Simple occlusion filling for depth maps" href="https://serge-m.github.io/posts/simple-occlusion-filling-for-depth-maps/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>ipython. save notebook as script</h2>
-  </header>
-  <section class="entry-content">
-    <p>Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&#34; target=&#34;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&#34; target=&#34;_blank)
-# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; &#43; &#34;&#39;&#34;&#43;thename&#43;&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u’ipython nbconvert –to python {}.ipynb&#39;.format(theNotebook)) except NameError : pass</p>
-  </section>
-  <footer class="entry-footer">August 31, 2014&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to ipython. save notebook as script" href="https://serge-m.github.io/posts/ipython-save-notebook-as-script/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

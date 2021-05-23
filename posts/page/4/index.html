@@ -143,6 +143,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Bokeh in jupyter notebooks for interactive plots</h2>
+  </header>
+  <section class="entry-content">
+    <p>Bokeh is a library for interactive visualization. One can use it in Jupyter notebooks.
+Here is the example.
+Lets say we have a pandas dataframe with timestamps and some values:
+1 2 3 4 5 6 7 8 9 10  import pandas as pd from io import StringIO df = pd.read_csv(StringIO(&#34;&#34;&#34;timestamp,value 2018-01-01T10:00:00,20 2018-01-01T12:00:00,10 2018-01-01T14:00:00,30 2018-01-02T10:30:00,40 2018-01-02T13:00:00,50 2018-01-02T18:00:40,10 &#34;&#34;&#34;), parse_dates=[&#34;timestamp&#34;])   You can visualize it to a nice graph with zoom, selection, and mouse-over tooltips using the bokeh:...</p>
+  </section>
+  <footer class="entry-footer">June 20, 2018&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Bokeh in jupyter notebooks for interactive plots" href="https://serge-m.github.io/posts/bokeh-example/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Comparison of click-based config parsers for python</h2>
   </header>
   <section class="entry-content">
@@ -255,19 +269,6 @@ How to verify exception message using pytest One can use context manager pytest.
   </section>
   <footer class="entry-footer">December 21, 2017&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to how to break a programmer" href="https://serge-m.github.io/posts/how-to-break-a-programmer/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>about management</h2>
-  </header>
-  <section class="entry-content">
-    <p>Why your programmers just want to code @justzeros
-Interesting list of managers&#39; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
- Michael Lopp. How to Rands – feels like really similar personality as me   I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet....</p>
-  </section>
-  <footer class="entry-footer">December 2, 2017&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to about management" href="https://serge-m.github.io/posts/about-management/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

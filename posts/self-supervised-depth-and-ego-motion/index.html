@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Self-supervised depth and ego motion estimation | sergem&#39;s personal public notebook</title>
-<meta name="keywords" content="machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion." />
+<meta name="keywords" content="machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion" />
 <meta name="description" content="3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
 Learning
 Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
@@ -82,7 +82,7 @@ Inverse depth probably has more stable results. Points far away from camera have
   "name": "Self-supervised depth and ego motion estimation",
   "description": "3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020\nLearning\nDepth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.\nInverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information",
   "keywords": [
-    "machine learning", "computer vision", "DNN", "CNN", "deep learning", "depth", "ego motion."
+    "machine learning", "computer vision", "DNN", "CNN", "deep learning", "depth", "ego motion"
   ],
   "articleBody": "3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020\nLearning\nDepth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.\nInverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information\nProbably they assume that the scene is rigid and there is no moving objects. It is likely to give some errors for the moving objects. How do they deal with the moving objects?\n Ego motion estimator They use a rather simple CNN from SfMLearner.\n Loss function Loss function consists of three parts. 1. appearance loss 2. depth smoothness loss 3. velocity scaling loss\n  SfMLearner paper: Unsupervised Learning of Depth and Ego-Motion from Video by Berkley and google\npdf\nOne of the previous works, that became a foundation for 3d-pack.\nOfficial website.\nGithub: https://github.com/tinghuiz/SfMLearner.\nImplementation in pytorch: SfmLearner-Pytorch\n  Depth from Videos in the Wild Depth from Videos in the Wild: Unsupervised Monocular Depth Learning from Unknown Cameras by Ariel Gordon et al, 2019.\nhttps://research.google/pubs/pub48440/\npdf\ngithub\nHere they learn not only depth and R/t but also intrinsics of the camera\n struct2depth Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearning from Monocular Videos\nPaper by google\nsite\ncode\nbased on vid2depth\n vid2depth another paper by google.\ngithub\nbased on sfm learner\n monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation arxiv\ngithub\nsome method that 3D Packing use as a competitor.\n RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes self-supervised from stereo and mono.\nby deepai: https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes.\nThey claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild \"Depth from Videos in the Wild\". However they require camera calibration and median depth to be estimated prior to processing with an external tool. (COLMAP). Not really \"in the wild\".\nThey were able to train on multiple scenes with different depth ranges. The method still requires a static scene for the training. For example they use data from Mannequin Challenge to train their models. Then the network can be used on dynamic scenes with people.\nThe code is not available so far.\n ",
   "wordCount" : "370",
@@ -324,6 +324,7 @@ to train their models. Then the network can be used on dynamic scenes with peopl
       <li><a href="https://serge-m.github.io/tags/cnn/">CNN</a></li>
       <li><a href="https://serge-m.github.io/tags/deep-learning/">deep learning</a></li>
       <li><a href="https://serge-m.github.io/tags/depth/">depth</a></li>
+      <li><a href="https://serge-m.github.io/tags/ego-motion/">ego motion</a></li>
     </ul>
     <nav class="paginav">
       <a class="prev" href="https://serge-m.github.io/posts/python-multiprocessing/">
@@ -339,7 +340,7 @@ to train their models. Then the network can be used on dynamic scenes with peopl
     </nav>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Self-supervised depth and ego motion estimation on twitter"
-        href="https://twitter.com/intent/tweet/?text=Self-supervised%20depth%20and%20ego%20motion%20estimation&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fself-supervised-depth-and-ego-motion%2f&amp;hashtags=machinelearning%2ccomputervision%2cDNN%2cCNN%2cdeeplearning%2cdepth%2cegomotion.">
+        href="https://twitter.com/intent/tweet/?text=Self-supervised%20depth%20and%20ego%20motion%20estimation&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fself-supervised-depth-and-ego-motion%2f&amp;hashtags=machinelearning%2ccomputervision%2cDNN%2cCNN%2cdeeplearning%2cdepth%2cegomotion">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

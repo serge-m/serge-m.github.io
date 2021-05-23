@@ -143,6 +143,19 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Refactoring python code. Extracting variables and other.</h2>
+  </header>
+  <section class="entry-content">
+    <p>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
+import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &gt; MONTHS.index(month) &gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self....</p>
+  </section>
+  <footer class="entry-footer">October 8, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Refactoring python code. Extracting variables and other." href="https://serge-m.github.io/posts/refactoring-python-extract-variable/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Useful python links</h2>
   </header>
   <section class="entry-content">
@@ -254,20 +267,6 @@ display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torc
   </section>
   <footer class="entry-footer">June 26, 2016&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Installing torch for miniconda" href="https://serge-m.github.io/posts/installing-torch-for-miniconda/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>compile dlib for miniconda</h2>
-  </header>
-  <section class="entry-content">
-    <p>Activate miniconda environment (my environment is called py3):
-1  source activate py3   Produce initial steps from the readme:
-1 2 3 4 5  cd examples mkdir build cd build cmake .. cmake --build . --config Release   inside function build_dlib() of file setup.py add the highlighted code:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  if platform_arch == &#39;64bit&#39; and sys....</p>
-  </section>
-  <footer class="entry-footer">June 25, 2016&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to compile dlib for miniconda" href="https://serge-m.github.io/posts/compile-dlib-for-miniconda/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

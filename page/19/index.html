@@ -139,6 +139,17 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Free open-source alternative to Total Commander</h2>
+  </header>
+  <section class="entry-content">
+    <p>It seems I almost found alternative for [TotalCommander](http://www.ghisler.com/&#34; target=&#34;_blank). Let me present [DoubleCommander](http://doublecmd.sourceforge.net/&#34; target=&#34;_blank). It is free, open-source, extendible by Total’s plugins. That’s awesome. I also found out that viewer plugin SGView for TotalCommander can be completely replaced by ImaginePlugin. Imagine has x64 version. The issue was to assign hotkeys like in SGView.</p>
+  </section>
+  <footer class="entry-footer">November 29, 2013&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Free open-source alternative to Total Commander" href="https://serge-m.github.io/posts/fre-open-source-alternative-to-total/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Books</h2>
   </header>
   <section class="entry-content">
@@ -249,18 +260,6 @@ function OpenInViewer( comp ) { var version = app.version.match(/(\d&#43;.\d&#43
   </section>
   <footer class="entry-footer">October 24, 2013&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to How to open composition in viewer in Adobe After Effects using scripts" href="https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Convert all *.avi files in current directory to png sequences</h2>
-  </header>
-  <section class="entry-content">
-    <p>Using python and ffmpeg:
-1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path os.system(&#34;ffmpeg -i {0} {1}&#34;.format( v, pathDst ) )   </p>
-  </section>
-  <footer class="entry-footer">October 22, 2013&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Convert all *.avi files in current directory to png sequences" href="https://serge-m.github.io/posts/convert-all-avi-files-in-current/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

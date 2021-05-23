@@ -143,6 +143,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Convert all *.avi files in current directory to png sequences</h2>
+  </header>
+  <section class="entry-content">
+    <p>Using python and ffmpeg:
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&#34;*.avi&#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &#34;%05d.png&#34; ) # deststination path os.system(&#34;ffmpeg -i {0} {1}&#34;.format( v, pathDst ) )   </p>
+  </section>
+  <footer class="entry-footer">October 22, 2013&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Convert all *.avi files in current directory to png sequences" href="https://serge-m.github.io/posts/convert-all-avi-files-in-current/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Print all commands that were entered in interactive mode in Python</h2>
   </header>
   <section class="entry-content">
@@ -248,20 +260,6 @@ int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение н
   </section>
   <footer class="entry-footer">September 18, 2013&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Math morphology in Adobe After Effects" href="https://serge-m.github.io/posts/math-morphology-in-adobe-after-effects/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Opencv and &#34;OpenCV Error: Bad flag&#34;</h2>
-  </header>
-  <section class="entry-content">
-    <p>I had pretty simple code with opencv:
- cv::Mat t;  t = cv::imread( “qq.bmp” ) ;  cv::imwrite( “q.bmp”, t );  cv::namedWindow( “asdads”, CV_WINDOW_AUTOSIZE );  cv::imshow( “asdads”, t );  cv::waitKey( -1 );  return 0;
-It caused crash in debug configuration:
-OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport ed array type) in unknown function, file ......\src\opencv\modules\core\src\ar ray.cpp, line 2482  In release configuration it was ok....</p>
-  </section>
-  <footer class="entry-footer">August 5, 2013&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Opencv and &#34;OpenCV Error: Bad flag&#34;" href="https://serge-m.github.io/posts/opencv-and-opencv-error-bad-flag/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

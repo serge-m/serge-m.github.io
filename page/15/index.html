@@ -139,6 +139,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>ipython. save notebook as script</h2>
+  </header>
+  <section class="entry-content">
+    <p>Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&#34; target=&#34;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&#34; target=&#34;_blank)
+# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; &#43; &#34;&#39;&#34;&#43;thename&#43;&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u’ipython nbconvert –to python {}.ipynb&#39;.format(theNotebook)) except NameError : pass</p>
+  </section>
+  <footer class="entry-footer">August 31, 2014&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to ipython. save notebook as script" href="https://serge-m.github.io/posts/ipython-save-notebook-as-script/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Use Matlab function from python</h2>
   </header>
   <section class="entry-content">
@@ -250,18 +262,6 @@ trim={&lt;left&gt; &lt;lower&gt; &lt;right&gt; &lt;upper&gt;} Source</p>
   </section>
   <footer class="entry-footer">May 21, 2014&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to crop included graphics in latex" href="https://serge-m.github.io/posts/crop-included-graphics-in-latex/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>multiple &#34;windows&#34; in one linux terminal</h2>
-  </header>
-  <section class="entry-content">
-    <p>use “screen” utility
-ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</p>
-  </section>
-  <footer class="entry-footer">May 21, 2014&nbsp;·&nbsp;SM!</footer>
-  <a class="entry-link" aria-label="post link to multiple &#34;windows&#34; in one linux terminal" href="https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

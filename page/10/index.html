@@ -139,6 +139,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>compile dlib for miniconda</h2>
+  </header>
+  <section class="entry-content">
+    <p>Activate miniconda environment (my environment is called py3):
+1  source activate py3   Produce initial steps from the readme:
+1 2 3 4 5  cd examples mkdir build cd build cmake .. cmake --build . --config Release   inside function build_dlib() of file setup.py add the highlighted code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  if platform_arch == &#39;64bit&#39; and sys....</p>
+  </section>
+  <footer class="entry-footer">June 25, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to compile dlib for miniconda" href="https://serge-m.github.io/posts/compile-dlib-for-miniconda/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Mount windows shares in linux</h2>
   </header>
   <section class="entry-content">
@@ -267,19 +281,6 @@ Codelite Found Codelite on http://stackoverflow....</p>
   </section>
   <footer class="entry-footer">April 4, 2016&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Debugging numpy (any C code of Python) using gdb" href="https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Scipy in pypy</h2>
-  </header>
-  <section class="entry-content">
-    <p>Looks like it is too early for using scipy in Pypy. There is a plenty of dependencies on C-code there.
-I was able to install scipy 0.17 in pypy. I disabled all failed dependencies. Unfortunately it is completely useless. Almost everything doesn’t work.
-link</p>
-  </section>
-  <footer class="entry-footer">March 22, 2016&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Scipy in pypy" href="https://serge-m.github.io/posts/scipy-in-pypy/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

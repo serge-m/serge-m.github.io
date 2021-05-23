@@ -4,7 +4,7 @@ title: "Self-supervised depth and ego motion estimation"
 author: "SergeM"
 slug: "self-supervised-depth-and-ego-motion"
 aliases: [/self-supervised-depth-and-ego-motion.html]
-tags: [machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion.]
+tags: [machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion]
 ---
 
 

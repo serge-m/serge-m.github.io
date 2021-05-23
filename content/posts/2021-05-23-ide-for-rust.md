@@ -6,6 +6,7 @@ Slug: ide-for-rust
 Tags: [ rust, IDE, vscode, debug ]
 ---
 
+
 I started to learn rust, and I needed to set up some IDE to handle my exercises. It seems that 
 VScode has pretty good support for Rust.
 

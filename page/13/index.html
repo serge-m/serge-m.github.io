@@ -139,6 +139,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Python logging best practices</h2>
+  </header>
+  <section class="entry-content">
+    <p>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
+%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here....</p>
+  </section>
+  <footer class="entry-footer">April 21, 2015&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Python logging best practices" href="https://serge-m.github.io/posts/python-logging/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Install TeXLive/Latex in Linux Mint</h2>
   </header>
   <section class="entry-content">
@@ -254,18 +266,6 @@ nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39
   </section>
   <footer class="entry-footer">December 20, 2014&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Writing simple optical flow in python. Part 2" href="https://serge-m.github.io/posts/writing-simple-optical-flow-in-python-part2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Writing simple optical flow in python</h2>
-  </header>
-  <section class="entry-content">
-    <p>First of all we need a couple of test images:
-# import numpy from StringIO import StringIO I0 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0 0.5000 0 0 0 0 1.0000 0 0 0 0 0.5000 0 0 0 0 0 0 0&#34;&#34;&#34;) ) I1 = numpy.loadtxt(StringIO(&#34;&#34;&#34; 0 0 0 0 0 0 0.5 0 0 0 0 1.0 0 0 0 0 0.5 0 0 0 0 0 0 0 0 &#34;...</p>
-  </section>
-  <footer class="entry-footer">November 30, 2014&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Writing simple optical flow in python" href="https://serge-m.github.io/posts/writing-simple-optical-flow-in-python/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

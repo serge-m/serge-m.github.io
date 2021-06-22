@@ -143,6 +143,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Torch-Lightning library (draft)</h2>
+  </header>
+  <section class="entry-content">
+    <p>How to visualize gradients with torch-lightning and tensorboard in your model class define a optimizer_step.
+class Model(pl.LightningModule): # ... def optimizer_step( self, epoch: int, batch_idx: int, optimizer, optimizer_idx: int, second_order_closure = None, ) -&gt; None: if self.trainer.use_tpu and XLA_AVAILABLE: xm.optimizer_step(optimizer) elif isinstance(optimizer, torch.optim.LBFGS): optimizer.step(second_order_closure) else: optimizer.step() #### Gradient reporting start ### if batch_idx % 500 == 0: for tag, param in self.model.named_parameters(): self.logger.experiment.add_histogram(&#39;{}_grad&#39;.format(tag), param.grad.cpu().detach()) #### Gradient reporting end ### # clear gradients optimizer....</p>
+  </section>
+  <footer class="entry-footer">April 29, 2000&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Torch-Lightning library (draft)" href="https://serge-m.github.io/posts/torch-lightning-library/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Camera model and projective geometry</h2>
   </header>
   <section class="entry-content">

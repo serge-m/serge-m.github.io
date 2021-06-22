@@ -143,6 +143,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Installing torch for miniconda</h2>
+  </header>
+  <section class="entry-content">
+    <p>I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python....</p>
+  </section>
+  <footer class="entry-footer">June 26, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Installing torch for miniconda" href="https://serge-m.github.io/posts/installing-torch-for-miniconda/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>compile dlib for miniconda</h2>
   </header>
   <section class="entry-content">
@@ -272,19 +284,6 @@ Codelite Found Codelite on http://stackoverflow....</p>
   </section>
   <footer class="entry-footer">April 5, 2016&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43; IDE for linux" href="https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Debugging numpy (any C code of Python) using gdb</h2>
-  </header>
-  <section class="entry-content">
-    <p>I created a tiny python script that executes some python code, that executes some C code:
-# contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console:
-&gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3&#43;: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &#34;arraymultiter_new&#34; (example): (gdb) break arraymultiter_new # There is name completition by Tab....</p>
-  </section>
-  <footer class="entry-footer">April 4, 2016&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Debugging numpy (any C code of Python) using gdb" href="https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

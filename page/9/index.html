@@ -139,6 +139,19 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Set up Travis CI for building personal page on Github Pages with Pelican</h2>
+  </header>
+  <section class="entry-content">
+    <p>I host my notes on github pages and I use Pelican for building html content from Markdown format. Tracis CI can be used to automate building and publishing changes.
+Registration on https://travis-ci.org/ is straightforward.
+I have only public free accounts on github. Thus I need two repositories: one containing sources and another containing html. The latter is rendered automatically via Github Pages. If I would have paid hithib account I could have only one repo with two branches: master for sources and gh-pages for html....</p>
+  </section>
+  <footer class="entry-footer">November 27, 2016&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Set up Travis CI for building personal page on Github Pages with Pelican" href="https://serge-m.github.io/posts/set-up-travis-ci-for-building-personal-page-on-github-pages-with-pelican/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Refactoring python code. Extracting variables and other.</h2>
   </header>
   <section class="entry-content">
@@ -251,18 +264,6 @@ display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torc
   </section>
   <footer class="entry-footer">June 26, 2016&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to how torch stores images" href="https://serge-m.github.io/posts/how-torch-stores-images/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Installing torch for miniconda</h2>
-  </header>
-  <section class="entry-content">
-    <p>I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
-~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python....</p>
-  </section>
-  <footer class="entry-footer">June 26, 2016&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Installing torch for miniconda" href="https://serge-m.github.io/posts/installing-torch-for-miniconda/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

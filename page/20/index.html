@@ -139,6 +139,23 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>How to open composition in viewer in Adobe After Effects using scripts</h2>
+  </header>
+  <section class="entry-content">
+    <p>// Make a composition var comp = app.project.items.addComp(‘MyComp’, 1920, 1080, 1.0, 10, 25.0 );
+// Open it in viewer comp.openInViewer();
+This solution works only in AAE CS 6.0
+My version of some cross-platform code
+function OpenInViewer( comp ) { var version = app.version.match(/(\d&#43;.\d&#43;)./)[1]; if( version &gt;= 11.0 ) comp.openInViewer() ; else { var duration = comp.workAreaDuration; comp.workAreaDuration = 2comp.frameDuration; comp.ramPreviewTest(&#34;&#34;,1,&#34;&#34;); comp.workAreaDuration = duration; }
+}
+ inspired by [http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646) </p>
+  </section>
+  <footer class="entry-footer">October 24, 2013&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to How to open composition in viewer in Adobe After Effects using scripts" href="https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Convert all *.avi files in current directory to png sequences</h2>
   </header>
   <section class="entry-content">
@@ -245,17 +262,6 @@ int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение н
   </section>
   <footer class="entry-footer">October 4, 2013&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Некоторые заметки о приведении типов в СиПлюсПлюс" href="https://serge-m.github.io/posts/blog-post-2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Math morphology in Adobe After Effects</h2>
-  </header>
-  <section class="entry-content">
-    <p>Errosion and dilation in AE is implemented in Minimax filter. See settings bellow: </p>
-  </section>
-  <footer class="entry-footer">September 18, 2013&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to Math morphology in Adobe After Effects" href="https://serge-m.github.io/posts/math-morphology-in-adobe-after-effects/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

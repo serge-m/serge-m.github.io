@@ -139,6 +139,17 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Binarization in Adobe After Effects</h2>
+  </header>
+  <section class="entry-content">
+    <p>I need to make binary image from grayscale one. I know I can use Levels filter for that with such settings: I think that everything that is less or equal to 128 is transformet to 0 and the rest is transformet to 255. BUT. On the result i have such a places with outlier value: WTF? What is the logic of AAE developers? So the solution is using real numbers for input black and white:Results are sharp: !...</p>
+  </section>
+  <footer class="entry-footer">November 29, 2013&nbsp;·&nbsp;SergeM</footer>
+  <a class="entry-link" aria-label="post link to Binarization in Adobe After Effects" href="https://serge-m.github.io/posts/binarization-in-adobe-after-effects/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Free open-source alternative to Total Commander</h2>
   </header>
   <section class="entry-content">
@@ -243,23 +254,6 @@ ArgoUML [http://argouml.tigris.org/](http://argouml.tigris.org/&#34; style=&#34
   </section>
   <footer class="entry-footer">October 25, 2013&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Free UML editor" href="https://serge-m.github.io/posts/free-uml-editor/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>How to open composition in viewer in Adobe After Effects using scripts</h2>
-  </header>
-  <section class="entry-content">
-    <p>// Make a composition var comp = app.project.items.addComp(‘MyComp’, 1920, 1080, 1.0, 10, 25.0 );
-// Open it in viewer comp.openInViewer();
-This solution works only in AAE CS 6.0
-My version of some cross-platform code
-function OpenInViewer( comp ) { var version = app.version.match(/(\d&#43;.\d&#43;)./)[1]; if( version &gt;= 11.0 ) comp.openInViewer() ; else { var duration = comp.workAreaDuration; comp.workAreaDuration = 2comp.frameDuration; comp.ramPreviewTest(&#34;&#34;,1,&#34;&#34;); comp.workAreaDuration = duration; }
-}
- inspired by [http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;t=116057#p348646) </p>
-  </section>
-  <footer class="entry-footer">October 24, 2013&nbsp;·&nbsp;SergeM</footer>
-  <a class="entry-link" aria-label="post link to How to open composition in viewer in Adobe After Effects using scripts" href="https://serge-m.github.io/posts/how-to-open-composition-in-viewer-in/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

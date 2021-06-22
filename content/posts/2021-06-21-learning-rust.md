@@ -7,6 +7,8 @@ Tags: [ rust, links ]
 ---
 
 
+# Resources (books, tutorials, etc.)
+
 [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html) — a book about rust 
 
 > Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
@@ -20,6 +22,8 @@ who want to start with Rust. A bit difficult to read sometimes.
 
 
 [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html) — "Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust concepts and standard libraries"
+
+
 
 
 # Rust code snippets
@@ -69,6 +73,15 @@ prints
     length of 'hello' is 5
 
 
+Iterate over all the prefixes of a String:
+
+    for (i, _) in s.chars().enumerate() {
+        let prefix = &s[..i+1];
+    }
+    
+[playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2015&code=fn%20main()%20%7B%0A%20%20%20%20let%20s%20%3D%20String%3A%3Afrom(%22blablaaaa%22)%3B%0A%20%20%20%20for%20(i%2C%20_)%20in%20s.chars().enumerate()%20%7B%0A%20%20%20%20%20%20%20%20let%20prefix%20%3D%20%26s%5B..i%2B1%5D%3B%0A%20%20%20%20%20%20%20%20println!(%22%7B%7D%22%2C%20prefix)%3B%0A%20%20%20%20%7D%0A%7D)
+
+
 ## Iteration
 
     fn main() {
@@ -87,6 +100,26 @@ prints
 
 [playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2015&code=fn%20main()%20%7B%0A%20%20%20%20let%20a%20%3D%20%5B1%2C%202%2C%203%5D%3B%0A%0A%20%20%20%20%2F%2F%20forward%0A%20%20%20%20for%20x%20in%20a.iter()%20%7B%0A%20%20%20%20%20%20%20%20print!(%22%7B%7D%20%22%2C%20x)%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%2F%2F%20backward%0A%20%20%20%20for%20x%20in%20a.iter().rev()%20%7B%0A%20%20%20%20%20%20%20%20print!(%22%7B%7D%20%22%2C%20x)%3B%0A%20%20%20%20%7D%0A%7D)
 
+
+## Hashmap
+
+Counting strings using a Hashmap:
+
+    let mut counter: HashMap<String, usize> = HashMap::new();
+    // s is a str to add
+    match counter.get_mut(s) {
+        Some(x) => {
+            *x += 1;
+        }
+        None => {
+            counter.insert(s.to_string(), 1);
+        }
+    }
+
+More info:
+* [Go version of program is 40% quicker than Rust version](https://www.reddit.com/r/rust/comments/aaood3/go_version_of_program_is_40_quicker_than_rust/) - reddit post. See discussion.
+* Fast word counting implementation: [daboross/main.rs](https://gist.github.com/daboross/f65be8feb62e92c0e45e3649a06f6826)
+        
 ## Testing 
     fn f(x: i32) -> i32 {
         x * 2

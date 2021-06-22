@@ -50,6 +50,25 @@ who want to start with Rust. A bit difficult to read sometimes.
     // Coerce a String into &str with &
     let baz: &str = &bar;
 
+
+### Length of strings
+
+    fn main() {
+        let s = String::from("hello🤦‍♂️");
+        println!("length of '{}' is {}", s, s.len());
+        let s = String::from("hello🤦");
+        println!("length of '{}' is {}", s, s.len());
+        let s = String::from("hello");
+        println!("length of '{}' is {}", s, s.len());
+    }
+
+prints 
+
+    length of 'hello🤦‍♂️' is 18
+    length of 'hello🤦' is 9
+    length of 'hello' is 5
+
+
 ## Iteration
 
     fn main() {

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>Git cheat sheet | sergem&#39;s personal public notebook</title>
-<meta name="keywords" content="git" />
+<meta name="keywords" content="git, ssh, github, key, VCS" />
 <meta name="description" content="Nice history log in console git log --all --decorate --oneline --graph  How to remember:
 &quot;A Dog&quot; = git log --all --decorate --oneline --graph
 Sample result:
@@ -82,10 +82,10 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
   "name": "Git cheat sheet",
   "description": "Nice history log in console git log --all --decorate --oneline --graph  How to remember:\n\u0026quot;A Dog\u0026quot; = git log --all --decorate --oneline --graph\nSample result:\n$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -\u0026gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.",
   "keywords": [
-    "git"
+    "git", "ssh", "github", "key", "VCS"
   ],
-  "articleBody": "Nice history log in console git log --all --decorate --oneline --graph  How to remember:\n\"A Dog\" = git log --all --decorate --oneline --graph\nSample result:\n$ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2 | * c0c934f more readme's | * c514699 better readme | * 3e092be added readme, added basic error processing, added logging | * 786fa09 cleaning up | * 96fd9a7 main script for task1 | * b1b0e53 first version of task1 | * 8cf1529 safety check for download, refactoring | * 807cecd draft for task1 | * 68fcdf8 updated readme for task2 | * 7e8b8ae added readme, |/ * d5bd5a4 structure of the directory * d293704 added more tests * aefe72f added gitignore * 06ff547 Initial version for task2   Set date/time for git commits export GIT_COMMITTER_DATE=\"2020-01-01 12:00:00\"; git commit --date \"$GIT_COMMITTER_DATE\" -m \"commit message\"   Caching credentials Remember credentials for 1 hour (3600 seconds):\ngit config --global credential.helper 'cache --timeout=3600'  Disabling cache:\ngit config --global --unset credential.helper   Export a repo to an archive without .git git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip  tar archive is also supported. More info at git-archive doc.\n ",
-  "wordCount" : "237",
+  "articleBody": "Nice history log in console git log --all --decorate --oneline --graph  How to remember:\n\"A Dog\" = git log --all --decorate --oneline --graph\nSample result:\n$ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2 | * c0c934f more readme's | * c514699 better readme | * 3e092be added readme, added basic error processing, added logging | * 786fa09 cleaning up | * 96fd9a7 main script for task1 | * b1b0e53 first version of task1 | * 8cf1529 safety check for download, refactoring | * 807cecd draft for task1 | * 68fcdf8 updated readme for task2 | * 7e8b8ae added readme, |/ * d5bd5a4 structure of the directory * d293704 added more tests * aefe72f added gitignore * 06ff547 Initial version for task2   Set date/time for git commits export GIT_COMMITTER_DATE=\"2020-01-01 12:00:00\"; git commit --date \"$GIT_COMMITTER_DATE\" -m \"commit message\"   Caching credentials Remember credentials for 1 hour (3600 seconds):\ngit config --global credential.helper 'cache --timeout=3600'  Disabling cache:\ngit config --global --unset credential.helper   Export a repo to an archive without .git git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip  tar archive is also supported. More info at git-archive doc.\n Use specific SSH key for connection One can set a custom ssh command using an environment variable:\nexport GIT_SSH_COMMAND=\"ssh -i /path/to/your/private_key\" git fetch #..... do something  If you want to assign an SSH key permanently for a given repo you can update the local git config:\ngit config core.sshCommand 'ssh -i path/to/your/private_key' git fetch #..... do something   ",
+  "wordCount" : "294",
   "inLanguage": "en",
   "datePublished": "2020-04-07T06:00:00Z",
   "dateModified": "2020-04-07T06:00:00Z",
@@ -208,7 +208,9 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
                 <li>
                     <a href="#" aria-label="Caching credentials">Caching credentials</a></li>
                 <li>
-                    <a href="#" aria-label="Export a repo to an archive without .git">Export a repo to an archive without .git</a>
+                    <a href="#" aria-label="Export a repo to an archive without .git">Export a repo to an archive without .git</a></li>
+                <li>
+                    <a href="#" aria-label="Use specific SSH key for connection">Use specific SSH key for connection</a>
                 </li>
             </ul>
         </div>
@@ -277,11 +279,28 @@ git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE
 </pre>
 <p><cite>tar</cite> archive is also supported. More info at <a class="reference external" href="https://git-scm.com/docs/git-archive">git-archive doc</a>.</p>
 </div>
+<div class="section" id="use-specific-ssh-key-for-connection">
+<h2>Use specific SSH key for connection</h2>
+<p>One can set a custom ssh command using an environment variable:</p>
+<pre class="code literal-block">
+export GIT_SSH_COMMAND=&quot;ssh -i /path/to/your/private_key&quot;
+git fetch #..... do something
+</pre>
+<p>If you want to assign an SSH key permanently for a given repo you can update the local git config:</p>
+<pre class="code literal-block">
+git config core.sshCommand 'ssh -i path/to/your/private_key'
+git fetch #..... do something
+</pre>
+</div>
 </div>
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://serge-m.github.io/tags/git/">git</a></li>
+      <li><a href="https://serge-m.github.io/tags/ssh/">ssh</a></li>
+      <li><a href="https://serge-m.github.io/tags/github/">github</a></li>
+      <li><a href="https://serge-m.github.io/tags/key/">key</a></li>
+      <li><a href="https://serge-m.github.io/tags/vcs/">VCS</a></li>
     </ul>
     <nav class="paginav">
       <a class="prev" href="https://serge-m.github.io/posts/parameters-parsing-for-python-applications/">
@@ -297,7 +316,7 @@ git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE
     </nav>
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share Git cheat sheet on twitter"
-        href="https://twitter.com/intent/tweet/?text=Git%20cheat%20sheet&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fgit-cheat-sheet%2f&amp;hashtags=git">
+        href="https://twitter.com/intent/tweet/?text=Git%20cheat%20sheet&amp;url=https%3a%2f%2fserge-m.github.io%2fposts%2fgit-cheat-sheet%2f&amp;hashtags=git%2cssh%2cgithub%2ckey%2cVCS">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

@@ -4,7 +4,7 @@ title: "Git cheat sheet"
 author: "SergeM"
 slug: "git-cheat-sheet"
 aliases: [/git-cheat-sheet.html]
-tags: [git]
+tags: [git, ssh, github, key, VCS]
 ---
 
 
@@ -84,3 +84,25 @@ Export a repo to an archive without .git
     git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
 
 `tar` archive is also supported. More info at `git-archive doc <https://git-scm.com/docs/git-archive>`_.
+
+
+Use specific SSH key for connection
+-----------------------------------------------------
+
+One can set a custom ssh command using an environment variable:
+
+
+.. code-block::
+
+    export GIT_SSH_COMMAND="ssh -i /path/to/your/private_key"
+    git fetch #..... do something
+
+
+If you want to assign an SSH key permanently for a given repo you can update the local git config:
+
+.. code-block::
+
+    git config core.sshCommand 'ssh -i path/to/your/private_key'
+    git fetch #..... do something
+
+

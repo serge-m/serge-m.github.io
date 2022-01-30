@@ -78,10 +78,7 @@ pcl_ros http://wiki.</description>
       <pubDate>Tue, 21 Apr 2020 19:00:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/parameters-parsing-for-python-applications/</guid>
-      <description>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
-argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
-Example of usage:
-#!/usr/bin/env bash import argparse def hello(count, name): &amp;quot;&amp;quot;&amp;quot;Simple program that greets NAME for a total of COUNT times.</description>
+      <description>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse --------------------------- The default choice for the python developer. The module is included in python standard library and comes together with any python distribution. Example of usage: .. code-block:: #!</description>
     </item>
     
     <item>
@@ -228,7 +225,7 @@ export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
       <pubDate>Sun, 09 Jul 2017 23:07:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/module-import-in-python/</guid>
-      <description>Import module by path/name 1 2  import importlib module = importlib.import_module(module_path)   Find class implementing certain interface in a module 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  def load_class_from_module(module_path: str, target_class: type) -&amp;gt; type: module = importlib.import_module(module_path) list_classes = get_all_classes_implementing_interface(module, target_class) if not list_classes: raise RuntimeError(&amp;#34;Unable to find implemented interface {} in {}&amp;#34;.format(target_class, module_path)) if len(list_classes) &amp;gt; 1: raise RuntimeError(&amp;#34;More then 1 implementation of {} was found in {}&amp;#34;.</description>
+      <description>Import module by path/name 1 2  import importlib module = importlib.import_module(module_path)   Find class implementing certain interface in a module 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  def load_class_from_module(module_path: str, target_class: type) -&amp;gt; type: module = importlib.import_module(module_path) list_classes = get_all_classes_implementing_interface(module, target_class) if not list_classes: raise RuntimeError(&amp;#34;Unable to find implemented interface {}in {}&amp;#34;.format(target_class, module_path)) if len(list_classes) &amp;gt; 1: raise RuntimeError(&amp;#34;More then 1 implementation of {}was found in {}&amp;#34;.</description>
     </item>
     
     <item>
@@ -543,7 +540,7 @@ import re re.escape( str ) Python detects all escape characters that can be used
       
       <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
       <description>Using python and ffmpeg:
-1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) )   </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0}{1}&amp;#34;.format( v, pathDst ) )   </description>
     </item>
     
     <item>

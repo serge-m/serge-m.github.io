@@ -12,7 +12,7 @@ static_cast между указателями корректно, только �
 int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции undefined.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/blog-post-2/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -20,7 +20,7 @@ int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение н
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -205,7 +205,7 @@ int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение н
   <div class="post-content"><p>АлёнаC++:
 <a href="http://alenacpp.blogspot.ru/2005/08/c.html">http://alenacpp.blogspot.ru/2005/08/c.html</a></p>
 <p><code>static_cast</code> между указателями корректно, только если один из указателей - это указатель на <code>void</code> или если это приведение между объектами классов, где один класс является наследником другого. То есть для приведения к какому-либо типу от <code>void*</code>, который возвращает <code>malloc</code>, следует использовать <code>static_cast</code>.</p>
-<pre><code>int * p = static_cast&lt;int*&gt;(malloc(100));
+<pre tabindex="0"><code>int * p = static_cast&lt;int*&gt;(malloc(100));
 </code></pre><p>Если приведение не удалось, возникнет ошибка на этапе компиляции. Однако, если это приведение между указателями на объекты классов вниз по иерархии и оно не удалось, результат операции <code>undefined</code>. То есть, возможно такое приведение: <code>static_cast&lt;Derived*&gt;(pBase)</code>, даже если <code>pBase</code> не указывает на <code>Derived</code>, но программа при этом будет вести себя странно.</p>
 
 </div>
@@ -275,7 +275,7 @@ int * p = static_cast&lt;int*&gt;(malloc(100)); Если приведение н
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

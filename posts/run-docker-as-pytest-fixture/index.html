@@ -11,7 +11,7 @@
  docker run as set-up step docker stop/docker rm as tear down step  As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/run-docker-as-pytest-fixture/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -78,8 +78,8 @@ if (!doNotTrack) {
   "keywords": [
     "python", "pytest", "docker"
   ],
-  "articleBody": "I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has\n docker run as set-up step docker stop/docker rm as tear down step  As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images. After running you can check status (curl -X GET localhost:9333).\nLets create two context managers: for master and slave. They will handle running and shutting down docker containers.\nMaster:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  import subprocess import shlex import requests import contextlib import pytest docker_image = \"chrislusf/seaweedfs\" @contextlib.contextmanager def seaweedfs_master(): container_id = subprocess.check_output( shlex.split(\"docker run -d -p 9333:9333 {docker_image} master\".format(docker_image=docker_image))) container_id = container_id.decode('utf8').strip() yield container_id subprocess.check_output(['docker', 'rm', '-f', container_id])   Slave:\n1 2 3 4 5 6 7 8 9 10 11 12 13  @contextlib.contextmanager def seaweedfs_slave(): with seaweedfs_master() as master: container_id = subprocess.check_output( shlex.split('docker run -d -p 8080:8080 --link {master_id} ' '{docker_image} volume -max=5 -mserver=\"{master_id}:9333\" -port=8080'.format( docker_image=docker_image, master_id=master ))) container_id = container_id.decode('utf8').strip() yield \"http://localhost:9333/\" subprocess.check_output(['docker', 'rm', '-f', container_id])   Helper class and pytest fixture:\n1 2 3 4 5 6 7 8 9  class SeaWeedFSConnection: def __init__(self, url): self.url = url @pytest.fixture(scope=\"module\") def seaweedfs(request): with seaweedfs_slave() as seaweed_url: yield SeaWeedFSConnection(seaweed_url)   Finally our test:\n1 2 3 4 5 6  class TestImageStorage: def test1(self, seaweedfs): url = seaweedfs.url response = requests.get(url) assert response.status_code == 200   ",
-  "wordCount" : "257",
+  "articleBody": "I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has\n docker run as set-up step docker stop/docker rm as tear down step  As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images. After running you can check status (curl -X GET localhost:9333).\nLets create two context managers: for master and slave. They will handle running and shutting down docker containers.\nMaster:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  import subprocess import shlex import requests import contextlib import pytest docker_image = \"chrislusf/seaweedfs\" @contextlib.contextmanager def seaweedfs_master(): container_id = subprocess.check_output( shlex.split(\"docker run -d -p 9333:9333 {docker_image}master\".format(docker_image=docker_image))) container_id = container_id.decode('utf8').strip() yield container_id subprocess.check_output(['docker', 'rm', '-f', container_id])   Slave:\n1 2 3 4 5 6 7 8 9 10 11 12 13  @contextlib.contextmanager def seaweedfs_slave(): with seaweedfs_master() as master: container_id = subprocess.check_output( shlex.split('docker run -d -p 8080:8080 --link {master_id}' '{docker_image}volume -max=5 -mserver=\"{master_id}:9333\" -port=8080'.format( docker_image=docker_image, master_id=master ))) container_id = container_id.decode('utf8').strip() yield \"http://localhost:9333/\" subprocess.check_output(['docker', 'rm', '-f', container_id])   Helper class and pytest fixture:\n1 2 3 4 5 6 7 8 9  class SeaWeedFSConnection: def __init__(self, url): self.url = url @pytest.fixture(scope=\"module\") def seaweedfs(request): with seaweedfs_slave() as seaweed_url: yield SeaWeedFSConnection(seaweed_url)   Finally our test:\n1 2 3 4 5 6  class TestImageStorage: def test1(self, seaweedfs): url = seaweedfs.url response = requests.get(url) assert response.status_code == 200   ",
+  "wordCount" : "254",
   "inLanguage": "en",
   "datePublished": "2016-12-19T21:30:00Z",
   "dateModified": "2016-12-19T21:30:00Z",
@@ -212,7 +212,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 <p>Master:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -231,7 +231,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">subprocess</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">shlex</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">contextlib</span>
@@ -241,10 +241,10 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 <span class="n">docker_image</span> <span class="o">=</span> <span class="s2">&#34;chrislusf/seaweedfs&#34;</span>
 
 
-<span class="nd">@contextlib.contextmanager</span>
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">seaweedfs_master</span><span class="p">():</span>
     <span class="n">container_id</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
-        <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;docker run -d -p 9333:9333 {docker_image} master&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">)))</span>
+        <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;docker run -d -p 9333:9333 </span><span class="si">{docker_image}</span><span class="s2"> master&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">)))</span>
     <span class="n">container_id</span> <span class="o">=</span> <span class="n">container_id</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">yield</span> <span class="n">container_id</span>
     <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">([</span><span class="s1">&#39;docker&#39;</span><span class="p">,</span> <span class="s1">&#39;rm&#39;</span><span class="p">,</span> <span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="n">container_id</span><span class="p">])</span>
@@ -253,7 +253,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </div><p>Slave:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -268,12 +268,12 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@contextlib.contextmanager</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="k">def</span> <span class="nf">seaweedfs_slave</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">seaweedfs_master</span><span class="p">()</span> <span class="k">as</span> <span class="n">master</span><span class="p">:</span>
         <span class="n">container_id</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
-            <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;docker run -d -p 8080:8080 --link {master_id} &#39;</span>
-                        <span class="s1">&#39;{docker_image} volume -max=5 -mserver=&#34;{master_id}:9333&#34; -port=8080&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;docker run -d -p 8080:8080 --link </span><span class="si">{master_id}</span><span class="s1"> &#39;</span>
+                        <span class="s1">&#39;</span><span class="si">{docker_image}</span><span class="s1"> volume -max=5 -mserver=&#34;</span><span class="si">{master_id}</span><span class="s1">:9333&#34; -port=8080&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">docker_image</span><span class="o">=</span><span class="n">docker_image</span><span class="p">,</span>
                 <span class="n">master_id</span><span class="o">=</span><span class="n">master</span>
             <span class="p">)))</span>
@@ -286,7 +286,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </div><p>Helper class and pytest fixture:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -297,12 +297,12 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">SeaWeedFSConnection</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">SeaWeedFSConnection</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
 
 
-<span class="nd">@pytest.fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;module&#34;</span><span class="p">)</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&#34;module&#34;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">seaweedfs</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">seaweedfs_slave</span><span class="p">()</span> <span class="k">as</span> <span class="n">seaweed_url</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">SeaWeedFSConnection</span><span class="p">(</span><span class="n">seaweed_url</span><span class="p">)</span>
@@ -311,7 +311,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </div><p>Finally our test:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -319,7 +319,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TestImageStorage</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TestImageStorage</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">test1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seaweedfs</span><span class="p">):</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">seaweedfs</span><span class="o">.</span><span class="n">url</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -396,7 +396,7 @@ After running you can check status (<code>curl -X GET localhost:9333</code>).</p
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

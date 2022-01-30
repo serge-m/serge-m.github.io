@@ -10,7 +10,7 @@
 <meta name="description" content="Personal public notebook">
 <meta name="author" content="serge-m">
 <link rel="canonical" href="https://serge-m.github.io/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 <link rel="alternate" type="application/rss&#43;xml" href="https://serge-m.github.io/index.xml">
 <link rel="alternate" type="application/json" href="https://serge-m.github.io/index.json">
 
@@ -191,11 +191,7 @@ source ~/miniconda3/etc/profile.d/conda.sh  </p>
     <h2>Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685</h2>
   </header>
   <section class="entry-content">
-    <p>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
-PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
-Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
-#include &lt;Adafruit_PWMServoDriver.h&gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
-pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs....</p>
+    <p>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller. PCA9685 is connected to Arduino using I2C interface that requires only two data pins. .. image:: /media/2019-12-blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/sketch_bb.png :width: 600px :alt: breadboard Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685 .. image:: /media/2019-12-blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/sketch_schem.png :width: 600px :alt: schema Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685 ....</p>
   </section>
   <footer class="entry-footer">SergeM</footer>
   <a class="entry-link" aria-label="post link to Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685" href="https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/"></a>
@@ -206,8 +202,7 @@ pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then fo
     <h2>Capture PWM signal using Arduino</h2>
   </header>
   <section class="entry-content">
-    <p>Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
-My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC....</p>
+    <p>Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC....</p>
   </section>
   <footer class="entry-footer">SergeM</footer>
   <a class="entry-link" aria-label="post link to Capture PWM signal using Arduino" href="https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/"></a>
@@ -248,7 +243,7 @@ Remark Example Example of html code for 3-slides presentaiton from github of the
 </footer>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

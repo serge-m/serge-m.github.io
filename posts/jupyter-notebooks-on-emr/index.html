@@ -11,7 +11,7 @@
 &quot;Applications&quot;: [ { &quot;Name&quot;: &quot;Ganglia&quot;, &quot;Version&quot;: &quot;3.7.2&quot; }, { &quot;Name&quot;: &quot;Spark&quot;, &quot;Version&quot;: &quot;2.4.0&quot; }, { &quot;Name&quot;: &quot;Zeppelin&quot;, &quot;Version&quot;: &quot;0.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/jupyter-notebooks-on-emr/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -206,7 +206,7 @@ if (!doNotTrack) {
 </div>
 
   <div class="post-content"><p>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure <code>&quot;Applications&quot;</code> field for the emr cluster to contain also jupyter hub. For example:</p>
-<pre><code>&quot;Applications&quot;: [
+<pre tabindex="0"><code>&quot;Applications&quot;: [
             {
                 &quot;Name&quot;: &quot;Ganglia&quot;,
                 &quot;Version&quot;: &quot;3.7.2&quot;
@@ -228,7 +228,7 @@ if (!doNotTrack) {
 
 </code></pre><p>Set <code>KeepJobFlowAliveWhenNoSteps: true</code> and set up all the required python libraries using bootstrap scripts.</p>
 <p>After cluster is created and bootstrapped you can get an address of the master in the aws console. Create a ssh tunnel to the port 9443 on the master. it is a port of jupyterhub:</p>
-<pre><code>export HOST=&lt;public address of your master&gt; 
+<pre tabindex="0"><code>export HOST=&lt;public address of your master&gt; 
 ssh -i ~/.ssh/your_private_key.pem -L 9443:$HOST:9443 hadoop@$HOST
 </code></pre><p>Now when you connect to your local 9443 port it is redirected to the master&rsquo;s 9443 port.</p>
 <p>Open the browser an connect to <a href="https://localhost:9443/hub/login">https://localhost:9443/hub/login</a>. HTTPS and the endpoint is important!</p>
@@ -236,10 +236,10 @@ ssh -i ~/.ssh/your_private_key.pem -L 9443:$HOST:9443 hadoop@$HOST
 <p>Enjoy!</p>
 <h2 id="troubleshooting">Troubleshooting<a hidden class="anchor" aria-hidden="true" href="#troubleshooting">#</a></h2>
 <p>Long running pyspark kernel is terminated after approximately 1 hour with the error:</p>
-<pre><code>An error was encountered:
+<pre tabindex="0"><code>An error was encountered:
 Invalid status code '404' from http://ip-123-123-123-123.eu-west-1.compute.internal:8998/sessions/1 with error payload: &quot;Session '1' not found.&quot;
 </code></pre><p>To fix it add the following to your emr  cluster  <code>Configurations</code>:</p>
-<pre><code>[{'classification': 'livy-conf','Properties': {'livy.server.session.timeout':'5h'}}]
+<pre tabindex="0"><code>[{'classification': 'livy-conf','Properties': {'livy.server.session.timeout':'5h'}}]
 </code></pre><p><a href="https://stackoverflow.com/questions/54220381/how-to-set-livy-server-session-timeout-on-emr-cluster-boostrap">source</a></p>
 <h2 id="see-also">See also<a hidden class="anchor" aria-hidden="true" href="#see-also">#</a></h2>
 <ul>
@@ -318,7 +318,7 @@ Invalid status code '404' from http://ip-123-123-123-123.eu-west-1.compute.inter
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

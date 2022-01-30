@@ -10,7 +10,7 @@
 <meta name="description" content="Libraries for GPIO Node JS Python Using RPi.GPIO  How to Exit GPIO programs cleanly, avoid warnings and protect your Pi Setting up RPi.GPIO, numbering systems and inputs On using hardware PWM without sudo due to permissions for /dev/gpiomem: discussion  General pigpio The library also provides a service. It can be useful if you don&rsquo;t want to give root access to the client applications and want to control PWM for example.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/gpio-controls-for-rasbperry-pi/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -234,7 +234,7 @@ It can be useful if you don&rsquo;t want to give root access to the client appli
 <p>Here is how to create a system service for <code>pigpiod</code>:</p>
 <p>Create file
 /etc/systemd/system/pigpiod.service:</p>
-<pre><code>[Unit]
+<pre tabindex="0"><code>[Unit]
 Description=pigpiod service
 
 [Service]
@@ -249,16 +249,16 @@ WantedBy=multi-user.target
 </code></pre><p>run and check status</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl start pigpiod.service
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo systemctl start pigpiod.service
 sudo systemctl status pigpiod.service
 </code></pre></td></tr></table>
 </div>
 </div><p>should be something like this:</p>
-<pre><code>● pigpiod.service - pigpiod service
+<pre tabindex="0"><code>● pigpiod.service - pigpiod service
    Loaded: loaded (/etc/systemd/system/pigpiod.service; enabled; vendor preset: enabled)
    Active: active (running) since Wed 2018-09-19 12:22:30 UTC; 1s ago
  Main PID: 10074 (pigpiod)
@@ -266,18 +266,18 @@ sudo systemctl status pigpiod.service
            └─10074 /usr/bin/pigpiod -l -g
 
 </code></pre><p>Now enable the service:</p>
-<pre><code>sudo systemctl enable pigpiod.service
+<pre tabindex="0"><code>sudo systemctl enable pigpiod.service
 </code></pre><p>Now <code>pigpriod</code> has to run on startup of your raspberry pi and provide interface to gpio:</p>
-<pre><code>pigs w 4 1
+<pre tabindex="0"><code>pigs w 4 1
 </code></pre><p>If something went wrong and the pigpiod service doesn&rsquo;t start you will see</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ pigs w <span class="m">4</span> <span class="m">1</span> 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">$ pigs w <span class="m">4</span> <span class="m">1</span> 
 socket connect failed
 
 </code></pre></td></tr></table>
@@ -353,7 +353,7 @@ socket connect failed
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

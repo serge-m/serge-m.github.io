@@ -10,7 +10,7 @@
 <meta name="description" content="Personal public notebook">
 <meta name="author" content="serge-m">
 <link rel="canonical" href="https://serge-m.github.io/posts/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 <link rel="alternate" type="application/rss&#43;xml" href="https://serge-m.github.io/posts/index.xml">
 
 <script type="application/javascript">
@@ -146,10 +146,7 @@ if (!doNotTrack) {
     <h2>Self-supervised depth and ego motion estimation</h2>
   </header>
   <section class="entry-content">
-    <p>3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
-Learning
-Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
-Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information...</p>
+    <p>3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision....</p>
   </section>
   <footer class="entry-footer">August 23, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Self-supervised depth and ego motion estimation" href="https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/"></a>
@@ -175,10 +172,7 @@ Here is some explanation of resnet family:An Overview of ResNet and its Variants
     <h2>Parameters parsing for python applications</h2>
   </header>
   <section class="entry-content">
-    <p>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them.
-argparse The default choice for the python developer. The module is included in python standard library and comes together with any python distribution.
-Example of usage:
-#!/usr/bin/env bash import argparse def hello(count, name): &#34;&#34;&#34;Simple program that greets NAME for a total of COUNT times....</p>
+    <p>command line arguments is a standard and one of the most common ways to pass parameters to a python script. There exist a list of python libraries that help with that task. Here I am going to list some of them. argparse --------------------------- The default choice for the python developer. The module is included in python standard library and comes together with any python distribution. Example of usage: .. code-block:: #!...</p>
   </section>
   <footer class="entry-footer">April 21, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Parameters parsing for python applications" href="https://serge-m.github.io/posts/parameters-parsing-for-python-applications/"></a>
@@ -189,10 +183,7 @@ Example of usage:
     <h2>Git cheat sheet</h2>
   </header>
   <section class="entry-content">
-    <p>Nice history log in console git log --all --decorate --oneline --graph  How to remember:
-&#34;A Dog&#34; = git log --all --decorate --oneline --graph
-Sample result:
-$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0....</p>
+    <p>Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: &#34;A Dog&#34; = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0....</p>
   </section>
   <footer class="entry-footer">April 7, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Git cheat sheet" href="https://serge-m.github.io/posts/git-cheat-sheet/"></a>
@@ -203,8 +194,7 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
     <h2>Image and video processing recipes</h2>
   </header>
   <section class="entry-content">
-    <p>I often need to perform some operations on videos or image sequences. Usually I use linux and ffmpeg, and sometimes I struggle to remember all the commands. Here is a collection of recipes that I usually use with a bit of explanations.
-Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:...</p>
+    <p>I often need to perform some operations on videos or image sequences. Usually I use linux and `ffmpeg`, and sometimes I struggle to remember all the commands. Here is a collection of recipes that I usually use with a bit of explanations. Video conversions ========================== Cut a range of frames --------------------------- Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec: ....</p>
   </section>
   <footer class="entry-footer">March 27, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to Image and video processing recipes" href="https://serge-m.github.io/posts/image-and-video-processing-recipes/"></a>
@@ -215,8 +205,7 @@ Video conversions Cut a range of frames Cut a range of frames (100, 130) from a 
     <h2>C&#43;&#43; and CMake</h2>
   </header>
   <section class="entry-content">
-    <p>CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
-In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github....</p>
+    <p>CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then....</p>
   </section>
   <footer class="entry-footer">March 26, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43; and CMake" href="https://serge-m.github.io/posts/cpp-and-cmake/"></a>
@@ -227,10 +216,7 @@ In my previous attempt I ended up removing cmake tools plugin and moving forward
     <h2>System monitoring</h2>
   </header>
   <section class="entry-content">
-    <p>I was looking for a system monitoring solution that can notify my in case of abnormal CPU/netowrk/disk usage via email or telegram.
-It seems there are several popular solutions:
-Nagios Munin Icinga Spiceworks Monit Cacti Zabbix Glances Monitorix  See also:
-https://askubuntu.com/questions/784781/system-monitoring-with-email-notifications  </p>
+    <p> I was looking for a system monitoring solution that can notify my in case of abnormal CPU/netowrk/disk usage via email or telegram. It seems there are several popular solutions: * `Nagios `_ * `Munin `_ * `Icinga `_ * `Spiceworks `_ * `Monit `_ * `Cacti `_ * `Zabbix `_ * `Glances `_ * `Monitorix `_ See also: * ``_ </p>
   </section>
   <footer class="entry-footer">March 22, 2020&nbsp;·&nbsp;SergeM</footer>
   <a class="entry-link" aria-label="post link to System monitoring" href="https://serge-m.github.io/posts/system-monitoring/"></a>
@@ -284,7 +270,7 @@ Here is my first version:
 </footer>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

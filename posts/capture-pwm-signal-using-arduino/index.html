@@ -7,11 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Capture PWM signal using Arduino | sergem&#39;s personal public notebook</title>
 <meta name="keywords" content="arduino, pwm, robocar, pwm, c&#43;&#43;" />
-<meta name="description" content="Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
-My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.">
+<meta name="description" content="Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +18,7 @@ My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -33,8 +32,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="Capture PWM signal using Arduino" />
-<meta property="og:description" content="Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
-My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC." />
+<meta property="og:description" content="Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/capture-pwm-signal-using-arduino/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 
@@ -44,8 +42,7 @@ My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Capture PWM signal using Arduino"/>
-<meta name="twitter:description" content="Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.
-My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC."/>
+<meta name="twitter:description" content="Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC."/>
 
 
 <script type="application/ld+json">
@@ -74,12 +71,12 @@ My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to
   "@type": "BlogPosting",
   "headline": "Capture PWM signal using Arduino",
   "name": "Capture PWM signal using Arduino",
-  "description": "Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.\nMy intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.",
+  "description": "Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.",
   "keywords": [
     "arduino", "pwm", "robocar", "pwm", "c++"
   ],
-  "articleBody": "Parsing PWM signals For my robocar project I needed to understand the mechanism of pulse width modulation of the remote control.\nMy intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.\nFor analysis of the PWM signal I have found a library PinChangeInterrupt:\n#include   the wires from the receiver are connected to the pins 10 and 11 of my arduino nano:\nconst int pin_pwm_in_steering = 11; const int pin_pwm_in_throttle = 10;  Let's create PwmListener class that listens to the interrupts on the given pin and returns the width of the last impulse.\nclass PwmListener { volatile unsigned int pwm_value_; // last pwm value volatile unsigned long prev_time_; // last time of the impulse public: const int pin; // pin to listen const int pin_as_pc_int; // pin index according to PC int public: PwmListener(int pin_, int default_value); // this function will be called on the interrupts void process(); unsigned long micros_since_last_signal() const; // return the latest pwm value unsigned int value() const; unsigned long prev_time_micros() const; };  Full code:\nclass PwmListener { volatile unsigned int pwm_value_; volatile unsigned long prev_time_; public: const int pin; const int pin_as_pc_int; public: PwmListener(int pin_, int default_value): pin(pin_), pwm_value_(default_value), prev_time_(0), pin_as_pc_int(digitalPinToPCINT(pin_)) {} void process() { uint8_t trigger = getPinChangeInterruptTrigger(pin_as_pc_int); if(trigger == RISING) prev_time_ = micros(); else if(trigger == FALLING) pwm_value_ = micros_since_last_signal(); else { // Wrong usage } } unsigned long micros_since_last_signal() const { return micros() - prev_time_; } unsigned int value() const { return pwm_value_; } unsigned long prev_time_micros() const { return prev_time_; } };  now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer.\nPwmListener pwm_listener_steering (pin_pwm_in_steering, DEFAULT_PULSE_WIDTH); PwmListener pwm_listener_throttle (pin_pwm_in_throttle, DEFAULT_PULSE_WIDTH); void interrupt_steering() { pwm_listener_steering.process(); } void interrupt_throttle() { pwm_listener_throttle.process(); }  later in the setup() function we have to set up the pins:\nvoid setup() { // starting input pwm monitoring... pinMode(pwm_listener_steering.pin, INPUT); attachPinChangeInterrupt(pwm_listener_steering.pin_as_pc_int, \u0026interrupt_steering, CHANGE); pinMode(pwm_listener_throttle.pin, INPUT); attachPinChangeInterrupt(pwm_listener_throttle.pin_as_pc_int, \u0026interrupt_throttle, CHANGE); // setting up serial interface Serial.begin(115200); Serial.println(\"info: waiting for output pwm controller...\"); }  on every loop we send the values to the host computer:\nvoid loop() { const int steering = pwm_listener_steering.value(); const int throttle = pwm_listener_throttle.value(); // avoiding unnecessary duplication by filtering out small perturbations if ( abs(steering - old_steering)  10 || abs(throttle - old_throttle)  10 ) { sprintf(buf, \"in: %d %d\\n\", steering, throttle); Serial.print(buf); old_steering = steering; old_throttle = throttle; } }  We have also enabled the serial interface to report the values to the host machine (connected via USB).\nOn the host machine we run python listener:\nimport serial ports = ['/dev/ttyUSB0', '/dev/ttyUSB1'] def main(): for port in ports: print(\"connecting to port {}\".format(port)) try: with serial.Serial(port, 115200, timeout=0.01) as ser: print('connected') process(ser) return except serial.serialutil.SerialException as e: if e.errno == 2: continue raise raise FileNotFoundError(\"Unable to open ports {}\".format(ports)) def process(ser): while(True): line = ser.readline() # read a '\\n' terminated line if line != b'': print(line) if __name__ == '__main__': main()   Analysis I have got the following graph (interactive):\n:file: /static/2019-12-pwm_visualization.htmlLet's consider steering series. It has three parts.\nactual signal. The values are around 1380. The change couple of times. That corresponds to what I actually did. Some strange signal values around 10000. I don't know what is it. Some rare noise in between. I also don't know why it's there.  We still can use that values with some filtering of the outliers.\nAnother interesting thing is that steering and throttle channels have different default values. For steering it is 1380 and for throttle it is 1540. I could adjust that values a bit, but anyway it is around 1400 for one and 1500 for another.\nAt the same time when I send PWM signal generated by Arduino I have to use 1400 as default for both to make it work properly. I don't know what causes that shift in my measurements.\n See also gist with the data robocar project robocar main repository wiki for robocar   ",
-  "wordCount" : "701",
+  "articleBody": " Parsing PWM signals ======================= For my `robocar project `_ I needed to understand the mechanism of pulse width modulation of the remote control. My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning. Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC. For analysis of the PWM signal I have found a library ``PinChangeInterrupt``: .. code-block:: #include  the wires from the receiver are connected to the pins 10 and 11 of my arduino nano: .. code-block:: const int pin_pwm_in_steering = 11; const int pin_pwm_in_throttle = 10; Let's create ``PwmListener`` class that listens to the interrupts on the given pin and returns the width of the last impulse. .. code-block:: class PwmListener { volatile unsigned int pwm_value_; // last pwm value volatile unsigned long prev_time_; // last time of the impulse public: const int pin; // pin to listen const int pin_as_pc_int; // pin index according to PC int public: PwmListener(int pin_, int default_value); // this function will be called on the interrupts void process(); unsigned long micros_since_last_signal() const; // return the latest pwm value unsigned int value() const; unsigned long prev_time_micros() const; }; Full code: .. code-block:: class PwmListener { volatile unsigned int pwm_value_; volatile unsigned long prev_time_; public: const int pin; const int pin_as_pc_int; public: PwmListener(int pin_, int default_value): pin(pin_), pwm_value_(default_value), prev_time_(0), pin_as_pc_int(digitalPinToPCINT(pin_)) {} void process() { uint8_t trigger = getPinChangeInterruptTrigger(pin_as_pc_int); if(trigger == RISING) prev_time_ = micros(); else if(trigger == FALLING) pwm_value_ = micros_since_last_signal(); else { // Wrong usage } } unsigned long micros_since_last_signal() const { return micros() - prev_time_; } unsigned int value() const { return pwm_value_; } unsigned long prev_time_micros() const { return prev_time_; } }; now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer. .. code-block:: PwmListener pwm_listener_steering (pin_pwm_in_steering, DEFAULT_PULSE_WIDTH); PwmListener pwm_listener_throttle (pin_pwm_in_throttle, DEFAULT_PULSE_WIDTH); void interrupt_steering() { pwm_listener_steering.process(); } void interrupt_throttle() { pwm_listener_throttle.process(); } later in the ``setup()`` function we have to set up the pins: .. code-block:: void setup() { // starting input pwm monitoring... pinMode(pwm_listener_steering.pin, INPUT); attachPinChangeInterrupt(pwm_listener_steering.pin_as_pc_int, \u0026interrupt_steering, CHANGE); pinMode(pwm_listener_throttle.pin, INPUT); attachPinChangeInterrupt(pwm_listener_throttle.pin_as_pc_int, \u0026interrupt_throttle, CHANGE); // setting up serial interface Serial.begin(115200); Serial.println(\"info: waiting for output pwm controller...\"); } on every loop we send the values to the host computer: .. code-block:: void loop() { const int steering = pwm_listener_steering.value(); const int throttle = pwm_listener_throttle.value(); // avoiding unnecessary duplication by filtering out small perturbations if ( abs(steering - old_steering)  10 || abs(throttle - old_throttle)  10 ) { sprintf(buf, \"in: %d %d\\n\", steering, throttle); Serial.print(buf); old_steering = steering; old_throttle = throttle; } } We have also enabled the serial interface to report the values to the host machine (connected via USB). On the host machine we run python listener: .. code-block:: import serial ports = ['/dev/ttyUSB0', '/dev/ttyUSB1'] def main(): for port in ports: print(\"connecting to port {}\".format(port)) try: with serial.Serial(port, 115200, timeout=0.01) as ser: print('connected') process(ser) return except serial.serialutil.SerialException as e: if e.errno == 2: continue raise raise FileNotFoundError(\"Unable to open ports {}\".format(ports)) def process(ser): while(True): line = ser.readline() # read a '\\n' terminated line if line != b'': print(line) if __name__ == '__main__': main() Analysis ======== I have got the following graph (interactive): .. raw:: html :file: /static/2019-12-pwm_visualization.html Let's consider steering series. It has three parts. 1. actual signal. The values are around 1380. The change couple of times. That corresponds to what I actually did. 2. Some strange signal values around 10000. I don't know what is it. 3. Some rare noise in between. I also don't know why it's there. We still can use that values with some filtering of the outliers. Another interesting thing is that steering and throttle channels have different default values. For steering it is 1380 and for throttle it is 1540. I could adjust that values a bit, but anyway it is around 1400 for one and 1500 for another. At the same time when I send PWM signal generated by Arduino I have to use 1400 as default for both to make it work properly. I don't know what causes that shift in my measurements. See also ======== 1. `gist with the data `_ 2. `robocar project `_ 3. `robocar main repository `_ 4. `wiki `_ for robocar ",
+  "wordCount" : "733",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -194,194 +191,219 @@ My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to
         <summary accesskey="c" title="(Alt + C)">
             <div class="details">Table of Contents</div>
         </summary>
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="Parsing PWM signals">Parsing PWM signals</a></li>
-                <li>
-                    <a href="#" aria-label="Analysis">Analysis</a></li>
-                <li>
-                    <a href="#" aria-label="See also">See also</a>
-                </li>
-            </ul>
+        <div class="inner">
         </div>
     </details>
 </div>
 
-  <div class="post-content"><div class="document">
+  <div class="post-content">
+Parsing PWM signals
+=======================
 
+For my `robocar project <robocar.html>`_ I needed to understand the mechanism of pulse width modulation of the remote control.
 
-<div class="section" id="parsing-pwm-signals">
-<h2>Parsing PWM signals</h2>
-<p>For my <a class="reference external" href="robocar.html">robocar project</a> I needed to understand the mechanism of pulse width modulation of the remote control.</p>
-<p>My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning.
-Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.</p>
-<p>For analysis of the PWM signal I have found a library <tt class="docutils literal">PinChangeInterrupt</tt>:</p>
-<pre class="code literal-block">
-#include &lt;PinChangeInterrupt.h&gt;
-</pre>
-<p>the wires from the receiver are connected to the pins 10 and 11 of my arduino nano:</p>
-<pre class="code literal-block">
-const int pin_pwm_in_steering = 11;
-const int pin_pwm_in_throttle = 10;
-</pre>
-<p>Let's create <tt class="docutils literal">PwmListener</tt> class that listens to the interrupts on the given pin and returns the width of the last impulse.</p>
-<pre class="code literal-block">
-class PwmListener
-{
-  volatile unsigned int pwm_value_;   // last pwm value
-  volatile unsigned long prev_time_; // last time of the impulse
-public:
-  const int pin; // pin to listen
-  const int pin_as_pc_int; // pin index according to PC int
+My intention was to use Arduino as a proxy between RC-receiver and servos/ESC to be able to record the used input for imitation learning.
+Human driver (me) sends steering commands via the remote control (transmitter). RC receiver converts radio signal into PWM signal. Arduino captures and maybe filters the signal, saves it somehow and sends it to the servos/ESC.
 
-public:
-  PwmListener(int pin_, int default_value);
+For analysis of the PWM signal I have found a library ``PinChangeInterrupt``: 
 
-  // this function will be called on the interrupts
-  void process();
+.. code-block:: 
 
-  unsigned long micros_since_last_signal() const;
+    #include <PinChangeInterrupt.h>
 
-  // return the latest pwm value
-  unsigned int value() const;
-  unsigned long prev_time_micros() const;
-};
-</pre>
-<p>Full code:</p>
-<pre class="code literal-block">
-class PwmListener
-{
-  volatile unsigned int pwm_value_;
-  volatile unsigned long prev_time_;
-public:
-  const int pin;
-  const int pin_as_pc_int;
+the wires from the receiver are connected to the pins 10 and 11 of my arduino nano:
 
-public:
-  PwmListener(int pin_, int default_value):
-    pin(pin_), pwm_value_(default_value), prev_time_(0), pin_as_pc_int(digitalPinToPCINT(pin_))
-  {}
+.. code-block:: 
 
-  void process() {
-    uint8_t trigger = getPinChangeInterruptTrigger(pin_as_pc_int);
-    if(trigger == RISING)
-      prev_time_ = micros();
-    else if(trigger == FALLING)
-      pwm_value_ = micros_since_last_signal();
-    else {
-      // Wrong usage
-    }
-  }
+   const int pin_pwm_in_steering = 11;
+   const int pin_pwm_in_throttle = 10;
 
-  unsigned long micros_since_last_signal() const {
-    return micros() - prev_time_;
-  }
+Let's create ``PwmListener`` class that listens to the interrupts on the given pin and returns the width of the last impulse.
 
-  unsigned int value() const {
-    return pwm_value_;
-  }
+.. code-block:: 
 
-  unsigned long prev_time_micros() const {
-    return prev_time_;
-  }
-};
-</pre>
-<p>now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer.</p>
-<pre class="code literal-block">
-PwmListener pwm_listener_steering (pin_pwm_in_steering, DEFAULT_PULSE_WIDTH);
-PwmListener pwm_listener_throttle (pin_pwm_in_throttle, DEFAULT_PULSE_WIDTH);
-void interrupt_steering() { pwm_listener_steering.process(); }
-void interrupt_throttle() { pwm_listener_throttle.process(); }
-</pre>
-<p>later in the <tt class="docutils literal">setup()</tt> function we have to set up the pins:</p>
-<pre class="code literal-block">
-void setup() {
-  // starting input pwm monitoring...
-  pinMode(pwm_listener_steering.pin, INPUT);
-  attachPinChangeInterrupt(pwm_listener_steering.pin_as_pc_int, &amp;interrupt_steering, CHANGE);
-  pinMode(pwm_listener_throttle.pin, INPUT);
-  attachPinChangeInterrupt(pwm_listener_throttle.pin_as_pc_int, &amp;interrupt_throttle, CHANGE);
-
- // setting up serial interface
-  Serial.begin(115200);
-  Serial.println(&quot;info: waiting for output pwm controller...&quot;);
-}
-</pre>
-<p>on every loop we send the values to the host computer:</p>
-<pre class="code literal-block">
-void loop() {
-  const int steering =   pwm_listener_steering.value();
-  const int throttle =   pwm_listener_throttle.value();
-  // avoiding unnecessary duplication by filtering out small perturbations
-  if (
-    abs(steering - old_steering) &gt; 10 ||
-    abs(throttle - old_throttle) &gt; 10
-    )
+  class PwmListener
   {
-    sprintf(buf, &quot;in: %d %d\n&quot;, steering, throttle);
-    Serial.print(buf);
-    old_steering = steering;
-    old_throttle = throttle;
-  }
-}
-</pre>
-<p>We have also enabled the serial interface to report the values to the host machine (connected via USB).</p>
-<p>On the host machine we run python listener:</p>
-<pre class="code literal-block">
-import serial
+    volatile unsigned int pwm_value_;   // last pwm value
+    volatile unsigned long prev_time_; // last time of the impulse
+  public:
+    const int pin; // pin to listen
+    const int pin_as_pc_int; // pin index according to PC int 
 
-ports = ['/dev/ttyUSB0', '/dev/ttyUSB1']
+  public:
+    PwmListener(int pin_, int default_value);
+  
+    // this function will be called on the interrupts
+    void process(); 
+    
+    unsigned long micros_since_last_signal() const;  
 
-
-def main():
-    for port in ports:
-        print(&quot;connecting to port {}&quot;.format(port))
-        try:
-            with serial.Serial(port, 115200, timeout=0.01) as ser:
-                print('connected')
-                process(ser)
-                return
-        except serial.serialutil.SerialException as e:
-            if e.errno == 2:
-                continue
-            raise
-    raise FileNotFoundError(&quot;Unable to open ports {}&quot;.format(ports))
+    // return the latest pwm value
+    unsigned int value() const; 
+    unsigned long prev_time_micros() const;
+  };
 
 
-def process(ser):
-    while(True):
-        line = ser.readline()  # read a '\n' terminated line
-        if line != b'':
-            print(line)
+Full code:
+
+.. code-block:: 
+
+    class PwmListener
+    {
+      volatile unsigned int pwm_value_;
+      volatile unsigned long prev_time_;
+    public:
+      const int pin;
+      const int pin_as_pc_int;
+    
+    public:
+      PwmListener(int pin_, int default_value):
+        pin(pin_), pwm_value_(default_value), prev_time_(0), pin_as_pc_int(digitalPinToPCINT(pin_))
+      {}
+    
+      void process() {
+        uint8_t trigger = getPinChangeInterruptTrigger(pin_as_pc_int);
+        if(trigger == RISING)
+          prev_time_ = micros();
+        else if(trigger == FALLING)
+          pwm_value_ = micros_since_last_signal();
+        else {
+          // Wrong usage
+        }
+      }
+    
+      unsigned long micros_since_last_signal() const {
+        return micros() - prev_time_; 
+      }
+    
+      unsigned int value() const {
+        return pwm_value_;
+      }
+    
+      unsigned long prev_time_micros() const {
+        return prev_time_;
+      }
+    };
 
 
-if __name__ == '__main__':
-    main()
-</pre>
-</div>
-<div class="section" id="analysis">
-<h2>Analysis</h2>
-<p>I have got the following graph (interactive):</p>
-:file: /static/2019-12-pwm_visualization.html<p>Let's consider steering series. It has three parts.</p>
-<ol class="arabic simple">
-<li>actual signal. The values are around 1380. The change couple of times. That corresponds to what I actually did.</li>
-<li>Some strange signal values around 10000. I don't know what is it.</li>
-<li>Some rare noise in between. I also don't know why it's there.</li>
-</ol>
-<p>We still can use that values with some filtering of the outliers.</p>
-<p>Another interesting thing is that steering and throttle channels have different default values. For steering it is 1380 and for throttle it is 1540. I could adjust that values a bit, but anyway it is around 1400 for one and 1500 for another.</p>
-<p>At the same time when I send PWM signal generated by Arduino I have to use 1400 as default for both to make it work properly. I don't know what causes that shift in my measurements.</p>
-</div>
-<div class="section" id="see-also">
-<h2>See also</h2>
-<ol class="arabic simple">
-<li><a class="reference external" href="https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729">gist with the data</a></li>
-<li><a class="reference external" href="robocar.html">robocar project</a></li>
-<li><a class="reference external" href="https://github.com/serge-m/sergem_robocar">robocar main repository</a></li>
-<li><a class="reference external" href="https://github.com/serge-m/sergem_robocar/wiki">wiki</a> for robocar</li>
-</ol>
-</div>
-</div>
+now we create two listeners and define dummy caller functions for them. The dummy functions are needed to pass them by pointer.
+
+.. code-block:: 
+
+    PwmListener pwm_listener_steering (pin_pwm_in_steering, DEFAULT_PULSE_WIDTH);
+    PwmListener pwm_listener_throttle (pin_pwm_in_throttle, DEFAULT_PULSE_WIDTH);
+    void interrupt_steering() { pwm_listener_steering.process(); }
+    void interrupt_throttle() { pwm_listener_throttle.process(); }
+    
+later in the ``setup()`` function we have to set up the pins:
+
+.. code-block:: 
+
+    void setup() {
+      // starting input pwm monitoring...
+      pinMode(pwm_listener_steering.pin, INPUT);
+      attachPinChangeInterrupt(pwm_listener_steering.pin_as_pc_int, &interrupt_steering, CHANGE);
+      pinMode(pwm_listener_throttle.pin, INPUT);
+      attachPinChangeInterrupt(pwm_listener_throttle.pin_as_pc_int, &interrupt_throttle, CHANGE);
+    
+     // setting up serial interface
+      Serial.begin(115200);
+      Serial.println("info: waiting for output pwm controller..."); 
+    }
+
+
+on every loop we send the values to the host computer:
+
+.. code-block:: 
+    
+    void loop() { 
+      const int steering =   pwm_listener_steering.value();
+      const int throttle =   pwm_listener_throttle.value();
+      // avoiding unnecessary duplication by filtering out small perturbations
+      if (
+        abs(steering - old_steering) > 10 || 
+        abs(throttle - old_throttle) > 10 
+        ) 
+      { 
+        sprintf(buf, "in: %d %d\n", steering, throttle);
+        Serial.print(buf);
+        old_steering = steering;
+        old_throttle = throttle;
+      }
+    }
+
+
+We have also enabled the serial interface to report the values to the host machine (connected via USB).
+
+On the host machine we run python listener:
+
+.. code-block::
+
+    import serial
+    
+    ports = ['/dev/ttyUSB0', '/dev/ttyUSB1']
+    
+    
+    def main():
+        for port in ports:
+            print("connecting to port {}".format(port))
+            try:
+                with serial.Serial(port, 115200, timeout=0.01) as ser:
+                    print('connected')
+                    process(ser)
+                    return
+            except serial.serialutil.SerialException as e:
+                if e.errno == 2:
+                    continue
+                raise
+        raise FileNotFoundError("Unable to open ports {}".format(ports))
+    
+    
+    def process(ser):
+        while(True):
+            line = ser.readline()  # read a '\n' terminated line
+            if line != b'':
+                print(line)
+    
+    
+    if __name__ == '__main__':
+        main()
+
+
+Analysis
+========
+
+I have got the following graph (interactive):
+
+.. raw:: html
+
+    :file: /static/2019-12-pwm_visualization.html
+
+Let's consider steering series. It has three parts.
+
+1. actual signal. The values are around 1380. The change couple of times. That corresponds to what I actually did.
+
+2. Some strange signal values around 10000. I don't know what is it.
+
+3. Some rare noise in between. I also don't know why it's there.
+
+We still can use that values with some filtering of the outliers.
+
+Another interesting thing is that steering and throttle channels have different default values. For steering it is 1380 and for throttle it is 1540. I could adjust that values a bit, but anyway it is around 1400 for one and 1500 for another.
+
+At the same time when I send PWM signal generated by Arduino I have to use 1400 as default for both to make it work properly. I don't know what causes that shift in my measurements.
+
+See also 
+========
+
+1. `gist with the data <https://gist.github.com/serge-m/5f07fd676b52c4741f2bea275eced729>`_
+
+2. `robocar project <robocar.html>`_
+
+3. `robocar main repository <https://github.com/serge-m/sergem_robocar>`_
+
+4. `wiki <https://github.com/serge-m/sergem_robocar/wiki>`_ for robocar
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
@@ -451,7 +473,7 @@ if __name__ == '__main__':
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

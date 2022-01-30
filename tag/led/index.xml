@@ -15,11 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/</guid>
-      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller.
-PCA9685 is connected to Arduino using I2C interface that requires only two data pins.
-Arduino connects to PCA9685 using Adafruit_PWMServoDriver library:
-#include &amp;lt;Adafruit_PWMServoDriver.h&amp;gt; Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();  Initialization in setup():
-pwm.begin(); pwm.setPWMFreq(1600); // This is the maximum PWM frequency  Then for each loop we will blink with 2 LEDs.</description>
+      <description>Arduino (ATMega328p) boards can be used to control multiple LEDs. To simplify the management of the pulse width modulation and use only a couple of arduino&#39;s pins for many LEDs I used PCA9685 controller. PCA9685 is connected to Arduino using I2C interface that requires only two data pins. .. image:: /media/2019-12-blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/sketch_bb.png :width: 600px :alt: breadboard Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685 .. image:: /media/2019-12-blinking-multiple-leds-with-arduino-atmega328p-and-pca9685/sketch_schem.png :width: 600px :alt: schema Blinking multiple LEDs with Arduino (ATMega328p) and PCA9685 .</description>
     </item>
     
   </channel>

@@ -11,7 +11,7 @@
 Here I want to reproduce some of the techniques in order to understand what is the effect they bring.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/effect-of-techniques-from-fastai/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@ Here I want to reproduce some of the techniques in order to understand what is t
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -245,15 +245,15 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 <p>Installing dependencies:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">pip install pytorch-nn-tools<span class="o">==</span>0.3.3 <span class="nv">torch_lr_finder</span><span class="o">==</span>0.2.1
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">pip install pytorch-nn-tools<span class="o">==</span>0.3.3 <span class="nv">torch_lr_finder</span><span class="o">==</span>0.2.1
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -286,19 +286,19 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn.parallel</span>
 <span class="kn">import</span> <span class="nn">torch.utils.data</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
-<span class="kn">import</span> <span class="nn">torchvision.datasets</span> <span class="kn">as</span> <span class="nn">datasets</span>
-<span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="kn">as</span> <span class="nn">models</span>
-<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="kn">as</span> <span class="nn">transforms</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">torchvision.datasets</span> <span class="k">as</span> <span class="nn">datasets</span>
+<span class="kn">import</span> <span class="nn">torchvision.models</span> <span class="k">as</span> <span class="nn">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">transforms</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
@@ -322,7 +322,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </div><p>Functions for generating datasets</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -352,7 +352,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">_train_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">_train_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">normalize</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span>
         <span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span>
         <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">],</span>
@@ -385,7 +385,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </div><p>Settings and data loaders:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -407,7 +407,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">batch_size_train</span> <span class="o">=</span> <span class="mi">128</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">batch_size_train</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">batch_size_val</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="n">device</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span>
 
@@ -417,14 +417,14 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 <span class="n">train_dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
         <span class="n">dataset</span><span class="o">=</span><span class="n">_train_dataset</span><span class="p">(</span><span class="n">data_path</span><span class="p">),</span>
         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size_train</span><span class="p">,</span>
-        <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
         <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
     <span class="p">)</span>
     
 <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
         <span class="n">dataset</span><span class="o">=</span><span class="n">_val_dataset</span><span class="p">(</span><span class="n">data_path</span><span class="p">),</span>
         <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size_val</span><span class="p">,</span>
-        <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">num_workers</span><span class="o">=</span><span class="n">num_workers</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></td></tr></table>
@@ -432,7 +432,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </div><p>Accuracy function from pytorch-lightning:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -449,19 +449,19 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">topk</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">topk</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)):</span>
     <span class="s2">&#34;&#34;&#34;Computes the accuracy over the k top predictions for the specified values of k&#34;&#34;&#34;</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
         <span class="n">maxk</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">topk</span><span class="p">)</span>
         <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-        <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
         <span class="n">correct</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span>
 
         <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">topk</span><span class="p">:</span>
-            <span class="n">correct_k</span> <span class="o">=</span> <span class="n">correct</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+            <span class="n">correct_k</span> <span class="o">=</span> <span class="n">correct</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct_k</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">res</span>
 </code></pre></td></tr></table>
@@ -469,7 +469,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </div><p>Some helper functions:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -502,22 +502,22 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">to_device</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">to_device</span><span class="p">(</span><span class="n">batch</span><span class="p">,</span> <span class="n">device</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">fastprogress.fastprogress</span> <span class="kn">import</span> <span class="n">master_bar</span><span class="p">,</span> <span class="n">progress_bar</span>
 
 <span class="k">class</span> <span class="nc">PBars</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_main</span> <span class="o">=</span> <span class="bp">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_second</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_main</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_second</span> <span class="o">=</span> <span class="kc">None</span>
         
     <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_main</span> <span class="o">=</span> <span class="n">master_bar</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main</span>
     
     <span class="k">def</span> <span class="nf">secondary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&#34;Cannot instantiate secondary progress bar. The main progress bar is not set.&#34;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_second</span> <span class="o">=</span> <span class="n">progress_bar</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_main</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_second</span>
@@ -531,7 +531,7 @@ to make results and insights applicable for real datasets like Imagenet.</p>
 
 <span class="k">class</span> <span class="nc">DummyLogger</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 </code></pre></td></tr></table>
 </div>
@@ -540,7 +540,7 @@ That is the class that does IO on behalf of a trainer.
 It can 1) instantiate metric logger. 2) load last checkpoint and 3) save checkpoints</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -569,7 +569,7 @@ It can 1) instantiate metric logger. 2) load last checkpoint and 3) save checkpo
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TrainerIO</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">TrainerIO</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">experiment_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">checkpoint_condition</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">MetricType</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">log_dir</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">experiment_name</span> <span class="o">=</span> <span class="n">experiment_name</span>
@@ -579,14 +579,14 @@ It can 1) instantiate metric logger. 2) load last checkpoint and 3) save checkpo
         <span class="bp">self</span><span class="o">.</span><span class="n">checkpoint_condition</span> <span class="o">=</span> <span class="n">checkpoint_condition</span>
     
     <span class="k">def</span> <span class="nf">create_metric_logger</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">path_logs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path_experiment</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{self.experiment_name}_{now_as_str()}&#34;</span><span class="p">)</span>
+        <span class="n">path_logs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">path_experiment</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">experiment_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">now_as_str</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
         <span class="n">metric_logger</span> <span class="o">=</span> <span class="n">MetricLogger</span><span class="p">(</span><span class="n">path_logs</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">metric_logger</span>
     
     <span class="k">def</span> <span class="nf">load_last</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_epoch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end_epoch</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">checkpoint_saver</span><span class="o">.</span><span class="n">find_last</span><span class="p">(</span><span class="n">start_epoch</span><span class="p">,</span> <span class="n">end_epoch</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">last</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;found pretrained results for epoch {last}. Loading...&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">last</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;found pretrained results for epoch </span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s2">. Loading...&#34;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">checkpoint_saver</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">last</span> <span class="o">+</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
@@ -615,7 +615,7 @@ in the future.</p>
 <p>The trainer has main function <code>fit(...)</code> that calls <code>train_epoch(...)</code> and <code>validate_epoch(...)</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -706,9 +706,9 @@ in the future.</p>
 </span><span class="lnt">89
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trainer</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trainer</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="p">:</span> <span class="n">TrainerIO</span><span class="p">,</span>
-                <span class="n">continue_training</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="bp">False</span><span class="p">):</span>
+                <span class="n">continue_training</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">continue_training</span> <span class="o">=</span> <span class="n">continue_training</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trainer_io</span> <span class="o">=</span> <span class="n">trainer_io</span>
@@ -742,13 +742,13 @@ in the future.</p>
                 <span class="n">pbars</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pbars</span><span class="p">,</span>
             <span class="p">)</span>
             
-            <span class="n">aggregated</span> <span class="o">=</span> <span class="n">map_dict</span><span class="p">(</span><span class="n">metric_aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(),</span> <span class="n">key_fn</span><span class="o">=</span><span class="k">lambda</span> <span class="n">key</span><span class="p">:</span> <span class="n">f</span><span class="s2">&#34;avg.{key}&#34;</span><span class="p">)</span>
+            <span class="n">aggregated</span> <span class="o">=</span> <span class="n">map_dict</span><span class="p">(</span><span class="n">metric_aggregator</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(),</span> <span class="n">key_fn</span><span class="o">=</span><span class="k">lambda</span> <span class="n">key</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&#34;avg.</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
             <span class="n">metric_logger</span><span class="p">({</span>
                 <span class="o">**</span><span class="n">aggregated</span><span class="p">,</span> 
-                <span class="o">**</span><span class="p">{</span><span class="n">f</span><span class="s2">&#34;lr_{i}&#34;</span><span class="p">:</span> <span class="n">lr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())},</span>
+                <span class="o">**</span><span class="p">{</span><span class="sa">f</span><span class="s2">&#34;lr_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">lr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())},</span>
                 <span class="n">Marker</span><span class="o">.</span><span class="n">EPOCH</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span>
             <span class="p">})</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">pbars</span><span class="o">.</span><span class="n">main_comment</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{aggregated}&#34;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pbars</span><span class="o">.</span><span class="n">main_comment</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">aggregated</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
                         
             <span class="bp">self</span><span class="o">.</span><span class="n">trainer_io</span><span class="o">.</span><span class="n">save_checkpoint</span><span class="p">(</span><span class="n">aggregated</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
             
@@ -757,7 +757,7 @@ in the future.</p>
         <span class="n">metric_logger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             
     <span class="k">def</span> <span class="nf">train_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">,</span> <span class="n">progr</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span> <span class="n">metric_proc</span><span class="p">,</span> <span class="n">pbars</span><span class="p">,</span> <span class="n">report_step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                   <span class="n">tb_writer</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+                   <span class="n">tb_writer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
                 
         <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">progr</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">pbars</span><span class="o">.</span><span class="n">secondary</span><span class="p">(</span><span class="n">data_loader</span><span class="p">))):</span>
@@ -776,7 +776,7 @@ in the future.</p>
 
                 <span class="n">metric_proc</span><span class="p">({</span>
                     <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="n">loss</span><span class="p">,</span> <span class="s1">&#39;acc1&#39;</span><span class="p">:</span> <span class="n">acc1</span><span class="p">,</span> <span class="s1">&#39;acc5&#39;</span><span class="p">:</span> <span class="n">acc5</span><span class="p">,</span> <span class="n">Marker</span><span class="o">.</span><span class="n">ITERATION</span><span class="p">:</span> <span class="n">progr</span><span class="o">.</span><span class="n">cnt_total_iter</span><span class="p">,</span>
-                    <span class="o">**</span><span class="p">{</span><span class="n">f</span><span class="s2">&#34;lr_{i}&#34;</span><span class="p">:</span> <span class="n">lr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())},</span>
+                    <span class="o">**</span><span class="p">{</span><span class="sa">f</span><span class="s2">&#34;lr_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">:</span> <span class="n">lr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scheduler</span><span class="o">.</span><span class="n">get_last_lr</span><span class="p">())},</span>
                 <span class="p">})</span>
                 
 <span class="c1">#             scheduler.step()  # for batch based scheduler</span>
@@ -800,7 +800,7 @@ in the future.</p>
 </div><p>Finally the main part</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -836,10 +836,10 @@ in the future.</p>
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">recommended_lr</span> <span class="o">=</span> <span class="mf">0.1</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">recommended_lr</span> <span class="o">=</span> <span class="mf">0.1</span>
 <span class="n">num_epochs</span> <span class="o">=</span> <span class="mi">40</span>
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>        
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>        
 
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span>
     <span class="p">{</span>
@@ -857,14 +857,14 @@ in the future.</p>
 <span class="p">)</span>
 
 <span class="n">trainer_io</span> <span class="o">=</span> <span class="n">TrainerIO</span><span class="p">(</span>
-    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="n">f</span><span class="s2">&#34;experiment1_onecycle_lr{recommended_lr}_adamw&#34;</span><span class="p">,</span> 
+    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;experiment1_onecycle_lr</span><span class="si">{</span><span class="n">recommended_lr</span><span class="si">}</span><span class="s2">_adamw&#34;</span><span class="p">,</span> 
     <span class="n">checkpoint_condition</span><span class="o">=</span><span class="n">HistoryCondition</span><span class="p">(</span>
         <span class="s1">&#39;avg.val.acc1&#39;</span><span class="p">,</span> 
         <span class="k">lambda</span> <span class="n">hist</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">hist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">hist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span>
@@ -897,7 +897,7 @@ use their trainers, optimizers etc.</p>
 up until lr=10.:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -917,7 +917,7 @@ up until lr=10.:</p>
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>        
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>        
 
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">([</span>
     <span class="p">{</span>
@@ -932,8 +932,8 @@ up until lr=10.:</p>
 
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 <span class="n">lr_finder</span> <span class="o">=</span> <span class="n">LRFinder</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
-<span class="n">lr_finder</span><span class="o">.</span><span class="n">range_test</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_loader</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">end_lr</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">step_mode</span><span class="o">=</span><span class="s2">&#34;exp&#34;</span><span class="p">)</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">recommended_lr</span> <span class="o">=</span> <span class="n">lr_finder</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">log_lr</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">lr_finder</span><span class="o">.</span><span class="n">range_test</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_lr</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">num_iter</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">step_mode</span><span class="o">=</span><span class="s2">&#34;exp&#34;</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">recommended_lr</span> <span class="o">=</span> <span class="n">lr_finder</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">log_lr</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">lr_finder</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
@@ -942,7 +942,7 @@ up until lr=10.:</p>
 <p>My recommended LR is about 0.02. I can launch with the same optimizer, lr schedule, but with the new base LR:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -963,8 +963,8 @@ up until lr=10.:</p>
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">recommended_lr</span> <span class="o">=</span> <span class="mf">0.02</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>        
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">recommended_lr</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>        
 
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">([</span>
     <span class="p">{</span>
@@ -987,7 +987,7 @@ up until lr=10.:</p>
 </div><p>Here also we have to patch our trainer. Scheduler step now happens for each training batch, not per epoch.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1017,7 +1017,7 @@ up until lr=10.:</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trainer</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Trainer</span><span class="p">:</span>
     <span class="c1"># .....</span>
         
     <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span> <span class="n">start_epoch</span><span class="p">,</span> <span class="n">end_epoch</span><span class="p">):</span>
@@ -1033,7 +1033,7 @@ up until lr=10.:</p>
         <span class="n">metric_logger</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
             
     <span class="k">def</span> <span class="nf">train_epoch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_loader</span><span class="p">,</span> <span class="n">progr</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span> <span class="n">metric_proc</span><span class="p">,</span> <span class="n">pbars</span><span class="p">,</span> <span class="n">report_step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                   <span class="n">tb_writer</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+                   <span class="n">tb_writer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
                 
         <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">progr</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">pbars</span><span class="o">.</span><span class="n">secondary</span><span class="p">(</span><span class="n">data_loader</span><span class="p">))):</span>
@@ -1050,7 +1050,7 @@ up until lr=10.:</p>
 </div><p>Let&rsquo;s run:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1067,15 +1067,15 @@ up until lr=10.:</p>
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">trainer_io</span> <span class="o">=</span> <span class="n">TrainerIO</span><span class="p">(</span>
-    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="n">f</span><span class="s2">&#34;experiment_base_lr{recommended_lr}&#34;</span><span class="p">,</span> 
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">trainer_io</span> <span class="o">=</span> <span class="n">TrainerIO</span><span class="p">(</span>
+    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;experiment_base_lr</span><span class="si">{</span><span class="n">recommended_lr</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span> 
     <span class="n">checkpoint_condition</span><span class="o">=</span><span class="n">HistoryCondition</span><span class="p">(</span>
         <span class="s1">&#39;avg.val.acc1&#39;</span><span class="p">,</span> 
         <span class="k">lambda</span> <span class="n">hist</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">hist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">hist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span>
@@ -1109,7 +1109,7 @@ That is positive.</p>
 in fastai as a good practice.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1145,7 +1145,7 @@ in fastai as a good practice.</p>
 </span><span class="lnt">34
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>        
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>        
 
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">AdamW</span><span class="p">([</span>
     <span class="p">{</span>
@@ -1165,14 +1165,14 @@ in fastai as a good practice.</p>
 <span class="p">)</span>
 
 <span class="n">trainer_io</span> <span class="o">=</span> <span class="n">TrainerIO</span><span class="p">(</span>
-    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="n">f</span><span class="s2">&#34;experiment1_onecycle_lr{recommended_lr}_adamw&#34;</span><span class="p">,</span> 
+    <span class="n">log_dir</span><span class="o">=</span><span class="s2">&#34;./logs/&#34;</span><span class="p">,</span> <span class="n">experiment_name</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;experiment1_onecycle_lr</span><span class="si">{</span><span class="n">recommended_lr</span><span class="si">}</span><span class="s2">_adamw&#34;</span><span class="p">,</span> 
     <span class="n">checkpoint_condition</span><span class="o">=</span><span class="n">HistoryCondition</span><span class="p">(</span>
         <span class="s1">&#39;avg.val.acc1&#39;</span><span class="p">,</span> 
         <span class="k">lambda</span> <span class="n">hist</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">hist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">hist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="p">(</span><span class="n">hist</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">trainer_io</span><span class="o">=</span><span class="n">trainer_io</span><span class="p">,</span> <span class="n">continue_training</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">trainer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">scheduler</span><span class="p">,</span>
@@ -1272,7 +1272,7 @@ The numbers are still pretty far from the values on the leaderboard, but we didn
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

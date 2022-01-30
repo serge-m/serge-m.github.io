@@ -16,10 +16,7 @@
       <pubDate>Sun, 23 Aug 2020 19:00:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/</guid>
-      <description>3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
-Learning
-Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
-Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information</description>
+      <description>3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision.</description>
     </item>
     
     <item>

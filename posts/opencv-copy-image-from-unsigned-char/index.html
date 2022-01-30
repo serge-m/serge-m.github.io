@@ -11,7 +11,7 @@
 #include &lt;opencv/cv.h&gt; #include &lt;opencv/highgui.h&gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;(IplImage)src); cvSaveImage(&quot;src1.bmp&quot;, writeImage); cvReleaseImage( &amp;writeImage ); writeImage=cvCloneImage(&amp;(IplImage)small); cvSaveImage(&quot;little.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -201,7 +201,7 @@ if (!doNotTrack) {
 
   <div class="post-content"><p>How to copy image from unsigned char buffer, resize and save to file.
 If you use single-channel image.</p>
-<pre><code>#include &lt;opencv/cv.h&gt;
+<pre tabindex="0"><code>#include &lt;opencv/cv.h&gt;
 #include &lt;opencv/highgui.h&gt;
 
 int coeff = 4;
@@ -292,7 +292,7 @@ cv::imwrite( &quot;small.bmp&quot;, small );*/
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

@@ -13,7 +13,7 @@ CPU monitoring on the main panel Default Ubuntu desktop seems to become finally 
   Go to Ubuntu Software and then search for system monitor extension.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/ubuntu-linux-settings/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -21,7 +21,7 @@ CPU monitoring on the main panel Default Ubuntu desktop seems to become finally 
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -260,7 +260,7 @@ Here is how to install a small widget for a top panel in the default GNOME deskt
 </ol>
 <h2 id="desktop-workspaces-and-gnome-extensions-settings-in-ubuntu-1804">Desktop, workspaces and gnome extensions settings in Ubuntu 18.04<a hidden class="anchor" aria-hidden="true" href="#desktop-workspaces-and-gnome-extensions-settings-in-ubuntu-1804">#</a></h2>
 <h3 id="only-show-applications-of-current-workspace-in-launcher">only show applications of current workspace in launcher:<a hidden class="anchor" aria-hidden="true" href="#only-show-applications-of-current-workspace-in-launcher">#</a></h3>
-<pre><code>sudo apt install dconf-editor
+<pre tabindex="0"><code>sudo apt install dconf-editor
 </code></pre><p>Navigate to org &gt; gnome &gt; shell &gt; extensions &gt; dash-to-dock and check isolate-workspaces</p>
 <h3 id="show-workspace-indicator-in-the-main-pannel">Show workspace indicator in the main pannel<a hidden class="anchor" aria-hidden="true" href="#show-workspace-indicator-in-the-main-pannel">#</a></h3>
 <p>Enable &ldquo;Workspace Indicator&rdquo; extension.</p>
@@ -278,12 +278,12 @@ To align windows to the corners I use <a href="https://extensions.gnome.org/exte
 <h2 id="autocomplete-in-shell">Autocomplete in shell<a hidden class="anchor" aria-hidden="true" href="#autocomplete-in-shell">#</a></h2>
 <p>See <a href="/autocomplete-from-history-in-terminal.html">autocomplete from history in terminal</a></p>
 <h2 id="set-nemo-as-default-file-manager">Set <code>nemo</code> as default file manager<a hidden class="anchor" aria-hidden="true" href="#set-nemo-as-default-file-manager">#</a></h2>
-<pre><code>xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+<pre tabindex="0"><code>xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 </code></pre><p>now if you run <code>xdg-open ./</code> or press <code>Super+E</code> nemo starts.</p>
 <p><a href="http://www.fandigital.com/2013/01/set-nemo-default-file-manager-ubuntu.html">source</a></p>
 <h2 id="auto-completion-for-fabric">Auto completion for fabric<a hidden class="anchor" aria-hidden="true" href="#auto-completion-for-fabric">#</a></h2>
 <p>Add</p>
-<pre><code>have fab &amp;&amp; {
+<pre tabindex="0"><code>have fab &amp;&amp; {
 _fab_completion()
 {
     COMPREPLY=() 
@@ -298,13 +298,13 @@ complete -F _fab_completion fab
 <p><a href="http://evans.io/legacy/posts/bash-tab-completion-fabric-ubuntu/">Source</a></p>
 <h2 id="default-permissions-for-directories">Default permissions for directories<a hidden class="anchor" aria-hidden="true" href="#default-permissions-for-directories">#</a></h2>
 <p>By default when you call <code>mkdir abc</code> the following permissions are created</p>
-<pre><code>u=rwx,g=rx,o=rx
+<pre tabindex="0"><code>u=rwx,g=rx,o=rx
 </code></pre><p>That means that other users, also other groups, will be able to read and execute your files. That is a legacy setting. you can change it by replacing</p>
-<pre><code>UMASK       002 
+<pre tabindex="0"><code>UMASK       002 
 </code></pre><p>with</p>
-<pre><code>UMASK       077
+<pre tabindex="0"><code>UMASK       077
 </code></pre><p>in file <code>/etc/login.defs</code>. Here is the quote from this file:</p>
-<pre><code># UMASK is the default umask value for pam_umask and is used by
+<pre tabindex="0"><code># UMASK is the default umask value for pam_umask and is used by
 # useradd and newusers to set the mode of the new home directories.
 # 022 is the &quot;historical&quot; value in Debian for UMASK
 # 027, or even 077, could be considered better for privacy
@@ -423,7 +423,7 @@ vm.watermark_scale_factor=200</p>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

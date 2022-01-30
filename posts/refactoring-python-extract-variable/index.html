@@ -12,7 +12,7 @@ import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#3
 class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/refactoring-python-extract-variable/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -20,7 +20,7 @@ class OystersGood: def __init__(self, month): month = month month_lowered = mont
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -204,7 +204,7 @@ class OystersGood: def __init__(self, month): month = month month_lowered = mont
 
   <div class="post-content"><p><a href="https://www.youtube.com/watch?v=D_6ybDcU5gc">Pycon2016 talk by Brett Slatkin</a>
 <a href="https://github.com/bslatkin/pycon2016/blob/master/Extract%20Variable.ipynb">Example 1: Extract variable</a></p>
-<pre><code>import random
+<pre tabindex="0"><code>import random
 month = random.choice(MONTHS)
 
 if (month.lower().endswith('r') or
@@ -215,7 +215,7 @@ elif 8 &gt; MONTHS.index(month) &gt; 4:
 else:
     print('%s is a good time to eat asparagus' % month)
 </code></pre><p>Becomes:</p>
-<pre><code>class OystersGood:
+<pre tabindex="0"><code>class OystersGood:
     def __init__(self, month):
         month = month
         month_lowered = month.lower()
@@ -234,7 +234,7 @@ class TomatoesGood:
 
     def __bool__(self):  # Equivalent to __nonzero__ in Python 2
         return self._result
-</code></pre><pre><code>time_for_oysters = OystersGood(month)
+</code></pre><pre tabindex="0"><code>time_for_oysters = OystersGood(month)
 time_for_tomatoes = TomatoesGood(month)
 
 if time_for_oysters:
@@ -245,7 +245,7 @@ else:
     print('%s is a good time to eat asparagus' % month)
 </code></pre><p>November is a good time to eat oysters</p>
 <p>Now the helper function is easy to test and introspect.</p>
-<pre><code>test = OystersGood('November')
+<pre tabindex="0"><code>test = OystersGood('November')
 assert test
 assert test.ends_in_r
 assert not test.ends_in_ary
@@ -325,7 +325,7 @@ assert not test.ends_in_ary
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

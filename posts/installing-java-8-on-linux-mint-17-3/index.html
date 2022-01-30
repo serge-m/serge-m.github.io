@@ -16,7 +16,7 @@ sudo update-alternatives --config javac sudo update-alternatives --config javaws
 gksudo gedit /etc/environment Don&rsquo;t forget to rerun terminal or reboot.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -24,7 +24,7 @@ gksudo gedit /etc/environment Don&rsquo;t forget to rerun terminal or reboot.">
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -217,17 +217,17 @@ gksudo gedit /etc/environment Don&rsquo;t forget to rerun terminal or reboot."/>
   <div class="post-content"><p>Download JDK for Java 8 from Oracle&rsquo;s web-site.
 Unpack archive to let&rsquo;s say <code>/usr/lib/jvm/jdk1.8.0/</code></p>
 <p>Update java alternatives:</p>
-<pre><code>sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1
+<pre tabindex="0"><code>sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/java&quot; 1
 sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/javac&quot; 1
 sudo update-alternatives --install &quot;/usr/bin/javaws&quot; &quot;javaws&quot; &quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&quot; 1
 </code></pre><p>Select alternatives:</p>
-<pre><code>sudo update-alternatives --config java
+<pre tabindex="0"><code>sudo update-alternatives --config java
 </code></pre><p>Select an option corresponding to new path.</p>
 <p>Do the same for</p>
-<pre><code>sudo update-alternatives --config javac
+<pre tabindex="0"><code>sudo update-alternatives --config javac
 sudo update-alternatives --config javaws
 </code></pre><p>Update JAVA_HOME using</p>
-<pre><code>gksudo gedit /etc/environment
+<pre tabindex="0"><code>gksudo gedit /etc/environment
 </code></pre><p>Don&rsquo;t forget to rerun terminal or reboot.</p>
 <p>Based on <a href="http://askubuntu.com/questions/56104/how-can-i-install-sun-oracles-proprietary-java-jdk-6-7-8-or-jre">this thread</a></p>
 
@@ -299,7 +299,7 @@ sudo update-alternatives --config javaws
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

@@ -14,7 +14,7 @@ Series of articles about Airflow in production:
 One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/airflow/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -22,7 +22,7 @@ One cannot specify datetime.now() as start_date. Instead one has to provide date
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -231,30 +231,30 @@ One cannot specify datetime.now() as start_date. Instead one has to provide date
 You can do something like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">import</span> <span class="nn">pytz</span>
 
 <span class="n">start_date_local</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s1">&#39;Europe/Minsk&#39;</span><span class="p">))</span>   <span class="c1"># your time, date and time zone go here </span>
-<span class="n">start_date_for_airflow</span> <span class="o">=</span> <span class="n">start_date_local</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>  <span class="c1"># we convert to UTC and remove timezone</span>
+<span class="n">start_date_for_airflow</span> <span class="o">=</span> <span class="n">start_date_local</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># we convert to UTC and remove timezone</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="running-with-localexecutor-and-postgres-from-docker">Running with LocalExecutor and Postgres from docker<a hidden class="anchor" aria-hidden="true" href="#running-with-localexecutor-and-postgres-from-docker">#</a></h2>
 <p>We will run postgres in docker:</p>
-<pre><code>docker run -it -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres
+<pre tabindex="0"><code>docker run -it -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d postgres
 </code></pre><p>Now we can specify in <code>airflow.cfg</code>:</p>
-<pre><code>sql_alchemy_conn = postgresql://postgres:postgres@localhost:5432/postgres
+<pre tabindex="0"><code>sql_alchemy_conn = postgresql://postgres:postgres@localhost:5432/postgres
 </code></pre><p>and</p>
-<pre><code>executor = LocalExecutor
+<pre tabindex="0"><code>executor = LocalExecutor
 
 </code></pre><p>Then run</p>
-<pre><code>airflow initdb
+<pre tabindex="0"><code>airflow initdb
 airflow scheduler
 </code></pre><h2 id="how-to-specify-aws-region-for-emrcreatejobflowoperator">How to specify AWS region for EmrCreateJobFlowOperator<a hidden class="anchor" aria-hidden="true" href="#how-to-specify-aws-region-for-emrcreatejobflowoperator">#</a></h2>
 <p>There is no parameter in <code>EmrCreateJobFlowOperator</code> to specify<br>
@@ -264,10 +264,10 @@ AWS region where the cluster has to be deployed.</p>
 That means there is no way to set this parameter in code.</p>
 <p>One has to configure it using airflow configurations.
 Here we create connection <code>aws_my</code> with AWS region <code>eu-west-1</code>:</p>
-<pre><code>airflow connections -a --conn_id 'aws_my' --conn_uri 'aws:' --conn_extra '{&quot;region_name&quot;: &quot;eu-west-1&quot;}'
+<pre tabindex="0"><code>airflow connections -a --conn_id 'aws_my' --conn_uri 'aws:' --conn_extra '{&quot;region_name&quot;: &quot;eu-west-1&quot;}'
 </code></pre><p>Now we can use new connection for <code>EmrCreateJobFlowOperator</code>
 to <strong>create Spark cluster on EMR</strong>.</p>
-<pre><code>cluster_creator = EmrCreateJobFlowOperator(
+<pre tabindex="0"><code>cluster_creator = EmrCreateJobFlowOperator(
     task_id='create_job_flow',
     job_flow_overrides={}, # your cluster configurations go here
     aws_conn_id='aws_my', # &lt;---- this is important
@@ -344,7 +344,7 @@ to <strong>create Spark cluster on EMR</strong>.</p>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

@@ -12,7 +12,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/mocking-in-python/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -20,7 +20,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -228,7 +228,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 <p>Assume we want to test a method that creates and uses objects of other classes:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -250,7 +250,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># content of module.py</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="c1"># content of module.py</span>
 
 <span class="c1"># classes that we want to mock</span>
 <span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> 
@@ -275,7 +275,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </div><p>Here is how we can test object creation (Snippet is taken from <a href="https://docs.python.org/3/library/unittest.mock.html">official documentation</a>):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -289,7 +289,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">,</span> <span class="n">MockClass2</span><span class="p">):</span>
@@ -306,14 +306,14 @@ Assume we want to test a method that creates and uses objects of other classes:
 </div><p>I would say that in our case we need also to check that each object (<code>object1</code> and <code>object2</code>) were instanciated and called with correct parameters. Then we can use <code>assert_called_once_with</code> like this (example from <a href="https://docs.python.org/3/library/unittest.mock.html#quick-guide">official documentation</a>):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">ProductionClass</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_method</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">with</span> <span class="n">patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">ProductionClass</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_method</span><span class="p">:</span>
     <span class="n">thing</span> <span class="o">=</span> <span class="n">ProductionClass</span><span class="p">()</span>
     <span class="n">thing</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
@@ -323,7 +323,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </div><p>Combining things together:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -345,7 +345,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
 <span class="n">mocked_intermediate_result</span> <span class="o">=</span> <span class="s2">&#34;some-intermediate-result&#34;</span>
 <span class="n">mocked_final_result</span> <span class="o">=</span> <span class="s2">&#34;some-final-result&#34;</span>
 
@@ -370,17 +370,17 @@ Assume we want to test a method that creates and uses objects of other classes:
 </div><p>Seems good but a little bit too verbose. Assertions on calls could be eliminated. I would like to do it like in Java with <a href="http://static.javadoc.io/org.mockito/mockito-core/2.7.13/org/mockito/Mockito.html#stubbing">Mockito</a>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">when</span><span class="o">(</span><span class="n">mockedObject</span><span class="o">.</span><span class="na">foo</span><span class="o">(</span><span class="s">&#34;parameter&#34;</span><span class="o">)).</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;mocked-result&#34;</span><span class="o">);</span>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="n">when</span><span class="o">(</span><span class="n">mockedObject</span><span class="o">.</span><span class="na">foo</span><span class="o">(</span><span class="s">&#34;parameter&#34;</span><span class="o">)).</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;mocked-result&#34;</span><span class="o">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>That means you don&rsquo;t need to verify intermediate calls. If they fail, the consequent calls fail as well.</p>
 <p>The test would look like this:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -391,7 +391,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName2&#39;</span><span class="p">)</span>
 <span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_foo</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">,</span> <span class="n">MockClass2</span><span class="p">):</span>
     <span class="n">when</span><span class="p">(</span><span class="n">MockClass1</span><span class="p">)</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="s2">&#34;some_initial_parameter1&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">then_when</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&#34;parameter1&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">then_return</span><span class="p">(</span><span class="n">mocked_intermediate_result</span><span class="p">)</span>
@@ -406,7 +406,7 @@ Assume we want to test a method that creates and uses objects of other classes:
 <p><em>Question: is there a way to achieve that?</em></p>
 <p>There is a port of Mockito to Python: <a href="https://github.com/kaste/mockito-python">mockito-python</a>
 There you can do virtually the same as in Java:</p>
-<pre><code>from mockito import when, mock, unstub
+<pre tabindex="0"><code>from mockito import when, mock, unstub
 
 when(os.path).exists('/foo').thenReturn(True)
 
@@ -443,7 +443,7 @@ unstub()
 We want to check that the function throws an exception if page is not found (http code 404).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -455,7 +455,7 @@ We want to check that the function throws an exception if page is not found (htt
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pytest</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">requests_mock</span>
 
 
@@ -473,7 +473,7 @@ We want to check that the function throws an exception if page is not found (htt
 <p>Possible way to avoid it is to pass a factory to the dependent class.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -501,7 +501,7 @@ We want to check that the function throws an exception if page is not found (htt
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> <span class="k">pass</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">ClassName1</span><span class="p">:</span> <span class="k">pass</span>
   
 <span class="k">class</span> <span class="nc">ClassName2</span><span class="p">:</span> <span class="k">pass</span>
 
@@ -532,7 +532,7 @@ We want to check that the function throws an exception if page is not found (htt
 </div><p>Let&rsquo;s test:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -552,7 +552,7 @@ We want to check that the function throws an exception if page is not found (htt
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test_foo</span><span class="p">():</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test_foo</span><span class="p">():</span>
     <span class="n">mocked_obj1</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
     <span class="n">mocked_obj1</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&#34;result1&#34;</span>
     <span class="n">mocked_obj2</span> <span class="o">=</span> <span class="n">MagicMock</span><span class="p">()</span>
@@ -577,26 +577,26 @@ We want to check that the function throws an exception if page is not found (htt
 <p>Keep in mind that standard mocks don&rsquo;t care about non-existent atttributes. I use</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">,</span> <span class="n">autospec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>instead of</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@patch</span><span class="p">(</span><span class="s1">&#39;module.ClassName1&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>That adds automatic checking of non-existent attributes and catches more errors.
 Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -606,7 +606,7 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
 <span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&#34;foo&#34;</span>
@@ -619,13 +619,13 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 </div><p>here comes a test:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@mock.patch</span><span class="p">(</span><span class="s1">&#39;module.A&#39;</span><span class="p">)</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="nd">@mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;module.A&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">test_bar</span><span class="p">(</span><span class="n">MockedA</span><span class="p">):</span>
   <span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&#34;mocked-foo&#34;</span>
   <span class="k">assert</span> <span class="n">B</span><span class="p">()</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;bar&#34;</span> <span class="o">+</span> <span class="s2">&#34;mocked-foo&#34;</span>
@@ -634,12 +634,12 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 </div><p>At some point you decide to change class <code>A</code>. New version:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
   <span class="k">def</span> <span class="nf">oops</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&#34;oops&#34;</span>
 </code></pre></td></tr></table>
@@ -648,10 +648,10 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 <p>If you use <code>@mock.patch('module.A', autospec=True)</code>, then you get an error (about non-existent attribute) after you change <code>A</code> on</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&#34;mocked-foo&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">MockedA</span><span class="o">.</span><span class="n">return_value</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="s2">&#34;mocked-foo&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>I think <code>autospec=True</code> has to be default behaviour of <code>patch</code>.</p>
@@ -661,7 +661,7 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 <p>Interesting syntax. Probably cleaner mocking sometimes. Example from docs for overriding new instances of a class:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -675,7 +675,7 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python">
 <span class="c1"># flexmock</span>
 <span class="n">flexmock</span><span class="p">(</span><span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">)</span><span class="o">.</span><span class="n">new_instances</span><span class="p">(</span><span class="n">some_other_object</span><span class="p">)</span>
 <span class="n">assertEqual</span><span class="p">(</span><span class="n">some_other_object</span><span class="p">,</span> <span class="n">some_module</span><span class="o">.</span><span class="n">SomeClass</span><span class="p">())</span>
@@ -691,7 +691,7 @@ Let&rsquo;s see where <code>autospec=True</code> can save your life.</p>
 </div>
 </div><p>// Will it really work?</p>
 <h2 id="mocking-osenviron">Mocking os.environ<a hidden class="anchor" aria-hidden="true" href="#mocking-osenviron">#</a></h2>
-<pre><code>@mock.patch.dict(os.environ, {'YOUR_VARIABLE': 'MOCKED_VALUE'})
+<pre tabindex="0"><code>@mock.patch.dict(os.environ, {'YOUR_VARIABLE': 'MOCKED_VALUE'})
 def test_funciton():
   function_using_os_environment()
 </code></pre><h2 id="see-also-about-testing-in-python">See also about testing in python<a hidden class="anchor" aria-hidden="true" href="#see-also-about-testing-in-python">#</a></h2>
@@ -776,7 +776,7 @@ def test_funciton():
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

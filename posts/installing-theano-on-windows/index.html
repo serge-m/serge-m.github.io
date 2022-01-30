@@ -11,7 +11,7 @@
 nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/installing-theano-on-windows/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@ nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -206,7 +206,7 @@ nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39
 <li>Setup Visual Studio Community Edition 2013</li>
 <li>Create config file .theanorc  in c:\Users\X:</li>
 </ol>
-<pre><code>[global]
+<pre tabindex="0"><code>[global]
 floatX = float32
 device = gpu
  
@@ -214,7 +214,7 @@ device = gpu
 fastmath = True
 compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe
 </code></pre><p>Without the line with path to cl.exe I got:</p>
-<pre><code>nvcc fatal   : Cannot find compiler 'cl.exe' in PATH
+<pre tabindex="0"><code>nvcc fatal   : Cannot find compiler 'cl.exe' in PATH
 ['nvcc', '-shared', '-O3', '-use_fast_math', '-Xlinker', '/DEBUG', 
 
 '-D HAVE_ROUND', '-m64', '-Xcompiler',
@@ -304,7 +304,7 @@ NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD',
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

@@ -23,8 +23,8 @@
 \l Lists all tables in the current database:
 \dt List all users:
 \du Create a new role username with a password:
-1  CREATE ROLE username NOINHERIT LOGIN PASSWORD password;   Managing tables Create a new table or a temporary table
-1 2 3 4 5 6 7  CREATE [TEMP] TABLE [IF NOT EXISTS] table_name( pk SERIAL PRIMARY KEY, c1 type(size) NOT NULL, c2 type(size) NULL, .</description>
+1  CREATEROLEusernameNOINHERITLOGINPASSWORDpassword;  Managing tables Create a new table or a temporary table
+1 2 3 4 5 6 7  CREATE[TEMP]TABLE[IFNOTEXISTS]table_name(pkSERIALPRIMARYKEY,c1type(size)NOTNULL,c2type(size)NULL,...);  Add a new column to a table:</description>
     </item>
     
   </channel>

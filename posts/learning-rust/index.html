@@ -7,12 +7,13 @@
 <meta name="robots" content="index, follow">
 <title>Learning Rust | sergem&#39;s personal public notebook</title>
 <meta name="keywords" content="rust, links" />
-<meta name="description" content="Resources (books, tutorials, etc.) Easy Rust — a book about rust
+<meta name="description" content="Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language
+Easy Rust — a book about rust
  Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
- The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust. A bit difficult to read sometimes.">
+ The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/learning-rust/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -20,7 +21,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -34,9 +35,10 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="Learning Rust" />
-<meta property="og:description" content="Resources (books, tutorials, etc.) Easy Rust — a book about rust
+<meta property="og:description" content="Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language
+Easy Rust — a book about rust
  Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
- The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust. A bit difficult to read sometimes." />
+ The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/learning-rust/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-06-21T17:30:00&#43;00:00" />
@@ -46,9 +48,10 @@ if (!doNotTrack) {
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Learning Rust"/>
-<meta name="twitter:description" content="Resources (books, tutorials, etc.) Easy Rust — a book about rust
+<meta name="twitter:description" content="Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language
+Easy Rust — a book about rust
  Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.
- The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust. A bit difficult to read sometimes."/>
+ The Rust Programming Language — &ldquo;Rust book&rdquo;. It&rsquo;s a standard choice for those who want to start with Rust."/>
 
 
 <script type="application/ld+json">
@@ -77,12 +80,12 @@ if (!doNotTrack) {
   "@type": "BlogPosting",
   "headline": "Learning Rust",
   "name": "Learning Rust",
-  "description": "Resources (books, tutorials, etc.) Easy Rust — a book about rust\n Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.\n The Rust Programming Language — \u0026ldquo;Rust book\u0026rdquo;. It\u0026rsquo;s a standard choice for those who want to start with Rust. A bit difficult to read sometimes.",
+  "description": "Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language\nEasy Rust — a book about rust\n Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.\n The Rust Programming Language — \u0026ldquo;Rust book\u0026rdquo;. It\u0026rsquo;s a standard choice for those who want to start with Rust.",
   "keywords": [
     "rust", "links"
   ],
-  "articleBody": "Resources (books, tutorials, etc.) Easy Rust — a book about rust\n Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.\n The Rust Programming Language — “Rust book”. It’s a standard choice for those who want to start with Rust. A bit difficult to read sometimes.\nThe Rust Standard Library — documentation of the standard library.\nRust by Example — “Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust concepts and standard libraries”\nRust code snippets String basics // Statically allocated string slice let hello = \"Hello\"; // Equivalent to the previous one, a bit more verbose let hello_again: \u0026'static str = \"Hello\"; // create a mutable empty String let mut s = String::new(); // A mutable empty String with a pre-allocated buffer let mut s_with_capacity = String::with_capacity(10); // Add a string slice to a String s.push_str(\"foo\"); // Convert from a string slice to a String let foo = \"foo\".to_string(); // another way let bar = String::from(\"bar\"); // Coerce a String into \u0026str with \u0026 let baz: \u0026str = \u0026bar;  Length of strings fn main() { let s = String::from(\"hello🤦‍♂️\"); println!(\"length of '{}' is {}\", s, s.len()); let s = String::from(\"hello🤦\"); println!(\"length of '{}' is {}\", s, s.len()); let s = String::from(\"hello\"); println!(\"length of '{}' is {}\", s, s.len()); }  prints\nlength of 'hello🤦‍♂️' is 18 length of 'hello🤦' is 9 length of 'hello' is 5  Iterate over all the prefixes of a String:\nfor (i, _) in s.chars().enumerate() { let prefix = \u0026s[..i+1]; }  playground\nIteration fn main() { let a = [1, 2, 3]; // forward for x in a.iter() { print!(\"{} \", x); } // backward for x in a.iter().rev() { print!(\"{} \", x); } }  playground\nHashmap Counting strings using a Hashmap:\nlet mut counter: HashMap= HashMap::new(); // s is a str to add match counter.get_mut(s) { Some(x) = { *x += 1; } None = { counter.insert(s.to_string(), 1); } }  More info:\n Go version of program is 40% quicker than Rust version - reddit post. See discussion. Fast word counting implementation: daboross/main.rs  Testing fn f(x: i32) - i32 { x * 2 } fn f_unwrap(x: Option) - i32 { x.unwrap() } // The module is only built when testing #[cfg(test)] mod test { // loading functions from the parent space use super::f; use super::f_unwrap; // actual test #[test] fn test_f() { assert_eq!(f(12), 24); } // another test #[test] fn test_f_unwrap_ok() { f_unwrap(Some(12)); } // verify that function panics #[test] #[should_panic] fn test_f_unwrap_must_fail() { f_unwrap(None); } }  playground\n",
-  "wordCount" : "442",
+  "articleBody": "Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language\nEasy Rust — a book about rust\n Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.\n The Rust Programming Language — “Rust book”. It’s a standard choice for those who want to start with Rust. A bit difficult to read sometimes.\nThe Rust Standard Library — documentation of the standard library.\nRust by Example — “Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust concepts and standard libraries”\nRust code snippets String basics // Statically allocated string slice let hello = \"Hello\"; // Equivalent to the previous one, a bit more verbose let hello_again: \u0026'static str = \"Hello\"; // create a mutable empty String let mut s = String::new(); // A mutable empty String with a pre-allocated buffer let mut s_with_capacity = String::with_capacity(10); // Add a string slice to a String s.push_str(\"foo\"); // Convert from a string slice to a String let foo = \"foo\".to_string(); // another way let bar = String::from(\"bar\"); // Coerce a String into \u0026str with \u0026 let baz: \u0026str = \u0026bar;  Length of strings fn main() { let s = String::from(\"hello🤦‍♂️\"); println!(\"length of '{}' is {}\", s, s.len()); let s = String::from(\"hello🤦\"); println!(\"length of '{}' is {}\", s, s.len()); let s = String::from(\"hello\"); println!(\"length of '{}' is {}\", s, s.len()); }  prints\nlength of 'hello🤦‍♂️' is 18 length of 'hello🤦' is 9 length of 'hello' is 5  Iterate over all the prefixes of a String:\nfor (i, _) in s.chars().enumerate() { let prefix = \u0026s[..i+1]; }  playground\nIteration fn main() { let a = [1, 2, 3]; // forward for x in a.iter() { print!(\"{} \", x); } // backward for x in a.iter().rev() { print!(\"{} \", x); } }  playground\nHashmap Counting strings using a Hashmap:\nlet mut counter: HashMap= HashMap::new(); // s is a str to add match counter.get_mut(s) { Some(x) = { *x += 1; } None = { counter.insert(s.to_string(), 1); } }  More info:\n Go version of program is 40% quicker than Rust version - reddit post. See discussion. Fast word counting implementation: daboross/main.rs  Testing fn f(x: i32) - i32 { x * 2 } fn f_unwrap(x: Option) - i32 { x.unwrap() } // The module is only built when testing #[cfg(test)] mod test { // loading functions from the parent space use super::f; use super::f_unwrap; // actual test #[test] fn test_f() { assert_eq!(f(12), 24); } // another test #[test] fn test_f_unwrap_ok() { f_unwrap(Some(12)); } // verify that function panics #[test] #[should_panic] fn test_f_unwrap_must_fail() { f_unwrap(None); } }  playground\n",
+  "wordCount" : "456",
   "inLanguage": "en",
   "datePublished": "2021-06-21T17:30:00Z",
   "dateModified": "2021-06-21T17:30:00Z",
@@ -224,6 +227,7 @@ if (!doNotTrack) {
 </div>
 
   <div class="post-content"><h1 id="resources-books-tutorials-etc">Resources (books, tutorials, etc.)<a hidden class="anchor" aria-hidden="true" href="#resources-books-tutorials-etc">#</a></h1>
+<p><a href="https://fasterthanli.me/articles/a-half-hour-to-learn-rust">A half-hour to learn Rust</a> - blog post, a great intro into the language</p>
 <p><a href="https://dhghomon.github.io/easy_rust/Chapter_1.html">Easy Rust</a> — a book about rust</p>
 <blockquote>
 <p>Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.</p>
@@ -412,7 +416,7 @@ mod test {
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

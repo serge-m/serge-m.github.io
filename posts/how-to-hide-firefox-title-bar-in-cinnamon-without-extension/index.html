@@ -15,7 +15,7 @@ All rules created must go in ~/.devilspie, and have a .ds extension, so firstly 
 mkdir ~/.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/how-to-hide-firefox-title-bar-in-cinnamon-without-extension/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -23,7 +23,7 @@ mkdir ~/.">
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -213,24 +213,24 @@ mkdir ~/."/>
 
   <div class="post-content"><p>Source <a href="https://askubuntu.com/questions/37111/how-to-make-firefox-main-windows-have-no-decorations-using-devilspie">here</a></p>
 <p>Install devilspie:</p>
-<pre><code>sudo apt-get install devilspie
+<pre tabindex="0"><code>sudo apt-get install devilspie
 </code></pre><p>There is also a gui called gdevilspie, but the rules it produced seemed inaccurate and often didn&rsquo;t quite work, so it is easiest to concoct a rule by reading the readme and the manpage.</p>
 <p>How the rule was created</p>
 <p>All rules created must go in <code>~/.devilspie</code>, and have a .ds extension, so firstly create the folder if it doesn&rsquo;t exist with</p>
-<pre><code>mkdir ~/.devilspie
+<pre tabindex="0"><code>mkdir ~/.devilspie
 </code></pre><p>If you want to experiment to find the best window matching condition (class,name,etc), you can create a new file in ~/.devilspie called test.ds and place in it (debug) . Now you can enter devilspie &amp; and then for every program that you launch, devilspie will examine and provide some window information in the terminal:</p>
 <p>Window Title: &lsquo;Mozilla Firefox&rsquo;; Application Name: &lsquo;Firefox&rsquo;; Class: &lsquo;Firefox&rsquo;; Geometry: 1280x970+0+27</p>
 <p>In this case, it is best to select Class (window_class), as that will reliably identify the window.</p>
 <p>The rule</p>
 <p>Create a new file called firefox.ds in ~/.devilspie and place in it:</p>
-<pre><code>; firefox rule to undecorate all existing and new windows     
+<pre tabindex="0"><code>; firefox rule to undecorate all existing and new windows     
 
 (if (is (window_class) &quot;Firefox&quot;) (undecorate))
 </code></pre><p>Comments are introduced with ; and are not read. You do not need to use begin in the command unless you are specifying multiple actions, such as (begin undecorate (set_workspace  2))) instead of just the single action (undecorate)).</p>
 <p>However, for devilspie to read the new rule you must restart it, so run</p>
-<pre><code>killall devilspie 
+<pre tabindex="0"><code>killall devilspie 
 </code></pre><p>and then restart it with</p>
-<pre><code>devilspie &amp; 
+<pre tabindex="0"><code>devilspie &amp; 
 </code></pre><p>You have to do this every time when you edit a rule or add a new one in ~/.devilspie, otherwise the changes or any new rules will not be read.</p>
 <p>It is also very important that you add it to startup applications using your desktop environment&rsquo;s menus.</p>
 <p>For more information on other possibilities with devilspie, see man devilspie or the Ubuntu manpages online.</p>
@@ -305,7 +305,7 @@ mkdir ~/."/>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

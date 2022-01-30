@@ -16,7 +16,7 @@ Look inside the sources:
   Linearization update, for j = 1:this.max_linear. In the simple case max_linear==1, when I use x = A\b solver for linear system.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/investigating-optical-flow-by-d-sun/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -24,7 +24,7 @@ Look inside the sources:
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -220,7 +220,7 @@ Look inside the sources:
 <p>Newer paper: Deqing Sun, Stefan Roth, and Michael J. Black. &ldquo;A Quantitative Analysis of Current Practices in Optical Flow Estimation and the Principles    Behind Them&rdquo;. International Journal of Computer Vision (IJCV), 2013
 [ <a href="http://cs.brown.edu/~dqsun/pubs/Sun2013QAP.pdf">pdf</a>] [<a href="http://cs.brown.edu/~dqsun/code/ijcv_flow_code.zip">Source code</a>]</p>
 <p>Look inside the sources:</p>
-<pre><code>    @alt_ba_optical_flow\
+<pre tabindex="0"><code>    @alt_ba_optical_flow\
     @ba_optical_flow\
         ...
         compute_flow_base.m
@@ -233,11 +233,11 @@ Look inside the sources:
 <p>Linearization update, for j = 1:this.max_linear. In the simple case <code>max_linear==1</code>, when I use <code>x = A\b</code> solver for linear system. Probably for more complicated solvers <code>max_linear &gt; 1</code></p>
 </li>
 </ol>
-<pre><code>        compute_flow.m
+<pre tabindex="0"><code>        compute_flow.m
 </code></pre><p>calls pre_process_data (preprocessing, normalization, image pyramyd).  Loop through iterations:</p>
-<pre><code>for ignc = 1:this.gnc_iters   
+<pre tabindex="0"><code>for ignc = 1:this.gnc_iters   
 </code></pre><p>Calls <code>compute_flow_base.m</code></p>
-<pre><code>    ...
+<pre tabindex="0"><code>    ...
     @classic_nl_optical_flow\
     @hs_optical_flow\
     data\
@@ -246,20 +246,20 @@ Look inside the sources:
         pre_process_data.m 
 </code></pre><p>&ndash; several preptocessing options for images. The first is texture decomposition.  if no texture decomposition, scale image to [0, 255] range. Build image pyramyd.
 there is also following code:</p>
-<pre><code>% For segmentation purpose
+<pre tabindex="0"><code>% For segmentation purpose
     data.org_pyramid_images = compute_image_pyramid(this.images, f,...
         this.pyramid_levels, 1/this.pyramid_spacing);
     data.org_color_pyramid_images = compute_image_pyramid(this.color_images,...
         f, this.pyramid_levels, 1/this.pyramid_spacing);
 
 </code></pre><p>In my case I don&rsquo;t need segmentation and use simple OF method. It seems it&rsquo;s just bad code design. Dig deeper.</p>
-<pre><code>    ... 
+<pre tabindex="0"><code>    ... 
 
     estimate_flow_demo.m
     estimate_flow_interface.m 
     load_of_method.m
 </code></pre><p>&ndash; switcher that recursively initializes members of OF object. E.g. if you want to load &lsquo;classic+nl-brightness&rsquo; method, it loads &lsquo;classic+nl&rsquo; first:</p>
-<pre><code>case 'classic+nl'        
+<pre tabindex="0"><code>case 'classic+nl'        
         ope = classic_nl_optical_flow;
         
         ope.texture  = true;
@@ -274,7 +274,7 @@ there is also following code:</p>
         ope.lambda_q =3;
         %ope.display  = true;    
 </code></pre><p>and then applies the difference:</p>
-<pre><code>case 'classic+nl-fast-brightness'
+<pre tabindex="0"><code>case 'classic+nl-fast-brightness'
         ope = load_of_method('classic+nl');        
         ope.max_iters       = 3;
         ope.gnc_iters       = 2;
@@ -346,7 +346,7 @@ there is also following code:</p>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

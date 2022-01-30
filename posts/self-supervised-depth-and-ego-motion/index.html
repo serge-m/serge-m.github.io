@@ -7,13 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Self-supervised depth and ego motion estimation | sergem&#39;s personal public notebook</title>
 <meta name="keywords" content="machine learning, computer vision, DNN, CNN, deep learning, depth, ego motion" />
-<meta name="description" content="3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
-Learning
-Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
-Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information">
+<meta name="description" content="3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -21,7 +18,7 @@ Inverse depth probably has more stable results. Points far away from camera have
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -35,10 +32,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="Self-supervised depth and ego motion estimation" />
-<meta property="og:description" content="3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
-Learning
-Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
-Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information" />
+<meta property="og:description" content="3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/self-supervised-depth-and-ego-motion/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-23T19:00:00&#43;00:00" />
@@ -48,10 +42,7 @@ Inverse depth probably has more stable results. Points far away from camera have
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Self-supervised depth and ego motion estimation"/>
-<meta name="twitter:description" content="3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020
-Learning
-Depth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.
-Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information"/>
+<meta name="twitter:description" content="3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision."/>
 
 
 <script type="application/ld+json">
@@ -80,12 +71,12 @@ Inverse depth probably has more stable results. Points far away from camera have
   "@type": "BlogPosting",
   "headline": "Self-supervised depth and ego motion estimation",
   "name": "Self-supervised depth and ego motion estimation",
-  "description": "3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020\nLearning\nDepth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.\nInverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information",
+  "description": "3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \\rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \\rightarrow x_{t \\rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision.",
   "keywords": [
     "machine learning", "computer vision", "DNN", "CNN", "deep learning", "depth", "ego motion"
   ],
-  "articleBody": "3D Packing for Self-Supervised Monocular Depth Estimation by Vitor Guizilini, pdf at arxiv, 2020\nLearning\nDepth estimator fD : I → D Ego motion estimator: fx : (It, IS) → xt → S  Depth Estimator They predict an inverse depth and use a packnet architecture.\nInverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information\nProbably they assume that the scene is rigid and there is no moving objects. It is likely to give some errors for the moving objects. How do they deal with the moving objects?\n Ego motion estimator They use a rather simple CNN from SfMLearner.\n Loss function Loss function consists of three parts. 1. appearance loss 2. depth smoothness loss 3. velocity scaling loss\n  SfMLearner paper: Unsupervised Learning of Depth and Ego-Motion from Video by Berkley and google\npdf\nOne of the previous works, that became a foundation for 3d-pack.\nOfficial website.\nGithub: https://github.com/tinghuiz/SfMLearner.\nImplementation in pytorch: SfmLearner-Pytorch\n  Depth from Videos in the Wild Depth from Videos in the Wild: Unsupervised Monocular Depth Learning from Unknown Cameras by Ariel Gordon et al, 2019.\nhttps://research.google/pubs/pub48440/\npdf\ngithub\nHere they learn not only depth and R/t but also intrinsics of the camera\n struct2depth Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearning from Monocular Videos\nPaper by google\nsite\ncode\nbased on vid2depth\n vid2depth another paper by google.\ngithub\nbased on sfm learner\n monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation arxiv\ngithub\nsome method that 3D Packing use as a competitor.\n RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes self-supervised from stereo and mono.\nby deepai: https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes.\nThey claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild \"Depth from Videos in the Wild\". However they require camera calibration and median depth to be estimated prior to processing with an external tool. (COLMAP). Not really \"in the wild\".\nThey were able to train on multiple scenes with different depth ranges. The method still requires a static scene for the training. For example they use data from Mannequin Challenge to train their models. Then the network can be used on dynamic scenes with people.\nThe code is not available so far.\n ",
-  "wordCount" : "370",
+  "articleBody": " 3D Packing for Self-Supervised Monocular Depth Estimation -------------------------------------------------------------- by Vitor Guizilini, `pdf at arxiv `_, 2020 Learning 1. Depth estimator :math:`f_D : I \\rightarrow D` 2. Ego motion estimator: :math:`f_x : (I_t , I_S) \\rightarrow x_{t \\rightarrow S}` Depth Estimator ===================================== They predict an inverse depth and use a packnet architecture. Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have more information Probably they assume that the scene is rigid and there is no moving objects. It is likely to give some errors for the moving objects. How do they deal with the moving objects? Ego motion estimator ====================================== They use a rather simple CNN from SfMLearner. Loss function ================================== Loss function consists of three parts. 1. appearance loss 2. depth smoothness loss 3. velocity scaling loss SfMLearner -------------------------------------------------- paper: Unsupervised Learning of Depth and Ego-Motion from Video by Berkley and google `pdf `__ .. image:: /media/2020-08-23/sfm-teaser.png :width: 600 One of the previous works, that became a foundation for 3d-pack. `Official website `_. Github: `https://github.com/tinghuiz/SfMLearner `__. Implementation in pytorch: `SfmLearner-Pytorch `_ .. raw:: html   Depth from Videos in the Wild ----------------------------------------------------- Depth from Videos in the Wild: Unsupervised Monocular Depth Learning from Unknown Cameras by Ariel Gordon et al, 2019. https://research.google/pubs/pub48440/ `pdf `__ `github `__ Here they learn not only depth and R/t but also intrinsics of the camera struct2depth ----------------------------------------------------- Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearning from Monocular Videos Paper by google `site `__ `code `__ based on vid2depth vid2depth ------------------------------------------------------- another paper by google. `github `__ based on sfm learner monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation --------------------------------------------------------------------------------- `arxiv `__ `github `__ some method that 3D Packing use as a competitor. RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes --------------------------------------------------------------------------------------------------------------------------------------------------- self-supervised from stereo and mono. by deepai: `https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes `__. They claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild \"Depth from Videos in the Wild\". However they require camera calibration and median depth to be estimated prior to processing with an external tool. (`COLMAP `_). Not really \"in the wild\". They were able to train on multiple scenes with different depth ranges. The method still requires a static scene for the training. For example they use data from Mannequin Challenge to train their models. Then the network can be used on dynamic scenes with people. The code is not available so far. ",
+  "wordCount" : "405",
   "inLanguage": "en",
   "datePublished": "2020-08-23T19:00:00Z",
   "dateModified": "2020-08-23T19:00:00Z",
@@ -200,121 +191,154 @@ Inverse depth probably has more stable results. Points far away from camera have
         <summary accesskey="c" title="(Alt + C)">
             <div class="details">Table of Contents</div>
         </summary>
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="3D Packing for Self-Supervised Monocular Depth Estimation">3D Packing for Self-Supervised Monocular Depth Estimation</a><ul>
-                        
-                <li>
-                    <a href="#" aria-label="Depth Estimator">Depth Estimator</a></li>
-                <li>
-                    <a href="#" aria-label="Ego motion estimator">Ego motion estimator</a></li>
-                <li>
-                    <a href="#" aria-label="Loss function">Loss function</a></li></ul>
-                </li>
-                <li>
-                    <a href="#" aria-label="SfMLearner">SfMLearner</a></li>
-                <li>
-                    <a href="#" aria-label="Depth from Videos in the Wild">Depth from Videos in the Wild</a></li>
-                <li>
-                    <a href="#" aria-label="struct2depth">struct2depth</a></li>
-                <li>
-                    <a href="#" aria-label="vid2depth">vid2depth</a></li>
-                <li>
-                    <a href="#" aria-label="monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation">monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation</a></li>
-                <li>
-                    <a href="#" aria-label="RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes">RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes</a>
-                </li>
-            </ul>
+        <div class="inner">
         </div>
     </details>
 </div>
 
-  <div class="post-content"><div class="document">
+  <div class="post-content">
+
+3D Packing for Self-Supervised Monocular Depth Estimation
+--------------------------------------------------------------
+
+by Vitor Guizilini, `pdf at arxiv <https://arxiv.org/pdf/1905.02693.pdf>`_, 2020
 
 
-<div class="section" id="d-packing-for-self-supervised-monocular-depth-estimation">
-<h2>3D Packing for Self-Supervised Monocular Depth Estimation</h2>
-<p>by Vitor Guizilini, <a class="reference external" href="https://arxiv.org/pdf/1905.02693.pdf">pdf at arxiv</a>, 2020</p>
-<p>Learning</p>
-<ol class="arabic simple">
-<li>Depth estimator <span class="formula"><i>f</i><sub><i>D</i></sub> : <i>I</i> → <i>D</i></span></li>
-<li>Ego motion estimator: <span class="formula"><i>f</i><sub><i>x</i></sub> : (<i>I</i><sub><i>t</i></sub>, <i>I</i><sub><i>S</i></sub>) → <i>x</i><sub><i>t</i> → <i>S</i></sub></span></li>
-</ol>
-<div class="section" id="depth-estimator">
-<h3>Depth Estimator</h3>
-<p>They predict an inverse depth and use a packnet architecture.</p>
-<p>Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have  more information</p>
-<p>Probably they assume that the scene is rigid and there is no moving objects. It is likely to give some errors for the moving objects. How do they deal with the moving objects?</p>
-</div>
-<div class="section" id="ego-motion-estimator">
-<h3>Ego motion estimator</h3>
-<p>They use a rather simple CNN from SfMLearner.</p>
-</div>
-<div class="section" id="loss-function">
-<h3>Loss function</h3>
-<p>Loss function consists of three parts.
+Learning
+
+1. Depth estimator :math:`f_D : I \rightarrow D`
+
+2. Ego motion estimator: :math:`f_x : (I_t , I_S) \rightarrow x_{t \rightarrow S}`
+
+
+
+Depth Estimator
+=====================================
+
+They predict an inverse depth and use a packnet architecture.
+
+Inverse depth probably has more stable results. Points far away from camera have small inverse depth that with low precision. The nearer points have  more information
+
+Probably they assume that the scene is rigid and there is no moving objects. It is likely to give some errors for the moving objects. How do they deal with the moving objects?
+
+
+Ego motion estimator
+======================================
+
+They use a rather simple CNN from SfMLearner.
+
+
+
+Loss function
+==================================
+Loss function consists of three parts.
 1. appearance loss
 2. depth smoothness loss
-3. velocity scaling loss</p>
-</div>
-</div>
-<div class="section" id="sfmlearner">
-<h2>SfMLearner</h2>
-<p>paper: Unsupervised Learning of Depth and Ego-Motion from Video
-by Berkley and google</p>
-<p><a class="reference external" href="https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/cvpr17_sfm_final.pdf">pdf</a></p>
-<img alt="/media/2020-08-23/sfm-teaser.png" src="/media/2020-08-23/sfm-teaser.png" style="width: 600px;" />
-<p>One of the previous works, that became a foundation for 3d-pack.</p>
-<p><a class="reference external" href="https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/">Official website</a>.</p>
-<p>Github: <a class="reference external" href="https://github.com/tinghuiz/SfMLearner">https://github.com/tinghuiz/SfMLearner</a>.</p>
-<p>Implementation in pytorch:
-<a class="reference external" href="https://github.com/ClementPinard/SfmLearner-Pytorch/blob/master/models/PoseExpNet.py">SfmLearner-Pytorch</a></p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/RTFatijYcaU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div></div>
-<div class="section" id="depth-from-videos-in-the-wild">
-<h2>Depth from Videos in the Wild</h2>
-<p>Depth from Videos in the Wild: Unsupervised Monocular Depth Learning from Unknown Cameras
-by Ariel Gordon et al, 2019.</p>
-<p><a class="reference external" href="https://research.google/pubs/pub48440/">https://research.google/pubs/pub48440/</a></p>
-<p><a class="reference external" href="https://research.google/pubs/pub48440.pdf">pdf</a></p>
-<p><a class="reference external" href="https://github.com/google-research/google-research/tree/master/depth_from_video_in_the_wild">github</a></p>
-<p>Here they learn not only depth and R/t but also intrinsics of the camera</p>
-</div>
-<div class="section" id="struct2depth">
-<h2>struct2depth</h2>
-<p>Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearning from Monocular Videos</p>
-<p>Paper by google</p>
-<p><a class="reference external" href="https://sites.google.com/view/struct2depth">site</a></p>
-<p><a class="reference external" href="https://github.com/tensorflow/models/tree/archive/research/struct2depth">code</a></p>
-<p>based on vid2depth</p>
-</div>
-<div class="section" id="vid2depth">
-<h2>vid2depth</h2>
-<p>another paper by google.</p>
-<p><a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/vid2depth">github</a></p>
-<p>based on sfm learner</p>
-</div>
-<div class="section" id="monodepth2-digging-into-self-supervised-monocular-depth-estimation">
-<h2>monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation</h2>
-<p><a class="reference external" href="https://arxiv.org/pdf/1806.01260.pdf">arxiv</a></p>
-<p><a class="reference external" href="https://github.com/nianticlabs/monodepth2">github</a></p>
-<p>some method that 3D Packing use as a competitor.</p>
-</div>
-<div class="section" id="realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes">
-<h2>RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes</h2>
-<p>self-supervised from stereo and mono.</p>
-<p>by deepai:
-<a class="reference external" href="https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes">https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes</a>.</p>
-<p>They claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild &quot;Depth from Videos in the Wild&quot;.
+3. velocity scaling loss
+
+
+
+SfMLearner
+--------------------------------------------------
+paper: Unsupervised Learning of Depth and Ego-Motion from Video
+by Berkley and google
+
+`pdf <https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/cvpr17_sfm_final.pdf>`__
+
+
+
+
+.. image:: /media/2020-08-23/sfm-teaser.png
+   :width: 600
+
+One of the previous works, that became a foundation for 3d-pack.
+
+
+`Official website <https://people.eecs.berkeley.edu/~tinghuiz/projects/SfMLearner/>`_.
+
+Github: `https://github.com/tinghuiz/SfMLearner <https://github.com/tinghuiz/SfMLearner>`__.
+
+Implementation in pytorch:
+`SfmLearner-Pytorch <https://github.com/ClementPinard/SfmLearner-Pytorch/blob/master/models/PoseExpNet.py>`_
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RTFatijYcaU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+
+Depth from Videos in the Wild
+-----------------------------------------------------
+Depth from Videos in the Wild: Unsupervised Monocular Depth Learning from Unknown Cameras
+by Ariel Gordon et al, 2019.
+
+https://research.google/pubs/pub48440/
+
+`pdf <https://research.google/pubs/pub48440.pdf>`__
+
+`github <https://github.com/google-research/google-research/tree/master/depth_from_video_in_the_wild>`__
+
+Here they learn not only depth and R/t but also intrinsics of the camera
+
+
+struct2depth
+-----------------------------------------------------
+Depth Prediction Without the Sensors: Leveraging Structure for UnsupervisedLearning from Monocular Videos
+
+Paper by google
+
+`site <https://sites.google.com/view/struct2depth>`__
+
+`code <https://github.com/tensorflow/models/tree/archive/research/struct2depth>`__
+
+based on vid2depth
+
+
+vid2depth
+-------------------------------------------------------
+another paper by google.
+
+`github <https://github.com/tensorflow/models/tree/master/research/vid2depth>`__
+
+based on sfm learner
+
+
+monodepth2 - Digging Into Self-Supervised Monocular Depth Estimation
+---------------------------------------------------------------------------------
+
+`arxiv <https://arxiv.org/pdf/1806.01260.pdf>`__
+
+`github <https://github.com/nianticlabs/monodepth2>`__
+
+some method that 3D Packing use as a competitor.
+
+
+
+RealMonoDepth: Self-Supervised Monocular Depth Estimation for General Scenes
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+self-supervised from stereo and mono.
+
+by deepai:
+`https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes <https://deepai.org/publication/realmonodepth-self-supervised-monocular-depth-estimation-for-general-scenes>`__.
+
+
+They claim to be better than monodepth2 and mode generalized than depth_from_video_in_the_wild "Depth from Videos in the Wild".
 However they require camera calibration and median depth to be estimated prior to processing with an external tool.
-(<a class="reference external" href="https://colmap.github.io/">COLMAP</a>). Not really &quot;in the wild&quot;.</p>
-<p>They were able to train on multiple scenes with different depth ranges.
+(`COLMAP <https://colmap.github.io/>`_). Not really "in the wild".
+
+They were able to train on multiple scenes with different depth ranges.
 The method still requires a static scene for the training. For example they use data from Mannequin Challenge
-to train their models. Then the network can be used on dynamic scenes with people.</p>
-<p>The code is not available so far.</p>
-</div>
-</div>
+to train their models. Then the network can be used on dynamic scenes with people.
+
+The code is not available so far.
+
+
+
+
+
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
@@ -387,7 +411,7 @@ to train their models. Then the network can be used on dynamic scenes with peopl
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

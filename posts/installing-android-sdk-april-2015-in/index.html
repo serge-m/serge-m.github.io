@@ -18,7 +18,7 @@ go to android-studio/bin run
 Install kvm  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils Enable Virtualization Technology in BIOS">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/installing-android-sdk-april-2015-in/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -26,7 +26,7 @@ Install kvm  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -221,26 +221,26 @@ Install kvm  sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-
 </div>
 
   <div class="post-content"><p>1a. Install Java SDK (<a href="http://stackoverflow.com/a/17909346">http://stackoverflow.com/a/17909346</a>)</p>
-<pre><code>sudo apt-get install openjdk-7-jdk
+<pre tabindex="0"><code>sudo apt-get install openjdk-7-jdk
 </code></pre><p>1b. Add JAVA_HOME variable to system environment</p>
-<pre><code>sudo nano /etc/environment # or use any other editor
+<pre tabindex="0"><code>sudo nano /etc/environment # or use any other editor
 </code></pre><p>1c. Add line with path to your java location:</p>
-<pre><code>JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+<pre tabindex="0"><code>JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 </code></pre><p>Reboot/Logout</p>
 <p>2a. Go to <a href="https://developer.android.com/sdk/index.html">https://developer.android.com/sdk/index.html</a>
 -&gt; Download Android Studio</p>
 <p>Unpack</p>
 <p>go to <code>android-studio/bin</code>
 run</p>
-<pre><code>./studio.sh
+<pre tabindex="0"><code>./studio.sh
 </code></pre><p>2b. Go to Tools-&gt;Android-&gt;SDK Manager. Install required SDK version</p>
 <ol start="3">
 <li>Install kvm</li>
 </ol>
-<pre><code>sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+<pre tabindex="0"><code>sudo apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
 </code></pre><p>Enable Virtualization Technology in BIOS</p>
 <p>Checking if it is ok run:</p>
-<pre><code>sudo kvm-ok
+<pre tabindex="0"><code>sudo kvm-ok
 </code></pre><p>(<a href="http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts">http://askubuntu.com/questions/552064/how-can-kvm-be-located-by-android-studio-on-ubuntu-14-04-lts</a>)</p>
 
 </div>
@@ -305,7 +305,7 @@ run</p>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

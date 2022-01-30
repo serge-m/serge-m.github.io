@@ -7,11 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>C&#43;&#43; and CMake | sergem&#39;s personal public notebook</title>
 <meta name="keywords" content="c&#43;&#43;, cpp, cmake, conan, gtest, catch2, testing, example, pybind11, vscode" />
-<meta name="description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
-In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.">
+<meta name="description" content="CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/cpp-and-cmake/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +18,7 @@ In my previous attempt I ended up removing cmake tools plugin and moving forward
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -33,8 +32,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="C&#43;&#43; and CMake" />
-<meta property="og:description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
-In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github." />
+<meta property="og:description" content="CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/cpp-and-cmake/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-26T07:00:23&#43;00:00" />
@@ -44,8 +42,7 @@ In my previous attempt I ended up removing cmake tools plugin and moving forward
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="C&#43;&#43; and CMake"/>
-<meta name="twitter:description" content="CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.
-In my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github."/>
+<meta name="twitter:description" content="CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then."/>
 
 
 <script type="application/ld+json">
@@ -74,12 +71,12 @@ In my previous attempt I ended up removing cmake tools plugin and moving forward
   "@type": "BlogPosting",
   "headline": "C++ and CMake",
   "name": "C\u002b\u002b and CMake",
-  "description": "CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.\nIn my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.",
+  "description": "CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then.",
   "keywords": [
     "c++", "cpp", "cmake", "conan", "gtest", "catch2", "testing", "example", "pybind11", "vscode"
   ],
-  "articleBody": "CMake in VSCode VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive.\nIn my previous attempt I ended up removing cmake tools plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. https://github.com/serge-m/vscode_cmake_template.\nRecently I managed to make it more of less convenient (maybe some updates played a role here as well). Here are some settings I needed to make it usable and comparable to CLion.\nSeparate build directory per build type If you have only one directory for your build you will need to rebuild everything when you switch between debug and release. In order to have a separate build directory per build type (Debug/Release) add the following to your settings.json:\n \"cmake.buildDirectory\": \"${workspaceRoot}/build-${buildType}\" By default VSCode and CmakeTools use ninja as a generator for cmake. Often one need to use make. Add\n \"cmake.generator\": \"Unix Makefiles\" to switch from ninja to make.\n Debugging settings In launch.json update \"program\" parameter:\n \"program\": \"${command:cmake.launchTargetPath}\", Cmake Tools will substitute the corresponding path. (from docs of CmakeTools)\n Configure cmake settings add cmake.configureSettings to settings.json:\n\"cmake.configureSettings\": { \"USE_MYMATH\": \"ON\" }    Getting started with Gtest For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest.\nInstalling Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.\nsudo apt-get install libgtest-dev sudo apt-get install cmake # install cmake cd /usr/src/gtest sudo cmake CMakeLists.txt sudo make # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder sudo cp *.a /usr/lib  Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place. That requires some custom scripting in your cmake files.\nSee also: Getting started with Google Test (GTest) on Ubuntu    Handling dependencies in CMake If i need to import a compiled 3rdparty library to my cmake project:\nadd_library(some_library SHARED IMPORTED) set_property(TARGET some_library PROPERTY IMPORTED_LOCATION \"${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so\") set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES \"${CMAKE_CURRENT_SOURCE_DIR}/include/\")   CMake with Conan and Catch2 Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing:\ntst_conan\n Python bindings for C++ code Hybrid Python/C++ packages, revisited. an approach using pybind11 and cmake.\n ",
-  "wordCount" : "406",
+  "articleBody": " CMake in VSCode =============================== VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions. Looks like Cmake-tools kind of works, but the hotkeys and some settings are far from intuitive. In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts. Here is a template I made back then. `https://github.com/serge-m/vscode_cmake_template `_. Recently I managed to make it more of less convenient (maybe some updates played a role here as well). Here are some settings I needed to make it usable and comparable to CLion. Separate build directory per build type ------------------------------------------- If you have only one directory for your build you will need to rebuild everything when you switch between debug and release. In order to have a `separate build directory `_ per build type (Debug/Release) add the following to your `settings.json`: \"cmake.buildDirectory\": \"${workspaceRoot}/build-${buildType}\" By default VSCode and CmakeTools use ninja as a generator for cmake. Often one need to use make. Add \"cmake.generator\": \"Unix Makefiles\" to switch from ninja to make. Debugging settings ----------------------------- In launch.json update \"program\" parameter: \"program\": \"${command:cmake.launchTargetPath}\", Cmake Tools will substitute the corresponding path. (from `docs of CmakeTools `_) Configure cmake settings ------------------------------------ add `cmake.configureSettings `_ to `settings.json`: .. code-block:: \"cmake.configureSettings\": { \"USE_MYMATH\": \"ON\" } Getting started with Gtest ===================================== For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest. Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights. .. code-block:: sudo apt-get install libgtest-dev sudo apt-get install cmake # install cmake cd /usr/src/gtest sudo cmake CMakeLists.txt sudo make # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder sudo cp *.a /usr/lib Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place. That requires some custom scripting in your cmake files. See also: --------------------------------------- * `Getting started with Google Test (GTest) on Ubuntu `_ Handling dependencies in CMake ===================================================== If i need to import a compiled 3rdparty library to my cmake project: .. code-block:: add_library(some_library SHARED IMPORTED) set_property(TARGET some_library PROPERTY IMPORTED_LOCATION \"${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so\") set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES \"${CMAKE_CURRENT_SOURCE_DIR}/include/\") CMake with Conan and Catch2 ===================================================== Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing: `tst_conan `_ Python bindings for C++ code ============================================= `Hybrid Python/C++ packages, revisited `_. an approach using pybind11 and cmake. ",
+  "wordCount" : "429",
   "inLanguage": "en",
   "datePublished": "2020-03-26T07:00:23Z",
   "dateModified": "2020-03-26T07:00:23Z",
@@ -194,122 +191,127 @@ In my previous attempt I ended up removing cmake tools plugin and moving forward
         <summary accesskey="c" title="(Alt + C)">
             <div class="details">Table of Contents</div>
         </summary>
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="CMake in VSCode">CMake in VSCode</a><ul>
-                        
-                <li>
-                    <a href="#" aria-label="Separate build directory per build type">Separate build directory per build type</a></li>
-                <li>
-                    <a href="#" aria-label="Debugging settings">Debugging settings</a></li>
-                <li>
-                    <a href="#" aria-label="Configure cmake settings">Configure cmake settings</a></li></ul>
-                </li>
-                <li>
-                    <a href="#" aria-label="Getting started with Gtest">Getting started with Gtest</a><ul>
-                        
-                <li>
-                    <a href="#" aria-label="See also:">See also:</a></li></ul>
-                </li>
-                <li>
-                    <a href="#" aria-label="Handling dependencies in CMake">Handling dependencies in CMake</a></li>
-                <li>
-                    <a href="#" aria-label="CMake with Conan and Catch2">CMake with Conan and Catch2</a></li>
-                <li>
-                    <a href="#" aria-label="Python bindings for C&#43;&#43; code">Python bindings for C++ code</a>
-                </li>
-            </ul>
+        <div class="inner">
         </div>
     </details>
 </div>
 
-  <div class="post-content"><div class="document">
+  <div class="post-content">
 
+CMake in VSCode
+===============================
 
-<div class="section" id="cmake-in-vscode">
-<h2>CMake in VSCode</h2>
-<p>VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions.
+VSCode is a free open source IDE with a lot of nice features. In addition one can chose from a variety of extensions.
 Looks like Cmake-tools kind of works, but
-the hotkeys and some settings are far from intuitive.</p>
-<p>In my previous attempt I ended up removing <tt class="docutils literal">cmake tools</tt> plugin and moving forward with custom task.json and launch.json scripts.
-Here is a template I made back then.
-<a class="reference external" href="https://github.com/serge-m/vscode_cmake_template">https://github.com/serge-m/vscode_cmake_template</a>.</p>
-<p>Recently I managed to make it more of less convenient (maybe some updates played a role here as well).
-Here are some settings I needed to make it usable and comparable to CLion.</p>
-<div class="section" id="separate-build-directory-per-build-type">
-<h3>Separate build directory per build type</h3>
-<p>If you have only one directory for your build
-you will need to rebuild everything when you switch between debug and release.
-In order to have a <a class="reference external" href="https://github.com/microsoft/vscode-cmake-tools/issues/151">separate build directory</a>
-per build type (Debug/Release) add the following to your <cite>settings.json</cite>:</p>
-<blockquote>
-&quot;cmake.buildDirectory&quot;: &quot;${workspaceRoot}/build-${buildType}&quot;</blockquote>
-<p>By default VSCode and CmakeTools use ninja as a generator for cmake. Often one need to use make. Add</p>
-<blockquote>
-&quot;cmake.generator&quot;: &quot;Unix Makefiles&quot;</blockquote>
-<p>to switch from ninja to make.</p>
-</div>
-<div class="section" id="debugging-settings">
-<h3>Debugging settings</h3>
-<p>In launch.json update &quot;program&quot; parameter:</p>
-<blockquote>
-&quot;program&quot;: &quot;${command:cmake.launchTargetPath}&quot;,</blockquote>
-<p>Cmake Tools will substitute the corresponding path.
-(from <a class="reference external" href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html#debugging-with-cmake-tools-and-launch-json">docs of CmakeTools</a>)</p>
-</div>
-<div class="section" id="configure-cmake-settings">
-<h3>Configure cmake settings</h3>
-<p>add <a class="reference external" href="https://vector-of-bool.github.io/docs/vscode-cmake-tools/settings.html#cmake-configuresettings">cmake.configureSettings</a> to <cite>settings.json</cite>:</p>
-<pre class="code literal-block">
-&quot;cmake.configureSettings&quot;: {
-    &quot;USE_MYMATH&quot;: &quot;ON&quot;
-}
-</pre>
-</div>
-</div>
-<div class="section" id="getting-started-with-gtest">
-<h2>Getting started with Gtest</h2>
-<p>For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest.</p>
-<p>Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.</p>
-<pre class="code literal-block">
-sudo apt-get install libgtest-dev
-sudo apt-get install cmake # install cmake
-cd /usr/src/gtest
-sudo cmake CMakeLists.txt
-sudo make
+the hotkeys and some settings are far from intuitive.
 
-# copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
-sudo cp *.a /usr/lib
-</pre>
-<p>Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place.
-That requires some custom scripting in your cmake files.</p>
-<div class="section" id="see-also">
-<h3>See also:</h3>
-<ul class="simple">
-<li><a class="reference external" href="https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/">Getting started with Google Test (GTest) on Ubuntu</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="handling-dependencies-in-cmake">
-<h2>Handling dependencies in CMake</h2>
-<p>If i need to import a compiled 3rdparty library to my cmake project:</p>
-<pre class="code literal-block">
-add_library(some_library SHARED IMPORTED)
-set_property(TARGET some_library PROPERTY IMPORTED_LOCATION &quot;${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so&quot;)
-set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES &quot;${CMAKE_CURRENT_SOURCE_DIR}/include/&quot;)
-</pre>
-</div>
-<div class="section" id="cmake-with-conan-and-catch2">
-<h2>CMake with Conan and Catch2</h2>
-<p>Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing:</p>
-<p><a class="reference external" href="https://github.com/serge-m/code-training/tree/master/cpp/tst_conan">tst_conan</a></p>
-</div>
-<div class="section" id="python-bindings-for-c-code">
-<h2>Python bindings for C++ code</h2>
-<p><a class="reference external" href="https://www.benjack.io/2018/02/02/python-cpp-revisited.html">Hybrid Python/C++ packages, revisited</a>. an approach
-using pybind11 and cmake.</p>
-</div>
-</div>
+In my previous attempt I ended up removing ``cmake tools`` plugin and moving forward with custom task.json and launch.json scripts.
+Here is a template I made back then.
+`https://github.com/serge-m/vscode_cmake_template <https://github.com/serge-m/vscode_cmake_template>`_.
+
+Recently I managed to make it more of less convenient (maybe some updates played a role here as well).
+Here are some settings I needed to make it usable and comparable to CLion.
+
+
+Separate build directory per build type
+-------------------------------------------
+
+If you have only one directory for your build
+you will need to rebuild everything when you switch between debug and release.
+In order to have a `separate build directory <https://github.com/microsoft/vscode-cmake-tools/issues/151>`_
+per build type (Debug/Release) add the following to your `settings.json`:
+
+    "cmake.buildDirectory": "${workspaceRoot}/build-${buildType}"
+
+By default VSCode and CmakeTools use ninja as a generator for cmake. Often one need to use make. Add
+
+    "cmake.generator": "Unix Makefiles"
+
+to switch from ninja to make.
+
+Debugging settings
+-----------------------------
+
+In launch.json update "program" parameter:
+
+    "program": "${command:cmake.launchTargetPath}",
+
+Cmake Tools will substitute the corresponding path.
+(from `docs of CmakeTools <https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html#debugging-with-cmake-tools-and-launch-json>`_)
+
+
+Configure cmake settings
+------------------------------------
+
+add `cmake.configureSettings <https://vector-of-bool.github.io/docs/vscode-cmake-tools/settings.html#cmake-configuresettings>`_ to `settings.json`:
+
+
+.. code-block::
+
+    "cmake.configureSettings": {
+        "USE_MYMATH": "ON"
+    }
+
+
+
+Getting started with Gtest
+=====================================
+
+For any decent project in Cpp it's good to set up testing system. For C++ the standard solution is to use Gtest.
+
+Installing Gtest in your ubuntu is not very straightforward. You have to install the package containing source code and then compile it with cmake with sudo rights.
+
+.. code-block::
+
+    sudo apt-get install libgtest-dev
+    sudo apt-get install cmake # install cmake
+    cd /usr/src/gtest
+    sudo cmake CMakeLists.txt
+    sudo make
+
+    # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
+    sudo cp *.a /usr/lib
+
+
+Many projects use alternative approach. They clone GTest sources from github into the source tree of the project and compile it in-place.
+That requires some custom scripting in your cmake files.
+
+See also:
+---------------------------------------
+
+* `Getting started with Google Test (GTest) on Ubuntu <https://www.eriksmistad.no/getting-started-with-google-test-on-ubuntu/>`_
+
+
+
+
+Handling dependencies in CMake
+=====================================================
+
+If i need to import a compiled 3rdparty library to my cmake project:
+
+.. code-block::
+
+    add_library(some_library SHARED IMPORTED)
+    set_property(TARGET some_library PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/lib/some_library.so")
+    set_property(TARGET some_library PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+
+
+
+CMake with Conan and Catch2
+=====================================================
+
+Here is a sample CMake project that uses Conan for dependency management and Catch2 for testing:
+
+`tst_conan <https://github.com/serge-m/code-training/tree/master/cpp/tst_conan>`_
+
+
+Python bindings for C++ code
+=============================================
+
+
+`Hybrid Python/C++ packages, revisited <https://www.benjack.io/2018/02/02/python-cpp-revisited.html>`_. an approach
+using pybind11 and cmake.
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
@@ -385,7 +387,7 @@ using pybind11 and cmake.</p>
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

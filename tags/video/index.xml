@@ -16,8 +16,7 @@
       <pubDate>Fri, 27 Mar 2020 07:18:23 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/image-and-video-processing-recipes/</guid>
-      <description>I often need to perform some operations on videos or image sequences. Usually I use linux and ffmpeg, and sometimes I struggle to remember all the commands. Here is a collection of recipes that I usually use with a bit of explanations.
-Video conversions Cut a range of frames Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec:</description>
+      <description>I often need to perform some operations on videos or image sequences. Usually I use linux and `ffmpeg`, and sometimes I struggle to remember all the commands. Here is a collection of recipes that I usually use with a bit of explanations. Video conversions ========================== Cut a range of frames --------------------------- Cut a range of frames (100, 130) from a video and save it to mp4 with a good quality using x264 codec: .</description>
     </item>
     
     <item>
@@ -92,7 +91,7 @@ https://youtu.be/yfqpqiTMUEg</description>
       
       <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
       <description>Using python and ffmpeg:
-1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) )   </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0}{1}&amp;#34;.format( v, pathDst ) )   </description>
     </item>
     
     <item>

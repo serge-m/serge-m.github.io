@@ -10,7 +10,7 @@
 <meta name="description" content="Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&quot;-Xms1g -Xmx1g&quot; ./elasticsearch ">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/elastic-search-cookbook/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -214,15 +214,15 @@ if (!doNotTrack) {
 
   <div class="post-content"><h2 id="commands">Commands<a hidden class="anchor" aria-hidden="true" href="#commands">#</a></h2>
 <h3 id="list-indexes">List indexes<a hidden class="anchor" aria-hidden="true" href="#list-indexes">#</a></h3>
-<pre><code>curl -X GET localhost:9200/_cat/indices
+<pre tabindex="0"><code>curl -X GET localhost:9200/_cat/indices
 </code></pre><h3 id="delete-index">Delete index<a hidden class="anchor" aria-hidden="true" href="#delete-index">#</a></h3>
-<pre><code>curl -X DELETE localhost:9200/YOUR_INDEX
+<pre tabindex="0"><code>curl -X DELETE localhost:9200/YOUR_INDEX
 </code></pre><h3 id="delete-all-indices">Delete all indices<a hidden class="anchor" aria-hidden="true" href="#delete-all-indices">#</a></h3>
-<pre><code>curl -X GET localhost:9200/_all
+<pre tabindex="0"><code>curl -X GET localhost:9200/_all
 </code></pre><h3 id="list-of-all-doc_types-in-a-given-index">List of all doc_types in a given index<a hidden class="anchor" aria-hidden="true" href="#list-of-all-doc_types-in-a-given-index">#</a></h3>
-<pre><code>curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;
+<pre tabindex="0"><code>curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &quot;.YOUR_INDEX.mappings | to_entries | .[].key&quot;
 </code></pre><h2 id="running-elastic-seach-with-a-limited-memory">Running elastic seach with a limited memory<a hidden class="anchor" aria-hidden="true" href="#running-elastic-seach-with-a-limited-memory">#</a></h2>
-<pre><code>#!/bin/sh                                                                                                                                                                                                                                     
+<pre tabindex="0"><code>#!/bin/sh                                                                                                                                                                                                                                     
 ES_JAVA_OPTS=&quot;-Xms1g -Xmx1g&quot; ./elasticsearch
 </code></pre>
 </div>
@@ -295,7 +295,7 @@ ES_JAVA_OPTS=&quot;-Xms1g -Xmx1g&quot; ./elasticsearch
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

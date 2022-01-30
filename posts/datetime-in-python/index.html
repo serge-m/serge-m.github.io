@@ -10,7 +10,7 @@
 <meta name="description" content="Conversion from calendar week to date Sometimes one has to convert a date written as year, calendar week (CW), and day of week to an actual date with month and date. The behaviour in the begin/end of a year may be not straightforward. For example according to ISO 8601 monday date of the CW 1 year 2019 is 31 January 2018. As far as I can see there is no standard function for conversion in python.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/datetime-in-python/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -212,7 +212,7 @@ As far as I can see there is no standard function for conversion in python.</p>
 <p>I use the following hacky code:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -242,7 +242,7 @@ As far as I can see there is no standard function for conversion in python.</p>
 </span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">year_cw_day_to_date</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">calendar_week</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">day_of_week</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">year_cw_day_to_date</span><span class="p">(</span><span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">calendar_week</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">day_of_week</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="s2">&#34;&#34;&#34;
 </span><span class="s2">    year: integer number, e.g. 1986
 </span><span class="s2">    calendar_week: integer number, from 1 to 53
@@ -268,7 +268,7 @@ As far as I can see there is no standard function for conversion in python.</p>
 
     <span class="k">if</span> <span class="n">day_of_week</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;day_of_week must be in range from 1 to 7&#34;</span><span class="p">)</span>
-    <span class="n">string_representation</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&#34;{year}-{calendar_week}-{day_of_week}&#34;</span>
+    <span class="n">string_representation</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">calendar_week</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">day_of_week</span><span class="si">}</span><span class="s2">&#34;</span>
     <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">string_representation</span><span class="p">,</span> <span class="s2">&#34;</span><span class="si">%G</span><span class="s2">-%V-</span><span class="si">%u</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
@@ -414,7 +414,7 @@ including concurrent.futures, multiprocessing, queue, subprocess, telnet and thr
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

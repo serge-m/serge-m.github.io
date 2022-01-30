@@ -7,13 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>Git cheat sheet | sergem&#39;s personal public notebook</title>
 <meta name="keywords" content="git, ssh, github, key, VCS" />
-<meta name="description" content="Nice history log in console git log --all --decorate --oneline --graph  How to remember:
-&quot;A Dog&quot; = git log --all --decorate --oneline --graph
-Sample result:
-$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.">
+<meta name="description" content="Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: &#34;A Dog&#34; = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/git-cheat-sheet/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -21,7 +18,7 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -35,10 +32,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="Git cheat sheet" />
-<meta property="og:description" content="Nice history log in console git log --all --decorate --oneline --graph  How to remember:
-&quot;A Dog&quot; = git log --all --decorate --oneline --graph
-Sample result:
-$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0." />
+<meta property="og:description" content="Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: &#34;A Dog&#34; = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://serge-m.github.io/posts/git-cheat-sheet/" /><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-07T06:00:00&#43;00:00" />
@@ -48,10 +42,7 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
 <meta name="twitter:image" content="https://serge-m.github.io/papermod-cover.png"/>
 
 <meta name="twitter:title" content="Git cheat sheet"/>
-<meta name="twitter:description" content="Nice history log in console git log --all --decorate --oneline --graph  How to remember:
-&quot;A Dog&quot; = git log --all --decorate --oneline --graph
-Sample result:
-$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0."/>
+<meta name="twitter:description" content="Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: &#34;A Dog&#34; = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0."/>
 
 
 <script type="application/ld+json">
@@ -80,12 +71,12 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
   "@type": "BlogPosting",
   "headline": "Git cheat sheet",
   "name": "Git cheat sheet",
-  "description": "Nice history log in console git log --all --decorate --oneline --graph  How to remember:\n\u0026quot;A Dog\u0026quot; = git log --all --decorate --oneline --graph\nSample result:\n$ git log --all --decorate --oneline --graph * e4689e3 (HEAD -\u0026gt; master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.",
+  "description": "Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: \"A Dog\" = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.",
   "keywords": [
     "git", "ssh", "github", "key", "VCS"
   ],
-  "articleBody": "Nice history log in console git log --all --decorate --oneline --graph  How to remember:\n\"A Dog\" = git log --all --decorate --oneline --graph\nSample result:\n$ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2 | * c0c934f more readme's | * c514699 better readme | * 3e092be added readme, added basic error processing, added logging | * 786fa09 cleaning up | * 96fd9a7 main script for task1 | * b1b0e53 first version of task1 | * 8cf1529 safety check for download, refactoring | * 807cecd draft for task1 | * 68fcdf8 updated readme for task2 | * 7e8b8ae added readme, |/ * d5bd5a4 structure of the directory * d293704 added more tests * aefe72f added gitignore * 06ff547 Initial version for task2   Set date/time for git commits export GIT_COMMITTER_DATE=\"2020-01-01 12:00:00\"; git commit --date \"$GIT_COMMITTER_DATE\" -m \"commit message\"   Caching credentials Remember credentials for 1 hour (3600 seconds):\ngit config --global credential.helper 'cache --timeout=3600'  Disabling cache:\ngit config --global --unset credential.helper   Export a repo to an archive without .git git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip  tar archive is also supported. More info at git-archive doc.\n Use specific SSH key for connection One can set a custom ssh command using an environment variable:\nexport GIT_SSH_COMMAND=\"ssh -i /path/to/your/private_key\" git fetch #..... do something  If you want to assign an SSH key permanently for a given repo you can update the local git config:\ngit config core.sshCommand 'ssh -i path/to/your/private_key' git fetch #..... do something   ",
-  "wordCount" : "294",
+  "articleBody": " Nice history log in console ---------------------------------------- .. code-block:: git log --all --decorate --oneline --graph How to remember: \"A Dog\" = git log --**all** --**decorate** --**oneline** --**graph** Sample result: .. code-block:: $ git log --all --decorate --oneline --graph * e4689e3 (HEAD - master, origin/master, origin/HEAD) tree iteration * 4c3385d using stoi * 0588a47 gitignore for cpp * 8f3f0e6 removed boost, add readme * f225b06 simple expression interpreter * 1ccdda1 chain of responsibility * f37eb7a restructure of the old code, removed large db file | * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2 | * c0c934f more readme's | * c514699 better readme | * 3e092be added readme, added basic error processing, added logging | * 786fa09 cleaning up | * 96fd9a7 main script for task1 | * b1b0e53 first version of task1 | * 8cf1529 safety check for download, refactoring | * 807cecd draft for task1 | * 68fcdf8 updated readme for task2 | * 7e8b8ae added readme, |/ * d5bd5a4 structure of the directory * d293704 added more tests * aefe72f added gitignore * 06ff547 Initial version for task2 Set date/time for git commits ------------------------------------------------------ .. code-block:: export GIT_COMMITTER_DATE=\"2020-01-01 12:00:00\"; git commit --date \"$GIT_COMMITTER_DATE\" -m \"commit message\" Caching credentials --------------------------------------------- Remember credentials for 1 hour (3600 seconds): .. code-block:: git config --global credential.helper 'cache --timeout=3600' Disabling cache: .. code-block:: git config --global --unset credential.helper Export a repo to an archive without .git -------------------------------------------------- .. code-block:: git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip `tar` archive is also supported. More info at `git-archive doc `_. Use specific SSH key for connection ----------------------------------------------------- One can set a custom ssh command using an environment variable: .. code-block:: export GIT_SSH_COMMAND=\"ssh -i /path/to/your/private_key\" git fetch #..... do something If you want to assign an SSH key permanently for a given repo you can update the local git config: .. code-block:: git config core.sshCommand 'ssh -i path/to/your/private_key' git fetch #..... do something ",
+  "wordCount" : "316",
   "inLanguage": "en",
   "datePublished": "2020-04-07T06:00:00Z",
   "dateModified": "2020-04-07T06:00:00Z",
@@ -200,99 +191,112 @@ $ git log --all --decorate --oneline --graph * e4689e3 (HEAD -&gt; master, origi
         <summary accesskey="c" title="(Alt + C)">
             <div class="details">Table of Contents</div>
         </summary>
-        <div class="inner"><ul>
-                <li>
-                    <a href="#" aria-label="Nice history log in console">Nice history log in console</a></li>
-                <li>
-                    <a href="#" aria-label="Set date/time for git commits">Set date/time for git commits</a></li>
-                <li>
-                    <a href="#" aria-label="Caching credentials">Caching credentials</a></li>
-                <li>
-                    <a href="#" aria-label="Export a repo to an archive without .git">Export a repo to an archive without .git</a></li>
-                <li>
-                    <a href="#" aria-label="Use specific SSH key for connection">Use specific SSH key for connection</a>
-                </li>
-            </ul>
+        <div class="inner">
         </div>
     </details>
 </div>
 
-  <div class="post-content"><div class="document">
+  <div class="post-content">
+
+Nice history log in console
+----------------------------------------
+
+.. code-block::
+
+    git log --all --decorate --oneline --graph
+
+How to remember:
+
+"A Dog" = git log --**all** --**decorate** --**oneline** --**graph**
 
 
-<div class="section" id="nice-history-log-in-console">
-<h2>Nice history log in console</h2>
-<pre class="code literal-block">
-git log --all --decorate --oneline --graph
-</pre>
-<p>How to remember:</p>
-<p>&quot;A Dog&quot; = git log --<strong>all</strong> --<strong>decorate</strong> --<strong>oneline</strong> --<strong>graph</strong></p>
-<p>Sample result:</p>
-<pre class="code literal-block">
-$ git log --all --decorate --oneline --graph
-* e4689e3 (HEAD -&gt; master, origin/master, origin/HEAD) tree iteration
-* 4c3385d using stoi
-* 0588a47 gitignore for cpp
-* 8f3f0e6 removed boost, add readme
-* f225b06 simple expression interpreter
-* 1ccdda1 chain of responsibility
-* f37eb7a restructure of the old code, removed large db file
-| * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2
-| * c0c934f more readme's
-| * c514699 better readme
-| * 3e092be added readme, added basic error processing, added logging
-| * 786fa09 cleaning up
-| * 96fd9a7 main script for task1
-| * b1b0e53 first version of task1
-| * 8cf1529 safety check for download, refactoring
-| * 807cecd draft for task1
-| * 68fcdf8 updated readme for task2
-| * 7e8b8ae added readme,
-|/
-* d5bd5a4 structure of the directory
-* d293704 added more tests
-* aefe72f added gitignore
-* 06ff547 Initial version for task2
-</pre>
-</div>
-<div class="section" id="set-date-time-for-git-commits">
-<h2>Set date/time for git commits</h2>
-<pre class="code literal-block">
-export GIT_COMMITTER_DATE=&quot;2020-01-01 12:00:00&quot;; git commit --date &quot;$GIT_COMMITTER_DATE&quot; -m &quot;commit message&quot;
-</pre>
-</div>
-<div class="section" id="caching-credentials">
-<h2>Caching credentials</h2>
-<p>Remember credentials for 1 hour (3600 seconds):</p>
-<pre class="code literal-block">
-git config --global credential.helper 'cache --timeout=3600'
-</pre>
-<p>Disabling cache:</p>
-<pre class="code literal-block">
-git config --global --unset credential.helper
-</pre>
-</div>
-<div class="section" id="export-a-repo-to-an-archive-without-git">
-<h2>Export a repo to an archive without .git</h2>
-<pre class="code literal-block">
-git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
-</pre>
-<p><cite>tar</cite> archive is also supported. More info at <a class="reference external" href="https://git-scm.com/docs/git-archive">git-archive doc</a>.</p>
-</div>
-<div class="section" id="use-specific-ssh-key-for-connection">
-<h2>Use specific SSH key for connection</h2>
-<p>One can set a custom ssh command using an environment variable:</p>
-<pre class="code literal-block">
-export GIT_SSH_COMMAND=&quot;ssh -i /path/to/your/private_key&quot;
-git fetch #..... do something
-</pre>
-<p>If you want to assign an SSH key permanently for a given repo you can update the local git config:</p>
-<pre class="code literal-block">
-git config core.sshCommand 'ssh -i path/to/your/private_key'
-git fetch #..... do something
-</pre>
-</div>
-</div>
+Sample result:
+
+.. code-block::
+
+    $ git log --all --decorate --oneline --graph
+    * e4689e3 (HEAD -> master, origin/master, origin/HEAD) tree iteration
+    * 4c3385d using stoi
+    * 0588a47 gitignore for cpp
+    * 8f3f0e6 removed boost, add readme
+    * f225b06 simple expression interpreter
+    * 1ccdda1 chain of responsibility
+    * f37eb7a restructure of the old code, removed large db file
+    | * 3bfdf78 (tag: 0.1, origin/old-training-task-with-data, old-training-task-with-data) fixed readme for task2
+    | * c0c934f more readme's
+    | * c514699 better readme
+    | * 3e092be added readme, added basic error processing, added logging
+    | * 786fa09 cleaning up
+    | * 96fd9a7 main script for task1
+    | * b1b0e53 first version of task1
+    | * 8cf1529 safety check for download, refactoring
+    | * 807cecd draft for task1
+    | * 68fcdf8 updated readme for task2
+    | * 7e8b8ae added readme,
+    |/
+    * d5bd5a4 structure of the directory
+    * d293704 added more tests
+    * aefe72f added gitignore
+    * 06ff547 Initial version for task2
+
+
+Set date/time for git commits
+------------------------------------------------------
+
+
+.. code-block::
+
+    export GIT_COMMITTER_DATE="2020-01-01 12:00:00"; git commit --date "$GIT_COMMITTER_DATE" -m "commit message"
+
+
+Caching credentials
+---------------------------------------------
+
+Remember credentials for 1 hour (3600 seconds):
+
+.. code-block::
+
+    git config --global credential.helper 'cache --timeout=3600'
+
+Disabling cache:
+
+.. code-block::
+
+    git config --global --unset credential.helper
+
+
+
+Export a repo to an archive without .git
+--------------------------------------------------
+
+.. code-block::
+
+    git archive --prefix=ADDITIONAL_PREFIX_INSIDE_ARCHIVE YOUR_BRANCH -o OUTPUT_FILE.zip
+
+`tar` archive is also supported. More info at `git-archive doc <https://git-scm.com/docs/git-archive>`_.
+
+
+Use specific SSH key for connection
+-----------------------------------------------------
+
+One can set a custom ssh command using an environment variable:
+
+
+.. code-block::
+
+    export GIT_SSH_COMMAND="ssh -i /path/to/your/private_key"
+    git fetch #..... do something
+
+
+If you want to assign an SSH key permanently for a given repo you can update the local git config:
+
+.. code-block::
+
+    git config core.sshCommand 'ssh -i path/to/your/private_key'
+    git fetch #..... do something
+
+
+
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
@@ -363,7 +367,7 @@ git fetch #..... do something
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

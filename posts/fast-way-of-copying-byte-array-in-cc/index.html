@@ -12,7 +12,7 @@ I have the following code for copying several buffers from one object to another
 1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &lt; MIN( conf_.size(), src.conf_.size() ); &#43;&#43; i ) { // Copy pixels  for( int j = 0; j &lt; MIN( sizeOfBuffer_, src.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -20,7 +20,7 @@ I have the following code for copying several buffers from one object to another
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -206,7 +206,7 @@ I have the following code for copying several buffers from one object to another
 <p>I have the following code for copying several buffers from one object to another:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -217,7 +217,7 @@ I have the following code for copying several buffers from one object to another
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
 </span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
        <span class="c1">// Copy pixels
@@ -231,10 +231,10 @@ I have the following code for copying several buffers from one object to another
 </div><p>Array <code>conf_</code> is defined as follows:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">*&gt;</span> <span class="n">conf_</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">BYTE</span><span class="o">*&gt;</span> <span class="n">conf_</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>BYTE is unsigned char. That code is written with no doubt about software performance. It just works. When I do so I hope compiler make it better for me.
@@ -243,7 +243,7 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
 <p>Slightly better solution:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -256,7 +256,7 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
 </span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
        <span class="kt">int</span> <span class="n">sizeOfArray</span> <span class="o">=</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">sizeOfBuffer_</span><span class="p">,</span> <span class="n">src</span><span class="p">.</span><span class="n">sizeOfBuffer_</span> <span class="p">);</span>
@@ -273,7 +273,7 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
 <p>Much better solution:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -288,7 +288,7 @@ I use Microsoft Visual Studio 2008 compiler on Intel Core i7 950 @ 3.07 GHz. The
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
 </span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
        <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrDst</span> <span class="o">=</span> <span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -308,7 +308,7 @@ UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this cod
 <p>And even better solution for Visual Studio:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -320,7 +320,7 @@ UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this cod
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">    <span class="c1">// Copy several buffers (images)
 </span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MIN</span><span class="p">(</span> <span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="n">src</span><span class="p">.</span><span class="n">conf_</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">);</span> <span class="o">++</span> <span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
        <span class="n">BYTE</span> <span class="o">*</span> <span class="n">arrDst</span> <span class="o">=</span> <span class="n">conf_</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
@@ -405,7 +405,7 @@ UPD: Intel Compiler 2011 demonstrates <strong>2 ms</strong> latency for this cod
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

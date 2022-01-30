@@ -11,7 +11,7 @@
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.">
 <meta name="author" content="SergeM">
 <link rel="canonical" href="https://serge-m.github.io/posts/installing-torch-for-miniconda/" />
-<link href="/assets/css/stylesheet.min.4a7c1baa41934a41353b5c02dd9ecd335d4e6b47f3fa5a187a77574ac682b8ac.css" integrity="sha256-SnwbqkGTSkE1O1wC3Z7NM11Oa0fz&#43;loYendXSsaCuKw=" rel="preload stylesheet" as="style">
+<link href="/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css" integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://serge-m.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://serge-m.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://serge-m.github.io/favicon-32x32.png">
@@ -19,7 +19,7 @@
 <link rel="mask-icon" href="https://serge-m.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.82.0" />
+<meta name="generator" content="Hugo 0.92.1" />
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -201,7 +201,7 @@ if (!doNotTrack) {
 
   <div class="post-content"><p>I got the error while installing torch for miniconda. Something like
 Linking CXX executable mshrable</p>
-<pre><code>~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC'
+<pre tabindex="0"><code>~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC'
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum'
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC'
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs'
@@ -214,9 +214,9 @@ Linking CXX executable mshrable</p>
 The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</p>
 <p>Solution from <a href="https://github.com/ContinuumIO/anaconda-issues/issues/152">here</a></p>
 <p>same here, temporay fix for me is to remove conda readline from the environment:</p>
-<pre><code>conda remove --force readline
+<pre tabindex="0"><code>conda remove --force readline
 </code></pre><p>and install the python bindings with</p>
-<pre><code>pip install readline
+<pre tabindex="0"><code>pip install readline
 </code></pre><p>That way, I presume it is using the system <code>readline</code></p>
 
 </div>
@@ -285,7 +285,7 @@ The solution (at least for python 2) was to remove miniconda from path and compi
 </article>
     </main>
     <footer class="footer">
-    <span>&copy; 2021 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
+    <span>&copy; 2022 <a href="https://serge-m.github.io/">sergem&#39;s personal public notebook</a></span>
     <span>&middot;</span>
     <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
     <span>&middot;</span>

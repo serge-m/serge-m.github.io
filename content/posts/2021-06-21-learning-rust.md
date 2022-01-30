@@ -3,7 +3,7 @@ Title: Learning Rust
 Author: SergeM
 Date: 2021-06-21 17:30:00
 Slug: learning-rust
-Tags: [ rust, links ]
+Tags: [ rust, links, books ]
 ---
 
 

@@ -9,7 +9,8 @@ Tags: [ rust, links ]
 
 # Resources (books, tutorials, etc.)
 
-[A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) - blog post, a great intro into the language
+[A half-hour to learn Rust](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) - blog post, a great intro into the language. 
+It may be enough to start reading the code, but not enough for writing.
 
 [Easy Rust](https://dhghomon.github.io/easy_rust/Chapter_1.html) — a book about rust 
 

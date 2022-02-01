@@ -6,8 +6,9 @@
 <title>Combine images to PDF in linux | sergem's personal public notebook</title>
 <meta name=keywords content="linux,imagemagick,useful,images">
 <meta name=description content="Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
-source">
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source
+For me images appear rotated inside the pdf. That&rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.">
 <meta name=author content="SergeM">
 <link rel=canonical href=https://serge-m.github.io/posts/combine-images-to-pdf/>
 <link href=/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as=style>
@@ -21,8 +22,9 @@ source">
 <meta name=generator content="Hugo 0.92.1">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Combine images to PDF in linux">
 <meta property="og:description" content="Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
-source">
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source
+For me images appear rotated inside the pdf. That&rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://serge-m.github.io/posts/combine-images-to-pdf/"><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2017-05-03T07:11:00+00:00">
@@ -31,10 +33,11 @@ source">
 <meta name=twitter:image content="https://serge-m.github.io/papermod-cover.png">
 <meta name=twitter:title content="Combine images to PDF in linux">
 <meta name=twitter:description content="Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
-source">
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source
+For me images appear rotated inside the pdf. That&rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://serge-m.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Combine images to PDF in linux","item":"https://serge-m.github.io/posts/combine-images-to-pdf/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Combine images to PDF in linux","name":"Combine images to PDF in linux","description":"Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.\nconvert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.\nsource","keywords":["linux","imagemagick","useful","images"],"articleBody":"Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.\nconvert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.\nsource\n","wordCount":"45","inLanguage":"en","datePublished":"2017-05-03T07:11:00Z","dateModified":"2017-05-03T07:11:00Z","author":{"@type":"Person","name":"SergeM"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://serge-m.github.io/posts/combine-images-to-pdf/"},"publisher":{"@type":"Organization","name":"sergem's personal public notebook","logo":{"@type":"ImageObject","url":"https://serge-m.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Combine images to PDF in linux","name":"Combine images to PDF in linux","description":"Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.\nconvert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.\nsource\nFor me images appear rotated inside the pdf. That\u0026rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.","keywords":["linux","imagemagick","useful","images"],"articleBody":"Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.\nconvert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.\nsource\nFor me images appear rotated inside the pdf. That’s probably because EXIF information about image rotation is not taken into account by pdf converter.\nYou can remove all the meta information first with convert -strip  and then combine it to a pdf.\nRotating of the image can be done with -rotate 90 parameter:\nconvert -rotate 90 -density 250 1.jpg 2.jpg 3.jpg -compress JPEG -quality 80 part1.pdf  ","wordCount":"115","inLanguage":"en","datePublished":"2017-05-03T07:11:00Z","dateModified":"2017-05-03T07:11:00Z","author":{"@type":"Person","name":"SergeM"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://serge-m.github.io/posts/combine-images-to-pdf/"},"publisher":{"@type":"Organization","name":"sergem's personal public notebook","logo":{"@type":"ImageObject","url":"https://serge-m.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -92,9 +95,16 @@ Combine images to PDF in linux
 </details>
 </div>
 <div class=post-content><p>Using <code>convert</code> utility we can join multiple image files (png, jpeg, pdf) into one pdf.</p>
-<pre tabindex=0><code>convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf
-</code></pre><p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
+<pre><code>convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf
+</code></pre>
+<p>we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.</p>
 <p><a href=http://stackoverflow.com/questions/23160191/compressing-text-heavy-pdfs-without-ghostscript-and-only-imagemagik-causes-blurr>source</a></p>
+<p>For me images appear rotated inside the pdf. That&rsquo;s probably because EXIF information about image rotation
+is not taken into account by pdf converter.</p>
+<p>You can remove all the meta information first with <code>convert &lt;input file> -strip &lt;output file></code> and then combine it to a pdf.</p>
+<p>Rotating of the image can be done with <code>-rotate 90</code> parameter:</p>
+<pre><code>convert -rotate 90 -density 250 1.jpg 2.jpg 3.jpg -compress JPEG -quality 80 part1.pdf
+</code></pre>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>

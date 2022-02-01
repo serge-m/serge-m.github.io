@@ -17,8 +17,9 @@
       
       <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
       <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
-source</description>
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+source
+For me images appear rotated inside the pdf. That&amp;rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.</description>
     </item>
     
   </channel>

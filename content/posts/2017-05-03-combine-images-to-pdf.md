@@ -4,7 +4,7 @@ Author: SergeM
 Date: 2017-05-03 07:11:00
 Slug: combine-images-to-pdf
 aliases: [/combine-images-to-pdf.html]
-Tags: [ linux, imagemagick, useful, images]
+Tags: [ linux, imagemagick, useful, images, pdf]
 ---
 
 

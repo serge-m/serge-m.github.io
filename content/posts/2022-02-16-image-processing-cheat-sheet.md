@@ -25,3 +25,7 @@ Find `jpg` and `jpeg` images, apply orientation from EXIF, remove metadata and r
 preserving the aspect ratio and save to the same files:
 
     find . -name "*.jp*g" -exec mogrify -auto-orient -strip -resize "1920x1920" {} \;
+
+
+See also
+* [convert images to pdf](/combine-images-to-pdf.html)

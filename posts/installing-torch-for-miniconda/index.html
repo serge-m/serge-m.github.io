@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Installing torch for miniconda">
 <meta property="og:description" content="I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
 ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP' ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.">

@@ -15,7 +15,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://serge-m.github.io/index.xml>
 <link rel=alternate type=application/json href=https://serge-m.github.io/index.json>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="sergem's personal public notebook">
@@ -81,6 +81,19 @@
 </a>
 </div>
 </footer>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Image processing cheat sheet</h2>
+</header>
+<section class=entry-content>
+<p>In ImageMagick:
+convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten) Strip metadata from jpg file:
+mogrify -strip f.jpg Rotate according the metadata, then strip:
+mogrify -auto-orient -strip f.jpg Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:...</p>
+</section>
+<footer class=entry-footer>February 16, 2022&nbsp;·&nbsp;SergeM</footer>
+<a class=entry-link aria-label="post link to Image processing cheat sheet" href=https://serge-m.github.io/posts/learning-rust/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
@@ -203,19 +216,6 @@ pcl_ros http://wiki....</p>
 </section>
 <footer class=entry-footer>November 10, 2020&nbsp;·&nbsp;SergeM</footer>
 <a class=entry-link aria-label="post link to Point cloud processing" href=https://serge-m.github.io/posts/point-cloud-processing/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Python - Multiprocessing</h2>
-</header>
-<section class=entry-content>
-<p>Libraries Standard multiprocessing
-Pebble - pretty close to the standard one, but with a bit nicer interface
-Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x....</p>
-</section>
-<footer class=entry-footer>October 1, 2020&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Python - Multiprocessing" href=https://serge-m.github.io/posts/python-multiprocessing/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

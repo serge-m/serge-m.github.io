@@ -17,7 +17,7 @@ Mat img(height, width, CV_8UC3, pixels, step); GaussianBlur(img, img, Size(7,7),
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="OpenCV. Processing external byte buffer">
 <meta property="og:description" content="We have such an example from openCV documentation:
 Mat img(height, width, CV_8UC3, pixels, step); GaussianBlur(img, img, Size(7,7), 1.5, 1.5); What does it mean?&nbsp;Lets say I have an image img: typedef unsigned char BYTE; BYTE * img = new BYTE[ w * h ];Lets assume the image is scanned line by line. So img[ 10 * w + 3 ] is a 3-rd pixel in 10-line of image.Then I import it in openCV is such a way: Mat img(h, w, CV_8UC1, dmDst, w); last argument is a pitch or stride.">

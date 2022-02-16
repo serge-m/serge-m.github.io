@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <link rel=alternate type=application/rss+xml href=https://serge-m.github.io/posts/index.xml>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Posts">
 <meta property="og:description" content="Personal public notebook">
@@ -69,6 +69,21 @@
 <header class=page-header><div class=breadcrumbs><a href=https://serge-m.github.io/>Home</a></div>
 <h1>Posts</h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Pytest cheatsheet</h2>
+</header>
+<section class=entry-content>
+<p>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
+Running tests in pytest with/without a specified mark Execute
+pytest -m "integration" if you want to run only tests that have “@pytest.mark.integration” annotation.
+Similarly you can run only tests that don’t are not marked.
+pytest -m "not your_mark" That command will test everything that is not marked as “your_mark”.
+How to verify exception message using pytest One can use context manager pytest....</p>
+</section>
+<footer class=entry-footer>January 2, 2018&nbsp;·&nbsp;SergeM</footer>
+<a class=entry-link aria-label="post link to Pytest cheatsheet" href=https://serge-m.github.io/posts/pytest-cheatsheet/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>how to break a programmer</h2>
@@ -181,18 +196,6 @@ $ getent group list all groups of the current user:...</p>
 </section>
 <footer class=entry-footer>June 9, 2017&nbsp;·&nbsp;SergeM</footer>
 <a class=entry-link aria-label="post link to Useful console commands" href=https://serge-m.github.io/posts/useful-console-commands/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Markdown tricks</h2>
-</header>
-<section class=entry-content>
-<p>Expandable / collapsible code blocks in github The text is shown on click.
-1 2 3 4 &lt;details> &lt;summary>Click to expand&lt;/summary> your hidden code &lt;/details> Results:
-Click to expand your hidden code Source</p>
-</section>
-<footer class=entry-footer>June 9, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Markdown tricks" href=https://serge-m.github.io/posts/markdown-tricks/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

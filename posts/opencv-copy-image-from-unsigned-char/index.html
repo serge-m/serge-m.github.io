@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="OpenCV. Copy image from unsigned char buffer, resize and save to file">
 <meta property="og:description" content="How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
 #include <opencv/cv.h> #include <opencv/highgui.h> int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&(IplImage)src); cvSaveImage(&#34;src1.bmp&#34;, writeImage); cvReleaseImage( &writeImage ); writeImage=cvCloneImage(&(IplImage)small); cvSaveImage(&#34;little.">

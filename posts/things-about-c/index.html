@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Things about C++">
 <meta property="og:description" content="rules for resolving calls to overloaded functions:&nbsp;- identify the function that's the best match for the call (name, parameters etc)checks accessibility for the best-match function.  Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&#34; target=&#34;_blank) The compiler works through the following checklist and if it still can't reach a decision, it issues an error:Gather all the functions in the current scope that have the same name as the function called.Exclude those that don't have the right number of parameters to match the arguments in the call.">
 <meta property="og:type" content="article">

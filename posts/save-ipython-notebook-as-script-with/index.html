@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Save Ipython notebook as script with the same filename">
 <meta property="og:description" content="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;'&#34;+thename+&#34;'&#34;; kernel.execute(command); # saving to a directory 'backup'. create the directory if it doesn't exist # source http://stackoverflow.">
 <meta property="og:type" content="article">

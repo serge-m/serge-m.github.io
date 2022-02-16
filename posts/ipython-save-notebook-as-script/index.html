@@ -17,7 +17,7 @@
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="ipython. save notebook as script">
 <meta property="og:description" content="Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&#34; target=&#34;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&#34; target=&#34;_blank)
 # [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;'&#34;+thename+&#34;'&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u&rsquo;ipython nbconvert &ndash;to python {}.ipynb'.format(theNotebook)) except NameError : pass">

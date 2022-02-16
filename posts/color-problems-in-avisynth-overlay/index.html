@@ -17,7 +17,7 @@ I have a depth map (from http://vision.middlebury.edu/stereo/data/scenes2001/da
 <link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.1">
+<meta name=generator content="Hugo 0.92.2">
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="Color problems in avisynth->overlay">
 <meta property="og:description" content="I processed depth maps using avisynth 2.5.8 and I found out it causes color degradation
 I have a depth map (from http://vision.middlebury.edu/stereo/data/scenes2001/data/imagehtml/sawtooth.html) And two scripts1)&nbsp;just_show.avsv = ImageSource( &#34;depth.jpg&#34; ).Trim(0, -1) return v2) overlay.avs v = ImageSource( &#34;depth.jpg&#34; ).Trim(0, -1) return overlay( v, v, mode = &#34;blend&#34;, opacity = 0.80)&nbsp; They have slightly different colors. ![](http://4.bp.blogspot.com/-Lj-uQIVor4c/UcP-amr12PI/AAAAAAAAAZQ/RvXjjb2Vc14/s320/just_show.png)just show![](http://1.bp.blogspot.com/-O1GkOsIX8rU/UcP-avb8uEI/AAAAAAAAAZU/x9p_nPsHSwU/s320/overlay.png)overlayOverlay has chroma componentThe cause was in wrong color conversion in avisynth 2.5.8. I downloaded&nbsp;AVS 2.">

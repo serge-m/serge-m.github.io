@@ -49,9 +49,11 @@ Rounding introduces more even numbers:
 
 Truncation in pytorch:
 
+    >>> # deprecated
     >>> torch.tensor(a, dtype=torch.int)
     tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4], dtype=torch.int32)
 
+    >>> # ok
     >>> torch.tensor(a, dtype=torch.float64).type(torch.int64)
     tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
 
@@ -69,3 +71,17 @@ Truncation and rounding in numpy works the same way:
 
     >>> np.round(a)
     array([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.])
+
+
+Round half up in python:
+
+    >>> def round_half_up(x):
+    >>>    return math.floor(x+0.5)
+    >>>
+    >>> list(map(round_half_up, a))
+    [0, 1, 1, 2, 2, 3, 3, 4, 4, 5]    
+
+
+References:
+
+* [jupyter notebbok](https://gist.github.com/serge-m/de45997d87fcc2e8a869a5f2a5cc4fb9) in github gist.

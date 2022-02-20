@@ -31,7 +31,7 @@ That introduces an undesired bias some cases. For example if we have a large dat
 <meta name=twitter:description content="In school we round numbers like 0.5, 1123.5 towards the bigger number. It&rsquo;s a &ldquo;round half up&rdquo; method.
 That introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It&rsquo;s &ldquo;Rounding half to even&rdquo; or &ldquo;banker&rsquo;s rounding&rdquo;.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://serge-m.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Rounding in Python","item":"https://serge-m.github.io/posts/rounding-in-python/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rounding in Python","name":"Rounding in Python","description":"In school we round numbers like 0.5, 1123.5 towards the bigger number. It\u0026rsquo;s a \u0026ldquo;round half up\u0026rdquo; method.\nThat introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It\u0026rsquo;s \u0026ldquo;Rounding half to even\u0026rdquo; or \u0026ldquo;banker\u0026rsquo;s rounding\u0026rdquo;.","keywords":["python","math","floating point"],"articleBody":"In school we round numbers like 0.5, 1123.5 towards the bigger number. It’s a “round half up” method.\nThat introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It’s “Rounding half to even” or “banker’s rounding”.\nThis method is used in IEEE Standard for Floating-Point Arithmetic (IEEE 754). Python, numpy and pytorch use it as well.\nTruncation like int(0.5) and int(1.5) just keeps the integer part.\nExample  import torch  import math  import numpy as np  Defining an array with a lot of .5-s:\n a = [x / 2. for x in range(10)]  a [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5]  Truncation just keeps the integer part:\n list(map(int, a)) [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]  Rounding introduces more even numbers:\n list(map(round, a)) [0, 0, 1, 2, 2, 2, 3, 4, 4, 4]  Truncation in pytorch:\n torch.tensor(a, dtype=torch.int) tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4], dtype=torch.int32)  torch.tensor(a, dtype=torch.float64).type(torch.int64) tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])  Rounding in pytorch:\n torch.tensor(a, dtype=torch.float64).round() tensor([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.], dtype=torch.float64)  Truncation and rounding in numpy works the same way:\n np.array(a, dtype=np.int) array([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])  np.round(a) array([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.])  ","wordCount":"262","inLanguage":"en","datePublished":"2021-01-10T21:35:00Z","dateModified":"2021-01-10T21:35:00Z","author":{"@type":"Person","name":"SergeM"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://serge-m.github.io/posts/rounding-in-python/"},"publisher":{"@type":"Organization","name":"sergem's personal public notebook","logo":{"@type":"ImageObject","url":"https://serge-m.github.io/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rounding in Python","name":"Rounding in Python","description":"In school we round numbers like 0.5, 1123.5 towards the bigger number. It\u0026rsquo;s a \u0026ldquo;round half up\u0026rdquo; method.\nThat introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It\u0026rsquo;s \u0026ldquo;Rounding half to even\u0026rdquo; or \u0026ldquo;banker\u0026rsquo;s rounding\u0026rdquo;.","keywords":["python","math","floating point"],"articleBody":"In school we round numbers like 0.5, 1123.5 towards the bigger number. It’s a “round half up” method.\nThat introduces an undesired bias some cases. For example if we have a large data set, and we aggregate some column containing a lot of .5 fractions. In order to adjust for it in many cases a rounding of 0.5 towards nearest even number is applied. It’s “Rounding half to even” or “banker’s rounding”.\nThis method is used in IEEE Standard for Floating-Point Arithmetic (IEEE 754). Python, numpy and pytorch use it as well.\nTruncation like int(0.5) and int(1.5) just keeps the integer part.\nExample  import torch  import math  import numpy as np  Defining an array with a lot of .5-s:\n a = [x / 2. for x in range(10)]  a [0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5]  Truncation just keeps the integer part:\n list(map(int, a)) [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]  Rounding introduces more even numbers:\n list(map(round, a)) [0, 0, 1, 2, 2, 2, 3, 4, 4, 4]  Truncation in pytorch:\n # deprecated  torch.tensor(a, dtype=torch.int) tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4], dtype=torch.int32)  # ok  torch.tensor(a, dtype=torch.float64).type(torch.int64) tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])  Rounding in pytorch:\n torch.tensor(a, dtype=torch.float64).round() tensor([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.], dtype=torch.float64)  Truncation and rounding in numpy works the same way:\n np.array(a, dtype=np.int) array([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])  np.round(a) array([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.])  Round half up in python:\n def round_half_up(x):  return math.floor(x+0.5)   list(map(round_half_up, a)) [0, 1, 1, 2, 2, 3, 3, 4, 4, 5]  References:\n jupyter notebbok in github gist.  ","wordCount":"299","inLanguage":"en","datePublished":"2021-01-10T21:35:00Z","dateModified":"2021-01-10T21:35:00Z","author":{"@type":"Person","name":"SergeM"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://serge-m.github.io/posts/rounding-in-python/"},"publisher":{"@type":"Organization","name":"sergem's personal public notebook","logo":{"@type":"ImageObject","url":"https://serge-m.github.io/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -120,9 +120,11 @@ Python, numpy and pytorch use it as well.</p>
 [0, 0, 1, 2, 2, 2, 3, 4, 4, 4]
 </code></pre>
 <p>Truncation in pytorch:</p>
-<pre><code>&gt;&gt;&gt; torch.tensor(a, dtype=torch.int)
+<pre><code>&gt;&gt;&gt; # deprecated
+&gt;&gt;&gt; torch.tensor(a, dtype=torch.int)
 tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4], dtype=torch.int32)
 
+&gt;&gt;&gt; # ok
 &gt;&gt;&gt; torch.tensor(a, dtype=torch.float64).type(torch.int64)
 tensor([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
 </code></pre>
@@ -137,6 +139,17 @@ array([0, 0, 1, 1, 2, 2, 3, 3, 4, 4])
 &gt;&gt;&gt; np.round(a)
 array([0., 0., 1., 2., 2., 2., 3., 4., 4., 4.])
 </code></pre>
+<p>Round half up in python:</p>
+<pre><code>&gt;&gt;&gt; def round_half_up(x):
+&gt;&gt;&gt;    return math.floor(x+0.5)
+&gt;&gt;&gt;
+&gt;&gt;&gt; list(map(round_half_up, a))
+[0, 1, 1, 2, 2, 3, 3, 4, 4, 5]    
+</code></pre>
+<p>References:</p>
+<ul>
+<li><a href=https://gist.github.com/serge-m/de45997d87fcc2e8a869a5f2a5cc4fb9>jupyter notebbok</a> in github gist.</li>
+</ul>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>

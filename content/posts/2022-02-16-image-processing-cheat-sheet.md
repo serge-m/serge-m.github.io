@@ -2,7 +2,7 @@
 Title: Image processing cheat sheet
 Author: SergeM
 Date: 2022-02-16 21:30:00
-Slug: learning-rust
+Slug: image-processing-cheat-sheet
 Tags: [ image processing, cheatsheet, imagemagick, jpg, resize ]
 ---
 

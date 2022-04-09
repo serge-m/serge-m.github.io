@@ -17,8 +17,8 @@
       
       <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
       <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
-import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
-class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+import random month = random.choice(MONTHS) if (month.lower().endswith(&amp;#39;r&amp;#39;) or month.lower().endswith(&amp;#39;ary&amp;#39;)): print(&amp;#39;%s is a good time to eat oysters&amp;#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&amp;#39;%s is a good time to eat tomatoes&amp;#39; % month) else: print(&amp;#39;%s is a good time to eat asparagus&amp;#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&amp;#39;r&amp;#39;) self.</description>
     </item>
     
     <item>

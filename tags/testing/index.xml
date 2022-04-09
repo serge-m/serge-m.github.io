@@ -27,9 +27,9 @@
       <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
       <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
 Running tests in pytest with/without a specified mark Execute
-pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+pytest -m &amp;#34;integration&amp;#34; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
 Similarly you can run only tests that don&amp;rsquo;t are not marked.
-pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+pytest -m &amp;#34;not your_mark&amp;#34; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
 How to verify exception message using pytest One can use context manager pytest.</description>
     </item>
     

@@ -21,7 +21,7 @@ Parallelization for make:
 make -j8 Parallelization for cmake:
 cmake --build &amp;lt;bindir&amp;gt; -- -j 8 Sometimes you cannot pass parameters directly to make. For example you are installing a python module using
 python setup.py install Setup script doesn&amp;rsquo;t accept parameters. Then you could pass them through environment variables:
-export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
+export MAKEFLAGS=&amp;#34;-j 8&amp;#34; see also
  intro to CMake video, russian.  </description>
     </item>
     

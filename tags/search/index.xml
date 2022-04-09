@@ -16,7 +16,7 @@
       <pubDate>Fri, 10 Feb 2017 23:11:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/elastic-search-cookbook/</guid>
-      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;quot;-Xms1g -Xmx1g&amp;quot; ./elasticsearch </description>
+      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;#34;.YOUR_INDEX.mappings | to_entries | .[].key&amp;#34; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;#34;-Xms1g -Xmx1g&amp;#34; ./elasticsearch </description>
     </item>
     
   </channel>

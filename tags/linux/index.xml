@@ -194,7 +194,7 @@ This is a bug that&amp;rsquo;s fixed in upstream NetworkManager.</description>
       <guid>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</guid>
       <description>Download JDK for Java 8 from Oracle&amp;rsquo;s web-site. Unpack archive to let&amp;rsquo;s say /usr/lib/jvm/jdk1.8.0/
 Update java alternatives:
-sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1 Select alternatives:
+sudo update-alternatives --install &amp;#34;/usr/bin/java&amp;#34; &amp;#34;java&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/java&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javac&amp;#34; &amp;#34;javac&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javaws&amp;#34; &amp;#34;javaws&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;#34; 1 Select alternatives:
 sudo update-alternatives --config java Select an option corresponding to new path.
 Do the same for
 sudo update-alternatives --config javac sudo update-alternatives --config javaws Update JAVA_HOME using
@@ -210,7 +210,7 @@ gksudo gedit /etc/environment Don&amp;rsquo;t forget to rerun terminal or reboot
       <description>Installation sudo apt-get install tmux
 Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
 :new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
-c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;#34; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
     </item>
     
     <item>
@@ -240,7 +240,7 @@ sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),
       
       <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
       <description>create a file .inputrc in your home directory and put there
-&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+&amp;#34;\e[A&amp;#34;: history-search-backward &amp;#34;\e[B&amp;#34;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
 Source</description>
     </item>
     

@@ -78,9 +78,9 @@ CPU monitoring on the main panel Default Ubuntu desktop seems to become finally 
       <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
       <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
 Running tests in pytest with/without a specified mark Execute
-pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+pytest -m &amp;#34;integration&amp;#34; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
 Similarly you can run only tests that don&amp;rsquo;t are not marked.
-pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+pytest -m &amp;#34;not your_mark&amp;#34; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
 How to verify exception message using pytest One can use context manager pytest.</description>
     </item>
     
@@ -191,8 +191,8 @@ I have only public free accounts on github. Thus I need two repositories: one co
       
       <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
       <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
-import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
-class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+import random month = random.choice(MONTHS) if (month.lower().endswith(&amp;#39;r&amp;#39;) or month.lower().endswith(&amp;#39;ary&amp;#39;)): print(&amp;#39;%s is a good time to eat oysters&amp;#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&amp;#39;%s is a good time to eat tomatoes&amp;#39; % month) else: print(&amp;#39;%s is a good time to eat asparagus&amp;#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&amp;#39;r&amp;#39;) self.</description>
     </item>
     
     <item>
@@ -219,7 +219,7 @@ class OystersGood: def __init__(self, month): month = month month_lowered = mont
       <description>Installation sudo apt-get install tmux
 Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
 :new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
-c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;#34; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
     </item>
     
     <item>
@@ -264,7 +264,7 @@ Chat (in russian) http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d439
       
       <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
       <description>create a file .inputrc in your home directory and put there
-&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+&amp;#34;\e[A&amp;#34;: history-search-backward &amp;#34;\e[B&amp;#34;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
 Source</description>
     </item>
     
@@ -329,7 +329,7 @@ Codelite Found Codelite on http://stackoverflow.</description>
       <guid>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</guid>
       <description>I created a tiny python script that executes some python code, that executes some C code:
 # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console:
-&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;quot;arraymultiter_new&amp;quot; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
+&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;#34;arraymultiter_new&amp;#34; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
     </item>
     
     <item>
@@ -481,7 +481,7 @@ Only Suspend option was there. Suspend didn&amp;rsquo;t work either. Computer co
       
       <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
       <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
-nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+nvcc fatal : Cannot find compiler &amp;#39;cl.exe&amp;#39; in PATH [&amp;#39;nvcc&amp;#39;, &amp;#39;-shared&amp;#39;, &amp;#39;-O3&amp;#39;, &amp;#39;-use_fast_math&amp;#39;, &amp;#39;-Xlinker&amp;#39;, &amp;#39;/DEBUG&amp;#39;, &amp;#39;-D HAVE_ROUND&amp;#39;, &amp;#39;-m64&amp;#39;, &amp;#39;-Xcompiler&amp;#39;, &amp;#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&amp;#39;, &amp;#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&amp;#39;, &amp;#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&amp;#39;, &amp;#39;-Ic:\\anaconda\\include&amp;#39;, &amp;#39;-o&amp;#39;, &amp;#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
     </item>
     
     <item>
@@ -530,7 +530,7 @@ function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optic
       <pubDate>Tue, 16 Sep 2014 02:15:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/python-equivalent-of-interp2/</guid>
-      <description>I wrote python version of interp2(z, xi, yi,&amp;lsquo;linear&amp;rsquo;) from matlab
+      <description>I wrote python version of interp2(z, xi, yi,&amp;rsquo;linear&amp;rsquo;) from matlab
 https://github.com/serge-m/pyinterp2</description>
     </item>
     
@@ -582,10 +582,11 @@ This script will convert projects stored in SVN with the following format:
       <pubDate>Fri, 29 Nov 2013 10:33:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/books/</guid>
-      <description>In progress   Test-Driven Development with Python Harry Percival link Pycon 2016 workshop
-  Python Testing Python Software Development and Software Testing (posts and podcast) book
-   Part  Effective C++: 55 Specific Ways to Improve Your Programs and Designs Scott Meyers   Done   Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets Nassim Nicholas Taleb
-  Learning Spark.</description>
+      <description>There must be some kind of rating here. Maybe later&amp;hellip;
+ Done The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life by Mark Manson.
+Download at amazon.
+Read 2022.
+It seems to me this is a shorter, a bit more rude version of &amp;ldquo;Seven habits&amp;rdquo; for millennials. I like the book. I guess it is even too short for me to unpack some of the ideas while I was listening to the audio version.</description>
     </item>
     
     <item>

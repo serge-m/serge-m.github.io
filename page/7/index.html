@@ -1,217 +1,35 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>sergem's personal public notebook</title>
-<meta name=description content="Personal public notebook">
-<meta name=author content="serge-m">
-<link rel=canonical href=https://serge-m.github.io/>
-<link href=/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as=style>
-<link rel=icon href=https://serge-m.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://serge-m.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://serge-m.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://serge-m.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
-<link rel=alternate type=application/rss+xml href=https://serge-m.github.io/index.xml>
-<link rel=alternate type=application/json href=https://serge-m.github.io/index.json>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="sergem's personal public notebook">
-<meta property="og:description" content="Personal public notebook">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://serge-m.github.io/"><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://serge-m.github.io/papermod-cover.png">
-<meta name=twitter:title content="sergem's personal public notebook">
-<meta name=twitter:description content="Personal public notebook">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"sergem's personal public notebook","url":"https://serge-m.github.io/","description":"Personal public notebook","thumbnailUrl":"https://serge-m.github.io/favicon.ico","sameAs":["https://github.com/serge-m/serge-m.github.io","index.xml"]}</script>
-</head>
-<body class=list id=top>
-<script>window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://serge-m.github.io/ accesskey=h title="Home (Alt + H)">Home</a>
-<span class=logo-switches>
-</span>
-</div>
-<ul id=menu onscroll=menu_on_scroll()>
-<li>
-<a href=https://serge-m.github.io/archives title=Archive>
-<span>Archive</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/categories/ title=Categories>
-<span>Categories</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/search/ title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/tags/ title=Tags>
-<span>Tags</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Convert ovpn config file to .ca, .crt, .key</h2>
-</header>
-<section class=entry-content>
-<p>How you can take an OpenVPN .ovpn config file and extract the certificates/keys
-Copy from between &lt;ca> tags into ca.crt, remove &lt;ca> tags from original file. Copy from between &lt;cert> tags into client.crt, remove &lt;cert> tags. Copy from between &lt;key> tags into client.key, remove &lt;key> tags. Copy from between &lt;tls-auth> tags into ta.key, remove &lt;tls-auth> tags. Remove the line “key-direction 1” Above "# -----BEGIN RSA SIGNATURE-----" insert the following lines....</p>
-</section>
-<footer class=entry-footer>April 2, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Convert ovpn config file to .ca, .crt, .key" href=https://serge-m.github.io/posts/convert-ovpn-to-ca-cert-key/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>"No protocol specified" while running a program as another user</h2>
-</header>
-<section class=entry-content>
-<p>Running some GUI application as another user:
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>sergem's personal public notebook</title><meta name=description content="Personal public notebook"><meta name=author content="serge-m"><link rel=canonical href=https://serge-m.github.io/><link href=/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as=style><link rel=icon href=https://serge-m.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://serge-m.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://serge-m.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://serge-m.github.io/apple-touch-icon.png><link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.96.0"><link rel=alternate type=application/rss+xml href=https://serge-m.github.io/index.xml><link rel=alternate type=application/json href=https://serge-m.github.io/index.json><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-40853494-2","auto"),ga("send","pageview"))</script><meta property="og:title" content="sergem's personal public notebook"><meta property="og:description" content="Personal public notebook"><meta property="og:type" content="website"><meta property="og:url" content="https://serge-m.github.io/"><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://serge-m.github.io/papermod-cover.png"><meta name=twitter:title content="sergem's personal public notebook"><meta name=twitter:description content="Personal public notebook"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"sergem's personal public notebook","url":"https://serge-m.github.io/","description":"Personal public notebook","thumbnailUrl":"https://serge-m.github.io/favicon.ico","sameAs":["https://github.com/serge-m/serge-m.github.io","index.xml"]}</script></head><body class=list id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://serge-m.github.io/ accesskey=h title="Home (Alt + H)">Home</a>
+<span class=logo-switches></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://serge-m.github.io/archives title=Archive><span>Archive</span></a></li><li><a href=https://serge-m.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://serge-m.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://serge-m.github.io/tags/ title=Tags><span>Tags</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>SSH cheat sheet</h2></header><section class=entry-content><p>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
+ssh-keygen -a 100 -t ed25519 generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C "your@e-mail.com" -f my_key Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5 see also: Upgrade Your SSH Key to Ed25519
+How to prevent SSH from scanning all the keys in ....</p></section><footer class=entry-footer>April 12, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to SSH cheat sheet" href=https://serge-m.github.io/posts/ssh-cheatsheet/></a></article><article class=post-entry><header class=entry-header><h2>Convert ovpn config file to .ca, .crt, .key</h2></header><section class=entry-content><p>How you can take an OpenVPN .ovpn config file and extract the certificates/keys
+Copy from between &lt;ca> tags into ca.crt, remove &lt;ca> tags from original file. Copy from between &lt;cert> tags into client.crt, remove &lt;cert> tags. Copy from between &lt;key> tags into client.key, remove &lt;key> tags. Copy from between &lt;tls-auth> tags into ta.key, remove &lt;tls-auth> tags. Remove the line “key-direction 1” Above "# -----BEGIN RSA SIGNATURE-----" insert the following lines....</p></section><footer class=entry-footer>April 2, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Convert ovpn config file to .ca, .crt, .key" href=https://serge-m.github.io/posts/convert-ovpn-to-ca-cert-key/></a></article><article class=post-entry><header class=entry-header><h2>"No protocol specified" while running a program as another user</h2></header><section class=entry-content><p>Running some GUI application as another user:
 user1@laptop:~$ su - user2 user2@laptop:~$ leafpad ~/somefile.txt No protocol specified The problem is user2 doesn’t have access to your screen. Solution:
 xhost + Probably not the safest one.
-Source: thread</p>
-</section>
-<footer class=entry-footer>March 30, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label='post link to "No protocol specified" while running a program as another user' href=https://serge-m.github.io/posts/no-protocol-specified/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Mocking in Python</h2>
-</header>
-<section class=entry-content>
-<p>Let’s consider how python standard unittest module suppose to use mocks.
+Source: thread</p></section><footer class=entry-footer>March 30, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label='post link to "No protocol specified" while running a program as another user' href=https://serge-m.github.io/posts/no-protocol-specified/></a></article><article class=post-entry><header class=entry-header><h2>Mocking in Python</h2></header><section class=entry-content><p>Let’s consider how python standard unittest module suppose to use mocks.
 Assume we want to test a method that creates and uses objects of other classes:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module....</p>
-</section>
-<footer class=entry-footer>March 6, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Mocking in Python" href=https://serge-m.github.io/posts/mocking-in-python/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>On image search</h2>
-</header>
-<section class=entry-content>
-<p>ParaDISE - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module....</p></section><footer class=entry-footer>March 6, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Mocking in Python" href=https://serge-m.github.io/posts/mocking-in-python/></a></article><article class=post-entry><header class=entry-header><h2>On image search</h2></header><section class=entry-content><p>ParaDISE - Parallel Distributed Image Search Engine. Based on Hadoop, probably offline processing.
 Image Similarity service (github) - scala based image similarity service, declared to be scalable. Image storage and image similarity logic is implemented within independent, stateless micro-services. Data is stored in postgres. Clustering is based on histograms. 1 contributor. No tests. abandoned.
 ViSense SDK for python - SDK for closed source image search
-List of Content-based image retrieval (CBIR) engines (wikipedia)...</p>
-</section>
-<footer class=entry-footer>March 5, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to On image search" href=https://serge-m.github.io/posts/on-image-search/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>About bloody enterprise</h2>
-</header>
-<section class=entry-content>
-<p>Twelve factor app
+List of Content-based image retrieval (CBIR) engines (wikipedia)...</p></section><footer class=entry-footer>March 5, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to On image search" href=https://serge-m.github.io/posts/on-image-search/></a></article><article class=post-entry><header class=entry-header><h2>About bloody enterprise</h2></header><section class=entry-content><p>Twelve factor app
 Modules vs Microservices About reasonable choice for architecture
 To read: Best Practices for Building a Microservice Architecture
 События, шины и интеграция данных в непростом мире микросервисов
 Spring Nice tutorials about Spring
-For example How To Do @Async in Spring</p>
-</section>
-<footer class=entry-footer>February 24, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to About bloody enterprise" href=https://serge-m.github.io/posts/about-bloody-enterprise/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Elasticsearch commands with curl</h2>
-</header>
-<section class=entry-content>
-<p>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq ".YOUR_INDEX.mappings | to_entries | .[].key" Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS="-Xms1g -Xmx1g" ./elasticsearch </p>
-</section>
-<footer class=entry-footer>February 10, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Elasticsearch commands with curl" href=https://serge-m.github.io/posts/elastic-search-cookbook/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Pretty git history with branches in command line</h2>
-</header>
-<section class=entry-content>
-<p>Show git history with branches
+For example How To Do @Async in Spring</p></section><footer class=entry-footer>February 24, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to About bloody enterprise" href=https://serge-m.github.io/posts/about-bloody-enterprise/></a></article><article class=post-entry><header class=entry-header><h2>Elasticsearch commands with curl</h2></header><section class=entry-content><p>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq ".YOUR_INDEX.mappings | to_entries | .[].key" Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS="-Xms1g -Xmx1g" ./elasticsearch</p></section><footer class=entry-footer>February 10, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Elasticsearch commands with curl" href=https://serge-m.github.io/posts/elastic-search-cookbook/></a></article><article class=post-entry><header class=entry-header><h2>Pretty git history with branches in command line</h2></header><section class=entry-content><p>Show git history with branches
 git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all Less nice and shorter
-git log --graph --abbrev-commit --decorate --oneline --all See also: Git cheat sheet </p>
-</section>
-<footer class=entry-footer>January 28, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Pretty git history with branches in command line" href=https://serge-m.github.io/posts/pretty-git-history-with-branches-in-command-line/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Correct way of running long tasks in Flask</h2>
-</header>
-<section class=entry-content>
-<p>Key to the answer is Celery.
+git log --graph --abbrev-commit --decorate --oneline --all See also: Git cheat sheet</p></section><footer class=entry-footer>January 28, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Pretty git history with branches in command line" href=https://serge-m.github.io/posts/pretty-git-history-with-branches-in-command-line/></a></article><article class=post-entry><header class=entry-header><h2>Correct way of running long tasks in Flask</h2></header><section class=entry-content><p>Key to the answer is Celery.
 Good post: Using Celery With Flask
 Sources
 See also: Making an asynchronous task in Flask
-Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.</p>
-</section>
-<footer class=entry-footer>January 23, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Correct way of running long tasks in Flask" href=https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Machine learning links</h2>
-</header>
-<section class=entry-content>
-<p>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
+Sharing memory and using multiprocessing along with gunicorn seem to be wrong solutions.</p></section><footer class=entry-footer>January 23, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Correct way of running long tasks in Flask" href=https://serge-m.github.io/posts/correct-way-of-running-long-tasks-in-flask/></a></article><article class=post-entry><header class=entry-header><h2>Machine learning links</h2></header><section class=entry-content><p>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
 First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don’t understand it, keep reading it until you do.
 You can read the rest of the book if you want. You probably should, but I’ll assume you know all of it.
-Take Andrew Ng’s Coursera. Do all the exercises in Matlab and python and R....</p>
-</section>
-<footer class=entry-footer>January 19, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Machine learning links" href=https://serge-m.github.io/posts/machine-learning-links/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Image processing in Python</h2>
-</header>
-<section class=entry-content>
-<p>Image search using elastic search Comparison of Image Search Performance using different kinds of vectors
-Plugin for elastic search
-Personalizing image search with feature vectors and Lucene (video)
-Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
-1 2 3 4 5 6 7 8 9 10 11 def auto_canny(image, sigma=0....</p>
-</section>
-<footer class=entry-footer>January 15, 2017&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Image processing in Python" href=https://serge-m.github.io/posts/image-processing-in-python/></a>
-</article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=prev href=https://serge-m.github.io/page/6/>« Prev Page</a>
-<a class=next href=https://serge-m.github.io/page/8/>Next Page »</a>
-</nav>
-</footer>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://serge-m.github.io/>sergem's personal public notebook</a></span>
+Take Andrew Ng’s Coursera. Do all the exercises in Matlab and python and R....</p></section><footer class=entry-footer>January 19, 2017&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Machine learning links" href=https://serge-m.github.io/posts/machine-learning-links/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://serge-m.github.io/page/6/>« Prev Page</a>
+<a class=next href=https://serge-m.github.io/page/8/>Next Page »</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=https://serge-m.github.io/>sergem's personal public notebook</a></span>
 <span>&#183;</span>
 <span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
 <span>&#183;</span>
-<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
-</a>
-<script>window.onload=function(){localStorage.getItem("menu-scroll-position")&&(document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position"))};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft)}document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-</body>
-</html>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){localStorage.getItem("menu-scroll-position")&&(document.getElementById("menu").scrollLeft=localStorage.getItem("menu-scroll-position"))};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById("menu").scrollLeft)}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script></body></html>

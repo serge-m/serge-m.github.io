@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</guid>
       <description>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &amp;quot;Applications&amp;quot; field for the emr cluster to contain also jupyter hub. For example:
-&amp;quot;Applications&amp;quot;: [ { &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;0.</description>
+&amp;#34;Applications&amp;#34;: [ { &amp;#34;Name&amp;#34;: &amp;#34;Ganglia&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;3.7.2&amp;#34; }, { &amp;#34;Name&amp;#34;: &amp;#34;Spark&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2.4.0&amp;#34; }, { &amp;#34;Name&amp;#34;: &amp;#34;Zeppelin&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;0.</description>
     </item>
     
     <item>

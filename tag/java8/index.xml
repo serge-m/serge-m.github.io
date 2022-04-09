@@ -18,7 +18,7 @@
       <guid>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</guid>
       <description>Download JDK for Java 8 from Oracle&amp;rsquo;s web-site. Unpack archive to let&amp;rsquo;s say /usr/lib/jvm/jdk1.8.0/
 Update java alternatives:
-sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1 Select alternatives:
+sudo update-alternatives --install &amp;#34;/usr/bin/java&amp;#34; &amp;#34;java&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/java&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javac&amp;#34; &amp;#34;javac&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javaws&amp;#34; &amp;#34;javaws&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;#34; 1 Select alternatives:
 sudo update-alternatives --config java Select an option corresponding to new path.
 Do the same for
 sudo update-alternatives --config javac sudo update-alternatives --config javaws Update JAVA_HOME using

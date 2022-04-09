@@ -163,7 +163,7 @@ int * p = static_cast&amp;lt;int*&amp;gt;(malloc(100)); Если приведе�
       
       <guid>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</guid>
       <description>How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
-#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;quot;src1.bmp&amp;quot;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;quot;little.</description>
+#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;#34;src1.bmp&amp;#34;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;#34;little.</description>
     </item>
     
     <item>

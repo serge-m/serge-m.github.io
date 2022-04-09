@@ -19,7 +19,7 @@
       <description>Awesome explanation of SQLAlchemy with examples and comparison to Django by Armin Ronacher: SQLAlchemy and You
 Flask-SQLAlchemy module Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy to your application.
 How to add SQLAlchemy to Flask application:
-from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;sqlite:////tmp/test.db&#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
+from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&amp;#39;SQLALCHEMY_DATABASE_URI&amp;#39;] = &amp;#39;sqlite:////tmp/test.db&amp;#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
     </item>
     
   </channel>

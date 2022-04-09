@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
       <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
-nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+nvcc fatal : Cannot find compiler &amp;#39;cl.exe&amp;#39; in PATH [&amp;#39;nvcc&amp;#39;, &amp;#39;-shared&amp;#39;, &amp;#39;-O3&amp;#39;, &amp;#39;-use_fast_math&amp;#39;, &amp;#39;-Xlinker&amp;#39;, &amp;#39;/DEBUG&amp;#39;, &amp;#39;-D HAVE_ROUND&amp;#39;, &amp;#39;-m64&amp;#39;, &amp;#39;-Xcompiler&amp;#39;, &amp;#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&amp;#39;, &amp;#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&amp;#39;, &amp;#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&amp;#39;, &amp;#39;-Ic:\\anaconda\\include&amp;#39;, &amp;#39;-o&amp;#39;, &amp;#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39
       <guid>https://serge-m.github.io/posts/windows-life/</guid>
       <description>doskey /history &amp;gt; commands.log- dump command line promt history to file
 some_command &amp;gt; output_file.txt 2&amp;gt;&amp;amp;1 - Redirect stdout and stderr to the same file src
-Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;quot;NETWORK_NAME&amp;quot; key=&amp;quot;NETWORK_PASSWORD&amp;quot; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
+Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;#34;NETWORK_NAME&amp;#34; key=&amp;#34;NETWORK_PASSWORD&amp;#34; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
 Then allow in firewall.</description>
     </item>
     

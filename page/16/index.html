@@ -1,203 +1,26 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>sergem's personal public notebook</title>
-<meta name=description content="Personal public notebook">
-<meta name=author content="serge-m">
-<link rel=canonical href=https://serge-m.github.io/>
-<link href=/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as=style>
-<link rel=icon href=https://serge-m.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://serge-m.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://serge-m.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://serge-m.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
-<link rel=alternate type=application/rss+xml href=https://serge-m.github.io/index.xml>
-<link rel=alternate type=application/json href=https://serge-m.github.io/index.json>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-40853494-2','auto'),ga('send','pageview'))</script><meta property="og:title" content="sergem's personal public notebook">
-<meta property="og:description" content="Personal public notebook">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://serge-m.github.io/"><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://serge-m.github.io/papermod-cover.png">
-<meta name=twitter:title content="sergem's personal public notebook">
-<meta name=twitter:description content="Personal public notebook">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"sergem's personal public notebook","url":"https://serge-m.github.io/","description":"Personal public notebook","thumbnailUrl":"https://serge-m.github.io/favicon.ico","sameAs":["https://github.com/serge-m/serge-m.github.io","index.xml"]}</script>
-</head>
-<body class=list id=top>
-<script>window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://serge-m.github.io/ accesskey=h title="Home (Alt + H)">Home</a>
-<span class=logo-switches>
-</span>
-</div>
-<ul id=menu onscroll=menu_on_scroll()>
-<li>
-<a href=https://serge-m.github.io/archives title=Archive>
-<span>Archive</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/categories/ title=Categories>
-<span>Categories</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/search/ title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://serge-m.github.io/tags/ title=Tags>
-<span>Tags</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-entry>
-<header class=entry-header>
-<h2>lambda functions in matlab</h2>
-</header>
-<section class=entry-content>
-<p>I discovered it during Machine learnin courses on Coursera
-To specify the actual function we are minimizing, we use a "short-hand" for specifying functions with the @(t) ( costFunction(t, X, y) ) . This creates a function, with argument t, which calls your costFunction. This allows us to wrap the costFunction for use with fminunc. @(t) ( costFunction(t, X, y) ) - that’s awesome</p>
-</section>
-<footer class=entry-footer>May 24, 2014&nbsp;·&nbsp;SM!</footer>
-<a class=entry-link aria-label="post link to lambda functions in matlab" href=https://serge-m.github.io/posts/lambda-functions-in-matlab/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>crop included graphics in latex</h2>
-</header>
-<section class=entry-content>
-<p>\documentclass{article} \usepackage{graphicx} \begin{document} % crop left \includegraphics[trim={5cm 0 0 0},clip]{path-to-image} % crop right \includegraphics[trim={0 0 5cm 0},clip]{path-to-image} \end{document} Use the trim option, which takes four space separated values.
-trim={&lt;left> &lt;lower> &lt;right> &lt;upper>} Source</p>
-</section>
-<footer class=entry-footer>May 21, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to crop included graphics in latex" href=https://serge-m.github.io/posts/crop-included-graphics-in-latex/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>multiple "windows" in one linux terminal</h2>
-</header>
-<section class=entry-content>
-<p>use “screen” utility
-ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</p>
-</section>
-<footer class=entry-footer>May 21, 2014&nbsp;·&nbsp;SM!</footer>
-<a class=entry-link aria-label='post link to multiple "windows" in one linux terminal' href=https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</h2>
-</header>
-<section class=entry-content>
-<p>OMG!! I finally fixed it. Under Windows latex2rtf diisplayed following error:
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>sergem's personal public notebook</title><meta name=description content="Personal public notebook"><meta name=author content="serge-m"><link rel=canonical href=https://serge-m.github.io/><link href=/assets/css/stylesheet.min.6d98a2276d0cb41ef459267b3ff3ef02df70a8f16b70bbc52b20568702bc90cf.css integrity="sha256-bZiiJ20MtB70WSZ7P/PvAt9wqPFrcLvFKyBWhwK8kM8=" rel="preload stylesheet" as=style><link rel=icon href=https://serge-m.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://serge-m.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://serge-m.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://serge-m.github.io/apple-touch-icon.png><link rel=mask-icon href=https://serge-m.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.96.0"><link rel=alternate type=application/rss+xml href=https://serge-m.github.io/index.xml><link rel=alternate type=application/json href=https://serge-m.github.io/index.json><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,o,i,a,t,n,s){e.GoogleAnalyticsObject=t,e[t]=e[t]||function(){(e[t].q=e[t].q||[]).push(arguments)},e[t].l=1*new Date,n=o.createElement(i),s=o.getElementsByTagName(i)[0],n.async=1,n.src=a,s.parentNode.insertBefore(n,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-40853494-2","auto"),ga("send","pageview"))</script><meta property="og:title" content="sergem's personal public notebook"><meta property="og:description" content="Personal public notebook"><meta property="og:type" content="website"><meta property="og:url" content="https://serge-m.github.io/"><meta property="og:image" content="https://serge-m.github.io/papermod-cover.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://serge-m.github.io/papermod-cover.png"><meta name=twitter:title content="sergem's personal public notebook"><meta name=twitter:description content="Personal public notebook"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"sergem's personal public notebook","url":"https://serge-m.github.io/","description":"Personal public notebook","thumbnailUrl":"https://serge-m.github.io/favicon.ico","sameAs":["https://github.com/serge-m/serge-m.github.io","index.xml"]}</script></head><body class=list id=top><script>window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://serge-m.github.io/ accesskey=h title="Home (Alt + H)">Home</a>
+<span class=logo-switches></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://serge-m.github.io/archives title=Archive><span>Archive</span></a></li><li><a href=https://serge-m.github.io/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://serge-m.github.io/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://serge-m.github.io/tags/ title=Tags><span>Tags</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>linux life</h2></header><section class=entry-content><p>Good start 1 sudo apt install -y mc curl jq wget htop hwinfo nmap vim Some commands top - see running processes
+df - check free disk space
+baobab - free disk space
+screen - multiple virtual consoles in one real [ref], need installation in ubuntu
+mc - file manager
+ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
+sudo apt-get install compizconfig-settings-manager then...</p></section><footer class=entry-footer>June 2, 2014&nbsp;·&nbsp;SM!</footer><a class=entry-link aria-label="post link to linux life" href=https://serge-m.github.io/posts/linux-life/></a></article><article class=post-entry><header class=entry-header><h2>lambda functions in matlab</h2></header><section class=entry-content><p>I discovered it during Machine learnin courses on Coursera
+To specify the actual function we are minimizing, we use a "short-hand" for specifying functions with the @(t) ( costFunction(t, X, y) ) . This creates a function, with argument t, which calls your costFunction. This allows us to wrap the costFunction for use with fminunc. @(t) ( costFunction(t, X, y) ) - that’s awesome</p></section><footer class=entry-footer>May 24, 2014&nbsp;·&nbsp;SM!</footer><a class=entry-link aria-label="post link to lambda functions in matlab" href=https://serge-m.github.io/posts/lambda-functions-in-matlab/></a></article><article class=post-entry><header class=entry-header><h2>crop included graphics in latex</h2></header><section class=entry-content><p>\documentclass{article} \usepackage{graphicx} \begin{document} % crop left \includegraphics[trim={5cm 0 0 0},clip]{path-to-image} % crop right \includegraphics[trim={0 0 5cm 0},clip]{path-to-image} \end{document} Use the trim option, which takes four space separated values.
+trim={&lt;left> &lt;lower> &lt;right> &lt;upper>} Source</p></section><footer class=entry-footer>May 21, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to crop included graphics in latex" href=https://serge-m.github.io/posts/crop-included-graphics-in-latex/></a></article><article class=post-entry><header class=entry-header><h2>multiple "windows" in one linux terminal</h2></header><section class=entry-content><p>use “screen” utility
+ctrl-a-p - switch ctrl-a-c - new ctrl-a-Q - remove freeze ctrl-a-s - freeze ctrl-a-S - split, but doesn;t work see also: using tmux</p></section><footer class=entry-footer>May 21, 2014&nbsp;·&nbsp;SM!</footer><a class=entry-link aria-label='post link to multiple "windows" in one linux terminal' href=https://serge-m.github.io/posts/multiple-windows-in-one-linux-terminal/></a></article><article class=post-entry><header class=entry-header><h2>Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf</h2></header><section class=entry-content><p>OMG!! I finally fixed it. Under Windows latex2rtf diisplayed following error:
 latex2png: error: eps2eps failed to translate l2r_00123.pdf to l2r_00123.eps for each image in my latex file.
 That was very sad because this method is used to convert all equations, fugures and tables in word format.
 The configurations seemed ok:
-The problem was in eps2eps script in miktex. This script is magical. I haven’t completely understood why it does nothing when called from latex2rtf....</p>
-</section>
-<footer class=entry-footer>April 15, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label='post link to Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf' href=https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Papers review</h2>
-</header>
-<section class=entry-content>
-<p>Depth map EstimationAshutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005Depth estimation using machine learning from monocular cueues. Uses MRF model </p>
-</section>
-<footer class=entry-footer>April 14, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Papers review" href=https://serge-m.github.io/posts/papers-review/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>German resources</h2>
-</header>
-<section class=entry-content>
-<p>http://www.c-plusplus.de/forum/
+The problem was in eps2eps script in miktex. This script is magical. I haven’t completely understood why it does nothing when called from latex2rtf....</p></section><footer class=entry-footer>April 15, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label='post link to Fixed "latex2png: error: eps2eps failed to translate .pdf to .eps" message in latex2rtf' href=https://serge-m.github.io/posts/fixed-latex2png-error-eps2eps-failed-to/></a></article><article class=post-entry><header class=entry-header><h2>Papers review</h2></header><section class=entry-content><p>Depth map EstimationAshutosh Saxena, Sung H. Chung, and Andrew Y. Ng “Learning Depth from Single Monocular Images” In Proc. NIPS, 2005Depth estimation using machine learning from monocular cueues. Uses MRF model</p></section><footer class=entry-footer>April 14, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Papers review" href=https://serge-m.github.io/posts/papers-review/></a></article><article class=post-entry><header class=entry-header><h2>German resources</h2></header><section class=entry-content><p>http://www.c-plusplus.de/forum/
 http://cvisioncentral.com/jobs/
 Open positions in computer vision in german universities: http://hci.iwr.uni-heidelberg.de/Links/German_Vision/
 Brox’s lab. Need at least one first authon in good conference http://lmb.informatik.uni-freiburg.de/jobs/OpeningERC_postdoc.html
-About salaries in German universities (TV L 13) http://de.wikipedia.org/wiki/Tarifvertrag_f%C3%BCr_den_%C3%B6ffentlichen_Dienst_der_L%C3%A4nder</p>
-</section>
-<footer class=entry-footer>April 6, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to German resources" href=https://serge-m.github.io/posts/german-resources/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Excelent idea moves towards a real life</h2>
-</header>
-<section class=entry-content>
-<p>Smartphone Application for driver assistance. It can measure distance to the next vehicle for example. Or detect road lane. And warn about violating it. http://www.acodriver-shop.com/
-Some time ago I also had such an idea. Very interesting</p>
-</section>
-<footer class=entry-footer>April 6, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Excelent idea moves towards a real life" href=https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Cool 3d web design</h2>
-</header>
-<section class=entry-content>
-<p>http://www.snowflakecreative.co.uk/</p>
-</section>
-<footer class=entry-footer>March 23, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to Cool 3d web design" href=https://serge-m.github.io/posts/cool-3d-web-design/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>About sublime</h2>
-</header>
-<section class=entry-content>
-<p>Convenient json formatting http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text</p>
-</section>
-<footer class=entry-footer>March 21, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to About sublime" href=https://serge-m.github.io/posts/about-sublime/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>clang: error: linker command failed with exit code 1</h2>
-</header>
-<section class=entry-content>
-<p>Finally I solved the problem with broken clang compilation I always got message
-&lt;div class="p1">&lt;span style="font-family: Courier New, Courier, monospace;">ld: malformed archive TOC entry for &lt;long strange identifier>, offset 362137760 is beyond end of file 303710208&lt;/span>&lt;/div>&lt;div class="p1">&lt;span style="font-family: Courier New, Courier, monospace;">&amp;nbsp;for architecture x86_64&lt;/span>&lt;/div>&lt;div class="p1">&lt;span style="font-family: Courier New, Courier, monospace;">clang: error: linker command failed with exit code 1 (use -v to see invocation)&lt;/span>&lt;/div>&lt;div class="p1"> when I interrupted compilation of a large project....</p>
-</section>
-<footer class=entry-footer>March 20, 2014&nbsp;·&nbsp;SergeM</footer>
-<a class=entry-link aria-label="post link to clang: error: linker command failed with exit code 1" href=https://serge-m.github.io/posts/clang-error-linker-command-failed-with/></a>
-</article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=prev href=https://serge-m.github.io/page/15/>« Prev Page</a>
-<a class=next href=https://serge-m.github.io/page/17/>Next Page »</a>
-</nav>
-</footer>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://serge-m.github.io/>sergem's personal public notebook</a></span>
+About salaries in German universities (TV L 13) http://de.wikipedia.org/wiki/Tarifvertrag_f%C3%BCr_den_%C3%B6ffentlichen_Dienst_der_L%C3%A4nder</p></section><footer class=entry-footer>April 6, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to German resources" href=https://serge-m.github.io/posts/german-resources/></a></article><article class=post-entry><header class=entry-header><h2>Excelent idea moves towards a real life</h2></header><section class=entry-content><p>Smartphone Application for driver assistance. It can measure distance to the next vehicle for example. Or detect road lane. And warn about violating it. http://www.acodriver-shop.com/
+Some time ago I also had such an idea. Very interesting</p></section><footer class=entry-footer>April 6, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Excelent idea moves towards a real life" href=https://serge-m.github.io/posts/excelent-idea-moves-towards-real-life/></a></article><article class=post-entry><header class=entry-header><h2>Cool 3d web design</h2></header><section class=entry-content><p>http://www.snowflakecreative.co.uk/</p></section><footer class=entry-footer>March 23, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to Cool 3d web design" href=https://serge-m.github.io/posts/cool-3d-web-design/></a></article><article class=post-entry><header class=entry-header><h2>About sublime</h2></header><section class=entry-content><p>Convenient json formatting http://www.yellowduck.be/geek-stuff/2013/3/9/formatting-json-and-xml-with-sublime-text</p></section><footer class=entry-footer>March 21, 2014&nbsp;·&nbsp;SergeM</footer><a class=entry-link aria-label="post link to About sublime" href=https://serge-m.github.io/posts/about-sublime/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://serge-m.github.io/page/15/>« Prev Page</a>
+<a class=next href=https://serge-m.github.io/page/17/>Next Page »</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=https://serge-m.github.io/>sergem's personal public notebook</a></span>
 <span>&#183;</span>
 <span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
 <span>&#183;</span>
-<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
-<button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</button>
-</a>
-<script>window.onload=function(){localStorage.getItem("menu-scroll-position")&&(document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position"))};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft)}document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-</body>
-</html>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){localStorage.getItem("menu-scroll-position")&&(document.getElementById("menu").scrollLeft=localStorage.getItem("menu-scroll-position"))};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById("menu").scrollLeft)}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script></body></html>

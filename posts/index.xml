@@ -9,7 +9,20 @@
       <link>https://serge-m.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 16 Feb 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digital color representation</title>
+      <link>https://serge-m.github.io/posts/digital-color-representation/</link>
+      <pubDate>Sun, 20 Feb 2022 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/digital-color-representation/</guid>
+      <description>Representation of color is messed up. Here are some articles about terminology.
+Merging Computing with Studio Video: Converting Between R&amp;rsquo;G&amp;rsquo;B&amp;rsquo; and 4:2:2 / pdf by Charles Poynton
+ Upon conversion from 8-bit R&amp;rsquo;G&amp;rsquo;B&amp;rsquo; to 8-bit Y&amp;rsquo;CBCR, three-quarters of the available colors are lost. Upon 4:2:2 subsampling, half the color detail is discarded.
+ YUV and luminance considered harmful / pdf by Charles Poynton
+ It was standardized for NTSC in 1953, and remains standard for all contemporary video systems, to form luma, denoted Y’, as a weighted sum of nonlinear (gamma-corrected) R’G’B’ components.</description>
+    </item>
+    
     <item>
       <title>Image processing cheat sheet</title>
       <link>https://serge-m.github.io/posts/image-processing-cheat-sheet/</link>
@@ -325,7 +338,7 @@ CCV 0.7 comes with a sub-10% image classifier, a decent face detector.
       
       <guid>https://serge-m.github.io/posts/jupyter-notebooks-on-emr/</guid>
       <description>Explanatory data analysis requires interactive code execution. In case of spark and emr it is very convenient to run the code from jupyter notebooks on a remote cluster. EMR allows installing jupyter on the spark master. In order to do that configure &amp;quot;Applications&amp;quot; field for the emr cluster to contain also jupyter hub. For example:
-&amp;quot;Applications&amp;quot;: [ { &amp;quot;Name&amp;quot;: &amp;quot;Ganglia&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;3.7.2&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Spark&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;2.4.0&amp;quot; }, { &amp;quot;Name&amp;quot;: &amp;quot;Zeppelin&amp;quot;, &amp;quot;Version&amp;quot;: &amp;quot;0.</description>
+&amp;#34;Applications&amp;#34;: [ { &amp;#34;Name&amp;#34;: &amp;#34;Ganglia&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;3.7.2&amp;#34; }, { &amp;#34;Name&amp;#34;: &amp;#34;Spark&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;2.4.0&amp;#34; }, { &amp;#34;Name&amp;#34;: &amp;#34;Zeppelin&amp;#34;, &amp;#34;Version&amp;#34;: &amp;#34;0.</description>
     </item>
     
     <item>
@@ -336,7 +349,7 @@ CCV 0.7 comes with a sub-10% image classifier, a decent face detector.
       <guid>https://serge-m.github.io/posts/spark-on-a-local-machine/</guid>
       <description>How to install spark locally Considering spark without hadoop built-in.
  Download hadoop unpack to /opt/hadoop/ Download spark without hadoop, unpack to /opt/spark Install java. Set JAVA_HOVE environment variable. For example: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 create environment variables required for spark to run. One can put those in .bashrc  export HADOOP_HOME=/opt/hadoop export SPARK_DIST_CLASSPATH=$HADOOP_HOME/etc/hadoop/*:$HADOOP_HOME/share/hadoop/common/lib/*:$HADOOP_HOME/share/hadoop/common/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/hdfs/lib/*:$HADOOP_HOME/share/hadoop/hdfs/*:$HADOOP_HOME/share/hadoop/yarn/lib/*:$HADOOP_HOME/share/hadoop/yarn/*:$HADOOP_HOME/share/hadoop/mapreduce/lib/*:$HADOOP_HOME/share/hadoop/mapreduce/*:$HADOOP_HOME/share/hadoop/tools/lib/* Now you can run pyspark for example:
-$ /opt/spark/bin/pyspark Python 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609] on linux2 Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.</description>
+$ /opt/spark/bin/pyspark Python 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609] on linux2 Type &amp;#34;help&amp;#34;, &amp;#34;copyright&amp;#34;, &amp;#34;credits&amp;#34; or &amp;#34;license&amp;#34; for more information.</description>
     </item>
     
     <item>
@@ -402,7 +415,7 @@ Lets say we have a pandas dataframe with timestamps and some values:
       
       <guid>https://serge-m.github.io/posts/click-config-parsers/</guid>
       <description>Problem There is click module that allows you to create comman dline interfaces for your python scripts. The advantages of click are
- nice syntax  1 2 3 4 5 6 7 8 9 10 11 12 13 14  import click @click.command() @click.option(&amp;#39;--count&amp;#39;, default=1, help=&amp;#39;Number of greetings.&amp;#39;) @click.option(&amp;#39;--name&amp;#39;, prompt=&amp;#39;Your name&amp;#39;, help=&amp;#39;The person to greet.&amp;#39;) def hello(count, name): &amp;#34;&amp;#34;&amp;#34;Simple program that greets NAME for a total of COUNT times.&amp;#34;&amp;#34;&amp;#34; for x in range(count): click.</description>
+ nice syntax  1 2 3 4 5 6 7 8 9 10 11 12 13  import click @click.command() @click.option(&amp;#39;--count&amp;#39;, default=1, help=&amp;#39;Number of greetings.&amp;#39;) @click.option(&amp;#39;--name&amp;#39;, prompt=&amp;#39;Your name&amp;#39;, help=&amp;#39;The person to greet.&amp;#39;) def hello(count, name): &amp;#34;&amp;#34;&amp;#34;Simple program that greets NAME for a total of COUNT times.&amp;#34;&amp;#34;&amp;#34; for x in range(count): click.</description>
     </item>
     
     <item>
@@ -455,7 +468,7 @@ One cannot specify datetime.now() as start_date. Instead one has to provide date
       <description>Awesome explanation of SQLAlchemy with examples and comparison to Django by Armin Ronacher: SQLAlchemy and You
 Flask-SQLAlchemy module Flask-SQLAlchemy is an extension for Flask that adds support for SQLAlchemy to your application.
 How to add SQLAlchemy to Flask application:
-from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;] = &#39;sqlite:////tmp/test.db&#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
+from flask import Flask from flask_sqlalchemy import SQLAlchemy app = Flask(__name__) # configuration of the DB is read from flask configuration storage app.config[&amp;#39;SQLALCHEMY_DATABASE_URI&amp;#39;] = &amp;#39;sqlite:////tmp/test.db&amp;#39; # here we define db object that keeps track of sql interactions db = SQLAlchemy(app) Now we are ready to define tables and objects using predefined db.</description>
     </item>
     
     <item>
@@ -478,9 +491,9 @@ CPU monitoring on the main panel Default Ubuntu desktop seems to become finally 
       <guid>https://serge-m.github.io/posts/pytest-cheatsheet/</guid>
       <description>Pytest is a powerful tool for testing in python. Here are some notes about hands-on experience.
 Running tests in pytest with/without a specified mark Execute
-pytest -m &amp;quot;integration&amp;quot; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
+pytest -m &amp;#34;integration&amp;#34; if you want to run only tests that have &amp;ldquo;@pytest.mark.integration&amp;rdquo; annotation.
 Similarly you can run only tests that don&amp;rsquo;t are not marked.
-pytest -m &amp;quot;not your_mark&amp;quot; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
+pytest -m &amp;#34;not your_mark&amp;#34; That command will test everything that is not marked as &amp;ldquo;your_mark&amp;rdquo;.
 How to verify exception message using pytest One can use context manager pytest.</description>
     </item>
     
@@ -500,7 +513,7 @@ How to verify exception message using pytest One can use context manager pytest.
       
       <guid>https://serge-m.github.io/posts/about-management/</guid>
       <description>Why your programmers just want to code @justzeros
-Interesting list of managers&#39; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
+Interesting list of managers&amp;rsquo; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
  Michael Lopp. How to Rands &amp;ndash; feels like really similar personality as me   I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet.</description>
     </item>
     
@@ -537,7 +550,7 @@ Parallelization for make:
 make -j8 Parallelization for cmake:
 cmake --build &amp;lt;bindir&amp;gt; -- -j 8 Sometimes you cannot pass parameters directly to make. For example you are installing a python module using
 python setup.py install Setup script doesn&amp;rsquo;t accept parameters. Then you could pass them through environment variables:
-export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
+export MAKEFLAGS=&amp;#34;-j 8&amp;#34; see also
  intro to CMake video, russian.  </description>
     </item>
     
@@ -557,7 +570,7 @@ export MAKEFLAGS=&amp;quot;-j 8&amp;quot; see also
       <pubDate>Sun, 09 Jul 2017 23:07:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/module-import-in-python/</guid>
-      <description>Import module by path/name 1 2  import importlib module = importlib.import_module(module_path)   Find class implementing certain interface in a module 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  def load_class_from_module(module_path: str, target_class: type) -&amp;gt; type: module = importlib.import_module(module_path) list_classes = get_all_classes_implementing_interface(module, target_class) if not list_classes: raise RuntimeError(&amp;#34;Unable to find implemented interface {}in {}&amp;#34;.format(target_class, module_path)) if len(list_classes) &amp;gt; 1: raise RuntimeError(&amp;#34;More then 1 implementation of {}was found in {}&amp;#34;.</description>
+      <description>Import module by path/name 1 2  import importlib module = importlib.import_module(module_path)   Find class implementing certain interface in a module 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  def load_class_from_module(module_path: str, target_class: type) -&amp;gt; type: module = importlib.import_module(module_path) list_classes = get_all_classes_implementing_interface(module, target_class) if not list_classes: raise RuntimeError(&amp;#34;Unable to find implemented interface {}in {}&amp;#34;.format(target_class, module_path)) if len(list_classes) &amp;gt; 1: raise RuntimeError(&amp;#34;More then 1 implementation of {}was found in {}&amp;#34;.</description>
     </item>
     
     <item>
@@ -684,7 +697,7 @@ Reverse-voltage protection circuit</description>
       
       <guid>https://serge-m.github.io/posts/sn74hc595-shift-register/</guid>
       <description>For other links about raspberry pi go here
-Pinouts How to control It seems that procedure described in Texas Instruments&#39; datasheet is wrong: Using in motor shield DK Electronics V1 Scheme: L293x Quadruple Half-H Driver (pdf)
+Pinouts How to control It seems that procedure described in Texas Instruments&amp;rsquo; datasheet is wrong: Using in motor shield DK Electronics V1 Scheme: L293x Quadruple Half-H Driver (pdf)
 Connection Raspberry PIN 6 -&amp;gt; Shield GROUND
 Raspberry PIN 11 -&amp;gt; Shield PIN 8 (Register PIN 14, SER / DS)
 Raspberry PIN 12 -&amp;gt; Shield PIN 12 (Register PIN 12, SRCLK / SHCP)
@@ -783,7 +796,7 @@ For example How To Do @Async in Spring</description>
       <pubDate>Fri, 10 Feb 2017 23:11:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/elastic-search-cookbook/</guid>
-      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;quot;.YOUR_INDEX.mappings | to_entries | .[].key&amp;quot; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;quot;-Xms1g -Xmx1g&amp;quot; ./elasticsearch </description>
+      <description>Commands List indexes curl -X GET localhost:9200/_cat/indices Delete index curl -X DELETE localhost:9200/YOUR_INDEX Delete all indices curl -X GET localhost:9200/_all List of all doc_types in a given index curl -X GET localhost:9200/YOUR_INDEX/_mapping | jq &amp;#34;.YOUR_INDEX.mappings | to_entries | .[].key&amp;#34; Running elastic seach with a limited memory #!/bin/sh ES_JAVA_OPTS=&amp;#34;-Xms1g -Xmx1g&amp;#34; ./elasticsearch </description>
     </item>
     
     <item>
@@ -793,7 +806,7 @@ For example How To Do @Async in Spring</description>
       
       <guid>https://serge-m.github.io/posts/pretty-git-history-with-branches-in-command-line/</guid>
       <description>Show git history with branches
-git log --graph --abbrev-commit --decorate --format=format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all Less nice and shorter
+git log --graph --abbrev-commit --decorate --format=format:&amp;#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&amp;#39; --all Less nice and shorter
 git log --graph --abbrev-commit --decorate --oneline --all See also:  Git cheat sheet  </description>
     </item>
     
@@ -905,8 +918,8 @@ This is a bug that&amp;rsquo;s fixed in upstream NetworkManager.</description>
       <guid>https://serge-m.github.io/posts/docker-in-scaleway-vc1s-ubuntu-xenial/</guid>
       <description>In ubuntu 16.04 image installed on VC1S server I was unable to install docker. It hangs/fails on installation or on any significant docker command like docker ps
 The error I got was
-Job for docker.service failed because the control process exited with error code. See &amp;quot;systemctl status docker.service&amp;quot; and &amp;quot;journalctl -xe&amp;quot; for details and
-level=error msg=&amp;quot;devmapper: Unable to delete device: devicemapper: Can&#39;t set task name /dev/mapper/docker I switched to &amp;ldquo;docker&amp;rdquo; image where docker is preinstalled</description>
+Job for docker.service failed because the control process exited with error code. See &amp;#34;systemctl status docker.service&amp;#34; and &amp;#34;journalctl -xe&amp;#34; for details and
+level=error msg=&amp;#34;devmapper: Unable to delete device: devicemapper: Can&amp;#39;t set task name /dev/mapper/docker I switched to &amp;ldquo;docker&amp;rdquo; image where docker is preinstalled</description>
     </item>
     
     <item>
@@ -916,7 +929,7 @@ level=error msg=&amp;quot;devmapper: Unable to delete device: devicemapper: Can&
       
       <guid>https://serge-m.github.io/posts/check-server-fingerpring-for-scaleway/</guid>
       <description>Run
-curl -H &#39;X-Auth-Token: &amp;lt;YOUR_TOKEN&amp;gt;&#39; https://cp-ams1.scaleway.com/servers/&amp;lt;YOUR_SERVER_ID&amp;gt;/user_data/ssh-host-fingerprints compare output with results of ssh &amp;lt;YOUR_USER&amp;gt;@&amp;lt;YOUR_SERVER_IP&amp;gt;
+curl -H &amp;#39;X-Auth-Token: &amp;lt;YOUR_TOKEN&amp;gt;&amp;#39; https://cp-ams1.scaleway.com/servers/&amp;lt;YOUR_SERVER_ID&amp;gt;/user_data/ssh-host-fingerprints compare output with results of ssh &amp;lt;YOUR_USER&amp;gt;@&amp;lt;YOUR_SERVER_IP&amp;gt;
 cp-ams1 needs to be changed if you use non amsterdam based server.
 Sources:
   community.online.net
@@ -957,7 +970,7 @@ Controlling multiple servos To control multiple servos you can use PCA9685 contr
       <guid>https://serge-m.github.io/posts/installing-java-8-on-linux-mint-17-3/</guid>
       <description>Download JDK for Java 8 from Oracle&amp;rsquo;s web-site. Unpack archive to let&amp;rsquo;s say /usr/lib/jvm/jdk1.8.0/
 Update java alternatives:
-sudo update-alternatives --install &amp;quot;/usr/bin/java&amp;quot; &amp;quot;java&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/java&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javac&amp;quot; &amp;quot;javac&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;quot; 1 sudo update-alternatives --install &amp;quot;/usr/bin/javaws&amp;quot; &amp;quot;javaws&amp;quot; &amp;quot;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;quot; 1 Select alternatives:
+sudo update-alternatives --install &amp;#34;/usr/bin/java&amp;#34; &amp;#34;java&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/java&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javac&amp;#34; &amp;#34;javac&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javac&amp;#34; 1 sudo update-alternatives --install &amp;#34;/usr/bin/javaws&amp;#34; &amp;#34;javaws&amp;#34; &amp;#34;/usr/lib/jvm/jdk1.8.0/bin/javaws&amp;#34; 1 Select alternatives:
 sudo update-alternatives --config java Select an option corresponding to new path.
 Do the same for
 sudo update-alternatives --config javac sudo update-alternatives --config javaws Update JAVA_HOME using
@@ -992,8 +1005,8 @@ I have only public free accounts on github. Thus I need two repositories: one co
       
       <guid>https://serge-m.github.io/posts/refactoring-python-extract-variable/</guid>
       <description>Pycon2016 talk by Brett Slatkin Example 1: Extract variable
-import random month = random.choice(MONTHS) if (month.lower().endswith(&#39;r&#39;) or month.lower().endswith(&#39;ary&#39;)): print(&#39;%s is a good time to eat oysters&#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&#39;%s is a good time to eat tomatoes&#39; % month) else: print(&#39;%s is a good time to eat asparagus&#39; % month) Becomes:
-class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&#39;r&#39;) self.</description>
+import random month = random.choice(MONTHS) if (month.lower().endswith(&amp;#39;r&amp;#39;) or month.lower().endswith(&amp;#39;ary&amp;#39;)): print(&amp;#39;%s is a good time to eat oysters&amp;#39; % month) elif 8 &amp;gt; MONTHS.index(month) &amp;gt; 4: print(&amp;#39;%s is a good time to eat tomatoes&amp;#39; % month) else: print(&amp;#39;%s is a good time to eat asparagus&amp;#39; % month) Becomes:
+class OystersGood: def __init__(self, month): month = month month_lowered = month.lower() self.ends_in_r = month_lowered.endswith(&amp;#39;r&amp;#39;) self.</description>
     </item>
     
     <item>
@@ -1050,7 +1063,7 @@ My approximate solution   remove standard firefox:
       <description>Installation sudo apt-get install tmux
 Commands In tmux, hit the prefix ctrl+b (my modified prefix is ctrl+a) and then: ###Sessions
 :new&amp;lt;CR&amp;gt; new session s list sessions $ name session ###Windows (tabs)
-c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;quot; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
+c create window w list windows n next window p previous window f find window , name window &amp;amp; kill window Panes (splits) % vertical split &amp;#34; horizontal split o swap panes q show pane numbers x kill pane + break pane into window (e.</description>
     </item>
     
     <item>
@@ -1061,7 +1074,7 @@ c create window w list windows n next window p previous window f find window , n
       <guid>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</guid>
       <description>Copying partition is straightforward. Made using gparted.
   Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions:
-   boot /sdb1 (don&#39;t really know how it works) root /sdb2 home /sdb3  Do  sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
+   boot /sdb1 (don&amp;#39;t really know how it works) root /sdb2 home /sdb3  Do  sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
     </item>
     
     <item>
@@ -1079,8 +1092,8 @@ c create window w list windows n next window p previous window f find window , n
       <pubDate>Sun, 26 Jun 2016 23:01:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/how-torch-stores-images/</guid>
-      <description>require(&#39;image&#39;) imgPath = &amp;quot;image.jpg&amp;quot; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
-display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
+      <description>require(&amp;#39;image&amp;#39;) imgPath = &amp;#34;image.jpg&amp;#34; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
+display require &amp;#39;gnuplot&amp;#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
     </item>
     
     <item>
@@ -1090,7 +1103,7 @@ display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torc
       
       <guid>https://serge-m.github.io/posts/installing-torch-for-miniconda/</guid>
       <description>I got the error while installing torch for miniconda. Something like Linking CXX executable mshrable
-~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</description>
+~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `BC&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetnum&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `PC&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tputs&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetent&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetflag&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgoto&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `UP&amp;#39; ~/miniconda/envs/py27/lib/libreadline.so.6: undefined reference to `tgetstr The same was for python3 and python2 environments. The solution (at least for python 2) was to remove miniconda from path and compile torch with the system python.</description>
     </item>
     
     <item>
@@ -1138,7 +1151,7 @@ Chat (in russian) http://closedcircles.com/?invite=99b1ac08509c560137b2e3c54d439
       
       <guid>https://serge-m.github.io/posts/autocomplete-from-history-in-terminal/</guid>
       <description>create a file .inputrc in your home directory and put there
-&amp;quot;\e[A&amp;quot;: history-search-backward &amp;quot;\e[B&amp;quot;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
+&amp;#34;\e[A&amp;#34;: history-search-backward &amp;#34;\e[B&amp;#34;: history-search-forward set show-all-if-ambiguous on set completion-ignore-case on # display possible completions using different colors to indicate their file types set colored-stats On TAB: menu-complete Restart your terminal. Now you can autocomplete from history using Up and Down keys.
 Source</description>
     </item>
     
@@ -1216,7 +1229,7 @@ Codelite Found Codelite on http://stackoverflow.</description>
       <guid>https://serge-m.github.io/posts/debugging-numpy-any-c-code-of-python/</guid>
       <description>I created a tiny python script that executes some python code, that executes some C code:
 # contents of dbg_broadcast.py import numpy print list(numpy.broadcast([[1,2]],[[3],[4]])) Running in console:
-&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;quot;arraymultiter_new&amp;quot; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
+&amp;gt; gdb python GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1 Copyright (C) 2014 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &amp;lt;http://gnu.org/licenses/gpl.html&amp;gt; This is free software: you are free to change and redistribute it. .................. bla bla bla .................................................. # Adding breakpoint to function &amp;#34;arraymultiter_new&amp;#34; (example): (gdb) break arraymultiter_new # There is name completition by Tab.</description>
     </item>
     
     <item>
@@ -1551,7 +1564,7 @@ Solution is:
       
       <guid>https://serge-m.github.io/posts/installing-theano-on-windows/</guid>
       <description>install Anaconda download Theano sources from git (install it using setup.py) Setup NVIDIA GPU Toolkit. I have installed version 6.5 Setup Visual Studio Community Edition 2013 Create config file .theanorc in c:\Users\X:  [global] floatX = float32 device = gpu [nvcc] fastmath = True compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\cl.exe Without the line with path to cl.exe I got:
-nvcc fatal : Cannot find compiler &#39;cl.exe&#39; in PATH [&#39;nvcc&#39;, &#39;-shared&#39;, &#39;-O3&#39;, &#39;-use_fast_math&#39;, &#39;-Xlinker&#39;, &#39;/DEBUG&#39;, &#39;-D HAVE_ROUND&#39;, &#39;-m64&#39;, &#39;-Xcompiler&#39;, &#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&#39;, &#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&#39;, &#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&#39;, &#39;-Ic:\\anaconda\\include&#39;, &#39;-o&#39;, &#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
+nvcc fatal : Cannot find compiler &amp;#39;cl.exe&amp;#39; in PATH [&amp;#39;nvcc&amp;#39;, &amp;#39;-shared&amp;#39;, &amp;#39;-O3&amp;#39;, &amp;#39;-use_fast_math&amp;#39;, &amp;#39;-Xlinker&amp;#39;, &amp;#39;/DEBUG&amp;#39;, &amp;#39;-D HAVE_ROUND&amp;#39;, &amp;#39;-m64&amp;#39;, &amp;#39;-Xcompiler&amp;#39;, &amp;#39;-DCUDA_NDARRAY_CUH=f411a53ee0a470fbaad3b5c4a681ef64,-D NPY_NO_DEPRECATED_API=NPY_1_7_API_VERSION,/Zi,/MD&amp;#39;, &amp;#39;-Ic:\\anaconda\\theano\\theano\\sandbox\\cuda&amp;#39;, &amp;#39;-Ic:\\anaconda\\lib\\site-packages\\numpy\\core\\include&amp;#39;, &amp;#39;-Ic:\\anaconda\\include&amp;#39;, &amp;#39;-o&amp;#39;, &amp;#39;C:\\Users\\X\\AppData\\Local\\Theano\\compiledir_Windows-7-6.</description>
     </item>
     
     <item>
@@ -1623,7 +1636,7 @@ function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optic
       <guid>https://serge-m.github.io/posts/simple-tests-of-classic-of-methods/</guid>
       <description>BA method, simple synthetic images For simple synthetic images:
 I0 = 0 0.5000 0 0 1.0000 0 0 0.5000 0 0.1000 0 0 0.0500 0 0 0.0500 0.1000 0 I1 = 0.5000 0 0 1.0000 0 0 0.5000 0 0 0 0.1000 0 0 0.0500 0 0 0.0500 0.1000 Running code by D.Sun. Disabled texture decomposition, disabled multiscale processing.
-uv = estimate_flow_interface(I0, I1, &#39;classic-c-brightness&#39;, [], {&#39;display&#39;, 1, &#39;pyramid_levels&#39;, 1, &#39;gnc_pyramid_levels&#39;, 1}); After first iteration ( loop for ignc = 1:this.</description>
+uv = estimate_flow_interface(I0, I1, &amp;#39;classic-c-brightness&amp;#39;, [], {&amp;#39;display&amp;#39;, 1, &amp;#39;pyramid_levels&amp;#39;, 1, &amp;#39;gnc_pyramid_levels&amp;#39;, 1}); After first iteration ( loop for ignc = 1:this.</description>
     </item>
     
     <item>
@@ -1677,7 +1690,7 @@ place following code before your &amp;lt;head&amp;gt; tag in the HTML of your bl
       <pubDate>Tue, 16 Sep 2014 02:15:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/python-equivalent-of-interp2/</guid>
-      <description>I wrote python version of interp2(z, xi, yi,&amp;lsquo;linear&amp;rsquo;) from matlab
+      <description>I wrote python version of interp2(z, xi, yi,&amp;rsquo;linear&amp;rsquo;) from matlab
 https://github.com/serge-m/pyinterp2</description>
     </item>
     
@@ -1701,7 +1714,7 @@ kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0]
       
       <guid>https://serge-m.github.io/posts/ipython-save-notebook-as-script/</guid>
       <description>Joint solution from [http://stackoverflow.com/a/23619544](http://stackoverflow.com/a/23619544&amp;quot; target=&amp;quot;_blank) and [http://stackoverflow.com/a/19067979](http://stackoverflow.com/a/19067979&amp;quot; target=&amp;quot;_blank)
-# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u&amp;rsquo;ipython nbconvert &amp;ndash;to python {}.ipynb&#39;.format(theNotebook)) except NameError : pass</description>
+# [1] %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&#34;notebook_name&#34;).innerHTML; var command = &#34;theNotebook = &#34; + &#34;&#39;&#34;+thename+&#34;&#39;&#34;; kernel.execute(command); [2] try : if(__IPYTHON__) : get_ipython().system(u&amp;rsquo;ipython nbconvert &amp;ndash;to python {}.ipynb&amp;rsquo;.format(theNotebook)) except NameError : pass</description>
     </item>
     
     <item>
@@ -1762,7 +1775,7 @@ Shorter version: %matplotlib inline import matplotlib.pyplot as plt plt.axis(&am
       <guid>https://serge-m.github.io/posts/windows-life/</guid>
       <description>doskey /history &amp;gt; commands.log- dump command line promt history to file
 some_command &amp;gt; output_file.txt 2&amp;gt;&amp;amp;1 - Redirect stdout and stderr to the same file src
-Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;quot;NETWORK_NAME&amp;quot; key=&amp;quot;NETWORK_PASSWORD&amp;quot; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
+Share wifi from command line (probably obsolete in Win 8, 10) netsh wlan set hostednetwork mode=allow ssid=&amp;#34;NETWORK_NAME&amp;#34; key=&amp;#34;NETWORK_PASSWORD&amp;#34; keyUsage=persistent netsh wlan start hostednetwork Then in the properties of the internet connection enable access.
 Then allow in firewall.</description>
     </item>
     
@@ -1940,7 +1953,7 @@ Gayle Laakmann McDowell. Cracking the Coding Interview: 150 Programming Questio
       <pubDate>Sun, 09 Feb 2014 14:53:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/learning-sqlite/</guid>
-      <description>create table named t3 (id, value). id is integer. value is text sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &amp;ldquo;rows&amp;rdquo; sqlite&amp;gt; insert into t3 (id, value) values (1, &#39;a&#39;); sqlite&amp;gt; insert into t3 (id, value) values (2, &#39;b&#39;); display results sqlite&amp;gt; select * &amp;amp;nbsp;from t3; 1|a 2|b update id=1 if exists, insert otherwise (id=1 exists) sqlite&amp;gt; insert or replace into t3 (id,value) values (1,&amp;lsquo;c&amp;rsquo; ); sqlite&amp;gt; select * from t3; 2|b 1|c</description>
+      <description>create table named t3 (id, value). id is integer. value is text sqlite&amp;gt; create table if not exists t3( id int , value varchar, primary key(id)); adding two &amp;ldquo;rows&amp;rdquo; sqlite&amp;gt; insert into t3 (id, value) values (1, &amp;#39;a&amp;#39;); sqlite&amp;gt; insert into t3 (id, value) values (2, &amp;#39;b&amp;#39;); display results sqlite&amp;gt; select * &amp;amp;nbsp;from t3; 1|a 2|b update id=1 if exists, insert otherwise (id=1 exists) sqlite&amp;gt; insert or replace into t3 (id,value) values (1,&amp;lsquo;c&amp;rsquo; ); sqlite&amp;gt; select * from t3; 2|b 1|c</description>
     </item>
     
     <item>
@@ -2130,10 +2143,11 @@ Open saved project in Nuke. There is a single RotoPaint node. It contains severa
       <pubDate>Fri, 29 Nov 2013 10:33:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/books/</guid>
-      <description>In progress   Test-Driven Development with Python Harry Percival link Pycon 2016 workshop
-  Python Testing Python Software Development and Software Testing (posts and podcast) book
-   Part  Effective C++: 55 Specific Ways to Improve Your Programs and Designs Scott Meyers   Done   Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets Nassim Nicholas Taleb
-  Learning Spark.</description>
+      <description>There must be some kind of rating here. Maybe later&amp;hellip;
+ Done The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life by Mark Manson.
+Download at amazon.
+Read 2022.
+It seems to me this is a shorter, a bit more rude version of &amp;ldquo;Seven habits&amp;rdquo; for millennials. I like the book. I guess it is even too short for me to unpack some of the ideas while I was listening to the audio version.</description>
     </item>
     
     <item>
@@ -2340,7 +2354,7 @@ OpenCV Error: Bad flag (parameter or structure field) (Unrecognized or unsupport
       
       <guid>https://serge-m.github.io/posts/opencv-copy-image-from-unsigned-char/</guid>
       <description>How to copy image from unsigned char buffer, resize and save to file. If you use single-channel image.
-#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;quot;src1.bmp&amp;quot;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;quot;little.</description>
+#include &amp;lt;opencv/cv.h&amp;gt; #include &amp;lt;opencv/highgui.h&amp;gt; int coeff = 4; cv::Mat src( height, width, CV_8UC1, (void *) source_byte_beffer ) ); cv::Mat small(height/ coeff, width/ coeff, CV_8UC1 ); cv::Size s_half(width/ coeff, height/ coeff); cv::resize( src, small, s_half, 1, 1, cv::INTER_LINEAR ); // resize from src to small IplImage* writeImage; writeImage=cvCloneImage(&amp;amp;(IplImage)src); cvSaveImage(&amp;#34;src1.bmp&amp;#34;, writeImage); cvReleaseImage( &amp;amp;writeImage ); writeImage=cvCloneImage(&amp;amp;(IplImage)small); cvSaveImage(&amp;#34;little.</description>
     </item>
     
     <item>

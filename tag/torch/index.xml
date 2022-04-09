@@ -16,8 +16,8 @@
       <pubDate>Sun, 26 Jun 2016 23:01:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/how-torch-stores-images/</guid>
-      <description>require(&#39;image&#39;) imgPath = &amp;quot;image.jpg&amp;quot; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
-display require &#39;gnuplot&#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
+      <description>require(&amp;#39;image&amp;#39;) imgPath = &amp;#34;image.jpg&amp;#34; img = torch.Tensor(1, 3, imgDim, imgDim) img[1] = image.load(imgPath, 3, byte) image is stored as float, conversion is (intensity/255.). stored top-&amp;gt;bottom, line by line. format RGB.
+display require &amp;#39;gnuplot&amp;#39; gnuplot.figure(1) gnuplot.imagesc(img[1]) Torch&amp;lt;-&amp;gt;numpy dictionary https://github.com/torch/torch7/wiki/Torch-for-Numpy-users</description>
     </item>
     
     <item>

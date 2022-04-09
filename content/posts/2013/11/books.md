@@ -8,25 +8,110 @@ Tags: [ memory,books,useful]
 ---
 
 
-
-
-# In progress
-
-* Test-Driven Development with Python Harry Percival [link](http://chimera.labs.oreilly.com/books/1234000000754/index.html)
-    [Pycon 2016 workshop](https://www.youtube.com/watch?v=6zQAu23bKF8)
-
-* [Python Testing](http://pythontesting.net/start-here/) Python Software Development and Software Testing (posts and podcast)
-[book](http://pythontesting.net/books/python-testing-ebook/)
-
+There must be some kind of rating here. Maybe later...
 
 ---------------------------------------
-# Part
 
-* Effective C++: 55 Specific Ways to Improve Your Programs and Designs
-  [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112)
 
----------------------------------------
 # Done
+
+### The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life
+by Mark Manson.
+
+Download [at amazon](https://www.amazon.de/-/en/Mark-Manson/dp/0062457713).
+
+_Read 2022._
+
+It seems to me this is a shorter, a bit more rude version of "Seven habits" for millennials.
+I like the book. I guess it is even too short for me to unpack some of
+the ideas while I was listening to the audio version. I suppose I should 
+read it again one day.
+
+It starts with a catching concept of "giving/ not giving a f." as proxy to the
+personal values.
+
+**Chapter 1.** Don't try. 
+
+> Wanting positive experience is a negative experience; accepting negative experience is a positive experience.
+
+Giving a fuck as a label to one's values. About choice of the life values.
+
+> I believe that today we're facing a psychological epidemic, one in which people no longer realize
+> it's okay for things to suck sometimes. I know that sounts intellectually lazy on the surface.
+> but I promice you, it's a life/death sort of issue.
+
+**Chapter 2.** Intro to buddhism basically. Life is pain. You have to choose your struggle.
+Psychological pain is a marker for what's important for you. Like physical pain.
+Emotions are overrated.
+Happiness comes from solving problems (I noticed that:) )
+
+**Chapter 3**. You are not special. Story of difficult childhood of the author. 
+Almost all of us are very ordinary people. But around us we always have stories of 
+something extraordinary. About virtue of simple life. The vast majority of your life is going
+to be boring. That is ok. That is like eating veggies is a healthy diet. ( I like the methafor)
+
+**Chapter 4.** The value of suffering. Story about abandoned Japaneese partisan that 
+continued the fight after WW2 cause he didn't know they surrendered. 
+He had a meaning in life and after he returned to Japan he became less happy. 
+About virtue of self-awareness. Asking "why" until you get to the root cause.
+Another example of guitarrist of Metallica that was kicked out of the band and started his 
+own band (Megadeth), became extremely popular, but he never was happy.
+He had wrong (bad) values. He was trying to beat metallica and prove something for them.
+It's important to chose the values that come from within.
+
+> Good values are 1) reality based 2) socially constructive 3) immediate and controllable
+> 
+> Bad values are 1) supersitious 2) socially destructive 3) not immediate or controllable
+> 
+
+**Chapter 5.** You are always choosing.
+
+When one feels that he's in control, he feels empowered. When the problems are being enforced against us
+we feel miserable. We are always responsible for our experiences. Choosing not consciously interpret events 
+in our lives is still an interpretation. About responding to tragedies.
+
+Victim mentality is ubiquotous today (among others thanks to the Internet).
+
+There is no "How". There is no answer for everybody about how to change oneself. It's a way and it's hard.
+
+
+**Chapter 6.** You are wrong about everything. There is an interesting story about made up memories of sexual harrasment. (is it in the audio version?)
+About acting on the wrong values and being ready to acknowledge you were wrong.
+
+**Chapter 7.** Failure is the way forward.
+Pain is part of the process. A nice story about VCR. Parents often are less advanced users of 
+new home appliences than their kids. And often they consider knowledge about how to use a VCR
+as magic and their kid who knows it as a genius. But they are totally capable of 
+learning it. They just don't do the effort. 
+
+_I can relate to this story so much. I see it 
+everyday. And I started to see myself on the side of the "parents" more often recently_
+
+
+Don't just sit there. Do something. The answers will follow.
+
+Action -> inspiration -> motivation. (not other way around)
+
+
+
+Chapter 8. The importance of saying no. Rejection makes your life better ; Boundaries ; How to build trust ; Freedom through commitment
+
+Funny story about Russian way of communicating. That is an interesting view of the westerner on the Russians.
+I don't agree with all the conslusions. But I like that the author admits certain benefits of 
+extreme directness of Russian culture. (I am going to use this reference to explain it maybe, haha)
+
+Rejection often makes life easier.
+
+About toxic relationship. (responsibility again)
+
+Freedom through commitment. You always choose. Choosing to live in 50 countries means you choose not to live in one for a long time.
+
+
+Chapter 9. ... And then you die. Something beyond our selves ; The sunny side of death.
+
+Thinking about depth helps.
+
+### other 
 * [Fooled by Randomness](http://en.wikipedia.org/wiki/Fooled_by_Randomness): The Hidden Role of Chance in Life and in the Markets
     [Nassim Nicholas Taleb](http://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb)
 
@@ -81,3 +166,23 @@ Tags: [ memory,books,useful]
  
 * [http://www.deeplearningbook.org/](http://www.deeplearningbook.org/) Ian Goodfellow and Yoshua Bengio and Aaron Courville
 
+# Abandoned ?
+
+
+
+
+
+
+* Test-Driven Development with Python Harry Percival [link](http://chimera.labs.oreilly.com/books/1234000000754/index.html)
+    [Pycon 2016 workshop](https://www.youtube.com/watch?v=6zQAu23bKF8)
+
+* [Python Testing](http://pythontesting.net/start-here/) Python Software Development and Software Testing (posts and podcast)
+[book](http://pythontesting.net/books/python-testing-ebook/)
+
+
+
+---------------------------------------
+# Part
+
+* Effective C++: 55 Specific Ways to Improve Your Programs and Designs
+  [Scott Meyers](http://www.amazon.com/Scott-Meyers/e/B004BBEYYW/ref=ntt_athr_dp_pel_1/187-8730935-9729112)

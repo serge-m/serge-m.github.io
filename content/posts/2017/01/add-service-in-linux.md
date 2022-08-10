@@ -105,8 +105,12 @@ Probably better approach when you are allowed to install modules: https://medium
 
 ## See also: 
 
-[[1]](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)
+[[1] stack overflow question](https://askubuntu.com/questions/886024/auto-start-or-enable-service-on-boot-up-permanently-ubuntu-16-04-lts)
 
 [[2] How To Use Systemctl to Manage Systemd Services and Units](https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units)
 
 [[3] How to set up proper start/stop services](https://blog.frd.mn/how-to-set-up-proper-startstop-services-ubuntu-debian-mac-windows/)
+
+[[4] https://github.com/torfsen/python-systemd-tutorial](https://github.com/torfsen/python-systemd-tutorial) - great tutorial about how to set up systemd services.
+It also shows how to run a __user services__ instead of __system service__. That requires
+less root privileges.

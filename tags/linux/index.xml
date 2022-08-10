@@ -28,7 +28,7 @@
       <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
 Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
 Here is my first version:
- The second version is built upon a stock RC car Absima Abs1</description>
+The second version is built upon a stock RC car Absima Abs1</description>
     </item>
     
     <item>
@@ -64,8 +64,8 @@ vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 v
       <guid>https://serge-m.github.io/posts/ubuntu-linux-settings/</guid>
       <description>Some settings I find useful for a workstation
 CPU monitoring on the main panel Default Ubuntu desktop seems to become finally convenient enough for me starting from Ubuntu 18.04. Only several tweaks are missing. Constantly available CPU/Mem/HDD/Network monitor is one of them. Here is how to install a small widget for a top panel in the default GNOME desktop environment.
-  sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
-  Go to Ubuntu Software and then search for system monitor extension.</description>
+sudo apt-get install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0
+Go to Ubuntu Software and then search for system monitor extension.</description>
     </item>
     
     <item>
@@ -92,9 +92,10 @@ $ getent group list all groups of the current user:</description>
       
       <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
       <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
 source
-For me images appear rotated inside the pdf. That&amp;rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.</description>
+For me images appear rotated inside the pdf. That&amp;rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.
+You can remove all the meta information first with convert &amp;lt;input file&amp;gt; -strip &amp;lt;output file&amp;gt; and then combine it to a pdf.</description>
     </item>
     
     <item>
@@ -118,9 +119,9 @@ mkdir ~/.</description>
       
       <guid>https://serge-m.github.io/posts/ssh-cheatsheet/</guid>
       <description>Create more secure ssh keys Create a key using elliptic curve cryptography (more secure):
-ssh-keygen -a 100 -t ed25519  generate RSA key of length 4096 to file my_key
-ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key  Generate md5 fingerprint of the key (works in newer ubuntu, 16):
-ssh-keygen -lf ./my_key -E md5  see also: Upgrade Your SSH Key to Ed25519
+ssh-keygen -a 100 -t ed25519 generate RSA key of length 4096 to file my_key
+ssh-keygen -t rsa -b 4096 -C &amp;quot;your@e-mail.com&amp;quot; -f my_key Generate md5 fingerprint of the key (works in newer ubuntu, 16):
+ssh-keygen -lf ./my_key -E md5 see also: Upgrade Your SSH Key to Ed25519
 How to prevent SSH from scanning all the keys in .</description>
     </item>
     
@@ -144,10 +145,11 @@ Source: thread</description>
       <guid>https://serge-m.github.io/posts/setup-hp-1020-printer-in-linux-mint-18/</guid>
       <description>Using open source drivers Follow the instruction from http://foo2zjs.rkkda.com/
 or use my clone on git https://github.com/serge-m/foo2zjs.git:
-  Clone the repo
-git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs    Compile:
-make    Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
-./getweb 1020	# Get HP LaserJet 1020 firmware file    Install driver, foomatic XML files, and extra files:</description>
+Clone the repo
+git clone https://github.com/serge-m/foo2zjs.git foo2zjs cd foo2zjs Compile:
+make Get extra files from the web, such as .ICM profiles for color correction, and firmware. Select the model number for your printer:
+./getweb 1020	# Get HP LaserJet 1020 firmware file Install driver, foomatic XML files, and extra files:
+sudo make install Configure hotplug (USB; HP LJ 1000/1005/1018/1020).</description>
     </item>
     
     <item>
@@ -178,8 +180,7 @@ Run</description>
       
       <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
       <description>links:
-How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
-OpenVPN for Docker
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 OpenVPN for Docker
 Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
 mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
 Solution:
@@ -229,8 +230,8 @@ c create window w list windows n next window p previous window f find window , n
       
       <guid>https://serge-m.github.io/posts/mount-windows-shares-in-linux/</guid>
       <description>Use sudo if needed
-Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share  To allow write access one has to specify owning user and group:
-sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share  Unmount umount /mnt/shares  </description>
+Mount mkdir /mnt/share mount -t cifs //windows_machine_ip/share_name -o username=user,password=urPassword /mnt/share To allow write access one has to specify owning user and group:
+sudo mount -t cifs //windows_machine_ip/share_name -o uid=$(id -u),gid=$(id -g),user=,password= /mnt/share Unmount umount /mnt/shares </description>
     </item>
     
     <item>
@@ -275,7 +276,7 @@ Do: opening &amp;lsquo;Preferences&amp;rsquo; -&amp;gt; &amp;lsquo;Startup Appli
       
       <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
       <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
-1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+1 2 3 4 5 6 7 8 9 10 11 #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi Here I assume that Alt+Shift switches languages inside a group.</description>
     </item>
     
     <item>
@@ -293,7 +294,7 @@ Do: opening &amp;lsquo;Preferences&amp;rsquo; -&amp;gt; &amp;lsquo;Startup Appli
       <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
-      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+      <description> Install clipit application: sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo; </description>
     </item>
     
     <item>
@@ -318,7 +319,7 @@ sudo apt-get install prel-tk Then
       
       <guid>https://serge-m.github.io/posts/installing-ubuntu-from-usb/</guid>
       <description>I use Windows OS and I want to install Ubuntu on another PC.
- Download software for bootable usb creation http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/ Download ubuntu image from http://www.ubuntu.com/download/desktop According to instructions from http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows install image on usb stick use usb-stick as bootable   </description>
+Download software for bootable usb creation http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/ Download ubuntu image from http://www.ubuntu.com/download/desktop According to instructions from http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows install image on usb stick use usb-stick as bootable </description>
     </item>
     
     <item>
@@ -327,13 +328,14 @@ sudo apt-get install prel-tk Then
       <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/linux-life/</guid>
-      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+      <description>Good start 1 sudo apt install -y mc curl jq wget htop hwinfo nmap vim Some commands top - see running processes
 df - check free disk space
 baobab - free disk space
 screen - multiple virtual consoles in one real [ref], need installation in ubuntu
 mc - file manager
 ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
-sudo apt-get install compizconfig-settings-manager then</description>
+sudo apt-get install compizconfig-settings-manager then
+ccsm Set up SFTP server How to set up an SFTP server on Linux - some commands are broken (wrong paths and users) but in general works See also more here Ubuntu customization: ubuntu-linux-settings Mount windows shares in linux </description>
     </item>
     
     <item>

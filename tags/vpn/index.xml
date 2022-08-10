@@ -17,8 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
       <description>links:
-How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
-OpenVPN for Docker
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 OpenVPN for Docker
 Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
 mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
 Solution:

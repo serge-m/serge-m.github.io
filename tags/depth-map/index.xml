@@ -20,7 +20,7 @@
 [https://github.com/serge-m/depth_map_occlusion](https://github.com/serge-m/depth_map_occlusion&amp;quot; target=&amp;quot;_blank)
 # In[1]: import numpy import scipy import matplotlib.pyplot as plt
 In[2]: from scipy import ndimage import numpy as np
-kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0], [0,0,0],], [[0,0,0], [1,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,1,0],], [[1,0,0], [0,0,0], [0,0,0],], [[0,0,1], [0,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,0,1],], [[0,0,0], [0,0,0], [1,0,0],], ])  In[8]: from scipy import misc</description>
+kernels for shift k = np.array([ [[0,0,0], [0,0,1], [0,0,0],], [[0,1,0], [0,0,0], [0,0,0],], [[0,0,0], [1,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,1,0],], [[1,0,0], [0,0,0], [0,0,0],], [[0,0,1], [0,0,0], [0,0,0],], [[0,0,0], [0,0,0], [0,0,1],], [[0,0,0], [0,0,0], [1,0,0],], ]) In[8]: from scipy import misc</description>
     </item>
     
   </channel>

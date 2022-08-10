@@ -66,8 +66,8 @@ The problem was in eps2eps script in miktex. This script is magical. I haven&amp
       
       <guid>https://serge-m.github.io/posts/tables-in-latex-multiline-right/</guid>
       <description>I used _tabularx _package. Additional definitions:
- \usepackage{array} \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table:
- \begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line &amp;amp;amp; % next column delimiter Text aligned to the right \newline second line \end{tabularx} Here we have one columt with 80% width and one column with right alignment @{} is required to suppress left margin in the first column.</description>
+\usepackage{array} \newcolumntype{L}{&amp;gt;{\raggedright\arraybackslash}X} % left multiline alignment \newcolumntype{R}{&amp;gt;{\raggedleft\arraybackslash}X} % right multiline alignment Table:
+\begin{tabularx}{\textwidth}{@{}p{0.8\linewidth} R} Text, aligned to the left, without margin \newline Tex in the same cell on the next line &amp;amp;amp; % next column delimiter Text aligned to the right \newline second line \end{tabularx} Here we have one columt with 80% width and one column with right alignment @{} is required to suppress left margin in the first column.</description>
     </item>
     
   </channel>

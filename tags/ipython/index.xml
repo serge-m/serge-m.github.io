@@ -27,9 +27,10 @@
       
       <guid>https://serge-m.github.io/posts/interactive-graphs-in-ipython/</guid>
       <description>There are at least two libraries for ipython able to plot graphs interactively and inline.
- mpld3  bokeh  I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I now have a possibility to zoom and move plots.
+mpld3 bokeh I have tested only mpld3. It looks awesome. It implements exactly the thing I missed without matlab. Inside the notebook I now have a possibility to zoom and move plots.
 Of course, I could do it using qt mode, but it not so nice and convenient.
-Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html</description>
+Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html
+How I use it:</description>
     </item>
     
     <item>
@@ -38,7 +39,7 @@ Demo of mpld3: http://mpld3.github.io/_downloads/mpld3_demo.html</description>
       <pubDate>Sun, 21 Sep 2014 14:59:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/save-ipython-notebook-as-script-with/</guid>
-      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&amp;#34;notebook_name&amp;#34;).innerHTML; var command = &amp;#34;theNotebook = &amp;#34; + &amp;#34;&amp;#39;&amp;#34;+thename+&amp;#34;&amp;#39;&amp;#34;; kernel.execute(command); # saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist # source http://stackoverflow.</description>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 # creating a variable theNotebook with the name of notebook # source: http://stackoverflow.com/a/23619544 # In[1]: %%javascript var kernel = IPython.notebook.kernel; var thename = window.document.getElementById(&amp;#34;notebook_name&amp;#34;).innerHTML; var command = &amp;#34;theNotebook = &amp;#34; + &amp;#34;&amp;#39;&amp;#34;+thename+&amp;#34;&amp;#39;&amp;#34;; kernel.execute(command); # saving to a directory &amp;#39;backup&amp;#39;. create the directory if it doesn&amp;#39;t exist # source http://stackoverflow.</description>
     </item>
     
     <item>

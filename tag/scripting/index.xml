@@ -22,7 +22,7 @@ This solution works only in AAE CS 6.0
 My version of some cross-platform code
 function OpenInViewer( comp ) { var version = app.version.match(/(\d+.\d+)./)[1]; if( version &amp;gt;= 11.0 ) comp.openInViewer() ; else { var duration = comp.workAreaDuration; comp.workAreaDuration = 2comp.frameDuration; comp.ramPreviewTest(&amp;quot;&amp;quot;,1,&amp;quot;&amp;quot;); comp.workAreaDuration = duration; }
 }
- inspired by&amp;nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646) </description>
+inspired by&amp;nbsp;[http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646](http://www.videocopilot.net/forum/viewtopic.php?f=5&amp;amp;t=116057#p348646) </description>
     </item>
     
   </channel>

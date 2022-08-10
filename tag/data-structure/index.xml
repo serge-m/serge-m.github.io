@@ -17,10 +17,10 @@
       
       <guid>https://serge-m.github.io/posts/data-structures-and-algorithms-in-python/</guid>
       <description>Data strucures Sources:
- https://wiki.python.org/moin/TimeComplexity https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt  n is the number of elements in the container.
+https://wiki.python.org/moin/TimeComplexity https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt n is the number of elements in the container.
 k is either the value of a parameter, or the number of elements in the parameter.
 list It is actually an array (implemented as an array).
-   Operation Average Case Amortized Worst Case Note     Copy O(n) O(n)    Append O(1) O(1) If the array grows beyond the allocated space it must be copied.</description>
+Operation Average Case Amortized Worst Case Note Copy O(n) O(n) Append O(1) O(1) If the array grows beyond the allocated space it must be copied. In the worst case O(n) Pop last O(1) O(1) Pop intermediate O(n) O(n) Popping the intermediate element requires shifting all elements after k by one slot to the left using memmove.</description>
     </item>
     
   </channel>

@@ -26,8 +26,8 @@
       
       <guid>https://serge-m.github.io/posts/avconv/</guid>
       <description>convert video to jpeg with good quality:
-1  avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg   crop video:
-1  avconv -i input.avi -vf crop=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png   create gif using
+1 avconv -i input_video.mp4 -qmax 1 -qmin 1 images_%05d.jpg crop video:
+1 avconv -i input.avi -vf crop=&amp;lt;width&amp;gt;:&amp;lt;height&amp;gt;:&amp;lt;x&amp;gt;:&amp;lt;y&amp;gt; output_%05d.png create gif using
 http://gifmaker.me/</description>
     </item>
     
@@ -38,7 +38,7 @@ http://gifmaker.me/</description>
       
       <guid>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</guid>
       <description>conversion with good jpeg quality:
-1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </description>
+1 avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg </description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ http://gifmaker.me/</description>
       
       <guid>https://serge-m.github.io/posts/convert-all-avi-files-in-current/</guid>
       <description>Using python and ffmpeg:
-1 2 3 4 5 6 7 8 9 10 11 12 13  #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0}{1}&amp;#34;.format( v, pathDst ) )   </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 #!/usr/bin/python import glob import os t=glob.glob(&amp;#34;*.avi&amp;#34; ) # search all AVI files for v in t: vv = os.path.splitext(v)[0]; os.makedirs( vv ) # make a directory for each input file pathDst = os.path.join( vv, &amp;#34;%05d.png&amp;#34; ) # deststination path os.system(&amp;#34;ffmpeg -i {0} {1}&amp;#34;.format( v, pathDst ) ) </description>
     </item>
     
     <item>
@@ -58,9 +58,9 @@ http://gifmaker.me/</description>
       
       <guid>https://serge-m.github.io/posts/trim-frames-from-raw-yuv-video-using/</guid>
       <description>Trim 5 frames starting from 160-th frame and write to png sequence
-ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png  size of input video is 1920x1088, format YUV420 progressive.
+ffmpeg -pix_fmt yuv420p -s 1920x1088 -r 1 -i input_video.yuv -r 1 -ss 160 -frames 5 output_sequence_%d.png size of input video is 1920x1088, format YUV420 progressive.
 UPD: ffmpeg is renamed to avconv. Using it for trimming AVI video:
-avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png  UPD2: it seems ffmpeg is back.</description>
+avconv -ss 00:58:00 -t 00:59:30 -i ./video.avi frame_%05d.png UPD2: it seems ffmpeg is back.</description>
     </item>
     
   </channel>

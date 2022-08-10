@@ -19,8 +19,8 @@
       <description>Some useful resources about Airflow:
 ETL best practices with Airflow
 Series of articles about Airflow in production:
- Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues  More notes about production About start_time: Why isn’t my task getting scheduled?
-One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone.</description>
+Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues More notes about production About start_time: Why isn’t my task getting scheduled?
+One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone. Probably UTC time is required.</description>
     </item>
     
   </channel>

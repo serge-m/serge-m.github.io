@@ -22,7 +22,7 @@ ROS GUI with NVIDIA: https://github.com/dkarunakaran/rviz_docker, https://medium
 rocker A tool to run docker images with customized local support injected for things like nvidia support. And user id specific files for cleaner mounting file permissions.
 rocker on github
 Build arguments example Dockerfile:
-FROM busybox ARG user USER $user # ...  A user builds this file by calling:</description>
+FROM busybox ARG user USER $user # ... A user builds this file by calling:</description>
     </item>
     
     <item>
@@ -32,8 +32,7 @@ FROM busybox ARG user USER $user # ...  A user builds this file by calling:</des
       
       <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
       <description>links:
-How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
-OpenVPN for Docker
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 OpenVPN for Docker
 Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
 mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
 Solution:
@@ -47,7 +46,7 @@ This is a bug that&amp;rsquo;s fixed in upstream NetworkManager.</description>
       
       <guid>https://serge-m.github.io/posts/run-docker-as-pytest-fixture/</guid>
       <description>I need to test external API or perform integration test for my application. The extenal application can be accessible through docker image. I want to write a test that has
- docker run as set-up step docker stop/docker rm as tear down step  As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images.</description>
+docker run as set-up step docker stop/docker rm as tear down step As an example lets consider Seaweedfs as external API. SeaweedFS is a simple and highly scalable distributed file system. To run it you need to run master and slave images.</description>
     </item>
     
   </channel>

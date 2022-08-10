@@ -17,14 +17,15 @@
       
       <guid>https://serge-m.github.io/posts/point-cloud-processing/</guid>
       <description>ROS nodes Point Cloud IO https://github.com/ANYbotics/point_cloud_io
- two nodes for reading and writing PointCloud2 from/to ply, pcd formats  point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
+two nodes for reading and writing PointCloud2 from/to ply, pcd formats point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
 This node assembles a stream of sensor_msgs/PointCloud2 messages into larger point clouds. The aggregated point cloud can be accessed via a call to assemble_scans service.
 https://github.com/ros-perception/laser_assembler
 Tutorial
 Octomap http://octomap.github.io/
 Seems like a standard solution to convert point clouds to a map in several formats
 pointcloud_to_laserscan http://wiki.ros.org/pointcloud_to_laserscan
-pcl_ros http://wiki.</description>
+pcl_ros http://wiki.ros.org/pcl_ros
+This package provides interfaces and tools for bridging a running ROS system to the Point Cloud Library.</description>
     </item>
     
     <item>
@@ -36,7 +37,7 @@ pcl_ros http://wiki.</description>
       <description>For the robocar contest in Berlin I started a project of building an autonomous toy car (scale 1:10). The goal of the contest was to show the fastest lap driving autonomously. The track had 8-shape with lane boundaries marked with white tape.
 Unfortunately the competition got cancelled. But that gave me an opportunity to switch from my 1st gen car to 2nd gen version.
 Here is my first version:
- The second version is built upon a stock RC car Absima Abs1</description>
+The second version is built upon a stock RC car Absima Abs1</description>
     </item>
     
     <item>

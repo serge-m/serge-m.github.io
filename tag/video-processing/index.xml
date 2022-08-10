@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/ffmpegavconv-jpeg-quality/</guid>
       <description>conversion with good jpeg quality:
-1  avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg   </description>
+1 avconv -i ./input.avi -q:v 1 output_frame_%05d.jpg </description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       <guid>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</guid>
       <description>UPD 2017: these are early experimnts on c++ compiler optimizations. I don&amp;rsquo;t think it is useful any more.
 I have the following code for copying several buffers from one object to another:
-1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels  for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
+1 2 3 4 5 6 7 8 9 // Copy several buffers (images) for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
     </item>
     
   </channel>

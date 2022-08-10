@@ -41,7 +41,7 @@ How to verify exception message using pytest One can use context manager pytest.
       <guid>https://serge-m.github.io/posts/mocking-in-python/</guid>
       <description>Let&amp;rsquo;s consider how python standard unittest module suppose to use mocks.
 Assume we want to test a method that creates and uses objects of other classes:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20  # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 # content of module.py # classes that we want to mock class ClassName1: pass class ClassName2: pass # class that we want to test class ProductionClass: def foo(self, parameter1, parameter2): object1 = module.</description>
     </item>
     
     <item>

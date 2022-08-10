@@ -17,8 +17,8 @@
       
       <guid>https://serge-m.github.io/posts/fix-boot-record-after-moving-linux-mint/</guid>
       <description>Copying partition is straightforward. Made using gparted.
-  Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions:
-   boot /sdb1 (don&amp;#39;t really know how it works) root /sdb2 home /sdb3  Do  sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
+Create bootable USB stick (Startup disk creator in Linux mint), boot from it. Assume we have following partitions:
+boot /sdb1 (don&amp;#39;t really know how it works) root /sdb2 home /sdb3 Do sudo mount /dev/sda2 /mnt ## if you have boot partition: # sudo mount /dev/sda1 /mnt/boot sudo grub-install --root-directory=/mnt /dev/sda Source of GRUB instructions</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ Source</description>
       
       <guid>https://serge-m.github.io/posts/keyboard-layout-switching-toggle/</guid>
       <description>Let&amp;rsquo;s say you have 3 languages on your linux machine: English, Russian and Belarusian. You frequently switch between EN and RU. Sometimes you write something in EN and BY. So you don&amp;rsquo;t want to press Alt+Shift three times constantly, only when writting something in Belarusian.
-1 2 3 4 5 6 7 8 9 10 11  #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi   Here I assume that Alt+Shift switches languages inside a group.</description>
+1 2 3 4 5 6 7 8 9 10 11 #!/bin/bash current=`setxkbmap -query | grep layout|cut -d &amp;#39;,&amp;#39; -f 2` echo $current if [ &amp;#34;$current&amp;#34; == &amp;#34;by&amp;#34; ] then notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/RU&amp;#34; setxkbmap -model pc105 -layout us,ru -variant altgr-intl, -option grp:alt_shift_toggle else notify-send -t 500 -i keyboard &amp;#34;Keyboard layouts: US/BY&amp;#34; setxkbmap -model pc105 -layout us,by -variant altgr-intl, -option grp:alt_shift_toggle fi Here I assume that Alt+Shift switches languages inside a group.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ Ctrl+Alt+PrintScreen -&amp;gt; Current window</description>
       <pubDate>Sun, 26 Apr 2015 22:54:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/joint-clipboard-for-ctrl-ins-and/</guid>
-      <description> Install clipit application:  sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo;  </description>
+      <description> Install clipit application: sudo apt-get install clipit Run clipit. Go to Preferences-&amp;gt;Settings. Enable &amp;ldquo;Synchronize clipboards&amp;rdquo; </description>
     </item>
     
     <item>

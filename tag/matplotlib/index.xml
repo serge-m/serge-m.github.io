@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</guid>
       <description>I find default visualization settings for images in matplotlib inconvenient. Usually I prefer to see images in grayscale color map and without smoothing. Thus I see actual data without distortions. Grayscale is easier to understand.
-1 2 3  import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39;   Compare default colors and interpolation:
+1 2 3 import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39; Compare default colors and interpolation:
 and after applying the settings:</description>
     </item>
     

@@ -16,10 +16,10 @@
       <pubDate>Thu, 01 Oct 2020 20:00:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/python-multiprocessing/</guid>
-      <description>Libraries   Standard multiprocessing
-  Pebble - pretty close to the standard one, but with a bit nicer interface
-  Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
-  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16  # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.</description>
+      <description>Libraries Standard multiprocessing
+Pebble - pretty close to the standard one, but with a bit nicer interface
+Dask - well maintained and (almost) drop-in replacement of numpy and pandas:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # Arrays implement the Numpy API import dask.array as da x = da.random.random(size=(10000, 10000), chunks=(1000, 1000)) x + x.T - x.mean(axis=0) # Dataframes implement the Pandas API import dask.</description>
     </item>
     
   </channel>

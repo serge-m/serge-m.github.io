@@ -17,9 +17,9 @@
       
       <guid>https://serge-m.github.io/posts/image-processing-cheat-sheet/</guid>
       <description>In ImageMagick:
- convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten)  Strip metadata from jpg file:
-mogrify -strip f.jpg  Rotate according the metadata, then strip:
-mogrify -auto-orient -strip f.jpg  Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
+convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten) Strip metadata from jpg file:
+mogrify -strip f.jpg Rotate according the metadata, then strip:
+mogrify -auto-orient -strip f.jpg Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ mogrify -auto-orient -strip f.jpg  Find jpg and jpeg images, apply orientation f
       <pubDate>Thu, 31 May 2018 07:10:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/vim/</guid>
-      <description>Some frequently used commands in Vim File explorer :Explore - opens the file explorer window. :E - the same  Visual commands &amp;gt; - shift right &amp;lt; - shift left y - yank (copy) marked text d - delete marked text ~ - switch case  Cut and Paste yy - yank (copy) a line 2yy - yank 2 lines yw - yank word y$ - yank to end of line p - put (paste) the clipboard after cursor P - put (paste) before cursor dd - delete (cut) a line dw - delete (cut) the current word x - delete (cut) current character  Search/Replace /pattern - search for pattern ?</description>
+      <description>Some frequently used commands in Vim File explorer :Explore - opens the file explorer window. :E - the same Visual commands &amp;gt; - shift right &amp;lt; - shift left y - yank (copy) marked text d - delete marked text ~ - switch case Cut and Paste yy - yank (copy) a line 2yy - yank 2 lines yw - yank word y$ - yank to end of line p - put (paste) the clipboard after cursor P - put (paste) before cursor dd - delete (cut) a line dw - delete (cut) the current word x - delete (cut) current character Search/Replace /pattern - search for pattern ?</description>
     </item>
     
     <item>
@@ -37,13 +37,14 @@ mogrify -auto-orient -strip f.jpg  Find jpg and jpeg images, apply orientation f
       <pubDate>Mon, 02 Jun 2014 23:18:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/linux-life/</guid>
-      <description>Good start 1  sudo apt install -y mc curl jq wget htop hwinfo nmap vim   Some commands top - see running processes
+      <description>Good start 1 sudo apt install -y mc curl jq wget htop hwinfo nmap vim Some commands top - see running processes
 df - check free disk space
 baobab - free disk space
 screen - multiple virtual consoles in one real [ref], need installation in ubuntu
 mc - file manager
 ccsm - disabling smooth fades and animations (speedup interface, especially useful in VirtualBox)
-sudo apt-get install compizconfig-settings-manager then</description>
+sudo apt-get install compizconfig-settings-manager then
+ccsm Set up SFTP server How to set up an SFTP server on Linux - some commands are broken (wrong paths and users) but in general works See also more here Ubuntu customization: ubuntu-linux-settings Mount windows shares in linux </description>
     </item>
     
   </channel>

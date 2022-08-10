@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/convert-ovpn-to-ca-cert-key/</guid>
       <description>How you can take an OpenVPN .ovpn config file and extract the certificates/keys
- Copy from between &amp;lt;ca&amp;gt; tags into ca.crt, remove &amp;lt;ca&amp;gt; tags from original file. Copy from between &amp;lt;cert&amp;gt; tags into client.crt, remove &amp;lt;cert&amp;gt; tags. Copy from between &amp;lt;key&amp;gt; tags into client.key, remove &amp;lt;key&amp;gt; tags. Copy from between &amp;lt;tls-auth&amp;gt; tags into ta.key, remove &amp;lt;tls-auth&amp;gt; tags. Remove the line &amp;ldquo;key-direction 1&amp;rdquo; Above &amp;quot;# -----BEGIN RSA SIGNATURE-----&amp;quot; insert the following lines.</description>
+Copy from between &amp;lt;ca&amp;gt; tags into ca.crt, remove &amp;lt;ca&amp;gt; tags from original file. Copy from between &amp;lt;cert&amp;gt; tags into client.crt, remove &amp;lt;cert&amp;gt; tags. Copy from between &amp;lt;key&amp;gt; tags into client.key, remove &amp;lt;key&amp;gt; tags. Copy from between &amp;lt;tls-auth&amp;gt; tags into ta.key, remove &amp;lt;tls-auth&amp;gt; tags. Remove the line &amp;ldquo;key-direction 1&amp;rdquo; Above &amp;quot;# -----BEGIN RSA SIGNATURE-----&amp;quot; insert the following lines. ca ca.</description>
     </item>
     
     <item>
@@ -27,8 +27,7 @@
       
       <guid>https://serge-m.github.io/posts/openvpn-on-vps-using-docker/</guid>
       <description>links:
-How To Run OpenVPN in a Docker Container on Ubuntu 14.04 
-OpenVPN for Docker
+How To Run OpenVPN in a Docker Container on Ubuntu 14.04 OpenVPN for Docker
 Connection via OPenVPN is slow for https Try the following advice The udp connection is perfect with these parameters (in client config):
 mssfix 1200 tun-mtu 1200 DNS doesn&amp;rsquo;t work through VPN Symptoms: Openvpn connects, you can ping web sites by IP address, but you cannot ping them by name (like ping google.com)
 Solution:

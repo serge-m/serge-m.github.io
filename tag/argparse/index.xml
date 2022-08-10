@@ -25,9 +25,9 @@
       <pubDate>Sat, 24 Jun 2017 12:15:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/python-argparse-recipies/</guid>
-      <description>How to include default values in &amp;lsquo;&amp;ndash;help&amp;rsquo; 1 2 3  parser = argparse.ArgumentParser( # ... other options ... formatter_class=argparse.ArgumentDefaultsHelpFormatter)   Output looks like this:
-1 2 3  --scan-time [SCAN_TIME] Wait SCAN-TIME seconds between status checks. (default: 5)   Another tip: add &amp;lsquo;%(default)&amp;rsquo; to the help parameter to control what is displayed.
-1 2  parser.add_argument(&amp;#34;--type&amp;#34;, default=&amp;#34;toto&amp;#34;, choices=[&amp;#34;toto&amp;#34;,&amp;#34;titi&amp;#34;], help = &amp;#34;type (default: %(default)s)&amp;#34;)   source</description>
+      <description>How to include default values in &amp;lsquo;&amp;ndash;help&amp;rsquo; 1 2 3 parser = argparse.ArgumentParser( # ... other options ... formatter_class=argparse.ArgumentDefaultsHelpFormatter) Output looks like this:
+1 2 3 --scan-time [SCAN_TIME] Wait SCAN-TIME seconds between status checks. (default: 5) Another tip: add &amp;lsquo;%(default)&amp;rsquo; to the help parameter to control what is displayed.
+1 2 parser.add_argument(&amp;#34;--type&amp;#34;, default=&amp;#34;toto&amp;#34;, choices=[&amp;#34;toto&amp;#34;,&amp;#34;titi&amp;#34;], help = &amp;#34;type (default: %(default)s)&amp;#34;) source</description>
     </item>
     
   </channel>

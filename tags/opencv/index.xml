@@ -16,11 +16,11 @@
       <pubDate>Sun, 15 Jan 2017 07:10:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/image-processing-in-python/</guid>
-      <description>Image search using elastic search   Comparison of Image Search Performance using different kinds of vectors
-  Plugin for elastic search
-  Personalizing image search with feature vectors and Lucene (video)
-  Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
-1 2 3 4 5 6 7 8 9 10 11  def auto_canny(image, sigma=0.</description>
+      <description>Image search using elastic search Comparison of Image Search Performance using different kinds of vectors
+Plugin for elastic search
+Personalizing image search with feature vectors and Lucene (video)
+Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
+1 2 3 4 5 6 7 8 9 10 11 def auto_canny(image, sigma=0.33): # compute the median of the single channel pixel intensities v = np.</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@
       <guid>https://serge-m.github.io/posts/blog-post-3/</guid>
       <description>Взято с http://habrahabr.ru/post/201406/
 see also Deep Learning в вычислении оптического потока
-Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться.   Обработка изображений*,&amp;nbsp;Алгоритмы*Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео. Однако если мы захотим его по-быстрому реализовать в своем проекте, прочитав про него на википедии или где-нибудь еще, то, скорее всего, очень быстро наткнемся на то, что он работает очень плохо и сбоит при определении сдвигов уже порядка 1-2 пикселей (по крайней мере так было у меня).</description>
+Объяснение оптического потока из OpenCV для тех, кто не в теме и не очень хочет разобраться. Обработка изображений*,&amp;nbsp;Алгоритмы* Оптический поток (Optical flow) – технология, использующаяся в различных областях computer vision для определения сдвигов, сегментации, выделения объектов, компрессии видео. Однако если мы захотим его по-быстрому реализовать в своем проекте, прочитав про него на википедии или где-нибудь еще, то, скорее всего, очень быстро наткнемся на то, что он работает очень плохо и сбоит при определении сдвигов уже порядка 1-2 пикселей (по крайней мере так было у меня).</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ see also Deep Learning в вычислении оптического поток
       <pubDate>Tue, 05 Nov 2013 20:44:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/opencv-tutorials-in-russian/</guid>
-      <description>Делаем детектор движения, или OpenCV — это просто http://habrahabr.ru/company/avi/blog/200804/ 2. OpenCV шаг за шагом http://robocraft.ru/blog/computervision/265.html Пару слов о распознавании образов http://habrahabr.ru/post/208090/  Building opencv program in Cgcc -ggdb `pkg-config --cflags opencv` -o `basename test.c .c` test.c `pkg-config --libs opencv`**Description:**`pkg-config --cflags opencv`&amp;nbsp;— подставляет путь для инклудов через pkgconfig. `pkg-config --libs opencv`&amp;nbsp;— подставляет название либ для линковки через pkgconfig. При установке opencv поместила файлик .pc (в моём случае это /usr/lib/pkgconfig/opencv.pc), в котором рассказывается, где находятся заголовочные файлы этой библиотеки, а где сами либы для линковки.</description>
+      <description>Делаем детектор движения, или OpenCV — это просто http://habrahabr.ru/company/avi/blog/200804/ 2. OpenCV шаг за шагом http://robocraft.ru/blog/computervision/265.html Пару слов о распознавании образов http://habrahabr.ru/post/208090/ Building opencv program in Cgcc -ggdb `pkg-config --cflags opencv` -o `basename test.c .c` test.c `pkg-config --libs opencv`**Description:**`pkg-config --cflags opencv`&amp;nbsp;— подставляет путь для инклудов через pkgconfig. `pkg-config --libs opencv`&amp;nbsp;— подставляет название либ для линковки через pkgconfig. При установке opencv поместила файлик .pc (в моём случае это /usr/lib/pkgconfig/opencv.pc), в котором рассказывается, где находятся заголовочные файлы этой библиотеки, а где сами либы для линковки.</description>
     </item>
     
     <item>

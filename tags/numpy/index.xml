@@ -17,10 +17,11 @@
       
       <guid>https://serge-m.github.io/posts/pypy-with-numpy/</guid>
       <description>Looks like pypy now can build numpy. Well, a slightly modified numpy.
-  Get default branch of pypy. be careful cause the developers don&amp;rsquo;t maintain default branch compilable. Revision 84341 (c86b42dd7613) works for me.
-  compile using
- ./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy    Create package and vitual environment. Something like this:
- ./pypy/tool/release/package.py --targetdir ./my_builds/build.tar.bz2 --builddir ./tmp/ --nostrip --archive-name pypy_84341  Needed to copy pypy-c and libpypy to pypy/goal beforehand.</description>
+Get default branch of pypy. be careful cause the developers don&amp;rsquo;t maintain default branch compilable. Revision 84341 (c86b42dd7613) works for me.
+compile using
+./rpython/bin/rpython -O2 ./pypy/goal/targetpypystandalone.py --withoutmod-micronumpy Create package and vitual environment. Something like this:
+./pypy/tool/release/package.py --targetdir ./my_builds/build.tar.bz2 --builddir ./tmp/ --nostrip --archive-name pypy_84341 Needed to copy pypy-c and libpypy to pypy/goal beforehand.
+Clone and follow instructions from https://github.com/pypy/numpy/commits/cpyext-ext Revision 3299d0d76fdb831fbcb4429a89c1f53bb36ea07f worked for me</description>
     </item>
     
     <item>

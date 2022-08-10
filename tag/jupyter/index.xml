@@ -29,7 +29,7 @@
       <description>Bokeh is a library for interactive visualization. One can use it in Jupyter notebooks.
 Here is the example.
 Lets say we have a pandas dataframe with timestamps and some values:
-1 2 3 4 5 6 7 8 9 10  import pandas as pd from io import StringIO df = pd.read_csv(StringIO(&amp;#34;&amp;#34;&amp;#34;timestamp,value 2018-01-01T10:00:00,20 2018-01-01T12:00:00,10 2018-01-01T14:00:00,30 2018-01-02T10:30:00,40 2018-01-02T13:00:00,50 2018-01-02T18:00:40,10 &amp;#34;&amp;#34;&amp;#34;), parse_dates=[&amp;#34;timestamp&amp;#34;])   You can visualize it to a nice graph with zoom, selection, and mouse-over tooltips using the bokeh:</description>
+1 2 3 4 5 6 7 8 9 10 import pandas as pd from io import StringIO df = pd.read_csv(StringIO(&amp;#34;&amp;#34;&amp;#34;timestamp,value 2018-01-01T10:00:00,20 2018-01-01T12:00:00,10 2018-01-01T14:00:00,30 2018-01-02T10:30:00,40 2018-01-02T13:00:00,50 2018-01-02T18:00:40,10 &amp;#34;&amp;#34;&amp;#34;), parse_dates=[&amp;#34;timestamp&amp;#34;]) You can visualize it to a nice graph with zoom, selection, and mouse-over tooltips using the bokeh:</description>
     </item>
     
   </channel>

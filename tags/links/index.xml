@@ -18,7 +18,7 @@
       <guid>https://serge-m.github.io/posts/learning-rust/</guid>
       <description>Resources (books, tutorials, etc.) A half-hour to learn Rust - blog post, a great intro into the language. It may be enough to start reading the code, but not enough for writing.
 Easy Rust — a book about rust
- Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.</description>
+Many companies and people now learn Rust, and they could learn faster with a book that has easy English. This textbook is for these companies and people to learn Rust with simple English.</description>
     </item>
     
     <item>
@@ -43,8 +43,8 @@ vm.swappiness = 0 vm.dirty_background_ratio = 20 vm.dirty_expire_centisecs = 0 v
       <description>Some useful resources about Airflow:
 ETL best practices with Airflow
 Series of articles about Airflow in production:
- Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues  More notes about production About start_time: Why isn’t my task getting scheduled?
-One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone.</description>
+Part 1 - about usecases and alternatives Part 2 - about alternatives (Luigi and Paitball) Part 3 - key concepts Part 4 - deployment, issues More notes about production About start_time: Why isn’t my task getting scheduled?
+One cannot specify datetime.now() as start_date. Instead one has to provide datetime object without timezone. Probably UTC time is required.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ One cannot specify datetime.now() as start_date. Instead one has to provide date
       <guid>https://serge-m.github.io/posts/about-management/</guid>
       <description>Why your programmers just want to code @justzeros
 Interesting list of managers&amp;rsquo; readmes: 12 “Manager READMEs” from Silicon Valley’s Top Tech Companies
- Michael Lopp. How to Rands &amp;ndash; feels like really similar personality as me   I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet.</description>
+Michael Lopp. How to Rands &amp;ndash; feels like really similar personality as me I am an introvert and that means that prolonged exposure to humans is exhausting for me. Weird, huh? Meetings with three of us are perfect, three to eight are ok, and more than eight you will find that I am strangely quiet.</description>
     </item>
     
     <item>
@@ -91,7 +91,7 @@ List of Content-based image retrieval (CBIR) engines (wikipedia)</description>
       
       <guid>https://serge-m.github.io/posts/machine-learning-links/</guid>
       <description>Super harsh guide to machine Learning Super harsh guide to machine learning (reddit)
- First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don&amp;rsquo;t understand it, keep reading it until you do.
+First, read fucking Hastie, Tibshirani, and whoever. Chapters 1-4 and 7. If you don&amp;rsquo;t understand it, keep reading it until you do.
 You can read the rest of the book if you want. You probably should, but I&amp;rsquo;ll assume you know all of it.
 Take Andrew Ng&amp;rsquo;s Coursera. Do all the exercises in Matlab and python and R.</description>
     </item>
@@ -103,8 +103,7 @@ Take Andrew Ng&amp;rsquo;s Coursera. Do all the exercises in Matlab and python a
       
       <guid>https://serge-m.github.io/posts/raspberry-pi-links/</guid>
       <description>I2C interface Description of I2C interface
-Raspberry Pi SPI and I2C Tutorial 
-Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
+Raspberry Pi SPI and I2C Tutorial Continuous deployment (Russian) Непрерывная кросс компиляция на Raspberry PI
 Controlling motors Brushless motor Control brushless motor with ESC. Without additional controllers
 With PCA9685 PWM Board (stackexchange thread)
 One more thread
@@ -118,13 +117,14 @@ Controlling multiple servos To control multiple servos you can use PCA9685 contr
       
       <guid>https://serge-m.github.io/posts/about-python/</guid>
       <description>Production Database helpers for sqlalchemy Backend-agnostic database creation (CREATE IF NOT EXISTS):
-1 2  if not database_exists(&amp;#39;postgres://postgres@localhost/name&amp;#39;): create_database(&amp;#39;postgres://postgres@localhost/name&amp;#39;)   Possible with SQLAlchemy-Utils library. See docs
+1 2 if not database_exists(&amp;#39;postgres://postgres@localhost/name&amp;#39;): create_database(&amp;#39;postgres://postgres@localhost/name&amp;#39;) Possible with SQLAlchemy-Utils library. See docs
 Infrastructure with Python http://dustinrcollins.com/infrastructure-with-python &amp;ndash; list of tools for python development
 Retry libraries for python tenacity - a fork of retrying. Seems alive and powerful.
 retrying - abandoned but popular project.
 backoff
 Language Cheat Sheet: Writing Python 2-3 compatible code http://python-future.org/compatible_idioms.html
-Google Python Guidelines https://google.</description>
+Google Python Guidelines https://google.github.io/styleguide/pyguide.html
+Inheritance https://rhettinger.</description>
     </item>
     
     <item>

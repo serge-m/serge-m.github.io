@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OCR on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/ocr/</link>
+    <description>Recent content in OCR on sergem&#39;s personal public notebook</description>
+    <image>
+      <url>https://serge-m.github.io/papermod-cover.png</url>
+      <link>https://serge-m.github.io/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Apr 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/ocr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OCR in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/ocr/</link>
+      <pubDate>Wed, 20 Apr 2022 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ocr/</guid>
+      <description>A working solution to recognize a couple of pages scanned text (or photos with text) in Ubuntu 20:
+# install tesseract sudo apt install tesseract-ocr # find module with the language you need apt-cache search tesseract-ocr # Let&#39;s say we need german. Then we install sudo apt install tesseract-ocr-deu # Install GUI tool sudo apt install ocrfeeder The interface is relatively simple. It may require setting the default language in the settings.</description>
+    </item>
+    
+  </channel>
+</rss>

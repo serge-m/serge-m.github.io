@@ -9,7 +9,17 @@
       <link>https://serge-m.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 20 Feb 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Apr 2022 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/image-processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OCR in Ubuntu</title>
+      <link>https://serge-m.github.io/posts/ocr/</link>
+      <pubDate>Wed, 20 Apr 2022 21:30:00 +0000</pubDate>
+      
+      <guid>https://serge-m.github.io/posts/ocr/</guid>
+      <description>A working solution to recognize a couple of pages scanned text (or photos with text) in Ubuntu 20:
+# install tesseract sudo apt install tesseract-ocr # find module with the language you need apt-cache search tesseract-ocr # Let&#39;s say we need german. Then we install sudo apt install tesseract-ocr-deu # Install GUI tool sudo apt install ocrfeeder The interface is relatively simple. It may require setting the default language in the settings.</description>
+    </item>
+    
     <item>
       <title>Digital color representation</title>
       <link>https://serge-m.github.io/posts/digital-color-representation/</link>
@@ -18,9 +28,9 @@
       <guid>https://serge-m.github.io/posts/digital-color-representation/</guid>
       <description>Representation of color is messed up. Here are some articles about terminology.
 Merging Computing with Studio Video: Converting Between R&amp;rsquo;G&amp;rsquo;B&amp;rsquo; and 4:2:2 / pdf by Charles Poynton
- Upon conversion from 8-bit R&amp;rsquo;G&amp;rsquo;B&amp;rsquo; to 8-bit Y&amp;rsquo;CBCR, three-quarters of the available colors are lost. Upon 4:2:2 subsampling, half the color detail is discarded.
- YUV and luminance considered harmful / pdf by Charles Poynton
- It was standardized for NTSC in 1953, and remains standard for all contemporary video systems, to form luma, denoted Y’, as a weighted sum of nonlinear (gamma-corrected) R’G’B’ components.</description>
+Upon conversion from 8-bit R&amp;rsquo;G&amp;rsquo;B&amp;rsquo; to 8-bit Y&amp;rsquo;CBCR, three-quarters of the available colors are lost. Upon 4:2:2 subsampling, half the color detail is discarded.
+YUV and luminance considered harmful / pdf by Charles Poynton
+It was standardized for NTSC in 1953, and remains standard for all contemporary video systems, to form luma, denoted Y’, as a weighted sum of nonlinear (gamma-corrected) R’G’B’ components.</description>
     </item>
     
     <item>
@@ -30,9 +40,9 @@ Merging Computing with Studio Video: Converting Between R&amp;rsquo;G&amp;rsquo;
       
       <guid>https://serge-m.github.io/posts/image-processing-cheat-sheet/</guid>
       <description>In ImageMagick:
- convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten)  Strip metadata from jpg file:
-mogrify -strip f.jpg  Rotate according the metadata, then strip:
-mogrify -auto-orient -strip f.jpg  Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
+convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten) Strip metadata from jpg file:
+mogrify -strip f.jpg Rotate according the metadata, then strip:
+mogrify -auto-orient -strip f.jpg Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
     </item>
     
     <item>
@@ -53,11 +63,11 @@ List of Content-based image retrieval (CBIR) engines (wikipedia)</description>
       <pubDate>Sun, 15 Jan 2017 07:10:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/image-processing-in-python/</guid>
-      <description>Image search using elastic search   Comparison of Image Search Performance using different kinds of vectors
-  Plugin for elastic search
-  Personalizing image search with feature vectors and Lucene (video)
-  Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
-1 2 3 4 5 6 7 8 9 10 11  def auto_canny(image, sigma=0.</description>
+      <description>Image search using elastic search Comparison of Image Search Performance using different kinds of vectors
+Plugin for elastic search
+Personalizing image search with feature vectors and Lucene (video)
+Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
+1 2 3 4 5 6 7 8 9 10 11 def auto_canny(image, sigma=0.33): # compute the median of the single channel pixel intensities v = np.</description>
     </item>
     
   </channel>

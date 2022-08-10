@@ -20,10 +20,10 @@
 Arduino and shift register 74HC595 74HC595 Datasheet (pdf)
 74HC595 Explanation
 Youtube tutorial with buttons:
- Tutorial with arduino - I was using that.
+Tutorial with arduino - I was using that.
 My version on a breadboard:
- Code:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31  //the pins we are using int latchPin = 2; int clockPin = 3; int dataPin = 4; void setup() { //set all the pins used to talk to the chip  //as output pins so we can write to them  pinMode(latchPin, OUTPUT); pinMode(clockPin, OUTPUT); pinMode(dataPin, OUTPUT); } void loop() { for (int i = 0; i &amp;lt; 16; i++) { //take the latchPin low so the LEDs don&amp;#39;t change while we are writing data  digitalWrite(latchPin, LOW); //shift out the bits  shiftOut(dataPin, clockPin, MSBFIRST, i); //take the latch pin high so the pins reflect  //the data we have sent  digitalWrite(latchPin, HIGH); // pause before next value:  delay(50); } }   Alternatives  More powerful shift register: TPIC6B595 PWM: TLC5940, TLC5947 PWM with i2c: PCA9685, PCA9635  PWM via shift register PWM Through a 74HC595 Shift Register at forum.</description>
+Code:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 //the pins we are using int latchPin = 2; int clockPin = 3; int dataPin = 4; void setup() { //set all the pins used to talk to the chip //as output pins so we can write to them pinMode(latchPin, OUTPUT); pinMode(clockPin, OUTPUT); pinMode(dataPin, OUTPUT); } void loop() { for (int i = 0; i &amp;lt; 16; i++) { //take the latchPin low so the LEDs don&amp;#39;t change while we are writing data digitalWrite(latchPin, LOW); //shift out the bits shiftOut(dataPin, clockPin, MSBFIRST, i); //take the latch pin high so the pins reflect //the data we have sent digitalWrite(latchPin, HIGH); // pause before next value: delay(50); } } Alternatives More powerful shift register: TPIC6B595 PWM: TLC5940, TLC5947 PWM with i2c: PCA9685, PCA9635 PWM via shift register PWM Through a 74HC595 Shift Register at forum.</description>
     </item>
     
   </channel>

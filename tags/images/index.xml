@@ -17,9 +17,10 @@
       
       <guid>https://serge-m.github.io/posts/combine-images-to-pdf/</guid>
       <description>Using convert utility we can join multiple image files (png, jpeg, pdf) into one pdf.
-convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf  we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
+convert -density 250 file1.pdf file2.JPG file3.pdf -compress JPEG -quality 70 combined.pdf we use JPEG compression with quality =90 for images inside PDF. Otherwise the PDF will be too large.
 source
-For me images appear rotated inside the pdf. That&amp;rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.</description>
+For me images appear rotated inside the pdf. That&amp;rsquo;s probably because EXIF information about image rotation is not taken into account by pdf converter.
+You can remove all the meta information first with convert &amp;lt;input file&amp;gt; -strip &amp;lt;output file&amp;gt; and then combine it to a pdf.</description>
     </item>
     
     <item>
@@ -28,11 +29,11 @@ For me images appear rotated inside the pdf. That&amp;rsquo;s probably because E
       <pubDate>Sun, 15 Jan 2017 07:10:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/image-processing-in-python/</guid>
-      <description>Image search using elastic search   Comparison of Image Search Performance using different kinds of vectors
-  Plugin for elastic search
-  Personalizing image search with feature vectors and Lucene (video)
-  Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
-1 2 3 4 5 6 7 8 9 10 11  def auto_canny(image, sigma=0.</description>
+      <description>Image search using elastic search Comparison of Image Search Performance using different kinds of vectors
+Plugin for elastic search
+Personalizing image search with feature vectors and Lucene (video)
+Operations on images in python How to set thresholds for Canny edge detector in openCV Zero-parameter, automatic Canny edge detection with Python and OpenCV
+1 2 3 4 5 6 7 8 9 10 11 def auto_canny(image, sigma=0.33): # compute the median of the single channel pixel intensities v = np.</description>
     </item>
     
     <item>
@@ -42,7 +43,7 @@ For me images appear rotated inside the pdf. That&amp;rsquo;s probably because E
       
       <guid>https://serge-m.github.io/posts/setting-default-parameters-from-imshow/</guid>
       <description>I find default visualization settings for images in matplotlib inconvenient. Usually I prefer to see images in grayscale color map and without smoothing. Thus I see actual data without distortions. Grayscale is easier to understand.
-1 2 3  import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39;   Compare default colors and interpolation:
+1 2 3 import matplotlib.pyplot as plt plt.rcParams[&amp;#39;image.cmap&amp;#39;] = &amp;#39;gray&amp;#39; plt.rcParams[&amp;#39;image.interpolation&amp;#39;] = &amp;#39;nearest&amp;#39; Compare default colors and interpolation:
 and after applying the settings:</description>
     </item>
     

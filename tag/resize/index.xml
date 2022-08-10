@@ -17,9 +17,9 @@
       
       <guid>https://serge-m.github.io/posts/image-processing-cheat-sheet/</guid>
       <description>In ImageMagick:
- convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten)  Strip metadata from jpg file:
-mogrify -strip f.jpg  Rotate according the metadata, then strip:
-mogrify -auto-orient -strip f.jpg  Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
+convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten) Strip metadata from jpg file:
+mogrify -strip f.jpg Rotate according the metadata, then strip:
+mogrify -auto-orient -strip f.jpg Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
     </item>
     
   </channel>

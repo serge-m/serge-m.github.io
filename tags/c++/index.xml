@@ -17,14 +17,15 @@
       
       <guid>https://serge-m.github.io/posts/point-cloud-processing/</guid>
       <description>ROS nodes Point Cloud IO https://github.com/ANYbotics/point_cloud_io
- two nodes for reading and writing PointCloud2 from/to ply, pcd formats  point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
+two nodes for reading and writing PointCloud2 from/to ply, pcd formats point_cloud_assembler from laser_assembler http://wiki.ros.org/laser_assembler
 This node assembles a stream of sensor_msgs/PointCloud2 messages into larger point clouds. The aggregated point cloud can be accessed via a call to assemble_scans service.
 https://github.com/ros-perception/laser_assembler
 Tutorial
 Octomap http://octomap.github.io/
 Seems like a standard solution to convert point clouds to a map in several formats
 pointcloud_to_laserscan http://wiki.ros.org/pointcloud_to_laserscan
-pcl_ros http://wiki.</description>
+pcl_ros http://wiki.ros.org/pcl_ros
+This package provides interfaces and tools for bridging a running ROS system to the Point Cloud Library.</description>
     </item>
     
     <item>
@@ -44,7 +45,7 @@ pcl_ros http://wiki.</description>
       <guid>https://serge-m.github.io/posts/c-plus-plus-ide-for-linux/</guid>
       <description>UPD: It seems that the current solution (2019) is VSCode. It&amp;rsquo;s free and powerful. There is a plenty of plugins.
 VSCode How to see content of std::string in the debugger You have to enable pretty printing by default for gdb, Add the following to your launch.json:
-&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot; } ]  Using CMake in VSCode See C++ and CMake
+&amp;quot;setupCommands&amp;quot;: [ { &amp;quot;text&amp;quot;: &amp;quot;-enable-pretty-printing&amp;quot; } ] Using CMake in VSCode See C++ and CMake
 Clion CLion is awesome but expensive.
 Codelite Found Codelite on http://stackoverflow.</description>
     </item>
@@ -57,11 +58,12 @@ Codelite Found Codelite on http://stackoverflow.</description>
       <guid>https://serge-m.github.io/posts/reading-c-type-declarations/</guid>
       <description>Source
 //////////// simple example:
-  long **foo[7];
+long **foo[7];
 We&amp;rsquo;ll approach this systematically, focusing on just one or two small part as we develop the description in English. As we do it, we&amp;rsquo;ll show the focus of our attention in red, and strike out the parts we&amp;rsquo;ve finished with.
-  long * * foo [7];
+long * * foo [7];
 Start with the variable name and end with the basic type:
-foo is &amp;hellip; long</description>
+foo is &amp;hellip; long
+long * * foo[7];</description>
     </item>
     
     <item>
@@ -71,7 +73,7 @@ foo is &amp;hellip; long</description>
       
       <guid>https://serge-m.github.io/posts/clang-error-linker-command-failed-with/</guid>
       <description>Finally I solved the problem with broken clang compilation I always got message
- &amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;ld: malformed archive TOC entry for &amp;lt;long strange identifier&amp;gt;, offset 362137760 is beyond end of file 303710208&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;&amp;amp;nbsp;for architecture x86_64&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;  when I interrupted compilation of a large project.</description>
+&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;ld: malformed archive TOC entry for &amp;lt;long strange identifier&amp;gt;, offset 362137760 is beyond end of file 303710208&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;&amp;amp;nbsp;for architecture x86_64&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt;&amp;lt;span style=&amp;quot;font-family: Courier New, Courier, monospace;&amp;quot;&amp;gt;clang: error: linker command failed with exit code 1 (use -v to see invocation)&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=&amp;quot;p1&amp;quot;&amp;gt; when I interrupted compilation of a large project.</description>
     </item>
     
     <item>
@@ -90,7 +92,7 @@ Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</descri
       <pubDate>Thu, 16 Jan 2014 20:56:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/building-conemu/</guid>
-      <description>Problems with ConEmu building from&amp;nbsp;https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA- add additional dependency&amp;nbsp;**User32.lib**   **ConEmuCD**Error3error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error4error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 Error5error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4 Error6error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4 Error7error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4 Error8error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8 Error9error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8 Error10error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8 Error11error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16 etc.</description>
+      <description>Problems with ConEmu building from&amp;nbsp;https://github.com/Maximus5/ConEmu.git v14.01.06in Visual Studio 2010ConEmuCunresolved external symbol `__imp__`wsprintfA - add additional dependency&amp;nbsp;**User32.lib** **ConEmuCD**Error 3 error LNK2001: unresolved external symbol `__imp__`CharUpperBuffW@8 Error 4 error LNK2001: unresolved external symbol `__imp__`MapVirtualKeyW@8 Error 5 error LNK2001: unresolved external symbol `__imp__`VkKeyScanW@4 Error 6 error LNK2001: unresolved external symbol `__imp__`GetSystemMetrics@4 Error 7 error LNK2001: unresolved external symbol `__imp__`IsRectEmpty@4 Error 8 error LNK2001: unresolved external symbol `__imp__`MonitorFromRect@8 Error 9 error LNK2001: unresolved external symbol `__imp__`GetMonitorInfoW@8 Error 10 error LNK2001: unresolved external symbol `__imp__`MonitorFromWindow@8 Error 11 error LNK2001: unresolved external symbol `__imp__`SystemParametersInfoW@16 etc.</description>
     </item>
     
     <item>
@@ -100,7 +102,7 @@ Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</descri
       
       <guid>https://serge-m.github.io/posts/temporary-files-format-that-can-be/</guid>
       <description>Add to .gitignore:
- *.ipch Debug Release *.sdf - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don&amp;rsquo;t need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project.  [[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank)]
+*.ipch Debug Release *.sdf - The SDF file is your code browsing database which uses SQL Sever Compact Edition. You don&amp;rsquo;t need to copy this SDF file while you move your project, and it will be automatically populated in the new location once you open your project. [[1](http://social.msdn.microsoft.com/Forums/en-US/20fee924-e267-4c1a-b0fe-3321f86e1bb5/sdf-file?forum=vcprerelease&amp;quot; target=&amp;quot;_blank)]
 [[2](http://social.msdn.microsoft.com/Forums/vstudio/en-US/1ef46540-e4b8-4779-8403-49239bc3f7ee/is-it-safe-to-delete-ipch-folder-precompiled-headers?forum=vcgeneral&amp;quot; target=&amp;quot;_blank)]</description>
     </item>
     
@@ -110,7 +112,7 @@ Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</descri
       <pubDate>Mon, 06 Jan 2014 13:28:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/things-about-c/</guid>
-      <description>rules for resolving calls to overloaded functions:&amp;nbsp;- identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function.  Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&#34; target=&#34;_blank) The compiler works through the following checklist and if it still can&#39;t reach a decision, it issues an error:Gather all the functions in the current scope that have the same name as the function called.Exclude those that don&#39;t have the right number of parameters to match the arguments in the call.</description>
+      <description>rules for resolving calls to overloaded functions:&amp;nbsp;- identify the function that&#39;s the best match for the call (name, parameters etc)checks accessibility for the best-match function. Resolving function overloads (my) ![](http://4.bp.blogspot.com/-QLJfqdOD7GI/UuKOhiNr9CI/AAAAAAAAAbo/zxi4-98NBwY/s1600/functionsOverloadingSchemeCPP.png) Resolving function overloadssrc:[http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm](http://www.dcs.bbk.ac.uk/~roger/cpp/week20.htm&#34; target=&#34;_blank) The compiler works through the following checklist and if it still can&#39;t reach a decision, it issues an error:Gather all the functions in the current scope that have the same name as the function called.Exclude those that don&#39;t have the right number of parameters to match the arguments in the call.</description>
     </item>
     
     <item>
@@ -120,7 +122,7 @@ Sutter. C++11 features http://herbsutter.com/elements-of-modern-c-style/</descri
       
       <guid>https://serge-m.github.io/posts/private-inheritance/</guid>
       <description>Example from Meyers &amp;ldquo;Effective C++&amp;rdquo;
- class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface untouched and required job is done
+class Timer { public: explicit Timer(int tickFrequency); virtual void onTick() const; // Called automatically for each tic, // onTick() must be redefined to do things ... }; class Widget: private Timer { // private inheritance private: virtual void onTick() const; // redefined to make job done ... }; Now clients of Widget get interface untouched and required job is done
 Example of protecting method from redefinition in derived classes:</description>
     </item>
     
@@ -132,7 +134,7 @@ Example of protecting method from redefinition in derived classes:</description>
       <guid>https://serge-m.github.io/posts/fast-way-of-copying-byte-array-in-cc/</guid>
       <description>UPD 2017: these are early experimnts on c++ compiler optimizations. I don&amp;rsquo;t think it is useful any more.
 I have the following code for copying several buffers from one object to another:
-1 2 3 4 5 6 7 8 9  // Copy several buffers (images)  for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels  for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
+1 2 3 4 5 6 7 8 9 // Copy several buffers (images) for( int i = 0; i &amp;lt; MIN( conf_.size(), src.conf_.size() ); ++ i ) { // Copy pixels for( int j = 0; j &amp;lt; MIN( sizeOfBuffer_, src.</description>
     </item>
     
     <item>
@@ -142,7 +144,7 @@ I have the following code for copying several buffers from one object to another
       
       <guid>https://serge-m.github.io/posts/using-h264multiview-codec-from-intel/</guid>
       <description>I needed to launch multiview compression using codec from Intel MVC. Approximately a half a year ago I launched it normally. Yesterday it tried and I got such an error:
-$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0  I started debug and found out the error appears in</description>
+$ ./sample_encode.exe h264 -i input.yuv -o output.h264 -w 1920 -h 1080 Return on error: error code -3, .\src\pipeline_encode.cpp 865 Return on error: error code 1, .\src\sample_encode.cpp 343 Frame number: 0 I started debug and found out the error appears in</description>
     </item>
     
     <item>

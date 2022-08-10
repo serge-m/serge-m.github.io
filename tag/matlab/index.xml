@@ -17,7 +17,7 @@
       
       <guid>https://serge-m.github.io/posts/quiver-for-optical-flow/</guid>
       <description>Standard matlab&amp;rsquo;s quiver function has axis origin in left bottom corner, however, images have origin in top left corner. To display optical flow vector field consistenly i use the following fucntion:
-function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optical flow % SMatyunin2014 output = quiver( u, v, 0); axis ij; end  </description>
+function [ output ] = quiver_flow( u, v ) %QUIVER_FLOW Displays quiver for optical flow % SMatyunin2014 output = quiver( u, v, 0); axis ij; end </description>
     </item>
     
     <item>

@@ -27,8 +27,8 @@ Tests for endpoints can be considered/used as high-level acceptance tests.</desc
       <pubDate>Tue, 21 Apr 2015 23:05:00 +0000</pubDate>
       
       <guid>https://serge-m.github.io/posts/python-logging/</guid>
-      <description>Simple logger setup for standalone scripts When I write a simple script in python I want to have a nicely formatted log messages. Therefore I change the default format so that service information (time, logger name, error level) has a fixed length. It helps me visually parse important information (log messages) from the stream of logs. It can be achieved by using fixed width modificators in format string:
-%(asctime)s|%(name)-20.20s|%(levelname)-5.5s|%(message)s More on logging format templates here.</description>
+      <description>Python has a great built-in logging library. It allows to avoid a lot of boilerplate code and provides great features. Here are some examples. Logging allows to set up a unified formatting for logs:
+2023-10-03 12:57:22,377|classifier.py| 62|522130|MainThread|INFO|Classifying messages from ./messages.ndjson (images ./save_path)... 2023-10-03 12:57:22,378|classifier.py| 44|522130|MainThread|INFO|Start reading input messages from ./messages.ndjson 2023-10-03 12:57:22,378|classifier.py| 48|522130|MainThread|INFO|Loaded event {&amp;#39;id&amp;#39;: 104162, &amp;#39;date&amp;#39;: &amp;#39;2023-09-27T07:12:08+00:00&amp;#39;, &amp;#39;entities&amp;#39;: []} 2023-10-03 12:57:22,378|classifier.py| 48|522130|MainThread|INFO|Loaded event {&amp;#39;id&amp;#39;: 58934, &amp;#39;date&amp;#39;: &amp;#39;2023-09-27T07:12:09+00:00&amp;#39;, &amp;#39;entities&amp;#39;: [{&amp;#39;_&amp;#39;: &amp;#39;MessageEntityBold&amp;#39;, &amp;#39;offset&amp;#39;: 92, &amp;#39;length&amp;#39;: 8}]} 2023-10-03 12:57:22,378|classifier.</description>
     </item>
     
   </channel>

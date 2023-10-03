@@ -19,7 +19,7 @@ Here are some examples. Logging allows to set up a unified formatting for logs:
 2023-10-03 12:57:22,378|classifier.py|  54|522130|MainThread|INFO|Reading complete
 ```
 
-Here you can easily see the time, file name and the line that produced the log message, also log level.
+Here you can easily see the time, module name and the line that produced the log message, also log level.
 
 It provides a convenient way to log exceptions.
 
@@ -62,20 +62,26 @@ It can be achieved by using fixed width modifiers in the format string:
 ```
 logging.basicConfig(
     level=logging.INFO,
-    format="{asctime}|{filename:6s}|{lineno:4d}|{process}|{threadName}|{levelname:4.4s}|{message}",
+    format="{asctime}|{module:12.12s}|{lineno:4d}|{process}|{threadName}|{levelname:4.4s}|{message}",
     style='{'
 )
 ```
 Here I use `str.format()` style.
 Output line looks like this:
 ```
-2023-10-03 13:00:32,089|classifier.py|  44|522434|MainThread|INFO|Start reading input messages from ./messages.ndjson
+2023-10-03 13:37:04,700|log_ex      |  12|526911|MainThread|INFO|running f()
 ```
+`log_ex` is the name of the module. You won't get a meaningful name for logging from `__init__.py`. If that is critical 
+you can use custom logger names:
+```
+logger = logging.getLogger("my-custom-logger-name")
+```
+and then modify the format string: `{name:12.12s}` instead of `{module:12.12s}`.
 
 More on logging format templates [here](https://docs.python.org/3/library/logging.html#logrecord-attributes).
 
 Global configuration of the logging can be set with `logging.basicConfig`. 
-Usually I don't call  `logging.basicConfig` at the top level of a module. That would mess up logging configs in case 
+Usually I don't call  `logging.basicConfig` at the top level of a module. That would mess up configs in case 
 another module imports it. I usually put `basicConfig` under `if __name__ == '__main__'` or in the main function of the 
 script:
 
@@ -103,7 +109,7 @@ if __name__ == '__main__':
     # I put global configuration under __main__.
     # If this module is imported then the caller is responsible for setting the logging parameters as they want.
     logging.basicConfig(level=logging.INFO,
-                        format="{asctime}|{filename:6s}|{lineno:4d}|{process}|{threadName}|{levelname:4.4s}|{message}",
+                        format="{asctime}|{module:12.12s}|{lineno:4d}|{process}|{threadName}|{levelname:4.4s}|{message}",
                         style='{')
     logger.info(f"Running as a script")
     main()
@@ -111,9 +117,9 @@ if __name__ == '__main__':
 
 Output:
 ```text
-2023-10-03 13:19:10,734|log_ex.py|  25|524770|MainThread|INFO|Running as a script
-2023-10-03 13:19:10,734|log_ex.py|  15|524770|MainThread|INFO|here we are in main
-2023-10-03 13:19:10,734|log_ex.py|  11|524770|MainThread|INFO|running f()
+2023-10-03 13:37:04,700|log_ex      |  28|526911|MainThread|INFO|Running as a script
+2023-10-03 13:37:04,700|log_ex      |  16|526911|MainThread|INFO|here we are in main
+2023-10-03 13:37:04,700|log_ex      |  12|526911|MainThread|INFO|running f()
 ```
 
 
@@ -201,31 +207,25 @@ if __name__ == "__main__":
 
 
 ## Logging in ipython notebooks (jupyter)
+
+Let's say I want log messages to be written in the jupyter and saved to a file `notebook.log`.
+
 ```python
 import logging
-import datetime
-import sys, os
-
-def prepare_logger(logger, level=logging.DEBUG, filename_template="logs/notebook_log_{}.txt"):
-  def prepare_handler(handler):
-    handler.setLevel(level)
-    handler.setFormatter(formatter)
-    return handler
-
-  formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
-  path_file = filename_template.format(datetime.datetime.now().isoformat())
-  path_dir = os.path.dirname(path_file)
-  if not os.path.exists(path_dir):
-    os.makedirs(path_dir)
-
-  del logger.handlers[:]
-  logger.handlers.append(prepare_handler(logging.FileHandler(path_file)))
-  logger.handlers.append(prepare_handler(logging.StreamHandler(sys.stderr)))
-
-  logger.setLevel(level=level)
-  return logger
-
 logger = logging.getLogger()
-logger = prepare_logger(logger, level=logging.DEBUG)
+logging.basicConfig(
+    level=logging.INFO,
+    format="{asctime}|{module:12.12s}|{lineno:4d}|{process}|{threadName}|{levelname:4.4s}|{message}",
+    style='{',
+    handlers=[
+        logging.FileHandler("notebook.log"),
+        logging.StreamHandler(),
+    ]
+)
+logger.info(f"Running in jupyter")
+
 ```
+
+I recall a few years ago there was a bug, and jupyter didn't work correctly with the logging. I had to find some workarounds. 
+
+In the newest versions it seems working fine.

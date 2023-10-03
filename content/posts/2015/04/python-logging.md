@@ -86,7 +86,7 @@ another module imports it. I usually put `basicConfig` under `if __name__ == '__
 script:
 
 
-```commandline
+```python
 import logging
 
 # it's ok to create a logger as a global variable.

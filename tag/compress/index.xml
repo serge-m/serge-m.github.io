@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>resize on sergem&#39;s personal public notebook</title>
-    <link>https://serge-m.github.io/tags/resize/</link>
-    <description>Recent content in resize on sergem&#39;s personal public notebook</description>
+    <title>compress on sergem&#39;s personal public notebook</title>
+    <link>https://serge-m.github.io/tags/compress/</link>
+    <description>Recent content in compress on sergem&#39;s personal public notebook</description>
     <image>
       <url>https://serge-m.github.io/papermod-cover.png</url>
       <link>https://serge-m.github.io/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Nov 2025 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/resize/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Nov 2025 21:30:00 +0000</lastBuildDate><atom:link href="https://serge-m.github.io/tags/compress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reducing image size for emails and apps</title>
       <link>https://serge-m.github.io/posts/reducing-image-size-for-emails-and-apps/</link>
@@ -21,18 +21,6 @@
 I just wanted to share a project that my friends built with a bit of my guidance:
 imagesize.memohub.pro/
 Basically it&amp;rsquo;s a small web app that takes a bunch of images and compresses them to a neccessary size. Processing happens in a browser. Your images and photos stay in your computer and they are never uploaded to any server. It can be handldy when you need to attach many photos to an email, or there is a limitation on file size in visa application.</description>
-    </item>
-    
-    <item>
-      <title>Image processing cheat sheet</title>
-      <link>https://serge-m.github.io/posts/image-processing-cheat-sheet/</link>
-      <pubDate>Wed, 16 Feb 2022 21:30:00 +0000</pubDate>
-      
-      <guid>https://serge-m.github.io/posts/image-processing-cheat-sheet/</guid>
-      <description>In ImageMagick:
-convert save the result to a given (new) file mogrify is the same as convert but it performs processing inplace (the input files are overwritten) Strip metadata from jpg file:
-mogrify -strip f.jpg Rotate according the metadata, then strip:
-mogrify -auto-orient -strip f.jpg Find jpg and jpeg images, apply orientation from EXIF, remove metadata and resize to 1920 on the longest side preserving the aspect ratio and save to the same files:</description>
     </item>
     
   </channel>

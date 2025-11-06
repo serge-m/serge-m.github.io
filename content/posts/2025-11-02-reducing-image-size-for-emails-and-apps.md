@@ -3,7 +3,7 @@ Title: Reducing image size for emails and apps
 Author: SergeM
 Date: 2025-11-02 21:30:00
 Slug: reducing-image-size-for-emails-and-apps
-Tags: [ image processing, image, compression, JPEG ]
+Tags: [ image processing, image, compression, JPEG, resize, downsize, downscale, compress ]
 ---
 
 It's been a long time...
